@@ -1,3 +1,19 @@
+# Ported from OG GitHub (Arena)
+
+/releases/
+/private/
+/data/
+/avatars/
+/logs/
+/saves/
+/sounds/
+/custom/
+*.cmp
+settings.ini
+.reset.bat
+*.lnk
+
+
 # User-specific files
 *.rsuser
 *.suo

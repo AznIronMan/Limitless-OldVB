@@ -1,0 +1,189 @@
+TO DO'S/IDEAS (DEVELOPING)
+
+
+[PORTED FROM JAVA VERSION]
+
+[IN PROGRESS] create baseline statuses
+[PARTIAL COM] bio builder -- need to include effects?
+- menu bar
+- variable count with for loop for players
+- link toon status to status
+- generics
+- absorb abilities
+- steal abilities
+- mimic ability
+- weight stat
+- fatigue meter
+- status target?
+- ability - grappling?
+- soul stat (hidden) math
+- decay stat (hidden) math
+- config enter key to act as submit button
+- set current stats after import
+- translate specifics on character select
+- develop write to tables
+- condense ability options
+- status feature and logic
+- fatal blow concept (intentional and accidental)
+- add fatal attribute to ability
+- mercy ability
+- strengths/weaknesses (status?)
+- randomizer engine
+[IN PROGRESS] battle gui
+[IN PROGRESS] battle logic
+- mutant class with anti-mutant attribute for ability
+- same with alien (e.g. Krp/SM)
+- weapons
+- armor
+- add "similiar to" field to race and class
+- similiar to logic
+- race specific classes -- e.g. RACE mutants CLASS shapeshifter, RACE machine CLASS android
+- auto battle
+- AI battles
+- arena board gui
+- arena board logic
+- time lapse exp
+- time lapse battles
+- factions
+- blank db
+- editor gui
+- editor functionality
+- import/export db
+- training with faction logic
+- training logic
+- inventory
+- items
+- loot
+- magic logic
+- types of magic
+- magic table
+- add AP Ability Points
+- logic to not display MP if not applicable
+- level up logic
+- level up table
+- buff/debuff logic
+- experience logic
+- avatar display
+- set db option
+- menu options
+- time stamp
+- about menu
+- auto save option
+- turn back time? (time traveler?)
+- time heal logic
+- self heal/revive ability logic
+- revive randomizer logic
+- anti-revive attribute trigger and logic
+- time speed logic (zone time detection with actual time vs. multiplier?)
+- time of day / time zone logic
+- time of day gui (sun/moon based on time)
+- reputation attribute logic
+- age feature (estimate, unknown, exact?)
+- add max age to race
+- add max age to class
+- age season of life logic?
+- age modifier logic
+- race overwrites class logic (maybe)?
+- race level up modifier
+- class level up modifier
+- or if race/class attributes conflict, then neutralize logic (maybe)?
+- reversal attack logic?
+- team battles?
+- statuses that cancel others?
+- permadeaths
+- if you use time travel, you age faster logic
+- undead can't die lose until crit
+- thanos snap effect
+- illnesses
+- bleeding effect
+- casino betting
+- implement some type of currency
+- shop to buy items or loot
+- different locations
+- different arenas
+- set encrypt db change db and uncomment hidefile db for release
+- attach abilities to weapons
+- level building for abilities tables
+- save game tables
+- current AI battle(s) ticker at top?
+- upcoming battles chart/button?
+- history looking up?
+- win/loss/tie records
+- clickable drill down/export?
+- turn meter
+- specific body damage
+- body part / melee modifiers (e.g. captain hook or baracka from MK)
+- genders
+- orientation
+- relationships
+- mating / mutations / reproduction
+- relationships based on decisions (kill, alliances, dating, etc.)
+- battle scripts per toon?
+- option for randomized attacks instead of scripts?
+- timer for bitten status (to turn into ?)
+- similar to
+- offspring/family
+- "talk to" scenarios
+- status to temp change alignment 
+- add is identity secret
+- add who knows identity table?
+- alter ego table
+- pregnant status
+- kids as inventory to parents until age
+- mechanic that if kid inventory is lost, the new owner can raise the kid
+- currency
+- for hire logic
+- spell/ability to turn toons into items for collection
+- prisoners
+- different arenas that only allow certain types of battle?
+- credits (money)
+- combining elements to create new ones (fire + earth = magma // air + earth = gravity)
+- magnetism
+- ability to "buy" spells from shop
+- ability for toons to teach other toons spells
+- race/class to have id for magic
+- level based ability slots
+- favorites for ability slots
+- alt names for ability based on character
+- interaction options when not in battle
+- secret identities and alternative character slots (real and fake stats)
+- knowledge of items acquired by use - no description by default
+- knowledge of items start known by certain characters/races/classes
+- Add "destiny" stats -- for AI focus of characters
+- News button for happenings
+- Space awareness during battle (near, far, air, etc.)
+- gender/race/class/alignment wide relationships
+- life force items (transformers have spark, rumple has dagger, etc.)
+- items that change alignment
+
+
+
+COMPLETED
+
+[COMPLETE] import stats on character select 
+[COMPLETE] change alignment/rep to jlabels
+[COMPLETE] text space for user input / submit button
+[COMPLETE] separate tables for toon abl and toon status
+[COMPLETE] link toon abl to abl
+[COMPLETE] create statuses table
+[COMPLETE] add effect table
+[COMPLETE] race ability table
+[COMPLETE] class ability table
+[COMPLETE]  need universal sorter method
+[COMPLETE] split out race class and age boxes
+[COMPLETE] add size box
+[COMPLETE] status table for each ability
+[COMPLETE] fix comparing in status when effects are the same
+[COMPLETE] separated active stats from OG stats
+[COMPLETE] redo effects fields -- add + ± and -
+[COMPLETE] separate bio box into its own text box?
+[COMPLETE] Redo interface
+[COMPLETE] Start / Welcome Screen with options
+[COMPLETE] size stat?
+[COMPLETE] remove generic labels of fields throughout db -- theres no point to do this
+[COMPLETE] Figure out complexities of save game
+[COMPLETE] generic music
+[COMPLETE] team determiner
+[COMPLETE] custom music option
+[COMPLETE] encrypt db
+[COMPLETE] Save / Character Select screen

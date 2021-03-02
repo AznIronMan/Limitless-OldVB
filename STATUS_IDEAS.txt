@@ -1,0 +1,224 @@
+
+[PORTED FROM JAVA VERSION]
+
+How many AP/MP/HP?
+
+ability damaged - temp lost of 1+ points.  returns after x amount of time
+ability drained - perm lost of 1+ points.
+cowering - -def -dex -luck -char -strength
+
+unconscious
+dying
+dead
++
+±
+-
+
+draining AP/MP/HP?
+undead (reverse)
+regen (slow gain)
+fire
+ice
+earth
+wind
+water
+time
+blind
+paralysis
+charmed
+exhausted ( 75% speed, stren, stam, dex pentality)
+darkness
+light
+indifferent
+tired ( 50% speed stren stam dex pentality)
+fear ( 50% -att, -mystic, -def, -intel, -luck )
+grappling (disables all except melee attacks?)
+helpless (mercy or fatal option for opponent)
+incorporeal (immune from phys attack -- except from other incorporeals)
+invisible (xPhysAttacks xevade to 100%  -MagicAttacks)
+panick ( 75% fear)
+shaken ( 25% fear)
+paralyzed ( dex -0 str -0 , only can do mental attacks)
+on fire
+frozen
+stone
+prone
+healthy
+stunned
+turned
+
+
+
+POS
+
+Dispel - Nullifies all statuses
+Image - +Evade 
+Brave - +PhysAttack
+Bubble - +Max HP Double
+Faith - +Mystic
+Float - xEarth
+Haste - +Speed
+Invin - +Def +MDef
+Vanish - xPhysAttacks -MagicAttacks
+Relife - Revival when knocked out
+Runic - Absorb Magic Attack -> MP
+Regen - Restore HP over time
+Immortal - Can't be killed unless special item (defined)
+Shell - +MagDef
+Myst - Unlimited MP for (X) number of turn (figure out balance)
+Try Hard - Exp is multipled by (figure out balance)
+Icy - +Ice -Fire
+On Fire - +Fire -water -ice
+
+NEUTRAL
+
+Wild - +PhysAttack +Speed -- only attacks for X turns
+Split - Create a double of character; splits stats
+Merge - Only works on a split -- combines back together
+
+
+NEG
+
+Blind - -Accuracy
+Mind - Confusion/Attack Self?
+Last Wind - under 5% -- changes for crit multiples?
+Condemned - Has X number of turns before KO
+Confusion - Random Attacks
+Curse - drops all stats and random number of neg effects
+Disease - gives draining effect and drops stats
+Paralyzed - Speed and Dex to 0 for X number of turns
+Freeze - like para but fire attack can recover unless Icy
+Numb - -Speed and decrease is incremental
+Oil - Takes extra damage from fire unless On Fire
+Poison - HP and Stamina drain every turn
+Taunt - based on charisma - angers opponent (what does this mean?) and increases +luck and ?
+Undead - Cure causes deal, poison causes regen, etc.  survives battles at 1 HP until critical
+Silence - disables Mystic for X number of turns
+Shrink - -PhysAttack -Defense
+Sleep - Like Paralyzed but until physically attacked
+Bitten - Zombie/Vamp/Were etc.  If reversed/cured, race changes to what it was bitten by
+Heavy - -Speed 
+Toad - Turns to Frog - Cannot do anything but "Tongue Attack" and "Croak" - all stats dropped
+Pig - Becomes Pig -- can still use weapons, no other major abilities, no armor, -def drop
+Animal - Turns into random from animal race
+helpless - when strength = 0
+
+
+from ff6
+
+Regular statuses
+KO
+Petrify
+Imp
+Invisible
+Magitek
+Poison
+Zombie
+Darkness
+Sleep
+Sap
+Confuse
+Berserk
+Silence
+Image
+Critical
+Doom
+Reflect
+Protect
+Shell
+Stop
+Haste
+Slow
+Regen
+Dance
+Float
+Interceptor Guard
+Hidden
+Chanting
+Trance
+Reraise
+Frozen
+Rage
+Normal
+
+Specialized statuses
+Death
+Charm
+HP Leak
+Heat
+Runic
+Grab
+Invincible
+Cover
+Golem
+
+from ff4 
+List of statuses
+KO
+Petrify
+Toad
+Mini
+Pig
+Silence
+Blind
+Poison
+Curse
+Float
+Paralyze
+Sleep
+Confuse
+Berserk
+Gradual Petrify (2/3)
+Gradual Petrify (1/3)
+Magnetize
+Stop
+Egg
+Defend
+Charging
+Twincast
+Jump
+Doom
+Hide
+Sap
+Reflect
+Barrier
+Blink (2)
+Blink (1)
+Cover
+Critical
+Regen
+
+from ff7
+
+List of statuses
+Death / Sudden Death
+Poison
+Petrify
+Darkness
+Silence
+Berserk
+Zombie
+Sleep
+Slow
+Stop
+Doom
+Petrifying
+Confuse
+Drain
+Eject
+Curse
+Vit 0
+Gravity
+The End
+Aura
+Protect
+Shell
+Haste
+Reflect
+Float
+Regen
+Double
+Triple
+Defend
+Angel Wing
+Invincible
