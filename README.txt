@@ -62,8 +62,11 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.0.046 / 2021.03.02-1359
+ALPHA 0.0.046 / 2021.03.03-2237
 
+- restructure a custom, borderless window at 1366x768 for main window
+- added code to update title bar and version number based on release number
+- added code to allow all dlls and references to be references in a separate folder instead of install root
 - complete rewrite of the game in vb.net for long term compatiblity and portablity
 - migrated from accdb to sqlite for performance and portablity
 - ported over legacy java code into placeholders for vb.net version (not available for public)

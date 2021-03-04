@@ -1,4 +1,5 @@
-﻿Imports System
+﻿Imports System.Resources
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -10,15 +11,15 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Limitless")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyCompany("ClarkTribeGames")>
 <Assembly: AssemblyProduct("Limitless")>
-<Assembly: AssemblyCopyright("Copyright ©  2021")>
+<Assembly: AssemblyCopyright("Copyright ©  2021  ClarkTribeGames")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("f78b3998-d278-46fc-8143-05cd8e51637e")>
+<Assembly: Guid("3750d8e1-09f3-4f95-8223-ea2244ac84d8")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,5 +32,6 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("0.0.046.2237")>
+<Assembly: AssemblyFileVersion("0.0.046.0")>
+<Assembly: NeutralResourcesLanguage("en-US")>
