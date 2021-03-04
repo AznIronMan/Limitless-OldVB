@@ -117,76 +117,475 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="titlePanel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="TitleLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="titleLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TitleLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="titleLabel.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TitleLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Lucida Console, 9.75pt, style=Bold</value>
   </data>
-  <data name="titleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, -1</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TitleLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="titleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>549, 7</value>
+  </data>
+  <data name="TitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="titleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1368, 20</value>
+  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 13</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="titleLabel.TabIndex" type="System.Int32, mscorlib">
+  <data name="TitleLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="titleLabel.Text" xml:space="preserve">
-    <value>Limitless</value>
+  <data name="TitleLabel.Text" xml:space="preserve">
+    <value>Limitless [ALPHA v#.#.#.####]</value>
   </data>
-  <data name="titleLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="TitleLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;titleLabel.Name" xml:space="preserve">
-    <value>titleLabel</value>
+  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
+    <value>TitleLabel</value>
   </data>
-  <data name="&gt;&gt;titleLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;titleLabel.Parent" xml:space="preserve">
-    <value>titlePanel</value>
+  <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
+    <value>TitleBarPanel</value>
   </data>
-  <data name="&gt;&gt;titleLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="titlePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2, -1</value>
+  <metadata name="TitleBarIcon.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="TitleBarIcon.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
   </data>
-  <data name="titlePanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+  <data name="TitleBarIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-25, 0</value>
   </data>
-  <data name="titlePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1370, 21</value>
+  <data name="TitleBarIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 25</value>
   </data>
-  <data name="titlePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="TitleBarIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;titlePanel.Name" xml:space="preserve">
-    <value>titlePanel</value>
+  <data name="&gt;&gt;TitleBarIcon.Name" xml:space="preserve">
+    <value>TitleBarIcon</value>
   </data>
-  <data name="&gt;&gt;titlePanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;TitleBarIcon.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;titlePanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TitleBarIcon.Parent" xml:space="preserve">
+    <value>TitleBarPanel</value>
+  </data>
+  <data name="&gt;&gt;TitleBarIcon.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="MinimizeButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="MinimizeText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MinimizeText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="MinimizeText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 11.25pt, style=Bold</value>
+  </data>
+  <data name="MinimizeText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="MinimizeText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MinimizeText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 15</value>
+  </data>
+  <data name="MinimizeText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="MinimizeText.Text" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="&gt;&gt;MinimizeText.Name" xml:space="preserve">
+    <value>MinimizeText</value>
+  </data>
+  <data name="&gt;&gt;MinimizeText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MinimizeText.Parent" xml:space="preserve">
+    <value>MinimizeButton</value>
+  </data>
+  <data name="&gt;&gt;MinimizeText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="MinimizeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1314, 4</value>
+  </data>
+  <data name="MinimizeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 17</value>
+  </data>
+  <data name="MinimizeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;MinimizeButton.Name" xml:space="preserve">
+    <value>MinimizeButton</value>
+  </data>
+  <data name="&gt;&gt;MinimizeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MinimizeButton.Parent" xml:space="preserve">
+    <value>TitleBarPanel</value>
+  </data>
+  <data name="&gt;&gt;MinimizeButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="CloseButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="CloseText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CloseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="CloseText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CloseText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CloseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="CloseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 15</value>
+  </data>
+  <data name="CloseText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="CloseText.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="&gt;&gt;CloseText.Name" xml:space="preserve">
+    <value>CloseText</value>
+  </data>
+  <data name="&gt;&gt;CloseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CloseText.Parent" xml:space="preserve">
+    <value>CloseButton</value>
+  </data>
+  <data name="&gt;&gt;CloseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CloseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1339, 4</value>
+  </data>
+  <data name="CloseButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 17</value>
+  </data>
+  <data name="CloseButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Name" xml:space="preserve">
+    <value>CloseButton</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Parent" xml:space="preserve">
+    <value>TitleBarPanel</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TitleBarPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="TitleBarPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TitleBarPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1366, 30</value>
+  </data>
+  <data name="TitleBarPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TitleBarPanel.Name" xml:space="preserve">
+    <value>TitleBarPanel</value>
+  </data>
+  <data name="&gt;&gt;TitleBarPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TitleBarPanel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;titlePanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TitleBarPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="BackgroundPanel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="FooterPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 684</value>
+  </data>
+  <data name="FooterPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1332, 35</value>
+  </data>
+  <data name="FooterPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;FooterPanel.Name" xml:space="preserve">
+    <value>FooterPanel</value>
+  </data>
+  <data name="&gt;&gt;FooterPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FooterPanel.Parent" xml:space="preserve">
+    <value>BackgroundPanel</value>
+  </data>
+  <data name="&gt;&gt;FooterPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="WelcomeImage0.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 15</value>
+  </data>
+  <data name="WelcomeImage0.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage0.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage0.Name" xml:space="preserve">
+    <value>WelcomeImage0</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage0.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage0.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage0.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="WelcomeImage1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>222, 205</value>
+  </data>
+  <data name="WelcomeImage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage1.Name" xml:space="preserve">
+    <value>WelcomeImage1</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage1.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="WelcomeImage2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>548, 205</value>
+  </data>
+  <data name="WelcomeImage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage2.Name" xml:space="preserve">
+    <value>WelcomeImage2</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage2.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="WelcomeImage4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>711, 15</value>
+  </data>
+  <data name="WelcomeImage4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage4.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage4.Name" xml:space="preserve">
+    <value>WelcomeImage4</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage4.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="WelcomeImage3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 15</value>
+  </data>
+  <data name="WelcomeImage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage3.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage3.Name" xml:space="preserve">
+    <value>WelcomeImage3</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage3.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="WelcomePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 210</value>
+  </data>
+  <data name="WelcomePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>950, 420</value>
+  </data>
+  <data name="WelcomePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;WelcomePanel.Name" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomePanel.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomePanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="MainMenuBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 210</value>
+  </data>
+  <data name="MainMenuBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 420</value>
+  </data>
+  <data name="MainMenuBar.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;MainMenuBar.Name" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;MainMenuBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainMenuBar.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;MainMenuBar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TitleLogo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="TitleLogo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 20</value>
+  </data>
+  <data name="TitleLogo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>885, 150</value>
+  </data>
+  <data name="TitleLogo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TitleLogo.Name" xml:space="preserve">
+    <value>TitleLogo</value>
+  </data>
+  <data name="&gt;&gt;TitleLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TitleLogo.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;TitleLogo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="MainMenuPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 11</value>
+  </data>
+  <data name="MainMenuPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1332, 673</value>
+  </data>
+  <data name="MainMenuPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.Name" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.Parent" xml:space="preserve">
+    <value>BackgroundPanel</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="BackgroundPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="BackgroundPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 30</value>
+  </data>
+  <data name="BackgroundPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1366, 738</value>
+  </data>
+  <data name="BackgroundPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;BackgroundPanel.Name" xml:space="preserve">
+    <value>BackgroundPanel</value>
+  </data>
+  <data name="&gt;&gt;BackgroundPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BackgroundPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BackgroundPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
@@ -198,11 +597,14 @@
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Limitless</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>LimitlessForm</value>
+    <value>MainWindow</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

@@ -61,6 +61,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to D:/OneDrive/Files/Programs/VisualStudio/Limitless/.
+        '''</summary>
+        Public ReadOnly Property BasePath() As String
+            Get
+                Return ResourceManager.GetString("BasePath", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Byte[].
         '''</summary>
         Public ReadOnly Property battle() As Byte()
