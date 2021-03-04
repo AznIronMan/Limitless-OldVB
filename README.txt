@@ -62,8 +62,10 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.0.046 / 2021.03.03-2237
+ALPHA 0.0.046 / 2021.03.04-1249
 
+- added jukebox and added looping function for start/stop/continous mp3 audio
+- created title panel, footer panel, and framework for main menu panel
 - restructure a custom, borderless window at 1366x768 for main window
 - added code to update title bar and version number based on release number
 - added code to allow all dlls and references to be references in a separate folder instead of install root
