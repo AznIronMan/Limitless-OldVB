@@ -4,7 +4,7 @@ Public Module Initialize
 
     Public Sub InitProcess()
         InitFolders()
-        InitMove()
+        'InitMove()
         InitHide()
         InitSettings()
     End Sub
@@ -23,6 +23,9 @@ Public Module Initialize
 
     Private Sub InitHide()
         FilesFolders.HideFolder("lib")
+        FilesFolders.HideFolder("x86")
+        FilesFolders.HideFolder("x64")
+        FilesFolders.HideFolder("en-US")
         FilesFolders.HideFile("limitless.exe.config")
     End Sub
 
