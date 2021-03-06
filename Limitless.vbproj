@@ -151,6 +151,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Database.vb" />
+    <Compile Include="FilesFolders.vb" />
+    <Compile Include="Initialize.vb" />
+    <Compile Include="MemoryBank.vb" />
     <Compile Include="Limitless.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +163,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Jukebox.vb" />
+    <Compile Include="Appearance.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -175,6 +180,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Settings.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Limitless.en-US.resx">
@@ -234,6 +240,27 @@
   <ItemGroup>
     <None Include="resources\sounds\victory.mp3" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\_empty_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\bs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\dc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\fb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\pp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\pt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\yt.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -251,5 +278,11 @@
     <PropertyGroup>
       <TargetFrameworkSDKToolsDirectory>$(TargetFrameworkSDKToolsDirectory)$(PlatformTarget)\</TargetFrameworkSDKToolsDirectory>
     </PropertyGroup>
+  </Target>
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <MoveToLibFolder Include="$(OutputPath)*.dll ; $(OutputPath)*.pdb ; $(OutputPath)*.xml" />
+    </ItemGroup>
+    <Move SourceFiles="@(MoveToLibFolder)" DestinationFolder="$(OutputPath)lib" OverwriteReadOnlyFiles="true" />
   </Target>
 </Project>

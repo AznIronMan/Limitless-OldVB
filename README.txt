@@ -62,8 +62,14 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.0.046 / 2021.03.04-1249
+ALPHA 0.0.046 / 2021.03.05-2152
 
+- complete overhaul of UI from scratch
+- new, clear sql based settings file generates on start
+- enabled exit game button
+- created database modules for future use
+- added buttons to new title screen with hover/leave effect
+- created dark mode (default) and light mode with options to add custom color themes in the future
 - added jukebox and added looping function for start/stop/continous mp3 audio
 - created title panel, footer panel, and framework for main menu panel
 - restructure a custom, borderless window at 1366x768 for main window
@@ -72,7 +78,6 @@ ALPHA 0.0.046 / 2021.03.04-1249
 - complete rewrite of the game in vb.net for long term compatiblity and portablity
 - migrated from accdb to sqlite for performance and portablity
 - ported over legacy java code into placeholders for vb.net version (not available for public)
-- created placeholder code to start the migration
 - updated readme to reflect new changes
 - created new github (https://github.com/AznBlusuazn/Limitless) and archived the former github
 

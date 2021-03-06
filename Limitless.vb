@@ -5,6 +5,8 @@
     Dim Highlighted As Boolean = False
 
     Private Sub LimitlessForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Initialize.InitProcess()
+        Appearance.AssignMode("Default")
         'Formats Title with App Name, Release Type, and Version Number
         Dim ApplicationName, ReleaseType, VersionNumber, AppTitleText As String
         ApplicationName = Application.ProductName
@@ -14,9 +16,6 @@
         AppTitleText = ApplicationName & " [" & ReleaseType & "v" & VersionNumber & "]"
         Me.TitleLabel.Text = AppTitleText
         Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
-
-        Dim NewPath As String = My.Resources.BasePath & "Avatars/geoff clark.png"
-        WelcomeImage0.Image = System.Drawing.Image.FromFile(NewPath)
 
     End Sub
 
@@ -34,9 +33,31 @@
             Case Else
                 VersionConverter = versionpart
         End Select
-
-
     End Function
+
+    Private Sub HoverOverEffect(obj As Object)
+        If obj.Enabled Then
+            Appearance.AssignColor(obj, "Hover")
+        End If
+    End Sub
+
+    Private Sub LeaveObjEffect(obj As Object)
+        If obj.Enabled Then
+            Appearance.AssignColor(obj, "Leave")
+        End If
+    End Sub
+    Private Sub MouseDownEffect(obj As Object)
+        If obj.Enabled Then
+            Appearance.AssignColor(obj, "Click")
+        End If
+    End Sub
+
+    Private Sub MouseUpEffect(obj As Object)
+        If obj.Enabled Then
+            Appearance.AssignColor(obj, "Hover")
+        End If
+    End Sub
+
 
     Private Sub ExitGame()
         Close()
@@ -59,12 +80,24 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub CloseWindow_MouseDown(sender As Object, e As MouseEventArgs) Handles CloseButton.MouseDown, CloseText.MouseDown
+    Private Sub Exit_Program(sender As Object, e As MouseEventArgs) Handles TitleBarIcon.DoubleClick, CloseButton.MouseDown, CloseText.MouseDown, ExitButton.MouseClick
         ExitGame()
     End Sub
 
-    Private Sub Panel1_DoubleClick(sender As Object, e As EventArgs) Handles TitleBarIcon.DoubleClick
-        ExitGame()
+    Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles StartButton.MouseHover, UpdateButton.MouseHover, OptionsButton.MouseHover, LoadButton.MouseHover, ExitButton.MouseHover, EditButton.MouseHover, DonateButton.MouseHover, AboutButton.MouseHover
+        HoverOverEffect(sender)
+    End Sub
+
+    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles StartButton.MouseLeave, UpdateButton.MouseLeave, OptionsButton.MouseLeave, LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, DonateButton.MouseLeave, AboutButton.MouseLeave
+        LeaveObjEffect(sender)
+    End Sub
+
+    Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles StartButton.MouseDown, UpdateButton.MouseDown, OptionsButton.MouseDown, LoadButton.MouseDown, ExitButton.MouseDown, EditButton.MouseDown, DonateButton.MouseDown, AboutButton.MouseDown
+        MouseDownEffect(sender)
+    End Sub
+
+    Private Sub Button_MouseUp(sender As Object, e As MouseEventArgs) Handles StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, DonateButton.MouseUp, AboutButton.MouseUp
+        MouseUpEffect(sender)
     End Sub
 
     Private Sub TitleBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseUp, TitleLabel.MouseUp, TitleBarIcon.MouseUp
