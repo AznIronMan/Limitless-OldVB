@@ -4,36 +4,37 @@ Public Module Initialize
 
     Public Sub InitProcess()
         InitFolders()
-        'InitMove()
         InitHide()
         InitSettings()
+        InitPanels()
+        Avatars.TitleScreen()
+
     End Sub
 
     Private Sub InitFolders()
-        FilesFolders.CreateDirectory("avatars")
-        FilesFolders.CreateDirectory("data")
-        FilesFolders.CreateDirectory("saves")
-    End Sub
-
-    Private Sub InitMove()
-        FilesFolders.MoveDirectory("en-US", "lib\en-US")
-        FilesFolders.MoveDirectory("x64", "lib\x64")
-        FilesFolders.MoveDirectory("x86", "lib\x86")
+        FilesFolders.CreateDirectory(MemoryBank.AvatarsDir)
+        FilesFolders.CreateDirectory(MemoryBank.DataDir)
+        FilesFolders.CreateDirectory(MemoryBank.SavesDir)
     End Sub
 
     Private Sub InitHide()
-        FilesFolders.HideFolder("lib")
-        FilesFolders.HideFolder("x86")
-        FilesFolders.HideFolder("x64")
-        FilesFolders.HideFolder("en-US")
-        FilesFolders.HideFile("limitless.exe.config")
+        FilesFolders.HideFolder(MemoryBank.LibDir)
+        FilesFolders.HideFile(LCase(Application.ProductName) & ".exe.config")
     End Sub
 
     Private Sub InitSettings()
-        If Not File.Exists("settings.db") Then
+        If Not File.Exists(MemoryBank.SettingsFile & "." &
+                           MemoryBank.SettingsExt) Then
             Settings.CreateSettings()
             Settings.BuildDefault()
         End If
+    End Sub
+
+    Private Sub InitPanels()
+        MainWindow.WelcomePanel.Visible = True
+        MainWindow.AboutPanel.Visible = False
+        MainWindow.DonatePanel.Visible = False
+        MainWindow.OptionsPanel.Visible = False
     End Sub
 
 End Module

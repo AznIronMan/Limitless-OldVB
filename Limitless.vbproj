@@ -40,8 +40,8 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>.testing\</OutputPath>
@@ -77,6 +77,12 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>resources\icons\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ContentSQLiteInteropFiles>true</ContentSQLiteInteropFiles>
+    <CopySQLiteInteropFiles>false</CopySQLiteInteropFiles>
+    <CleanSQLiteInteropFiles>false</CleanSQLiteInteropFiles>
+    <CollectSQLiteInteropFiles>false</CollectSQLiteInteropFiles>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -151,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Avatars.vb" />
+    <Compile Include="Calculator.vb" />
+    <Compile Include="Converters.vb" />
     <Compile Include="Database.vb" />
     <Compile Include="FilesFolders.vb" />
     <Compile Include="Initialize.vb" />
@@ -181,6 +190,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Settings.vb" />
+    <Compile Include="Tools.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Limitless.en-US.resx">
@@ -280,9 +290,22 @@
     </PropertyGroup>
   </Target>
   <Target Name="AfterBuild">
+    <MakeDir Directories="$(OutputPath)lib" ContinueOnError="true" />
+    <MakeDir Directories="$(OutputPath)lib\x64" ContinueOnError="true" />
+    <MakeDir Directories="$(OutputPath)lib\x86" ContinueOnError="true" />
+    <MakeDir Directories="$(OutputPath)lib\en-US" ContinueOnError="true" />
     <ItemGroup>
       <MoveToLibFolder Include="$(OutputPath)*.dll ; $(OutputPath)*.pdb ; $(OutputPath)*.xml" />
+      <MoveToLibFolder2 Include="$(OutputPath)x64\*.*" />
+      <MoveToLibFolder3 Include="$(OutputPath)x86\*.*" />
+      <MoveToLibFolder4 Include="$(OutputPath)en-US\*.*" />
     </ItemGroup>
     <Move SourceFiles="@(MoveToLibFolder)" DestinationFolder="$(OutputPath)lib" OverwriteReadOnlyFiles="true" />
+    <Move SourceFiles="@(MoveToLibFolder2)" DestinationFolder="$(OutputPath)lib\x64" OverwriteReadOnlyFiles="true" />
+    <Move SourceFiles="@(MoveToLibFolder3)" DestinationFolder="$(OutputPath)lib\x86" OverwriteReadOnlyFiles="true" />
+    <Move SourceFiles="@(MoveToLibFolder4)" DestinationFolder="$(OutputPath)lib\en-US" OverwriteReadOnlyFiles="true" />
+    <RemoveDir Directories="$(OutputPath)x64" />
+    <RemoveDir Directories="$(OutputPath)x86" />
+    <RemoveDir Directories="$(OutputPath)en-US" />
   </Target>
 </Project>

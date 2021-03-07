@@ -13,14 +13,18 @@
         MemoryBank.PagesForeColor = Color.WhiteSmoke
         MemoryBank.ButtonBackColor = Color.Black
         MemoryBank.ButtonForeColor = Color.WhiteSmoke
+        MemoryBank.DonateForeColor = Color.DarkRed
+        MemoryBank.DonateHoverOver = Color.DarkGreen
         MemoryBank.ButtonMouseDownBack = Color.Black
-        MemoryBank.ButtonDisabledColor = Color.FromArgb(22, 22, 22)
+        MemoryBank.ButtonDisabledColor = Color.FromArgb(5, 5, 5)
         MemoryBank.HoverBackColor = Color.Black
         MemoryBank.HoverForeColor = Color.Blue
         MemoryBank.LeaveBackColor = Color.Black
         MemoryBank.LeaveForeColor = Color.WhiteSmoke
         MemoryBank.ClickBackColor = Color.Black
         MemoryBank.ClickForeColor = Color.Red
+        MemoryBank.GroupBackColor = Color.FromArgb(5, 5, 5)
+        MemoryBank.GroupForeColor = Color.WhiteSmoke
     End Sub
     Private Sub LiteModeColors()
         MemoryBank.TitleBarBackColor = SystemColors.Highlight
@@ -33,14 +37,18 @@
         MemoryBank.PagesForeColor = SystemColors.ControlText
         MemoryBank.ButtonBackColor = SystemColors.Control
         MemoryBank.ButtonForeColor = SystemColors.ControlText
+        MemoryBank.DonateForeColor = Color.DarkRed
+        MemoryBank.DonateHoverOver = Color.DarkGreen
         MemoryBank.ButtonMouseDownBack = SystemColors.Control
-        MemoryBank.ButtonDisabledColor = Color.FromArgb(RGB(22, 22, 22))
+        MemoryBank.ButtonDisabledColor = Color.FromArgb(RGB(5, 5, 5))
         MemoryBank.HoverBackColor = SystemColors.Control
         MemoryBank.HoverForeColor = Color.Blue
         MemoryBank.LeaveBackColor = SystemColors.Control
         MemoryBank.LeaveForeColor = SystemColors.ControlText
         MemoryBank.ClickBackColor = SystemColors.Control
         MemoryBank.ClickForeColor = Color.Red
+        MemoryBank.GroupBackColor = SystemColors.Control
+        MemoryBank.GroupForeColor = SystemColors.ControlText
     End Sub
 
     Public Sub AssignMode(mode As String)
@@ -65,8 +73,25 @@
         AssignColor(MainWindow.EditButton, "Button")
         AssignColor(MainWindow.OptionsButton, "Button")
         AssignColor(MainWindow.AboutButton, "Button")
-        AssignColor(MainWindow.DonateButton, "Button")
+        AssignColor(MainWindow.AboutPanel, "Pages")
+        AssignColor(MainWindow.AboutText, "Pages")
+        AssignColor(MainWindow.AboutFBButton, "Button")
+        AssignColor(MainWindow.AboutDCButton, "Button")
+        AssignColor(MainWindow.AboutYTButton, "Button")
+        AssignColor(MainWindow.AboutBSButton, "Button")
+        AssignColor(MainWindow.DonateButton, "Donate")
+        AssignColor(MainWindow.DonatePanel, "Pages")
+        AssignColor(MainWindow.DonateText, "Pages")
+        AssignColor(MainWindow.DonatePTButton, "Button")
+        AssignColor(MainWindow.DonatePPButton, "Button")
         AssignColor(MainWindow.UpdateButton, "Button")
+        AssignColor(MainWindow.OptionsPanel, "Pages")
+        AssignColor(MainWindow.OptionsColorGroup, "Group")
+        AssignColor(MainWindow.OptionsMusicGroup, "Group")
+        AssignColor(MainWindow.OptionsAudioSelectBattle, "Button")
+        AssignColor(MainWindow.OptionsAudioSelectDefeat, "Button")
+        AssignColor(MainWindow.OptionsAudioSelectIntro, "Button")
+        AssignColor(MainWindow.OptionsAudioSelectVictory, "Button")
         AssignColor(MainWindow.ExitButton, "Button")
 
     End Sub
@@ -99,6 +124,16 @@
                     obj.ForeColor = MemoryBank.ButtonForeColor
                     SetButtonStyle(obj)
                 End If
+            Case "Donate"
+                If obj.Enabled Then
+                    obj.BackColor = MemoryBank.ButtonBackColor
+                    obj.ForeColor = MemoryBank.DonateForeColor
+                    SetButtonStyle(obj)
+                Else
+                    obj.BackColor = MemoryBank.ButtonDisabledColor
+                    obj.ForeColor = MemoryBank.DonateForeColor
+                    SetButtonStyle(obj)
+                End If
             Case "Hover"
                 obj.BackColor = MemoryBank.HoverBackColor
                 obj.ForeColor = MemoryBank.HoverForeColor
@@ -108,6 +143,9 @@
             Case "Click"
                 obj.BackColor = MemoryBank.ClickBackColor
                 obj.ForeColor = MemoryBank.ClickForeColor
+            Case "Group"
+                obj.BackColor = MemoryBank.GroupBackColor
+                obj.ForeColor = MemoryBank.GroupForeColor
             Case Else
                 obj.BackColor = MemoryBank.PagesBackColor
                 obj.ForeColor = MemoryBank.PagesForeColor

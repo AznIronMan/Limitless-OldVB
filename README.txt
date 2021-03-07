@@ -62,6 +62,15 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
+ALPHA 0.0.047 / 2021.03.06
+
+- added typewriter effect method as a class 
+- completed the porting of the about button with all working links
+- created filefolders, avatars, and calculator classes for various functions
+- fixed loading bug looking for x86 x64 and enUS folders
+
+[PREVIOUS UPDATES]
+
 ALPHA 0.0.046 / 2021.03.05-2152
 
 - complete overhaul of UI from scratch
@@ -80,8 +89,6 @@ ALPHA 0.0.046 / 2021.03.05-2152
 - ported over legacy java code into placeholders for vb.net version (not available for public)
 - updated readme to reflect new changes
 - created new github (https://github.com/AznBlusuazn/Limitless) and archived the former github
-
-[PREVIOUS UPDATES]
 
 [ALL PRIOR UPDATES ARE FROM THE DISCONTINUED JAVA VERSION]
 ALPHA 0.0.045 / 2021.02.07-2225

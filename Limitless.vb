@@ -12,28 +12,12 @@
         ApplicationName = Application.ProductName
         ReleaseType = "ALPHA "
         Dim VersionParts() As String = Strings.Split((System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()), ".", 4)
-        VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & VersionConverter(VersionParts(2), 3) & "." & VersionConverter(VersionParts(3), 4)
+        VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
         AppTitleText = ApplicationName & " [" & ReleaseType & "v" & VersionNumber & "]"
         Me.TitleLabel.Text = AppTitleText
         Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
 
     End Sub
-
-    Private Function VersionConverter(versionpart As String, digits As Integer) As String
-        Dim PartLength As Integer = Len(versionpart)
-        Select Case PartLength
-            Case digits - 1
-                VersionConverter = "0" + versionpart
-            Case digits - 2
-                VersionConverter = "00" + versionpart
-            Case digits - 3
-                VersionConverter = "000" + versionpart
-            Case digits - 4
-                VersionConverter = "0000" + versionpart
-            Case Else
-                VersionConverter = versionpart
-        End Select
-    End Function
 
     Private Sub HoverOverEffect(obj As Object)
         If obj.Enabled Then
@@ -52,12 +36,40 @@
         End If
     End Sub
 
-    Private Sub MouseUpEffect(obj As Object)
-        If obj.Enabled Then
-            Appearance.AssignColor(obj, "Hover")
-        End If
+    Private Sub AboutButtonPressed()
+        WelcomePanel.Visible = False
+        AboutPanel.Visible = True
+        DonatePanel.Visible = False
+        OptionsPanel.Visible = False
+        Dim AboutMessage As String = "This application was created by ClarkTribe Games." & Environment.NewLine & Environment.NewLine &
+            "It was the development of basically a one man team with the advice, suggestions, and feedback from friends, family, and colleagues." & Environment.NewLine & Environment.NewLine &
+            "Limitless is dedicate to the kids of the creator." & Environment.NewLine & Environment.NewLine &
+            "Please consider supporting the cause with a donation via the Donate To The Cause button." & Environment.NewLine & Environment.NewLine &
+            "The music was provided by BenSound.com.  Please visit their site for some awesome tracks!" & Environment.NewLine & Environment.NewLine &
+            "Thank you for your continued support!" & Environment.NewLine & Environment.NewLine &
+            "- Geoff Clark @ ClarkTribeGames"
+        Tools.TypeWriter(AboutText, 15, AboutMessage)
     End Sub
 
+    Private Sub DonateButtonPressed()
+        WelcomePanel.Visible = False
+        AboutPanel.Visible = False
+        DonatePanel.Visible = True
+        OptionsPanel.Visible = False
+        Dim DonateMessage As String = "Welcome to Limitless!" & Environment.NewLine & Environment.NewLine &
+            "This title is still under development.  Please be patient." & Environment.NewLine & Environment.NewLine &
+            "You can become a Patreon or Donate if you want to help support the cause." & Environment.NewLine & Environment.NewLine &
+            "Thanks!" & Environment.NewLine & Environment.NewLine &
+            "- Geoff Clark @ ClarkTribeGames"
+        Tools.TypeWriter(DonateText, 15, DonateMessage)
+    End Sub
+
+    Private Sub OptionsButtonPressed()
+        WelcomePanel.Visible = False
+        AboutPanel.Visible = False
+        DonatePanel.Visible = False
+        OptionsPanel.Visible = True
+    End Sub
 
     Private Sub ExitGame()
         Close()
@@ -84,11 +96,11 @@
         ExitGame()
     End Sub
 
-    Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles StartButton.MouseHover, UpdateButton.MouseHover, OptionsButton.MouseHover, LoadButton.MouseHover, ExitButton.MouseHover, EditButton.MouseHover, DonateButton.MouseHover, AboutButton.MouseHover
+    Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles StartButton.MouseHover, UpdateButton.MouseHover, OptionsButton.MouseHover, LoadButton.MouseHover, ExitButton.MouseHover, EditButton.MouseHover, DonateButton.MouseHover, AboutButton.MouseHover, StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp
         HoverOverEffect(sender)
     End Sub
 
-    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles StartButton.MouseLeave, UpdateButton.MouseLeave, OptionsButton.MouseLeave, LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, DonateButton.MouseLeave, AboutButton.MouseLeave
+    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles StartButton.MouseLeave, UpdateButton.MouseLeave, OptionsButton.MouseLeave, LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, AboutButton.MouseLeave
         LeaveObjEffect(sender)
     End Sub
 
@@ -96,8 +108,56 @@
         MouseDownEffect(sender)
     End Sub
 
-    Private Sub Button_MouseUp(sender As Object, e As MouseEventArgs) Handles StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, DonateButton.MouseUp, AboutButton.MouseUp
-        MouseUpEffect(sender)
+    Private Sub AboutButton_Click(sender As Object, e As EventArgs) Handles AboutButton.Click
+        AboutButtonPressed()
+    End Sub
+    Private Sub AboutFBImage_Click(sender As Object, e As EventArgs) Handles AboutFBButton.Click
+        Tools.GoToWeb("https://www.facebook.com/clarktribe.games")
+    End Sub
+
+    Private Sub AboutDCImage_Click(sender As Object, e As EventArgs) Handles AboutDCButton.Click
+        Tools.GoToWeb("https://discord.gg/6kW4der")
+    End Sub
+
+    Private Sub AboutYTImage_Click(sender As Object, e As EventArgs) Handles AboutYTButton.Click
+        Tools.GoToWeb("https://www.youtube.com/channel/UCjcPw3ApuFduiETIdmAhFAQ")
+    End Sub
+
+    Private Sub AboutBSImage_Click(sender As Object, e As EventArgs) Handles AboutBSButton.Click
+        Tools.GoToWeb("https://www.bensound.com/")
+    End Sub
+
+    Private Sub AboutText_Enter(sender As Object, e As EventArgs) Handles AboutText.Enter
+        AboutTitle.Select()
+    End Sub
+
+    Private Sub DonateText_Enter(sender As Object, e As EventArgs) Handles DonateText.Enter
+        DonateTitle.Select()
+    End Sub
+
+    Private Sub DonateButton_MouseLeave(sender As Object, e As EventArgs) Handles DonateButton.MouseLeave
+        AssignColor(sender, "Donate")
+    End Sub
+
+    Private Sub DonateButton_MouseHover(sender As Object, e As EventArgs) Handles DonateButton.MouseHover, DonateButton.MouseUp
+        sender.BackColor = MemoryBank.HoverBackColor
+        sender.ForeColor = MemoryBank.DonateHoverOver
+    End Sub
+
+    Private Sub DonateButton_Click(sender As Object, e As EventArgs) Handles DonateButton.Click
+        DonateButtonPressed()
+    End Sub
+
+    Private Sub DonatePTButton_Click(sender As Object, e As EventArgs) Handles DonatePTButton.Click
+        Tools.GoToWeb("https://www.patreon.com/clarktribegames")
+    End Sub
+
+    Private Sub DonatePPButton_Click(sender As Object, e As EventArgs) Handles DonatePPButton.Click
+        Tools.GoToWeb("https://www.paypal.com/paypalme/aznblusuazn")
+    End Sub
+
+    Private Sub OptionsButton_Click(sender As Object, e As EventArgs) Handles OptionsButton.Click
+        OptionsButtonPressed()
     End Sub
 
     Private Sub TitleBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseUp, TitleLabel.MouseUp, TitleBarIcon.MouseUp

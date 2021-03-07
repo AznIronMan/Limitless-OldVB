@@ -15,8 +15,8 @@
         (System.Reflection.Assembly.GetExecutingAssembly().GetName().
         Version.ToString()) & "'", "'mode', 'Dark'", "'music', 'on'",
         "'custm', 'off'", "'custi', 'off'", "'custb', 'off'",
-        "'custw', 'off'", "'sound', 'on'", "'samedb', 'on'",
-        "'defaultdb', 'default'", "'lastdb', 'default'"})
+        "'custw', 'off'", "'custl', 'off'", "'sound', 'on'",
+        "'samedb', 'on'", "'defaultdb', 'default'", "'lastdb', 'default'"})
     End Sub
 
 End Class

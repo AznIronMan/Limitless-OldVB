@@ -39,4 +39,10 @@ Public Class FilesFolders
                 .Attributes = IO.FileAttributes.Hidden}
         End If
     End Sub
+
+    Public Shared Function CountFiles(dir As String, ext As String) As Integer
+        CountFiles = Directory.GetFiles(dir, ext).Count
+    End Function
+
+
 End Class
