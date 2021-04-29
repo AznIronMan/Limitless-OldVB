@@ -1,6 +1,6 @@
 =============================================
 LIMITLESS by Geoff Clark
-VERSION ALPHA 0.0.046
+VERSION ALPHA 0.0.048
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -58,9 +58,30 @@ Contact the author:  info@clarktribegames.com
 
 =============================================
 
+COPYRIGHT AND TRADEMARK DISCLAIMER
+
+*ALL PRODUCT AND COMPANY NAMES ARE TRADEMARKS
+OR REGISTERED(R) TRADEMARKS OF THEIR
+RESPECTIVE HOLDERS.  USE OF THEM DOES NOT
+IMPLY ANY AFFILIATION WITH OR ENDORSEMENT BY
+THEM.*
+
+=============================================
+
 DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
+
+ALPHA 0.0.048 / 2021.04.28
+
+- removed all fantasy names and going with actual names -- the game will be free so no trademark issues
+- added uid and version number to options menu
+- added dark/lite mode logic with buttons in options menu
+- fixed dark/lite mode not loading correctly upon opening -- previously would always default to dark
+- fixed db reader and update functions to work correctly with new db
+- added trademark disclaimer to readme
+
+[PREVIOUS UPDATES]
 
 ALPHA 0.0.047 / 2021.03.06
 
@@ -68,8 +89,6 @@ ALPHA 0.0.047 / 2021.03.06
 - completed the porting of the about button with all working links
 - created filefolders, avatars, and calculator classes for various functions
 - fixed loading bug looking for x86 x64 and enUS folders
-
-[PREVIOUS UPDATES]
 
 ALPHA 0.0.046 / 2021.03.05-2152
 

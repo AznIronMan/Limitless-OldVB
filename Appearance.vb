@@ -88,10 +88,14 @@
         AssignColor(MainWindow.OptionsPanel, "Pages")
         AssignColor(MainWindow.OptionsColorGroup, "Group")
         AssignColor(MainWindow.OptionsMusicGroup, "Group")
+        AssignColor(MainWindow.OptionsManageGroup, "Group")
         AssignColor(MainWindow.OptionsAudioSelectBattle, "Button")
         AssignColor(MainWindow.OptionsAudioSelectDefeat, "Button")
         AssignColor(MainWindow.OptionsAudioSelectIntro, "Button")
         AssignColor(MainWindow.OptionsAudioSelectVictory, "Button")
+        AssignColor(MainWindow.OptionsManageAvatars, "Button")
+        AssignColor(MainWindow.OptionsManageMusic, "Button")
+        AssignColor(MainWindow.OptionsManageSound, "Button")
         AssignColor(MainWindow.ExitButton, "Button")
 
     End Sub

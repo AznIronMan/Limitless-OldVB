@@ -34,6 +34,26 @@ Partial Class MainWindow
         Me.FooterPanel = New System.Windows.Forms.Panel()
         Me.MainMenuPanel = New System.Windows.Forms.Panel()
         Me.OptionsPanel = New System.Windows.Forms.Panel()
+        Me.OptionsManageGroup = New System.Windows.Forms.GroupBox()
+        Me.OptionsManageSound = New System.Windows.Forms.Button()
+        Me.OptionsManageMusic = New System.Windows.Forms.Button()
+        Me.OptionsManageAvatars = New System.Windows.Forms.Button()
+        Me.OptionsMusicGroup = New System.Windows.Forms.GroupBox()
+        Me.OptionsAudioTextDefeat = New System.Windows.Forms.Label()
+        Me.OptionsAudioTextVictory = New System.Windows.Forms.Label()
+        Me.OptionsAudioTextBattle = New System.Windows.Forms.Label()
+        Me.OptionsAudioTextIntro = New System.Windows.Forms.Label()
+        Me.OptionsAudioSelectDefeat = New System.Windows.Forms.Button()
+        Me.OptionsAudioSelectVictory = New System.Windows.Forms.Button()
+        Me.OptionsAudioSelectBattle = New System.Windows.Forms.Button()
+        Me.OptionsAudioSelectIntro = New System.Windows.Forms.Button()
+        Me.OptionsAudioCheckSound = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckDefeat = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckVictory = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckBattle = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckIntro = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckCustom = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckMusic = New System.Windows.Forms.CheckBox()
         Me.OptionsColorGroup = New System.Windows.Forms.GroupBox()
         Me.OptionsColorCustom = New System.Windows.Forms.CheckBox()
         Me.OptionsColorLite = New System.Windows.Forms.CheckBox()
@@ -68,27 +88,14 @@ Partial Class MainWindow
         Me.DonatePTButton = New System.Windows.Forms.Button()
         Me.DonateText = New System.Windows.Forms.TextBox()
         Me.DonateTitle = New System.Windows.Forms.Label()
-        Me.OptionsMusicGroup = New System.Windows.Forms.GroupBox()
-        Me.OptionsAudioCheckIntro = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckCustom = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckMusic = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckBattle = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckVictory = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckDefeat = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckSound = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioSelectIntro = New System.Windows.Forms.Button()
-        Me.OptionsAudioSelectBattle = New System.Windows.Forms.Button()
-        Me.OptionsAudioSelectVictory = New System.Windows.Forms.Button()
-        Me.OptionsAudioSelectDefeat = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.TitleBarPanel.SuspendLayout()
         Me.MinimizeButton.SuspendLayout()
         Me.CloseButton.SuspendLayout()
         Me.BackgroundPanel.SuspendLayout()
         Me.MainMenuPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
+        Me.OptionsManageGroup.SuspendLayout()
+        Me.OptionsMusicGroup.SuspendLayout()
         Me.OptionsColorGroup.SuspendLayout()
         Me.AboutPanel.SuspendLayout()
         Me.WelcomePanel.SuspendLayout()
@@ -100,8 +107,6 @@ Partial Class MainWindow
         Me.MainMenuBar.SuspendLayout()
         CType(Me.TitleLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DonatePanel.SuspendLayout()
-        Me.OptionsMusicGroup.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TitleLabel
@@ -187,13 +192,162 @@ Partial Class MainWindow
         '
         'OptionsPanel
         '
-        Me.OptionsPanel.Controls.Add(Me.GroupBox1)
+        Me.OptionsPanel.Controls.Add(Me.OptionsManageGroup)
         Me.OptionsPanel.Controls.Add(Me.OptionsMusicGroup)
         Me.OptionsPanel.Controls.Add(Me.OptionsColorGroup)
         Me.OptionsPanel.Controls.Add(Me.OptionsHost)
         Me.OptionsPanel.Controls.Add(Me.OptionsTitle)
         resources.ApplyResources(Me.OptionsPanel, "OptionsPanel")
         Me.OptionsPanel.Name = "OptionsPanel"
+        '
+        'OptionsManageGroup
+        '
+        Me.OptionsManageGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.OptionsManageGroup.Controls.Add(Me.OptionsManageSound)
+        Me.OptionsManageGroup.Controls.Add(Me.OptionsManageMusic)
+        Me.OptionsManageGroup.Controls.Add(Me.OptionsManageAvatars)
+        Me.OptionsManageGroup.ForeColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.OptionsManageGroup, "OptionsManageGroup")
+        Me.OptionsManageGroup.Name = "OptionsManageGroup"
+        Me.OptionsManageGroup.TabStop = False
+        '
+        'OptionsManageSound
+        '
+        Me.OptionsManageSound.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsManageSound, "OptionsManageSound")
+        Me.OptionsManageSound.Name = "OptionsManageSound"
+        Me.OptionsManageSound.UseVisualStyleBackColor = False
+        '
+        'OptionsManageMusic
+        '
+        Me.OptionsManageMusic.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsManageMusic, "OptionsManageMusic")
+        Me.OptionsManageMusic.Name = "OptionsManageMusic"
+        Me.OptionsManageMusic.UseVisualStyleBackColor = False
+        '
+        'OptionsManageAvatars
+        '
+        Me.OptionsManageAvatars.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsManageAvatars, "OptionsManageAvatars")
+        Me.OptionsManageAvatars.Name = "OptionsManageAvatars"
+        Me.OptionsManageAvatars.UseVisualStyleBackColor = False
+        '
+        'OptionsMusicGroup
+        '
+        Me.OptionsMusicGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextDefeat)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextVictory)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextBattle)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextIntro)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectDefeat)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectVictory)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectBattle)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectIntro)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckSound)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckDefeat)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckVictory)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckBattle)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckIntro)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckCustom)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckMusic)
+        Me.OptionsMusicGroup.ForeColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.OptionsMusicGroup, "OptionsMusicGroup")
+        Me.OptionsMusicGroup.Name = "OptionsMusicGroup"
+        Me.OptionsMusicGroup.TabStop = False
+        '
+        'OptionsAudioTextDefeat
+        '
+        resources.ApplyResources(Me.OptionsAudioTextDefeat, "OptionsAudioTextDefeat")
+        Me.OptionsAudioTextDefeat.Name = "OptionsAudioTextDefeat"
+        '
+        'OptionsAudioTextVictory
+        '
+        resources.ApplyResources(Me.OptionsAudioTextVictory, "OptionsAudioTextVictory")
+        Me.OptionsAudioTextVictory.Name = "OptionsAudioTextVictory"
+        '
+        'OptionsAudioTextBattle
+        '
+        resources.ApplyResources(Me.OptionsAudioTextBattle, "OptionsAudioTextBattle")
+        Me.OptionsAudioTextBattle.Name = "OptionsAudioTextBattle"
+        '
+        'OptionsAudioTextIntro
+        '
+        resources.ApplyResources(Me.OptionsAudioTextIntro, "OptionsAudioTextIntro")
+        Me.OptionsAudioTextIntro.Name = "OptionsAudioTextIntro"
+        '
+        'OptionsAudioSelectDefeat
+        '
+        Me.OptionsAudioSelectDefeat.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsAudioSelectDefeat, "OptionsAudioSelectDefeat")
+        Me.OptionsAudioSelectDefeat.Name = "OptionsAudioSelectDefeat"
+        Me.OptionsAudioSelectDefeat.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioSelectVictory
+        '
+        Me.OptionsAudioSelectVictory.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsAudioSelectVictory, "OptionsAudioSelectVictory")
+        Me.OptionsAudioSelectVictory.Name = "OptionsAudioSelectVictory"
+        Me.OptionsAudioSelectVictory.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioSelectBattle
+        '
+        Me.OptionsAudioSelectBattle.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsAudioSelectBattle, "OptionsAudioSelectBattle")
+        Me.OptionsAudioSelectBattle.Name = "OptionsAudioSelectBattle"
+        Me.OptionsAudioSelectBattle.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioSelectIntro
+        '
+        Me.OptionsAudioSelectIntro.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsAudioSelectIntro, "OptionsAudioSelectIntro")
+        Me.OptionsAudioSelectIntro.Name = "OptionsAudioSelectIntro"
+        Me.OptionsAudioSelectIntro.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioCheckSound
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckSound, "OptionsAudioCheckSound")
+        Me.OptionsAudioCheckSound.Checked = True
+        Me.OptionsAudioCheckSound.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.OptionsAudioCheckSound.Name = "OptionsAudioCheckSound"
+        Me.OptionsAudioCheckSound.UseVisualStyleBackColor = True
+        '
+        'OptionsAudioCheckDefeat
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckDefeat, "OptionsAudioCheckDefeat")
+        Me.OptionsAudioCheckDefeat.Name = "OptionsAudioCheckDefeat"
+        Me.OptionsAudioCheckDefeat.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioCheckVictory
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckVictory, "OptionsAudioCheckVictory")
+        Me.OptionsAudioCheckVictory.Name = "OptionsAudioCheckVictory"
+        Me.OptionsAudioCheckVictory.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioCheckBattle
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckBattle, "OptionsAudioCheckBattle")
+        Me.OptionsAudioCheckBattle.Name = "OptionsAudioCheckBattle"
+        Me.OptionsAudioCheckBattle.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioCheckIntro
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckIntro, "OptionsAudioCheckIntro")
+        Me.OptionsAudioCheckIntro.Name = "OptionsAudioCheckIntro"
+        Me.OptionsAudioCheckIntro.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioCheckCustom
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckCustom, "OptionsAudioCheckCustom")
+        Me.OptionsAudioCheckCustom.Name = "OptionsAudioCheckCustom"
+        Me.OptionsAudioCheckCustom.UseVisualStyleBackColor = True
+        '
+        'OptionsAudioCheckMusic
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckMusic, "OptionsAudioCheckMusic")
+        Me.OptionsAudioCheckMusic.Checked = True
+        Me.OptionsAudioCheckMusic.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.OptionsAudioCheckMusic.Name = "OptionsAudioCheckMusic"
+        Me.OptionsAudioCheckMusic.UseVisualStyleBackColor = True
         '
         'OptionsColorGroup
         '
@@ -478,121 +632,6 @@ Partial Class MainWindow
         resources.ApplyResources(Me.DonateTitle, "DonateTitle")
         Me.DonateTitle.Name = "DonateTitle"
         '
-        'OptionsMusicGroup
-        '
-        Me.OptionsMusicGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectDefeat)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectVictory)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectBattle)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectIntro)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckSound)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckDefeat)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckVictory)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckBattle)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckIntro)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckCustom)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckMusic)
-        Me.OptionsMusicGroup.ForeColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.OptionsMusicGroup, "OptionsMusicGroup")
-        Me.OptionsMusicGroup.Name = "OptionsMusicGroup"
-        Me.OptionsMusicGroup.TabStop = False
-        '
-        'OptionsAudioCheckIntro
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckIntro, "OptionsAudioCheckIntro")
-        Me.OptionsAudioCheckIntro.Name = "OptionsAudioCheckIntro"
-        Me.OptionsAudioCheckIntro.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioCheckCustom
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckCustom, "OptionsAudioCheckCustom")
-        Me.OptionsAudioCheckCustom.Name = "OptionsAudioCheckCustom"
-        Me.OptionsAudioCheckCustom.UseVisualStyleBackColor = True
-        '
-        'OptionsAudioCheckMusic
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckMusic, "OptionsAudioCheckMusic")
-        Me.OptionsAudioCheckMusic.Name = "OptionsAudioCheckMusic"
-        Me.OptionsAudioCheckMusic.UseVisualStyleBackColor = True
-        '
-        'OptionsAudioCheckBattle
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckBattle, "OptionsAudioCheckBattle")
-        Me.OptionsAudioCheckBattle.Name = "OptionsAudioCheckBattle"
-        Me.OptionsAudioCheckBattle.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioCheckVictory
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckVictory, "OptionsAudioCheckVictory")
-        Me.OptionsAudioCheckVictory.Name = "OptionsAudioCheckVictory"
-        Me.OptionsAudioCheckVictory.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioCheckDefeat
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckDefeat, "OptionsAudioCheckDefeat")
-        Me.OptionsAudioCheckDefeat.Name = "OptionsAudioCheckDefeat"
-        Me.OptionsAudioCheckDefeat.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioCheckSound
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckSound, "OptionsAudioCheckSound")
-        Me.OptionsAudioCheckSound.Checked = True
-        Me.OptionsAudioCheckSound.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.OptionsAudioCheckSound.Name = "OptionsAudioCheckSound"
-        Me.OptionsAudioCheckSound.UseVisualStyleBackColor = True
-        '
-        'OptionsAudioSelectIntro
-        '
-        Me.OptionsAudioSelectIntro.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsAudioSelectIntro, "OptionsAudioSelectIntro")
-        Me.OptionsAudioSelectIntro.Name = "OptionsAudioSelectIntro"
-        Me.OptionsAudioSelectIntro.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioSelectBattle
-        '
-        Me.OptionsAudioSelectBattle.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsAudioSelectBattle, "OptionsAudioSelectBattle")
-        Me.OptionsAudioSelectBattle.Name = "OptionsAudioSelectBattle"
-        Me.OptionsAudioSelectBattle.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioSelectVictory
-        '
-        Me.OptionsAudioSelectVictory.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsAudioSelectVictory, "OptionsAudioSelectVictory")
-        Me.OptionsAudioSelectVictory.Name = "OptionsAudioSelectVictory"
-        Me.OptionsAudioSelectVictory.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioSelectDefeat
-        '
-        Me.OptionsAudioSelectDefeat.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsAudioSelectDefeat, "OptionsAudioSelectDefeat")
-        Me.OptionsAudioSelectDefeat.Name = "OptionsAudioSelectDefeat"
-        Me.OptionsAudioSelectDefeat.UseVisualStyleBackColor = False
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.TabStop = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.Button1, "Button1")
-        Me.Button1.Name = "Button1"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.Button2, "Button2")
-        Me.Button2.Name = "Button2"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'MainWindow
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -615,8 +654,10 @@ Partial Class MainWindow
         Me.BackgroundPanel.ResumeLayout(False)
         Me.MainMenuPanel.ResumeLayout(False)
         Me.OptionsPanel.ResumeLayout(False)
+        Me.OptionsManageGroup.ResumeLayout(False)
+        Me.OptionsMusicGroup.ResumeLayout(False)
+        Me.OptionsMusicGroup.PerformLayout()
         Me.OptionsColorGroup.ResumeLayout(False)
-        Me.OptionsColorGroup.PerformLayout()
         Me.AboutPanel.ResumeLayout(False)
         Me.AboutPanel.PerformLayout()
         Me.WelcomePanel.ResumeLayout(False)
@@ -629,9 +670,6 @@ Partial Class MainWindow
         CType(Me.TitleLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DonatePanel.ResumeLayout(False)
         Me.DonatePanel.PerformLayout()
-        Me.OptionsMusicGroup.ResumeLayout(False)
-        Me.OptionsMusicGroup.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -699,7 +737,12 @@ Partial Class MainWindow
     Friend WithEvents OptionsAudioCheckIntro As CheckBox
     Friend WithEvents OptionsAudioCheckCustom As CheckBox
     Friend WithEvents OptionsAudioCheckMusic As CheckBox
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents OptionsManageGroup As GroupBox
+    Friend WithEvents OptionsManageMusic As Button
+    Friend WithEvents OptionsManageAvatars As Button
+    Friend WithEvents OptionsManageSound As Button
+    Friend WithEvents OptionsAudioTextDefeat As Label
+    Friend WithEvents OptionsAudioTextVictory As Label
+    Friend WithEvents OptionsAudioTextBattle As Label
+    Friend WithEvents OptionsAudioTextIntro As Label
 End Class

@@ -6,7 +6,7 @@
 
     Private Sub LimitlessForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Initialize.InitProcess()
-        Appearance.AssignMode("Default")
+        UpdateSettings()
         'Formats Title with App Name, Release Type, and Version Number
         Dim ApplicationName, ReleaseType, VersionNumber, AppTitleText As String
         ApplicationName = Application.ProductName
@@ -69,6 +69,22 @@
         AboutPanel.Visible = False
         DonatePanel.Visible = False
         OptionsPanel.Visible = True
+    End Sub
+
+    Private Sub UpdateSettings()
+        If Settings.SettingsMode = "Lite" Then
+            OptionsColorLite.CheckState = CheckState.Checked
+            OptionsColorDark.CheckState = CheckState.Unchecked
+            OptionsColorCustom.CheckState = CheckState.Unchecked
+        Else
+            OptionsColorDark.CheckState = CheckState.Checked
+            OptionsColorLite.CheckState = CheckState.Unchecked
+            OptionsColorCustom.CheckState = CheckState.Unchecked
+        End If
+        Dim ReleaseType As String = "ALPHA "
+        Dim VersionParts() As String = Strings.Split(Settings.SettingsVersion, ".", 4)
+        Dim VersionNumber As String = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
+        OptionsHost.Text = Settings.SettingsUID & " • " & ReleaseType & "VERSION " & VersionNumber
     End Sub
 
     Private Sub ExitGame()
@@ -158,6 +174,26 @@
 
     Private Sub OptionsButton_Click(sender As Object, e As EventArgs) Handles OptionsButton.Click
         OptionsButtonPressed()
+    End Sub
+
+    Private Sub OptionsManageAvatars_Click(sender As Object, e As EventArgs) Handles OptionsManageAvatars.Click
+        '
+    End Sub
+
+    Private Sub OptionsColorDark_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsColorDark.CheckStateChanged
+        If OptionsColorDark.Checked Then
+            OptionsColorLite.CheckState = CheckState.Unchecked
+            OptionsColorCustom.CheckState = CheckState.Unchecked
+            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {"Dark"})
+        End If
+    End Sub
+
+    Private Sub OptionsColorLite_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsColorLite.CheckStateChanged
+        If OptionsColorLite.Checked Then
+            OptionsColorDark.CheckState = CheckState.Unchecked
+            OptionsColorCustom.CheckState = CheckState.Unchecked
+            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {"Lite"})
+        End If
     End Sub
 
     Private Sub TitleBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseUp, TitleLabel.MouseUp, TitleBarIcon.MouseUp

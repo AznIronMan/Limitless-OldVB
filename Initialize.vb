@@ -23,11 +23,20 @@ Public Module Initialize
     End Sub
 
     Private Sub InitSettings()
+
         If Not File.Exists(MemoryBank.SettingsFile & "." &
                            MemoryBank.SettingsExt) Then
             Settings.CreateSettings()
             Settings.BuildDefault()
+        Else
+            Settings.GetSettings()
         End If
+        If Settings.SettingsMode = "Lite" Then
+            Appearance.AssignMode("Ugly")
+        Else
+            Appearance.AssignMode("Default")
+        End If
+
     End Sub
 
     Private Sub InitPanels()
