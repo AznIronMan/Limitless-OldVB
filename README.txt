@@ -72,8 +72,11 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.0.048 / 2021.04.28
+ALPHA 0.0.048 / 2021.04.29
 
+- added enable/disable functionality to option menu check boxes
+- added start/stop music upon turning music on and off in options
+- added notice to restart game if dark/lite mode is changed
 - removed all fantasy names and going with actual names -- the game will be free so no trademark issues
 - added uid and version number to options menu
 - added dark/lite mode logic with buttons in options menu

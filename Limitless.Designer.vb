@@ -344,8 +344,6 @@ Partial Class MainWindow
         'OptionsAudioCheckMusic
         '
         resources.ApplyResources(Me.OptionsAudioCheckMusic, "OptionsAudioCheckMusic")
-        Me.OptionsAudioCheckMusic.Checked = True
-        Me.OptionsAudioCheckMusic.CheckState = System.Windows.Forms.CheckState.Checked
         Me.OptionsAudioCheckMusic.Name = "OptionsAudioCheckMusic"
         Me.OptionsAudioCheckMusic.UseVisualStyleBackColor = True
         '

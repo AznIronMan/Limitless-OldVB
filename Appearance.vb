@@ -52,7 +52,7 @@
     End Sub
 
     Public Sub AssignMode(mode As String)
-        If mode = "Ugly" Then
+        If mode.ToLower = "ugly" Then
             LiteModeColors()
         Else
             DarkModeColors()

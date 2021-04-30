@@ -20,7 +20,6 @@
         Database.CreateDB(SettingsPath, SettingsName, "CREATE TABLE 
             'mainSettings' ('settingName' TEXT NOT NULL, 'settingConfig'
             TEXT);")
-        MsgBox("Created")
     End Sub
 
     Public Shared Sub BuildDefault()

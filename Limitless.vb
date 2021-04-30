@@ -3,6 +3,7 @@
     Dim WindowDrag As Boolean
     Dim WindowMouseX, WindowMouseY As Integer
     Dim Highlighted As Boolean = False
+    Dim StartupInProgress As Boolean = True
 
     Private Sub LimitlessForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Initialize.InitProcess()
@@ -15,8 +16,8 @@
         VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
         AppTitleText = ApplicationName & " [" & ReleaseType & "v" & VersionNumber & "]"
         Me.TitleLabel.Text = AppTitleText
-        Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
-
+        If Settings.SettingsMusic.ToLower = "on" Then Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+        StartupInProgress = False
     End Sub
 
     Private Sub HoverOverEffect(obj As Object)
@@ -72,7 +73,7 @@
     End Sub
 
     Private Sub UpdateSettings()
-        If Settings.SettingsMode = "Lite" Then
+        If Settings.SettingsMode.ToLower = "lite" Then
             OptionsColorLite.CheckState = CheckState.Checked
             OptionsColorDark.CheckState = CheckState.Unchecked
             OptionsColorCustom.CheckState = CheckState.Unchecked
@@ -81,10 +82,90 @@
             OptionsColorLite.CheckState = CheckState.Unchecked
             OptionsColorCustom.CheckState = CheckState.Unchecked
         End If
+        If Settings.SettingsMusic.ToLower = "on" Then
+            OptionsAudioCheckMusic.CheckState = CheckState.Checked
+            OptionsAudioCheckCustom.Enabled = True
+        Else
+            DisableMusicOptions()
+            OptionsAudioCheckCustom.Enabled = False
+            OptionsAudioCheckMusic.CheckState = CheckState.Unchecked
+        End If
+        If Settings.SettingsCustM.ToLower = "on" Then
+            OptionsAudioCheckCustom.CheckState = CheckState.Checked
+        Else
+            OptionsAudioCheckCustom.CheckState = CheckState.Unchecked
+        End If
+        If Settings.SettingsCustI.ToLower = "on" Then
+            OptionsAudioCheckIntro.CheckState = CheckState.Checked
+        Else
+            OptionsAudioCheckIntro.CheckState = CheckState.Unchecked
+        End If
+        If Settings.SettingsCustB.ToLower = "on" Then
+            OptionsAudioCheckBattle.CheckState = CheckState.Checked
+        Else
+            OptionsAudioCheckBattle.CheckState = CheckState.Unchecked
+        End If
+        If Settings.SettingsCustW.ToLower = "on" Then
+            OptionsAudioCheckVictory.CheckState = CheckState.Checked
+        Else
+            OptionsAudioCheckVictory.CheckState = CheckState.Unchecked
+        End If
+        If Settings.SettingsCustL.ToLower = "on" Then
+            OptionsAudioCheckDefeat.CheckState = CheckState.Checked
+        Else
+            OptionsAudioCheckDefeat.CheckState = CheckState.Unchecked
+        End If
+        If Settings.SettingsSound.ToLower = "on" Then
+            OptionsAudioCheckSound.CheckState = CheckState.Checked
+        Else
+            OptionsAudioCheckSound.CheckState = CheckState.Unchecked
+        End If
+
         Dim ReleaseType As String = "ALPHA "
         Dim VersionParts() As String = Strings.Split(Settings.SettingsVersion, ".", 4)
         Dim VersionNumber As String = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
         OptionsHost.Text = Settings.SettingsUID & " • " & ReleaseType & "VERSION " & VersionNumber
+    End Sub
+
+    Private Sub DisableMusicOptions()
+        OptionsAudioCheckIntro.Enabled = False
+        OptionsAudioCheckBattle.Enabled = False
+        OptionsAudioCheckVictory.Enabled = False
+        OptionsAudioCheckDefeat.Enabled = False
+        OptionsAudioSelectIntro.Enabled = False
+        OptionsAudioSelectBattle.Enabled = False
+        OptionsAudioSelectVictory.Enabled = False
+        OptionsAudioSelectDefeat.Enabled = False
+        OptionsAudioSelectIntro.Visible = False
+        OptionsAudioSelectBattle.Visible = False
+        OptionsAudioSelectVictory.Visible = False
+        OptionsAudioSelectDefeat.Visible = False
+    End Sub
+
+    Private Sub EnableMusicCheckBoxes()
+        OptionsAudioCheckIntro.Enabled = True
+        OptionsAudioCheckBattle.Enabled = True
+        OptionsAudioCheckVictory.Enabled = True
+        OptionsAudioCheckDefeat.Enabled = True
+    End Sub
+
+    Private Sub CheckCustomMusicOptions()
+        If OptionsAudioCheckIntro.Enabled And OptionsAudioCheckIntro.CheckState = CheckState.Checked Then
+            OptionsAudioSelectIntro.Enabled = True
+            OptionsAudioSelectIntro.Visible = True
+        End If
+        If OptionsAudioCheckBattle.Enabled And OptionsAudioCheckBattle.CheckState = CheckState.Checked Then
+            OptionsAudioSelectBattle.Enabled = True
+            OptionsAudioSelectBattle.Visible = True
+        End If
+        If OptionsAudioCheckVictory.Enabled And OptionsAudioCheckVictory.CheckState = CheckState.Checked Then
+            OptionsAudioSelectVictory.Enabled = True
+            OptionsAudioSelectVictory.Visible = True
+        End If
+        If OptionsAudioCheckDefeat.Enabled And OptionsAudioCheckDefeat.CheckState = CheckState.Checked Then
+            OptionsAudioSelectDefeat.Enabled = True
+            OptionsAudioSelectDefeat.Visible = True
+        End If
     End Sub
 
     Private Sub ExitGame()
@@ -185,6 +266,8 @@
             OptionsColorLite.CheckState = CheckState.Unchecked
             OptionsColorCustom.CheckState = CheckState.Unchecked
             Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {"Dark"})
+            Settings.SettingsMode = "Dark"
+            If StartupInProgress = False Then MsgBox("Restart of Game Required to Change Color Modes.")
         End If
     End Sub
 
@@ -193,6 +276,114 @@
             OptionsColorDark.CheckState = CheckState.Unchecked
             OptionsColorCustom.CheckState = CheckState.Unchecked
             Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {"Lite"})
+            Settings.SettingsMode = "Lite"
+            If StartupInProgress = False Then MsgBox("Restart of Game Required to Change Color Modes.")
+        End If
+    End Sub
+
+    Private Sub OptionsAudioCheckMusic_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckMusic.CheckedChanged
+        If OptionsAudioCheckMusic.Checked Then
+            OptionsAudioCheckCustom.Enabled = True
+            Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+            If OptionsAudioCheckCustom.CheckState = CheckState.Checked Then
+                EnableMusicCheckBoxes()
+                CheckCustomMusicOptions()
+            End If
+            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"on"})
+            Settings.SettingsMusic = "on"
+        Else
+            DisableMusicOptions()
+            OptionsAudioCheckCustom.Enabled = False
+            Jukebox.StopSong()
+            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"off"})
+            Settings.SettingsMusic = "off"
+        End If
+    End Sub
+
+    Private Sub OptionsAudioCheckCustom_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckCustom.CheckedChanged
+        If OptionsAudioCheckCustom.Enabled Then
+            If OptionsAudioCheckCustom.Checked Then
+                EnableMusicCheckBoxes()
+                CheckCustomMusicOptions()
+                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"on"})
+                Settings.SettingsCustM = "on"
+            Else
+                DisableMusicOptions()
+                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"off"})
+                Settings.SettingsCustM = "off"
+            End If
+        End If
+    End Sub
+
+    Private Sub OptionsAudioCheckIntro_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckIntro.CheckedChanged
+        If OptionsAudioCheckCustom.Checked And OptionsAudioCheckCustom.Enabled Then
+            If OptionsAudioCheckIntro.Checked Then
+                OptionsAudioSelectIntro.Enabled = True
+                OptionsAudioSelectIntro.Visible = True
+                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custi", {"settingConfig"}, {"on"})
+                Settings.SettingsCustI = "on"
+            Else
+                OptionsAudioSelectIntro.Enabled = False
+                OptionsAudioSelectIntro.Visible = False
+                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custi", {"settingConfig"}, {"off"})
+                Settings.SettingsCustI = "off"
+            End If
+        End If
+    End Sub
+
+    Private Sub OptionsAudioCheckBattle_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckBattle.CheckedChanged
+        If OptionsAudioCheckCustom.Checked And OptionsAudioCheckCustom.Enabled Then
+            If OptionsAudioCheckBattle.Checked Then
+                OptionsAudioSelectBattle.Enabled = True
+                OptionsAudioSelectBattle.Visible = True
+                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custb", {"settingConfig"}, {"on"})
+                Settings.SettingsCustB = "on"
+            Else
+                OptionsAudioSelectBattle.Enabled = False
+                OptionsAudioSelectBattle.Visible = False
+                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custb", {"settingConfig"}, {"off"})
+                Settings.SettingsCustB = "off"
+            End If
+        End If
+    End Sub
+
+    Private Sub OptionsAudioCheckVictory_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckVictory.CheckedChanged
+        If OptionsAudioCheckCustom.Checked And OptionsAudioCheckCustom.Enabled Then
+            If OptionsAudioCheckVictory.Checked Then
+                OptionsAudioSelectVictory.Enabled = True
+                OptionsAudioSelectVictory.Visible = True
+                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custw", {"settingConfig"}, {"on"})
+                Settings.SettingsCustW = "on"
+            Else
+                OptionsAudioSelectVictory.Enabled = False
+                OptionsAudioSelectVictory.Visible = False
+                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custw", {"settingConfig"}, {"off"})
+                Settings.SettingsCustW = "off"
+            End If
+        End If
+    End Sub
+
+    Private Sub OptionsAudioCheckDefeat_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckDefeat.CheckedChanged
+        If OptionsAudioCheckCustom.Checked And OptionsAudioCheckCustom.Enabled Then
+            If OptionsAudioCheckDefeat.Checked Then
+                OptionsAudioSelectDefeat.Enabled = True
+                OptionsAudioSelectDefeat.Visible = True
+                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custl", {"settingConfig"}, {"on"})
+                Settings.SettingsCustL = "on"
+            Else
+                OptionsAudioSelectDefeat.Enabled = False
+                OptionsAudioSelectDefeat.Visible = False
+                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custl", {"settingConfig"}, {"off"})
+                Settings.SettingsCustL = "off"
+            End If
+        End If
+    End Sub
+
+    Private Sub OptionsAudioCheckSound_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckSound.CheckedChanged
+        If (OptionsAudioCheckSound.Enabled And OptionsAudioCheckSound.Checked) Or OptionsAudioCheckSound.Enabled = False Then
+            'Insert future method to "turn on sound" here
+        ElseIf OptionsAudioCheckSound.Enabled And OptionsAudioCheckSound.CheckState = False Then
+            'Insert future method to "turn off sound" here
         End If
     End Sub
 
