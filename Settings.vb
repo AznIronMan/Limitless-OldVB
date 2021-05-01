@@ -15,22 +15,29 @@
     Public Shared SettingsSameDB As String = "on"
     Public Shared SettingsDefaultDB As String = "default"
     Public Shared SettingsLastDB As String = "default"
+    Public Shared SettingsAutoSave As String = "on"
 
     Public Shared Sub CreateSettings()
-        Database.CreateDB(SettingsPath, SettingsName, "CREATE TABLE 
-            'mainSettings' ('settingName' TEXT NOT NULL, 'settingConfig'
-            TEXT);")
+        Database.CreateDB(SettingsPath, SettingsName,
+            "CREATE TABLE 'mainSettings' ('settingName' TEXT NOT NULL, 'settingConfig' TEXT);
+            CREATE TABLE 'customAvatars' ('avatarID' INTEGER NOT NULL UNIQUE, 'avatarFile' TEXT NOT NULL, 
+            'avatarActive' TEXT, 'avatarName' TEXT, PRIMARY KEY('avatarID' AUTOINCREMENT));
+            CREATE TABLE 'customMusic' ('musicID' INTEGER NOT NULL UNIQUE, 'musicFile' TEXT NOT NULL, 
+            'musicActive' TEXT, 'musicName' TEXT, PRIMARY KEY('musicID' AUTOINCREMENT));
+            CREATE TABLE 'customSound' ('soundID' INTEGER NOT NULL UNIQUE, 'soundFile' TEXT NOT NULL, 
+            'soundActive' TEXT, 'soundName' TEXT, PRIMARY KEY('soundID' AUTOINCREMENT));")
     End Sub
 
     Public Shared Sub BuildDefault()
         Database.InsertData(SettingsPath, SettingsName, "mainSettings",
-        {"'uid', '" & SettingsUID & "'", "'version', '" & SettingsVersion & _
-        "'", "'mode', '" & SettingsMode & "'", "'music', '" & SettingsMusic & _
-        "'", "'custm', '" & SettingsCustM & "'", "'custi', '" & SettingsCustI & _
-        "'", "'custb', '" & SettingsCustB & "'", "'custw', '" & SettingsCustW & _
-        "'", "'custl', '" & SettingsCustL & "'", "'sound', '" & SettingsSound & _
-        "'", "'samedb', '" & SettingsSameDB & "'", "'defaultdb', '" & _ 
-        SettingsDefaultDB & "'", "'lastdb', '" & SettingsLastDB & "'"})
+        {"'uid', '" & SettingsUID & "'", "'version', '" & SettingsVersion &
+        "'", "'mode', '" & SettingsMode & "'", "'music', '" & SettingsMusic &
+        "'", "'custm', '" & SettingsCustM & "'", "'custi', '" & SettingsCustI &
+        "'", "'custb', '" & SettingsCustB & "'", "'custw', '" & SettingsCustW &
+        "'", "'custl', '" & SettingsCustL & "'", "'sound', '" & SettingsSound &
+        "'", "'samedb', '" & SettingsSameDB & "'", "'defaultdb', '" &
+        SettingsDefaultDB & "'", "'lastdb', '" & SettingsLastDB & "'",
+        "'autosave', '" & SettingsAutoSave & "'"})
     End Sub
 
     Public Shared Sub GetSettings()
@@ -48,6 +55,7 @@
         SettingsSameDB = CurrentSettings(10)
         SettingsDefaultDB = CurrentSettings(11)
         SettingsLastDB = CurrentSettings(12)
+        SettingsAutoSave = CurrentSettings(13)
     End Sub
 
 End Class

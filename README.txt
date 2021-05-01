@@ -1,6 +1,6 @@
 =============================================
 LIMITLESS by Geoff Clark
-VERSION ALPHA 0.0.048
+VERSION ALPHA 0.0.048.0003
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -72,8 +72,12 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.0.048 / 2021.04.29
+ALPHA 0.0.048.0003 / 2021.04.30
 
+- added universal manage library form and framework to update as manage buttons are pressed
+- enabled custom library management group in options
+- simplified some repeating methods in options menu into single variable based functions
+- added splice method for custom lines in settings for ability to have multiple custom items assigned to one task
 - added enable/disable functionality to option menu check boxes
 - added start/stop music upon turning music on and off in options
 - added notice to restart game if dark/lite mode is changed

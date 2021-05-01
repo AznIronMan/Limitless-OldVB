@@ -357,6 +357,303 @@
   <data name="&gt;&gt;FooterPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="CustomLibsSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomLibsSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>315, 294</value>
+  </data>
+  <data name="CustomLibsSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="CustomLibsSave.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="CustomLibsSave.Text" xml:space="preserve">
+    <value>Save Changes</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsSave.Name" xml:space="preserve">
+    <value>CustomLibsSave</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsSave.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsSave.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CustomLibsAuto.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CustomLibsAuto.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomLibsAuto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 298</value>
+  </data>
+  <data name="CustomLibsAuto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="CustomLibsAuto.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="CustomLibsAuto.Text" xml:space="preserve">
+    <value>Auto Save</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsAuto.Name" xml:space="preserve">
+    <value>CustomLibsAuto</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsAuto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsAuto.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsAuto.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CustomLibsPath.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CustomLibsPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 267</value>
+  </data>
+  <data name="CustomLibsPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 20</value>
+  </data>
+  <data name="CustomLibsPath.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="CustomLibsPath.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPath.Name" xml:space="preserve">
+    <value>CustomLibsPath</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPath.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPath.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CustomLibsEdit.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CustomLibsEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomLibsEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>290, 237</value>
+  </data>
+  <data name="CustomLibsEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 23</value>
+  </data>
+  <data name="CustomLibsEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="CustomLibsEdit.Text" xml:space="preserve">
+    <value>Edit Name</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsEdit.Name" xml:space="preserve">
+    <value>CustomLibsEdit</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsEdit.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsEdit.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CustomLibsActive.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CustomLibsActive.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomLibsActive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 240</value>
+  </data>
+  <data name="CustomLibsActive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 17</value>
+  </data>
+  <data name="CustomLibsActive.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="CustomLibsActive.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsActive.Name" xml:space="preserve">
+    <value>CustomLibsActive</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsActive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsActive.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsActive.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="CustomLibsName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CustomLibsName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 210</value>
+  </data>
+  <data name="CustomLibsName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 20</value>
+  </data>
+  <data name="CustomLibsName.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="CustomLibsName.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsName.Name" xml:space="preserve">
+    <value>CustomLibsName</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsName.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="CustomLibsImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 25</value>
+  </data>
+  <data name="CustomLibsImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 175</value>
+  </data>
+  <data name="CustomLibsImage.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImage.Name" xml:space="preserve">
+    <value>CustomLibsImage</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImage.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImage.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="CustomLibsDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomLibsDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 295</value>
+  </data>
+  <data name="CustomLibsDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="CustomLibsDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="CustomLibsDelete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsDelete.Name" xml:space="preserve">
+    <value>CustomLibsDelete</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsDelete.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsDelete.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="CustomLibsImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomLibsImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 295</value>
+  </data>
+  <data name="CustomLibsImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="CustomLibsImport.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="CustomLibsImport.Text" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImport.Name" xml:space="preserve">
+    <value>CustomLibsImport</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImport.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImport.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="CustomLibsList.Items" xml:space="preserve">
+    <value>&lt;No Avatars Available&gt;</value>
+  </data>
+  <data name="CustomLibsList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 25</value>
+  </data>
+  <data name="CustomLibsList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 264</value>
+  </data>
+  <data name="CustomLibsList.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsList.Name" xml:space="preserve">
+    <value>CustomLibsList</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsList.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsList.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="CustomLibsGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>490, 80</value>
+  </data>
+  <data name="CustomLibsGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>450, 330</value>
+  </data>
+  <data name="CustomLibsGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="CustomLibsGroup.Text" xml:space="preserve">
+    <value>Custom Group</value>
+  </data>
+  <data name="CustomLibsGroup.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.Name" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.Parent" xml:space="preserve">
+    <value>OptionsPanel</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="OptionsManageSound.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -386,9 +683,6 @@
   </data>
   <data name="&gt;&gt;OptionsManageSound.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="OptionsManageMusic.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="OptionsManageMusic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -445,7 +739,7 @@
     <value>2</value>
   </data>
   <data name="OptionsManageGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 350</value>
+    <value>10, 350</value>
   </data>
   <data name="OptionsManageGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>450, 60</value>
@@ -466,7 +760,7 @@
     <value>OptionsPanel</value>
   </data>
   <data name="&gt;&gt;OptionsManageGroup.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="OptionsAudioTextDefeat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -931,7 +1225,7 @@
     <value>14</value>
   </data>
   <data name="OptionsMusicGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 150</value>
+    <value>10, 150</value>
   </data>
   <data name="OptionsMusicGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>450, 190</value>
@@ -952,7 +1246,7 @@
     <value>OptionsPanel</value>
   </data>
   <data name="&gt;&gt;OptionsMusicGroup.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="OptionsColorCustom.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1039,7 +1333,7 @@
     <value>2</value>
   </data>
   <data name="OptionsColorGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 80</value>
+    <value>10, 80</value>
   </data>
   <data name="OptionsColorGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>450, 60</value>
@@ -1060,7 +1354,7 @@
     <value>OptionsPanel</value>
   </data>
   <data name="&gt;&gt;OptionsColorGroup.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="OptionsHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 60</value>
@@ -1087,7 +1381,7 @@
     <value>OptionsPanel</value>
   </data>
   <data name="&gt;&gt;OptionsHost.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="OptionsTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Lucida Console, 24pt, style=Bold</value>
@@ -1120,7 +1414,7 @@
     <value>OptionsPanel</value>
   </data>
   <data name="&gt;&gt;OptionsTitle.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="OptionsPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>335, 210</value>
@@ -1969,9 +2263,6 @@ Thanks!
   </data>
   <data name="DonatePanel.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
-  </data>
-  <data name="DonatePanel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;DonatePanel.Name" xml:space="preserve">
     <value>DonatePanel</value>

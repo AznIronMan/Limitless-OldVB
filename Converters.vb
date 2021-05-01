@@ -15,4 +15,11 @@
         End Select
     End Function
 
+    Public Shared Function UppercaseFirstLetter(ByVal val As String) As String
+        If String.IsNullOrEmpty(val) Then Return val
+        Dim array() As Char = val.ToCharArray
+        array(0) = Char.ToUpper(array(0))
+        Return New String(array)
+    End Function
+
 End Class
