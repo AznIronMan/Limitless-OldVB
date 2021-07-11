@@ -73,6 +73,7 @@
         DonatePanel.Visible = False
         OptionsGroupToMid()
         OptionsPanel.Visible = True
+        CustomLibsGroup.Visible = False
     End Sub
 
     Private Sub UpdateSettings()
@@ -203,6 +204,20 @@
             OptionsGroupToMid()
             CustomLibsGroup.Visible = False
         End If
+        Select Case type
+            Case "avatars"
+                CustomLibsPreviewAvatar.Visible = True
+                CustomLibsPreviewImage.Image = Nothing
+                CustomLibsPreviewMusic.Visible = False
+            Case Else
+                Jukebox.StopSong()
+                CustomLibsPreviewAvatar.Visible = False
+                CustomLibsPreviewImage.Image = Nothing
+                CustomLibsPreviewMusic.Visible = True
+                CustomLibsPreviewPlay.Enabled = False
+                CustomLibsPreviewStop.Enabled = False
+        End Select
+        CustomLibsListPop()
     End Sub
 
     Private Sub ExitGame()
@@ -394,13 +409,30 @@
         End If
     End Sub
 
-    Private Sub OptionsAudioSelectIntro_Click(sender As Object, e As EventArgs) Handles OptionsAudioSelectIntro.Click
-
-    End Sub
-
     Private Sub CustomLibsGroup_Updater(sender As Object, e As EventArgs) Handles OptionsManageAvatars.ForeColorChanged,
         OptionsManageMusic.ForeColorChanged, OptionsManageSound.ForeColorChanged, CustomLibsGroup.VisibleChanged
         CustomLibsGroup.Text = ("Custom " & Converters.UppercaseFirstLetter(CustomLibsSelected))
+    End Sub
+
+    Private Sub CustomLibsListPop()
+        Select Case LCase(CustomLibsSelected)
+            Case "avatars"
+                Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.AvatarsDir, CustomLibsActive, "*.png")
+            Case "music"
+                Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.MusicDir, CustomLibsActive, "*.mp3")
+            Case "sounds"
+                Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.SoundDir, CustomLibsActive, "*.mp3")
+            Case Else
+                '
+        End Select
+        CustomLibsPath.Text = ""
+        CustomLibsActive.Enabled = False
+        CustomLibsActive.CheckState = CheckState.Unchecked
+        CustomLibsAuto.Enabled = False
+        CustomLibsAuto.CheckState = CheckState.Unchecked
+        CustomLibsEdit.Enabled = False
+        CustomLibsDelete.Enabled = False
+        CustomLibsSave.Enabled = False
     End Sub
 
     Private Sub CustomLibsAuto_CheckedChanged(sender As Object, e As EventArgs) Handles CustomLibsAuto.CheckedChanged
@@ -411,6 +443,156 @@
             Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "autosave", {"settingConfig"}, {"no"})
             Settings.SettingsAutoSave = "off"
         End If
+    End Sub
+
+    Private Sub CustomLibsList_Changed(sender As Object, e As EventArgs) Handles CustomLibsList.SelectedIndexChanged
+        If CustomLibsList.Enabled = True And CustomLibsList.SelectedIndex >= 0 Then
+            Dim SelectedName As String = CustomLibsList.SelectedItem.ToString
+            Dim SelectedDir As String = ""
+            Dim FoundIt As Boolean = False
+            Select Case LCase(CustomLibsSelected)
+                Case "avatars"
+                    SelectedDir = MemoryBank.AvatarsDir
+                Case "music"
+                    SelectedDir = MemoryBank.MusicDir
+                Case "sound"
+                    SelectedDir = MemoryBank.SoundDir
+                Case Else
+                    '
+            End Select
+            For Each Filename In FilesFolders.GetFilesInFolder(SelectedDir)
+                If FoundIt = False Then
+                    Dim ShortFileName As String = Replace(Filename, SelectedDir & "\", "", 1)
+                    Dim FoundName As String = ShortFileName.Trim().Substring(0, ShortFileName.Length - 4)
+                    If FoundName = SelectedName Then
+                        FoundIt = True
+                        CustomLibsPath.Enabled = True
+                        CustomLibsPath.Text = ShortFileName
+                        CustomLibsDelete.Enabled = True
+                        CustomLibsEdit.Enabled = True
+                        CustomLibsActive.Enabled = True
+                        CustomLibsActive.CheckState = CheckState.Checked
+                        CustomLibsActive.ForeColor = MemoryBank.GroupForeColor
+                    End If
+                    If Replace(SelectedName, "Ω ", "Ω") = FoundName And FoundIt = False Then
+                        FoundIt = True
+                        CustomLibsPath.Enabled = True
+                        CustomLibsPath.Text = ShortFileName
+                        CustomLibsDelete.Enabled = True
+                        CustomLibsEdit.Enabled = True
+                        CustomLibsActive.Enabled = True
+                        CustomLibsActive.CheckState = CheckState.Unchecked
+                        CustomLibsActive.ForeColor = Color.Red
+                    End If
+                    If FoundIt = True Then
+                        Select Case LCase(CustomLibsSelected)
+                            Case "avatars"
+                                CustomLibsPreviewMusic.Visible = False
+                                CustomLibsPreviewAvatar.Visible = True
+                                CustomLibsPreviewImage.Image = Image.FromFile(Filename)
+                                CustomLibsPreviewImage.SizeMode = PictureBoxSizeMode.StretchImage
+                            Case Else
+                                CustomLibsPreviewAvatar.Visible = False
+                                CustomLibsPreviewMusic.Visible = True
+                                CustomLibsPreviewPlay.Enabled = True
+                        End Select
+                    End If
+                    End If
+            Next
+        Else
+            CustomLibsEdit.Enabled = False
+            CustomLibsDelete.Enabled = False
+            CustomLibsPath.Text = ""
+        End If
+    End Sub
+
+    Private Sub CustomLibsActive_CheckedChanged(sender As Object, e As EventArgs) Handles CustomLibsActive.Click
+        If CustomLibsActive.Enabled = True Then
+            Dim SelectedDir As String = ""
+            Dim Ext As String = ""
+            Select Case LCase(CustomLibsSelected)
+                Case "avatars"
+                    SelectedDir = MemoryBank.AvatarsDir
+                    Ext = ".png"
+                Case "music"
+                    SelectedDir = MemoryBank.MusicDir
+                    Ext = ".mp3"
+                Case "sound"
+                    SelectedDir = MemoryBank.SoundDir
+                    Ext = ".mp3"
+                Case Else
+                    '
+            End Select
+            Dim SelectedFile As String = CustomLibsList.SelectedItem.ToString
+            Dim ItemActive As Boolean = True
+            Dim ChangePhrase As String, ChangeAction As String
+            Dim ChangeIt As Boolean = False
+            If SelectedFile.StartsWith("Ω") = True Then ItemActive = False Else ItemActive = True
+            Select Case ItemActive
+                Case True
+                    ChangePhrase = "active"
+                    ChangeAction = "inactive"
+
+                Case Else
+                    ChangePhrase = "inactive"
+                    ChangeAction = "active"
+            End Select
+            Dim answer As Integer
+            Dim NewName = ""
+            answer = MsgBox(("The File " & Chr(34) & SelectedFile & Chr(34) & " is currently " & ChangePhrase & "." &
+                vbCrLf & vbCrLf & "Do you want to switch this file to " & ChangeAction & "?"), vbExclamation + vbYesNo)
+            If answer = vbYes And ItemActive = False Then
+                Dim OldName As String = Replace(SelectedFile, "Ω ", "Ω")
+                NewName = Replace(SelectedFile, "Ω ", "")
+                If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
+                If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.SwitchToIntro(CustomLibsPreviewStop, CustomLibsPreviewPlay, CustomLibsList)
+                Try
+                    My.Computer.FileSystem.RenameFile(SelectedDir & "/" & OldName & Ext, NewName & Ext)
+                Catch ex As Exception
+                    MsgBox(("Error:  File locked, please try again."), vbOKOnly)
+                End Try
+                CustomLibsActive.Enabled = True
+                CustomLibsActive.CheckState = CheckState.Checked
+                CustomLibsActive.ForeColor = MemoryBank.GroupForeColor
+
+            End If
+            If answer = vbYes And ItemActive = True Then
+                NewName = "Ω" & SelectedFile
+                If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
+                If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.SwitchToIntro(CustomLibsPreviewStop, CustomLibsPreviewPlay, CustomLibsList)
+                Try
+                    My.Computer.FileSystem.RenameFile(SelectedDir & "/" & SelectedFile & Ext, NewName & Ext)
+                Catch ex As Exception
+                    MsgBox(("Error:  File locked, please try again."), vbOKOnly)
+                End Try
+                CustomLibsActive.Enabled = True
+                CustomLibsActive.CheckState = CheckState.Unchecked
+                CustomLibsActive.ForeColor = Color.Red
+            End If
+            If answer = vbYes Then
+                CustomLibsListPop()
+                CustomLibsList.SelectedItem = Replace(NewName, "Ω", "Ω ")
+            End If
+            If Not answer = vbYes Then MsgBox("No Changes Made")
+        End If
+    End Sub
+
+    Private Sub CustomLibsPreviewPlay_Click(sender As Object, e As EventArgs) Handles CustomLibsPreviewPlay.Click
+        If CustomLibsPreviewPlay.Enabled = True And OptionsAudioCheckMusic.CheckState = CheckState.Checked Then
+            Dim SongFile As String = MemoryBank.MusicDir & "/" & Replace(CustomLibsList.SelectedItem, "Ω ", "Ω") & ".mp3"
+            Jukebox.StopSong()
+            Do Until Jukebox.SongPlaying = False
+                Jukebox.StopSong()
+            Loop
+            Jukebox.PlayMp3(SongFile)
+            CustomLibsPreviewPlay.Enabled = False
+            CustomLibsList.Enabled = False
+            CustomLibsPreviewStop.Enabled = True
+        End If
+    End Sub
+
+    Private Sub CustomLibsPreviewStop_Click(sender As Object, e As EventArgs) Handles CustomLibsPreviewStop.Click
+        Jukebox.SwitchToIntro(CustomLibsPreviewStop, CustomLibsPreviewPlay, CustomLibsList)
     End Sub
 
     Private Sub TitleBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseUp, TitleLabel.MouseUp, TitleBarIcon.MouseUp

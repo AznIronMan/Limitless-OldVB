@@ -5,7 +5,7 @@ Module Jukebox
 
     Dim ActiveSong As BlockAlignReductionStream = Nothing
     Dim SongOutput As DirectSoundOut = Nothing
-    Dim SongPlaying As Boolean = False
+    Public SongPlaying As Boolean = False
     Dim SongLoaded As Boolean = False
     Dim SongPosition As Long = 0
 
@@ -29,6 +29,11 @@ Module Jukebox
 
     End Function
 
+    Public Sub PlayMp3(mp3file As String)
+        SongOutput.Init(New Mp3FileReader(mp3file))
+        PlaySong(True)
+    End Sub
+
     Public Function FileToStreamSong(mp3file As String) As Byte()
         FileToStreamSong = System.IO.File.ReadAllBytes(mp3file)
     End Function
@@ -50,6 +55,18 @@ Module Jukebox
         SongPlaying = False
         ActiveSong = Nothing
         SongLoaded = False
+        SongOutput.Stop()
+        SongOutput.Dispose()
+    End Sub
+
+    Public Sub SwitchToIntro(stopbutton As Button, playbutton As Button, optionslist As ListBox)
+        If stopbutton.Enabled = True Then
+            Jukebox.StopSong()
+            playbutton.Enabled = True
+            optionslist.Enabled = True
+            stopbutton.Enabled = False
+            If Settings.SettingsMusic.ToLower = "on" Then Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+        End If
     End Sub
 
 End Module

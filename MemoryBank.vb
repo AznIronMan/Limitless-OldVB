@@ -9,6 +9,8 @@
     Public Shared SettingsFile As String = "settings"
     Public Shared SettingsExt As String = "db"
     Public Shared LibDir As String = "lib"
+    Public Shared MusicDir As String = "music"
+    Public Shared SoundDir As String = "sound "
 
     'Colors
     Public Shared TitleBarBackColor As Color

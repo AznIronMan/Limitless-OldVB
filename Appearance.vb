@@ -97,7 +97,18 @@
         AssignColor(MainWindow.OptionsManageMusic, "Button")
         AssignColor(MainWindow.OptionsManageSound, "Button")
         AssignColor(MainWindow.ExitButton, "Button")
-
+        AssignColor(MainWindow.CustomLibsPreviewAvatar, "Group")
+        AssignColor(MainWindow.CustomLibsPreviewMusic, "Group")
+        AssignColor(MainWindow.CustomLibsPreviewPlay, "Button")
+        AssignColor(MainWindow.CustomLibsPreviewStop, "Button")
+        AssignColor(MainWindow.CustomLibsImport, "Button")
+        AssignColor(MainWindow.CustomLibsDelete, "Button")
+        AssignColor(MainWindow.CustomLibsList, "Group")
+        AssignColor(MainWindow.CustomLibsOmega, "Group")
+        AssignColor(MainWindow.CustomLibsPath, "Pages")
+        AssignColor(MainWindow.CustomLibsSave, "Button")
+        AssignColor(MainWindow.CustomLibsGroup, "Group")
+        AssignColor(MainWindow.CustomLibsEdit, "Button")
     End Sub
 
     Public Sub SetButtonStyle(button As Button)

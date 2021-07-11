@@ -56,4 +56,11 @@
         box.ImageLocation = (MemoryBank.AvatarsDir & "\" & file)
     End Sub
 
+    Public Shared Sub ReleaseAvatarFromBox(pbox As PictureBox)
+        Dim tmpImg = pbox.Image
+        pbox.Image = Nothing
+        tmpImg.Dispose()
+        tmpImg = Nothing
+    End Sub
+
 End Class

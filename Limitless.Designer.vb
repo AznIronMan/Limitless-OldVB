@@ -35,16 +35,20 @@ Partial Class MainWindow
         Me.MainMenuPanel = New System.Windows.Forms.Panel()
         Me.OptionsPanel = New System.Windows.Forms.Panel()
         Me.CustomLibsGroup = New System.Windows.Forms.GroupBox()
+        Me.CustomLibsPreviewAvatar = New System.Windows.Forms.GroupBox()
+        Me.CustomLibsPreviewImage = New System.Windows.Forms.PictureBox()
+        Me.CustomLibsOmega = New System.Windows.Forms.Label()
         Me.CustomLibsSave = New System.Windows.Forms.Button()
         Me.CustomLibsAuto = New System.Windows.Forms.CheckBox()
         Me.CustomLibsPath = New System.Windows.Forms.TextBox()
         Me.CustomLibsEdit = New System.Windows.Forms.Button()
         Me.CustomLibsActive = New System.Windows.Forms.CheckBox()
-        Me.CustomLibsName = New System.Windows.Forms.TextBox()
-        Me.CustomLibsImage = New System.Windows.Forms.PictureBox()
         Me.CustomLibsDelete = New System.Windows.Forms.Button()
         Me.CustomLibsImport = New System.Windows.Forms.Button()
         Me.CustomLibsList = New System.Windows.Forms.ListBox()
+        Me.CustomLibsPreviewMusic = New System.Windows.Forms.GroupBox()
+        Me.CustomLibsPreviewStop = New System.Windows.Forms.Button()
+        Me.CustomLibsPreviewPlay = New System.Windows.Forms.Button()
         Me.OptionsManageGroup = New System.Windows.Forms.GroupBox()
         Me.OptionsManageSound = New System.Windows.Forms.Button()
         Me.OptionsManageMusic = New System.Windows.Forms.Button()
@@ -106,7 +110,9 @@ Partial Class MainWindow
         Me.MainMenuPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
         Me.CustomLibsGroup.SuspendLayout()
-        CType(Me.CustomLibsImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CustomLibsPreviewAvatar.SuspendLayout()
+        CType(Me.CustomLibsPreviewImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CustomLibsPreviewMusic.SuspendLayout()
         Me.OptionsManageGroup.SuspendLayout()
         Me.OptionsMusicGroup.SuspendLayout()
         Me.OptionsColorGroup.SuspendLayout()
@@ -217,20 +223,40 @@ Partial Class MainWindow
         'CustomLibsGroup
         '
         Me.CustomLibsGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsOmega)
         Me.CustomLibsGroup.Controls.Add(Me.CustomLibsSave)
         Me.CustomLibsGroup.Controls.Add(Me.CustomLibsAuto)
         Me.CustomLibsGroup.Controls.Add(Me.CustomLibsPath)
         Me.CustomLibsGroup.Controls.Add(Me.CustomLibsEdit)
         Me.CustomLibsGroup.Controls.Add(Me.CustomLibsActive)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsName)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsImage)
         Me.CustomLibsGroup.Controls.Add(Me.CustomLibsDelete)
         Me.CustomLibsGroup.Controls.Add(Me.CustomLibsImport)
         Me.CustomLibsGroup.Controls.Add(Me.CustomLibsList)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsPreviewMusic)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsPreviewAvatar)
         Me.CustomLibsGroup.ForeColor = System.Drawing.Color.White
         resources.ApplyResources(Me.CustomLibsGroup, "CustomLibsGroup")
         Me.CustomLibsGroup.Name = "CustomLibsGroup"
         Me.CustomLibsGroup.TabStop = False
+        '
+        'CustomLibsPreviewAvatar
+        '
+        Me.CustomLibsPreviewAvatar.Controls.Add(Me.CustomLibsPreviewImage)
+        Me.CustomLibsPreviewAvatar.ForeColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.CustomLibsPreviewAvatar, "CustomLibsPreviewAvatar")
+        Me.CustomLibsPreviewAvatar.Name = "CustomLibsPreviewAvatar"
+        Me.CustomLibsPreviewAvatar.TabStop = False
+        '
+        'CustomLibsPreviewImage
+        '
+        resources.ApplyResources(Me.CustomLibsPreviewImage, "CustomLibsPreviewImage")
+        Me.CustomLibsPreviewImage.Name = "CustomLibsPreviewImage"
+        Me.CustomLibsPreviewImage.TabStop = False
+        '
+        'CustomLibsOmega
+        '
+        resources.ApplyResources(Me.CustomLibsOmega, "CustomLibsOmega")
+        Me.CustomLibsOmega.Name = "CustomLibsOmega"
         '
         'CustomLibsSave
         '
@@ -266,20 +292,6 @@ Partial Class MainWindow
         Me.CustomLibsActive.Name = "CustomLibsActive"
         Me.CustomLibsActive.UseVisualStyleBackColor = True
         '
-        'CustomLibsName
-        '
-        Me.CustomLibsName.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        resources.ApplyResources(Me.CustomLibsName, "CustomLibsName")
-        Me.CustomLibsName.ForeColor = System.Drawing.SystemColors.Window
-        Me.CustomLibsName.Name = "CustomLibsName"
-        Me.CustomLibsName.ReadOnly = True
-        '
-        'CustomLibsImage
-        '
-        resources.ApplyResources(Me.CustomLibsImage, "CustomLibsImage")
-        Me.CustomLibsImage.Name = "CustomLibsImage"
-        Me.CustomLibsImage.TabStop = False
-        '
         'CustomLibsDelete
         '
         Me.CustomLibsDelete.BackColor = System.Drawing.SystemColors.ControlText
@@ -303,6 +315,29 @@ Partial Class MainWindow
         resources.ApplyResources(Me.CustomLibsList, "CustomLibsList")
         Me.CustomLibsList.Name = "CustomLibsList"
         Me.CustomLibsList.Sorted = True
+        '
+        'CustomLibsPreviewMusic
+        '
+        Me.CustomLibsPreviewMusic.Controls.Add(Me.CustomLibsPreviewStop)
+        Me.CustomLibsPreviewMusic.Controls.Add(Me.CustomLibsPreviewPlay)
+        Me.CustomLibsPreviewMusic.ForeColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.CustomLibsPreviewMusic, "CustomLibsPreviewMusic")
+        Me.CustomLibsPreviewMusic.Name = "CustomLibsPreviewMusic"
+        Me.CustomLibsPreviewMusic.TabStop = False
+        '
+        'CustomLibsPreviewStop
+        '
+        Me.CustomLibsPreviewStop.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.CustomLibsPreviewStop, "CustomLibsPreviewStop")
+        Me.CustomLibsPreviewStop.Name = "CustomLibsPreviewStop"
+        Me.CustomLibsPreviewStop.UseVisualStyleBackColor = False
+        '
+        'CustomLibsPreviewPlay
+        '
+        Me.CustomLibsPreviewPlay.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.CustomLibsPreviewPlay, "CustomLibsPreviewPlay")
+        Me.CustomLibsPreviewPlay.Name = "CustomLibsPreviewPlay"
+        Me.CustomLibsPreviewPlay.UseVisualStyleBackColor = False
         '
         'OptionsManageGroup
         '
@@ -758,7 +793,9 @@ Partial Class MainWindow
         Me.OptionsPanel.ResumeLayout(False)
         Me.CustomLibsGroup.ResumeLayout(False)
         Me.CustomLibsGroup.PerformLayout()
-        CType(Me.CustomLibsImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CustomLibsPreviewAvatar.ResumeLayout(False)
+        CType(Me.CustomLibsPreviewImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CustomLibsPreviewMusic.ResumeLayout(False)
         Me.OptionsManageGroup.ResumeLayout(False)
         Me.OptionsMusicGroup.ResumeLayout(False)
         Me.OptionsMusicGroup.PerformLayout()
@@ -852,13 +889,17 @@ Partial Class MainWindow
     Friend WithEvents OptionsAudioTextIntro As Label
     Friend WithEvents CustomLibsGroup As GroupBox
     Friend WithEvents CustomLibsList As ListBox
-    Friend WithEvents CustomLibsImage As PictureBox
     Friend WithEvents CustomLibsDelete As Button
     Friend WithEvents CustomLibsImport As Button
-    Friend WithEvents CustomLibsName As TextBox
-    Friend WithEvents CustomLibsSave As Button
     Friend WithEvents CustomLibsAuto As CheckBox
     Friend WithEvents CustomLibsPath As TextBox
     Friend WithEvents CustomLibsEdit As Button
     Friend WithEvents CustomLibsActive As CheckBox
+    Friend WithEvents CustomLibsPreviewMusic As GroupBox
+    Friend WithEvents CustomLibsPreviewStop As Button
+    Friend WithEvents CustomLibsPreviewPlay As Button
+    Friend WithEvents CustomLibsOmega As Label
+    Friend WithEvents CustomLibsPreviewAvatar As GroupBox
+    Friend WithEvents CustomLibsPreviewImage As PictureBox
+    Friend WithEvents CustomLibsSave As Button
 End Class

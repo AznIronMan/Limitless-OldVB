@@ -44,5 +44,8 @@ Public Class FilesFolders
         CountFiles = Directory.GetFiles(dir, ext).Count
     End Function
 
+    Public Shared Function GetFilesInFolder(dir As String) As String()
+        GetFilesInFolder = Directory.GetFiles(dir)
+    End Function
 
 End Class

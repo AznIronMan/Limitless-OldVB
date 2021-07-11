@@ -20,14 +20,32 @@ Public Class Tools
     End Sub
 
     Public Shared Sub GoToWeb(url As String)
-
         Try
             Process.Start(url)
         Catch ex As Exception
             MessageBox.Show("Something went wrong with launching system your browser." & Environment.NewLine & Environment.NewLine &
                             "Please try going to " & url & " manually." & Environment.NewLine & Environment.NewLine & "Thank you.")
         End Try
-
     End Sub
+
+    Public Shared Sub CustomLibsListBuilder(type As String, list As ListBox, dir As String, activecheck As CheckBox, ext As String)
+        If FilesFolders.CountFiles(dir, ext) > 0 Then
+            list.Items.Clear()
+            list.Enabled = True
+            For Each Filename In FilesFolders.GetFilesInFolder(dir)
+                Dim FoundName As String = Replace(Filename, dir & "\", "", 1)
+                Dim NameToAdd = FoundName.Trim().Substring(0, FoundName.Length - 4)
+                If NameToAdd.StartsWith("Ω") = True Then _
+                    list.Items.Add("Ω " & NameToAdd.Trim().Substring(1)) _
+                    Else list.Items.Add(NameToAdd)
+            Next
+        Else
+            list.Items.Clear()
+            list.Items.Add("<No Files Available>")
+            list.Enabled = False
+        End If
+    End Sub
+
+
 
 End Class
