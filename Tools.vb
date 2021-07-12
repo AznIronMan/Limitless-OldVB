@@ -28,7 +28,8 @@ Public Class Tools
         End Try
     End Sub
 
-    Public Shared Sub CustomLibsListBuilder(type As String, list As ListBox, dir As String, activecheck As CheckBox, ext As String)
+    Public Shared Sub CustomLibsListBuilder(type As String, list As ListBox, dir As String, activecheck As CheckBox,
+        ext As String, importbutton As Button)
         If FilesFolders.CountFiles(dir, ext) > 0 Then
             list.Items.Clear()
             list.Enabled = True
@@ -44,6 +45,7 @@ Public Class Tools
             list.Items.Add("<No Files Available>")
             list.Enabled = False
         End If
+        importbutton.Enabled = True
     End Sub
 
 

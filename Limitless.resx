@@ -681,20 +681,29 @@
   <data name="&gt;&gt;CustomLibsList.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="CustomLibsPreviewStop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;CustomLibsMusicMsg.Name" xml:space="preserve">
+    <value>CustomLibsMusicMsg</value>
   </data>
-  <data name="CustomLibsPreviewStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 140</value>
+  <data name="&gt;&gt;CustomLibsMusicMsg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="CustomLibsPreviewStop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
+  <data name="&gt;&gt;CustomLibsMusicMsg.Parent" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
   </data>
-  <data name="CustomLibsPreviewStop.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="&gt;&gt;CustomLibsMusicMsg.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="CustomLibsPreviewStop.Text" xml:space="preserve">
-    <value>Stop</value>
+  <data name="&gt;&gt;CustomLibsMusicImage.Name" xml:space="preserve">
+    <value>CustomLibsMusicImage</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicImage.Parent" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicImage.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;CustomLibsPreviewStop.Name" xml:space="preserve">
     <value>CustomLibsPreviewStop</value>
@@ -706,22 +715,7 @@
     <value>CustomLibsPreviewMusic</value>
   </data>
   <data name="&gt;&gt;CustomLibsPreviewStop.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CustomLibsPreviewPlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CustomLibsPreviewPlay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 140</value>
-  </data>
-  <data name="CustomLibsPreviewPlay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="CustomLibsPreviewPlay.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="CustomLibsPreviewPlay.Text" xml:space="preserve">
-    <value>Play</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;CustomLibsPreviewPlay.Name" xml:space="preserve">
     <value>CustomLibsPreviewPlay</value>
@@ -733,7 +727,7 @@
     <value>CustomLibsPreviewMusic</value>
   </data>
   <data name="&gt;&gt;CustomLibsPreviewPlay.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="CustomLibsPreviewMusic.Location" type="System.Drawing.Point, System.Drawing">
     <value>210, 25</value>
@@ -1667,6 +1661,60 @@
   </data>
   <data name="&gt;&gt;BackgroundPanel.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="CustomLibsPreviewStop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomLibsPreviewStop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 140</value>
+  </data>
+  <data name="CustomLibsPreviewStop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="CustomLibsPreviewStop.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="CustomLibsPreviewStop.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewStop.Name" xml:space="preserve">
+    <value>CustomLibsPreviewStop</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewStop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewStop.Parent" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewStop.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CustomLibsPreviewPlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomLibsPreviewPlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 140</value>
+  </data>
+  <data name="CustomLibsPreviewPlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="CustomLibsPreviewPlay.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="CustomLibsPreviewPlay.Text" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewPlay.Name" xml:space="preserve">
+    <value>CustomLibsPreviewPlay</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewPlay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewPlay.Parent" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewPlay.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="CustomLibsPreviewImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3046,6 +3094,63 @@ Thanks!
   </data>
   <data name="&gt;&gt;DonateTitle.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="CustomLibsMusicImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomLibsMusicImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 19</value>
+  </data>
+  <data name="CustomLibsMusicImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 80</value>
+  </data>
+  <data name="CustomLibsMusicImage.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicImage.Name" xml:space="preserve">
+    <value>CustomLibsMusicImage</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicImage.Parent" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicImage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CustomLibsMusicMsg.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomLibsMusicMsg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 110</value>
+  </data>
+  <data name="CustomLibsMusicMsg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 20</value>
+  </data>
+  <data name="CustomLibsMusicMsg.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="CustomLibsMusicMsg.Text" xml:space="preserve">
+    <value>Stop Preview To Continue</value>
+  </data>
+  <data name="CustomLibsMusicMsg.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="CustomLibsMusicMsg.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicMsg.Name" xml:space="preserve">
+    <value>CustomLibsMusicMsg</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicMsg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicMsg.Parent" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicMsg.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

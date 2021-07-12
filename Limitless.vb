@@ -18,7 +18,10 @@
         VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
         AppTitleText = ApplicationName & " [" & ReleaseType & "v" & VersionNumber & "]"
         Me.TitleLabel.Text = AppTitleText
-        If Settings.SettingsMusic.ToLower = "on" Then Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+        If Settings.SettingsMusic.ToLower = "on" Then
+            Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+            Jukebox.IntroInPlay = True
+        End If
         StartupInProgress = False
     End Sub
 
@@ -40,6 +43,7 @@
     End Sub
 
     Private Sub AboutButtonPressed()
+        SwitchToIntro()
         WelcomePanel.Visible = False
         AboutPanel.Visible = True
         DonatePanel.Visible = False
@@ -55,6 +59,7 @@
     End Sub
 
     Private Sub DonateButtonPressed()
+        SwitchToIntro()
         WelcomePanel.Visible = False
         AboutPanel.Visible = False
         DonatePanel.Visible = True
@@ -68,12 +73,16 @@
     End Sub
 
     Private Sub OptionsButtonPressed()
+        SwitchToIntro()
         WelcomePanel.Visible = False
         AboutPanel.Visible = False
         DonatePanel.Visible = False
         OptionsGroupToMid()
         OptionsPanel.Visible = True
         CustomLibsGroup.Visible = False
+        OptionsManageGroup.Enabled = True
+        OptionsMusicGroup.Enabled = True
+        OptionsColorGroup.Enabled = True
     End Sub
 
     Private Sub UpdateSettings()
@@ -210,7 +219,7 @@
                 CustomLibsPreviewImage.Image = Nothing
                 CustomLibsPreviewMusic.Visible = False
             Case Else
-                Jukebox.StopSong()
+                If IntroInPlay = False Then Jukebox.StopSong()
                 CustomLibsPreviewAvatar.Visible = False
                 CustomLibsPreviewImage.Image = Nothing
                 CustomLibsPreviewMusic.Visible = True
@@ -355,6 +364,7 @@
         If OptionsAudioCheckMusic.Checked Then
             OptionsAudioCheckCustom.Enabled = True
             Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+            Jukebox.IntroInPlay = True
             If OptionsAudioCheckCustom.CheckState = CheckState.Checked Then
                 EnableMusicCheckBoxes()
                 CheckCustomMusicOptions()
@@ -417,11 +427,14 @@
     Private Sub CustomLibsListPop()
         Select Case LCase(CustomLibsSelected)
             Case "avatars"
-                Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.AvatarsDir, CustomLibsActive, "*.png")
+                Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.AvatarsDir, CustomLibsActive,
+                    "*.png", CustomLibsImport)
             Case "music"
-                Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.MusicDir, CustomLibsActive, "*.mp3")
+                Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.MusicDir, CustomLibsActive,
+                    "*.mp3", CustomLibsImport)
             Case "sounds"
-                Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.SoundDir, CustomLibsActive, "*.mp3")
+                Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.SoundDir, CustomLibsActive,
+                    "*.mp3", CustomLibsImport)
             Case Else
                 '
         End Select
@@ -507,6 +520,7 @@
     End Sub
 
     Private Sub CustomLibsActive_CheckedChanged(sender As Object, e As EventArgs) Handles CustomLibsActive.Click
+        'Add AutoSave Check and verification for no autosave
         If CustomLibsActive.Enabled = True Then
             Dim SelectedDir As String = ""
             Dim Ext As String = ""
@@ -545,7 +559,9 @@
                 Dim OldName As String = Replace(SelectedFile, "Ω ", "Ω")
                 NewName = Replace(SelectedFile, "Ω ", "")
                 If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
-                If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.SwitchToIntro(CustomLibsPreviewStop, CustomLibsPreviewPlay, CustomLibsList)
+                If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
+                    CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
+                    OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
                 Try
                     My.Computer.FileSystem.RenameFile(SelectedDir & "/" & OldName & Ext, NewName & Ext)
                 Catch ex As Exception
@@ -559,7 +575,9 @@
             If answer = vbYes And ItemActive = True Then
                 NewName = "Ω" & SelectedFile
                 If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
-                If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.SwitchToIntro(CustomLibsPreviewStop, CustomLibsPreviewPlay, CustomLibsList)
+                If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
+                    CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
+                    OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
                 Try
                     My.Computer.FileSystem.RenameFile(SelectedDir & "/" & SelectedFile & Ext, NewName & Ext)
                 Catch ex As Exception
@@ -584,15 +602,69 @@
             Do Until Jukebox.SongPlaying = False
                 Jukebox.StopSong()
             Loop
+            Jukebox.IntroInPlay = False
             Jukebox.PlayMp3(SongFile)
             CustomLibsPreviewPlay.Enabled = False
             CustomLibsList.Enabled = False
             CustomLibsPreviewStop.Enabled = True
+            CustomLibsActive.Enabled = False
+            CustomLibsEdit.Enabled = False
+            CustomLibsMusicMsg.Visible = True
+            OptionsColorGroup.Enabled = False
+            OptionsMusicGroup.Enabled = False
+            OptionsManageGroup.Enabled = False
+            CustomLibsImport.Enabled = False
+            CustomLibsDelete.Enabled = False
+            'OptionsManageSound.Enabled = False
         End If
     End Sub
 
     Private Sub CustomLibsPreviewStop_Click(sender As Object, e As EventArgs) Handles CustomLibsPreviewStop.Click
-        Jukebox.SwitchToIntro(CustomLibsPreviewStop, CustomLibsPreviewPlay, CustomLibsList)
+        Jukebox.ReturnToIntro(CustomLibsPreviewStop, CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit,
+            CustomLibsMusicMsg, OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
+    End Sub
+
+    Private Sub CustomLibsEdit_Click(sender As Object, e As EventArgs) Handles CustomLibsEdit.Click
+        'Add AutoSave Check and verification for no autosave
+        If CustomLibsEdit.Enabled = True Then
+            Dim SelectedDir = "", Ext = "", SelectedName = CustomLibsList.SelectedItem.ToString, OldFileName,
+                NewFileName As String
+            Dim FoundIt As Boolean = False
+            Select Case LCase(CustomLibsSelected)
+                Case "avatars"
+                    SelectedDir = MemoryBank.AvatarsDir
+                    Ext = ".png"
+                Case "music"
+                    SelectedDir = MemoryBank.MusicDir
+                    Ext = ".mp3"
+                Case "sound"
+                    SelectedDir = MemoryBank.SoundDir
+                    Ext = ".mp3"
+                Case Else
+                    '
+            End Select
+            OldFileName = SelectedDir & "/" & Replace(SelectedName, "Ω ", "Ω") & Ext
+            If System.IO.File.Exists(OldFileName) Then
+                Dim CompletedAnswer As Boolean = False
+                While CompletedAnswer = False
+                    Dim CheckName = "", answer As String
+                    answer = InputBox("New File Name (alphanumeric and spaces only please)", "Rename" & SelectedName,
+                        SelectedName)
+                    'check if answer contains non alphanumeric characters with error, if all good continue
+                    CheckName = SelectedDir & "/" & Replace(CheckName, "Ω ", "Ω") & Ext
+                    If Not System.IO.File.Exists(CheckName) Then
+                        CompletedAnswer = True
+                    Else
+                        MsgBox("Error:  Filename Exists, try again.", vbOKOnly)
+                    End If
+                End While
+                'prompt user for new name with current populated
+                'confirm new name doesn't exist - if so, offer alternative?
+                My.Computer.FileSystem.RenameFile(OldFileName, NewFileName)
+            Else
+                MsgBox("Error: Could not verify file exists, please try again.", vbOKOnly)
+            End If
+        End If
     End Sub
 
     Private Sub TitleBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseUp, TitleLabel.MouseUp, TitleBarIcon.MouseUp

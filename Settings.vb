@@ -18,14 +18,16 @@
     Public Shared SettingsAutoSave As String = "on"
 
     Public Shared Sub CreateSettings()
+        'Database.CreateDB(SettingsPath, SettingsName,
+        '    "CREATE TABLE 'mainSettings' ('settingName' TEXT NOT NULL, 'settingConfig' TEXT);
+        '    CREATE TABLE 'customAvatars' ('avatarID' INTEGER NOT NULL UNIQUE, 'avatarFile' TEXT NOT NULL, 
+        '    'avatarActive' TEXT, 'avatarName' TEXT, PRIMARY KEY('avatarID' AUTOINCREMENT));
+        '    CREATE TABLE 'customMusic' ('musicID' INTEGER NOT NULL UNIQUE, 'musicFile' TEXT NOT NULL, 
+        '    'musicActive' TEXT, 'musicName' TEXT, PRIMARY KEY('musicID' AUTOINCREMENT));
+        '    CREATE TABLE 'customSound' ('soundID' INTEGER NOT NULL UNIQUE, 'soundFile' TEXT NOT NULL, 
+        '    'soundActive' TEXT, 'soundName' TEXT, PRIMARY KEY('soundID' AUTOINCREMENT));")
         Database.CreateDB(SettingsPath, SettingsName,
-            "CREATE TABLE 'mainSettings' ('settingName' TEXT NOT NULL, 'settingConfig' TEXT);
-            CREATE TABLE 'customAvatars' ('avatarID' INTEGER NOT NULL UNIQUE, 'avatarFile' TEXT NOT NULL, 
-            'avatarActive' TEXT, 'avatarName' TEXT, PRIMARY KEY('avatarID' AUTOINCREMENT));
-            CREATE TABLE 'customMusic' ('musicID' INTEGER NOT NULL UNIQUE, 'musicFile' TEXT NOT NULL, 
-            'musicActive' TEXT, 'musicName' TEXT, PRIMARY KEY('musicID' AUTOINCREMENT));
-            CREATE TABLE 'customSound' ('soundID' INTEGER NOT NULL UNIQUE, 'soundFile' TEXT NOT NULL, 
-            'soundActive' TEXT, 'soundName' TEXT, PRIMARY KEY('soundID' AUTOINCREMENT));")
+            "CREATE TABLE 'mainSettings' ('settingName' TEXT NOT NULL, 'settingConfig' TEXT);")
     End Sub
 
     Public Shared Sub BuildDefault()

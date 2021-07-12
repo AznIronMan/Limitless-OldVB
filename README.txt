@@ -72,7 +72,7 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.003 / 2021.07.10
+ALPHA 0.1.003.0002 / 2021.07.12
 
 - changed versioning to 0.1.x for the new platform
 - added legacy notes document as a reference to the legacy platform
@@ -84,6 +84,8 @@ ALPHA 0.1.003 / 2021.07.10
 - removed redundant file name box in custom items options
 - added feature to display file names on custom items as they are selected
 - added feature for custom avatar preview in options menu
+- fixed issue with music tracks not stopping when new music starts
+- fixed issue with music files not unlocking when previewing
 
 [PREVIOUS UPDATES]
 

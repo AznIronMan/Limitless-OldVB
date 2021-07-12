@@ -4,10 +4,11 @@ Imports NAudio.Wave
 Module Jukebox
 
     Dim ActiveSong As BlockAlignReductionStream = Nothing
-    Dim SongOutput As DirectSoundOut = Nothing
+    Dim SongOutput As New NAudio.Wave.WaveOut
     Public SongPlaying As Boolean = False
     Dim SongLoaded As Boolean = False
     Dim SongPosition As Long = 0
+    Public IntroInPlay As Boolean = False
 
     Public Function NewSong(mp3file As Byte()) As Boolean
         If SongPlaying Then
@@ -17,7 +18,7 @@ Module Jukebox
             Dim Songfile As MemoryStream = New MemoryStream(mp3file)
             Dim pcm As WaveStream = WaveFormatConversionStream.CreatePcmStream(New Mp3FileReader(Songfile))
             ActiveSong = New BlockAlignReductionStream(pcm)
-            SongOutput = New DirectSoundOut
+            SongOutput = New WaveOut
             Dim [loop] As LoopStream = New LoopStream(ActiveSong)
             SongOutput.Init([loop])
             NewSong = True
@@ -30,8 +31,7 @@ Module Jukebox
     End Function
 
     Public Sub PlayMp3(mp3file As String)
-        SongOutput.Init(New Mp3FileReader(mp3file))
-        PlaySong(True)
+        PlaySong(NewSong(FileToStreamSong(mp3file)))
     End Sub
 
     Public Function FileToStreamSong(mp3file As String) As Byte()
@@ -59,13 +59,33 @@ Module Jukebox
         SongOutput.Dispose()
     End Sub
 
-    Public Sub SwitchToIntro(stopbutton As Button, playbutton As Button, optionslist As ListBox)
+    Public Sub ReturnToIntro(stopbutton As Button, playbutton As Button, optionslist As ListBox, activebox As CheckBox,
+        editbutton As Button, message As Label, colorgroup As GroupBox, musicgroup As GroupBox, managegroup As GroupBox,
+        importbutton As Button, deletebutton As Button)
+        'Specific for the Custom Music/Sound Menu
         If stopbutton.Enabled = True Then
-            Jukebox.StopSong()
             playbutton.Enabled = True
             optionslist.Enabled = True
             stopbutton.Enabled = False
-            If Settings.SettingsMusic.ToLower = "on" Then Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+            activebox.Enabled = True
+            editbutton.Enabled = True
+            message.Visible = False
+            colorgroup.Enabled = True
+            musicgroup.Enabled = True
+            managegroup.Enabled = True
+            importbutton.Enabled = True
+            deletebutton.Enabled = True
+            SwitchToIntro()
+        End If
+    End Sub
+
+    Public Sub SwitchToIntro()
+        If IntroInPlay = False Then
+            StopSong()
+            If Settings.SettingsMusic.ToLower = "on" Then
+                PlaySong(NewSong(My.Resources.intro))
+                IntroInPlay = True
+            End If
         End If
     End Sub
 

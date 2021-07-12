@@ -109,6 +109,8 @@
         AssignColor(MainWindow.CustomLibsSave, "Button")
         AssignColor(MainWindow.CustomLibsGroup, "Group")
         AssignColor(MainWindow.CustomLibsEdit, "Button")
+        AssignColor(MainWindow.CustomLibsMusicMsg, "Group")
+        AssignColor(MainWindow.CustomLibsMusicImage, "Group")
     End Sub
 
     Public Sub SetButtonStyle(button As Button)
