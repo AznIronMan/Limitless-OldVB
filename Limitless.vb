@@ -508,6 +508,7 @@
                                 CustomLibsPreviewAvatar.Visible = False
                                 CustomLibsPreviewMusic.Visible = True
                                 CustomLibsPreviewPlay.Enabled = True
+                                CustomLibsMusicImage.BackgroundImage = Global.Limitless.My.Resources.Resources.mp3sound
                         End Select
                     End If
                     End If
@@ -626,49 +627,158 @@
 
     Private Sub CustomLibsEdit_Click(sender As Object, e As EventArgs) Handles CustomLibsEdit.Click
         'Add AutoSave Check and verification for no autosave
-        If CustomLibsEdit.Enabled = True Then
-            Dim SelectedDir = "", Ext = "", SelectedName = CustomLibsList.SelectedItem.ToString, OldFileName,
-                NewFileName As String
-            Dim FoundIt As Boolean = False
-            Select Case LCase(CustomLibsSelected)
-                Case "avatars"
-                    SelectedDir = MemoryBank.AvatarsDir
-                    Ext = ".png"
-                Case "music"
-                    SelectedDir = MemoryBank.MusicDir
-                    Ext = ".mp3"
-                Case "sound"
-                    SelectedDir = MemoryBank.SoundDir
-                    Ext = ".mp3"
-                Case Else
-                    '
-            End Select
-            OldFileName = SelectedDir & "/" & Replace(SelectedName, "Ω ", "Ω") & Ext
-            If System.IO.File.Exists(OldFileName) Then
-                Dim CompletedAnswer As Boolean = False
-                While CompletedAnswer = False
-                    Dim CheckName = "", answer As String
-                    answer = InputBox("New File Name (alphanumeric and spaces only please)", "Rename" & SelectedName,
-                        SelectedName)
-                    'check if answer contains non alphanumeric characters with error, if all good continue
-                    CheckName = SelectedDir & "/" & Replace(CheckName, "Ω ", "Ω") & Ext
-                    If Not System.IO.File.Exists(CheckName) Then
-                        CompletedAnswer = True
+        Dim SelectedDir = "", Ext = "", SelectedName = CustomLibsList.SelectedItem.ToString, OldFileName
+        Select Case LCase(CustomLibsSelected)
+            Case "avatars"
+                SelectedDir = MemoryBank.AvatarsDir
+                Ext = ".png"
+            Case "music"
+                SelectedDir = MemoryBank.MusicDir
+                Ext = ".mp3"
+            Case "sound"
+                SelectedDir = MemoryBank.SoundDir
+                Ext = ".mp3"
+            Case Else
+                '
+        End Select
+        OldFileName = SelectedDir & "/" & Replace(SelectedName, "Ω ", "Ω") & Ext
+        Select Case CustomLibsEdit.Text
+            Case "Edit Name"
+                If CustomLibsEdit.Enabled = True Then
+                    If System.IO.File.Exists(OldFileName) Then
+                        Dim TempValue As String = CustomLibsPath.Text
+                        CustomLibsPath.BackColor = Color.Red
+                        CustomLibsPath.ReadOnly = False
+                        CustomLibsPath.Text = TempValue.Substring(0, TempValue.Length - 4)
+                        CustomLibsEdit.Text = "Confirm"
                     Else
-                        MsgBox("Error:  Filename Exists, try again.", vbOKOnly)
+                        MsgBox("Error: Could not verify file exists, please try again.", vbOKOnly)
                     End If
-                End While
-                'prompt user for new name with current populated
-                'confirm new name doesn't exist - if so, offer alternative?
-                My.Computer.FileSystem.RenameFile(OldFileName, NewFileName)
+                End If
+            Case "Confirm"
+                Dim ClearToGo As Boolean = True
+                Dim CheckName = SelectedDir & "/" & Replace(CustomLibsPath.Text, "Ω ", "Ω") & Ext
+                If System.IO.File.Exists(CheckName) Then
+                    ClearToGo = False
+                    MsgBox("The File Name " & CustomLibsPath.Text & " already exists." & vbCrLf &
+                        vbCrLf & "Please try it again.", vbOKOnly + vbCritical)
+                End If
+                If ClearToGo = True Then
+                    If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
+                    If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
+                        CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
+                        OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
+                    Try
+                        My.Computer.FileSystem.RenameFile(OldFileName, Replace(CustomLibsPath.Text, "Ω ", "Ω") & Ext)
+                        CustomLibsEdit.Text = "Edit Name"
+                        CustomLibsPath.BackColor = MemoryBank.PagesBackColor
+                        CustomLibsPath.ReadOnly = True
+                        CustomLibsPath.Text = CustomLibsPath.Text & Ext
+                        CustomLibsListPop()
+                    Catch ex As Exception
+                        MsgBox(("Error:  File locked, please try again." & vbCrLf), vbOKOnly)
+                    End Try
+                End If
+            Case Else
+                '
+        End Select
+    End Sub
+
+    Private Sub CustomLibsDelete_Click(sender As Object, e As EventArgs) Handles CustomLibsDelete.Click
+        Dim SelectedDir = "", Ext = "", SelectedName = CustomLibsList.SelectedItem.ToString, FileToGo As String
+        Select Case LCase(CustomLibsSelected)
+            Case "avatars"
+                SelectedDir = MemoryBank.AvatarsDir
+                Ext = ".png"
+            Case "music"
+                SelectedDir = MemoryBank.MusicDir
+                Ext = ".mp3"
+            Case "sound"
+                SelectedDir = MemoryBank.SoundDir
+                Ext = ".mp3"
+            Case Else
+                '
+        End Select
+        FileToGo = SelectedDir & "/" & Replace(SelectedName, "Ω ", "Ω") & Ext
+        If CustomLibsDelete.Enabled = True Then
+            If System.IO.File.Exists(FileToGo) Then
+                Dim answer As Integer
+                answer = MsgBox("Confirm:  Do you want to delete " & Replace(SelectedName, "Ω ", "Ω") & "?", vbYesNo)
+                If answer = vbYes Then
+                    If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
+                    If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
+                        CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
+                        OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
+                    Try
+                        My.Computer.FileSystem.DeleteFile(FileToGo, FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.DeletePermanently)
+                        CustomLibsListPop()
+                    Catch ex As Exception
+                        MsgBox("Error:  File locked, please try again." & vbCrLf, vbOKOnly)
+                    End Try
+
+                Else
+                    MsgBox("Operation Cancelled.", vbOKOnly)
+                End If
             Else
                 MsgBox("Error: Could not verify file exists, please try again.", vbOKOnly)
             End If
         End If
     End Sub
 
+    Private Sub CustomLibsImport_Click(sender As Object, e As EventArgs) Handles CustomLibsImport.Click
+        Dim SelectedDir = "", Ext = "", SourceFile As String, NewFile As String
+        Select Case LCase(CustomLibsSelected)
+            Case "avatars"
+                SelectedDir = MemoryBank.AvatarsDir
+                Ext = ".png"
+            Case "music"
+                SelectedDir = MemoryBank.MusicDir
+                Ext = ".mp3"
+            Case "sound"
+                SelectedDir = MemoryBank.SoundDir
+                Ext = ".mp3"
+            Case Else
+                '
+        End Select
+        'Change to allow multiple files
+        Dim fd As OpenFileDialog = New OpenFileDialog With {
+            .Title = "File To Import File",
+            .InitialDirectory = SelectedDir,
+            .Filter = Replace(Ext, ".", "") & " Files (*" & Ext & ")|*" & Ext,
+            .FilterIndex = 1,
+            .RestoreDirectory = True
+        }
+        If fd.ShowDialog() = DialogResult.OK Then
+            SourceFile = fd.FileName
+            Dim ConfirmExt As String = SourceFile.Substring(SourceFile.Length - 4, 4)
+            If LCase(ConfirmExt) = Ext Then
+                Dim SourceName As String = Replace(SourceFile.Split("\").Last(), Ext, "")
+                NewFile = SelectedDir & "/" & Replace(SourceName, "Ω ", "Ω") & Ext
+                Try
+                    FileSystem.FileCopy(SourceFile, NewFile)
+                Catch ex As Exception
+                    MsgBox(("Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
+                End Try
+                CustomLibsListPop()
+            Else
+                MsgBox("Invalid file extension.  Please be sure to select a " & Ext & " file.", vbOKOnly + vbCritical)
+            End If
+        End If
+    End Sub
+
     Private Sub TitleBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseUp, TitleLabel.MouseUp, TitleBarIcon.MouseUp
         WindowDrag = False
+    End Sub
+
+
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CustomLibsPath.KeyPress
+        If Not (Asc(e.KeyChar) = 8) Then
+            Dim allowedChars As String = "abcdefghijklmnopqrstuvwxyz -.0123456789"
+            If Not allowedChars.Contains(e.KeyChar.ToString.ToLower) Then
+                e.KeyChar = ChrW(0)
+                e.Handled = True
+            End If
+        End If
     End Sub
 
 End Class

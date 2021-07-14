@@ -45,6 +45,8 @@ Partial Class MainWindow
         Me.CustomLibsImport = New System.Windows.Forms.Button()
         Me.CustomLibsList = New System.Windows.Forms.ListBox()
         Me.CustomLibsPreviewMusic = New System.Windows.Forms.GroupBox()
+        Me.CustomLibsMusicMsg = New System.Windows.Forms.Label()
+        Me.CustomLibsMusicImage = New System.Windows.Forms.PictureBox()
         Me.CustomLibsPreviewStop = New System.Windows.Forms.Button()
         Me.CustomLibsPreviewPlay = New System.Windows.Forms.Button()
         Me.CustomLibsPreviewAvatar = New System.Windows.Forms.GroupBox()
@@ -103,8 +105,6 @@ Partial Class MainWindow
         Me.DonatePTButton = New System.Windows.Forms.Button()
         Me.DonateText = New System.Windows.Forms.TextBox()
         Me.DonateTitle = New System.Windows.Forms.Label()
-        Me.CustomLibsMusicImage = New System.Windows.Forms.PictureBox()
-        Me.CustomLibsMusicMsg = New System.Windows.Forms.Label()
         Me.TitleBarPanel.SuspendLayout()
         Me.MinimizeButton.SuspendLayout()
         Me.CloseButton.SuspendLayout()
@@ -113,6 +113,7 @@ Partial Class MainWindow
         Me.OptionsPanel.SuspendLayout()
         Me.CustomLibsGroup.SuspendLayout()
         Me.CustomLibsPreviewMusic.SuspendLayout()
+        CType(Me.CustomLibsMusicImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CustomLibsPreviewAvatar.SuspendLayout()
         CType(Me.CustomLibsPreviewImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OptionsManageGroup.SuspendLayout()
@@ -128,7 +129,6 @@ Partial Class MainWindow
         Me.MainMenuBar.SuspendLayout()
         CType(Me.TitleLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DonatePanel.SuspendLayout()
-        CType(Me.CustomLibsMusicImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TitleLabel
@@ -315,6 +315,17 @@ Partial Class MainWindow
         resources.ApplyResources(Me.CustomLibsPreviewMusic, "CustomLibsPreviewMusic")
         Me.CustomLibsPreviewMusic.Name = "CustomLibsPreviewMusic"
         Me.CustomLibsPreviewMusic.TabStop = False
+        '
+        'CustomLibsMusicMsg
+        '
+        resources.ApplyResources(Me.CustomLibsMusicMsg, "CustomLibsMusicMsg")
+        Me.CustomLibsMusicMsg.Name = "CustomLibsMusicMsg"
+        '
+        'CustomLibsMusicImage
+        '
+        resources.ApplyResources(Me.CustomLibsMusicImage, "CustomLibsMusicImage")
+        Me.CustomLibsMusicImage.Name = "CustomLibsMusicImage"
+        Me.CustomLibsMusicImage.TabStop = False
         '
         'CustomLibsPreviewStop
         '
@@ -774,18 +785,6 @@ Partial Class MainWindow
         resources.ApplyResources(Me.DonateTitle, "DonateTitle")
         Me.DonateTitle.Name = "DonateTitle"
         '
-        'CustomLibsMusicImage
-        '
-        Me.CustomLibsMusicImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        resources.ApplyResources(Me.CustomLibsMusicImage, "CustomLibsMusicImage")
-        Me.CustomLibsMusicImage.Name = "CustomLibsMusicImage"
-        Me.CustomLibsMusicImage.TabStop = False
-        '
-        'CustomLibsMusicMsg
-        '
-        resources.ApplyResources(Me.CustomLibsMusicMsg, "CustomLibsMusicMsg")
-        Me.CustomLibsMusicMsg.Name = "CustomLibsMusicMsg"
-        '
         'MainWindow
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -811,6 +810,7 @@ Partial Class MainWindow
         Me.CustomLibsGroup.ResumeLayout(False)
         Me.CustomLibsGroup.PerformLayout()
         Me.CustomLibsPreviewMusic.ResumeLayout(False)
+        CType(Me.CustomLibsMusicImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CustomLibsPreviewAvatar.ResumeLayout(False)
         CType(Me.CustomLibsPreviewImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OptionsManageGroup.ResumeLayout(False)
@@ -829,7 +829,6 @@ Partial Class MainWindow
         CType(Me.TitleLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DonatePanel.ResumeLayout(False)
         Me.DonatePanel.PerformLayout()
-        CType(Me.CustomLibsMusicImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

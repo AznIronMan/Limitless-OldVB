@@ -153,6 +153,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Public ReadOnly Property mp3sound() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mp3sound", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Public ReadOnly Property pp() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("pp", resourceCulture)

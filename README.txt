@@ -1,6 +1,6 @@
 =============================================
 LIMITLESS by Geoff Clark
-VERSION ALPHA 0.1.003
+VERSION ALPHA 0.1.003.0003
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -72,7 +72,7 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.003.0002 / 2021.07.12
+ALPHA 0.1.003.0003 / 2021.07.13
 
 - changed versioning to 0.1.x for the new platform
 - added legacy notes document as a reference to the legacy platform
@@ -86,6 +86,8 @@ ALPHA 0.1.003.0002 / 2021.07.12
 - added feature for custom avatar preview in options menu
 - fixed issue with music tracks not stopping when new music starts
 - fixed issue with music files not unlocking when previewing
+- added ability to rename, import, and delete custom files in menu
+- added MP3 image for custom music/sounds menus
 
 [PREVIOUS UPDATES]
 
