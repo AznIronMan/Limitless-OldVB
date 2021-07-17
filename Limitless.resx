@@ -165,18 +165,12 @@
   <metadata name="TitleBarIcon.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="TitleBarIcon.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="TitleBarIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-25, 0</value>
-  </data>
-  <data name="TitleBarIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 25</value>
-  </data>
-  <data name="TitleBarIcon.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
+  <metadata name="MinimizeButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CloseButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="&gt;&gt;TitleBarIcon.Name" xml:space="preserve">
     <value>TitleBarIcon</value>
   </data>
@@ -189,54 +183,6 @@
   <data name="&gt;&gt;TitleBarIcon.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="MinimizeButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="MinimizeText.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="MinimizeText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="MinimizeText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 11.25pt, style=Bold</value>
-  </data>
-  <data name="MinimizeText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="MinimizeText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MinimizeText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 15</value>
-  </data>
-  <data name="MinimizeText.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="MinimizeText.Text" xml:space="preserve">
-    <value>_</value>
-  </data>
-  <data name="&gt;&gt;MinimizeText.Name" xml:space="preserve">
-    <value>MinimizeText</value>
-  </data>
-  <data name="&gt;&gt;MinimizeText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MinimizeText.Parent" xml:space="preserve">
-    <value>MinimizeButton</value>
-  </data>
-  <data name="&gt;&gt;MinimizeText.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="MinimizeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1314, 4</value>
-  </data>
-  <data name="MinimizeButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 17</value>
-  </data>
-  <data name="MinimizeButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;MinimizeButton.Name" xml:space="preserve">
     <value>MinimizeButton</value>
   </data>
@@ -247,54 +193,6 @@
     <value>TitleBarPanel</value>
   </data>
   <data name="&gt;&gt;MinimizeButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="CloseButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="CloseText.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CloseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="CloseText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 11.25pt, style=Bold</value>
-  </data>
-  <data name="CloseText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CloseText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="CloseText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 15</value>
-  </data>
-  <data name="CloseText.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="CloseText.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
-  <data name="&gt;&gt;CloseText.Name" xml:space="preserve">
-    <value>CloseText</value>
-  </data>
-  <data name="&gt;&gt;CloseText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CloseText.Parent" xml:space="preserve">
-    <value>CloseButton</value>
-  </data>
-  <data name="&gt;&gt;CloseText.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CloseButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1339, 4</value>
-  </data>
-  <data name="CloseButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 17</value>
-  </data>
-  <data name="CloseButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="&gt;&gt;CloseButton.Name" xml:space="preserve">
@@ -333,6 +231,177 @@
   <data name="&gt;&gt;TitleBarPanel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="TitleBarIcon.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="TitleBarIcon.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="TitleBarIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-25, 0</value>
+  </data>
+  <data name="TitleBarIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 25</value>
+  </data>
+  <data name="TitleBarIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;TitleBarIcon.Name" xml:space="preserve">
+    <value>TitleBarIcon</value>
+  </data>
+  <data name="&gt;&gt;TitleBarIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TitleBarIcon.Parent" xml:space="preserve">
+    <value>TitleBarPanel</value>
+  </data>
+  <data name="&gt;&gt;TitleBarIcon.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="MinimizeButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;MinimizeText.Name" xml:space="preserve">
+    <value>MinimizeText</value>
+  </data>
+  <data name="&gt;&gt;MinimizeText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MinimizeText.Parent" xml:space="preserve">
+    <value>MinimizeButton</value>
+  </data>
+  <data name="&gt;&gt;MinimizeText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="MinimizeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1314, 4</value>
+  </data>
+  <data name="MinimizeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 17</value>
+  </data>
+  <data name="MinimizeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;MinimizeButton.Name" xml:space="preserve">
+    <value>MinimizeButton</value>
+  </data>
+  <data name="&gt;&gt;MinimizeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MinimizeButton.Parent" xml:space="preserve">
+    <value>TitleBarPanel</value>
+  </data>
+  <data name="&gt;&gt;MinimizeButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="MinimizeText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MinimizeText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="MinimizeText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 11.25pt, style=Bold</value>
+  </data>
+  <data name="MinimizeText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="MinimizeText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MinimizeText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 15</value>
+  </data>
+  <data name="MinimizeText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="MinimizeText.Text" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="&gt;&gt;MinimizeText.Name" xml:space="preserve">
+    <value>MinimizeText</value>
+  </data>
+  <data name="&gt;&gt;MinimizeText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MinimizeText.Parent" xml:space="preserve">
+    <value>MinimizeButton</value>
+  </data>
+  <data name="&gt;&gt;MinimizeText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="CloseButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;CloseText.Name" xml:space="preserve">
+    <value>CloseText</value>
+  </data>
+  <data name="&gt;&gt;CloseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CloseText.Parent" xml:space="preserve">
+    <value>CloseButton</value>
+  </data>
+  <data name="&gt;&gt;CloseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CloseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1339, 4</value>
+  </data>
+  <data name="CloseButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 17</value>
+  </data>
+  <data name="CloseButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Name" xml:space="preserve">
+    <value>CloseButton</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Parent" xml:space="preserve">
+    <value>TitleBarPanel</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CloseText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CloseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="CloseText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CloseText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CloseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="CloseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 15</value>
+  </data>
+  <data name="CloseText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="CloseText.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="&gt;&gt;CloseText.Name" xml:space="preserve">
+    <value>CloseText</value>
+  </data>
+  <data name="&gt;&gt;CloseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CloseText.Parent" xml:space="preserve">
+    <value>CloseButton</value>
+  </data>
+  <data name="&gt;&gt;CloseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="BackgroundPanel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -355,6 +424,1071 @@
     <value>BackgroundPanel</value>
   </data>
   <data name="&gt;&gt;FooterPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditorSubText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorSubText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 60</value>
+  </data>
+  <data name="EditorSubText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>945, 13</value>
+  </data>
+  <data name="EditorSubText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditorSubText.Text" xml:space="preserve">
+    <value>Subtext goes here</value>
+  </data>
+  <data name="EditorSubText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Name" xml:space="preserve">
+    <value>EditorSubText</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Parent" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditorTitleText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 24pt, style=Bold</value>
+  </data>
+  <data name="EditorTitleText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorTitleText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 20</value>
+  </data>
+  <data name="EditorTitleText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>945, 32</value>
+  </data>
+  <data name="EditorTitleText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditorTitleText.Text" xml:space="preserve">
+    <value>Limitless Editor</value>
+  </data>
+  <data name="EditorTitleText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Name" xml:space="preserve">
+    <value>EditorTitleText</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Parent" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 210</value>
+  </data>
+  <data name="EditorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>950, 420</value>
+  </data>
+  <data name="EditorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="EditorPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.Name" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ExitButton.Name" xml:space="preserve">
+    <value>ExitButton</value>
+  </data>
+  <data name="&gt;&gt;ExitButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExitButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;ExitButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.Name" xml:space="preserve">
+    <value>UpdateButton</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;DonateButton.Name" xml:space="preserve">
+    <value>DonateButton</value>
+  </data>
+  <data name="&gt;&gt;DonateButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DonateButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;DonateButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.Name" xml:space="preserve">
+    <value>AboutButton</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;OptionsButton.Name" xml:space="preserve">
+    <value>OptionsButton</value>
+  </data>
+  <data name="&gt;&gt;OptionsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;OptionsButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;EditButton.Name" xml:space="preserve">
+    <value>EditButton</value>
+  </data>
+  <data name="&gt;&gt;EditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;EditButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;LoadButton.Name" xml:space="preserve">
+    <value>LoadButton</value>
+  </data>
+  <data name="&gt;&gt;LoadButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LoadButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;LoadButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;StartButton.Name" xml:space="preserve">
+    <value>StartButton</value>
+  </data>
+  <data name="&gt;&gt;StartButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StartButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;StartButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="MainMenuBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 210</value>
+  </data>
+  <data name="MainMenuBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 420</value>
+  </data>
+  <data name="MainMenuBar.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;MainMenuBar.Name" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;MainMenuBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainMenuBar.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;MainMenuBar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TitleLogo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="TitleLogo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 20</value>
+  </data>
+  <data name="TitleLogo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>885, 150</value>
+  </data>
+  <data name="TitleLogo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TitleLogo.Name" xml:space="preserve">
+    <value>TitleLogo</value>
+  </data>
+  <data name="&gt;&gt;TitleLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TitleLogo.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;TitleLogo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.Name" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.Parent" xml:space="preserve">
+    <value>OptionsPanel</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageGroup.Name" xml:space="preserve">
+    <value>OptionsManageGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageGroup.Parent" xml:space="preserve">
+    <value>OptionsPanel</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageGroup.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;OptionsMusicGroup.Name" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsMusicGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsMusicGroup.Parent" xml:space="preserve">
+    <value>OptionsPanel</value>
+  </data>
+  <data name="&gt;&gt;OptionsMusicGroup.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorGroup.Name" xml:space="preserve">
+    <value>OptionsColorGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorGroup.Parent" xml:space="preserve">
+    <value>OptionsPanel</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorGroup.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;OptionsHost.Name" xml:space="preserve">
+    <value>OptionsHost</value>
+  </data>
+  <data name="&gt;&gt;OptionsHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsHost.Parent" xml:space="preserve">
+    <value>OptionsPanel</value>
+  </data>
+  <data name="&gt;&gt;OptionsHost.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;OptionsTitle.Name" xml:space="preserve">
+    <value>OptionsTitle</value>
+  </data>
+  <data name="&gt;&gt;OptionsTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsTitle.Parent" xml:space="preserve">
+    <value>OptionsPanel</value>
+  </data>
+  <data name="&gt;&gt;OptionsTitle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="OptionsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 210</value>
+  </data>
+  <data name="OptionsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>950, 420</value>
+  </data>
+  <data name="OptionsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="OptionsPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;OptionsPanel.Name" xml:space="preserve">
+    <value>OptionsPanel</value>
+  </data>
+  <data name="&gt;&gt;OptionsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsPanel.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;OptionsPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;AboutBSButton.Name" xml:space="preserve">
+    <value>AboutBSButton</value>
+  </data>
+  <data name="&gt;&gt;AboutBSButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutBSButton.Parent" xml:space="preserve">
+    <value>AboutPanel</value>
+  </data>
+  <data name="&gt;&gt;AboutBSButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AboutYTButton.Name" xml:space="preserve">
+    <value>AboutYTButton</value>
+  </data>
+  <data name="&gt;&gt;AboutYTButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutYTButton.Parent" xml:space="preserve">
+    <value>AboutPanel</value>
+  </data>
+  <data name="&gt;&gt;AboutYTButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;AboutDCButton.Name" xml:space="preserve">
+    <value>AboutDCButton</value>
+  </data>
+  <data name="&gt;&gt;AboutDCButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutDCButton.Parent" xml:space="preserve">
+    <value>AboutPanel</value>
+  </data>
+  <data name="&gt;&gt;AboutDCButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;AboutFBButton.Name" xml:space="preserve">
+    <value>AboutFBButton</value>
+  </data>
+  <data name="&gt;&gt;AboutFBButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutFBButton.Parent" xml:space="preserve">
+    <value>AboutPanel</value>
+  </data>
+  <data name="&gt;&gt;AboutFBButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;AboutText.Name" xml:space="preserve">
+    <value>AboutText</value>
+  </data>
+  <data name="&gt;&gt;AboutText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutText.Parent" xml:space="preserve">
+    <value>AboutPanel</value>
+  </data>
+  <data name="&gt;&gt;AboutText.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;AboutTitle.Name" xml:space="preserve">
+    <value>AboutTitle</value>
+  </data>
+  <data name="&gt;&gt;AboutTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutTitle.Parent" xml:space="preserve">
+    <value>AboutPanel</value>
+  </data>
+  <data name="&gt;&gt;AboutTitle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="AboutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 210</value>
+  </data>
+  <data name="AboutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>950, 420</value>
+  </data>
+  <data name="AboutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="AboutPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;AboutPanel.Name" xml:space="preserve">
+    <value>AboutPanel</value>
+  </data>
+  <data name="&gt;&gt;AboutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutPanel.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;AboutPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage0.Name" xml:space="preserve">
+    <value>WelcomeImage0</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage0.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage0.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage0.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage1.Name" xml:space="preserve">
+    <value>WelcomeImage1</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage1.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage2.Name" xml:space="preserve">
+    <value>WelcomeImage2</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage2.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage4.Name" xml:space="preserve">
+    <value>WelcomeImage4</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage4.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage3.Name" xml:space="preserve">
+    <value>WelcomeImage3</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage3.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="WelcomePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 210</value>
+  </data>
+  <data name="WelcomePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>950, 420</value>
+  </data>
+  <data name="WelcomePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;WelcomePanel.Name" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomePanel.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomePanel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;DonatePPButton.Name" xml:space="preserve">
+    <value>DonatePPButton</value>
+  </data>
+  <data name="&gt;&gt;DonatePPButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DonatePPButton.Parent" xml:space="preserve">
+    <value>DonatePanel</value>
+  </data>
+  <data name="&gt;&gt;DonatePPButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;DonatePTButton.Name" xml:space="preserve">
+    <value>DonatePTButton</value>
+  </data>
+  <data name="&gt;&gt;DonatePTButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DonatePTButton.Parent" xml:space="preserve">
+    <value>DonatePanel</value>
+  </data>
+  <data name="&gt;&gt;DonatePTButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;DonateText.Name" xml:space="preserve">
+    <value>DonateText</value>
+  </data>
+  <data name="&gt;&gt;DonateText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DonateText.Parent" xml:space="preserve">
+    <value>DonatePanel</value>
+  </data>
+  <data name="&gt;&gt;DonateText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;DonateTitle.Name" xml:space="preserve">
+    <value>DonateTitle</value>
+  </data>
+  <data name="&gt;&gt;DonateTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DonateTitle.Parent" xml:space="preserve">
+    <value>DonatePanel</value>
+  </data>
+  <data name="&gt;&gt;DonateTitle.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="DonatePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 210</value>
+  </data>
+  <data name="DonatePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>950, 420</value>
+  </data>
+  <data name="DonatePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;DonatePanel.Name" xml:space="preserve">
+    <value>DonatePanel</value>
+  </data>
+  <data name="&gt;&gt;DonatePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DonatePanel.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;DonatePanel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="MainMenuPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 11</value>
+  </data>
+  <data name="MainMenuPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1332, 673</value>
+  </data>
+  <data name="MainMenuPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.Name" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.Parent" xml:space="preserve">
+    <value>BackgroundPanel</value>
+  </data>
+  <data name="&gt;&gt;MainMenuPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="BackgroundPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="BackgroundPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 30</value>
+  </data>
+  <data name="BackgroundPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1366, 738</value>
+  </data>
+  <data name="BackgroundPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;BackgroundPanel.Name" xml:space="preserve">
+    <value>BackgroundPanel</value>
+  </data>
+  <data name="&gt;&gt;BackgroundPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BackgroundPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BackgroundPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ExitButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ExitButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="ExitButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ExitButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 370</value>
+  </data>
+  <data name="ExitButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 30</value>
+  </data>
+  <data name="ExitButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="ExitButton.Text" xml:space="preserve">
+    <value> Exit The Game</value>
+  </data>
+  <data name="ExitButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;ExitButton.Name" xml:space="preserve">
+    <value>ExitButton</value>
+  </data>
+  <data name="&gt;&gt;ExitButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExitButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;ExitButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="UpdateButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UpdateButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="UpdateButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="UpdateButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UpdateButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 320</value>
+  </data>
+  <data name="UpdateButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 30</value>
+  </data>
+  <data name="UpdateButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="UpdateButton.Text" xml:space="preserve">
+    <value> Check For Update</value>
+  </data>
+  <data name="UpdateButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.Name" xml:space="preserve">
+    <value>UpdateButton</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DonateButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="DonateButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="DonateButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DonateButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 270</value>
+  </data>
+  <data name="DonateButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 30</value>
+  </data>
+  <data name="DonateButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="DonateButton.Text" xml:space="preserve">
+    <value> Donate To The Cause</value>
+  </data>
+  <data name="DonateButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;DonateButton.Name" xml:space="preserve">
+    <value>DonateButton</value>
+  </data>
+  <data name="&gt;&gt;DonateButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DonateButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;DonateButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AboutButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="AboutButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="AboutButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AboutButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 220</value>
+  </data>
+  <data name="AboutButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 30</value>
+  </data>
+  <data name="AboutButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="AboutButton.Text" xml:space="preserve">
+    <value> About Limitless</value>
+  </data>
+  <data name="AboutButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.Name" xml:space="preserve">
+    <value>AboutButton</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="OptionsButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="OptionsButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="OptionsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="OptionsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 170</value>
+  </data>
+  <data name="OptionsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 30</value>
+  </data>
+  <data name="OptionsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="OptionsButton.Text" xml:space="preserve">
+    <value> Options Menu</value>
+  </data>
+  <data name="OptionsButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;OptionsButton.Name" xml:space="preserve">
+    <value>OptionsButton</value>
+  </data>
+  <data name="&gt;&gt;OptionsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;OptionsButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="EditButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 120</value>
+  </data>
+  <data name="EditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 30</value>
+  </data>
+  <data name="EditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditButton.Text" xml:space="preserve">
+    <value> Limitless Editor</value>
+  </data>
+  <data name="EditButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;EditButton.Name" xml:space="preserve">
+    <value>EditButton</value>
+  </data>
+  <data name="&gt;&gt;EditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;EditButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LoadButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LoadButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="LoadButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="LoadButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LoadButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 70</value>
+  </data>
+  <data name="LoadButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 30</value>
+  </data>
+  <data name="LoadButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LoadButton.Text" xml:space="preserve">
+    <value> Continue Saved Game</value>
+  </data>
+  <data name="LoadButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;LoadButton.Name" xml:space="preserve">
+    <value>LoadButton</value>
+  </data>
+  <data name="&gt;&gt;LoadButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LoadButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;LoadButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="StartButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="StartButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="StartButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="StartButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 30</value>
+  </data>
+  <data name="StartButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="StartButton.Text" xml:space="preserve">
+    <value> Start New Game</value>
+  </data>
+  <data name="StartButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;StartButton.Name" xml:space="preserve">
+    <value>StartButton</value>
+  </data>
+  <data name="&gt;&gt;StartButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StartButton.Parent" xml:space="preserve">
+    <value>MainMenuBar</value>
+  </data>
+  <data name="&gt;&gt;StartButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsOmega.Name" xml:space="preserve">
+    <value>CustomLibsOmega</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsOmega.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsOmega.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsOmega.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsSave.Name" xml:space="preserve">
+    <value>CustomLibsSave</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsSave.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsSave.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsAuto.Name" xml:space="preserve">
+    <value>CustomLibsAuto</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsAuto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsAuto.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsAuto.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPath.Name" xml:space="preserve">
+    <value>CustomLibsPath</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPath.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsEdit.Name" xml:space="preserve">
+    <value>CustomLibsEdit</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsEdit.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsEdit.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsActive.Name" xml:space="preserve">
+    <value>CustomLibsActive</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsActive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsActive.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsActive.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsDelete.Name" xml:space="preserve">
+    <value>CustomLibsDelete</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsDelete.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsDelete.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImport.Name" xml:space="preserve">
+    <value>CustomLibsImport</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImport.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsImport.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsList.Name" xml:space="preserve">
+    <value>CustomLibsList</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsList.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsList.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewMusic.Name" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewMusic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewMusic.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewMusic.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewAvatar.Name" xml:space="preserve">
+    <value>CustomLibsPreviewAvatar</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewAvatar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewAvatar.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewAvatar.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="CustomLibsGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>490, 80</value>
+  </data>
+  <data name="CustomLibsGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>450, 330</value>
+  </data>
+  <data name="CustomLibsGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="CustomLibsGroup.Text" xml:space="preserve">
+    <value>Custom Group</value>
+  </data>
+  <data name="CustomLibsGroup.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.Name" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.Parent" xml:space="preserve">
+    <value>OptionsPanel</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsGroup.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="CustomLibsOmega.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -402,6 +1536,9 @@
   <data name="CustomLibsSave.Text" xml:space="preserve">
     <value>Save Changes</value>
   </data>
+  <data name="CustomLibsSave.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;CustomLibsSave.Name" xml:space="preserve">
     <value>CustomLibsSave</value>
   </data>
@@ -416,9 +1553,6 @@
   </data>
   <data name="CustomLibsAuto.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="CustomLibsAuto.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="CustomLibsAuto.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -612,6 +1746,81 @@
   <data name="&gt;&gt;CustomLibsList.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="&gt;&gt;CustomLibsMusicMsg.Name" xml:space="preserve">
+    <value>CustomLibsMusicMsg</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicMsg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicMsg.Parent" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicMsg.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicImage.Name" xml:space="preserve">
+    <value>CustomLibsMusicImage</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicImage.Parent" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsMusicImage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewStop.Name" xml:space="preserve">
+    <value>CustomLibsPreviewStop</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewStop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewStop.Parent" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewStop.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewPlay.Name" xml:space="preserve">
+    <value>CustomLibsPreviewPlay</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewPlay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewPlay.Parent" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewPlay.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CustomLibsPreviewMusic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 25</value>
+  </data>
+  <data name="CustomLibsPreviewMusic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 175</value>
+  </data>
+  <data name="CustomLibsPreviewMusic.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="CustomLibsPreviewMusic.Text" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="CustomLibsPreviewMusic.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewMusic.Name" xml:space="preserve">
+    <value>CustomLibsPreviewMusic</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewMusic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewMusic.Parent" xml:space="preserve">
+    <value>CustomLibsGroup</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewMusic.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <data name="CustomLibsMusicMsg.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -723,45 +1932,6 @@
   <data name="&gt;&gt;CustomLibsPreviewPlay.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="CustomLibsPreviewMusic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 25</value>
-  </data>
-  <data name="CustomLibsPreviewMusic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 175</value>
-  </data>
-  <data name="CustomLibsPreviewMusic.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="CustomLibsPreviewMusic.Text" xml:space="preserve">
-    <value>Preview</value>
-  </data>
-  <data name="CustomLibsPreviewMusic.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;CustomLibsPreviewMusic.Name" xml:space="preserve">
-    <value>CustomLibsPreviewMusic</value>
-  </data>
-  <data name="&gt;&gt;CustomLibsPreviewMusic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CustomLibsPreviewMusic.Parent" xml:space="preserve">
-    <value>CustomLibsGroup</value>
-  </data>
-  <data name="&gt;&gt;CustomLibsPreviewMusic.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="CustomLibsPreviewImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CustomLibsPreviewImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 15</value>
-  </data>
-  <data name="CustomLibsPreviewImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 150</value>
-  </data>
-  <data name="CustomLibsPreviewImage.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
   <data name="&gt;&gt;CustomLibsPreviewImage.Name" xml:space="preserve">
     <value>CustomLibsPreviewImage</value>
   </data>
@@ -801,32 +1971,89 @@
   <data name="&gt;&gt;CustomLibsPreviewAvatar.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="CustomLibsGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 80</value>
+  <data name="CustomLibsPreviewImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="CustomLibsGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 330</value>
+  <data name="CustomLibsPreviewImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 15</value>
   </data>
-  <data name="CustomLibsGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="CustomLibsPreviewImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 150</value>
   </data>
-  <data name="CustomLibsGroup.Text" xml:space="preserve">
-    <value>Custom Group</value>
+  <data name="CustomLibsPreviewImage.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="CustomLibsGroup.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;CustomLibsPreviewImage.Name" xml:space="preserve">
+    <value>CustomLibsPreviewImage</value>
   </data>
-  <data name="&gt;&gt;CustomLibsGroup.Name" xml:space="preserve">
-    <value>CustomLibsGroup</value>
+  <data name="&gt;&gt;CustomLibsPreviewImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CustomLibsGroup.Type" xml:space="preserve">
+  <data name="&gt;&gt;CustomLibsPreviewImage.Parent" xml:space="preserve">
+    <value>CustomLibsPreviewAvatar</value>
+  </data>
+  <data name="&gt;&gt;CustomLibsPreviewImage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageSound.Name" xml:space="preserve">
+    <value>OptionsManageSound</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageSound.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageSound.Parent" xml:space="preserve">
+    <value>OptionsManageGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageSound.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageMusic.Name" xml:space="preserve">
+    <value>OptionsManageMusic</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageMusic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageMusic.Parent" xml:space="preserve">
+    <value>OptionsManageGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageMusic.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageAvatars.Name" xml:space="preserve">
+    <value>OptionsManageAvatars</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageAvatars.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageAvatars.Parent" xml:space="preserve">
+    <value>OptionsManageGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageAvatars.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="OptionsManageGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 350</value>
+  </data>
+  <data name="OptionsManageGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>450, 60</value>
+  </data>
+  <data name="OptionsManageGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="OptionsManageGroup.Text" xml:space="preserve">
+    <value>Custom Libraries</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageGroup.Name" xml:space="preserve">
+    <value>OptionsManageGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsManageGroup.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CustomLibsGroup.Parent" xml:space="preserve">
+  <data name="&gt;&gt;OptionsManageGroup.Parent" xml:space="preserve">
     <value>OptionsPanel</value>
   </data>
-  <data name="&gt;&gt;CustomLibsGroup.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;OptionsManageGroup.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="OptionsManageSound.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -912,29 +2139,209 @@
   <data name="&gt;&gt;OptionsManageAvatars.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="OptionsManageGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 350</value>
+  <data name="&gt;&gt;OptionsAudioTextDefeat.Name" xml:space="preserve">
+    <value>OptionsAudioTextDefeat</value>
   </data>
-  <data name="OptionsManageGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 60</value>
+  <data name="&gt;&gt;OptionsAudioTextDefeat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="OptionsManageGroup.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;OptionsAudioTextDefeat.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextDefeat.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextVictory.Name" xml:space="preserve">
+    <value>OptionsAudioTextVictory</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextVictory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextVictory.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextVictory.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextBattle.Name" xml:space="preserve">
+    <value>OptionsAudioTextBattle</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextBattle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextBattle.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextBattle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextIntro.Name" xml:space="preserve">
+    <value>OptionsAudioTextIntro</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextIntro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextIntro.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioTextIntro.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="OptionsManageGroup.Text" xml:space="preserve">
-    <value>Custom Libraries</value>
+  <data name="&gt;&gt;OptionsAudioSelectDefeat.Name" xml:space="preserve">
+    <value>OptionsAudioSelectDefeat</value>
   </data>
-  <data name="&gt;&gt;OptionsManageGroup.Name" xml:space="preserve">
-    <value>OptionsManageGroup</value>
+  <data name="&gt;&gt;OptionsAudioSelectDefeat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;OptionsManageGroup.Type" xml:space="preserve">
+  <data name="&gt;&gt;OptionsAudioSelectDefeat.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectDefeat.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectVictory.Name" xml:space="preserve">
+    <value>OptionsAudioSelectVictory</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectVictory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectVictory.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectVictory.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectBattle.Name" xml:space="preserve">
+    <value>OptionsAudioSelectBattle</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectBattle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectBattle.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectBattle.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectIntro.Name" xml:space="preserve">
+    <value>OptionsAudioSelectIntro</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectIntro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectIntro.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioSelectIntro.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckSound.Name" xml:space="preserve">
+    <value>OptionsAudioCheckSound</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckSound.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckSound.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckSound.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckDefeat.Name" xml:space="preserve">
+    <value>OptionsAudioCheckDefeat</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckDefeat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckDefeat.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckDefeat.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckVictory.Name" xml:space="preserve">
+    <value>OptionsAudioCheckVictory</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckVictory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckVictory.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckVictory.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckBattle.Name" xml:space="preserve">
+    <value>OptionsAudioCheckBattle</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckBattle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckBattle.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckBattle.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckIntro.Name" xml:space="preserve">
+    <value>OptionsAudioCheckIntro</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckIntro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckIntro.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckIntro.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckCustom.Name" xml:space="preserve">
+    <value>OptionsAudioCheckCustom</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckCustom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckCustom.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckCustom.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckMusic.Name" xml:space="preserve">
+    <value>OptionsAudioCheckMusic</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckMusic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckMusic.Parent" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsAudioCheckMusic.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="OptionsMusicGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 150</value>
+  </data>
+  <data name="OptionsMusicGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>450, 190</value>
+  </data>
+  <data name="OptionsMusicGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="OptionsMusicGroup.Text" xml:space="preserve">
+    <value>Audio Options</value>
+  </data>
+  <data name="&gt;&gt;OptionsMusicGroup.Name" xml:space="preserve">
+    <value>OptionsMusicGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsMusicGroup.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;OptionsManageGroup.Parent" xml:space="preserve">
+  <data name="&gt;&gt;OptionsMusicGroup.Parent" xml:space="preserve">
     <value>OptionsPanel</value>
   </data>
-  <data name="&gt;&gt;OptionsManageGroup.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;OptionsMusicGroup.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="OptionsAudioTextDefeat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1398,29 +2805,65 @@
   <data name="&gt;&gt;OptionsAudioCheckMusic.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="OptionsMusicGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 150</value>
+  <data name="&gt;&gt;OptionsColorCustom.Name" xml:space="preserve">
+    <value>OptionsColorCustom</value>
   </data>
-  <data name="OptionsMusicGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 190</value>
+  <data name="&gt;&gt;OptionsColorCustom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="OptionsMusicGroup.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;OptionsColorCustom.Parent" xml:space="preserve">
+    <value>OptionsColorGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorCustom.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorLite.Name" xml:space="preserve">
+    <value>OptionsColorLite</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorLite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorLite.Parent" xml:space="preserve">
+    <value>OptionsColorGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorLite.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorDark.Name" xml:space="preserve">
+    <value>OptionsColorDark</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorDark.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorDark.Parent" xml:space="preserve">
+    <value>OptionsColorGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorDark.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="OptionsMusicGroup.Text" xml:space="preserve">
-    <value>Audio Options</value>
+  <data name="OptionsColorGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 80</value>
   </data>
-  <data name="&gt;&gt;OptionsMusicGroup.Name" xml:space="preserve">
-    <value>OptionsMusicGroup</value>
+  <data name="OptionsColorGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>450, 60</value>
   </data>
-  <data name="&gt;&gt;OptionsMusicGroup.Type" xml:space="preserve">
+  <data name="OptionsColorGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="OptionsColorGroup.Text" xml:space="preserve">
+    <value>Color Mode</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorGroup.Name" xml:space="preserve">
+    <value>OptionsColorGroup</value>
+  </data>
+  <data name="&gt;&gt;OptionsColorGroup.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;OptionsMusicGroup.Parent" xml:space="preserve">
+  <data name="&gt;&gt;OptionsColorGroup.Parent" xml:space="preserve">
     <value>OptionsPanel</value>
   </data>
-  <data name="&gt;&gt;OptionsMusicGroup.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;OptionsColorGroup.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="OptionsColorCustom.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1506,30 +2949,6 @@
   <data name="&gt;&gt;OptionsColorDark.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="OptionsColorGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 80</value>
-  </data>
-  <data name="OptionsColorGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 60</value>
-  </data>
-  <data name="OptionsColorGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="OptionsColorGroup.Text" xml:space="preserve">
-    <value>Color Mode</value>
-  </data>
-  <data name="&gt;&gt;OptionsColorGroup.Name" xml:space="preserve">
-    <value>OptionsColorGroup</value>
-  </data>
-  <data name="&gt;&gt;OptionsColorGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OptionsColorGroup.Parent" xml:space="preserve">
-    <value>OptionsPanel</value>
-  </data>
-  <data name="&gt;&gt;OptionsColorGroup.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="OptionsHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 60</value>
   </data>
@@ -1589,30 +3008,6 @@
   </data>
   <data name="&gt;&gt;OptionsTitle.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="OptionsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 210</value>
-  </data>
-  <data name="OptionsPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>950, 420</value>
-  </data>
-  <data name="OptionsPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="OptionsPanel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;OptionsPanel.Name" xml:space="preserve">
-    <value>OptionsPanel</value>
-  </data>
-  <data name="&gt;&gt;OptionsPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OptionsPanel.Parent" xml:space="preserve">
-    <value>MainMenuPanel</value>
-  </data>
-  <data name="&gt;&gt;OptionsPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="AboutBSButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -1800,30 +3195,6 @@ Thank you for your continued support!
   <data name="&gt;&gt;AboutTitle.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="AboutPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 210</value>
-  </data>
-  <data name="AboutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>950, 420</value>
-  </data>
-  <data name="AboutPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="AboutPanel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;AboutPanel.Name" xml:space="preserve">
-    <value>AboutPanel</value>
-  </data>
-  <data name="&gt;&gt;AboutPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AboutPanel.Parent" xml:space="preserve">
-    <value>MainMenuPanel</value>
-  </data>
-  <data name="&gt;&gt;AboutPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="WelcomeImage0.Location" type="System.Drawing.Point, System.Drawing">
     <value>385, 15</value>
   </data>
@@ -1939,366 +3310,6 @@ Thank you for your continued support!
     <value>WelcomePanel</value>
   </data>
   <data name="&gt;&gt;WelcomeImage3.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="WelcomePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 210</value>
-  </data>
-  <data name="WelcomePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>950, 420</value>
-  </data>
-  <data name="WelcomePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;WelcomePanel.Name" xml:space="preserve">
-    <value>WelcomePanel</value>
-  </data>
-  <data name="&gt;&gt;WelcomePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;WelcomePanel.Parent" xml:space="preserve">
-    <value>MainMenuPanel</value>
-  </data>
-  <data name="&gt;&gt;WelcomePanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ExitButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ExitButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 8.25pt</value>
-  </data>
-  <data name="ExitButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ExitButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 370</value>
-  </data>
-  <data name="ExitButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
-  </data>
-  <data name="ExitButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="ExitButton.Text" xml:space="preserve">
-    <value> Exit The Game</value>
-  </data>
-  <data name="ExitButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;ExitButton.Name" xml:space="preserve">
-    <value>ExitButton</value>
-  </data>
-  <data name="&gt;&gt;ExitButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExitButton.Parent" xml:space="preserve">
-    <value>MainMenuBar</value>
-  </data>
-  <data name="&gt;&gt;ExitButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="UpdateButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UpdateButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="UpdateButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 8.25pt</value>
-  </data>
-  <data name="UpdateButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="UpdateButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 320</value>
-  </data>
-  <data name="UpdateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
-  </data>
-  <data name="UpdateButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="UpdateButton.Text" xml:space="preserve">
-    <value> Check For Update</value>
-  </data>
-  <data name="UpdateButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;UpdateButton.Name" xml:space="preserve">
-    <value>UpdateButton</value>
-  </data>
-  <data name="&gt;&gt;UpdateButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateButton.Parent" xml:space="preserve">
-    <value>MainMenuBar</value>
-  </data>
-  <data name="&gt;&gt;UpdateButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="DonateButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="DonateButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 8.25pt</value>
-  </data>
-  <data name="DonateButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="DonateButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 270</value>
-  </data>
-  <data name="DonateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
-  </data>
-  <data name="DonateButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="DonateButton.Text" xml:space="preserve">
-    <value> Donate To The Cause</value>
-  </data>
-  <data name="DonateButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;DonateButton.Name" xml:space="preserve">
-    <value>DonateButton</value>
-  </data>
-  <data name="&gt;&gt;DonateButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DonateButton.Parent" xml:space="preserve">
-    <value>MainMenuBar</value>
-  </data>
-  <data name="&gt;&gt;DonateButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AboutButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="AboutButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 8.25pt</value>
-  </data>
-  <data name="AboutButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="AboutButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 220</value>
-  </data>
-  <data name="AboutButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
-  </data>
-  <data name="AboutButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="AboutButton.Text" xml:space="preserve">
-    <value> About Limitless</value>
-  </data>
-  <data name="AboutButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;AboutButton.Name" xml:space="preserve">
-    <value>AboutButton</value>
-  </data>
-  <data name="&gt;&gt;AboutButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AboutButton.Parent" xml:space="preserve">
-    <value>MainMenuBar</value>
-  </data>
-  <data name="&gt;&gt;AboutButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="OptionsButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="OptionsButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 8.25pt</value>
-  </data>
-  <data name="OptionsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="OptionsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 170</value>
-  </data>
-  <data name="OptionsButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
-  </data>
-  <data name="OptionsButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="OptionsButton.Text" xml:space="preserve">
-    <value> Options Menu</value>
-  </data>
-  <data name="OptionsButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;OptionsButton.Name" xml:space="preserve">
-    <value>OptionsButton</value>
-  </data>
-  <data name="&gt;&gt;OptionsButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OptionsButton.Parent" xml:space="preserve">
-    <value>MainMenuBar</value>
-  </data>
-  <data name="&gt;&gt;OptionsButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="EditButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="EditButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="EditButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 8.25pt</value>
-  </data>
-  <data name="EditButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 120</value>
-  </data>
-  <data name="EditButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
-  </data>
-  <data name="EditButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="EditButton.Text" xml:space="preserve">
-    <value> Limitless Editor</value>
-  </data>
-  <data name="EditButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;EditButton.Name" xml:space="preserve">
-    <value>EditButton</value>
-  </data>
-  <data name="&gt;&gt;EditButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditButton.Parent" xml:space="preserve">
-    <value>MainMenuBar</value>
-  </data>
-  <data name="&gt;&gt;EditButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="LoadButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LoadButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="LoadButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 8.25pt</value>
-  </data>
-  <data name="LoadButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LoadButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 70</value>
-  </data>
-  <data name="LoadButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
-  </data>
-  <data name="LoadButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="LoadButton.Text" xml:space="preserve">
-    <value> Continue Saved Game</value>
-  </data>
-  <data name="LoadButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;LoadButton.Name" xml:space="preserve">
-    <value>LoadButton</value>
-  </data>
-  <data name="&gt;&gt;LoadButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LoadButton.Parent" xml:space="preserve">
-    <value>MainMenuBar</value>
-  </data>
-  <data name="&gt;&gt;LoadButton.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="StartButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="StartButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 8.25pt</value>
-  </data>
-  <data name="StartButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 20</value>
-  </data>
-  <data name="StartButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
-  </data>
-  <data name="StartButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="StartButton.Text" xml:space="preserve">
-    <value> Start New Game</value>
-  </data>
-  <data name="StartButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;StartButton.Name" xml:space="preserve">
-    <value>StartButton</value>
-  </data>
-  <data name="&gt;&gt;StartButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StartButton.Parent" xml:space="preserve">
-    <value>MainMenuBar</value>
-  </data>
-  <data name="&gt;&gt;StartButton.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="MainMenuBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 210</value>
-  </data>
-  <data name="MainMenuBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 420</value>
-  </data>
-  <data name="MainMenuBar.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;MainMenuBar.Name" xml:space="preserve">
-    <value>MainMenuBar</value>
-  </data>
-  <data name="&gt;&gt;MainMenuBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MainMenuBar.Parent" xml:space="preserve">
-    <value>MainMenuPanel</value>
-  </data>
-  <data name="&gt;&gt;MainMenuBar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="TitleLogo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="TitleLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 20</value>
-  </data>
-  <data name="TitleLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>885, 150</value>
-  </data>
-  <data name="TitleLogo.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TitleLogo.Name" xml:space="preserve">
-    <value>TitleLogo</value>
-  </data>
-  <data name="&gt;&gt;TitleLogo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TitleLogo.Parent" xml:space="preserve">
-    <value>MainMenuPanel</value>
-  </data>
-  <data name="&gt;&gt;TitleLogo.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="DonatePPButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
@@ -2428,72 +3439,6 @@ Thanks!
   </data>
   <data name="&gt;&gt;DonateTitle.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="DonatePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 210</value>
-  </data>
-  <data name="DonatePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>950, 420</value>
-  </data>
-  <data name="DonatePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;DonatePanel.Name" xml:space="preserve">
-    <value>DonatePanel</value>
-  </data>
-  <data name="&gt;&gt;DonatePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DonatePanel.Parent" xml:space="preserve">
-    <value>MainMenuPanel</value>
-  </data>
-  <data name="&gt;&gt;DonatePanel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="MainMenuPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 11</value>
-  </data>
-  <data name="MainMenuPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1332, 673</value>
-  </data>
-  <data name="MainMenuPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;MainMenuPanel.Name" xml:space="preserve">
-    <value>MainMenuPanel</value>
-  </data>
-  <data name="&gt;&gt;MainMenuPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MainMenuPanel.Parent" xml:space="preserve">
-    <value>BackgroundPanel</value>
-  </data>
-  <data name="&gt;&gt;MainMenuPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="BackgroundPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="BackgroundPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 30</value>
-  </data>
-  <data name="BackgroundPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1366, 738</value>
-  </data>
-  <data name="BackgroundPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;BackgroundPanel.Name" xml:space="preserve">
-    <value>BackgroundPanel</value>
-  </data>
-  <data name="&gt;&gt;BackgroundPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BackgroundPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;BackgroundPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

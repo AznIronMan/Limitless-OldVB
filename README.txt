@@ -72,6 +72,17 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
+ALPHA 0.1.004.0001 / 2021.07.17
+
+- enabled editor button with placeholder panel
+- added visibility features for panels based on button pressed
+- added confirmation for exit game
+- fixed custom file edit name box not going to read only when changing menus
+- fixed select track buttons not disappearing when unchecked
+- added autosave feature to options (bypasses most are you sure prompts)
+
+[PREVIOUS UPDATES]
+
 ALPHA 0.1.003.0004 / 2021.07.17 - The Options Update
 
 - changed versioning to 0.1.x for the new platform
@@ -93,8 +104,6 @@ ALPHA 0.1.003.0004 / 2021.07.17 - The Options Update
 - added checks for intro music changes
 - added checks if custom track is not available to default to built in tracks
 - fix some button highlighting errors
-
-[PREVIOUS UPDATES]
 
 ALPHA 0.1.002.0003 / 2021.04.30
 

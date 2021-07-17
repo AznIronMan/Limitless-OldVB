@@ -33,7 +33,20 @@ Partial Class MainWindow
         Me.BackgroundPanel = New System.Windows.Forms.Panel()
         Me.FooterPanel = New System.Windows.Forms.Panel()
         Me.MainMenuPanel = New System.Windows.Forms.Panel()
+        Me.MainMenuBar = New System.Windows.Forms.Panel()
+        Me.ExitButton = New System.Windows.Forms.Button()
+        Me.UpdateButton = New System.Windows.Forms.Button()
+        Me.DonateButton = New System.Windows.Forms.Button()
+        Me.AboutButton = New System.Windows.Forms.Button()
+        Me.OptionsButton = New System.Windows.Forms.Button()
+        Me.EditButton = New System.Windows.Forms.Button()
+        Me.LoadButton = New System.Windows.Forms.Button()
+        Me.StartButton = New System.Windows.Forms.Button()
+        Me.TitleLogo = New System.Windows.Forms.PictureBox()
         Me.OptionsPanel = New System.Windows.Forms.Panel()
+        Me.EditorPanel = New System.Windows.Forms.Panel()
+        Me.EditorSubText = New System.Windows.Forms.Label()
+        Me.EditorTitleText = New System.Windows.Forms.Label()
         Me.CustomLibsGroup = New System.Windows.Forms.GroupBox()
         Me.CustomLibsOmega = New System.Windows.Forms.Label()
         Me.CustomLibsSave = New System.Windows.Forms.Button()
@@ -90,16 +103,6 @@ Partial Class MainWindow
         Me.WelcomeImage2 = New System.Windows.Forms.PictureBox()
         Me.WelcomeImage4 = New System.Windows.Forms.PictureBox()
         Me.WelcomeImage3 = New System.Windows.Forms.PictureBox()
-        Me.MainMenuBar = New System.Windows.Forms.Panel()
-        Me.ExitButton = New System.Windows.Forms.Button()
-        Me.UpdateButton = New System.Windows.Forms.Button()
-        Me.DonateButton = New System.Windows.Forms.Button()
-        Me.AboutButton = New System.Windows.Forms.Button()
-        Me.OptionsButton = New System.Windows.Forms.Button()
-        Me.EditButton = New System.Windows.Forms.Button()
-        Me.LoadButton = New System.Windows.Forms.Button()
-        Me.StartButton = New System.Windows.Forms.Button()
-        Me.TitleLogo = New System.Windows.Forms.PictureBox()
         Me.DonatePanel = New System.Windows.Forms.Panel()
         Me.DonatePPButton = New System.Windows.Forms.Button()
         Me.DonatePTButton = New System.Windows.Forms.Button()
@@ -110,7 +113,10 @@ Partial Class MainWindow
         Me.CloseButton.SuspendLayout()
         Me.BackgroundPanel.SuspendLayout()
         Me.MainMenuPanel.SuspendLayout()
+        Me.MainMenuBar.SuspendLayout()
+        CType(Me.TitleLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OptionsPanel.SuspendLayout()
+        Me.EditorPanel.SuspendLayout()
         Me.CustomLibsGroup.SuspendLayout()
         Me.CustomLibsPreviewMusic.SuspendLayout()
         CType(Me.CustomLibsMusicImage, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,8 +132,6 @@ Partial Class MainWindow
         CType(Me.WelcomeImage2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WelcomeImage4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WelcomeImage3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MainMenuBar.SuspendLayout()
-        CType(Me.TitleLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DonatePanel.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -203,14 +207,107 @@ Partial Class MainWindow
         'MainMenuPanel
         '
         Me.MainMenuPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.MainMenuPanel.Controls.Add(Me.EditorPanel)
+        Me.MainMenuPanel.Controls.Add(Me.MainMenuBar)
+        Me.MainMenuPanel.Controls.Add(Me.TitleLogo)
         Me.MainMenuPanel.Controls.Add(Me.OptionsPanel)
         Me.MainMenuPanel.Controls.Add(Me.AboutPanel)
         Me.MainMenuPanel.Controls.Add(Me.WelcomePanel)
-        Me.MainMenuPanel.Controls.Add(Me.MainMenuBar)
-        Me.MainMenuPanel.Controls.Add(Me.TitleLogo)
         Me.MainMenuPanel.Controls.Add(Me.DonatePanel)
         resources.ApplyResources(Me.MainMenuPanel, "MainMenuPanel")
         Me.MainMenuPanel.Name = "MainMenuPanel"
+        '
+        'MainMenuBar
+        '
+        Me.MainMenuBar.Controls.Add(Me.ExitButton)
+        Me.MainMenuBar.Controls.Add(Me.UpdateButton)
+        Me.MainMenuBar.Controls.Add(Me.DonateButton)
+        Me.MainMenuBar.Controls.Add(Me.AboutButton)
+        Me.MainMenuBar.Controls.Add(Me.OptionsButton)
+        Me.MainMenuBar.Controls.Add(Me.EditButton)
+        Me.MainMenuBar.Controls.Add(Me.LoadButton)
+        Me.MainMenuBar.Controls.Add(Me.StartButton)
+        resources.ApplyResources(Me.MainMenuBar, "MainMenuBar")
+        Me.MainMenuBar.Name = "MainMenuBar"
+        '
+        'ExitButton
+        '
+        Me.ExitButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.ExitButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.ExitButton, "ExitButton")
+        Me.ExitButton.ForeColor = System.Drawing.SystemColors.Control
+        Me.ExitButton.Name = "ExitButton"
+        Me.ExitButton.UseVisualStyleBackColor = False
+        '
+        'UpdateButton
+        '
+        Me.UpdateButton.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.UpdateButton, "UpdateButton")
+        Me.UpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
+        Me.UpdateButton.ForeColor = System.Drawing.SystemColors.Control
+        Me.UpdateButton.Name = "UpdateButton"
+        Me.UpdateButton.UseVisualStyleBackColor = False
+        '
+        'DonateButton
+        '
+        Me.DonateButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.DonateButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.DonateButton, "DonateButton")
+        Me.DonateButton.ForeColor = System.Drawing.SystemColors.Control
+        Me.DonateButton.Name = "DonateButton"
+        Me.DonateButton.UseVisualStyleBackColor = False
+        '
+        'AboutButton
+        '
+        Me.AboutButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.AboutButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.AboutButton, "AboutButton")
+        Me.AboutButton.ForeColor = System.Drawing.SystemColors.Control
+        Me.AboutButton.Name = "AboutButton"
+        Me.AboutButton.UseVisualStyleBackColor = False
+        '
+        'OptionsButton
+        '
+        Me.OptionsButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.OptionsButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsButton, "OptionsButton")
+        Me.OptionsButton.ForeColor = System.Drawing.SystemColors.Control
+        Me.OptionsButton.Name = "OptionsButton"
+        Me.OptionsButton.UseVisualStyleBackColor = False
+        '
+        'EditButton
+        '
+        Me.EditButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.EditButton, "EditButton")
+        Me.EditButton.ForeColor = System.Drawing.SystemColors.Control
+        Me.EditButton.Name = "EditButton"
+        Me.EditButton.UseVisualStyleBackColor = False
+        '
+        'LoadButton
+        '
+        Me.LoadButton.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.LoadButton, "LoadButton")
+        Me.LoadButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
+        Me.LoadButton.ForeColor = System.Drawing.SystemColors.Control
+        Me.LoadButton.Name = "LoadButton"
+        Me.LoadButton.UseVisualStyleBackColor = False
+        '
+        'StartButton
+        '
+        Me.StartButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.StartButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.StartButton, "StartButton")
+        Me.StartButton.ForeColor = System.Drawing.SystemColors.Control
+        Me.StartButton.Name = "StartButton"
+        Me.StartButton.UseVisualStyleBackColor = False
+        '
+        'TitleLogo
+        '
+        Me.TitleLogo.BackgroundImage = Global.Limitless.My.Resources.Resources.logo
+        resources.ApplyResources(Me.TitleLogo, "TitleLogo")
+        Me.TitleLogo.Name = "TitleLogo"
+        Me.TitleLogo.TabStop = False
         '
         'OptionsPanel
         '
@@ -222,6 +319,23 @@ Partial Class MainWindow
         Me.OptionsPanel.Controls.Add(Me.OptionsTitle)
         resources.ApplyResources(Me.OptionsPanel, "OptionsPanel")
         Me.OptionsPanel.Name = "OptionsPanel"
+        '
+        'EditorPanel
+        '
+        Me.EditorPanel.Controls.Add(Me.EditorSubText)
+        Me.EditorPanel.Controls.Add(Me.EditorTitleText)
+        resources.ApplyResources(Me.EditorPanel, "EditorPanel")
+        Me.EditorPanel.Name = "EditorPanel"
+        '
+        'EditorSubText
+        '
+        resources.ApplyResources(Me.EditorSubText, "EditorSubText")
+        Me.EditorSubText.Name = "EditorSubText"
+        '
+        'EditorTitleText
+        '
+        resources.ApplyResources(Me.EditorTitleText, "EditorTitleText")
+        Me.EditorTitleText.Name = "EditorTitleText"
         '
         'CustomLibsGroup
         '
@@ -648,98 +762,6 @@ Partial Class MainWindow
         Me.WelcomeImage3.Name = "WelcomeImage3"
         Me.WelcomeImage3.TabStop = False
         '
-        'MainMenuBar
-        '
-        Me.MainMenuBar.Controls.Add(Me.ExitButton)
-        Me.MainMenuBar.Controls.Add(Me.UpdateButton)
-        Me.MainMenuBar.Controls.Add(Me.DonateButton)
-        Me.MainMenuBar.Controls.Add(Me.AboutButton)
-        Me.MainMenuBar.Controls.Add(Me.OptionsButton)
-        Me.MainMenuBar.Controls.Add(Me.EditButton)
-        Me.MainMenuBar.Controls.Add(Me.LoadButton)
-        Me.MainMenuBar.Controls.Add(Me.StartButton)
-        resources.ApplyResources(Me.MainMenuBar, "MainMenuBar")
-        Me.MainMenuBar.Name = "MainMenuBar"
-        '
-        'ExitButton
-        '
-        Me.ExitButton.BackColor = System.Drawing.SystemColors.ControlText
-        Me.ExitButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.ExitButton, "ExitButton")
-        Me.ExitButton.ForeColor = System.Drawing.SystemColors.Control
-        Me.ExitButton.Name = "ExitButton"
-        Me.ExitButton.UseVisualStyleBackColor = False
-        '
-        'UpdateButton
-        '
-        Me.UpdateButton.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.UpdateButton, "UpdateButton")
-        Me.UpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
-        Me.UpdateButton.ForeColor = System.Drawing.SystemColors.Control
-        Me.UpdateButton.Name = "UpdateButton"
-        Me.UpdateButton.UseVisualStyleBackColor = False
-        '
-        'DonateButton
-        '
-        Me.DonateButton.BackColor = System.Drawing.SystemColors.ControlText
-        Me.DonateButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.DonateButton, "DonateButton")
-        Me.DonateButton.ForeColor = System.Drawing.SystemColors.Control
-        Me.DonateButton.Name = "DonateButton"
-        Me.DonateButton.UseVisualStyleBackColor = False
-        '
-        'AboutButton
-        '
-        Me.AboutButton.BackColor = System.Drawing.SystemColors.ControlText
-        Me.AboutButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.AboutButton, "AboutButton")
-        Me.AboutButton.ForeColor = System.Drawing.SystemColors.Control
-        Me.AboutButton.Name = "AboutButton"
-        Me.AboutButton.UseVisualStyleBackColor = False
-        '
-        'OptionsButton
-        '
-        Me.OptionsButton.BackColor = System.Drawing.SystemColors.ControlText
-        Me.OptionsButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsButton, "OptionsButton")
-        Me.OptionsButton.ForeColor = System.Drawing.SystemColors.Control
-        Me.OptionsButton.Name = "OptionsButton"
-        Me.OptionsButton.UseVisualStyleBackColor = False
-        '
-        'EditButton
-        '
-        Me.EditButton.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.EditButton, "EditButton")
-        Me.EditButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
-        Me.EditButton.ForeColor = System.Drawing.SystemColors.Control
-        Me.EditButton.Name = "EditButton"
-        Me.EditButton.UseVisualStyleBackColor = False
-        '
-        'LoadButton
-        '
-        Me.LoadButton.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.LoadButton, "LoadButton")
-        Me.LoadButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
-        Me.LoadButton.ForeColor = System.Drawing.SystemColors.Control
-        Me.LoadButton.Name = "LoadButton"
-        Me.LoadButton.UseVisualStyleBackColor = False
-        '
-        'StartButton
-        '
-        Me.StartButton.BackColor = System.Drawing.SystemColors.ControlText
-        Me.StartButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.StartButton, "StartButton")
-        Me.StartButton.ForeColor = System.Drawing.SystemColors.Control
-        Me.StartButton.Name = "StartButton"
-        Me.StartButton.UseVisualStyleBackColor = False
-        '
-        'TitleLogo
-        '
-        Me.TitleLogo.BackgroundImage = Global.Limitless.My.Resources.Resources.logo
-        resources.ApplyResources(Me.TitleLogo, "TitleLogo")
-        Me.TitleLogo.Name = "TitleLogo"
-        Me.TitleLogo.TabStop = False
-        '
         'DonatePanel
         '
         Me.DonatePanel.Controls.Add(Me.DonatePPButton)
@@ -806,7 +828,10 @@ Partial Class MainWindow
         Me.CloseButton.PerformLayout()
         Me.BackgroundPanel.ResumeLayout(False)
         Me.MainMenuPanel.ResumeLayout(False)
+        Me.MainMenuBar.ResumeLayout(False)
+        CType(Me.TitleLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OptionsPanel.ResumeLayout(False)
+        Me.EditorPanel.ResumeLayout(False)
         Me.CustomLibsGroup.ResumeLayout(False)
         Me.CustomLibsGroup.PerformLayout()
         Me.CustomLibsPreviewMusic.ResumeLayout(False)
@@ -825,8 +850,6 @@ Partial Class MainWindow
         CType(Me.WelcomeImage2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WelcomeImage4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WelcomeImage3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MainMenuBar.ResumeLayout(False)
-        CType(Me.TitleLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DonatePanel.ResumeLayout(False)
         Me.DonatePanel.PerformLayout()
         Me.ResumeLayout(False)
@@ -921,4 +944,7 @@ Partial Class MainWindow
     Friend WithEvents CustomLibsSave As Button
     Friend WithEvents CustomLibsMusicMsg As Label
     Friend WithEvents CustomLibsMusicImage As PictureBox
+    Friend WithEvents EditorPanel As Panel
+    Friend WithEvents EditorSubText As Label
+    Friend WithEvents EditorTitleText As Label
 End Class

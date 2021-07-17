@@ -1,5 +1,6 @@
 ﻿Public Class MainWindow
 
+    'Limitless Window Variables
     Dim WindowDrag As Boolean
     Dim WindowMouseX, WindowMouseY As Integer
     Dim Highlighted As Boolean = False
@@ -7,6 +8,8 @@
     Dim OptionsGroupLoc As String = "mid"
     Dim CustomLibsSelected As String = "avatars"
     Dim SelectCustomTrack As String = ""
+
+    'Limitless Form Functions
 
     Private Sub LimitlessForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Initialize.InitProcess()
@@ -48,12 +51,71 @@
         End If
     End Sub
 
+    Private Sub TitleBar_MouseMove(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseMove, TitleLabel.MouseMove, TitleBarIcon.MouseMove
+        If WindowDrag Then
+            Me.Left = Cursor.Position.X - WindowMouseX
+            Me.Top = Cursor.Position.Y - WindowMouseY
+        End If
+    End Sub
+
+    Private Sub TitleBar_MouseDown(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseDown, TitleLabel.MouseDown, TitleBarIcon.MouseDown
+        WindowDrag = True
+        WindowMouseX = Cursor.Position.X - Me.Left
+        WindowMouseY = Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub MinimizeWindow_MouseDown(sender As Object, e As MouseEventArgs) Handles MinimizeButton.MouseDown, MinimizeText.MouseDown
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+
+    Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles StartButton.MouseHover, UpdateButton.MouseHover, OptionsButton.MouseHover, LoadButton.MouseHover, ExitButton.MouseHover, EditButton.MouseHover, DonateButton.MouseHover, AboutButton.MouseHover, StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp
+        HoverOverEffect(sender)
+    End Sub
+
+    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles StartButton.MouseLeave, UpdateButton.MouseLeave, OptionsButton.MouseLeave, LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, AboutButton.MouseLeave
+        LeaveObjEffect(sender)
+    End Sub
+
+    Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles StartButton.MouseDown, UpdateButton.MouseDown, OptionsButton.MouseDown, LoadButton.MouseDown, ExitButton.MouseDown, EditButton.MouseDown, DonateButton.MouseDown, AboutButton.MouseDown
+        MouseDownEffect(sender)
+    End Sub
+
+    Private Sub TitleBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseUp, TitleLabel.MouseUp, TitleBarIcon.MouseUp
+        WindowDrag = False
+    End Sub
+
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CustomLibsPath.KeyPress
+        If Not (Asc(e.KeyChar) = 8) Then
+            Dim allowedChars As String = "abcdefghijklmnopqrstuvwxyz -.0123456789"
+            If Not allowedChars.Contains(e.KeyChar.ToString.ToLower) Then
+                e.KeyChar = ChrW(0)
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    'Exit Button
+
+    Private Sub Exit_Program(sender As Object, e As MouseEventArgs) Handles TitleBarIcon.DoubleClick, CloseButton.MouseDown, CloseText.MouseDown, ExitButton.MouseClick
+        Dim answer As Integer
+        answer = MsgBox("Are you sure you want to Exit Limitless?", vbYesNo + vbExclamation)
+        If answer = vbYes Then ExitGame()
+    End Sub
+
+    Private Sub ExitGame()
+        Close()
+    End Sub
+
+    'About Section
     Private Sub AboutButtonPressed()
         SwitchToIntro()
+        ResetEditPath()
         WelcomePanel.Visible = False
         AboutPanel.Visible = True
         DonatePanel.Visible = False
         OptionsPanel.Visible = False
+        EditorPanel.Visible = False
         Dim AboutMessage As String = "This application was created by ClarkTribe Games." & Environment.NewLine & Environment.NewLine &
             "It was the development of basically a one man team with the advice, suggestions, and feedback from friends, family, and colleagues." & Environment.NewLine & Environment.NewLine &
             "Limitless is dedicate to the kids of the creator." & Environment.NewLine & Environment.NewLine &
@@ -64,12 +126,38 @@
         Tools.TypeWriter(AboutText, 15, AboutMessage)
     End Sub
 
+    Private Sub AboutButton_Click(sender As Object, e As EventArgs) Handles AboutButton.Click
+        AboutButtonPressed()
+    End Sub
+    Private Sub AboutFBImage_Click(sender As Object, e As EventArgs) Handles AboutFBButton.Click
+        Tools.GoToWeb("https://www.facebook.com/clarktribe.games")
+    End Sub
+
+    Private Sub AboutDCImage_Click(sender As Object, e As EventArgs) Handles AboutDCButton.Click
+        Tools.GoToWeb("https://discord.gg/6kW4der")
+    End Sub
+
+    Private Sub AboutYTImage_Click(sender As Object, e As EventArgs) Handles AboutYTButton.Click
+        Tools.GoToWeb("https://www.youtube.com/channel/UCjcPw3ApuFduiETIdmAhFAQ")
+    End Sub
+
+    Private Sub AboutBSImage_Click(sender As Object, e As EventArgs) Handles AboutBSButton.Click
+        Tools.GoToWeb("https://www.bensound.com/")
+    End Sub
+
+    Private Sub AboutText_Enter(sender As Object, e As EventArgs) Handles AboutText.Enter
+        AboutTitle.Select()
+    End Sub
+
+    'Donate Section
     Private Sub DonateButtonPressed()
         SwitchToIntro()
+        ResetEditPath()
         WelcomePanel.Visible = False
         AboutPanel.Visible = False
         DonatePanel.Visible = True
         OptionsPanel.Visible = False
+        EditorPanel.Visible = False
         Dim DonateMessage As String = "Welcome to Limitless!" & Environment.NewLine & Environment.NewLine &
             "This title is still under development.  Please be patient." & Environment.NewLine & Environment.NewLine &
             "You can become a Patreon or Donate if you want to help support the cause." & Environment.NewLine & Environment.NewLine &
@@ -78,11 +166,48 @@
         Tools.TypeWriter(DonateText, 15, DonateMessage)
     End Sub
 
+    Private Sub DonateText_Enter(sender As Object, e As EventArgs) Handles DonateText.Enter
+        DonateTitle.Select()
+    End Sub
+
+    Private Sub DonateButton_MouseLeave(sender As Object, e As EventArgs) Handles DonateButton.MouseLeave
+        AssignColor(sender, "Donate")
+    End Sub
+
+    Private Sub DonateButton_MouseHover(sender As Object, e As EventArgs) Handles DonateButton.MouseHover, DonateButton.MouseUp
+        sender.BackColor = MemoryBank.HoverBackColor
+        sender.ForeColor = MemoryBank.DonateHoverOver
+    End Sub
+
+    Private Sub DonateButton_Click(sender As Object, e As EventArgs) Handles DonateButton.Click
+        DonateButtonPressed()
+    End Sub
+
+    Private Sub DonatePTButton_Click(sender As Object, e As EventArgs) Handles DonatePTButton.Click
+        Tools.GoToWeb("https://www.patreon.com/clarktribegames")
+    End Sub
+
+    Private Sub DonatePPButton_Click(sender As Object, e As EventArgs) Handles DonatePPButton.Click
+        Tools.GoToWeb("https://www.paypal.com/paypalme/aznblusuazn")
+    End Sub
+
+
+    'Update Section
+
+    'Add update function here
+
+
+    'Options Section
+    Private Sub OptionsButton_Click(sender As Object, e As EventArgs) Handles OptionsButton.Click
+        OptionsButtonPressed()
+    End Sub
+
     Private Sub OptionsButtonPressed()
         SwitchToIntro()
         WelcomePanel.Visible = False
         AboutPanel.Visible = False
         DonatePanel.Visible = False
+        EditorPanel.Visible = False
         OptionsGroupToMid()
         OptionsPanel.Visible = True
         CustomLibsGroup.Visible = False
@@ -93,6 +218,8 @@
         OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
         OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
         OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
+        ResetEditPath()
+        CheckCustomTracks()
     End Sub
 
     Private Sub UpdateSettings()
@@ -173,6 +300,10 @@
         OptionsAudioSelectBattle.Visible = False
         OptionsAudioSelectVictory.Visible = False
         OptionsAudioSelectDefeat.Visible = False
+        OptionsAudioTextIntro.Visible = False
+        OptionsAudioTextBattle.Visible = False
+        OptionsAudioTextVictory.Visible = False
+        OptionsAudioTextDefeat.Visible = False
     End Sub
 
     Private Sub EnableMusicCheckBoxes()
@@ -186,18 +317,57 @@
         If OptionsAudioCheckIntro.Enabled And OptionsAudioCheckIntro.CheckState = CheckState.Checked Then
             OptionsAudioSelectIntro.Enabled = True
             OptionsAudioSelectIntro.Visible = True
+            OptionsAudioTextIntro.Visible = True
         End If
         If OptionsAudioCheckBattle.Enabled And OptionsAudioCheckBattle.CheckState = CheckState.Checked Then
             OptionsAudioSelectBattle.Enabled = True
             OptionsAudioSelectBattle.Visible = True
+            OptionsAudioTextBattle.Visible = True
         End If
         If OptionsAudioCheckVictory.Enabled And OptionsAudioCheckVictory.CheckState = CheckState.Checked Then
             OptionsAudioSelectVictory.Enabled = True
             OptionsAudioSelectVictory.Visible = True
+            OptionsAudioTextVictory.Visible = True
         End If
         If OptionsAudioCheckDefeat.Enabled And OptionsAudioCheckDefeat.CheckState = CheckState.Checked Then
             OptionsAudioSelectDefeat.Enabled = True
             OptionsAudioSelectDefeat.Visible = True
+            OptionsAudioTextDefeat.Visible = True
+        End If
+    End Sub
+
+    Private Sub CheckCustomTracks()
+        CheckCustomTracksProcess(Settings.SettingsCustI, OptionsAudioTextIntro, OptionsAudioCheckIntro)
+        CheckCustomTracksProcess(Settings.SettingsCustB, OptionsAudioTextBattle, OptionsAudioCheckBattle)
+        CheckCustomTracksProcess(Settings.SettingsCustW, OptionsAudioTextVictory, OptionsAudioCheckVictory)
+        CheckCustomTracksProcess(Settings.SettingsCustL, OptionsAudioTextDefeat, OptionsAudioCheckDefeat)
+    End Sub
+
+    Private Sub HideCustomTracks()
+        OptionsAudioTextIntro.Visible = False
+        OptionsAudioTextBattle.Visible = False
+        OptionsAudioTextVictory.Visible = False
+        OptionsAudioTextDefeat.Visible = False
+    End Sub
+    Private Sub ResetEditPath()
+        CustomLibsEdit.Text = "Edit Name"
+        CustomLibsPath.BackColor = MemoryBank.PagesBackColor
+        CustomLibsPath.ReadOnly = True
+    End Sub
+
+    Private Sub CheckCustomTracksProcess(custsetting As String, custbox As Label, custcheck As CheckBox)
+        If custcheck.CheckState = CheckState.Checked Then
+            If LCase(custsetting).StartsWith("on") Then
+                Dim tempcustname As String = custsetting.Substring(3)
+                custbox.Visible = True
+                If Len(tempcustname) > 0 Then
+                    custbox.Text = custsetting.Substring(3)
+                Else
+                    custbox.Text = "<Empty>"
+                End If
+            Else
+                custbox.Visible = False
+            End If
         End If
     End Sub
 
@@ -213,6 +383,7 @@
                 If answer = vbYes Then ExitGame()
             End If
         End If
+        ResetEditPath()
     End Sub
 
     Private Sub ChangeAvatarGroup(button As Button, type As String, other1 As Button, other2 As Button)
@@ -249,6 +420,7 @@
                 CustomLibsPreviewStop.Enabled = False
                 CustomLibsListPop(True)
         End Select
+        ResetEditPath()
     End Sub
 
     Private Sub SelectTrackChanges(button As Button)
@@ -305,95 +477,6 @@
         SelectCustomTrack = ""
     End Sub
 
-    Private Sub ExitGame()
-        Close()
-    End Sub
-
-    Private Sub TitleBar_MouseMove(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseMove, TitleLabel.MouseMove, TitleBarIcon.MouseMove
-        If WindowDrag Then
-            Me.Left = Cursor.Position.X - WindowMouseX
-            Me.Top = Cursor.Position.Y - WindowMouseY
-        End If
-    End Sub
-
-    Private Sub TitleBar_MouseDown(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseDown, TitleLabel.MouseDown, TitleBarIcon.MouseDown
-        WindowDrag = True
-        WindowMouseX = Cursor.Position.X - Me.Left
-        WindowMouseY = Cursor.Position.Y - Me.Top
-    End Sub
-
-    Private Sub MinimizeWindow_MouseDown(sender As Object, e As MouseEventArgs) Handles MinimizeButton.MouseDown, MinimizeText.MouseDown
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
-
-    Private Sub Exit_Program(sender As Object, e As MouseEventArgs) Handles TitleBarIcon.DoubleClick, CloseButton.MouseDown, CloseText.MouseDown, ExitButton.MouseClick
-        ExitGame()
-    End Sub
-
-    Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles StartButton.MouseHover, UpdateButton.MouseHover, OptionsButton.MouseHover, LoadButton.MouseHover, ExitButton.MouseHover, EditButton.MouseHover, DonateButton.MouseHover, AboutButton.MouseHover, StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp
-        HoverOverEffect(sender)
-    End Sub
-
-    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles StartButton.MouseLeave, UpdateButton.MouseLeave, OptionsButton.MouseLeave, LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, AboutButton.MouseLeave
-        LeaveObjEffect(sender)
-    End Sub
-
-    Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles StartButton.MouseDown, UpdateButton.MouseDown, OptionsButton.MouseDown, LoadButton.MouseDown, ExitButton.MouseDown, EditButton.MouseDown, DonateButton.MouseDown, AboutButton.MouseDown
-        MouseDownEffect(sender)
-    End Sub
-
-    Private Sub AboutButton_Click(sender As Object, e As EventArgs) Handles AboutButton.Click
-        AboutButtonPressed()
-    End Sub
-    Private Sub AboutFBImage_Click(sender As Object, e As EventArgs) Handles AboutFBButton.Click
-        Tools.GoToWeb("https://www.facebook.com/clarktribe.games")
-    End Sub
-
-    Private Sub AboutDCImage_Click(sender As Object, e As EventArgs) Handles AboutDCButton.Click
-        Tools.GoToWeb("https://discord.gg/6kW4der")
-    End Sub
-
-    Private Sub AboutYTImage_Click(sender As Object, e As EventArgs) Handles AboutYTButton.Click
-        Tools.GoToWeb("https://www.youtube.com/channel/UCjcPw3ApuFduiETIdmAhFAQ")
-    End Sub
-
-    Private Sub AboutBSImage_Click(sender As Object, e As EventArgs) Handles AboutBSButton.Click
-        Tools.GoToWeb("https://www.bensound.com/")
-    End Sub
-
-    Private Sub AboutText_Enter(sender As Object, e As EventArgs) Handles AboutText.Enter
-        AboutTitle.Select()
-    End Sub
-
-    Private Sub DonateText_Enter(sender As Object, e As EventArgs) Handles DonateText.Enter
-        DonateTitle.Select()
-    End Sub
-
-    Private Sub DonateButton_MouseLeave(sender As Object, e As EventArgs) Handles DonateButton.MouseLeave
-        AssignColor(sender, "Donate")
-    End Sub
-
-    Private Sub DonateButton_MouseHover(sender As Object, e As EventArgs) Handles DonateButton.MouseHover, DonateButton.MouseUp
-        sender.BackColor = MemoryBank.HoverBackColor
-        sender.ForeColor = MemoryBank.DonateHoverOver
-    End Sub
-
-    Private Sub DonateButton_Click(sender As Object, e As EventArgs) Handles DonateButton.Click
-        DonateButtonPressed()
-    End Sub
-
-    Private Sub DonatePTButton_Click(sender As Object, e As EventArgs) Handles DonatePTButton.Click
-        Tools.GoToWeb("https://www.patreon.com/clarktribegames")
-    End Sub
-
-    Private Sub DonatePPButton_Click(sender As Object, e As EventArgs) Handles DonatePPButton.Click
-        Tools.GoToWeb("https://www.paypal.com/paypalme/aznblusuazn")
-    End Sub
-
-    Private Sub OptionsButton_Click(sender As Object, e As EventArgs) Handles OptionsButton.Click
-        OptionsButtonPressed()
-    End Sub
-
     Private Sub OptionsManageAvatars_Click(sender As Object, e As EventArgs) Handles OptionsManageAvatars.Click
         ChangeAvatarGroup(OptionsManageAvatars, "avatars", OptionsManageMusic, OptionsManageSound)
     End Sub
@@ -428,12 +511,14 @@
         OptionsGroupLocationMove(10, 150, OptionsMusicGroup)
         OptionsGroupLocationMove(10, 350, OptionsManageGroup)
         OptionsGroupLoc = "left"
+        ResetEditPath()
     End Sub
     Private Sub OptionsGroupToMid()
         OptionsGroupLocationMove(240, 80, OptionsColorGroup)
         OptionsGroupLocationMove(240, 150, OptionsMusicGroup)
         OptionsGroupLocationMove(240, 350, OptionsManageGroup)
         OptionsGroupLoc = "mid"
+        ResetEditPath()
     End Sub
 
     Private Sub OptionsAudioCheckMusic_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckMusic.CheckedChanged
@@ -454,6 +539,7 @@
             Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"no"})
             Settings.SettingsMusic = "off"
         End If
+        ResetEditPath()
     End Sub
 
     Private Sub OptionsAudioCheckCustom_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckCustom.CheckedChanged
@@ -461,39 +547,65 @@
             If OptionsAudioCheckCustom.Checked Then
                 EnableMusicCheckBoxes()
                 CheckCustomMusicOptions()
+                CheckCustomTracks()
                 Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"on"})
                 Settings.SettingsCustM = "on"
             Else
                 DisableMusicOptions()
                 Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"no"})
                 Settings.SettingsCustM = "off"
+                HideCustomTracks()
             End If
         End If
         Jukebox.IntroInPlay = False
         Jukebox.SwitchToIntro()
+        ResetEditPath()
     End Sub
 
     Private Sub OptionsAudioCheckIntro_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckIntro.CheckedChanged
-        OptionsAudioCheckChange(OptionsAudioCheckIntro, OptionsAudioSelectIntro, "custi", Settings.SettingsCustI)
         If OptionsAudioCheckIntro.Checked = CheckState.Unchecked Then
             Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custi", {"settingConfig"}, {"off"})
+            OptionsAudioTextIntro.Visible = False
         Else
             OptionsAudioCheckChange(OptionsAudioCheckIntro, OptionsAudioSelectIntro, "custi", Settings.SettingsCustI)
+            CheckCustomTracksProcess(Settings.SettingsCustI, OptionsAudioTextIntro, OptionsAudioCheckIntro)
         End If
         Jukebox.IntroInPlay = False
         Jukebox.SwitchToIntro()
+        ResetEditPath()
     End Sub
 
     Private Sub OptionsAudioCheckBattle_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckBattle.CheckedChanged
-        OptionsAudioCheckChange(OptionsAudioCheckBattle, OptionsAudioSelectBattle, "custb", Settings.SettingsCustB)
+        If OptionsAudioCheckBattle.Checked = CheckState.Unchecked Then
+            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custb", {"settingConfig"}, {"off"})
+            OptionsAudioTextBattle.Visible = False
+        Else
+            OptionsAudioCheckChange(OptionsAudioCheckBattle, OptionsAudioSelectBattle, "custb", Settings.SettingsCustB)
+            CheckCustomTracksProcess(Settings.SettingsCustB, OptionsAudioTextBattle, OptionsAudioCheckBattle)
+        End If
+        ResetEditPath()
     End Sub
 
     Private Sub OptionsAudioCheckVictory_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckVictory.CheckedChanged
-        OptionsAudioCheckChange(OptionsAudioCheckVictory, OptionsAudioSelectVictory, "custw", Settings.SettingsCustW)
+        If OptionsAudioCheckVictory.Checked = CheckState.Unchecked Then
+            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custw", {"settingConfig"}, {"off"})
+            OptionsAudioTextVictory.Visible = False
+        Else
+            OptionsAudioCheckChange(OptionsAudioCheckVictory, OptionsAudioSelectVictory, "custw", Settings.SettingsCustW)
+            CheckCustomTracksProcess(Settings.SettingsCustW, OptionsAudioTextVictory, OptionsAudioCheckVictory)
+        End If
+        ResetEditPath()
     End Sub
 
     Private Sub OptionsAudioCheckDefeat_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckDefeat.CheckedChanged
-        OptionsAudioCheckChange(OptionsAudioCheckDefeat, OptionsAudioSelectDefeat, "custl", Settings.SettingsCustL)
+        If OptionsAudioCheckDefeat.Checked = CheckState.Unchecked Then
+            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custl", {"settingConfig"}, {"off"})
+            OptionsAudioTextDefeat.Visible = False
+        Else
+            OptionsAudioCheckChange(OptionsAudioCheckDefeat, OptionsAudioSelectDefeat, "custl", Settings.SettingsCustL)
+            CheckCustomTracksProcess(Settings.SettingsCustL, OptionsAudioTextDefeat, OptionsAudioCheckDefeat)
+        End If
+        ResetEditPath()
     End Sub
 
     Private Sub OptionsAudioCheckSound_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckSound.CheckedChanged
@@ -502,6 +614,7 @@
         ElseIf OptionsAudioCheckSound.Enabled And OptionsAudioCheckSound.CheckState = False Then
             'Insert future method to "turn off sound" here
         End If
+        ResetEditPath()
     End Sub
 
     Private Sub CustomLibsGroup_Updater(sender As Object, e As EventArgs) Handles OptionsManageAvatars.ForeColorChanged,
@@ -530,12 +643,13 @@
         If Not LCase(CustomLibsSelected) = "tracks" Then
             CustomLibsActive.Enabled = False
             CustomLibsActive.CheckState = CheckState.Unchecked
-            CustomLibsAuto.Enabled = False
-            CustomLibsAuto.CheckState = CheckState.Unchecked
             CustomLibsEdit.Enabled = False
             CustomLibsDelete.Enabled = False
-            CustomLibsSave.Enabled = False
+            CustomLibsSave.Visible = False
+        Else
+            CustomLibsSave.Visible = True
         End If
+        ResetEditPath()
     End Sub
 
     Private Sub CustomLibsAuto_CheckedChanged(sender As Object, e As EventArgs) Handles CustomLibsAuto.CheckedChanged
@@ -546,6 +660,7 @@
             Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "autosave", {"settingConfig"}, {"no"})
             Settings.SettingsAutoSave = "off"
         End If
+        ResetEditPath()
     End Sub
 
     Private Sub CustomLibsList_Changed(sender As Object, e As EventArgs) Handles CustomLibsList.SelectedIndexChanged
@@ -610,10 +725,10 @@
             CustomLibsDelete.Enabled = False
             CustomLibsPath.Text = ""
         End If
+        ResetEditPath()
     End Sub
 
     Private Sub CustomLibsActive_CheckedChanged(sender As Object, e As EventArgs) Handles CustomLibsActive.Click
-        'Add AutoSave Check and verification for no autosave
         If CustomLibsActive.Enabled = True Then
             Dim SelectedDir As String = ""
             Dim Ext As String = ""
@@ -646,50 +761,57 @@
             End Select
             Dim answer As Integer
             Dim NewName = ""
-            answer = MsgBox(("The File " & Chr(34) & SelectedFile & Chr(34) & " is currently " & ChangePhrase & "." &
-                vbCrLf & vbCrLf & "Do you want to switch this file to " & ChangeAction & "?"), vbExclamation + vbYesNo)
-            If answer = vbYes And ItemActive = False Then
-                Dim OldName As String = Replace(SelectedFile, "Ω ", "Ω")
-                NewName = Replace(SelectedFile, "Ω ", "")
-                If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
-                If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
-                    CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
-                    OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
-                Try
-                    My.Computer.FileSystem.RenameFile(SelectedDir & "/" & OldName & Ext, NewName & Ext)
-                Catch ex As Exception
-                    Logger.WriteToLog("Custom " & CustomLibsSelected & " " &
-                        Converters.UppercaseFirstLetter(ChangeAction), "Rename Attempt", ex)
-                    MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
-                End Try
-                CustomLibsActive.Enabled = True
-                CustomLibsActive.CheckState = CheckState.Checked
-                CustomLibsActive.ForeColor = MemoryBank.GroupForeColor
-
-            End If
-            If answer = vbYes And ItemActive = True Then
-                NewName = "Ω" & SelectedFile
-                If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
-                If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
-                    CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
-                    OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
-                Try
-                    My.Computer.FileSystem.RenameFile(SelectedDir & "/" & SelectedFile & Ext, NewName & Ext)
-                Catch ex As Exception
-                    Logger.WriteToLog("Custom " & CustomLibsSelected & " " &
-                        Converters.UppercaseFirstLetter(ChangeAction), "Rename Attempt", ex)
-                    MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
-                End Try
-                CustomLibsActive.Enabled = True
-                CustomLibsActive.CheckState = CheckState.Unchecked
-                CustomLibsActive.ForeColor = Color.Red
+            If LCase(Settings.SettingsAutoSave) = "on" Then
+                answer = vbYes
+            Else
+                answer = MsgBox(("The File " & Chr(34) & SelectedFile & Chr(34) & " is currently " & ChangePhrase & "." &
+                    vbCrLf & vbCrLf & "Do you want to switch this file to " & ChangeAction & "?"), vbExclamation + vbYesNo)
             End If
             If answer = vbYes Then
-                CustomLibsListPop(True)
-                CustomLibsList.SelectedItem = Replace(NewName, "Ω", "Ω ")
+                If answer = vbYes And ItemActive = False Then
+                    Dim OldName As String = Replace(SelectedFile, "Ω ", "Ω")
+                    NewName = Replace(SelectedFile, "Ω ", "")
+                    If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
+                    If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
+                    CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
+                    OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
+                    Try
+                        My.Computer.FileSystem.RenameFile(SelectedDir & "/" & OldName & Ext, NewName & Ext)
+                    Catch ex As Exception
+                        Logger.WriteToLog("Custom " & CustomLibsSelected & " " &
+                        Converters.UppercaseFirstLetter(ChangeAction), "Rename Attempt", ex)
+                        MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
+                    End Try
+                    CustomLibsActive.Enabled = True
+                    CustomLibsActive.CheckState = CheckState.Checked
+                    CustomLibsActive.ForeColor = MemoryBank.GroupForeColor
+
+                End If
+                If answer = vbYes And ItemActive = True Then
+                    NewName = "Ω" & SelectedFile
+                    If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
+                    If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
+                    CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
+                    OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
+                    Try
+                        My.Computer.FileSystem.RenameFile(SelectedDir & "/" & SelectedFile & Ext, NewName & Ext)
+                    Catch ex As Exception
+                        Logger.WriteToLog("Custom " & CustomLibsSelected & " " &
+                        Converters.UppercaseFirstLetter(ChangeAction), "Rename Attempt", ex)
+                        MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
+                    End Try
+                    CustomLibsActive.Enabled = True
+                    CustomLibsActive.CheckState = CheckState.Unchecked
+                    CustomLibsActive.ForeColor = Color.Red
+                End If
+                If answer = vbYes Then
+                    CustomLibsListPop(True)
+                    CustomLibsList.SelectedItem = Replace(NewName, "Ω", "Ω ")
+                End If
+                If Not answer = vbYes Then MsgBox("No Changes Made")
             End If
-            If Not answer = vbYes Then MsgBox("No Changes Made")
         End If
+        ResetEditPath()
     End Sub
 
     Private Sub CustomLibsPreviewPlay_Click(sender As Object, e As EventArgs) Handles CustomLibsPreviewPlay.Click
@@ -714,15 +836,16 @@
             CustomLibsDelete.Enabled = False
             'OptionsManageSound.Enabled = False
         End If
+        ResetEditPath()
     End Sub
 
     Private Sub CustomLibsPreviewStop_Click(sender As Object, e As EventArgs) Handles CustomLibsPreviewStop.Click
         Jukebox.ReturnToIntro(CustomLibsPreviewStop, CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit,
             CustomLibsMusicMsg, OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
+        ResetEditPath()
     End Sub
 
     Private Sub CustomLibsEdit_Click(sender As Object, e As EventArgs) Handles CustomLibsEdit.Click
-        'Add AutoSave Check and verification for no autosave
         Dim SelectedDir = "", Ext = "", SelectedName = CustomLibsList.SelectedItem.ToString, OldFileName
         Select Case LCase(CustomLibsSelected)
             Case "avatars"
@@ -760,21 +883,27 @@
                         vbCrLf & "Please try it again.", vbOKOnly + vbCritical)
                 End If
                 If ClearToGo = True Then
-                    If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
-                    If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
-                        CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
-                        OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
-                    Try
-                        My.Computer.FileSystem.RenameFile(OldFileName, Replace(CustomLibsPath.Text, "Ω ", "Ω") & Ext)
-                        CustomLibsEdit.Text = "Edit Name"
-                        CustomLibsPath.BackColor = MemoryBank.PagesBackColor
-                        CustomLibsPath.ReadOnly = True
-                        CustomLibsPath.Text = CustomLibsPath.Text & Ext
-                        CustomLibsListPop(True)
-                    Catch ex As Exception
-                        Logger.WriteToLog("Custom " & CustomLibsSelected & " Rename", "Rename Attempt", ex)
-                        MsgBox(("Logged Error:  File locked, please try again." & vbCrLf), vbOKOnly)
-                    End Try
+                    Dim answer As Integer
+                    If LCase(Settings.SettingsAutoSave) = "on" Then
+                        answer = vbYes
+                    Else
+                        answer = MsgBox("Confirm:  Are you sure you want to rename " & OldFileName & " to " &
+                            Replace(CustomLibsPath.Text, "Ω ", "Ω") & "?", vbYesNo)
+                    End If
+                    If answer = vbYes Then
+                        If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
+                        If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
+                            CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
+                            OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
+                        Try
+                            My.Computer.FileSystem.RenameFile(OldFileName, Replace(CustomLibsPath.Text, "Ω ", "Ω") & Ext)
+                            ResetEditPath()
+                            CustomLibsListPop(True)
+                        Catch ex As Exception
+                            Logger.WriteToLog("Custom " & CustomLibsSelected & " Rename", "Rename Attempt", ex)
+                            MsgBox(("Logged Error:  File locked, please try again." & vbCrLf), vbOKOnly)
+                        End Try
+                    End If
                 End If
             Case Else
                 '
@@ -803,7 +932,11 @@
                     If CustomLibsDelete.Enabled = True Then
                         If System.IO.File.Exists(FileToGo) Then
                             Dim answer As Integer
-                            answer = MsgBox("Confirm:  Do you want to delete " & Replace(SelectedName, "Ω ", "Ω") & "?", vbYesNo)
+                            If LCase(Settings.SettingsAutoSave) = "on" Then
+                                answer = vbYes
+                            Else
+                                answer = MsgBox("Confirm:  Do you want to delete " & Replace(SelectedName, "Ω ", "Ω") & "?", vbYesNo)
+                            End If
                             If answer = vbYes Then
                                 If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
                                 If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
@@ -827,27 +960,46 @@
                 Case "Select"
                     Dim SelectedType As String = ""
                     Dim CustSetting As String = "on-" & SelectedName
-                    Select Case SelectCustomTrack
-                        Case OptionsAudioSelectIntro.Name.ToString
-                            SelectedType = "custi"
-                            Settings.SettingsCustI = CustSetting
-                        Case OptionsAudioSelectBattle.Name.ToString
-                            SelectedType = "custb"
-                            Settings.SettingsCustB = CustSetting
-                        Case OptionsAudioSelectVictory.Name.ToString
-                            SelectedType = "custw"
-                            Settings.SettingsCustW = CustSetting
-                        Case OptionsAudioSelectDefeat.Name.ToString
-                            SelectedType = "custl"
-                            Settings.SettingsCustL = CustSetting
-                    End Select
-                    Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", SelectedType, {"settingConfig"}, {CustSetting})
-                    If SelectedType = "custi" Then
-                        Jukebox.IntroInPlay = False
-                        Jukebox.SwitchToIntro()
+                    Dim answer As Integer
+                    If LCase(Settings.SettingsAutoSave) = "on" Then
+                        answer = vbYes
+                    Else
+                        answer = MsgBox("Confirm:  Do you want to change the Custom " & SelectCustomTrack.Replace("OptionsAudioSelect", "") _
+                            & " with " & SelectedName & "?", vbYesNo)
+                    End If
+                    If answer = vbYes Then
+                        Select Case SelectCustomTrack
+                            Case OptionsAudioSelectIntro.Name.ToString
+                                SelectedType = "custi"
+                                Settings.SettingsCustI = CustSetting
+                                OptionsAudioTextIntro.Visible = True
+                                OptionsAudioTextIntro.Text = SelectedName
+                            Case OptionsAudioSelectBattle.Name.ToString
+                                SelectedType = "custb"
+                                Settings.SettingsCustB = CustSetting
+                                OptionsAudioTextBattle.Visible = True
+                                OptionsAudioTextBattle.Text = SelectedName
+                            Case OptionsAudioSelectVictory.Name.ToString
+                                SelectedType = "custw"
+                                Settings.SettingsCustW = CustSetting
+                                OptionsAudioTextVictory.Visible = True
+                                OptionsAudioTextVictory.Text = SelectedName
+                            Case OptionsAudioSelectDefeat.Name.ToString
+                                SelectedType = "custl"
+                                Settings.SettingsCustL = CustSetting
+                                OptionsAudioTextDefeat.Visible = True
+                                OptionsAudioTextDefeat.Text = SelectedName
+                        End Select
+                        Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", SelectedType, {"settingConfig"}, {CustSetting})
+                        CheckCustomTracks()
+                        If SelectedType = "custi" Then
+                            Jukebox.IntroInPlay = False
+                            Jukebox.SwitchToIntro()
+                        End If
                     End If
             End Select
         End If
+        ResetEditPath()
     End Sub
 
     Private Sub CustomLibsImport_Click(sender As Object, e As EventArgs) Handles CustomLibsImport.Click
@@ -893,6 +1045,7 @@
                 End If
             Next
         End If
+        ResetEditPath()
     End Sub
 
     Private Sub SelectTrack_Click(sender As Object, e As EventArgs) Handles OptionsAudioSelectIntro.Click, OptionsAudioSelectBattle.Click,
@@ -900,18 +1053,23 @@
         SelectTrackChanges(sender)
     End Sub
 
-    Private Sub TitleBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseUp, TitleLabel.MouseUp, TitleBarIcon.MouseUp
-        WindowDrag = False
+    'Editor Section
+
+    Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
+        SwitchToIntro()
+        ResetEditPath()
+        WelcomePanel.Visible = False
+        AboutPanel.Visible = False
+        DonatePanel.Visible = False
+        OptionsPanel.Visible = False
+        EditorPanel.Visible = True
     End Sub
 
-    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CustomLibsPath.KeyPress
-        If Not (Asc(e.KeyChar) = 8) Then
-            Dim allowedChars As String = "abcdefghijklmnopqrstuvwxyz -.0123456789"
-            If Not allowedChars.Contains(e.KeyChar.ToString.ToLower) Then
-                e.KeyChar = ChrW(0)
-                e.Handled = True
-            End If
-        End If
+    'Start Game Section
+
+    Private Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
+        MsgBox("Yeah, we are excited about the game too, but it's not ready yet.  Be patient.  Thanks!" & vbCrLf & vbCrLf & "- Geoff", vbExclamation + vbOKOnly)
+        ResetEditPath()
     End Sub
 
 End Class

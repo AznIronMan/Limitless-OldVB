@@ -1,10 +1,48 @@
 TO DO'S/IDEAS (DEVELOPING)
 
+[0.1.x VERSION - IN PROGRESS]
 
-[PORTED FROM JAVA VERSION]
 
-[IN PROGRESS] create baseline statuses
-[PARTIAL COM] bio builder -- need to include effects?
+
+[COMPLETED]
+
+- Redo interface
+- Start / Welcome Screen with options
+- generic music
+- custom music option
+- encrypt db
+- develop write to tables
+- menu options
+- about menu
+- auto save option
+
+
+[FUTURE IDEAS/IDEAS PORTED FROM JAVA VERSION - 0.0.x VERSION]
+
+- import stats on character select 
+- change alignment/rep to jlabels
+- text space for user input / submit button
+- separate tables for toon abl and toon status
+- link toon abl to abl
+- create statuses table
+- add effect table
+- race ability table
+- class ability table
+- need universal sorter method
+- split out race class and age boxes
+- add size box
+- status table for each ability
+- fix comparing in status when effects are the same
+- separated active stats from OG stats
+- redo effects fields -- add + ± and -
+- separate bio box into its own text box?
+- size stat?
+- remove generic labels of fields throughout db -- theres no point to do this
+- Figure out complexities of save game
+- team determiner
+- Save / Character Select screen
+- create baseline statuses
+- bio builder -- need to include effects?
 - menu bar
 - variable count with for loop for players
 - link toon status to status
@@ -21,7 +59,6 @@ TO DO'S/IDEAS (DEVELOPING)
 - config enter key to act as submit button
 - set current stats after import
 - translate specifics on character select
-- develop write to tables
 - condense ability options
 - status feature and logic
 - fatal blow concept (intentional and accidental)
@@ -29,8 +66,8 @@ TO DO'S/IDEAS (DEVELOPING)
 - mercy ability
 - strengths/weaknesses (status?)
 - randomizer engine
-[IN PROGRESS] battle gui
-[IN PROGRESS] battle logic
+- battle gui
+- battle logic
 - mutant class with anti-mutant attribute for ability
 - same with alien (e.g. Krp/SM)
 - weapons
@@ -65,10 +102,7 @@ TO DO'S/IDEAS (DEVELOPING)
 - experience logic
 - avatar display
 - set db option
-- menu options
 - time stamp
-- about menu
-- auto save option
 - turn back time? (time traveler?)
 - time heal logic
 - self heal/revive ability logic
@@ -155,35 +189,3 @@ TO DO'S/IDEAS (DEVELOPING)
 - gender/race/class/alignment wide relationships
 - life force items (transformers have spark, rumple has dagger, etc.)
 - items that change alignment
-
-
-
-COMPLETED
-
-[COMPLETE] import stats on character select 
-[COMPLETE] change alignment/rep to jlabels
-[COMPLETE] text space for user input / submit button
-[COMPLETE] separate tables for toon abl and toon status
-[COMPLETE] link toon abl to abl
-[COMPLETE] create statuses table
-[COMPLETE] add effect table
-[COMPLETE] race ability table
-[COMPLETE] class ability table
-[COMPLETE]  need universal sorter method
-[COMPLETE] split out race class and age boxes
-[COMPLETE] add size box
-[COMPLETE] status table for each ability
-[COMPLETE] fix comparing in status when effects are the same
-[COMPLETE] separated active stats from OG stats
-[COMPLETE] redo effects fields -- add + ± and -
-[COMPLETE] separate bio box into its own text box?
-[COMPLETE] Redo interface
-[COMPLETE] Start / Welcome Screen with options
-[COMPLETE] size stat?
-[COMPLETE] remove generic labels of fields throughout db -- theres no point to do this
-[COMPLETE] Figure out complexities of save game
-[COMPLETE] generic music
-[COMPLETE] team determiner
-[COMPLETE] custom music option
-[COMPLETE] encrypt db
-[COMPLETE] Save / Character Select screen

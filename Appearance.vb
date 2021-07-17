@@ -111,6 +111,9 @@
         AssignColor(MainWindow.CustomLibsEdit, "Button")
         AssignColor(MainWindow.CustomLibsMusicMsg, "Group")
         AssignColor(MainWindow.CustomLibsMusicImage, "Group")
+        AssignColor(MainWindow.EditorPanel, "Pages")
+        AssignColor(MainWindow.EditorTitleText, "Pages")
+        AssignColor(MainWindow.EditorSubText, "Pages")
     End Sub
 
     Public Sub SetButtonStyle(button As Button)
