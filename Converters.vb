@@ -33,4 +33,13 @@
         Return FinalName
     End Function
 
+    Public Shared Function DateTimeConverter(ByVal val As String) As String
+        If String.IsNullOrEmpty(val) Then Return val
+        Dim dateTime As String = val
+        Dim dt As DateTime = Convert.ToDateTime(dateTime)
+        Dim format As String = "yyyyMMdd"
+        Dim str As String = dt.ToString(format)
+        Return str
+    End Function
+
 End Class

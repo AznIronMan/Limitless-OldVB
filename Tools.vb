@@ -23,22 +23,28 @@ Public Class Tools
         Try
             Process.Start(url)
         Catch ex As Exception
-            MessageBox.Show("Something went wrong with launching system your browser." & Environment.NewLine & Environment.NewLine &
-                            "Please try going to " & url & " manually." & Environment.NewLine & Environment.NewLine & "Thank you.")
+            Logger.WriteToLog("GoToWeb", "Failed URL : " & url, ex)
+            MessageBox.Show("Logged Error:  Something went wrong with launching system your browser." & Environment.NewLine _
+                & Environment.NewLine & "Please try going to " & url & " manually." & Environment.NewLine &
+                Environment.NewLine & "Thank you.")
         End Try
     End Sub
 
     Public Shared Sub CustomLibsListBuilder(type As String, list As ListBox, dir As String, activecheck As CheckBox,
-        ext As String, importbutton As Button)
+        ext As String, importbutton As Button, omega As Boolean)
         If FilesFolders.CountFiles(dir, ext) > 0 Then
             list.Items.Clear()
             list.Enabled = True
             For Each Filename In FilesFolders.GetFilesInFolder(dir)
                 Dim FoundName As String = Replace(Filename, dir & "\", "", 1)
                 Dim NameToAdd = FoundName.Trim().Substring(0, FoundName.Length - 4)
-                If NameToAdd.StartsWith("Ω") = True Then _
-                    list.Items.Add("Ω " & NameToAdd.Trim().Substring(1)) _
-                    Else list.Items.Add(NameToAdd)
+                If NameToAdd.StartsWith("Ω") = True Then
+                    If omega = True Then
+                        list.Items.Add("Ω " & NameToAdd.Trim().Substring(1))
+                    End If
+                Else
+                    list.Items.Add(NameToAdd)
+                End If
             Next
         Else
             list.Items.Clear()
@@ -47,7 +53,5 @@ Public Class Tools
         End If
         importbutton.Enabled = True
     End Sub
-
-
 
 End Class

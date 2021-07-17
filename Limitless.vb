@@ -6,6 +6,7 @@
     Dim StartupInProgress As Boolean = True
     Dim OptionsGroupLoc As String = "mid"
     Dim CustomLibsSelected As String = "avatars"
+    Dim SelectCustomTrack As String = ""
 
     Private Sub LimitlessForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Initialize.InitProcess()
@@ -19,7 +20,12 @@
         AppTitleText = ApplicationName & " [" & ReleaseType & "v" & VersionNumber & "]"
         Me.TitleLabel.Text = AppTitleText
         If Settings.SettingsMusic.ToLower = "on" Then
-            Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+            If Settings.SettingsCustM = "on" And Settings.SettingsCustI.StartsWith("on") Then
+                Dim customintro As String = MemoryBank.MusicDir & "/" & Settings.SettingsCustI.Substring(3) & ".mp3"
+                If System.IO.File.Exists(customintro) Then Jukebox.PlayMp3(customintro) Else Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+            Else
+                Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+            End If
             Jukebox.IntroInPlay = True
         End If
         StartupInProgress = False
@@ -83,6 +89,10 @@
         OptionsManageGroup.Enabled = True
         OptionsMusicGroup.Enabled = True
         OptionsColorGroup.Enabled = True
+        OptionsAudioSelectIntro.ForeColor = MemoryBank.ButtonForeColor
+        OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
+        OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
+        OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
     End Sub
 
     Private Sub UpdateSettings()
@@ -125,19 +135,28 @@
     End Sub
 
     Private Sub OptionsAudioCheckChange(checkbox As CheckBox, button As Button, setting As String, settingvar As String)
-        Dim CurrentSetting As String = Database.GetValue(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingConfig", "settingName", setting).Substring(2)
+        Dim CurrentSetting As String = Database.GetValue(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingConfig", "settingName", setting).Substring(3)
         If OptionsAudioCheckCustom.Checked And OptionsAudioCheckCustom.Enabled Then
             If checkbox.Checked Then
                 button.Enabled = True
                 button.Visible = True
-                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", setting, {"settingConfig"}, {"on" + CurrentSetting})
-                settingvar = "on"
+                settingvar = "on" & "-" & CurrentSetting
             Else
                 button.Enabled = False
                 button.Visible = False
-                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", setting, {"settingConfig"}, {"no" + CurrentSetting})
-                settingvar = "off"
+                settingvar = "of" & "-" & CurrentSetting
             End If
+            Select Case LCase(setting)
+                Case "custi"
+                    Settings.SettingsCustI = settingvar
+                Case "custb"
+                    Settings.SettingsCustB = settingvar
+                Case "custw"
+                    Settings.SettingsCustW = settingvar
+                Case "custl"
+                    Settings.SettingsCustL = settingvar
+            End Select
+            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", setting, {"settingConfig"}, {settingvar})
         End If
     End Sub
 
@@ -215,18 +234,75 @@
         End If
         Select Case type
             Case "avatars"
+                FlipTracksChanges()
                 CustomLibsPreviewAvatar.Visible = True
                 CustomLibsPreviewImage.Image = Nothing
                 CustomLibsPreviewMusic.Visible = False
+                CustomLibsListPop(True)
             Case Else
                 If IntroInPlay = False Then Jukebox.StopSong()
+                FlipTracksChanges()
                 CustomLibsPreviewAvatar.Visible = False
                 CustomLibsPreviewImage.Image = Nothing
                 CustomLibsPreviewMusic.Visible = True
                 CustomLibsPreviewPlay.Enabled = False
                 CustomLibsPreviewStop.Enabled = False
+                CustomLibsListPop(True)
         End Select
-        CustomLibsListPop()
+    End Sub
+
+    Private Sub SelectTrackChanges(button As Button)
+        SelectCustomTrack = ""
+        If (CustomLibsGroup.Visible = False) Or (CustomLibsGroup.Visible = True And
+            Not button.ForeColor = MemoryBank.ClickForeColor) Then
+            SelectCustomTrack = button.Name.ToString
+            OptionsGroupToLeft()
+            OptionsAudioSelectIntro.ForeColor = MemoryBank.ButtonForeColor
+            OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
+            OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
+            OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
+            button.ForeColor = MemoryBank.ClickForeColor
+            If IntroInPlay = False Then Jukebox.StopSong()
+            OptionsGroupToLeft()
+            CustomLibsGroup.Visible = True
+            CustomLibsPreviewAvatar.Visible = False
+            CustomLibsPreviewImage.Image = Nothing
+            CustomLibsPreviewMusic.Visible = True
+            CustomLibsPreviewPlay.Enabled = False
+            CustomLibsPreviewStop.Enabled = False
+            CustomLibsActive.Visible = False
+            CustomLibsEdit.Visible = False
+            CustomLibsOmega.Visible = False
+            CustomLibsSave.Visible = False
+            CustomLibsAuto.Visible = False
+            CustomLibsImport.Visible = False
+            CustomLibsDelete.Text = "Select"
+            CustomLibsSelected = "tracks"
+            CustomLibsListPop(False)
+        Else
+            OptionsGroupToMid()
+            CustomLibsGroup.Visible = False
+            FlipTracksChanges()
+            SelectTrackButtonReverse(button)
+        End If
+    End Sub
+
+    Private Sub FlipTracksChanges()
+        CustomLibsActive.Visible = True
+        CustomLibsEdit.Visible = True
+        CustomLibsOmega.Visible = True
+        CustomLibsSave.Visible = True
+        CustomLibsAuto.Visible = True
+        CustomLibsImport.Visible = True
+        CustomLibsDelete.Text = "Delete"
+    End Sub
+
+    Private Sub SelectTrackButtonReverse(button As Button)
+        OptionsAudioSelectIntro.ForeColor = MemoryBank.ButtonForeColor
+        OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
+        OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
+        OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
+        SelectCustomTrack = ""
     End Sub
 
     Private Sub ExitGame()
@@ -393,10 +469,19 @@
                 Settings.SettingsCustM = "off"
             End If
         End If
+        Jukebox.IntroInPlay = False
+        Jukebox.SwitchToIntro()
     End Sub
 
     Private Sub OptionsAudioCheckIntro_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckIntro.CheckedChanged
         OptionsAudioCheckChange(OptionsAudioCheckIntro, OptionsAudioSelectIntro, "custi", Settings.SettingsCustI)
+        If OptionsAudioCheckIntro.Checked = CheckState.Unchecked Then
+            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custi", {"settingConfig"}, {"off"})
+        Else
+            OptionsAudioCheckChange(OptionsAudioCheckIntro, OptionsAudioSelectIntro, "custi", Settings.SettingsCustI)
+        End If
+        Jukebox.IntroInPlay = False
+        Jukebox.SwitchToIntro()
     End Sub
 
     Private Sub OptionsAudioCheckBattle_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckBattle.CheckedChanged
@@ -424,28 +509,33 @@
         CustomLibsGroup.Text = ("Custom " & Converters.UppercaseFirstLetter(CustomLibsSelected))
     End Sub
 
-    Private Sub CustomLibsListPop()
+    Private Sub CustomLibsListPop(omega As Boolean)
         Select Case LCase(CustomLibsSelected)
             Case "avatars"
                 Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.AvatarsDir, CustomLibsActive,
-                    "*.png", CustomLibsImport)
+                    "*.png", CustomLibsImport, omega)
             Case "music"
                 Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.MusicDir, CustomLibsActive,
-                    "*.mp3", CustomLibsImport)
+                    "*.mp3", CustomLibsImport, omega)
             Case "sounds"
                 Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.SoundDir, CustomLibsActive,
-                    "*.mp3", CustomLibsImport)
+                    "*.mp3", CustomLibsImport, omega)
+            Case "tracks"
+                Tools.CustomLibsListBuilder(CustomLibsSelected, CustomLibsList, MemoryBank.MusicDir, CustomLibsActive,
+                    "*.mp3", CustomLibsDelete, omega)
             Case Else
                 '
         End Select
         CustomLibsPath.Text = ""
-        CustomLibsActive.Enabled = False
-        CustomLibsActive.CheckState = CheckState.Unchecked
-        CustomLibsAuto.Enabled = False
-        CustomLibsAuto.CheckState = CheckState.Unchecked
-        CustomLibsEdit.Enabled = False
-        CustomLibsDelete.Enabled = False
-        CustomLibsSave.Enabled = False
+        If Not LCase(CustomLibsSelected) = "tracks" Then
+            CustomLibsActive.Enabled = False
+            CustomLibsActive.CheckState = CheckState.Unchecked
+            CustomLibsAuto.Enabled = False
+            CustomLibsAuto.CheckState = CheckState.Unchecked
+            CustomLibsEdit.Enabled = False
+            CustomLibsDelete.Enabled = False
+            CustomLibsSave.Enabled = False
+        End If
     End Sub
 
     Private Sub CustomLibsAuto_CheckedChanged(sender As Object, e As EventArgs) Handles CustomLibsAuto.CheckedChanged
@@ -470,6 +560,8 @@
                     SelectedDir = MemoryBank.MusicDir
                 Case "sound"
                     SelectedDir = MemoryBank.SoundDir
+                Case "tracks"
+                    SelectedDir = MemoryBank.MusicDir
                 Case Else
                     '
             End Select
@@ -511,7 +603,7 @@
                                 CustomLibsMusicImage.BackgroundImage = Global.Limitless.My.Resources.Resources.mp3sound
                         End Select
                     End If
-                    End If
+                End If
             Next
         Else
             CustomLibsEdit.Enabled = False
@@ -566,7 +658,9 @@
                 Try
                     My.Computer.FileSystem.RenameFile(SelectedDir & "/" & OldName & Ext, NewName & Ext)
                 Catch ex As Exception
-                    MsgBox(("Error:  File locked, please try again."), vbOKOnly)
+                    Logger.WriteToLog("Custom " & CustomLibsSelected & " " &
+                        Converters.UppercaseFirstLetter(ChangeAction), "Rename Attempt", ex)
+                    MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
                 End Try
                 CustomLibsActive.Enabled = True
                 CustomLibsActive.CheckState = CheckState.Checked
@@ -582,14 +676,16 @@
                 Try
                     My.Computer.FileSystem.RenameFile(SelectedDir & "/" & SelectedFile & Ext, NewName & Ext)
                 Catch ex As Exception
-                    MsgBox(("Error:  File locked, please try again."), vbOKOnly)
+                    Logger.WriteToLog("Custom " & CustomLibsSelected & " " &
+                        Converters.UppercaseFirstLetter(ChangeAction), "Rename Attempt", ex)
+                    MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
                 End Try
                 CustomLibsActive.Enabled = True
                 CustomLibsActive.CheckState = CheckState.Unchecked
                 CustomLibsActive.ForeColor = Color.Red
             End If
             If answer = vbYes Then
-                CustomLibsListPop()
+                CustomLibsListPop(True)
                 CustomLibsList.SelectedItem = Replace(NewName, "Ω", "Ω ")
             End If
             If Not answer = vbYes Then MsgBox("No Changes Made")
@@ -674,9 +770,10 @@
                         CustomLibsPath.BackColor = MemoryBank.PagesBackColor
                         CustomLibsPath.ReadOnly = True
                         CustomLibsPath.Text = CustomLibsPath.Text & Ext
-                        CustomLibsListPop()
+                        CustomLibsListPop(True)
                     Catch ex As Exception
-                        MsgBox(("Error:  File locked, please try again." & vbCrLf), vbOKOnly)
+                        Logger.WriteToLog("Custom " & CustomLibsSelected & " Rename", "Rename Attempt", ex)
+                        MsgBox(("Logged Error:  File locked, please try again." & vbCrLf), vbOKOnly)
                     End Try
                 End If
             Case Else
@@ -685,48 +782,76 @@
     End Sub
 
     Private Sub CustomLibsDelete_Click(sender As Object, e As EventArgs) Handles CustomLibsDelete.Click
-        Dim SelectedDir = "", Ext = "", SelectedName = CustomLibsList.SelectedItem.ToString, FileToGo As String
-        Select Case LCase(CustomLibsSelected)
-            Case "avatars"
-                SelectedDir = MemoryBank.AvatarsDir
-                Ext = ".png"
-            Case "music"
-                SelectedDir = MemoryBank.MusicDir
-                Ext = ".mp3"
-            Case "sound"
-                SelectedDir = MemoryBank.SoundDir
-                Ext = ".mp3"
-            Case Else
-                '
-        End Select
-        FileToGo = SelectedDir & "/" & Replace(SelectedName, "Ω ", "Ω") & Ext
-        If CustomLibsDelete.Enabled = True Then
-            If System.IO.File.Exists(FileToGo) Then
-                Dim answer As Integer
-                answer = MsgBox("Confirm:  Do you want to delete " & Replace(SelectedName, "Ω ", "Ω") & "?", vbYesNo)
-                If answer = vbYes Then
-                    If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
-                    If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
-                        CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
-                        OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
-                    Try
-                        My.Computer.FileSystem.DeleteFile(FileToGo, FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.DeletePermanently)
-                        CustomLibsListPop()
-                    Catch ex As Exception
-                        MsgBox("Error:  File locked, please try again." & vbCrLf, vbOKOnly)
-                    End Try
+        If CustomLibsList.Visible = True And CustomLibsDelete.Enabled = True Then
+            Dim SelectedDir = "", Ext = "", SelectedName = CustomLibsList.SelectedItem.ToString, FileToGo As String
+            Select Case LCase(CustomLibsSelected)
+                Case "avatars"
+                    SelectedDir = MemoryBank.AvatarsDir
+                    Ext = ".png"
+                Case "music"
+                    SelectedDir = MemoryBank.MusicDir
+                    Ext = ".mp3"
+                Case "sound"
+                    SelectedDir = MemoryBank.SoundDir
+                    Ext = ".mp3"
+                Case Else
+                    '
+            End Select
+            Select Case (CustomLibsDelete.Text)
+                Case "Delete"
+                    FileToGo = SelectedDir & "/" & Replace(SelectedName, "Ω ", "Ω") & Ext
+                    If CustomLibsDelete.Enabled = True Then
+                        If System.IO.File.Exists(FileToGo) Then
+                            Dim answer As Integer
+                            answer = MsgBox("Confirm:  Do you want to delete " & Replace(SelectedName, "Ω ", "Ω") & "?", vbYesNo)
+                            If answer = vbYes Then
+                                If LCase(CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(CustomLibsPreviewImage)
+                                If Not LCase(CustomLibsSelected) = "avatars" Then Jukebox.ReturnToIntro(CustomLibsPreviewStop,
+                            CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
+                            OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
+                                Try
+                                    My.Computer.FileSystem.DeleteFile(FileToGo, FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.DeletePermanently)
+                                    CustomLibsListPop(True)
+                                Catch ex As Exception
+                                    Logger.WriteToLog("Custom " & CustomLibsSelected & " Delete", "Delete Attempt", ex)
+                                    MsgBox("Logged Error:  File locked, please try again." & vbCrLf, vbOKOnly)
+                                End Try
 
-                Else
-                    MsgBox("Operation Cancelled.", vbOKOnly)
-                End If
-            Else
-                MsgBox("Error: Could not verify file exists, please try again.", vbOKOnly)
-            End If
+                            Else
+                                MsgBox("Operation Cancelled.", vbOKOnly)
+                            End If
+                        Else
+                            MsgBox("Error: Could not verify file exists, please try again.", vbOKOnly)
+                        End If
+                    End If
+                Case "Select"
+                    Dim SelectedType As String = ""
+                    Dim CustSetting As String = "on-" & SelectedName
+                    Select Case SelectCustomTrack
+                        Case OptionsAudioSelectIntro.Name.ToString
+                            SelectedType = "custi"
+                            Settings.SettingsCustI = CustSetting
+                        Case OptionsAudioSelectBattle.Name.ToString
+                            SelectedType = "custb"
+                            Settings.SettingsCustB = CustSetting
+                        Case OptionsAudioSelectVictory.Name.ToString
+                            SelectedType = "custw"
+                            Settings.SettingsCustW = CustSetting
+                        Case OptionsAudioSelectDefeat.Name.ToString
+                            SelectedType = "custl"
+                            Settings.SettingsCustL = CustSetting
+                    End Select
+                    Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", SelectedType, {"settingConfig"}, {CustSetting})
+                    If SelectedType = "custi" Then
+                        Jukebox.IntroInPlay = False
+                        Jukebox.SwitchToIntro()
+                    End If
+            End Select
         End If
     End Sub
 
     Private Sub CustomLibsImport_Click(sender As Object, e As EventArgs) Handles CustomLibsImport.Click
-        Dim SelectedDir = "", Ext = "", SourceFile As String, NewFile As String
+        Dim SelectedDir = "", Ext = "", SourceFiles() As String, NewFile As String
         Select Case LCase(CustomLibsSelected)
             Case "avatars"
                 SelectedDir = MemoryBank.AvatarsDir
@@ -740,36 +865,44 @@
             Case Else
                 '
         End Select
-        'Change to allow multiple files
         Dim fd As OpenFileDialog = New OpenFileDialog With {
-            .Title = "File To Import File",
+            .Title = "Custom " & Converters.UppercaseFirstLetter(CustomLibsSelected) & " File(s) To Import",
             .InitialDirectory = SelectedDir,
             .Filter = Replace(Ext, ".", "") & " Files (*" & Ext & ")|*" & Ext,
             .FilterIndex = 1,
-            .RestoreDirectory = True
+            .RestoreDirectory = True,
+            .Multiselect = True
         }
         If fd.ShowDialog() = DialogResult.OK Then
-            SourceFile = fd.FileName
-            Dim ConfirmExt As String = SourceFile.Substring(SourceFile.Length - 4, 4)
-            If LCase(ConfirmExt) = Ext Then
-                Dim SourceName As String = Replace(SourceFile.Split("\").Last(), Ext, "")
-                NewFile = SelectedDir & "/" & Replace(SourceName, "Ω ", "Ω") & Ext
-                Try
-                    FileSystem.FileCopy(SourceFile, NewFile)
-                Catch ex As Exception
-                    MsgBox(("Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
-                End Try
-                CustomLibsListPop()
-            Else
-                MsgBox("Invalid file extension.  Please be sure to select a " & Ext & " file.", vbOKOnly + vbCritical)
-            End If
+            SourceFiles = fd.FileNames
+            For Each SourceFile In SourceFiles
+                Dim ConfirmExt As String = SourceFile.Substring(SourceFile.Length - 4, 4)
+                If LCase(ConfirmExt) = Ext Then
+                    Dim SourceName As String = Replace(SourceFile.Split("\").Last(), Ext, "")
+                    NewFile = SelectedDir & "/" & Replace(SourceName, "Ω ", "Ω") & Ext
+                    Try
+                        FileSystem.FileCopy(SourceFile, NewFile)
+                    Catch ex As Exception
+                        Logger.WriteToLog("Custom " & CustomLibsSelected & " Import", "Import Attempt - " &
+                            SourceName & Ext, ex)
+                        MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
+                    End Try
+                    CustomLibsListPop(True)
+                Else
+                    MsgBox("Invalid file extension.  Please be sure to select a " & Ext & " file.", vbOKOnly + vbCritical)
+                End If
+            Next
         End If
+    End Sub
+
+    Private Sub SelectTrack_Click(sender As Object, e As EventArgs) Handles OptionsAudioSelectIntro.Click, OptionsAudioSelectBattle.Click,
+        OptionsAudioSelectVictory.Click, OptionsAudioSelectDefeat.Click
+        SelectTrackChanges(sender)
     End Sub
 
     Private Sub TitleBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseUp, TitleLabel.MouseUp, TitleBarIcon.MouseUp
         WindowDrag = False
     End Sub
-
 
     Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CustomLibsPath.KeyPress
         If Not (Asc(e.KeyChar) = 8) Then

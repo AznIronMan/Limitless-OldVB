@@ -17,6 +17,7 @@ Public Module Initialize
         FilesFolders.CreateDirectory(MemoryBank.SavesDir)
         FilesFolders.CreateDirectory(MemoryBank.MusicDir)
         FilesFolders.CreateDirectory(MemoryBank.SoundDir)
+        FilesFolders.CreateDirectory(MemoryBank.LogDir)
     End Sub
 
     Private Sub InitHide()

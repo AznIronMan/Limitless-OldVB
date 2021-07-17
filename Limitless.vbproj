@@ -33,8 +33,8 @@
     <ProductName>Limitless</ProductName>
     <PublisherName>ClarkTribeGames</PublisherName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>3</ApplicationRevision>
-    <ApplicationVersion>0.1.0003.0003</ApplicationVersion>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>0.1.0003.0004</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -159,6 +159,7 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Avatars.vb" />
     <Compile Include="Calculator.vb" />
+    <Compile Include="Logger.vb" />
     <Compile Include="Converters.vb" />
     <Compile Include="Database.vb" />
     <Compile Include="FilesFolders.vb" />

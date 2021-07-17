@@ -1,6 +1,6 @@
 =============================================
 LIMITLESS by Geoff Clark
-VERSION ALPHA 0.1.003.0003
+VERSION ALPHA 0.1.004.0001
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -72,7 +72,7 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.003.0003 / 2021.07.13
+ALPHA 0.1.003.0004 / 2021.07.17 - The Options Update
 
 - changed versioning to 0.1.x for the new platform
 - added legacy notes document as a reference to the legacy platform
@@ -88,6 +88,11 @@ ALPHA 0.1.003.0003 / 2021.07.13
 - fixed issue with music files not unlocking when previewing
 - added ability to rename, import, and delete custom files in menu
 - added MP3 image for custom music/sounds menus
+- added log file and logger module for troubleshooting exception errors
+- added ability to select custom tracks for intro, battle, victory, and defeat music
+- added checks for intro music changes
+- added checks if custom track is not available to default to built in tracks
+- fix some button highlighting errors
 
 [PREVIOUS UPDATES]
 

@@ -83,7 +83,12 @@ Module Jukebox
         If IntroInPlay = False Then
             StopSong()
             If Settings.SettingsMusic.ToLower = "on" Then
-                PlaySong(NewSong(My.Resources.intro))
+                If Settings.SettingsCustM = "on" And Settings.SettingsCustI.StartsWith("on") Then
+                    Dim customintro As String = MemoryBank.MusicDir & "/" & Settings.SettingsCustI.Substring(3) & ".mp3"
+                    If System.IO.File.Exists(customintro) Then Jukebox.PlayMp3(customintro) Else Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+                Else
+                    Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
+                End If
                 IntroInPlay = True
             End If
         End If

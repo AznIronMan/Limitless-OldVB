@@ -1057,7 +1057,7 @@
     <value>10</value>
   </data>
   <data name="OptionsAudioSelectDefeat.Text" xml:space="preserve">
-    <value>Select Tracks</value>
+    <value>Select Track</value>
   </data>
   <data name="OptionsAudioSelectDefeat.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1090,7 +1090,7 @@
     <value>9</value>
   </data>
   <data name="OptionsAudioSelectVictory.Text" xml:space="preserve">
-    <value>Select Tracks</value>
+    <value>Select Track</value>
   </data>
   <data name="OptionsAudioSelectVictory.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1123,7 +1123,7 @@
     <value>8</value>
   </data>
   <data name="OptionsAudioSelectBattle.Text" xml:space="preserve">
-    <value>Select Tracks</value>
+    <value>Select Track</value>
   </data>
   <data name="OptionsAudioSelectBattle.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1156,7 +1156,7 @@
     <value>7</value>
   </data>
   <data name="OptionsAudioSelectIntro.Text" xml:space="preserve">
-    <value>Select Tracks</value>
+    <value>Select Track</value>
   </data>
   <data name="OptionsAudioSelectIntro.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
