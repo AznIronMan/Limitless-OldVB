@@ -72,8 +72,11 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.004.0001 / 2021.07.17
+ALPHA 0.1.004.0001 / 2021.07.20
 
+- gui change - moved menu bar to the top of the app and reduced logo, giving increasing the usable space
+- adjusted spacing for all menus per new window format
+- changed size of menu buttons to squares in menu bar
 - enabled editor button with placeholder panel
 - added visibility features for panels based on button pressed
 - added confirmation for exit game

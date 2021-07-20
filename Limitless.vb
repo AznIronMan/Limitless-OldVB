@@ -507,16 +507,16 @@
     End Sub
 
     Private Sub OptionsGroupToLeft()
-        OptionsGroupLocationMove(10, 80, OptionsColorGroup)
-        OptionsGroupLocationMove(10, 150, OptionsMusicGroup)
-        OptionsGroupLocationMove(10, 350, OptionsManageGroup)
+        OptionsGroupLocationMove(180, 180, OptionsColorGroup)
+        OptionsGroupLocationMove(180, 250, OptionsMusicGroup)
+        OptionsGroupLocationMove(180, 450, OptionsManageGroup)
         OptionsGroupLoc = "left"
         ResetEditPath()
     End Sub
     Private Sub OptionsGroupToMid()
-        OptionsGroupLocationMove(240, 80, OptionsColorGroup)
-        OptionsGroupLocationMove(240, 150, OptionsMusicGroup)
-        OptionsGroupLocationMove(240, 350, OptionsManageGroup)
+        OptionsGroupLocationMove(420, 180, OptionsColorGroup)
+        OptionsGroupLocationMove(420, 250, OptionsMusicGroup)
+        OptionsGroupLocationMove(420, 450, OptionsManageGroup)
         OptionsGroupLoc = "mid"
         ResetEditPath()
     End Sub

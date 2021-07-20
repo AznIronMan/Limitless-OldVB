@@ -42,11 +42,7 @@ Partial Class MainWindow
         Me.EditButton = New System.Windows.Forms.Button()
         Me.LoadButton = New System.Windows.Forms.Button()
         Me.StartButton = New System.Windows.Forms.Button()
-        Me.TitleLogo = New System.Windows.Forms.PictureBox()
         Me.OptionsPanel = New System.Windows.Forms.Panel()
-        Me.EditorPanel = New System.Windows.Forms.Panel()
-        Me.EditorSubText = New System.Windows.Forms.Label()
-        Me.EditorTitleText = New System.Windows.Forms.Label()
         Me.CustomLibsGroup = New System.Windows.Forms.GroupBox()
         Me.CustomLibsOmega = New System.Windows.Forms.Label()
         Me.CustomLibsSave = New System.Windows.Forms.Button()
@@ -108,15 +104,16 @@ Partial Class MainWindow
         Me.DonatePTButton = New System.Windows.Forms.Button()
         Me.DonateText = New System.Windows.Forms.TextBox()
         Me.DonateTitle = New System.Windows.Forms.Label()
+        Me.EditorPanel = New System.Windows.Forms.Panel()
+        Me.EditorSubText = New System.Windows.Forms.Label()
+        Me.EditorTitleText = New System.Windows.Forms.Label()
         Me.TitleBarPanel.SuspendLayout()
         Me.MinimizeButton.SuspendLayout()
         Me.CloseButton.SuspendLayout()
         Me.BackgroundPanel.SuspendLayout()
         Me.MainMenuPanel.SuspendLayout()
         Me.MainMenuBar.SuspendLayout()
-        CType(Me.TitleLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OptionsPanel.SuspendLayout()
-        Me.EditorPanel.SuspendLayout()
         Me.CustomLibsGroup.SuspendLayout()
         Me.CustomLibsPreviewMusic.SuspendLayout()
         CType(Me.CustomLibsMusicImage, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -133,6 +130,7 @@ Partial Class MainWindow
         CType(Me.WelcomeImage4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WelcomeImage3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DonatePanel.SuspendLayout()
+        Me.EditorPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'TitleLabel
@@ -207,18 +205,20 @@ Partial Class MainWindow
         'MainMenuPanel
         '
         Me.MainMenuPanel.BackColor = System.Drawing.SystemColors.ControlText
-        Me.MainMenuPanel.Controls.Add(Me.EditorPanel)
         Me.MainMenuPanel.Controls.Add(Me.MainMenuBar)
-        Me.MainMenuPanel.Controls.Add(Me.TitleLogo)
         Me.MainMenuPanel.Controls.Add(Me.OptionsPanel)
         Me.MainMenuPanel.Controls.Add(Me.AboutPanel)
         Me.MainMenuPanel.Controls.Add(Me.WelcomePanel)
         Me.MainMenuPanel.Controls.Add(Me.DonatePanel)
+        Me.MainMenuPanel.Controls.Add(Me.EditorPanel)
         resources.ApplyResources(Me.MainMenuPanel, "MainMenuPanel")
         Me.MainMenuPanel.Name = "MainMenuPanel"
         '
         'MainMenuBar
         '
+        Me.MainMenuBar.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.MainMenuBar.BackgroundImage = Global.Limitless.My.Resources.Resources.titlebar
+        resources.ApplyResources(Me.MainMenuBar, "MainMenuBar")
         Me.MainMenuBar.Controls.Add(Me.ExitButton)
         Me.MainMenuBar.Controls.Add(Me.UpdateButton)
         Me.MainMenuBar.Controls.Add(Me.DonateButton)
@@ -227,7 +227,6 @@ Partial Class MainWindow
         Me.MainMenuBar.Controls.Add(Me.EditButton)
         Me.MainMenuBar.Controls.Add(Me.LoadButton)
         Me.MainMenuBar.Controls.Add(Me.StartButton)
-        resources.ApplyResources(Me.MainMenuBar, "MainMenuBar")
         Me.MainMenuBar.Name = "MainMenuBar"
         '
         'ExitButton
@@ -302,13 +301,6 @@ Partial Class MainWindow
         Me.StartButton.Name = "StartButton"
         Me.StartButton.UseVisualStyleBackColor = False
         '
-        'TitleLogo
-        '
-        Me.TitleLogo.BackgroundImage = Global.Limitless.My.Resources.Resources.logo
-        resources.ApplyResources(Me.TitleLogo, "TitleLogo")
-        Me.TitleLogo.Name = "TitleLogo"
-        Me.TitleLogo.TabStop = False
-        '
         'OptionsPanel
         '
         Me.OptionsPanel.Controls.Add(Me.CustomLibsGroup)
@@ -319,23 +311,6 @@ Partial Class MainWindow
         Me.OptionsPanel.Controls.Add(Me.OptionsTitle)
         resources.ApplyResources(Me.OptionsPanel, "OptionsPanel")
         Me.OptionsPanel.Name = "OptionsPanel"
-        '
-        'EditorPanel
-        '
-        Me.EditorPanel.Controls.Add(Me.EditorSubText)
-        Me.EditorPanel.Controls.Add(Me.EditorTitleText)
-        resources.ApplyResources(Me.EditorPanel, "EditorPanel")
-        Me.EditorPanel.Name = "EditorPanel"
-        '
-        'EditorSubText
-        '
-        resources.ApplyResources(Me.EditorSubText, "EditorSubText")
-        Me.EditorSubText.Name = "EditorSubText"
-        '
-        'EditorTitleText
-        '
-        resources.ApplyResources(Me.EditorTitleText, "EditorTitleText")
-        Me.EditorTitleText.Name = "EditorTitleText"
         '
         'CustomLibsGroup
         '
@@ -807,6 +782,23 @@ Partial Class MainWindow
         resources.ApplyResources(Me.DonateTitle, "DonateTitle")
         Me.DonateTitle.Name = "DonateTitle"
         '
+        'EditorPanel
+        '
+        Me.EditorPanel.Controls.Add(Me.EditorSubText)
+        Me.EditorPanel.Controls.Add(Me.EditorTitleText)
+        resources.ApplyResources(Me.EditorPanel, "EditorPanel")
+        Me.EditorPanel.Name = "EditorPanel"
+        '
+        'EditorSubText
+        '
+        resources.ApplyResources(Me.EditorSubText, "EditorSubText")
+        Me.EditorSubText.Name = "EditorSubText"
+        '
+        'EditorTitleText
+        '
+        resources.ApplyResources(Me.EditorTitleText, "EditorTitleText")
+        Me.EditorTitleText.Name = "EditorTitleText"
+        '
         'MainWindow
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -829,9 +821,7 @@ Partial Class MainWindow
         Me.BackgroundPanel.ResumeLayout(False)
         Me.MainMenuPanel.ResumeLayout(False)
         Me.MainMenuBar.ResumeLayout(False)
-        CType(Me.TitleLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OptionsPanel.ResumeLayout(False)
-        Me.EditorPanel.ResumeLayout(False)
         Me.CustomLibsGroup.ResumeLayout(False)
         Me.CustomLibsGroup.PerformLayout()
         Me.CustomLibsPreviewMusic.ResumeLayout(False)
@@ -852,6 +842,7 @@ Partial Class MainWindow
         CType(Me.WelcomeImage3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DonatePanel.ResumeLayout(False)
         Me.DonatePanel.PerformLayout()
+        Me.EditorPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -871,7 +862,6 @@ Partial Class MainWindow
     Friend WithEvents CloseText As Label
     Friend WithEvents TitleBarIcon As Panel
     Friend WithEvents MainMenuPanel As Panel
-    Friend WithEvents TitleLogo As PictureBox
     Friend WithEvents FooterPanel As Panel
     Friend WithEvents MainMenuBar As Panel
     Friend WithEvents WelcomePanel As Panel

@@ -426,92 +426,8 @@
   <data name="&gt;&gt;FooterPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="EditorSubText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditorSubText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 60</value>
-  </data>
-  <data name="EditorSubText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>945, 13</value>
-  </data>
-  <data name="EditorSubText.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="EditorSubText.Text" xml:space="preserve">
-    <value>Subtext goes here</value>
-  </data>
-  <data name="EditorSubText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;EditorSubText.Name" xml:space="preserve">
-    <value>EditorSubText</value>
-  </data>
-  <data name="&gt;&gt;EditorSubText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditorSubText.Parent" xml:space="preserve">
-    <value>EditorPanel</value>
-  </data>
-  <data name="&gt;&gt;EditorSubText.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="EditorTitleText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 24pt, style=Bold</value>
-  </data>
-  <data name="EditorTitleText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditorTitleText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 20</value>
-  </data>
-  <data name="EditorTitleText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>945, 32</value>
-  </data>
-  <data name="EditorTitleText.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="EditorTitleText.Text" xml:space="preserve">
-    <value>Limitless Editor</value>
-  </data>
-  <data name="EditorTitleText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;EditorTitleText.Name" xml:space="preserve">
-    <value>EditorTitleText</value>
-  </data>
-  <data name="&gt;&gt;EditorTitleText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditorTitleText.Parent" xml:space="preserve">
-    <value>EditorPanel</value>
-  </data>
-  <data name="&gt;&gt;EditorTitleText.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="EditorPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 210</value>
-  </data>
-  <data name="EditorPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>950, 420</value>
-  </data>
-  <data name="EditorPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="EditorPanel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;EditorPanel.Name" xml:space="preserve">
-    <value>EditorPanel</value>
-  </data>
-  <data name="&gt;&gt;EditorPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditorPanel.Parent" xml:space="preserve">
-    <value>MainMenuPanel</value>
-  </data>
-  <data name="&gt;&gt;EditorPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="MainMenuBar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="&gt;&gt;ExitButton.Name" xml:space="preserve">
     <value>ExitButton</value>
@@ -610,10 +526,10 @@
     <value>7</value>
   </data>
   <data name="MainMenuBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 210</value>
+    <value>0, 0</value>
   </data>
   <data name="MainMenuBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 420</value>
+    <value>1332, 93</value>
   </data>
   <data name="MainMenuBar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -628,31 +544,7 @@
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;MainMenuBar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TitleLogo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="TitleLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 20</value>
-  </data>
-  <data name="TitleLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>885, 150</value>
-  </data>
-  <data name="TitleLogo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;TitleLogo.Name" xml:space="preserve">
-    <value>TitleLogo</value>
-  </data>
-  <data name="&gt;&gt;TitleLogo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TitleLogo.Parent" xml:space="preserve">
-    <value>MainMenuPanel</value>
-  </data>
-  <data name="&gt;&gt;TitleLogo.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;CustomLibsGroup.Name" xml:space="preserve">
     <value>CustomLibsGroup</value>
@@ -727,10 +619,10 @@
     <value>5</value>
   </data>
   <data name="OptionsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 210</value>
+    <value>25, 100</value>
   </data>
   <data name="OptionsPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>950, 420</value>
+    <value>1282, 550</value>
   </data>
   <data name="OptionsPanel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -748,7 +640,7 @@
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;OptionsPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;AboutBSButton.Name" xml:space="preserve">
     <value>AboutBSButton</value>
@@ -823,10 +715,10 @@
     <value>5</value>
   </data>
   <data name="AboutPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 210</value>
+    <value>25, 100</value>
   </data>
   <data name="AboutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>950, 420</value>
+    <value>1282, 550</value>
   </data>
   <data name="AboutPanel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -844,7 +736,7 @@
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;AboutPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;WelcomeImage0.Name" xml:space="preserve">
     <value>WelcomeImage0</value>
@@ -907,10 +799,10 @@
     <value>4</value>
   </data>
   <data name="WelcomePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 210</value>
+    <value>25, 100</value>
   </data>
   <data name="WelcomePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>950, 420</value>
+    <value>1282, 550</value>
   </data>
   <data name="WelcomePanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -925,7 +817,7 @@
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;WelcomePanel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;DonatePPButton.Name" xml:space="preserve">
     <value>DonatePPButton</value>
@@ -976,10 +868,10 @@
     <value>3</value>
   </data>
   <data name="DonatePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 210</value>
+    <value>25, 100</value>
   </data>
   <data name="DonatePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>950, 420</value>
+    <value>1282, 550</value>
   </data>
   <data name="DonatePanel.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -994,7 +886,55 @@
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;DonatePanel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Name" xml:space="preserve">
+    <value>EditorSubText</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Parent" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Name" xml:space="preserve">
+    <value>EditorTitleText</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Parent" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 100</value>
+  </data>
+  <data name="EditorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 550</value>
+  </data>
+  <data name="EditorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="EditorPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.Name" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="MainMenuPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 11</value>
@@ -1051,19 +991,16 @@
     <value>NoControl</value>
   </data>
   <data name="ExitButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 370</value>
+    <value>1237, 3</value>
   </data>
   <data name="ExitButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
+    <value>70, 70</value>
   </data>
   <data name="ExitButton.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="ExitButton.Text" xml:space="preserve">
-    <value> Exit The Game</value>
-  </data>
-  <data name="ExitButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>EXIT</value>
   </data>
   <data name="&gt;&gt;ExitButton.Name" xml:space="preserve">
     <value>ExitButton</value>
@@ -1090,19 +1027,16 @@
     <value>NoControl</value>
   </data>
   <data name="UpdateButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 320</value>
+    <value>1037, 3</value>
   </data>
   <data name="UpdateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
+    <value>70, 70</value>
   </data>
   <data name="UpdateButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="UpdateButton.Text" xml:space="preserve">
-    <value> Check For Update</value>
-  </data>
-  <data name="UpdateButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value> UPDATE</value>
   </data>
   <data name="&gt;&gt;UpdateButton.Name" xml:space="preserve">
     <value>UpdateButton</value>
@@ -1126,19 +1060,16 @@
     <value>NoControl</value>
   </data>
   <data name="DonateButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 270</value>
+    <value>937, 3</value>
   </data>
   <data name="DonateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
+    <value>70, 70</value>
   </data>
   <data name="DonateButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="DonateButton.Text" xml:space="preserve">
-    <value> Donate To The Cause</value>
-  </data>
-  <data name="DonateButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>DONATE</value>
   </data>
   <data name="&gt;&gt;DonateButton.Name" xml:space="preserve">
     <value>DonateButton</value>
@@ -1162,19 +1093,16 @@
     <value>NoControl</value>
   </data>
   <data name="AboutButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 220</value>
+    <value>1137, 3</value>
   </data>
   <data name="AboutButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
+    <value>70, 70</value>
   </data>
   <data name="AboutButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="AboutButton.Text" xml:space="preserve">
-    <value> About Limitless</value>
-  </data>
-  <data name="AboutButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>ABOUT</value>
   </data>
   <data name="&gt;&gt;AboutButton.Name" xml:space="preserve">
     <value>AboutButton</value>
@@ -1198,19 +1126,16 @@
     <value>NoControl</value>
   </data>
   <data name="OptionsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 170</value>
+    <value>325, 3</value>
   </data>
   <data name="OptionsButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
+    <value>70, 70</value>
   </data>
   <data name="OptionsButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="OptionsButton.Text" xml:space="preserve">
-    <value> Options Menu</value>
-  </data>
-  <data name="OptionsButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>OPTIONS</value>
   </data>
   <data name="&gt;&gt;OptionsButton.Name" xml:space="preserve">
     <value>OptionsButton</value>
@@ -1234,19 +1159,16 @@
     <value>NoControl</value>
   </data>
   <data name="EditButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 120</value>
+    <value>225, 3</value>
   </data>
   <data name="EditButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
+    <value>70, 70</value>
   </data>
   <data name="EditButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="EditButton.Text" xml:space="preserve">
-    <value> Limitless Editor</value>
-  </data>
-  <data name="EditButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>EDITOR</value>
   </data>
   <data name="&gt;&gt;EditButton.Name" xml:space="preserve">
     <value>EditButton</value>
@@ -1273,19 +1195,16 @@
     <value>NoControl</value>
   </data>
   <data name="LoadButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 70</value>
+    <value>125, 3</value>
   </data>
   <data name="LoadButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
+    <value>70, 70</value>
   </data>
   <data name="LoadButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="LoadButton.Text" xml:space="preserve">
-    <value> Continue Saved Game</value>
-  </data>
-  <data name="LoadButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>LOAD</value>
   </data>
   <data name="&gt;&gt;LoadButton.Name" xml:space="preserve">
     <value>LoadButton</value>
@@ -1306,19 +1225,16 @@
     <value>Lucida Console, 8.25pt</value>
   </data>
   <data name="StartButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 20</value>
+    <value>25, 3</value>
   </data>
   <data name="StartButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 30</value>
+    <value>70, 70</value>
   </data>
   <data name="StartButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="StartButton.Text" xml:space="preserve">
-    <value> Start New Game</value>
-  </data>
-  <data name="StartButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>START</value>
   </data>
   <data name="&gt;&gt;StartButton.Name" xml:space="preserve">
     <value>StartButton</value>
@@ -1465,7 +1381,7 @@
     <value>10</value>
   </data>
   <data name="CustomLibsGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 80</value>
+    <value>660, 180</value>
   </data>
   <data name="CustomLibsGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>450, 330</value>
@@ -2032,7 +1948,7 @@
     <value>2</value>
   </data>
   <data name="OptionsManageGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 350</value>
+    <value>180, 450</value>
   </data>
   <data name="OptionsManageGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>450, 60</value>
@@ -2320,7 +2236,7 @@
     <value>14</value>
   </data>
   <data name="OptionsMusicGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 150</value>
+    <value>180, 250</value>
   </data>
   <data name="OptionsMusicGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>450, 190</value>
@@ -2842,7 +2758,7 @@
     <value>2</value>
   </data>
   <data name="OptionsColorGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 80</value>
+    <value>180, 180</value>
   </data>
   <data name="OptionsColorGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>450, 60</value>
@@ -2950,10 +2866,10 @@
     <value>2</value>
   </data>
   <data name="OptionsHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 60</value>
+    <value>3, 110</value>
   </data>
   <data name="OptionsHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>945, 13</value>
+    <value>1282, 13</value>
   </data>
   <data name="OptionsHost.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2983,10 +2899,10 @@
     <value>NoControl</value>
   </data>
   <data name="OptionsTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 20</value>
+    <value>3, 70</value>
   </data>
   <data name="OptionsTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>945, 32</value>
+    <value>1282, 32</value>
   </data>
   <data name="OptionsTitle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3019,7 +2935,7 @@
     <value>NoControl</value>
   </data>
   <data name="AboutBSButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>605, 300</value>
+    <value>930, 400</value>
   </data>
   <data name="AboutBSButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 100</value>
@@ -3049,7 +2965,7 @@
     <value>NoControl</value>
   </data>
   <data name="AboutYTButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>485, 300</value>
+    <value>710, 400</value>
   </data>
   <data name="AboutYTButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 100</value>
@@ -3079,7 +2995,7 @@
     <value>NoControl</value>
   </data>
   <data name="AboutDCButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 300</value>
+    <value>490, 400</value>
   </data>
   <data name="AboutDCButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 100</value>
@@ -3106,7 +3022,7 @@
     <value>Popup</value>
   </data>
   <data name="AboutFBButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 300</value>
+    <value>270, 400</value>
   </data>
   <data name="AboutFBButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 100</value>
@@ -3127,7 +3043,7 @@
     <value>3</value>
   </data>
   <data name="AboutText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 70</value>
+    <value>290, 165</value>
   </data>
   <data name="AboutText.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3172,7 +3088,7 @@ Thank you for your continued support!
     <value>Lucida Console, 24pt, style=Bold</value>
   </data>
   <data name="AboutTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>318, 20</value>
+    <value>490, 70</value>
   </data>
   <data name="AboutTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>315, 32</value>
@@ -3196,7 +3112,7 @@ Thank you for your continued support!
     <value>5</value>
   </data>
   <data name="WelcomeImage0.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 15</value>
+    <value>540, 65</value>
   </data>
   <data name="WelcomeImage0.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 200</value>
@@ -3220,7 +3136,7 @@ Thank you for your continued support!
     <value>NoControl</value>
   </data>
   <data name="WelcomeImage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 205</value>
+    <value>355, 330</value>
   </data>
   <data name="WelcomeImage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 200</value>
@@ -3244,7 +3160,7 @@ Thank you for your continued support!
     <value>NoControl</value>
   </data>
   <data name="WelcomeImage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>535, 205</value>
+    <value>715, 330</value>
   </data>
   <data name="WelcomeImage2.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 200</value>
@@ -3268,7 +3184,7 @@ Thank you for your continued support!
     <value>NoControl</value>
   </data>
   <data name="WelcomeImage4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>675, 15</value>
+    <value>880, 65</value>
   </data>
   <data name="WelcomeImage4.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 200</value>
@@ -3292,7 +3208,7 @@ Thank you for your continued support!
     <value>NoControl</value>
   </data>
   <data name="WelcomeImage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 15</value>
+    <value>180, 65</value>
   </data>
   <data name="WelcomeImage3.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 200</value>
@@ -3322,7 +3238,7 @@ Thank you for your continued support!
     <value>NoControl</value>
   </data>
   <data name="DonatePPButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>485, 300</value>
+    <value>710, 400</value>
   </data>
   <data name="DonatePPButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 100</value>
@@ -3352,7 +3268,7 @@ Thank you for your continued support!
     <value>NoControl</value>
   </data>
   <data name="DonatePTButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 300</value>
+    <value>490, 400</value>
   </data>
   <data name="DonatePTButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 100</value>
@@ -3373,7 +3289,7 @@ Thank you for your continued support!
     <value>1</value>
   </data>
   <data name="DonateText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 115</value>
+    <value>350, 165</value>
   </data>
   <data name="DonateText.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3417,7 +3333,7 @@ Thanks!
     <value>NoControl</value>
   </data>
   <data name="DonateTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 20</value>
+    <value>450, 70</value>
   </data>
   <data name="DonateTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>395, 32</value>
@@ -3439,6 +3355,69 @@ Thanks!
   </data>
   <data name="&gt;&gt;DonateTitle.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="EditorSubText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorSubText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 60</value>
+  </data>
+  <data name="EditorSubText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 13</value>
+  </data>
+  <data name="EditorSubText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditorSubText.Text" xml:space="preserve">
+    <value>Subtext goes here</value>
+  </data>
+  <data name="EditorSubText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Name" xml:space="preserve">
+    <value>EditorSubText</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Parent" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditorTitleText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 24pt, style=Bold</value>
+  </data>
+  <data name="EditorTitleText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorTitleText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 20</value>
+  </data>
+  <data name="EditorTitleText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 32</value>
+  </data>
+  <data name="EditorTitleText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditorTitleText.Text" xml:space="preserve">
+    <value>Limitless Editor</value>
+  </data>
+  <data name="EditorTitleText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Name" xml:space="preserve">
+    <value>EditorTitleText</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Parent" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

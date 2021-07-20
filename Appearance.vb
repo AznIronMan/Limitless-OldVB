@@ -66,7 +66,7 @@
         AssignColor(MainWindow.CloseText, "TitleButton")
         AssignColor(MainWindow.MainMenuPanel, "Pages")
         AssignColor(MainWindow.FooterPanel, "Pages")
-        AssignColor(MainWindow.MainMenuBar, "Pages")
+        AssignColor(MainWindow.MainMenuBar, "Background")
         AssignColor(MainWindow.WelcomePanel, "Pages")
         AssignColor(MainWindow.StartButton, "Button")
         AssignColor(MainWindow.LoadButton, "Button")
