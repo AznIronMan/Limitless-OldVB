@@ -22,6 +22,7 @@ Partial Class MainWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
         Me.TitleLabel = New System.Windows.Forms.Label()
         Me.TitleBarPanel = New System.Windows.Forms.Panel()
@@ -34,6 +35,8 @@ Partial Class MainWindow
         Me.FooterPanel = New System.Windows.Forms.Panel()
         Me.MainMenuPanel = New System.Windows.Forms.Panel()
         Me.MainMenuBar = New System.Windows.Forms.Panel()
+        Me.NullButton = New System.Windows.Forms.Button()
+        Me.SaveButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.UpdateButton = New System.Windows.Forms.Button()
         Me.DonateButton = New System.Windows.Forms.Button()
@@ -107,6 +110,7 @@ Partial Class MainWindow
         Me.EditorPanel = New System.Windows.Forms.Panel()
         Me.EditorSubText = New System.Windows.Forms.Label()
         Me.EditorTitleText = New System.Windows.Forms.Label()
+        Me.MenuTips = New System.Windows.Forms.ToolTip(Me.components)
         Me.TitleBarPanel.SuspendLayout()
         Me.MinimizeButton.SuspendLayout()
         Me.CloseButton.SuspendLayout()
@@ -219,6 +223,8 @@ Partial Class MainWindow
         Me.MainMenuBar.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.MainMenuBar.BackgroundImage = Global.Limitless.My.Resources.Resources.titlebar
         resources.ApplyResources(Me.MainMenuBar, "MainMenuBar")
+        Me.MainMenuBar.Controls.Add(Me.NullButton)
+        Me.MainMenuBar.Controls.Add(Me.SaveButton)
         Me.MainMenuBar.Controls.Add(Me.ExitButton)
         Me.MainMenuBar.Controls.Add(Me.UpdateButton)
         Me.MainMenuBar.Controls.Add(Me.DonateButton)
@@ -229,76 +235,110 @@ Partial Class MainWindow
         Me.MainMenuBar.Controls.Add(Me.StartButton)
         Me.MainMenuBar.Name = "MainMenuBar"
         '
+        'NullButton
+        '
+        Me.NullButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.NullButton.BackgroundImage = Global.Limitless.My.Resources.Resources._new
+        resources.ApplyResources(Me.NullButton, "NullButton")
+        Me.NullButton.Name = "NullButton"
+        Me.MenuTips.SetToolTip(Me.NullButton, resources.GetString("NullButton.ToolTip"))
+        Me.NullButton.UseVisualStyleBackColor = False
+        '
+        'SaveButton
+        '
+        Me.SaveButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.SaveButton.BackgroundImage = Global.Limitless.My.Resources.Resources.save
+        resources.ApplyResources(Me.SaveButton, "SaveButton")
+        Me.SaveButton.Name = "SaveButton"
+        Me.MenuTips.SetToolTip(Me.SaveButton, resources.GetString("SaveButton.ToolTip"))
+        Me.SaveButton.UseVisualStyleBackColor = False
+        '
         'ExitButton
         '
         Me.ExitButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.ExitButton.BackgroundImage = Global.Limitless.My.Resources.Resources._exit
         Me.ExitButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
         resources.ApplyResources(Me.ExitButton, "ExitButton")
         Me.ExitButton.ForeColor = System.Drawing.SystemColors.Control
         Me.ExitButton.Name = "ExitButton"
+        Me.MenuTips.SetToolTip(Me.ExitButton, resources.GetString("ExitButton.ToolTip"))
         Me.ExitButton.UseVisualStyleBackColor = False
         '
         'UpdateButton
         '
         Me.UpdateButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.UpdateButton.BackgroundImage = Global.Limitless.My.Resources.Resources.update
         resources.ApplyResources(Me.UpdateButton, "UpdateButton")
         Me.UpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
         Me.UpdateButton.ForeColor = System.Drawing.SystemColors.Control
         Me.UpdateButton.Name = "UpdateButton"
+        Me.MenuTips.SetToolTip(Me.UpdateButton, resources.GetString("UpdateButton.ToolTip"))
         Me.UpdateButton.UseVisualStyleBackColor = False
         '
         'DonateButton
         '
         Me.DonateButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.DonateButton.BackgroundImage = Global.Limitless.My.Resources.Resources.donate
         Me.DonateButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
         resources.ApplyResources(Me.DonateButton, "DonateButton")
         Me.DonateButton.ForeColor = System.Drawing.SystemColors.Control
         Me.DonateButton.Name = "DonateButton"
+        Me.MenuTips.SetToolTip(Me.DonateButton, resources.GetString("DonateButton.ToolTip"))
         Me.DonateButton.UseVisualStyleBackColor = False
         '
         'AboutButton
         '
         Me.AboutButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.AboutButton.BackgroundImage = Global.Limitless.My.Resources.Resources.about
         Me.AboutButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
         resources.ApplyResources(Me.AboutButton, "AboutButton")
         Me.AboutButton.ForeColor = System.Drawing.SystemColors.Control
         Me.AboutButton.Name = "AboutButton"
+        Me.MenuTips.SetToolTip(Me.AboutButton, resources.GetString("AboutButton.ToolTip"))
         Me.AboutButton.UseVisualStyleBackColor = False
         '
         'OptionsButton
         '
         Me.OptionsButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.OptionsButton.BackgroundImage = Global.Limitless.My.Resources.Resources.options
         Me.OptionsButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
         resources.ApplyResources(Me.OptionsButton, "OptionsButton")
         Me.OptionsButton.ForeColor = System.Drawing.SystemColors.Control
         Me.OptionsButton.Name = "OptionsButton"
+        Me.MenuTips.SetToolTip(Me.OptionsButton, resources.GetString("OptionsButton.ToolTip"))
         Me.OptionsButton.UseVisualStyleBackColor = False
         '
         'EditButton
         '
         Me.EditButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditButton.BackgroundImage = Global.Limitless.My.Resources.Resources.editor
         Me.EditButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
         resources.ApplyResources(Me.EditButton, "EditButton")
         Me.EditButton.ForeColor = System.Drawing.SystemColors.Control
         Me.EditButton.Name = "EditButton"
+        Me.MenuTips.SetToolTip(Me.EditButton, resources.GetString("EditButton.ToolTip"))
         Me.EditButton.UseVisualStyleBackColor = False
         '
         'LoadButton
         '
         Me.LoadButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.LoadButton.BackgroundImage = Global.Limitless.My.Resources.Resources.load
         resources.ApplyResources(Me.LoadButton, "LoadButton")
         Me.LoadButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
         Me.LoadButton.ForeColor = System.Drawing.SystemColors.Control
         Me.LoadButton.Name = "LoadButton"
+        Me.MenuTips.SetToolTip(Me.LoadButton, resources.GetString("LoadButton.ToolTip"))
         Me.LoadButton.UseVisualStyleBackColor = False
         '
         'StartButton
         '
-        Me.StartButton.BackColor = System.Drawing.SystemColors.ControlText
-        Me.StartButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
         resources.ApplyResources(Me.StartButton, "StartButton")
+        Me.StartButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.StartButton.BackgroundImage = Global.Limitless.My.Resources.Resources._new
+        Me.StartButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
         Me.StartButton.ForeColor = System.Drawing.SystemColors.Control
         Me.StartButton.Name = "StartButton"
+        Me.MenuTips.SetToolTip(Me.StartButton, resources.GetString("StartButton.ToolTip"))
         Me.StartButton.UseVisualStyleBackColor = False
         '
         'OptionsPanel
@@ -937,4 +977,7 @@ Partial Class MainWindow
     Friend WithEvents EditorPanel As Panel
     Friend WithEvents EditorSubText As Label
     Friend WithEvents EditorTitleText As Label
+    Friend WithEvents NullButton As Button
+    Friend WithEvents SaveButton As Button
+    Friend WithEvents MenuTips As ToolTip
 End Class

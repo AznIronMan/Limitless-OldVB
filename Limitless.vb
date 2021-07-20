@@ -337,10 +337,10 @@
     End Sub
 
     Private Sub CheckCustomTracks()
-        CheckCustomTracksProcess(Settings.SettingsCustI, OptionsAudioTextIntro, OptionsAudioCheckIntro)
-        CheckCustomTracksProcess(Settings.SettingsCustB, OptionsAudioTextBattle, OptionsAudioCheckBattle)
-        CheckCustomTracksProcess(Settings.SettingsCustW, OptionsAudioTextVictory, OptionsAudioCheckVictory)
-        CheckCustomTracksProcess(Settings.SettingsCustL, OptionsAudioTextDefeat, OptionsAudioCheckDefeat)
+        CheckCustomTracksProcess(Settings.SettingsCustI, OptionsAudioSelectIntro, OptionsAudioTextIntro, OptionsAudioCheckIntro)
+        CheckCustomTracksProcess(Settings.SettingsCustB, OptionsAudioSelectBattle, OptionsAudioTextBattle, OptionsAudioCheckBattle)
+        CheckCustomTracksProcess(Settings.SettingsCustW, OptionsAudioSelectVictory, OptionsAudioTextVictory, OptionsAudioCheckVictory)
+        CheckCustomTracksProcess(Settings.SettingsCustL, OptionsAudioSelectDefeat, OptionsAudioTextDefeat, OptionsAudioCheckDefeat)
     End Sub
 
     Private Sub HideCustomTracks()
@@ -348,6 +348,10 @@
         OptionsAudioTextBattle.Visible = False
         OptionsAudioTextVictory.Visible = False
         OptionsAudioTextDefeat.Visible = False
+        OptionsAudioSelectIntro.Visible = False
+        OptionsAudioSelectBattle.Visible = False
+        OptionsAudioSelectVictory.Visible = False
+        OptionsAudioSelectDefeat.Visible = False
     End Sub
     Private Sub ResetEditPath()
         CustomLibsEdit.Text = "Edit Name"
@@ -355,11 +359,13 @@
         CustomLibsPath.ReadOnly = True
     End Sub
 
-    Private Sub CheckCustomTracksProcess(custsetting As String, custbox As Label, custcheck As CheckBox)
+    Private Sub CheckCustomTracksProcess(custsetting As String, custbutton As Button, custbox As Label, custcheck As CheckBox)
         If custcheck.CheckState = CheckState.Checked Then
             If LCase(custsetting).StartsWith("on") Then
                 Dim tempcustname As String = custsetting.Substring(3)
                 custbox.Visible = True
+                custbutton.Enabled = True
+                custbutton.Visible = True
                 If Len(tempcustname) > 0 Then
                     custbox.Text = custsetting.Substring(3)
                 Else
@@ -367,6 +373,7 @@
                 End If
             Else
                 custbox.Visible = False
+                custbutton.Visible = False
             End If
         End If
     End Sub
@@ -566,9 +573,10 @@
         If OptionsAudioCheckIntro.Checked = CheckState.Unchecked Then
             Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custi", {"settingConfig"}, {"off"})
             OptionsAudioTextIntro.Visible = False
+            OptionsAudioSelectIntro.Visible = False
         Else
             OptionsAudioCheckChange(OptionsAudioCheckIntro, OptionsAudioSelectIntro, "custi", Settings.SettingsCustI)
-            CheckCustomTracksProcess(Settings.SettingsCustI, OptionsAudioTextIntro, OptionsAudioCheckIntro)
+            CheckCustomTracksProcess(Settings.SettingsCustI, OptionsAudioSelectIntro, OptionsAudioTextIntro, OptionsAudioCheckIntro)
         End If
         Jukebox.IntroInPlay = False
         Jukebox.SwitchToIntro()
@@ -579,9 +587,10 @@
         If OptionsAudioCheckBattle.Checked = CheckState.Unchecked Then
             Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custb", {"settingConfig"}, {"off"})
             OptionsAudioTextBattle.Visible = False
+            OptionsAudioSelectBattle.Visible = False
         Else
             OptionsAudioCheckChange(OptionsAudioCheckBattle, OptionsAudioSelectBattle, "custb", Settings.SettingsCustB)
-            CheckCustomTracksProcess(Settings.SettingsCustB, OptionsAudioTextBattle, OptionsAudioCheckBattle)
+            CheckCustomTracksProcess(Settings.SettingsCustB, OptionsAudioSelectBattle, OptionsAudioTextBattle, OptionsAudioCheckBattle)
         End If
         ResetEditPath()
     End Sub
@@ -590,9 +599,10 @@
         If OptionsAudioCheckVictory.Checked = CheckState.Unchecked Then
             Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custw", {"settingConfig"}, {"off"})
             OptionsAudioTextVictory.Visible = False
+            OptionsAudioSelectVictory.Visible = False
         Else
             OptionsAudioCheckChange(OptionsAudioCheckVictory, OptionsAudioSelectVictory, "custw", Settings.SettingsCustW)
-            CheckCustomTracksProcess(Settings.SettingsCustW, OptionsAudioTextVictory, OptionsAudioCheckVictory)
+            CheckCustomTracksProcess(Settings.SettingsCustW, OptionsAudioSelectVictory, OptionsAudioTextVictory, OptionsAudioCheckVictory)
         End If
         ResetEditPath()
     End Sub
@@ -601,9 +611,10 @@
         If OptionsAudioCheckDefeat.Checked = CheckState.Unchecked Then
             Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custl", {"settingConfig"}, {"off"})
             OptionsAudioTextDefeat.Visible = False
+            OptionsAudioSelectDefeat.Visible = False
         Else
             OptionsAudioCheckChange(OptionsAudioCheckDefeat, OptionsAudioSelectDefeat, "custl", Settings.SettingsCustL)
-            CheckCustomTracksProcess(Settings.SettingsCustL, OptionsAudioTextDefeat, OptionsAudioCheckDefeat)
+            CheckCustomTracksProcess(Settings.SettingsCustL, OptionsAudioSelectDefeat, OptionsAudioTextDefeat, OptionsAudioCheckDefeat)
         End If
         ResetEditPath()
     End Sub

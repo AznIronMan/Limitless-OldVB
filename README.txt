@@ -1,6 +1,6 @@
 =============================================
 LIMITLESS by Geoff Clark
-VERSION ALPHA 0.1.004.0001
+VERSION ALPHA 0.1.004.0002
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -72,17 +72,21 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.004.0001 / 2021.07.20
+ALPHA 0.1.004.0002 / 2021.07.20 - The Menu Bar Update
 
 - gui change - moved menu bar to the top of the app and reduced logo, giving increasing the usable space
 - adjusted spacing for all menus per new window format
 - changed size of menu buttons to squares in menu bar
+- added hidden save button for future use
+- added placeholder null button for future use
+- adjusted colors for disabled and donate buttons in light and dark modes
 - enabled editor button with placeholder panel
 - added visibility features for panels based on button pressed
 - added confirmation for exit game
 - fixed custom file edit name box not going to read only when changing menus
 - fixed select track buttons not disappearing when unchecked
 - added autosave feature to options (bypasses most are you sure prompts)
+- added new menu bar icons
 
 [PREVIOUS UPDATES]
 

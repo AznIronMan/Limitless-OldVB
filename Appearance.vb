@@ -13,10 +13,10 @@
         MemoryBank.PagesForeColor = Color.WhiteSmoke
         MemoryBank.ButtonBackColor = Color.Black
         MemoryBank.ButtonForeColor = Color.WhiteSmoke
-        MemoryBank.DonateForeColor = Color.DarkRed
-        MemoryBank.DonateHoverOver = Color.DarkGreen
+        MemoryBank.DonateForeColor = Color.LightGreen
+        MemoryBank.DonateHoverOver = Color.Green
         MemoryBank.ButtonMouseDownBack = Color.Black
-        MemoryBank.ButtonDisabledColor = Color.FromArgb(5, 5, 5)
+        MemoryBank.ButtonDisabledColor = Color.Gray
         MemoryBank.HoverBackColor = Color.Black
         MemoryBank.HoverForeColor = Color.Blue
         MemoryBank.LeaveBackColor = Color.Black
@@ -37,10 +37,10 @@
         MemoryBank.PagesForeColor = SystemColors.ControlText
         MemoryBank.ButtonBackColor = SystemColors.Control
         MemoryBank.ButtonForeColor = SystemColors.ControlText
-        MemoryBank.DonateForeColor = Color.DarkRed
+        MemoryBank.DonateForeColor = Color.Green
         MemoryBank.DonateHoverOver = Color.DarkGreen
         MemoryBank.ButtonMouseDownBack = SystemColors.Control
-        MemoryBank.ButtonDisabledColor = Color.FromArgb(RGB(5, 5, 5))
+        MemoryBank.ButtonDisabledColor = Color.Gray
         MemoryBank.HoverBackColor = SystemColors.Control
         MemoryBank.HoverForeColor = Color.Blue
         MemoryBank.LeaveBackColor = SystemColors.Control
@@ -114,6 +114,8 @@
         AssignColor(MainWindow.EditorPanel, "Pages")
         AssignColor(MainWindow.EditorTitleText, "Pages")
         AssignColor(MainWindow.EditorSubText, "Pages")
+        AssignColor(MainWindow.SaveButton, "Button")
+        AssignColor(MainWindow.NullButton, "Button")
     End Sub
 
     Public Sub SetButtonStyle(button As Button)
