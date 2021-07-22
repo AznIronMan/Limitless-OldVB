@@ -462,9 +462,6 @@
   <data name="&gt;&gt;ExitButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="UpdateButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="UpdateButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -719,6 +716,312 @@
   </data>
   <data name="&gt;&gt;MainMenuBar.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="UpdateAvaBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>655, 255</value>
+  </data>
+  <data name="UpdateAvaBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="UpdateAvaBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaBox.Name" xml:space="preserve">
+    <value>UpdateAvaBox</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaBox.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="UpdateCurBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>655, 205</value>
+  </data>
+  <data name="UpdateCurBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="UpdateCurBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurBox.Name" xml:space="preserve">
+    <value>UpdateCurBox</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurBox.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="UpdateInstallButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UpdateInstallButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="UpdateInstallButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="UpdateInstallButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>565, 360</value>
+  </data>
+  <data name="UpdateInstallButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 23</value>
+  </data>
+  <data name="UpdateInstallButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="UpdateInstallButton.Text" xml:space="preserve">
+    <value>Install Update</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstallButton.Name" xml:space="preserve">
+    <value>UpdateInstallButton</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstallButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstallButton.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstallButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="UpdateAvaText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UpdateAvaText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>460, 260</value>
+  </data>
+  <data name="UpdateAvaText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 13</value>
+  </data>
+  <data name="UpdateAvaText.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="UpdateAvaText.Text" xml:space="preserve">
+    <value>Available Version:</value>
+  </data>
+  <data name="UpdateAvaText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaText.Name" xml:space="preserve">
+    <value>UpdateAvaText</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaText.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaText.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="UpdateCurText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UpdateCurText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>460, 210</value>
+  </data>
+  <data name="UpdateCurText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 13</value>
+  </data>
+  <data name="UpdateCurText.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="UpdateCurText.Text" xml:space="preserve">
+    <value>Installed Version:</value>
+  </data>
+  <data name="UpdateCurText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurText.Name" xml:space="preserve">
+    <value>UpdateCurText</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurText.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurText.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="UpdateSubText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UpdateSubText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 110</value>
+  </data>
+  <data name="UpdateSubText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 13</value>
+  </data>
+  <data name="UpdateSubText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="UpdateSubText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;UpdateSubText.Name" xml:space="preserve">
+    <value>UpdateSubText</value>
+  </data>
+  <data name="&gt;&gt;UpdateSubText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateSubText.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateSubText.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="UpdateTitleText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 24pt, style=Bold</value>
+  </data>
+  <data name="UpdateTitleText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UpdateTitleText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 70</value>
+  </data>
+  <data name="UpdateTitleText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 32</value>
+  </data>
+  <data name="UpdateTitleText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="UpdateTitleText.Text" xml:space="preserve">
+    <value>Check For Updates</value>
+  </data>
+  <data name="UpdateTitleText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;UpdateTitleText.Name" xml:space="preserve">
+    <value>UpdateTitleText</value>
+  </data>
+  <data name="&gt;&gt;UpdateTitleText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateTitleText.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateTitleText.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="UpdatePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 100</value>
+  </data>
+  <data name="UpdatePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 550</value>
+  </data>
+  <data name="UpdatePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="UpdatePanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;UpdatePanel.Name" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdatePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdatePanel.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;UpdatePanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditorSubText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorSubText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 60</value>
+  </data>
+  <data name="EditorSubText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 13</value>
+  </data>
+  <data name="EditorSubText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditorSubText.Text" xml:space="preserve">
+    <value>Subtext goes here</value>
+  </data>
+  <data name="EditorSubText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Name" xml:space="preserve">
+    <value>EditorSubText</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.Parent" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorSubText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditorTitleText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 24pt, style=Bold</value>
+  </data>
+  <data name="EditorTitleText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorTitleText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 20</value>
+  </data>
+  <data name="EditorTitleText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 32</value>
+  </data>
+  <data name="EditorTitleText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditorTitleText.Text" xml:space="preserve">
+    <value>Limitless Editor</value>
+  </data>
+  <data name="EditorTitleText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Name" xml:space="preserve">
+    <value>EditorTitleText</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.Parent" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorTitleText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 100</value>
+  </data>
+  <data name="EditorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 550</value>
+  </data>
+  <data name="EditorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="EditorPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.Name" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="CustomLibsOmega.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1963,7 +2266,7 @@
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;OptionsPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="AboutBSButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -2173,7 +2476,7 @@ Thank you for your continued support!
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;AboutPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="WelcomeImage0.Location" type="System.Drawing.Point, System.Drawing">
     <value>540, 65</value>
@@ -2311,7 +2614,7 @@ Thank you for your continued support!
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;WelcomePanel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="DonatePPButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -2460,94 +2763,7 @@ Thanks!
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;DonatePanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="EditorSubText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditorSubText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 60</value>
-  </data>
-  <data name="EditorSubText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1282, 13</value>
-  </data>
-  <data name="EditorSubText.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="EditorSubText.Text" xml:space="preserve">
-    <value>Subtext goes here</value>
-  </data>
-  <data name="EditorSubText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;EditorSubText.Name" xml:space="preserve">
-    <value>EditorSubText</value>
-  </data>
-  <data name="&gt;&gt;EditorSubText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditorSubText.Parent" xml:space="preserve">
-    <value>EditorPanel</value>
-  </data>
-  <data name="&gt;&gt;EditorSubText.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="EditorTitleText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 24pt, style=Bold</value>
-  </data>
-  <data name="EditorTitleText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditorTitleText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 20</value>
-  </data>
-  <data name="EditorTitleText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1282, 32</value>
-  </data>
-  <data name="EditorTitleText.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="EditorTitleText.Text" xml:space="preserve">
-    <value>Limitless Editor</value>
-  </data>
-  <data name="EditorTitleText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;EditorTitleText.Name" xml:space="preserve">
-    <value>EditorTitleText</value>
-  </data>
-  <data name="&gt;&gt;EditorTitleText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditorTitleText.Parent" xml:space="preserve">
-    <value>EditorPanel</value>
-  </data>
-  <data name="&gt;&gt;EditorTitleText.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="EditorPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 100</value>
-  </data>
-  <data name="EditorPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1282, 550</value>
-  </data>
-  <data name="EditorPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="EditorPanel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;EditorPanel.Name" xml:space="preserve">
-    <value>EditorPanel</value>
-  </data>
-  <data name="&gt;&gt;EditorPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditorPanel.Parent" xml:space="preserve">
-    <value>MainMenuPanel</value>
-  </data>
-  <data name="&gt;&gt;EditorPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="MainMenuPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 11</value>

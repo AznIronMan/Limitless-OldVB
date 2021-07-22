@@ -20,6 +20,18 @@
         ReleaseType = "ALPHA "
         Dim VersionParts() As String = Strings.Split((System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()), ".", 4)
         VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
+        UpdateCurBox.Text = VersionNumber
+        Try
+            UpdateAvaBox.Text = Tools.GetWebText(MemoryBank.VersionURL)
+            UpdateSubText.ForeColor = MemoryBank.PagesForeColor
+            CheckForUpdate(UpdateCurBox.Text, UpdateAvaBox.Text)
+        Catch ex As Exception
+            UpdateAvaBox.Text = "Not Available"
+            UpdateSubText.Text = "Error Checking Update Server - Please Check Your Internet Settings"
+            UpdateSubText.ForeColor = MemoryBank.DonateForeColor
+            UpdateInstallButton.Text = "Not Available"
+            Logger.WriteToLog("UpdateCheck", "Could not find update server.", ex)
+        End Try
         AppTitleText = ApplicationName & " [" & ReleaseType & "v" & VersionNumber & "]"
         Me.TitleLabel.Text = AppTitleText
         If Settings.SettingsMusic.ToLower = "on" Then
@@ -69,15 +81,20 @@
     End Sub
 
 
-    Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles StartButton.MouseHover, UpdateButton.MouseHover, OptionsButton.MouseHover, LoadButton.MouseHover, ExitButton.MouseHover, EditButton.MouseHover, DonateButton.MouseHover, AboutButton.MouseHover, StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp
+    Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles StartButton.MouseHover, UpdateButton.MouseHover, OptionsButton.MouseHover,
+        LoadButton.MouseHover, ExitButton.MouseHover, EditButton.MouseHover, DonateButton.MouseHover, AboutButton.MouseHover, UpdateInstallButton.MouseHover,
+        StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp,
+        UpdateInstallButton.MouseUp
         HoverOverEffect(sender)
     End Sub
 
-    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles StartButton.MouseLeave, UpdateButton.MouseLeave, OptionsButton.MouseLeave, LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, AboutButton.MouseLeave
+    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles StartButton.MouseLeave, UpdateButton.MouseLeave, OptionsButton.MouseLeave,
+        LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, AboutButton.MouseLeave, UpdateInstallButton.MouseLeave
         LeaveObjEffect(sender)
     End Sub
 
-    Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles StartButton.MouseDown, UpdateButton.MouseDown, OptionsButton.MouseDown, LoadButton.MouseDown, ExitButton.MouseDown, EditButton.MouseDown, DonateButton.MouseDown, AboutButton.MouseDown
+    Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles StartButton.MouseDown, UpdateButton.MouseDown, OptionsButton.MouseDown,
+        LoadButton.MouseDown, ExitButton.MouseDown, EditButton.MouseDown, DonateButton.MouseDown, AboutButton.MouseDown, UpdateInstallButton.MouseDown
         MouseDownEffect(sender)
     End Sub
 
@@ -107,6 +124,47 @@
         Close()
     End Sub
 
+    'Update Section
+
+    Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
+        UpdateButtonPressed()
+    End Sub
+
+    Private Sub UpdateButtonPressed()
+        SwitchToIntro()
+        ResetEditPath()
+        WelcomePanel.Visible = False
+        AboutPanel.Visible = False
+        DonatePanel.Visible = False
+        OptionsPanel.Visible = False
+        EditorPanel.Visible = False
+        UpdatePanel.Visible = True
+
+    End Sub
+
+    Private Sub CheckForUpdate(curver As String, avaver As String)
+        Dim currentver, availver As Long
+        currentver = CLng(Replace(curver, ".", ""))
+        availver = CLng(Replace(avaver, ".", ""))
+        If availver > currentver Then
+            Dim updatetext = "Update " & avaver & " Available!"
+            UpdateChanges(updatetext, MemoryBank.DonateForeColor, True, "Install Update")
+            Jukebox.StopSong()
+            MsgBox(updatetext & vbCrLf & vbCrLf & "Please Update via the Update Button!", vbOKOnly + vbExclamation)
+        Else
+            UpdateChanges("Your Game Is Current!", MemoryBank.DonateForeColor, False, "No Update Available")
+        End If
+    End Sub
+
+    Private Sub UpdateChanges(text As String, color As Color, enable As Boolean, buttontext As String)
+        UpdateSubText.Text = text
+        UpdateSubText.ForeColor = color
+        UpdateInstallButton.Enabled = enable
+        UpdateInstallButton.Text = buttontext
+        AssignColor(UpdateInstallButton, "Button")
+    End Sub
+
+
     'About Section
     Private Sub AboutButtonPressed()
         SwitchToIntro()
@@ -116,6 +174,7 @@
         DonatePanel.Visible = False
         OptionsPanel.Visible = False
         EditorPanel.Visible = False
+        UpdatePanel.Visible = False
         Dim AboutMessage As String = "This application was created by ClarkTribe Games." & Environment.NewLine & Environment.NewLine &
             "It was the development of basically a one man team with the advice, suggestions, and feedback from friends, family, and colleagues." & Environment.NewLine & Environment.NewLine &
             "Limitless is dedicate to the kids of the creator." & Environment.NewLine & Environment.NewLine &
@@ -191,12 +250,6 @@
         Tools.GoToWeb("https://www.paypal.com/paypalme/aznblusuazn")
     End Sub
 
-
-    'Update Section
-
-    'Add update function here
-
-
     'Options Section
     Private Sub OptionsButton_Click(sender As Object, e As EventArgs) Handles OptionsButton.Click
         OptionsButtonPressed()
@@ -208,6 +261,7 @@
         AboutPanel.Visible = False
         DonatePanel.Visible = False
         EditorPanel.Visible = False
+        UpdatePanel.Visible = False
         OptionsGroupToMid()
         OptionsPanel.Visible = True
         CustomLibsGroup.Visible = False
@@ -1076,10 +1130,21 @@
         EditorPanel.Visible = True
     End Sub
 
+    Private Sub UpdateInstallButton_Click(sender As Object, e As EventArgs) Handles UpdateInstallButton.Click
+        Dim pHelp As New ProcessStartInfo
+        pHelp.FileName = ".\" & MemoryBank.UpdaterName & ".exe"
+        pHelp.Arguments = "-Path " & Application.ProductName & " -Dir " &
+            (System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase)).Substring(6)
+        pHelp.UseShellExecute = True
+        pHelp.WindowStyle = ProcessWindowStyle.Normal
+        Dim proc As Process = Process.Start(pHelp)
+    End Sub
+
     'Start Game Section
 
     Private Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
         MsgBox("Yeah, we are excited about the game too, but it's not ready yet.  Be patient.  Thanks!" & vbCrLf & vbCrLf & "- Geoff", vbExclamation + vbOKOnly)
+        Initialize.InitPanels()
         ResetEditPath()
     End Sub
 

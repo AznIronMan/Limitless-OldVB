@@ -45,6 +45,17 @@ Partial Class MainWindow
         Me.EditButton = New System.Windows.Forms.Button()
         Me.LoadButton = New System.Windows.Forms.Button()
         Me.StartButton = New System.Windows.Forms.Button()
+        Me.UpdatePanel = New System.Windows.Forms.Panel()
+        Me.UpdateAvaBox = New System.Windows.Forms.TextBox()
+        Me.UpdateCurBox = New System.Windows.Forms.TextBox()
+        Me.UpdateInstallButton = New System.Windows.Forms.Button()
+        Me.UpdateAvaText = New System.Windows.Forms.Label()
+        Me.UpdateCurText = New System.Windows.Forms.Label()
+        Me.UpdateSubText = New System.Windows.Forms.Label()
+        Me.UpdateTitleText = New System.Windows.Forms.Label()
+        Me.EditorPanel = New System.Windows.Forms.Panel()
+        Me.EditorSubText = New System.Windows.Forms.Label()
+        Me.EditorTitleText = New System.Windows.Forms.Label()
         Me.OptionsPanel = New System.Windows.Forms.Panel()
         Me.CustomLibsGroup = New System.Windows.Forms.GroupBox()
         Me.CustomLibsOmega = New System.Windows.Forms.Label()
@@ -107,9 +118,6 @@ Partial Class MainWindow
         Me.DonatePTButton = New System.Windows.Forms.Button()
         Me.DonateText = New System.Windows.Forms.TextBox()
         Me.DonateTitle = New System.Windows.Forms.Label()
-        Me.EditorPanel = New System.Windows.Forms.Panel()
-        Me.EditorSubText = New System.Windows.Forms.Label()
-        Me.EditorTitleText = New System.Windows.Forms.Label()
         Me.MenuTips = New System.Windows.Forms.ToolTip(Me.components)
         Me.TitleBarPanel.SuspendLayout()
         Me.MinimizeButton.SuspendLayout()
@@ -117,6 +125,8 @@ Partial Class MainWindow
         Me.BackgroundPanel.SuspendLayout()
         Me.MainMenuPanel.SuspendLayout()
         Me.MainMenuBar.SuspendLayout()
+        Me.UpdatePanel.SuspendLayout()
+        Me.EditorPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
         Me.CustomLibsGroup.SuspendLayout()
         Me.CustomLibsPreviewMusic.SuspendLayout()
@@ -134,7 +144,6 @@ Partial Class MainWindow
         CType(Me.WelcomeImage4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WelcomeImage3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DonatePanel.SuspendLayout()
-        Me.EditorPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'TitleLabel
@@ -210,11 +219,12 @@ Partial Class MainWindow
         '
         Me.MainMenuPanel.BackColor = System.Drawing.SystemColors.ControlText
         Me.MainMenuPanel.Controls.Add(Me.MainMenuBar)
+        Me.MainMenuPanel.Controls.Add(Me.UpdatePanel)
+        Me.MainMenuPanel.Controls.Add(Me.EditorPanel)
         Me.MainMenuPanel.Controls.Add(Me.OptionsPanel)
         Me.MainMenuPanel.Controls.Add(Me.AboutPanel)
         Me.MainMenuPanel.Controls.Add(Me.WelcomePanel)
         Me.MainMenuPanel.Controls.Add(Me.DonatePanel)
-        Me.MainMenuPanel.Controls.Add(Me.EditorPanel)
         resources.ApplyResources(Me.MainMenuPanel, "MainMenuPanel")
         Me.MainMenuPanel.Name = "MainMenuPanel"
         '
@@ -268,8 +278,8 @@ Partial Class MainWindow
         '
         Me.UpdateButton.BackColor = System.Drawing.SystemColors.ControlText
         Me.UpdateButton.BackgroundImage = Global.Limitless.My.Resources.Resources.update
-        resources.ApplyResources(Me.UpdateButton, "UpdateButton")
         Me.UpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.UpdateButton, "UpdateButton")
         Me.UpdateButton.ForeColor = System.Drawing.SystemColors.Control
         Me.UpdateButton.Name = "UpdateButton"
         Me.MenuTips.SetToolTip(Me.UpdateButton, resources.GetString("UpdateButton.ToolTip"))
@@ -340,6 +350,79 @@ Partial Class MainWindow
         Me.StartButton.Name = "StartButton"
         Me.MenuTips.SetToolTip(Me.StartButton, resources.GetString("StartButton.ToolTip"))
         Me.StartButton.UseVisualStyleBackColor = False
+        '
+        'UpdatePanel
+        '
+        Me.UpdatePanel.Controls.Add(Me.UpdateAvaBox)
+        Me.UpdatePanel.Controls.Add(Me.UpdateCurBox)
+        Me.UpdatePanel.Controls.Add(Me.UpdateInstallButton)
+        Me.UpdatePanel.Controls.Add(Me.UpdateAvaText)
+        Me.UpdatePanel.Controls.Add(Me.UpdateCurText)
+        Me.UpdatePanel.Controls.Add(Me.UpdateSubText)
+        Me.UpdatePanel.Controls.Add(Me.UpdateTitleText)
+        resources.ApplyResources(Me.UpdatePanel, "UpdatePanel")
+        Me.UpdatePanel.Name = "UpdatePanel"
+        '
+        'UpdateAvaBox
+        '
+        Me.UpdateAvaBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.UpdateAvaBox.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.UpdateAvaBox, "UpdateAvaBox")
+        Me.UpdateAvaBox.Name = "UpdateAvaBox"
+        Me.UpdateAvaBox.ReadOnly = True
+        Me.UpdateAvaBox.TabStop = False
+        '
+        'UpdateCurBox
+        '
+        Me.UpdateCurBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.UpdateCurBox.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.UpdateCurBox, "UpdateCurBox")
+        Me.UpdateCurBox.Name = "UpdateCurBox"
+        Me.UpdateCurBox.ReadOnly = True
+        Me.UpdateCurBox.TabStop = False
+        '
+        'UpdateInstallButton
+        '
+        resources.ApplyResources(Me.UpdateInstallButton, "UpdateInstallButton")
+        Me.UpdateInstallButton.Name = "UpdateInstallButton"
+        Me.UpdateInstallButton.UseVisualStyleBackColor = True
+        '
+        'UpdateAvaText
+        '
+        resources.ApplyResources(Me.UpdateAvaText, "UpdateAvaText")
+        Me.UpdateAvaText.Name = "UpdateAvaText"
+        '
+        'UpdateCurText
+        '
+        resources.ApplyResources(Me.UpdateCurText, "UpdateCurText")
+        Me.UpdateCurText.Name = "UpdateCurText"
+        '
+        'UpdateSubText
+        '
+        resources.ApplyResources(Me.UpdateSubText, "UpdateSubText")
+        Me.UpdateSubText.Name = "UpdateSubText"
+        '
+        'UpdateTitleText
+        '
+        resources.ApplyResources(Me.UpdateTitleText, "UpdateTitleText")
+        Me.UpdateTitleText.Name = "UpdateTitleText"
+        '
+        'EditorPanel
+        '
+        Me.EditorPanel.Controls.Add(Me.EditorSubText)
+        Me.EditorPanel.Controls.Add(Me.EditorTitleText)
+        resources.ApplyResources(Me.EditorPanel, "EditorPanel")
+        Me.EditorPanel.Name = "EditorPanel"
+        '
+        'EditorSubText
+        '
+        resources.ApplyResources(Me.EditorSubText, "EditorSubText")
+        Me.EditorSubText.Name = "EditorSubText"
+        '
+        'EditorTitleText
+        '
+        resources.ApplyResources(Me.EditorTitleText, "EditorTitleText")
+        Me.EditorTitleText.Name = "EditorTitleText"
         '
         'OptionsPanel
         '
@@ -822,23 +905,6 @@ Partial Class MainWindow
         resources.ApplyResources(Me.DonateTitle, "DonateTitle")
         Me.DonateTitle.Name = "DonateTitle"
         '
-        'EditorPanel
-        '
-        Me.EditorPanel.Controls.Add(Me.EditorSubText)
-        Me.EditorPanel.Controls.Add(Me.EditorTitleText)
-        resources.ApplyResources(Me.EditorPanel, "EditorPanel")
-        Me.EditorPanel.Name = "EditorPanel"
-        '
-        'EditorSubText
-        '
-        resources.ApplyResources(Me.EditorSubText, "EditorSubText")
-        Me.EditorSubText.Name = "EditorSubText"
-        '
-        'EditorTitleText
-        '
-        resources.ApplyResources(Me.EditorTitleText, "EditorTitleText")
-        Me.EditorTitleText.Name = "EditorTitleText"
-        '
         'MainWindow
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -861,6 +927,9 @@ Partial Class MainWindow
         Me.BackgroundPanel.ResumeLayout(False)
         Me.MainMenuPanel.ResumeLayout(False)
         Me.MainMenuBar.ResumeLayout(False)
+        Me.UpdatePanel.ResumeLayout(False)
+        Me.UpdatePanel.PerformLayout()
+        Me.EditorPanel.ResumeLayout(False)
         Me.OptionsPanel.ResumeLayout(False)
         Me.CustomLibsGroup.ResumeLayout(False)
         Me.CustomLibsGroup.PerformLayout()
@@ -882,7 +951,6 @@ Partial Class MainWindow
         CType(Me.WelcomeImage3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DonatePanel.ResumeLayout(False)
         Me.DonatePanel.PerformLayout()
-        Me.EditorPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -980,4 +1048,12 @@ Partial Class MainWindow
     Friend WithEvents NullButton As Button
     Friend WithEvents SaveButton As Button
     Friend WithEvents MenuTips As ToolTip
+    Friend WithEvents UpdatePanel As Panel
+    Friend WithEvents UpdateSubText As Label
+    Friend WithEvents UpdateTitleText As Label
+    Friend WithEvents UpdateAvaText As Label
+    Friend WithEvents UpdateCurText As Label
+    Friend WithEvents UpdateInstallButton As Button
+    Friend WithEvents UpdateAvaBox As TextBox
+    Friend WithEvents UpdateCurBox As TextBox
 End Class

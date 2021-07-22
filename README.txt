@@ -1,6 +1,6 @@
 =============================================
 LIMITLESS by Geoff Clark
-VERSION ALPHA 0.1.004.0002
+VERSION ALPHA 0.1.005.0001
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -72,6 +72,17 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
+ALPHA 0.1.005.0001 / 2021.07.22 - The Updater Update
+
+- enabled update button
+- added check for available update on server vs installed version of game
+- added cosmetics for update notifications
+- added logic for checking available update vs current version
+- added ClarkTribeGames Updater 3rd party app as an exe with the application
+- added updater functionality
+
+[PREVIOUS UPDATES]
+
 ALPHA 0.1.004.0002 / 2021.07.20 - The Menu Bar Update
 
 - gui change - moved menu bar to the top of the app and reduced logo, giving increasing the usable space
@@ -87,8 +98,6 @@ ALPHA 0.1.004.0002 / 2021.07.20 - The Menu Bar Update
 - fixed select track buttons not disappearing when unchecked
 - added autosave feature to options (bypasses most are you sure prompts)
 - added new menu bar icons
-
-[PREVIOUS UPDATES]
 
 ALPHA 0.1.003.0004 / 2021.07.17 - The Options Update
 

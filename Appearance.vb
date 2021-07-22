@@ -116,6 +116,14 @@
         AssignColor(MainWindow.EditorSubText, "Pages")
         AssignColor(MainWindow.SaveButton, "Button")
         AssignColor(MainWindow.NullButton, "Button")
+        AssignColor(MainWindow.UpdatePanel, "Pages")
+        AssignColor(MainWindow.UpdateTitleText, "Pages")
+        AssignColor(MainWindow.UpdateSubText, "Pages")
+        AssignColor(MainWindow.UpdateCurText, "Pages")
+        AssignColor(MainWindow.UpdateAvaText, "Pages")
+        AssignColor(MainWindow.UpdateInstallButton, "Button")
+        AssignColor(MainWindow.UpdateCurBox, "Pages")
+        AssignColor(MainWindow.UpdateAvaBox, "Pages")
     End Sub
 
     Public Sub SetButtonStyle(button As Button)

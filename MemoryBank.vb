@@ -2,6 +2,8 @@
 
     'Environmental
     Public Shared BasePath As String = System.IO.Path.Combine(My.Computer.FileSystem.CurrentDirectory)
+    Public Shared VersionURL As String = "http://svr.clarktribegames.com:19762/limitless.txt"
+    Public Shared UpdaterName As String = "CTGUpdater"
     Public Shared AvatarsDir As String = "avatars"
     Public Shared DataDir As String = "data"
     Public Shared SavesDir As String = "saves"

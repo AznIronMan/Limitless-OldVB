@@ -1,4 +1,7 @@
 ﻿Imports System.Threading
+Imports System.Text
+Imports System.Net
+Imports System.IO
 
 Public Class Tools
 
@@ -29,6 +32,12 @@ Public Class Tools
                 Environment.NewLine & "Thank you.")
         End Try
     End Sub
+
+    Public Shared Function GetWebText(url As String) As String
+        Dim client As WebClient = New WebClient()
+        Dim reader As StreamReader = New StreamReader(client.OpenRead(url))
+        Return reader.ReadToEnd
+    End Function
 
     Public Shared Sub CustomLibsListBuilder(type As String, list As ListBox, dir As String, activecheck As CheckBox,
         ext As String, importbutton As Button, omega As Boolean)
