@@ -4,6 +4,7 @@ Public Module Initialize
 
     Public Sub InitProcess()
         InitFolders()
+        InitUpdater()
         InitHide()
         InitSettings()
         InitPanels()
@@ -20,11 +21,14 @@ Public Module Initialize
         FilesFolders.CreateDirectory(MemoryBank.LogDir)
     End Sub
 
+    Private Sub InitUpdater()
+        If Not File.Exists("CTGUpdater.exe") Then System.IO.File.WriteAllBytes("CTGUpdater.exe", My.Resources.CTGUpdater)
+    End Sub
+
     Private Sub InitHide()
         FilesFolders.HideFolder(MemoryBank.LibDir)
         FilesFolders.HideFile(LCase(Application.ProductName) & ".exe.config")
         FilesFolders.HideFile(MemoryBank.UpdaterName & ".exe")
-        FilesFolders.HideFile(MemoryBank.UpdaterName & ".exe.config")
     End Sub
 
     Private Sub InitSettings()

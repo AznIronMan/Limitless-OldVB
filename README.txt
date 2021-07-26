@@ -1,6 +1,6 @@
 =============================================
 LIMITLESS by Geoff Clark
-VERSION ALPHA 0.1.005.0001
+VERSION ALPHA 0.1.005.0002
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -72,7 +72,7 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.005.0001 / 2021.07.22 - The Updater Update
+ALPHA 0.1.005.0002 / 2021.07.22 - The Updater Update
 
 - enabled update button
 - added check for available update on server vs installed version of game
@@ -80,6 +80,7 @@ ALPHA 0.1.005.0001 / 2021.07.22 - The Updater Update
 - added logic for checking available update vs current version
 - added ClarkTribeGames Updater 3rd party app as an exe with the application
 - added updater functionality
+- embedded updater into resources and created method for auto installing updater if not exists
 
 [PREVIOUS UPDATES]
 
