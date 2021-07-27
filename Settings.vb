@@ -1,7 +1,7 @@
 ﻿Public Class Settings
 
     Public Shared SettingsPath As String = ".\"
-    Public Shared SettingsName As String = "settings.db"
+    Public Shared SettingsName As String = "Limitless.Settings"
     Public Shared SettingsUID As String = Environment.MachineName
     Public Shared SettingsVersion As String = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString())
     Public Shared SettingsMode As String = "Dark"
@@ -26,12 +26,12 @@
         '    'musicActive' TEXT, 'musicName' TEXT, PRIMARY KEY('musicID' AUTOINCREMENT));
         '    CREATE TABLE 'customSound' ('soundID' INTEGER NOT NULL UNIQUE, 'soundFile' TEXT NOT NULL, 
         '    'soundActive' TEXT, 'soundName' TEXT, PRIMARY KEY('soundID' AUTOINCREMENT));")
-        Database.CreateDB(SettingsPath, SettingsName,
+        DBTools.CreateDB(SettingsPath, SettingsName,
             "CREATE TABLE 'mainSettings' ('settingName' TEXT NOT NULL, 'settingConfig' TEXT);")
     End Sub
 
     Public Shared Sub BuildDefault()
-        Database.InsertData(SettingsPath, SettingsName, "mainSettings",
+        DBTools.InsertData(SettingsPath, SettingsName, "mainSettings",
         {"'uid', '" & SettingsUID & "'", "'version', '" & SettingsVersion &
         "'", "'mode', '" & SettingsMode & "'", "'music', '" & SettingsMusic &
         "'", "'custm', '" & SettingsCustM & "'", "'custi', '" & SettingsCustI &
@@ -43,7 +43,7 @@
     End Sub
 
     Public Shared Sub GetSettings()
-        Dim CurrentSettings() As String = (Database.GetCol(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingConfig").Split(","))
+        Dim CurrentSettings() As String = (DBTools.GetCol(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingConfig").Split(","))
         SettingsUID = CurrentSettings(0)
         SettingsVersion = CurrentSettings(1)
         SettingsMode = CurrentSettings(2)

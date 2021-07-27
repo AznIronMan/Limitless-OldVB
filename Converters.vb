@@ -24,7 +24,7 @@
 
     Public Shared Function UppercaseEachFirstLetter(ByVal val As String) As String
         If String.IsNullOrEmpty(val) Then Return val
-        Dim FinalName As String
+        Dim FinalName As String = ""
         Dim split() As String = val.Split(" ")
         For Each name In split
             FinalName = FinalName & UppercaseFirstLetter(name) & " "

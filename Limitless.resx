@@ -373,7 +373,7 @@
     <value>70, 70</value>
   </data>
   <data name="NullButton.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>5</value>
   </data>
   <metadata name="MenuTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -409,7 +409,7 @@
     <value>70, 70</value>
   </data>
   <data name="SaveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>4</value>
   </data>
   <data name="SaveButton.ToolTip" xml:space="preserve">
     <value>Save Your Game</value>
@@ -445,7 +445,7 @@
     <value>70, 70</value>
   </data>
   <data name="ExitButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="ExitButton.ToolTip" xml:space="preserve">
     <value>Exit The Game</value>
@@ -478,7 +478,7 @@
     <value>70, 70</value>
   </data>
   <data name="UpdateButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="UpdateButton.ToolTip" xml:space="preserve">
     <value>Check For Updates</value>
@@ -511,7 +511,7 @@
     <value>70, 70</value>
   </data>
   <data name="DonateButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="DonateButton.ToolTip" xml:space="preserve">
     <value>Donate To The Cause</value>
@@ -544,7 +544,7 @@
     <value>70, 70</value>
   </data>
   <data name="AboutButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="AboutButton.ToolTip" xml:space="preserve">
     <value>About Limitless</value>
@@ -717,254 +717,701 @@
   <data name="&gt;&gt;MainMenuBar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="UpdateAvaBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>655, 255</value>
-  </data>
-  <data name="UpdateAvaBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
-  </data>
-  <data name="UpdateAvaBox.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;UpdateAvaBox.Name" xml:space="preserve">
-    <value>UpdateAvaBox</value>
-  </data>
-  <data name="&gt;&gt;UpdateAvaBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateAvaBox.Parent" xml:space="preserve">
-    <value>UpdatePanel</value>
-  </data>
-  <data name="&gt;&gt;UpdateAvaBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="UpdateCurBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>655, 205</value>
-  </data>
-  <data name="UpdateCurBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
-  </data>
-  <data name="UpdateCurBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;UpdateCurBox.Name" xml:space="preserve">
-    <value>UpdateCurBox</value>
-  </data>
-  <data name="&gt;&gt;UpdateCurBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateCurBox.Parent" xml:space="preserve">
-    <value>UpdatePanel</value>
-  </data>
-  <data name="&gt;&gt;UpdateCurBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="UpdateInstallButton.Enabled" type="System.Boolean, mscorlib">
+  <data name="EditorExportButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="UpdateInstallButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="EditorExportButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="UpdateInstallButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditorExportButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Lucida Console, 8.25pt</value>
   </data>
-  <data name="UpdateInstallButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>565, 360</value>
+  <data name="EditorExportButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="UpdateInstallButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 23</value>
+  <data name="EditorExportButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>775, 50</value>
   </data>
-  <data name="UpdateInstallButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="EditorExportButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
   </data>
-  <data name="UpdateInstallButton.Text" xml:space="preserve">
-    <value>Install Update</value>
+  <data name="EditorExportButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;UpdateInstallButton.Name" xml:space="preserve">
-    <value>UpdateInstallButton</value>
+  <data name="EditorExportButton.Text" xml:space="preserve">
+    <value>Export Data</value>
   </data>
-  <data name="&gt;&gt;UpdateInstallButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditorExportButton.Name" xml:space="preserve">
+    <value>EditorExportButton</value>
+  </data>
+  <data name="&gt;&gt;EditorExportButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;UpdateInstallButton.Parent" xml:space="preserve">
-    <value>UpdatePanel</value>
+  <data name="&gt;&gt;EditorExportButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
   </data>
-  <data name="&gt;&gt;UpdateInstallButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="UpdateAvaText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="UpdateAvaText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 260</value>
-  </data>
-  <data name="UpdateAvaText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 13</value>
-  </data>
-  <data name="UpdateAvaText.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="UpdateAvaText.Text" xml:space="preserve">
-    <value>Available Version:</value>
-  </data>
-  <data name="UpdateAvaText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;UpdateAvaText.Name" xml:space="preserve">
-    <value>UpdateAvaText</value>
-  </data>
-  <data name="&gt;&gt;UpdateAvaText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateAvaText.Parent" xml:space="preserve">
-    <value>UpdatePanel</value>
-  </data>
-  <data name="&gt;&gt;UpdateAvaText.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="UpdateCurText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="UpdateCurText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 210</value>
-  </data>
-  <data name="UpdateCurText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 13</value>
-  </data>
-  <data name="UpdateCurText.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="UpdateCurText.Text" xml:space="preserve">
-    <value>Installed Version:</value>
-  </data>
-  <data name="UpdateCurText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;UpdateCurText.Name" xml:space="preserve">
-    <value>UpdateCurText</value>
-  </data>
-  <data name="&gt;&gt;UpdateCurText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateCurText.Parent" xml:space="preserve">
-    <value>UpdatePanel</value>
-  </data>
-  <data name="&gt;&gt;UpdateCurText.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="UpdateSubText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="UpdateSubText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 110</value>
-  </data>
-  <data name="UpdateSubText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1282, 13</value>
-  </data>
-  <data name="UpdateSubText.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="UpdateSubText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;UpdateSubText.Name" xml:space="preserve">
-    <value>UpdateSubText</value>
-  </data>
-  <data name="&gt;&gt;UpdateSubText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateSubText.Parent" xml:space="preserve">
-    <value>UpdatePanel</value>
-  </data>
-  <data name="&gt;&gt;UpdateSubText.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="UpdateTitleText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 24pt, style=Bold</value>
-  </data>
-  <data name="UpdateTitleText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="UpdateTitleText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 70</value>
-  </data>
-  <data name="UpdateTitleText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1282, 32</value>
-  </data>
-  <data name="UpdateTitleText.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;EditorExportButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="UpdateTitleText.Text" xml:space="preserve">
-    <value>Check For Updates</value>
-  </data>
-  <data name="UpdateTitleText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;UpdateTitleText.Name" xml:space="preserve">
-    <value>UpdateTitleText</value>
-  </data>
-  <data name="&gt;&gt;UpdateTitleText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateTitleText.Parent" xml:space="preserve">
-    <value>UpdatePanel</value>
-  </data>
-  <data name="&gt;&gt;UpdateTitleText.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="UpdatePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 100</value>
-  </data>
-  <data name="UpdatePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1282, 550</value>
-  </data>
-  <data name="UpdatePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="UpdatePanel.Visible" type="System.Boolean, mscorlib">
+  <data name="EditorImportButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;UpdatePanel.Name" xml:space="preserve">
-    <value>UpdatePanel</value>
+  <data name="EditorImportButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="&gt;&gt;UpdatePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="EditorImportButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
   </data>
-  <data name="&gt;&gt;UpdatePanel.Parent" xml:space="preserve">
-    <value>MainMenuPanel</value>
-  </data>
-  <data name="&gt;&gt;UpdatePanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="EditorSubText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditorImportButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditorSubText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 60</value>
+  <data name="EditorImportButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>375, 50</value>
   </data>
-  <data name="EditorSubText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1282, 13</value>
+  <data name="EditorImportButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
   </data>
-  <data name="EditorSubText.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditorImportButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditorImportButton.Text" xml:space="preserve">
+    <value>Import Data</value>
+  </data>
+  <data name="&gt;&gt;EditorImportButton.Name" xml:space="preserve">
+    <value>EditorImportButton</value>
+  </data>
+  <data name="&gt;&gt;EditorImportButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorImportButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorImportButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="EditorSubText.Text" xml:space="preserve">
-    <value>Subtext goes here</value>
+  <data name="EditorAliasButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="EditorSubText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="EditorAliasButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="&gt;&gt;EditorSubText.Name" xml:space="preserve">
-    <value>EditorSubText</value>
+  <data name="EditorAliasButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
   </data>
-  <data name="&gt;&gt;EditorSubText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="EditorAliasButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;EditorSubText.Parent" xml:space="preserve">
+  <data name="EditorAliasButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>375, 150</value>
+  </data>
+  <data name="EditorAliasButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorAliasButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditorAliasButton.Text" xml:space="preserve">
+    <value>Aliases</value>
+  </data>
+  <data name="&gt;&gt;EditorAliasButton.Name" xml:space="preserve">
+    <value>EditorAliasButton</value>
+  </data>
+  <data name="&gt;&gt;EditorAliasButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorAliasButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorAliasButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditorEffectsButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorEffectsButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorEffectsButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorEffectsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorEffectsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>575, 250</value>
+  </data>
+  <data name="EditorEffectsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorEffectsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="EditorEffectsButton.Text" xml:space="preserve">
+    <value>Effects</value>
+  </data>
+  <data name="&gt;&gt;EditorEffectsButton.Name" xml:space="preserve">
+    <value>EditorEffectsButton</value>
+  </data>
+  <data name="&gt;&gt;EditorEffectsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorEffectsButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorEffectsButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="EditorDBButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorDBButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorDBButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorDBButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>575, 50</value>
+  </data>
+  <data name="EditorDBButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorDBButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditorDBButton.Text" xml:space="preserve">
+    <value>Switch Database</value>
+  </data>
+  <data name="&gt;&gt;EditorDBButton.Name" xml:space="preserve">
+    <value>EditorDBButton</value>
+  </data>
+  <data name="&gt;&gt;EditorDBButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorDBButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorDBButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="EditorRelButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorRelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorRelButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorRelButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorRelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>375, 350</value>
+  </data>
+  <data name="EditorRelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorRelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="EditorRelButton.Text" xml:space="preserve">
+    <value>Relationships</value>
+  </data>
+  <data name="&gt;&gt;EditorRelButton.Name" xml:space="preserve">
+    <value>EditorRelButton</value>
+  </data>
+  <data name="&gt;&gt;EditorRelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorRelButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorRelButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="EditorArenaButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorArenaButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorArenaButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorArenaButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorArenaButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>575, 150</value>
+  </data>
+  <data name="EditorArenaButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorArenaButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditorArenaButton.Text" xml:space="preserve">
+    <value>Arenas</value>
+  </data>
+  <data name="&gt;&gt;EditorArenaButton.Name" xml:space="preserve">
+    <value>EditorArenaButton</value>
+  </data>
+  <data name="&gt;&gt;EditorArenaButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorArenaButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorArenaButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="EditorVerseButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorVerseButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorVerseButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorVerseButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorVerseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>175, 350</value>
+  </data>
+  <data name="EditorVerseButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorVerseButton.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="EditorVerseButton.Text" xml:space="preserve">
+    <value>Multiverse</value>
+  </data>
+  <data name="&gt;&gt;EditorVerseButton.Name" xml:space="preserve">
+    <value>EditorVerseButton</value>
+  </data>
+  <data name="&gt;&gt;EditorVerseButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorVerseButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorVerseButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="EditorDestinyButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorDestinyButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorDestinyButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorDestinyButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorDestinyButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>375, 250</value>
+  </data>
+  <data name="EditorDestinyButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorDestinyButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="EditorDestinyButton.Text" xml:space="preserve">
+    <value>Destinies</value>
+  </data>
+  <data name="&gt;&gt;EditorDestinyButton.Name" xml:space="preserve">
+    <value>EditorDestinyButton</value>
+  </data>
+  <data name="&gt;&gt;EditorDestinyButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorDestinyButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorDestinyButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="EditorStatusButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorStatusButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorStatusButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorStatusButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorStatusButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>575, 350</value>
+  </data>
+  <data name="EditorStatusButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorStatusButton.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="EditorStatusButton.Text" xml:space="preserve">
+    <value>Statuses</value>
+  </data>
+  <data name="&gt;&gt;EditorStatusButton.Name" xml:space="preserve">
+    <value>EditorStatusButton</value>
+  </data>
+  <data name="&gt;&gt;EditorStatusButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorStatusButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorStatusButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="EditorTeamsButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorTeamsButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorTeamsButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorTeamsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorTeamsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>775, 350</value>
+  </data>
+  <data name="EditorTeamsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorTeamsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="EditorTeamsButton.Text" xml:space="preserve">
+    <value>Teams</value>
+  </data>
+  <data name="&gt;&gt;EditorTeamsButton.Name" xml:space="preserve">
+    <value>EditorTeamsButton</value>
+  </data>
+  <data name="&gt;&gt;EditorTeamsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorTeamsButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorTeamsButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="EditorItemButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorItemButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorItemButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorItemButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorItemButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>975, 250</value>
+  </data>
+  <data name="EditorItemButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorItemButton.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="EditorItemButton.Text" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="&gt;&gt;EditorItemButton.Name" xml:space="preserve">
+    <value>EditorItemButton</value>
+  </data>
+  <data name="&gt;&gt;EditorItemButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorItemButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorItemButton.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="EditorWearButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorWearButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorWearButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorWearButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorWearButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>975, 350</value>
+  </data>
+  <data name="EditorWearButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorWearButton.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="EditorWearButton.Text" xml:space="preserve">
+    <value>Wearables</value>
+  </data>
+  <data name="&gt;&gt;EditorWearButton.Name" xml:space="preserve">
+    <value>EditorWearButton</value>
+  </data>
+  <data name="&gt;&gt;EditorWearButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorWearButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorWearButton.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="EditorCharmsButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorCharmsButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorCharmsButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorCharmsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorCharmsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>975, 150</value>
+  </data>
+  <data name="EditorCharmsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorCharmsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="EditorCharmsButton.Text" xml:space="preserve">
+    <value>Charms</value>
+  </data>
+  <data name="&gt;&gt;EditorCharmsButton.Name" xml:space="preserve">
+    <value>EditorCharmsButton</value>
+  </data>
+  <data name="&gt;&gt;EditorCharmsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharmsButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharmsButton.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="EditorHeldButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorHeldButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorHeldButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorHeldButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorHeldButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>775, 250</value>
+  </data>
+  <data name="EditorHeldButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorHeldButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="EditorHeldButton.Text" xml:space="preserve">
+    <value>Handhelds</value>
+  </data>
+  <data name="&gt;&gt;EditorHeldButton.Name" xml:space="preserve">
+    <value>EditorHeldButton</value>
+  </data>
+  <data name="&gt;&gt;EditorHeldButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorHeldButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorHeldButton.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="EditorAblButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorAblButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorAblButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorAblButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorAblButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>175, 150</value>
+  </data>
+  <data name="EditorAblButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorAblButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditorAblButton.Text" xml:space="preserve">
+    <value>Abilities</value>
+  </data>
+  <data name="&gt;&gt;EditorAblButton.Name" xml:space="preserve">
+    <value>EditorAblButton</value>
+  </data>
+  <data name="&gt;&gt;EditorAblButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorAblButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorAblButton.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="EditorClassButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorClassButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorClassButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorClassButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorClassButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 250</value>
+  </data>
+  <data name="EditorClassButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorClassButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="EditorClassButton.Text" xml:space="preserve">
+    <value>Classifications</value>
+  </data>
+  <data name="&gt;&gt;EditorClassButton.Name" xml:space="preserve">
+    <value>EditorClassButton</value>
+  </data>
+  <data name="&gt;&gt;EditorClassButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorClassButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorClassButton.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="EditorCharButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditorCharButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditorCharButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorCharButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>775, 150</value>
+  </data>
+  <data name="EditorCharButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="EditorCharButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="EditorCharButton.Text" xml:space="preserve">
+    <value>Characters</value>
+  </data>
+  <data name="&gt;&gt;EditorCharButton.Name" xml:space="preserve">
+    <value>EditorCharButton</value>
+  </data>
+  <data name="&gt;&gt;EditorCharButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharButton.Parent" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharButton.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="EditorMenuPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 93</value>
+  </data>
+  <data name="EditorMenuPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1275, 455</value>
+  </data>
+  <data name="EditorMenuPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditorMenuPanel.Name" xml:space="preserve">
+    <value>EditorMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorMenuPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorMenuPanel.Parent" xml:space="preserve">
     <value>EditorPanel</value>
   </data>
-  <data name="&gt;&gt;EditorSubText.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditorMenuPanel.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="EditorDBText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="EditorDBText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorDBText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>480, 55</value>
+  </data>
+  <data name="EditorDBText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 23</value>
+  </data>
+  <data name="EditorDBText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditorDBText.Text" xml:space="preserve">
+    <value>Database Name</value>
+  </data>
+  <data name="EditorDBText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;EditorDBText.Name" xml:space="preserve">
+    <value>EditorDBText</value>
+  </data>
+  <data name="&gt;&gt;EditorDBText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorDBText.Parent" xml:space="preserve">
+    <value>EditorPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorDBText.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="EditorTitleText.Font" type="System.Drawing.Font, System.Drawing">
     <value>Lucida Console, 24pt, style=Bold</value>
@@ -976,7 +1423,7 @@
     <value>3, 20</value>
   </data>
   <data name="EditorTitleText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1282, 32</value>
+    <value>1278, 32</value>
   </data>
   <data name="EditorTitleText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -997,7 +1444,7 @@
     <value>EditorPanel</value>
   </data>
   <data name="&gt;&gt;EditorTitleText.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EditorPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 100</value>
@@ -1021,7 +1468,7 @@
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;EditorPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="CustomLibsOmega.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2266,7 +2713,7 @@
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;OptionsPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="AboutBSButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -2476,124 +2923,328 @@ Thank you for your continued support!
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;AboutPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="WelcomeImage0.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 65</value>
-  </data>
-  <data name="WelcomeImage0.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 200</value>
-  </data>
-  <data name="WelcomeImage0.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage0.Name" xml:space="preserve">
-    <value>WelcomeImage0</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage0.Parent" xml:space="preserve">
-    <value>WelcomePanel</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage0.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="WelcomeImage1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="WelcomeImage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>355, 330</value>
-  </data>
-  <data name="WelcomeImage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 200</value>
-  </data>
-  <data name="WelcomeImage1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage1.Name" xml:space="preserve">
-    <value>WelcomeImage1</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage1.Parent" xml:space="preserve">
-    <value>WelcomePanel</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="WelcomeImage2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="WelcomeImage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>715, 330</value>
-  </data>
-  <data name="WelcomeImage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 200</value>
-  </data>
-  <data name="WelcomeImage2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage2.Name" xml:space="preserve">
-    <value>WelcomeImage2</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage2.Parent" xml:space="preserve">
-    <value>WelcomePanel</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="WelcomeImage4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="WelcomeImage4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>880, 65</value>
-  </data>
-  <data name="WelcomeImage4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 200</value>
-  </data>
-  <data name="WelcomeImage4.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage4.Name" xml:space="preserve">
-    <value>WelcomeImage4</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage4.Parent" xml:space="preserve">
-    <value>WelcomePanel</value>
-  </data>
-  <data name="&gt;&gt;WelcomeImage4.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="WelcomeImage3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="WelcomeImage06.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="WelcomeImage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 65</value>
+  <data name="WelcomeImage06.Location" type="System.Drawing.Point, System.Drawing">
+    <value>965, 300</value>
   </data>
-  <data name="WelcomeImage3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="WelcomeImage06.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 200</value>
   </data>
-  <data name="WelcomeImage3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="WelcomeImage06.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;WelcomeImage3.Name" xml:space="preserve">
-    <value>WelcomeImage3</value>
+  <data name="WelcomeImage06.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;WelcomeImage3.Type" xml:space="preserve">
+  <data name="&gt;&gt;WelcomeImage06.Name" xml:space="preserve">
+    <value>WelcomeImage06</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage06.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;WelcomeImage3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;WelcomeImage06.Parent" xml:space="preserve">
     <value>WelcomePanel</value>
   </data>
-  <data name="&gt;&gt;WelcomeImage3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;WelcomeImage06.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="WelcomeImage10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1050, 175</value>
+  </data>
+  <data name="WelcomeImage10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage10.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="WelcomeImage10.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage10.Name" xml:space="preserve">
+    <value>WelcomeImage10</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage10.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage10.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="WelcomeImage05.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage05.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-85, 300</value>
+  </data>
+  <data name="WelcomeImage05.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage05.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="WelcomeImage05.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage05.Name" xml:space="preserve">
+    <value>WelcomeImage05</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage05.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage05.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage05.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="WelcomeImage01.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage01.Location" type="System.Drawing.Point, System.Drawing">
+    <value>265, 300</value>
+  </data>
+  <data name="WelcomeImage01.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage01.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="WelcomeImage01.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage01.Name" xml:space="preserve">
+    <value>WelcomeImage01</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage01.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage01.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage01.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="WelcomeImage02.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage02.Location" type="System.Drawing.Point, System.Drawing">
+    <value>615, 300</value>
+  </data>
+  <data name="WelcomeImage02.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage02.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="WelcomeImage02.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage02.Name" xml:space="preserve">
+    <value>WelcomeImage02</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage02.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage02.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage02.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="WelcomeImage07.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage07.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 175</value>
+  </data>
+  <data name="WelcomeImage07.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage07.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="WelcomeImage07.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage07.Name" xml:space="preserve">
+    <value>WelcomeImage07</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage07.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage07.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage07.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="WelcomeImage08.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage08.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 175</value>
+  </data>
+  <data name="WelcomeImage08.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage08.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="WelcomeImage08.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage08.Name" xml:space="preserve">
+    <value>WelcomeImage08</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage08.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage08.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage08.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="WelcomeImage09.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage09.Location" type="System.Drawing.Point, System.Drawing">
+    <value>350, 175</value>
+  </data>
+  <data name="WelcomeImage09.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage09.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="WelcomeImage09.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage09.Name" xml:space="preserve">
+    <value>WelcomeImage09</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage09.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage09.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage09.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="WelcomeImage00.Location" type="System.Drawing.Point, System.Drawing">
+    <value>430, 50</value>
+  </data>
+  <data name="WelcomeImage00.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage00.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="WelcomeImage00.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage00.Name" xml:space="preserve">
+    <value>WelcomeImage00</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage00.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage00.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage00.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="WelcomeImage04.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage04.Location" type="System.Drawing.Point, System.Drawing">
+    <value>780, 50</value>
+  </data>
+  <data name="WelcomeImage04.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage04.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="WelcomeImage04.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage04.Name" xml:space="preserve">
+    <value>WelcomeImage04</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage04.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage04.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage04.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="WelcomeImage11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1125, 50</value>
+  </data>
+  <data name="WelcomeImage11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage11.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="WelcomeImage11.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage11.Name" xml:space="preserve">
+    <value>WelcomeImage11</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage11.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage11.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="WelcomeImage03.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WelcomeImage03.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 50</value>
+  </data>
+  <data name="WelcomeImage03.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="WelcomeImage03.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="WelcomeImage03.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage03.Name" xml:space="preserve">
+    <value>WelcomeImage03</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage03.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage03.Parent" xml:space="preserve">
+    <value>WelcomePanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeImage03.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="WelcomePanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 100</value>
@@ -2614,7 +3265,7 @@ Thank you for your continued support!
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;WelcomePanel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="DonatePPButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -2763,6 +3414,225 @@ Thanks!
     <value>MainMenuPanel</value>
   </data>
   <data name="&gt;&gt;DonatePanel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="UpdateAvaBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>655, 255</value>
+  </data>
+  <data name="UpdateAvaBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="UpdateAvaBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaBox.Name" xml:space="preserve">
+    <value>UpdateAvaBox</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaBox.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="UpdateCurBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>655, 205</value>
+  </data>
+  <data name="UpdateCurBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="UpdateCurBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurBox.Name" xml:space="preserve">
+    <value>UpdateCurBox</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurBox.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="UpdateInstallButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UpdateInstallButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="UpdateInstallButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 8.25pt</value>
+  </data>
+  <data name="UpdateInstallButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>565, 360</value>
+  </data>
+  <data name="UpdateInstallButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 23</value>
+  </data>
+  <data name="UpdateInstallButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="UpdateInstallButton.Text" xml:space="preserve">
+    <value>Install Update</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstallButton.Name" xml:space="preserve">
+    <value>UpdateInstallButton</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstallButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstallButton.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstallButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="UpdateAvaText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UpdateAvaText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>460, 260</value>
+  </data>
+  <data name="UpdateAvaText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 13</value>
+  </data>
+  <data name="UpdateAvaText.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="UpdateAvaText.Text" xml:space="preserve">
+    <value>Available Version:</value>
+  </data>
+  <data name="UpdateAvaText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaText.Name" xml:space="preserve">
+    <value>UpdateAvaText</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaText.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateAvaText.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="UpdateCurText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UpdateCurText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>460, 210</value>
+  </data>
+  <data name="UpdateCurText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 13</value>
+  </data>
+  <data name="UpdateCurText.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="UpdateCurText.Text" xml:space="preserve">
+    <value>Installed Version:</value>
+  </data>
+  <data name="UpdateCurText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurText.Name" xml:space="preserve">
+    <value>UpdateCurText</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurText.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateCurText.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="UpdateSubText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UpdateSubText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 110</value>
+  </data>
+  <data name="UpdateSubText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 13</value>
+  </data>
+  <data name="UpdateSubText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="UpdateSubText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;UpdateSubText.Name" xml:space="preserve">
+    <value>UpdateSubText</value>
+  </data>
+  <data name="&gt;&gt;UpdateSubText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateSubText.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateSubText.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="UpdateTitleText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Lucida Console, 24pt, style=Bold</value>
+  </data>
+  <data name="UpdateTitleText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UpdateTitleText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 70</value>
+  </data>
+  <data name="UpdateTitleText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 32</value>
+  </data>
+  <data name="UpdateTitleText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="UpdateTitleText.Text" xml:space="preserve">
+    <value>Check For Updates</value>
+  </data>
+  <data name="UpdateTitleText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;UpdateTitleText.Name" xml:space="preserve">
+    <value>UpdateTitleText</value>
+  </data>
+  <data name="&gt;&gt;UpdateTitleText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateTitleText.Parent" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateTitleText.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="UpdatePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 100</value>
+  </data>
+  <data name="UpdatePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1282, 550</value>
+  </data>
+  <data name="UpdatePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="UpdatePanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;UpdatePanel.Name" xml:space="preserve">
+    <value>UpdatePanel</value>
+  </data>
+  <data name="&gt;&gt;UpdatePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdatePanel.Parent" xml:space="preserve">
+    <value>MainMenuPanel</value>
+  </data>
+  <data name="&gt;&gt;UpdatePanel.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="MainMenuPanel.Location" type="System.Drawing.Point, System.Drawing">

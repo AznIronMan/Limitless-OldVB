@@ -33,8 +33,8 @@
     <ProductName>Limitless</ProductName>
     <PublisherName>ClarkTribeGames</PublisherName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>0.1.005.0002</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>0.1.006.0001</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -159,9 +159,10 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Avatars.vb" />
     <Compile Include="Calculator.vb" />
+    <Compile Include="Database.vb" />
     <Compile Include="Logger.vb" />
     <Compile Include="Converters.vb" />
-    <Compile Include="Database.vb" />
+    <Compile Include="DBTools.vb" />
     <Compile Include="FilesFolders.vb" />
     <Compile Include="Initialize.vb" />
     <Compile Include="MemoryBank.vb" />
@@ -306,7 +307,7 @@
     <Message Text="Adjusting SDK tools directory to use x64 version of AL.EXE">
     </Message>
     <PropertyGroup>
-      <TargetFrameworkSDKToolsDirectory>$(TargetFrameworkSDKToolsDirectory)$(PlatformTarget)\</TargetFrameworkSDKToolsDirectory>
+      <TargetFrameworkSDKToolsDirectory Condition=" '$(PlatformTarget)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)\$(PlatformTarget)\</TargetFrameworkSDKToolsDirectory>
     </PropertyGroup>
   </Target>
   <Target Name="AfterBuild">

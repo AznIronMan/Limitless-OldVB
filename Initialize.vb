@@ -9,7 +9,6 @@ Public Module Initialize
         InitSettings()
         InitPanels()
         Avatars.TitleScreen()
-
     End Sub
 
     Private Sub InitFolders()
@@ -22,7 +21,8 @@ Public Module Initialize
     End Sub
 
     Private Sub InitUpdater()
-        If Not File.Exists("CTGUpdater.exe") Then System.IO.File.WriteAllBytes("CTGUpdater.exe", My.Resources.CTGUpdater)
+        If Not File.Exists(MemoryBank.UpdaterName & ".exe") Then System.IO.File.WriteAllBytes(MemoryBank.UpdaterName & ".exe",
+            My.Resources.CTGUpdater)
     End Sub
 
     Private Sub InitHide()

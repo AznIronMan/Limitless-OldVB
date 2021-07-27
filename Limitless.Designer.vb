@@ -45,16 +45,27 @@ Partial Class MainWindow
         Me.EditButton = New System.Windows.Forms.Button()
         Me.LoadButton = New System.Windows.Forms.Button()
         Me.StartButton = New System.Windows.Forms.Button()
-        Me.UpdatePanel = New System.Windows.Forms.Panel()
-        Me.UpdateAvaBox = New System.Windows.Forms.TextBox()
-        Me.UpdateCurBox = New System.Windows.Forms.TextBox()
-        Me.UpdateInstallButton = New System.Windows.Forms.Button()
-        Me.UpdateAvaText = New System.Windows.Forms.Label()
-        Me.UpdateCurText = New System.Windows.Forms.Label()
-        Me.UpdateSubText = New System.Windows.Forms.Label()
-        Me.UpdateTitleText = New System.Windows.Forms.Label()
         Me.EditorPanel = New System.Windows.Forms.Panel()
-        Me.EditorSubText = New System.Windows.Forms.Label()
+        Me.EditorMenuPanel = New System.Windows.Forms.Panel()
+        Me.EditorExportButton = New System.Windows.Forms.Button()
+        Me.EditorImportButton = New System.Windows.Forms.Button()
+        Me.EditorAliasButton = New System.Windows.Forms.Button()
+        Me.EditorEffectsButton = New System.Windows.Forms.Button()
+        Me.EditorDBButton = New System.Windows.Forms.Button()
+        Me.EditorRelButton = New System.Windows.Forms.Button()
+        Me.EditorArenaButton = New System.Windows.Forms.Button()
+        Me.EditorVerseButton = New System.Windows.Forms.Button()
+        Me.EditorDestinyButton = New System.Windows.Forms.Button()
+        Me.EditorStatusButton = New System.Windows.Forms.Button()
+        Me.EditorTeamsButton = New System.Windows.Forms.Button()
+        Me.EditorItemButton = New System.Windows.Forms.Button()
+        Me.EditorWearButton = New System.Windows.Forms.Button()
+        Me.EditorCharmsButton = New System.Windows.Forms.Button()
+        Me.EditorHeldButton = New System.Windows.Forms.Button()
+        Me.EditorAblButton = New System.Windows.Forms.Button()
+        Me.EditorClassButton = New System.Windows.Forms.Button()
+        Me.EditorCharButton = New System.Windows.Forms.Button()
+        Me.EditorDBText = New System.Windows.Forms.Label()
         Me.EditorTitleText = New System.Windows.Forms.Label()
         Me.OptionsPanel = New System.Windows.Forms.Panel()
         Me.CustomLibsGroup = New System.Windows.Forms.GroupBox()
@@ -108,16 +119,31 @@ Partial Class MainWindow
         Me.AboutText = New System.Windows.Forms.TextBox()
         Me.AboutTitle = New System.Windows.Forms.Label()
         Me.WelcomePanel = New System.Windows.Forms.Panel()
-        Me.WelcomeImage0 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage1 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage2 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage4 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage3 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage06 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage10 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage05 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage01 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage02 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage07 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage08 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage09 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage00 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage04 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage11 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage03 = New System.Windows.Forms.PictureBox()
         Me.DonatePanel = New System.Windows.Forms.Panel()
         Me.DonatePPButton = New System.Windows.Forms.Button()
         Me.DonatePTButton = New System.Windows.Forms.Button()
         Me.DonateText = New System.Windows.Forms.TextBox()
         Me.DonateTitle = New System.Windows.Forms.Label()
+        Me.UpdatePanel = New System.Windows.Forms.Panel()
+        Me.UpdateAvaBox = New System.Windows.Forms.TextBox()
+        Me.UpdateCurBox = New System.Windows.Forms.TextBox()
+        Me.UpdateInstallButton = New System.Windows.Forms.Button()
+        Me.UpdateAvaText = New System.Windows.Forms.Label()
+        Me.UpdateCurText = New System.Windows.Forms.Label()
+        Me.UpdateSubText = New System.Windows.Forms.Label()
+        Me.UpdateTitleText = New System.Windows.Forms.Label()
         Me.MenuTips = New System.Windows.Forms.ToolTip(Me.components)
         Me.TitleBarPanel.SuspendLayout()
         Me.MinimizeButton.SuspendLayout()
@@ -125,8 +151,8 @@ Partial Class MainWindow
         Me.BackgroundPanel.SuspendLayout()
         Me.MainMenuPanel.SuspendLayout()
         Me.MainMenuBar.SuspendLayout()
-        Me.UpdatePanel.SuspendLayout()
         Me.EditorPanel.SuspendLayout()
+        Me.EditorMenuPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
         Me.CustomLibsGroup.SuspendLayout()
         Me.CustomLibsPreviewMusic.SuspendLayout()
@@ -138,12 +164,20 @@ Partial Class MainWindow
         Me.OptionsColorGroup.SuspendLayout()
         Me.AboutPanel.SuspendLayout()
         Me.WelcomePanel.SuspendLayout()
-        CType(Me.WelcomeImage0, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.WelcomeImage1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.WelcomeImage2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.WelcomeImage4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.WelcomeImage3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage06, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage05, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage01, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage02, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage07, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage08, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage09, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage00, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage04, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WelcomeImage03, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DonatePanel.SuspendLayout()
+        Me.UpdatePanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'TitleLabel
@@ -219,12 +253,12 @@ Partial Class MainWindow
         '
         Me.MainMenuPanel.BackColor = System.Drawing.SystemColors.ControlText
         Me.MainMenuPanel.Controls.Add(Me.MainMenuBar)
-        Me.MainMenuPanel.Controls.Add(Me.UpdatePanel)
         Me.MainMenuPanel.Controls.Add(Me.EditorPanel)
         Me.MainMenuPanel.Controls.Add(Me.OptionsPanel)
         Me.MainMenuPanel.Controls.Add(Me.AboutPanel)
         Me.MainMenuPanel.Controls.Add(Me.WelcomePanel)
         Me.MainMenuPanel.Controls.Add(Me.DonatePanel)
+        Me.MainMenuPanel.Controls.Add(Me.UpdatePanel)
         resources.ApplyResources(Me.MainMenuPanel, "MainMenuPanel")
         Me.MainMenuPanel.Name = "MainMenuPanel"
         '
@@ -351,73 +385,150 @@ Partial Class MainWindow
         Me.MenuTips.SetToolTip(Me.StartButton, resources.GetString("StartButton.ToolTip"))
         Me.StartButton.UseVisualStyleBackColor = False
         '
-        'UpdatePanel
-        '
-        Me.UpdatePanel.Controls.Add(Me.UpdateAvaBox)
-        Me.UpdatePanel.Controls.Add(Me.UpdateCurBox)
-        Me.UpdatePanel.Controls.Add(Me.UpdateInstallButton)
-        Me.UpdatePanel.Controls.Add(Me.UpdateAvaText)
-        Me.UpdatePanel.Controls.Add(Me.UpdateCurText)
-        Me.UpdatePanel.Controls.Add(Me.UpdateSubText)
-        Me.UpdatePanel.Controls.Add(Me.UpdateTitleText)
-        resources.ApplyResources(Me.UpdatePanel, "UpdatePanel")
-        Me.UpdatePanel.Name = "UpdatePanel"
-        '
-        'UpdateAvaBox
-        '
-        Me.UpdateAvaBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.UpdateAvaBox.ForeColor = System.Drawing.SystemColors.Window
-        resources.ApplyResources(Me.UpdateAvaBox, "UpdateAvaBox")
-        Me.UpdateAvaBox.Name = "UpdateAvaBox"
-        Me.UpdateAvaBox.ReadOnly = True
-        Me.UpdateAvaBox.TabStop = False
-        '
-        'UpdateCurBox
-        '
-        Me.UpdateCurBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.UpdateCurBox.ForeColor = System.Drawing.SystemColors.Window
-        resources.ApplyResources(Me.UpdateCurBox, "UpdateCurBox")
-        Me.UpdateCurBox.Name = "UpdateCurBox"
-        Me.UpdateCurBox.ReadOnly = True
-        Me.UpdateCurBox.TabStop = False
-        '
-        'UpdateInstallButton
-        '
-        resources.ApplyResources(Me.UpdateInstallButton, "UpdateInstallButton")
-        Me.UpdateInstallButton.Name = "UpdateInstallButton"
-        Me.UpdateInstallButton.UseVisualStyleBackColor = True
-        '
-        'UpdateAvaText
-        '
-        resources.ApplyResources(Me.UpdateAvaText, "UpdateAvaText")
-        Me.UpdateAvaText.Name = "UpdateAvaText"
-        '
-        'UpdateCurText
-        '
-        resources.ApplyResources(Me.UpdateCurText, "UpdateCurText")
-        Me.UpdateCurText.Name = "UpdateCurText"
-        '
-        'UpdateSubText
-        '
-        resources.ApplyResources(Me.UpdateSubText, "UpdateSubText")
-        Me.UpdateSubText.Name = "UpdateSubText"
-        '
-        'UpdateTitleText
-        '
-        resources.ApplyResources(Me.UpdateTitleText, "UpdateTitleText")
-        Me.UpdateTitleText.Name = "UpdateTitleText"
-        '
         'EditorPanel
         '
-        Me.EditorPanel.Controls.Add(Me.EditorSubText)
+        Me.EditorPanel.Controls.Add(Me.EditorMenuPanel)
+        Me.EditorPanel.Controls.Add(Me.EditorDBText)
         Me.EditorPanel.Controls.Add(Me.EditorTitleText)
         resources.ApplyResources(Me.EditorPanel, "EditorPanel")
         Me.EditorPanel.Name = "EditorPanel"
         '
-        'EditorSubText
+        'EditorMenuPanel
         '
-        resources.ApplyResources(Me.EditorSubText, "EditorSubText")
-        Me.EditorSubText.Name = "EditorSubText"
+        Me.EditorMenuPanel.Controls.Add(Me.EditorExportButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorImportButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorAliasButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorEffectsButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorDBButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorRelButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorArenaButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorVerseButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorDestinyButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorStatusButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorTeamsButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorItemButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorWearButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorCharmsButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorHeldButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorAblButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorClassButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorCharButton)
+        resources.ApplyResources(Me.EditorMenuPanel, "EditorMenuPanel")
+        Me.EditorMenuPanel.Name = "EditorMenuPanel"
+        '
+        'EditorExportButton
+        '
+        resources.ApplyResources(Me.EditorExportButton, "EditorExportButton")
+        Me.EditorExportButton.Name = "EditorExportButton"
+        Me.EditorExportButton.UseVisualStyleBackColor = True
+        '
+        'EditorImportButton
+        '
+        resources.ApplyResources(Me.EditorImportButton, "EditorImportButton")
+        Me.EditorImportButton.Name = "EditorImportButton"
+        Me.EditorImportButton.UseVisualStyleBackColor = True
+        '
+        'EditorAliasButton
+        '
+        resources.ApplyResources(Me.EditorAliasButton, "EditorAliasButton")
+        Me.EditorAliasButton.Name = "EditorAliasButton"
+        Me.EditorAliasButton.UseVisualStyleBackColor = True
+        '
+        'EditorEffectsButton
+        '
+        resources.ApplyResources(Me.EditorEffectsButton, "EditorEffectsButton")
+        Me.EditorEffectsButton.Name = "EditorEffectsButton"
+        Me.EditorEffectsButton.UseVisualStyleBackColor = True
+        '
+        'EditorDBButton
+        '
+        resources.ApplyResources(Me.EditorDBButton, "EditorDBButton")
+        Me.EditorDBButton.Name = "EditorDBButton"
+        Me.EditorDBButton.UseVisualStyleBackColor = True
+        '
+        'EditorRelButton
+        '
+        resources.ApplyResources(Me.EditorRelButton, "EditorRelButton")
+        Me.EditorRelButton.Name = "EditorRelButton"
+        Me.EditorRelButton.UseVisualStyleBackColor = True
+        '
+        'EditorArenaButton
+        '
+        resources.ApplyResources(Me.EditorArenaButton, "EditorArenaButton")
+        Me.EditorArenaButton.Name = "EditorArenaButton"
+        Me.EditorArenaButton.UseVisualStyleBackColor = True
+        '
+        'EditorVerseButton
+        '
+        resources.ApplyResources(Me.EditorVerseButton, "EditorVerseButton")
+        Me.EditorVerseButton.Name = "EditorVerseButton"
+        Me.EditorVerseButton.UseVisualStyleBackColor = True
+        '
+        'EditorDestinyButton
+        '
+        resources.ApplyResources(Me.EditorDestinyButton, "EditorDestinyButton")
+        Me.EditorDestinyButton.Name = "EditorDestinyButton"
+        Me.EditorDestinyButton.UseVisualStyleBackColor = True
+        '
+        'EditorStatusButton
+        '
+        resources.ApplyResources(Me.EditorStatusButton, "EditorStatusButton")
+        Me.EditorStatusButton.Name = "EditorStatusButton"
+        Me.EditorStatusButton.UseVisualStyleBackColor = True
+        '
+        'EditorTeamsButton
+        '
+        resources.ApplyResources(Me.EditorTeamsButton, "EditorTeamsButton")
+        Me.EditorTeamsButton.Name = "EditorTeamsButton"
+        Me.EditorTeamsButton.UseVisualStyleBackColor = True
+        '
+        'EditorItemButton
+        '
+        resources.ApplyResources(Me.EditorItemButton, "EditorItemButton")
+        Me.EditorItemButton.Name = "EditorItemButton"
+        Me.EditorItemButton.UseVisualStyleBackColor = True
+        '
+        'EditorWearButton
+        '
+        resources.ApplyResources(Me.EditorWearButton, "EditorWearButton")
+        Me.EditorWearButton.Name = "EditorWearButton"
+        Me.EditorWearButton.UseVisualStyleBackColor = True
+        '
+        'EditorCharmsButton
+        '
+        resources.ApplyResources(Me.EditorCharmsButton, "EditorCharmsButton")
+        Me.EditorCharmsButton.Name = "EditorCharmsButton"
+        Me.EditorCharmsButton.UseVisualStyleBackColor = True
+        '
+        'EditorHeldButton
+        '
+        resources.ApplyResources(Me.EditorHeldButton, "EditorHeldButton")
+        Me.EditorHeldButton.Name = "EditorHeldButton"
+        Me.EditorHeldButton.UseVisualStyleBackColor = True
+        '
+        'EditorAblButton
+        '
+        resources.ApplyResources(Me.EditorAblButton, "EditorAblButton")
+        Me.EditorAblButton.Name = "EditorAblButton"
+        Me.EditorAblButton.UseVisualStyleBackColor = True
+        '
+        'EditorClassButton
+        '
+        resources.ApplyResources(Me.EditorClassButton, "EditorClassButton")
+        Me.EditorClassButton.Name = "EditorClassButton"
+        Me.EditorClassButton.UseVisualStyleBackColor = True
+        '
+        'EditorCharButton
+        '
+        resources.ApplyResources(Me.EditorCharButton, "EditorCharButton")
+        Me.EditorCharButton.Name = "EditorCharButton"
+        Me.EditorCharButton.UseVisualStyleBackColor = True
+        '
+        'EditorDBText
+        '
+        Me.EditorDBText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.EditorDBText, "EditorDBText")
+        Me.EditorDBText.Name = "EditorDBText"
         '
         'EditorTitleText
         '
@@ -822,43 +933,106 @@ Partial Class MainWindow
         '
         'WelcomePanel
         '
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage0)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage1)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage2)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage4)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage3)
+        Me.WelcomePanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.WelcomePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage06)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage10)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage05)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage01)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage02)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage07)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage08)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage09)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage00)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage04)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage11)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage03)
         resources.ApplyResources(Me.WelcomePanel, "WelcomePanel")
         Me.WelcomePanel.Name = "WelcomePanel"
         '
-        'WelcomeImage0
+        'WelcomeImage06
         '
-        resources.ApplyResources(Me.WelcomeImage0, "WelcomeImage0")
-        Me.WelcomeImage0.Name = "WelcomeImage0"
-        Me.WelcomeImage0.TabStop = False
+        Me.WelcomeImage06.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage06, "WelcomeImage06")
+        Me.WelcomeImage06.Name = "WelcomeImage06"
+        Me.WelcomeImage06.TabStop = False
         '
-        'WelcomeImage1
+        'WelcomeImage10
         '
-        resources.ApplyResources(Me.WelcomeImage1, "WelcomeImage1")
-        Me.WelcomeImage1.Name = "WelcomeImage1"
-        Me.WelcomeImage1.TabStop = False
+        Me.WelcomeImage10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage10, "WelcomeImage10")
+        Me.WelcomeImage10.Name = "WelcomeImage10"
+        Me.WelcomeImage10.TabStop = False
         '
-        'WelcomeImage2
+        'WelcomeImage05
         '
-        resources.ApplyResources(Me.WelcomeImage2, "WelcomeImage2")
-        Me.WelcomeImage2.Name = "WelcomeImage2"
-        Me.WelcomeImage2.TabStop = False
+        Me.WelcomeImage05.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage05, "WelcomeImage05")
+        Me.WelcomeImage05.Name = "WelcomeImage05"
+        Me.WelcomeImage05.TabStop = False
         '
-        'WelcomeImage4
+        'WelcomeImage01
         '
-        resources.ApplyResources(Me.WelcomeImage4, "WelcomeImage4")
-        Me.WelcomeImage4.Name = "WelcomeImage4"
-        Me.WelcomeImage4.TabStop = False
+        Me.WelcomeImage01.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage01, "WelcomeImage01")
+        Me.WelcomeImage01.Name = "WelcomeImage01"
+        Me.WelcomeImage01.TabStop = False
         '
-        'WelcomeImage3
+        'WelcomeImage02
         '
-        resources.ApplyResources(Me.WelcomeImage3, "WelcomeImage3")
-        Me.WelcomeImage3.Name = "WelcomeImage3"
-        Me.WelcomeImage3.TabStop = False
+        Me.WelcomeImage02.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage02, "WelcomeImage02")
+        Me.WelcomeImage02.Name = "WelcomeImage02"
+        Me.WelcomeImage02.TabStop = False
+        '
+        'WelcomeImage07
+        '
+        Me.WelcomeImage07.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage07, "WelcomeImage07")
+        Me.WelcomeImage07.Name = "WelcomeImage07"
+        Me.WelcomeImage07.TabStop = False
+        '
+        'WelcomeImage08
+        '
+        Me.WelcomeImage08.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage08, "WelcomeImage08")
+        Me.WelcomeImage08.Name = "WelcomeImage08"
+        Me.WelcomeImage08.TabStop = False
+        '
+        'WelcomeImage09
+        '
+        Me.WelcomeImage09.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage09, "WelcomeImage09")
+        Me.WelcomeImage09.Name = "WelcomeImage09"
+        Me.WelcomeImage09.TabStop = False
+        '
+        'WelcomeImage00
+        '
+        Me.WelcomeImage00.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage00, "WelcomeImage00")
+        Me.WelcomeImage00.Name = "WelcomeImage00"
+        Me.WelcomeImage00.TabStop = False
+        '
+        'WelcomeImage04
+        '
+        Me.WelcomeImage04.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage04, "WelcomeImage04")
+        Me.WelcomeImage04.Name = "WelcomeImage04"
+        Me.WelcomeImage04.TabStop = False
+        '
+        'WelcomeImage11
+        '
+        Me.WelcomeImage11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage11, "WelcomeImage11")
+        Me.WelcomeImage11.Name = "WelcomeImage11"
+        Me.WelcomeImage11.TabStop = False
+        '
+        'WelcomeImage03
+        '
+        Me.WelcomeImage03.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage03, "WelcomeImage03")
+        Me.WelcomeImage03.Name = "WelcomeImage03"
+        Me.WelcomeImage03.TabStop = False
         '
         'DonatePanel
         '
@@ -905,6 +1079,62 @@ Partial Class MainWindow
         resources.ApplyResources(Me.DonateTitle, "DonateTitle")
         Me.DonateTitle.Name = "DonateTitle"
         '
+        'UpdatePanel
+        '
+        Me.UpdatePanel.Controls.Add(Me.UpdateAvaBox)
+        Me.UpdatePanel.Controls.Add(Me.UpdateCurBox)
+        Me.UpdatePanel.Controls.Add(Me.UpdateInstallButton)
+        Me.UpdatePanel.Controls.Add(Me.UpdateAvaText)
+        Me.UpdatePanel.Controls.Add(Me.UpdateCurText)
+        Me.UpdatePanel.Controls.Add(Me.UpdateSubText)
+        Me.UpdatePanel.Controls.Add(Me.UpdateTitleText)
+        resources.ApplyResources(Me.UpdatePanel, "UpdatePanel")
+        Me.UpdatePanel.Name = "UpdatePanel"
+        '
+        'UpdateAvaBox
+        '
+        Me.UpdateAvaBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.UpdateAvaBox.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.UpdateAvaBox, "UpdateAvaBox")
+        Me.UpdateAvaBox.Name = "UpdateAvaBox"
+        Me.UpdateAvaBox.ReadOnly = True
+        Me.UpdateAvaBox.TabStop = False
+        '
+        'UpdateCurBox
+        '
+        Me.UpdateCurBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.UpdateCurBox.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.UpdateCurBox, "UpdateCurBox")
+        Me.UpdateCurBox.Name = "UpdateCurBox"
+        Me.UpdateCurBox.ReadOnly = True
+        Me.UpdateCurBox.TabStop = False
+        '
+        'UpdateInstallButton
+        '
+        resources.ApplyResources(Me.UpdateInstallButton, "UpdateInstallButton")
+        Me.UpdateInstallButton.Name = "UpdateInstallButton"
+        Me.UpdateInstallButton.UseVisualStyleBackColor = True
+        '
+        'UpdateAvaText
+        '
+        resources.ApplyResources(Me.UpdateAvaText, "UpdateAvaText")
+        Me.UpdateAvaText.Name = "UpdateAvaText"
+        '
+        'UpdateCurText
+        '
+        resources.ApplyResources(Me.UpdateCurText, "UpdateCurText")
+        Me.UpdateCurText.Name = "UpdateCurText"
+        '
+        'UpdateSubText
+        '
+        resources.ApplyResources(Me.UpdateSubText, "UpdateSubText")
+        Me.UpdateSubText.Name = "UpdateSubText"
+        '
+        'UpdateTitleText
+        '
+        resources.ApplyResources(Me.UpdateTitleText, "UpdateTitleText")
+        Me.UpdateTitleText.Name = "UpdateTitleText"
+        '
         'MainWindow
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -927,9 +1157,8 @@ Partial Class MainWindow
         Me.BackgroundPanel.ResumeLayout(False)
         Me.MainMenuPanel.ResumeLayout(False)
         Me.MainMenuBar.ResumeLayout(False)
-        Me.UpdatePanel.ResumeLayout(False)
-        Me.UpdatePanel.PerformLayout()
         Me.EditorPanel.ResumeLayout(False)
+        Me.EditorMenuPanel.ResumeLayout(False)
         Me.OptionsPanel.ResumeLayout(False)
         Me.CustomLibsGroup.ResumeLayout(False)
         Me.CustomLibsGroup.PerformLayout()
@@ -944,13 +1173,22 @@ Partial Class MainWindow
         Me.AboutPanel.ResumeLayout(False)
         Me.AboutPanel.PerformLayout()
         Me.WelcomePanel.ResumeLayout(False)
-        CType(Me.WelcomeImage0, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage06, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage05, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage01, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage02, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage07, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage08, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage09, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage00, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage04, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage03, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DonatePanel.ResumeLayout(False)
         Me.DonatePanel.PerformLayout()
+        Me.UpdatePanel.ResumeLayout(False)
+        Me.UpdatePanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -973,11 +1211,11 @@ Partial Class MainWindow
     Friend WithEvents FooterPanel As Panel
     Friend WithEvents MainMenuBar As Panel
     Friend WithEvents WelcomePanel As Panel
-    Friend WithEvents WelcomeImage0 As PictureBox
-    Friend WithEvents WelcomeImage1 As PictureBox
-    Friend WithEvents WelcomeImage2 As PictureBox
-    Friend WithEvents WelcomeImage4 As PictureBox
-    Friend WithEvents WelcomeImage3 As PictureBox
+    Friend WithEvents WelcomeImage00 As PictureBox
+    Friend WithEvents WelcomeImage01 As PictureBox
+    Friend WithEvents WelcomeImage02 As PictureBox
+    Friend WithEvents WelcomeImage04 As PictureBox
+    Friend WithEvents WelcomeImage03 As PictureBox
     Friend WithEvents StartButton As Button
     Friend WithEvents EditButton As Button
     Friend WithEvents LoadButton As Button
@@ -1043,7 +1281,7 @@ Partial Class MainWindow
     Friend WithEvents CustomLibsMusicMsg As Label
     Friend WithEvents CustomLibsMusicImage As PictureBox
     Friend WithEvents EditorPanel As Panel
-    Friend WithEvents EditorSubText As Label
+    Friend WithEvents EditorDBText As Label
     Friend WithEvents EditorTitleText As Label
     Friend WithEvents NullButton As Button
     Friend WithEvents SaveButton As Button
@@ -1056,4 +1294,30 @@ Partial Class MainWindow
     Friend WithEvents UpdateInstallButton As Button
     Friend WithEvents UpdateAvaBox As TextBox
     Friend WithEvents UpdateCurBox As TextBox
+    Friend WithEvents EditorDBButton As Button
+    Friend WithEvents EditorMenuPanel As Panel
+    Friend WithEvents EditorRelButton As Button
+    Friend WithEvents EditorArenaButton As Button
+    Friend WithEvents EditorVerseButton As Button
+    Friend WithEvents EditorDestinyButton As Button
+    Friend WithEvents EditorStatusButton As Button
+    Friend WithEvents EditorTeamsButton As Button
+    Friend WithEvents EditorItemButton As Button
+    Friend WithEvents EditorWearButton As Button
+    Friend WithEvents EditorCharmsButton As Button
+    Friend WithEvents EditorHeldButton As Button
+    Friend WithEvents EditorAblButton As Button
+    Friend WithEvents EditorClassButton As Button
+    Friend WithEvents EditorCharButton As Button
+    Friend WithEvents WelcomeImage06 As PictureBox
+    Friend WithEvents WelcomeImage05 As PictureBox
+    Friend WithEvents WelcomeImage10 As PictureBox
+    Friend WithEvents WelcomeImage07 As PictureBox
+    Friend WithEvents WelcomeImage08 As PictureBox
+    Friend WithEvents WelcomeImage09 As PictureBox
+    Friend WithEvents WelcomeImage11 As PictureBox
+    Friend WithEvents EditorEffectsButton As Button
+    Friend WithEvents EditorExportButton As Button
+    Friend WithEvents EditorImportButton As Button
+    Friend WithEvents EditorAliasButton As Button
 End Class

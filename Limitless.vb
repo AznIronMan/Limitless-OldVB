@@ -83,18 +83,33 @@
 
     Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles StartButton.MouseHover, UpdateButton.MouseHover, OptionsButton.MouseHover,
         LoadButton.MouseHover, ExitButton.MouseHover, EditButton.MouseHover, DonateButton.MouseHover, AboutButton.MouseHover, UpdateInstallButton.MouseHover,
+        EditorAblButton.MouseHover, EditorArenaButton.MouseHover, EditorCharmsButton.MouseHover, EditorCharButton.MouseHover, EditorClassButton.MouseHover,
+        EditorDestinyButton.MouseHover, EditorItemButton.MouseHover, EditorRelButton.MouseHover, EditorStatusButton.MouseHover,
+        EditorVerseButton.MouseHover, EditorHeldButton.MouseHover, EditorWearButton.MouseHover, EditorDBButton.MouseHover,
+        EditorImportButton.MouseHover, EditorExportButton.MouseHover, EditorAliasButton.MouseHover, EditorTeamsButton.MouseHover,
         StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp,
-        UpdateInstallButton.MouseUp
+        UpdateInstallButton.MouseUp, EditorAblButton.MouseUp, EditorArenaButton.MouseUp, EditorCharmsButton.MouseUp, EditorCharButton.MouseUp,
+        EditorClassButton.MouseUp, EditorDestinyButton.MouseUp, EditorItemButton.MouseUp, EditorRelButton.MouseUp,
+        EditorStatusButton.MouseUp, EditorVerseButton.MouseUp, EditorHeldButton.MouseUp, EditorWearButton.MouseUp, EditorDBButton.MouseUp,
+        EditorImportButton.MouseUp, EditorExportButton.MouseUp, EditorAliasButton.MouseUp, EditorTeamsButton.MouseUp
         HoverOverEffect(sender)
     End Sub
 
     Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles StartButton.MouseLeave, UpdateButton.MouseLeave, OptionsButton.MouseLeave,
-        LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, AboutButton.MouseLeave, UpdateInstallButton.MouseLeave
+        LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, AboutButton.MouseLeave, UpdateInstallButton.MouseLeave,
+        EditorAblButton.MouseLeave, EditorArenaButton.MouseLeave, EditorCharmsButton.MouseLeave, EditorCharButton.MouseLeave, EditorClassButton.MouseLeave,
+        EditorDestinyButton.MouseLeave, EditorItemButton.MouseLeave, EditorRelButton.MouseLeave, EditorStatusButton.MouseLeave,
+        EditorVerseButton.MouseLeave, EditorHeldButton.MouseLeave, EditorWearButton.MouseLeave, EditorDBButton.MouseLeave,
+        EditorImportButton.MouseLeave, EditorExportButton.MouseLeave, EditorAliasButton.MouseLeave, EditorTeamsButton.MouseLeave
         LeaveObjEffect(sender)
     End Sub
 
     Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles StartButton.MouseDown, UpdateButton.MouseDown, OptionsButton.MouseDown,
-        LoadButton.MouseDown, ExitButton.MouseDown, EditButton.MouseDown, DonateButton.MouseDown, AboutButton.MouseDown, UpdateInstallButton.MouseDown
+        LoadButton.MouseDown, ExitButton.MouseDown, EditButton.MouseDown, DonateButton.MouseDown, AboutButton.MouseDown, UpdateInstallButton.MouseDown,
+        EditorAblButton.MouseDown, EditorArenaButton.MouseDown, EditorCharmsButton.MouseDown, EditorCharButton.MouseDown, EditorClassButton.MouseDown,
+        EditorDestinyButton.MouseDown, EditorItemButton.MouseDown, EditorRelButton.MouseDown, EditorStatusButton.MouseDown,
+        EditorVerseButton.MouseDown, EditorHeldButton.MouseDown, EditorWearButton.MouseDown, EditorDBButton.MouseDown,
+        EditorImportButton.MouseDown, EditorExportButton.MouseDown, EditorAliasButton.MouseDown, EditorTeamsButton.MouseDown
         MouseDownEffect(sender)
     End Sub
 
@@ -316,7 +331,7 @@
     End Sub
 
     Private Sub OptionsAudioCheckChange(checkbox As CheckBox, button As Button, setting As String, settingvar As String)
-        Dim CurrentSetting As String = Database.GetValue(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingConfig", "settingName", setting).Substring(3)
+        Dim CurrentSetting As String = DBTools.GetValue(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingConfig", "settingName", setting).Substring(3)
         If OptionsAudioCheckCustom.Checked And OptionsAudioCheckCustom.Enabled Then
             If checkbox.Checked Then
                 button.Enabled = True
@@ -337,7 +352,7 @@
                 Case "custl"
                     Settings.SettingsCustL = settingvar
             End Select
-            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", setting, {"settingConfig"}, {settingvar})
+            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", setting, {"settingConfig"}, {settingvar})
         End If
     End Sub
 
@@ -436,7 +451,7 @@
         If active.Checked Then
             other1.CheckState = CheckState.Unchecked
             other2.CheckState = CheckState.Unchecked
-            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {setting})
+            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {setting})
             Settings.SettingsMode = setting
             If StartupInProgress = False Then
                 Dim answer As Integer
@@ -591,13 +606,13 @@
                 EnableMusicCheckBoxes()
                 CheckCustomMusicOptions()
             End If
-            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"on"})
+            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"on"})
             Settings.SettingsMusic = "on"
         Else
             DisableMusicOptions()
             OptionsAudioCheckCustom.Enabled = False
             Jukebox.StopSong()
-            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"no"})
+            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"no"})
             Settings.SettingsMusic = "off"
         End If
         ResetEditPath()
@@ -609,11 +624,11 @@
                 EnableMusicCheckBoxes()
                 CheckCustomMusicOptions()
                 CheckCustomTracks()
-                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"on"})
+                DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"on"})
                 Settings.SettingsCustM = "on"
             Else
                 DisableMusicOptions()
-                Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"no"})
+                DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"no"})
                 Settings.SettingsCustM = "off"
                 HideCustomTracks()
             End If
@@ -625,7 +640,7 @@
 
     Private Sub OptionsAudioCheckIntro_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckIntro.CheckedChanged
         If OptionsAudioCheckIntro.Checked = CheckState.Unchecked Then
-            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custi", {"settingConfig"}, {"off"})
+            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custi", {"settingConfig"}, {"off"})
             OptionsAudioTextIntro.Visible = False
             OptionsAudioSelectIntro.Visible = False
         Else
@@ -639,7 +654,7 @@
 
     Private Sub OptionsAudioCheckBattle_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckBattle.CheckedChanged
         If OptionsAudioCheckBattle.Checked = CheckState.Unchecked Then
-            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custb", {"settingConfig"}, {"off"})
+            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custb", {"settingConfig"}, {"off"})
             OptionsAudioTextBattle.Visible = False
             OptionsAudioSelectBattle.Visible = False
         Else
@@ -651,7 +666,7 @@
 
     Private Sub OptionsAudioCheckVictory_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckVictory.CheckedChanged
         If OptionsAudioCheckVictory.Checked = CheckState.Unchecked Then
-            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custw", {"settingConfig"}, {"off"})
+            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custw", {"settingConfig"}, {"off"})
             OptionsAudioTextVictory.Visible = False
             OptionsAudioSelectVictory.Visible = False
         Else
@@ -663,7 +678,7 @@
 
     Private Sub OptionsAudioCheckDefeat_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckDefeat.CheckedChanged
         If OptionsAudioCheckDefeat.Checked = CheckState.Unchecked Then
-            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custl", {"settingConfig"}, {"off"})
+            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custl", {"settingConfig"}, {"off"})
             OptionsAudioTextDefeat.Visible = False
             OptionsAudioSelectDefeat.Visible = False
         Else
@@ -719,10 +734,10 @@
 
     Private Sub CustomLibsAuto_CheckedChanged(sender As Object, e As EventArgs) Handles CustomLibsAuto.CheckedChanged
         If CustomLibsActive.CheckState = CheckState.Checked Then
-            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "autosave", {"settingConfig"}, {"on"})
+            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "autosave", {"settingConfig"}, {"on"})
             Settings.SettingsAutoSave = "on"
         Else
-            Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "autosave", {"settingConfig"}, {"no"})
+            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "autosave", {"settingConfig"}, {"no"})
             Settings.SettingsAutoSave = "off"
         End If
         ResetEditPath()
@@ -1055,7 +1070,7 @@
                                 OptionsAudioTextDefeat.Visible = True
                                 OptionsAudioTextDefeat.Text = SelectedName
                         End Select
-                        Database.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", SelectedType, {"settingConfig"}, {CustSetting})
+                        DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", SelectedType, {"settingConfig"}, {CustSetting})
                         CheckCustomTracks()
                         If SelectedType = "custi" Then
                             Jukebox.IntroInPlay = False
@@ -1139,6 +1154,7 @@
         pHelp.WindowStyle = ProcessWindowStyle.Normal
         Dim proc As Process = Process.Start(pHelp)
     End Sub
+
 
     'Start Game Section
 
