@@ -22,6 +22,15 @@ Public Class DBTools
         End Using
     End Sub
 
+    Public Shared Sub CloseSQL(path As String, filename As String)
+        Using SqlConn As New SQLiteConnection(String.Format(
+            "Data Source = {0}", (System.IO.Path.Combine(path, filename))))
+            SqlConn.Close()
+            GC.Collect()
+            GC.WaitForPendingFinalizers()
+        End Using
+    End Sub
+
     Public Shared Function QuerySQL(path As String, filename As String, sql As String, querytype As String, colvalues() As String) As String
         Dim ValuesToAdd As String = ""
         Using SqlConn As New SQLiteConnection(String.Format(

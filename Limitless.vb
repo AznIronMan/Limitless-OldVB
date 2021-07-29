@@ -5,6 +5,7 @@
     Dim WindowMouseX, WindowMouseY As Integer
     Dim Highlighted As Boolean = False
     Dim StartupInProgress As Boolean = True
+    Dim ColorModeAtStart As String = ""
     Dim OptionsGroupLoc As String = "mid"
     Dim CustomLibsSelected As String = "avatars"
     Dim SelectCustomTrack As String = ""
@@ -13,6 +14,7 @@
 
     Private Sub LimitlessForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Initialize.InitProcess()
+        ColorModeAtStart = Settings.SettingsMode
         UpdateSettings()
         'Formats Title with App Name, Release Type, and Version Number
         Dim ApplicationName, ReleaseType, VersionNumber, AppTitleText As String
@@ -21,6 +23,7 @@
         Dim VersionParts() As String = Strings.Split((System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()), ".", 4)
         VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
         UpdateCurBox.Text = VersionNumber
+        Database.CheckForDB(Settings.SettingsLastDB)
         Try
             UpdateAvaBox.Text = Tools.GetWebText(MemoryBank.VersionURL)
             UpdateSubText.ForeColor = MemoryBank.PagesForeColor
@@ -87,11 +90,14 @@
         EditorDestinyButton.MouseHover, EditorItemButton.MouseHover, EditorRelButton.MouseHover, EditorStatusButton.MouseHover,
         EditorVerseButton.MouseHover, EditorHeldButton.MouseHover, EditorWearButton.MouseHover, EditorDBButton.MouseHover,
         EditorImportButton.MouseHover, EditorExportButton.MouseHover, EditorAliasButton.MouseHover, EditorTeamsButton.MouseHover,
+        EditorSwitchNewButton.MouseHover, EditorSwitchBackButton.MouseHover, EditorSwitchSDBButton.MouseHover, EditorSwitchDupButton.MouseHover,
+        EditorSwitchDelButton.MouseHover,
         StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp,
         UpdateInstallButton.MouseUp, EditorAblButton.MouseUp, EditorArenaButton.MouseUp, EditorCharmsButton.MouseUp, EditorCharButton.MouseUp,
         EditorClassButton.MouseUp, EditorDestinyButton.MouseUp, EditorItemButton.MouseUp, EditorRelButton.MouseUp,
         EditorStatusButton.MouseUp, EditorVerseButton.MouseUp, EditorHeldButton.MouseUp, EditorWearButton.MouseUp, EditorDBButton.MouseUp,
-        EditorImportButton.MouseUp, EditorExportButton.MouseUp, EditorAliasButton.MouseUp, EditorTeamsButton.MouseUp
+        EditorImportButton.MouseUp, EditorExportButton.MouseUp, EditorAliasButton.MouseUp, EditorTeamsButton.MouseUp,
+        EditorSwitchNewButton.MouseUp, EditorSwitchBackButton.MouseUp, EditorSwitchSDBButton.MouseUp, EditorSwitchDupButton.MouseUp, EditorSwitchDelButton.MouseUp
         HoverOverEffect(sender)
     End Sub
 
@@ -100,7 +106,9 @@
         EditorAblButton.MouseLeave, EditorArenaButton.MouseLeave, EditorCharmsButton.MouseLeave, EditorCharButton.MouseLeave, EditorClassButton.MouseLeave,
         EditorDestinyButton.MouseLeave, EditorItemButton.MouseLeave, EditorRelButton.MouseLeave, EditorStatusButton.MouseLeave,
         EditorVerseButton.MouseLeave, EditorHeldButton.MouseLeave, EditorWearButton.MouseLeave, EditorDBButton.MouseLeave,
-        EditorImportButton.MouseLeave, EditorExportButton.MouseLeave, EditorAliasButton.MouseLeave, EditorTeamsButton.MouseLeave
+        EditorImportButton.MouseLeave, EditorExportButton.MouseLeave, EditorAliasButton.MouseLeave, EditorTeamsButton.MouseLeave,
+        EditorSwitchNewButton.MouseLeave, EditorSwitchBackButton.MouseLeave, EditorSwitchSDBButton.MouseLeave, EditorSwitchDupButton.MouseLeave,
+        EditorSwitchDelButton.MouseLeave
         LeaveObjEffect(sender)
     End Sub
 
@@ -109,7 +117,9 @@
         EditorAblButton.MouseDown, EditorArenaButton.MouseDown, EditorCharmsButton.MouseDown, EditorCharButton.MouseDown, EditorClassButton.MouseDown,
         EditorDestinyButton.MouseDown, EditorItemButton.MouseDown, EditorRelButton.MouseDown, EditorStatusButton.MouseDown,
         EditorVerseButton.MouseDown, EditorHeldButton.MouseDown, EditorWearButton.MouseDown, EditorDBButton.MouseDown,
-        EditorImportButton.MouseDown, EditorExportButton.MouseDown, EditorAliasButton.MouseDown, EditorTeamsButton.MouseDown
+        EditorImportButton.MouseDown, EditorExportButton.MouseDown, EditorAliasButton.MouseDown, EditorTeamsButton.MouseDown,
+        EditorSwitchNewButton.MouseDown, EditorSwitchBackButton.MouseDown, EditorSwitchSDBButton.MouseDown, EditorSwitchDupButton.MouseDown,
+        EditorSwitchDelButton.MouseDown
         MouseDownEffect(sender)
     End Sub
 
@@ -117,7 +127,7 @@
         WindowDrag = False
     End Sub
 
-    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CustomLibsPath.KeyPress
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CustomLibsPath.KeyPress, EditorSwitchNewBox.KeyPress
         If Not (Asc(e.KeyChar) = 8) Then
             Dim allowedChars As String = "abcdefghijklmnopqrstuvwxyz -.0123456789"
             If Not allowedChars.Contains(e.KeyChar.ToString.ToLower) Then
@@ -125,6 +135,18 @@
                 e.Handled = True
             End If
         End If
+    End Sub
+
+    Private Sub MenuButtonPressed(activepanel As Panel)
+        SwitchToIntro()
+        ResetEditPath()
+        WelcomePanel.Visible = False
+        AboutPanel.Visible = False
+        DonatePanel.Visible = False
+        OptionsPanel.Visible = False
+        EditorPanel.Visible = False
+        UpdatePanel.Visible = False
+        activepanel.Visible = True
     End Sub
 
     'Exit Button
@@ -140,21 +162,12 @@
     End Sub
 
     'Update Section
-
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
         UpdateButtonPressed()
     End Sub
 
     Private Sub UpdateButtonPressed()
-        SwitchToIntro()
-        ResetEditPath()
-        WelcomePanel.Visible = False
-        AboutPanel.Visible = False
-        DonatePanel.Visible = False
-        OptionsPanel.Visible = False
-        EditorPanel.Visible = False
-        UpdatePanel.Visible = True
-
+        MenuButtonPressed(UpdatePanel)
     End Sub
 
     Private Sub CheckForUpdate(curver As String, avaver As String)
@@ -179,17 +192,19 @@
         AssignColor(UpdateInstallButton, "Button")
     End Sub
 
+    Private Sub UpdateInstallButton_Click(sender As Object, e As EventArgs) Handles UpdateInstallButton.Click
+        Dim pHelp As New ProcessStartInfo
+        pHelp.FileName = ".\" & MemoryBank.UpdaterName & ".exe"
+        pHelp.Arguments = "-Path " & Application.ProductName & " -Dir " &
+            (System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase)).Substring(6)
+        pHelp.UseShellExecute = True
+        pHelp.WindowStyle = ProcessWindowStyle.Normal
+        Dim proc As Process = Process.Start(pHelp)
+    End Sub
 
     'About Section
     Private Sub AboutButtonPressed()
-        SwitchToIntro()
-        ResetEditPath()
-        WelcomePanel.Visible = False
-        AboutPanel.Visible = True
-        DonatePanel.Visible = False
-        OptionsPanel.Visible = False
-        EditorPanel.Visible = False
-        UpdatePanel.Visible = False
+        MenuButtonPressed(AboutPanel)
         Dim AboutMessage As String = "This application was created by ClarkTribe Games." & Environment.NewLine & Environment.NewLine &
             "It was the development of basically a one man team with the advice, suggestions, and feedback from friends, family, and colleagues." & Environment.NewLine & Environment.NewLine &
             "Limitless is dedicate to the kids of the creator." & Environment.NewLine & Environment.NewLine &
@@ -225,13 +240,7 @@
 
     'Donate Section
     Private Sub DonateButtonPressed()
-        SwitchToIntro()
-        ResetEditPath()
-        WelcomePanel.Visible = False
-        AboutPanel.Visible = False
-        DonatePanel.Visible = True
-        OptionsPanel.Visible = False
-        EditorPanel.Visible = False
+        MenuButtonPressed(DonatePanel)
         Dim DonateMessage As String = "Welcome to Limitless!" & Environment.NewLine & Environment.NewLine &
             "This title is still under development.  Please be patient." & Environment.NewLine & Environment.NewLine &
             "You can become a Patreon or Donate if you want to help support the cause." & Environment.NewLine & Environment.NewLine &
@@ -271,14 +280,8 @@
     End Sub
 
     Private Sub OptionsButtonPressed()
-        SwitchToIntro()
-        WelcomePanel.Visible = False
-        AboutPanel.Visible = False
-        DonatePanel.Visible = False
-        EditorPanel.Visible = False
-        UpdatePanel.Visible = False
+        MenuButtonPressed(OptionsPanel)
         OptionsGroupToMid()
-        OptionsPanel.Visible = True
         CustomLibsGroup.Visible = False
         OptionsManageGroup.Enabled = True
         OptionsMusicGroup.Enabled = True
@@ -287,19 +290,24 @@
         OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
         OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
         OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
-        ResetEditPath()
         CheckCustomTracks()
     End Sub
 
     Private Sub UpdateSettings()
         If Settings.SettingsMode.ToLower = "lite" Then
             OptionsColorLite.CheckState = CheckState.Checked
+            OptionsColorLite.Enabled = False
             OptionsColorDark.CheckState = CheckState.Unchecked
+            OptionsColorDark.Enabled = True
             OptionsColorCustom.CheckState = CheckState.Unchecked
+            'OptionsColorCustom.Enabled = True
         Else
             OptionsColorDark.CheckState = CheckState.Checked
+            OptionsColorDark.Enabled = False
             OptionsColorLite.CheckState = CheckState.Unchecked
+            OptionsColorLite.Enabled = True
             OptionsColorCustom.CheckState = CheckState.Unchecked
+            'OptionsColorCustom.Enabled = True
         End If
         If Settings.SettingsMusic.ToLower.StartsWith("on") Then
             OptionsAudioCheckMusic.CheckState = CheckState.Checked
@@ -318,7 +326,8 @@
         OptionsCheckUncheck(Settings.SettingsAutoSave, CustomLibsAuto)
         Dim ReleaseType As String = "ALPHA "
         Dim VersionParts() As String = Strings.Split(Settings.SettingsVersion, ".", 4)
-        Dim VersionNumber As String = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
+        Dim VersionNumber As String = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) &
+            "." & Converters.VersionConverter(VersionParts(3), 4)
         OptionsHost.Text = Settings.SettingsUID & " • " & ReleaseType & "VERSION " & VersionNumber
     End Sub
 
@@ -453,10 +462,31 @@
             other2.CheckState = CheckState.Unchecked
             DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {setting})
             Settings.SettingsMode = setting
-            If StartupInProgress = False Then
-                Dim answer As Integer
-                answer = MsgBox(("Restart of Game Require to Apply Color Mode Change." & vbCrLf & vbCrLf & "Do you want to exit the game now to apply the changes?"), vbExclamation + vbYesNo)
-                If answer = vbYes Then ExitGame()
+            If Not LCase(ColorModeAtStart) = LCase(setting) Then
+                Dim choice As Integer = MsgBox(("Changing the Color Mode will Require a Restart of the Game." & vbCrLf & vbCrLf & "Are you sure you want to continue?"),
+                    vbExclamation + vbYesNo)
+                If choice = vbYes Then
+                    ExitGame()
+                Else
+                    setting = ColorModeAtStart
+                    DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {setting})
+                    Settings.SettingsMode = setting
+                    MsgBox("Action Cancelled!", vbOKOnly)
+                    Select Case (LCase(Settings.SettingsMode))
+                        Case "dark"
+                            OptionsColorDark.CheckState = CheckState.Checked
+                            OptionsColorLite.CheckState = CheckState.Unchecked
+                            OptionsColorCustom.CheckState = CheckState.Unchecked
+                        Case "lite"
+                            OptionsColorDark.CheckState = CheckState.Unchecked
+                            OptionsColorLite.CheckState = CheckState.Checked
+                            OptionsColorCustom.CheckState = CheckState.Unchecked
+                        Case Else
+                            OptionsColorDark.CheckState = CheckState.Unchecked
+                            OptionsColorLite.CheckState = CheckState.Unchecked
+                            OptionsColorCustom.CheckState = CheckState.Checked
+                    End Select
+                End If
             End If
         End If
         ResetEditPath()
@@ -1023,7 +1053,7 @@
                             CustomLibsPreviewPlay, CustomLibsList, CustomLibsActive, CustomLibsEdit, CustomLibsMusicMsg,
                             OptionsColorGroup, OptionsMusicGroup, OptionsManageGroup, CustomLibsImport, CustomLibsDelete)
                                 Try
-                                    My.Computer.FileSystem.DeleteFile(FileToGo, FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.DeletePermanently)
+                                    FilesFolders.DeleteFile(FileToGo)
                                     CustomLibsListPop(True)
                                 Catch ex As Exception
                                     Logger.WriteToLog("Custom " & CustomLibsSelected & " Delete", "Delete Attempt", ex)
@@ -1112,16 +1142,26 @@
                 If LCase(ConfirmExt) = Ext Then
                     Dim SourceName As String = Replace(SourceFile.Split("\").Last(), Ext, "")
                     NewFile = SelectedDir & "/" & Replace(SourceName, "Ω ", "Ω") & Ext
-                    Try
-                        FileSystem.FileCopy(SourceFile, NewFile)
-                    Catch ex As Exception
-                        Logger.WriteToLog("Custom " & CustomLibsSelected & " Import", "Import Attempt - " &
-                            SourceName & Ext, ex)
-                        MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
-                    End Try
+                    If Not LCase(CustomLibsSelected) = "avatars" Then
+                        Try
+                            FileSystem.FileCopy(SourceFile, NewFile)
+                        Catch ex As Exception
+                            Logger.WriteToLog("Custom " & CustomLibsSelected & " Import", "Import Attempt - " &
+                                SourceName & Ext, ex)
+                            MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
+                        End Try
+                    Else
+                        Try
+                            Converters.ResizeImage(SourceFile, NewFile.Substring(0, NewFile.Length - 4), 200, 200)
+                        Catch ex As Exception
+                            Logger.WriteToLog("Custom " & CustomLibsSelected & " Import", "Import Attempt - " &
+                                SourceName & Ext, ex)
+                            MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
+                        End Try
+                    End If
                     CustomLibsListPop(True)
-                Else
-                    MsgBox("Invalid file extension.  Please be sure to select a " & Ext & " file.", vbOKOnly + vbCritical)
+                    Else
+                        MsgBox("Invalid file extension.  Please be sure to select a " & Ext & " file.", vbOKOnly + vbCritical)
                 End If
             Next
         End If
@@ -1136,25 +1176,180 @@
     'Editor Section
 
     Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
-        SwitchToIntro()
-        ResetEditPath()
-        WelcomePanel.Visible = False
-        AboutPanel.Visible = False
-        DonatePanel.Visible = False
-        OptionsPanel.Visible = False
+        MenuButtonPressed(EditorPanel)
+        EditorPanelChange(EditorMenuPanel)
+    End Sub
+
+    Private Sub EditorPanelChange(activepanel As Panel)
         EditorPanel.Visible = True
+        EditorMenuPanel.Visible = False
+        EditorSwitchPanel.Visible = False
+        activepanel.Visible = True
     End Sub
 
-    Private Sub UpdateInstallButton_Click(sender As Object, e As EventArgs) Handles UpdateInstallButton.Click
-        Dim pHelp As New ProcessStartInfo
-        pHelp.FileName = ".\" & MemoryBank.UpdaterName & ".exe"
-        pHelp.Arguments = "-Path " & Application.ProductName & " -Dir " &
-            (System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase)).Substring(6)
-        pHelp.UseShellExecute = True
-        pHelp.WindowStyle = ProcessWindowStyle.Normal
-        Dim proc As Process = Process.Start(pHelp)
+    Private Sub EditorBackButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchBackButton.Click
+        EditorPanelChange(EditorMenuPanel)
     End Sub
 
+    Private Sub EditorDBButton_Click(sender As Object, e As EventArgs) Handles EditorDBButton.Click
+        EditorGenerateDBDrop()
+    End Sub
+
+    Private Sub EditorGenerateDBDrop()
+        EditorPanelChange(EditorSwitchPanel)
+        Dim LastDBFound As Boolean = False, DefaultDBFound As Boolean = False, NotFound As String = "<None Available>"
+        EditorSwitchSDBDrop.Items.Clear()
+        If FilesFolders.CountFiles(MemoryBank.DataDir, "*." & MemoryBank.SavesExt) > 0 Then
+            For Each FileName In FilesFolders.GetFilesInFolder(MemoryBank.DataDir)
+                EditorSDBEffects(True)
+                If FileName.EndsWith(MemoryBank.SavesExt) Then
+                    Dim DBName As String = Database.GetDBName(FileName.Replace(MemoryBank.DataDir & "\", ""))
+                    Dim DropName As String = (FileName.Replace(MemoryBank.DataDir & "\", "")).Substring(0,
+                        (FileName.Replace(MemoryBank.DataDir & "\", "")).Length - ((MemoryBank.SavesExt).Length + 1))
+                    If LastDBFound = False And (LCase(DBName) = LCase(Settings.SettingsLastDB)) Then LastDBFound = True
+                    If DefaultDBFound = False And (LCase(DBName) = LCase(Settings.SettingsDefaultDB)) Then DefaultDBFound = True
+                    EditorSwitchSDBDrop.Items.Add(Converters.UppercaseEachFirstLetter(DropName))
+                    EditorSwitchSDBDrop.Sorted = True
+                    DBTools.CloseSQL(MemoryBank.DataDir, FileName.Replace(MemoryBank.DataDir & "\", ""))
+                End If
+            Next
+        End If
+        If EditorSwitchSDBDrop.Items.Count < 1 Then
+            EditorSwitchSDBDrop.Items.Add(NotFound)
+            EditorSDBEffects(False)
+        End If
+        If Not EditorSwitchSDBDrop.SelectedItem = NotFound And LastDBFound = True Then
+            EditorSwitchSDBDrop.SelectedIndex = EditorSwitchSDBDrop.FindString(Settings.SettingsLastDB)
+        Else
+            If Not EditorSwitchSDBDrop.SelectedItem = NotFound And DefaultDBFound = True Then
+                EditorSwitchSDBDrop.SelectedIndex = EditorSwitchSDBDrop.FindString(Settings.SettingsDefaultDB)
+            Else
+                EditorSwitchSDBDrop.SelectedIndex = 0
+            End If
+        End If
+        If EditorSwitchSDBDrop.Items.Count < 2 Then
+            EditorSwitchDelButton.Enabled = False
+            Appearance.AssignColor(EditorSwitchDelButton, "Button")
+        Else
+            EditorSwitchDelButton.Enabled = True
+            Appearance.AssignColor(EditorSwitchDelButton, "Button")
+        End If
+    End Sub
+
+    Private Sub EditorSDBEffects(changevalue As Boolean)
+        EditorSwitchSDBDrop.Enabled = changevalue
+        EditorSwitchSDBButton.Enabled = changevalue
+        EditorSwitchDupButton.Enabled = changevalue
+        EditorSwitchDelButton.Enabled = changevalue
+        EditorSwitchVerBox.Visible = changevalue
+        EditorSwitchTarBox.Visible = changevalue
+    End Sub
+
+    Private Sub EditorSwitchSDBDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EditorSwitchSDBDrop.SelectedIndexChanged
+        EditorSwitchTarBox.Text = Database.GetDBName(EditorSwitchSDBDrop.SelectedItem & "." & MemoryBank.SavesExt)
+        EditorSwitchVerBox.Text = DBTools.GetCol(MemoryBank.DataDir, EditorSwitchSDBDrop.SelectedItem &
+            "." & MemoryBank.SavesExt, "dbInfo", "dbVersion").Split(",")(0)
+        DBTools.CloseSQL(MemoryBank.DataDir, EditorSwitchSDBDrop.SelectedItem & "." & MemoryBank.SavesExt)
+        If LCase(EditorSwitchTarBox.Text) = LCase(EditorSwitchCurBox.Text) Then
+            EditorSwitchSDBButton.Enabled = False
+            Appearance.AssignColor(EditorSwitchSDBButton, "Button")
+        Else
+            EditorSwitchSDBButton.Enabled = True
+            Appearance.AssignColor(EditorSwitchSDBButton, "Button")
+        End If
+    End Sub
+
+    Private Sub EditorSwitchNewCheck_CheckedChanged(sender As Object, e As EventArgs) Handles EditorSwitchNewCheck.CheckedChanged
+        If EditorSwitchNewCheck.CheckState = CheckState.Checked Then
+            EditorSwitchNewBox.Text = ""
+            EditorSwitchNewBox.Enabled = True
+        Else
+            EditorSwitchNewBox.Text = ""
+            EditorSwitchNewBox.Enabled = False
+        End If
+    End Sub
+
+    Private Sub EditorSwitchNewBox_KeyPress(sender As Object, e As EventArgs) Handles EditorSwitchNewBox.TextChanged
+        If EditorSwitchNewBox.TextLength > 0 Then
+            EditorSwitchNewButton.Enabled = True
+            Appearance.AssignColor(EditorSwitchNewButton, "Button")
+        Else
+            EditorSwitchNewButton.Enabled = False
+            Appearance.AssignColor(EditorSwitchNewButton, "Button")
+        End If
+    End Sub
+
+    Private Sub EditorSwitchNewButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchNewButton.Click
+        If EditorSwitchNewButton.Enabled = True Then
+            Dim NewDBName As String = (Converters.UppercaseEachFirstLetter(EditorSwitchNewBox.Text))
+            If Not System.IO.File.Exists(MemoryBank.DataDir & "\" & NewDBName & "." & MemoryBank.SavesExt) Then
+                Database.CreateEmptyDB(NewDBName)
+                MsgBox("New Database " & NewDBName & " Created!", vbOKOnly)
+                EditorSwitchNewCheck.CheckState = CheckState.Unchecked
+                EditorGenerateDBDrop()
+            Else
+                MsgBox("Filename of " & NewDBName & " already exists!  Please try a different name.", vbExclamation + vbOKOnly)
+            End If
+        End If
+    End Sub
+
+    Private Sub EditorSwitchSDBButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchSDBButton.Click
+        If EditorSwitchSDBButton.Enabled = True Then
+            Dim answer As Integer = MsgBox("Are you sure you want to switch to the " &
+                Converters.UppercaseEachFirstLetter(EditorSwitchSDBDrop.Text) & " database file?", vbYesNo)
+            If answer = vbYes Then
+                Database.CheckForDB(EditorSwitchSDBDrop.Text)
+                EditorGenerateDBDrop()
+            Else
+                MsgBox("Action Cancelled.", vbExclamation + vbOKOnly)
+            End If
+        End If
+    End Sub
+
+    Private Sub EditorSwitchDelButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchDelButton.Click
+        If EditorSwitchDelButton.Enabled = True Then
+            Dim answer As Integer = MsgBox("Are you sure you want to permanently delete the " &
+                Converters.UppercaseEachFirstLetter(EditorSwitchSDBDrop.Text) & " database file?", vbYesNo)
+            Dim FileToGo As String = MemoryBank.DataDir & "\" & EditorSwitchSDBDrop.Text & "." & MemoryBank.SavesExt
+            If answer = vbYes Then
+                Try
+                    DBTools.CloseSQL(MemoryBank.DataDir, EditorSwitchSDBDrop.SelectedItem & "." & MemoryBank.SavesExt)
+                    If EditorSwitchSDBDrop.SelectedIndex = 0 Then
+                        EditorSwitchSDBDrop.SelectedIndex = 1
+                    Else
+                        EditorSwitchSDBDrop.SelectedIndex = 0
+                    End If
+                    FilesFolders.DeleteFile(FileToGo)
+                    EditorGenerateDBDrop()
+                    Database.CheckForDB(EditorSwitchSDBDrop.SelectedItem.ToString)
+                Catch ex As Exception
+                    Logger.WriteToLog("Database " & FileToGo & " Delete", "Delete Attempt", ex)
+                    MsgBox("Logged Error:  File locked, please try again." & vbCrLf, vbOKOnly)
+                End Try
+            Else
+                MsgBox("Action Cancelled.", vbExclamation + vbOKOnly)
+            End If
+        End If
+    End Sub
+
+    Private Sub EditorSwitchDupButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchDupButton.Click
+        If EditorSwitchDupButton.Enabled = True Then
+            Dim answer As Integer = MsgBox("Are you sure you want to clone the " &
+                Converters.UppercaseEachFirstLetter(EditorSwitchSDBDrop.Text) & " database file?", vbYesNo)
+            Dim FileToClone As String = MemoryBank.DataDir & "\" & EditorSwitchSDBDrop.Text & "." & MemoryBank.SavesExt
+            If answer = vbYes Then
+                Try
+                    FilesFolders.CopyFile(MemoryBank.DataDir & "\" & EditorSwitchSDBDrop.Text, MemoryBank.SavesExt)
+                    EditorGenerateDBDrop()
+                Catch ex As Exception
+                    Logger.WriteToLog("Database " & FileToClone & " Clone", "Clone Attempt", ex)
+                    MsgBox("Logged Error:  File locked, please try again." & vbCrLf, vbOKOnly)
+                End Try
+            Else
+                MsgBox("Action Cancelled.", vbExclamation + vbOKOnly)
+            End If
+        End If
+    End Sub
 
     'Start Game Section
 

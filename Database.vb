@@ -1,24 +1,52 @@
 ﻿Public Class Database
 
-    Public Shared SavePath As String = "data\"
-    Public Shared DefaultSave As String = "Default"
-    Public Shared SaveExt As String = ".limit"
+    Public Shared SavePath As String = MemoryBank.DataDir & "\"
+    Public Shared DefaultSave As String = Settings.SettingsDefaultDB
+    Public Shared SaveExt As String = "." & MemoryBank.SavesExt
 
 
     Public Shared Sub CheckForDB(savename As String)
-        Dim DBExists As Boolean = System.IO.File.Exists(SavePath & savename & SaveExt)
-        Dim DefaultExists As Boolean = System.IO.File.Exists(SavePath & DefaultSave & SaveExt)
+        DefaultSave = Settings.SettingsDefaultDB
+        Dim DBExists As Boolean = System.IO.File.Exists(SavePath & savename & SaveExt),
+            DefaultExists As Boolean = System.IO.File.Exists(SavePath & DefaultSave & SaveExt)
         If DBExists Then
-            'savename exists
+            MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(savename)
+            MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(savename)
         Else
             If DefaultExists Then
-                'no savename but default exists
+                MsgBox(Converters.UppercaseEachFirstLetter(savename) & " not available.  Switching to " &
+                   Converters.UppercaseEachFirstLetter(DefaultSave) & ".")
+                DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
+                    "lastdb", {"settingConfig"}, {DefaultSave})
+                Settings.SettingsLastDB = LCase(DefaultSave)
+                MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
+                MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
             Else
-                'no savename and no default
+                If savename = DefaultSave Then
+                    MsgBox(Converters.UppercaseEachFirstLetter(savename) & " not available.  Generating a new " &
+                    Converters.UppercaseEachFirstLetter(DefaultSave) & " Database.")
+                Else
+                    MsgBox(Converters.UppercaseEachFirstLetter(savename) & " and " &
+                    Converters.UppercaseEachFirstLetter(DefaultSave) & " not available.  Generating a new " &
+                    Converters.UppercaseEachFirstLetter(DefaultSave) & " Database.")
+                End If
+                CreateEmptyDB(Converters.UppercaseEachFirstLetter(DefaultSave))
+                DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
+                    "defaultdb", {"settingConfig"}, {DefaultSave})
+                DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
+                    "lastdb", {"settingConfig"}, {DefaultSave})
+                Settings.SettingsLastDB = LCase(DefaultSave)
+                Settings.SettingsDefaultDB = LCase(DefaultSave)
+                MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
+                MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
             End If
         End If
-
     End Sub
+
+    Public Shared Function GetDBName(savename As String) As String
+        Return DBTools.GetCol(MemoryBank.DataDir, savename, "dbInfo", "dbName").Split(",")(0)
+    End Function
+
     Public Shared Sub CreateEmptyDB(savename As String)
         DBTools.CreateDB(SavePath, savename & SaveExt, "
             CREATE TABLE 'dbInfo' ('dbName' TEXT NOT NULL, 'dbVersion' TEXT NOT NULL);
@@ -137,7 +165,8 @@
             )
 
         'dbArenas
-        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbArenas' VALUES ('0','The Arena','0','This is the default arena.','3','3','3','1','1','1','5','0');")
+        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbArenas' VALUES ('0','The Arena','0',
+            'This is the default arena.','3','3','3','1','1','1','5','0');")
 
         'dbElements
         DBTools.RunSQL(SavePath, savename & SaveExt, "
@@ -216,7 +245,8 @@
             )
 
         'dbVerse
-        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbVerse' VALUES ('0','LimitlessVerse','This is the LimitlessVerse where The Arena is located.',NULL,'1',NULL,NULL);")
+        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbVerse' VALUES ('0','LimitlessVerse',
+            'This is the LimitlessVerse where The Arena is located.',NULL,'1',NULL,NULL);")
 
     End Sub
 

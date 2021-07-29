@@ -46,6 +46,21 @@ Partial Class MainWindow
         Me.LoadButton = New System.Windows.Forms.Button()
         Me.StartButton = New System.Windows.Forms.Button()
         Me.EditorPanel = New System.Windows.Forms.Panel()
+        Me.EditorTitleText = New System.Windows.Forms.Label()
+        Me.EditorSwitchPanel = New System.Windows.Forms.Panel()
+        Me.EditorSwitchDelButton = New System.Windows.Forms.Button()
+        Me.EditorSwitchDupButton = New System.Windows.Forms.Button()
+        Me.EditorSwitchNewBox = New System.Windows.Forms.TextBox()
+        Me.EditorSwitchNewCheck = New System.Windows.Forms.CheckBox()
+        Me.EditorSwitchVerBox = New System.Windows.Forms.Label()
+        Me.EditorSwitchTarBox = New System.Windows.Forms.Label()
+        Me.EditorSwitchSDBButton = New System.Windows.Forms.Button()
+        Me.EditorSwitchNewButton = New System.Windows.Forms.Button()
+        Me.EditorSwitchSDBDrop = New System.Windows.Forms.ComboBox()
+        Me.EditorSwitchSDBText = New System.Windows.Forms.Label()
+        Me.EditorSwitchCurBox = New System.Windows.Forms.Label()
+        Me.EditorSwitchCurText = New System.Windows.Forms.Label()
+        Me.EditorSwitchBackButton = New System.Windows.Forms.Button()
         Me.EditorMenuPanel = New System.Windows.Forms.Panel()
         Me.EditorExportButton = New System.Windows.Forms.Button()
         Me.EditorImportButton = New System.Windows.Forms.Button()
@@ -66,7 +81,6 @@ Partial Class MainWindow
         Me.EditorClassButton = New System.Windows.Forms.Button()
         Me.EditorCharButton = New System.Windows.Forms.Button()
         Me.EditorDBText = New System.Windows.Forms.Label()
-        Me.EditorTitleText = New System.Windows.Forms.Label()
         Me.OptionsPanel = New System.Windows.Forms.Panel()
         Me.CustomLibsGroup = New System.Windows.Forms.GroupBox()
         Me.CustomLibsOmega = New System.Windows.Forms.Label()
@@ -152,6 +166,7 @@ Partial Class MainWindow
         Me.MainMenuPanel.SuspendLayout()
         Me.MainMenuBar.SuspendLayout()
         Me.EditorPanel.SuspendLayout()
+        Me.EditorSwitchPanel.SuspendLayout()
         Me.EditorMenuPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
         Me.CustomLibsGroup.SuspendLayout()
@@ -387,11 +402,114 @@ Partial Class MainWindow
         '
         'EditorPanel
         '
-        Me.EditorPanel.Controls.Add(Me.EditorMenuPanel)
-        Me.EditorPanel.Controls.Add(Me.EditorDBText)
         Me.EditorPanel.Controls.Add(Me.EditorTitleText)
+        Me.EditorPanel.Controls.Add(Me.EditorDBText)
+        Me.EditorPanel.Controls.Add(Me.EditorSwitchPanel)
+        Me.EditorPanel.Controls.Add(Me.EditorMenuPanel)
         resources.ApplyResources(Me.EditorPanel, "EditorPanel")
         Me.EditorPanel.Name = "EditorPanel"
+        '
+        'EditorTitleText
+        '
+        resources.ApplyResources(Me.EditorTitleText, "EditorTitleText")
+        Me.EditorTitleText.Name = "EditorTitleText"
+        '
+        'EditorSwitchPanel
+        '
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchDelButton)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchDupButton)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchNewBox)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchNewCheck)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchVerBox)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchTarBox)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchSDBButton)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchNewButton)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchSDBDrop)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchSDBText)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchCurBox)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchCurText)
+        Me.EditorSwitchPanel.Controls.Add(Me.EditorSwitchBackButton)
+        resources.ApplyResources(Me.EditorSwitchPanel, "EditorSwitchPanel")
+        Me.EditorSwitchPanel.Name = "EditorSwitchPanel"
+        '
+        'EditorSwitchDelButton
+        '
+        resources.ApplyResources(Me.EditorSwitchDelButton, "EditorSwitchDelButton")
+        Me.EditorSwitchDelButton.Name = "EditorSwitchDelButton"
+        Me.EditorSwitchDelButton.UseVisualStyleBackColor = True
+        '
+        'EditorSwitchDupButton
+        '
+        resources.ApplyResources(Me.EditorSwitchDupButton, "EditorSwitchDupButton")
+        Me.EditorSwitchDupButton.Name = "EditorSwitchDupButton"
+        Me.EditorSwitchDupButton.UseVisualStyleBackColor = True
+        '
+        'EditorSwitchNewBox
+        '
+        Me.EditorSwitchNewBox.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.EditorSwitchNewBox, "EditorSwitchNewBox")
+        Me.EditorSwitchNewBox.ForeColor = System.Drawing.SystemColors.Window
+        Me.EditorSwitchNewBox.Name = "EditorSwitchNewBox"
+        '
+        'EditorSwitchNewCheck
+        '
+        resources.ApplyResources(Me.EditorSwitchNewCheck, "EditorSwitchNewCheck")
+        Me.EditorSwitchNewCheck.Name = "EditorSwitchNewCheck"
+        Me.EditorSwitchNewCheck.UseVisualStyleBackColor = True
+        '
+        'EditorSwitchVerBox
+        '
+        resources.ApplyResources(Me.EditorSwitchVerBox, "EditorSwitchVerBox")
+        Me.EditorSwitchVerBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorSwitchVerBox.Name = "EditorSwitchVerBox"
+        '
+        'EditorSwitchTarBox
+        '
+        resources.ApplyResources(Me.EditorSwitchTarBox, "EditorSwitchTarBox")
+        Me.EditorSwitchTarBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorSwitchTarBox.Name = "EditorSwitchTarBox"
+        '
+        'EditorSwitchSDBButton
+        '
+        resources.ApplyResources(Me.EditorSwitchSDBButton, "EditorSwitchSDBButton")
+        Me.EditorSwitchSDBButton.Name = "EditorSwitchSDBButton"
+        Me.EditorSwitchSDBButton.UseVisualStyleBackColor = True
+        '
+        'EditorSwitchNewButton
+        '
+        resources.ApplyResources(Me.EditorSwitchNewButton, "EditorSwitchNewButton")
+        Me.EditorSwitchNewButton.Name = "EditorSwitchNewButton"
+        Me.EditorSwitchNewButton.UseVisualStyleBackColor = True
+        '
+        'EditorSwitchSDBDrop
+        '
+        Me.EditorSwitchSDBDrop.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.EditorSwitchSDBDrop, "EditorSwitchSDBDrop")
+        Me.EditorSwitchSDBDrop.ForeColor = System.Drawing.SystemColors.Window
+        Me.EditorSwitchSDBDrop.FormattingEnabled = True
+        Me.EditorSwitchSDBDrop.Name = "EditorSwitchSDBDrop"
+        '
+        'EditorSwitchSDBText
+        '
+        resources.ApplyResources(Me.EditorSwitchSDBText, "EditorSwitchSDBText")
+        Me.EditorSwitchSDBText.Name = "EditorSwitchSDBText"
+        '
+        'EditorSwitchCurBox
+        '
+        resources.ApplyResources(Me.EditorSwitchCurBox, "EditorSwitchCurBox")
+        Me.EditorSwitchCurBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorSwitchCurBox.Name = "EditorSwitchCurBox"
+        '
+        'EditorSwitchCurText
+        '
+        resources.ApplyResources(Me.EditorSwitchCurText, "EditorSwitchCurText")
+        Me.EditorSwitchCurText.Name = "EditorSwitchCurText"
+        '
+        'EditorSwitchBackButton
+        '
+        resources.ApplyResources(Me.EditorSwitchBackButton, "EditorSwitchBackButton")
+        Me.EditorSwitchBackButton.Name = "EditorSwitchBackButton"
+        Me.EditorSwitchBackButton.UseVisualStyleBackColor = True
         '
         'EditorMenuPanel
         '
@@ -529,11 +647,6 @@ Partial Class MainWindow
         Me.EditorDBText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         resources.ApplyResources(Me.EditorDBText, "EditorDBText")
         Me.EditorDBText.Name = "EditorDBText"
-        '
-        'EditorTitleText
-        '
-        resources.ApplyResources(Me.EditorTitleText, "EditorTitleText")
-        Me.EditorTitleText.Name = "EditorTitleText"
         '
         'OptionsPanel
         '
@@ -1158,6 +1271,8 @@ Partial Class MainWindow
         Me.MainMenuPanel.ResumeLayout(False)
         Me.MainMenuBar.ResumeLayout(False)
         Me.EditorPanel.ResumeLayout(False)
+        Me.EditorSwitchPanel.ResumeLayout(False)
+        Me.EditorSwitchPanel.PerformLayout()
         Me.EditorMenuPanel.ResumeLayout(False)
         Me.OptionsPanel.ResumeLayout(False)
         Me.CustomLibsGroup.ResumeLayout(False)
@@ -1320,4 +1435,18 @@ Partial Class MainWindow
     Friend WithEvents EditorExportButton As Button
     Friend WithEvents EditorImportButton As Button
     Friend WithEvents EditorAliasButton As Button
+    Friend WithEvents EditorSwitchPanel As Panel
+    Friend WithEvents EditorSwitchCurText As Label
+    Friend WithEvents EditorSwitchBackButton As Button
+    Friend WithEvents EditorSwitchVerBox As Label
+    Friend WithEvents EditorSwitchTarBox As Label
+    Friend WithEvents EditorSwitchSDBButton As Button
+    Friend WithEvents EditorSwitchNewButton As Button
+    Friend WithEvents EditorSwitchSDBDrop As ComboBox
+    Friend WithEvents EditorSwitchSDBText As Label
+    Friend WithEvents EditorSwitchCurBox As Label
+    Friend WithEvents EditorSwitchNewBox As TextBox
+    Friend WithEvents EditorSwitchNewCheck As CheckBox
+    Friend WithEvents EditorSwitchDelButton As Button
+    Friend WithEvents EditorSwitchDupButton As Button
 End Class

@@ -1,6 +1,6 @@
 =============================================
 LIMITLESS by Geoff Clark
-VERSION ALPHA 0.1.006.0001
+VERSION ALPHA 0.1.006.0002
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -72,8 +72,13 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.006.0001 / 2021.07.27 - The Editor Update
+ALPHA 0.1.006.0002 / 2021.07.28 - The Editor Update
 
+- added switch database functionality
+- added clone and delete database buttons and functionality
+- added ability to custom named create baseline database from menu
+- added functionality to navigate databases and show names and version numbers on menu
+- added dropdown to show all databases in data folder
 - designed editor baseline menu (may change as development progresses) with inactive buttons for now
 - created elements, info, itemclass, and multiverse tables for new db
 - ported age, alignment, arenas (formerly areas), environments, sections, and size tables to new db format
@@ -81,6 +86,9 @@ ALPHA 0.1.006.0001 / 2021.07.27 - The Editor Update
 - added baseline database builder function for players that want a blank db
 - embedded ClarkTribeGames Updater into the main exe
 - updated welcome screen to support up to 12 random avatars
+- fixed issue with dark/lite mode checkboxes not working correctly
+- fixed issue with settings not saving in certain scenarios
+- added image resizer for imported avatars
 
 [PREVIOUS UPDATES]
 

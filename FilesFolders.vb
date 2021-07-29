@@ -48,4 +48,17 @@ Public Class FilesFolders
         GetFilesInFolder = Directory.GetFiles(dir)
     End Function
 
+    Public Shared Sub DeleteFile(filename As String)
+        My.Computer.FileSystem.DeleteFile(filename, FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.DeletePermanently)
+    End Sub
+
+    Public Shared Sub CopyFile(sourcefile As String, ext As String)
+        Dim count As Integer = 1, NewFile As String = sourcefile & "(" & count.ToString & ")." & ext
+        While FileIO.FileSystem.FileExists(NewFile)
+            count += 1
+            NewFile = sourcefile & "(" & count.ToString & ")." & ext
+        End While
+        IO.File.Copy(sourcefile & "." & ext, NewFile)
+    End Sub
+
 End Class
