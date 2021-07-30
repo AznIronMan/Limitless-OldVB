@@ -1,6 +1,6 @@
 =============================================
 LIMITLESS by Geoff Clark
-VERSION ALPHA 0.1.006.0002
+VERSION ALPHA 0.1.006.0003
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -72,8 +72,12 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.006.0002 / 2021.07.28 - The Editor Update
+ALPHA 0.1.006.0003 / 2021.07.29 - The Editor Update
 
+- create pages for each editor section with functional query list
+- created custom dropdown filler queries for editor dropdowns
+- recoded color mode change to not require restart of game
+- set custom color option to hidden until further notice
 - added switch database functionality
 - added clone and delete database buttons and functionality
 - added ability to custom named create baseline database from menu

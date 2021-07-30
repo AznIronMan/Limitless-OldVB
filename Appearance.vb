@@ -85,7 +85,7 @@
         AssignColor(MainWindow.DonatePTButton, "Button")
         AssignColor(MainWindow.DonatePPButton, "Button")
         AssignColor(MainWindow.UpdateButton, "Button")
-        AssignColor(MainWindow.OptionsPanel, "Pages")
+        AssignColor(MainWindow.OptionsPanel, "Background")
         AssignColor(MainWindow.OptionsColorGroup, "Group")
         AssignColor(MainWindow.OptionsMusicGroup, "Group")
         AssignColor(MainWindow.OptionsManageGroup, "Group")
@@ -124,7 +124,7 @@
         AssignColor(MainWindow.EditorPanel, "Pages")
         AssignColor(MainWindow.EditorTitleText, "Pages")
         AssignColor(MainWindow.EditorDBText, "Pages")
-        AssignColor(MainWindow.EditorMenuPanel, "Pages")
+        AssignColor(MainWindow.EditorMenuPanel, "Background")
         AssignColor(MainWindow.EditorImportButton, "Button")
         AssignColor(MainWindow.EditorDBButton, "Button")
         AssignColor(MainWindow.EditorExportButton, "Button")
@@ -143,7 +143,7 @@
         AssignColor(MainWindow.EditorStatusButton, "Button")
         AssignColor(MainWindow.EditorTeamsButton, "Button")
         AssignColor(MainWindow.EditorWearButton, "Button")
-        AssignColor(MainWindow.EditorSwitchPanel, "Pages")
+        AssignColor(MainWindow.EditorSwitchPanel, "Background")
         AssignColor(MainWindow.EditorSwitchCurText, "Pages")
         AssignColor(MainWindow.EditorSwitchSDBText, "Pages")
         AssignColor(MainWindow.EditorSwitchCurBox, "Pages")
@@ -156,6 +156,26 @@
         AssignColor(MainWindow.EditorSwitchNewBox, "Pages")
         AssignColor(MainWindow.EditorSwitchDupButton, "Button")
         AssignColor(MainWindow.EditorSwitchDelButton, "Button")
+        AssignColor(MainWindow.EditorEditPanel, "Background")
+        AssignColor(MainWindow.EditorEditList, "Pages")
+        AssignColor(MainWindow.EditorEditCharPanel, "Pages")
+        AssignColor(MainWindow.EditorEditBackButton, "Button")
+        AssignColor(MainWindow.EditorEditAddButton, "Button")
+        AssignColor(MainWindow.EditorEditDelButton, "Button")
+        AssignColor(MainWindow.EditorEditAblPanel, "Pages")
+        AssignColor(MainWindow.EditorEditAliasPanel, "Pages")
+        AssignColor(MainWindow.EditorEditArenaPanel, "Pages")
+        AssignColor(MainWindow.EditorEditCharmsPanel, "Pages")
+        AssignColor(MainWindow.EditorEditClassPanel, "Pages")
+        AssignColor(MainWindow.EditorEditDestinyPanel, "Pages")
+        AssignColor(MainWindow.EditorEditEffectsPanel, "Pages")
+        AssignColor(MainWindow.EditorEditHeldsPanel, "Pages")
+        AssignColor(MainWindow.EditorEditItemsPanel, "Pages")
+        AssignColor(MainWindow.EditorEditRelPanel, "Pages")
+        AssignColor(MainWindow.EditorEditStatusPanel, "Pages")
+        AssignColor(MainWindow.EditorEditTeamsPanel, "Pages")
+        AssignColor(MainWindow.EditorEditVersePanel, "Pages")
+        AssignColor(MainWindow.EditorEditWearsPanel, "Pages")
     End Sub
 
     Public Sub SetButtonStyle(button As Button)
@@ -212,6 +232,14 @@
                 obj.BackColor = MemoryBank.PagesBackColor
                 obj.ForeColor = MemoryBank.PagesForeColor
         End Select
+    End Sub
+
+    Public Sub RefreshColors()
+        If Settings.SettingsMode = "Lite" Then
+            Appearance.AssignMode("Ugly")
+        Else
+            Appearance.AssignMode("Default")
+        End If
     End Sub
 
 

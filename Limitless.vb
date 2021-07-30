@@ -9,6 +9,7 @@
     Dim OptionsGroupLoc As String = "mid"
     Dim CustomLibsSelected As String = "avatars"
     Dim SelectCustomTrack As String = ""
+    Dim ActiveEditWindow As String = ""
 
     'Limitless Form Functions
 
@@ -91,13 +92,14 @@
         EditorVerseButton.MouseHover, EditorHeldButton.MouseHover, EditorWearButton.MouseHover, EditorDBButton.MouseHover,
         EditorImportButton.MouseHover, EditorExportButton.MouseHover, EditorAliasButton.MouseHover, EditorTeamsButton.MouseHover,
         EditorSwitchNewButton.MouseHover, EditorSwitchBackButton.MouseHover, EditorSwitchSDBButton.MouseHover, EditorSwitchDupButton.MouseHover,
-        EditorSwitchDelButton.MouseHover,
+        EditorSwitchDelButton.MouseHover, EditorEditBackButton.MouseHover, EditorEditAddButton.MouseHover, EditorEditDelButton.MouseHover,
         StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp,
         UpdateInstallButton.MouseUp, EditorAblButton.MouseUp, EditorArenaButton.MouseUp, EditorCharmsButton.MouseUp, EditorCharButton.MouseUp,
         EditorClassButton.MouseUp, EditorDestinyButton.MouseUp, EditorItemButton.MouseUp, EditorRelButton.MouseUp,
         EditorStatusButton.MouseUp, EditorVerseButton.MouseUp, EditorHeldButton.MouseUp, EditorWearButton.MouseUp, EditorDBButton.MouseUp,
         EditorImportButton.MouseUp, EditorExportButton.MouseUp, EditorAliasButton.MouseUp, EditorTeamsButton.MouseUp,
-        EditorSwitchNewButton.MouseUp, EditorSwitchBackButton.MouseUp, EditorSwitchSDBButton.MouseUp, EditorSwitchDupButton.MouseUp, EditorSwitchDelButton.MouseUp
+        EditorSwitchNewButton.MouseUp, EditorSwitchBackButton.MouseUp, EditorSwitchSDBButton.MouseUp, EditorSwitchDupButton.MouseUp,
+        EditorSwitchDelButton.MouseUp, EditorEditBackButton.MouseUp, EditorEditAddButton.MouseUp, EditorEditDelButton.MouseUp
         HoverOverEffect(sender)
     End Sub
 
@@ -108,7 +110,7 @@
         EditorVerseButton.MouseLeave, EditorHeldButton.MouseLeave, EditorWearButton.MouseLeave, EditorDBButton.MouseLeave,
         EditorImportButton.MouseLeave, EditorExportButton.MouseLeave, EditorAliasButton.MouseLeave, EditorTeamsButton.MouseLeave,
         EditorSwitchNewButton.MouseLeave, EditorSwitchBackButton.MouseLeave, EditorSwitchSDBButton.MouseLeave, EditorSwitchDupButton.MouseLeave,
-        EditorSwitchDelButton.MouseLeave
+        EditorSwitchDelButton.MouseLeave, EditorEditBackButton.MouseLeave, EditorEditAddButton.MouseLeave, EditorEditDelButton.MouseLeave
         LeaveObjEffect(sender)
     End Sub
 
@@ -119,7 +121,7 @@
         EditorVerseButton.MouseDown, EditorHeldButton.MouseDown, EditorWearButton.MouseDown, EditorDBButton.MouseDown,
         EditorImportButton.MouseDown, EditorExportButton.MouseDown, EditorAliasButton.MouseDown, EditorTeamsButton.MouseDown,
         EditorSwitchNewButton.MouseDown, EditorSwitchBackButton.MouseDown, EditorSwitchSDBButton.MouseDown, EditorSwitchDupButton.MouseDown,
-        EditorSwitchDelButton.MouseDown
+        EditorSwitchDelButton.MouseDown, EditorEditBackButton.MouseDown, EditorEditAddButton.MouseDown, EditorEditDelButton.MouseDown
         MouseDownEffect(sender)
     End Sub
 
@@ -189,7 +191,7 @@
         UpdateSubText.ForeColor = color
         UpdateInstallButton.Enabled = enable
         UpdateInstallButton.Text = buttontext
-        AssignColor(UpdateInstallButton, "Button")
+        Appearance.RefreshColors()
     End Sub
 
     Private Sub UpdateInstallButton_Click(sender As Object, e As EventArgs) Handles UpdateInstallButton.Click
@@ -290,6 +292,7 @@
         OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
         OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
         OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
+        Appearance.RefreshColors()
         CheckCustomTracks()
     End Sub
 
@@ -317,6 +320,7 @@
             OptionsAudioCheckCustom.Enabled = False
             OptionsAudioCheckMusic.CheckState = CheckState.Unchecked
         End If
+        Appearance.RefreshColors()
         OptionsCheckUncheck(Settings.SettingsCustM, OptionsAudioCheckCustom)
         OptionsCheckUncheck(Settings.SettingsCustI, OptionsAudioCheckIntro)
         OptionsCheckUncheck(Settings.SettingsCustB, OptionsAudioCheckBattle)
@@ -351,6 +355,7 @@
                 button.Visible = False
                 settingvar = "of" & "-" & CurrentSetting
             End If
+            Appearance.RefreshColors()
             Select Case LCase(setting)
                 Case "custi"
                     Settings.SettingsCustI = settingvar
@@ -362,6 +367,7 @@
                     Settings.SettingsCustL = settingvar
             End Select
             DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", setting, {"settingConfig"}, {settingvar})
+            DBTools.CloseSQL(Settings.SettingsPath, Settings.SettingsName)
         End If
     End Sub
 
@@ -382,6 +388,7 @@
         OptionsAudioTextBattle.Visible = False
         OptionsAudioTextVictory.Visible = False
         OptionsAudioTextDefeat.Visible = False
+        Appearance.RefreshColors()
     End Sub
 
     Private Sub EnableMusicCheckBoxes()
@@ -389,6 +396,8 @@
         OptionsAudioCheckBattle.Enabled = True
         OptionsAudioCheckVictory.Enabled = True
         OptionsAudioCheckDefeat.Enabled = True
+        Appearance.RefreshColors()
+
     End Sub
 
     Private Sub CheckCustomMusicOptions()
@@ -396,21 +405,25 @@
             OptionsAudioSelectIntro.Enabled = True
             OptionsAudioSelectIntro.Visible = True
             OptionsAudioTextIntro.Visible = True
+            Appearance.RefreshColors()
         End If
         If OptionsAudioCheckBattle.Enabled And OptionsAudioCheckBattle.CheckState = CheckState.Checked Then
             OptionsAudioSelectBattle.Enabled = True
             OptionsAudioSelectBattle.Visible = True
             OptionsAudioTextBattle.Visible = True
+            Appearance.RefreshColors()
         End If
         If OptionsAudioCheckVictory.Enabled And OptionsAudioCheckVictory.CheckState = CheckState.Checked Then
             OptionsAudioSelectVictory.Enabled = True
             OptionsAudioSelectVictory.Visible = True
             OptionsAudioTextVictory.Visible = True
+            Appearance.RefreshColors()
         End If
         If OptionsAudioCheckDefeat.Enabled And OptionsAudioCheckDefeat.CheckState = CheckState.Checked Then
             OptionsAudioSelectDefeat.Enabled = True
             OptionsAudioSelectDefeat.Visible = True
             OptionsAudioTextDefeat.Visible = True
+            Appearance.RefreshColors()
         End If
     End Sub
 
@@ -453,6 +466,7 @@
                 custbox.Visible = False
                 custbutton.Visible = False
             End If
+            Appearance.RefreshColors()
         End If
     End Sub
 
@@ -463,32 +477,22 @@
             DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {setting})
             Settings.SettingsMode = setting
             If Not LCase(ColorModeAtStart) = LCase(setting) Then
-                Dim choice As Integer = MsgBox(("Changing the Color Mode will Require a Restart of the Game." & vbCrLf & vbCrLf & "Are you sure you want to continue?"),
-                    vbExclamation + vbYesNo)
-                If choice = vbYes Then
-                    ExitGame()
+                If Settings.SettingsMode = "Lite" Then
+                    OptionsColorDark.CheckState = CheckState.Unchecked
+                    OptionsColorLite.CheckState = CheckState.Checked
+                    OptionsColorLite.Enabled = False
+                    OptionsColorDark.Enabled = True
+                    ColorModeAtStart = "lite"
                 Else
-                    setting = ColorModeAtStart
-                    DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {setting})
-                    Settings.SettingsMode = setting
-                    MsgBox("Action Cancelled!", vbOKOnly)
-                    Select Case (LCase(Settings.SettingsMode))
-                        Case "dark"
-                            OptionsColorDark.CheckState = CheckState.Checked
-                            OptionsColorLite.CheckState = CheckState.Unchecked
-                            OptionsColorCustom.CheckState = CheckState.Unchecked
-                        Case "lite"
-                            OptionsColorDark.CheckState = CheckState.Unchecked
-                            OptionsColorLite.CheckState = CheckState.Checked
-                            OptionsColorCustom.CheckState = CheckState.Unchecked
-                        Case Else
-                            OptionsColorDark.CheckState = CheckState.Unchecked
-                            OptionsColorLite.CheckState = CheckState.Unchecked
-                            OptionsColorCustom.CheckState = CheckState.Checked
-                    End Select
+                    OptionsColorDark.CheckState = CheckState.Checked
+                    OptionsColorLite.CheckState = CheckState.Unchecked
+                    OptionsColorDark.Enabled = False
+                    OptionsColorLite.Enabled = True
+                    ColorModeAtStart = "dark"
                 End If
             End If
         End If
+        Appearance.RefreshColors()
         ResetEditPath()
     End Sub
 
@@ -524,6 +528,7 @@
                 CustomLibsPreviewMusic.Visible = True
                 CustomLibsPreviewPlay.Enabled = False
                 CustomLibsPreviewStop.Enabled = False
+                Appearance.RefreshColors()
                 CustomLibsListPop(True)
         End Select
         ResetEditPath()
@@ -548,6 +553,7 @@
             CustomLibsPreviewMusic.Visible = True
             CustomLibsPreviewPlay.Enabled = False
             CustomLibsPreviewStop.Enabled = False
+            Appearance.RefreshColors()
             CustomLibsActive.Visible = False
             CustomLibsEdit.Visible = False
             CustomLibsOmega.Visible = False
@@ -645,6 +651,7 @@
             DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"no"})
             Settings.SettingsMusic = "off"
         End If
+        Appearance.RefreshColors()
         ResetEditPath()
     End Sub
 
@@ -759,6 +766,7 @@
         Else
             CustomLibsSave.Visible = True
         End If
+        Appearance.RefreshColors()
         ResetEditPath()
     End Sub
 
@@ -835,6 +843,7 @@
             CustomLibsDelete.Enabled = False
             CustomLibsPath.Text = ""
         End If
+        Appearance.RefreshColors()
         ResetEditPath()
     End Sub
 
@@ -893,6 +902,7 @@
                         MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
                     End Try
                     CustomLibsActive.Enabled = True
+                    Appearance.RefreshColors()
                     CustomLibsActive.CheckState = CheckState.Checked
                     CustomLibsActive.ForeColor = MemoryBank.GroupForeColor
 
@@ -911,6 +921,7 @@
                         MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
                     End Try
                     CustomLibsActive.Enabled = True
+                    Appearance.RefreshColors()
                     CustomLibsActive.CheckState = CheckState.Unchecked
                     CustomLibsActive.ForeColor = Color.Red
                 End If
@@ -946,6 +957,7 @@
             CustomLibsDelete.Enabled = False
             'OptionsManageSound.Enabled = False
         End If
+        Appearance.RefreshColors()
         ResetEditPath()
     End Sub
 
@@ -1184,11 +1196,13 @@
         EditorPanel.Visible = True
         EditorMenuPanel.Visible = False
         EditorSwitchPanel.Visible = False
+        EditorEditPanel.Visible = False
         activepanel.Visible = True
     End Sub
 
-    Private Sub EditorBackButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchBackButton.Click
+    Private Sub EditorBackButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchBackButton.Click, EditorEditBackButton.Click
         EditorPanelChange(EditorMenuPanel)
+        ActiveEditWindow = ""
     End Sub
 
     Private Sub EditorDBButton_Click(sender As Object, e As EventArgs) Handles EditorDBButton.Click
@@ -1229,11 +1243,12 @@
         End If
         If EditorSwitchSDBDrop.Items.Count < 2 Then
             EditorSwitchDelButton.Enabled = False
-            Appearance.AssignColor(EditorSwitchDelButton, "Button")
+            'Appearance.AssignColor(EditorSwitchDelButton, "Button")
         Else
             EditorSwitchDelButton.Enabled = True
-            Appearance.AssignColor(EditorSwitchDelButton, "Button")
+            'Appearance.AssignColor(EditorSwitchDelButton, "Button")
         End If
+        Appearance.RefreshColors()
     End Sub
 
     Private Sub EditorSDBEffects(changevalue As Boolean)
@@ -1252,11 +1267,12 @@
         DBTools.CloseSQL(MemoryBank.DataDir, EditorSwitchSDBDrop.SelectedItem & "." & MemoryBank.SavesExt)
         If LCase(EditorSwitchTarBox.Text) = LCase(EditorSwitchCurBox.Text) Then
             EditorSwitchSDBButton.Enabled = False
-            Appearance.AssignColor(EditorSwitchSDBButton, "Button")
+            'Appearance.AssignColor(EditorSwitchSDBButton, "Button")
         Else
             EditorSwitchSDBButton.Enabled = True
-            Appearance.AssignColor(EditorSwitchSDBButton, "Button")
+            'Appearance.AssignColor(EditorSwitchSDBButton, "Button")
         End If
+        Appearance.RefreshColors()
     End Sub
 
     Private Sub EditorSwitchNewCheck_CheckedChanged(sender As Object, e As EventArgs) Handles EditorSwitchNewCheck.CheckedChanged
@@ -1267,16 +1283,18 @@
             EditorSwitchNewBox.Text = ""
             EditorSwitchNewBox.Enabled = False
         End If
+        Appearance.RefreshColors()
     End Sub
 
     Private Sub EditorSwitchNewBox_KeyPress(sender As Object, e As EventArgs) Handles EditorSwitchNewBox.TextChanged
         If EditorSwitchNewBox.TextLength > 0 Then
             EditorSwitchNewButton.Enabled = True
-            Appearance.AssignColor(EditorSwitchNewButton, "Button")
+            'Appearance.AssignColor(EditorSwitchNewButton, "Button")
         Else
             EditorSwitchNewButton.Enabled = False
-            Appearance.AssignColor(EditorSwitchNewButton, "Button")
+            'Appearance.AssignColor(EditorSwitchNewButton, "Button")
         End If
+        Appearance.RefreshColors()
     End Sub
 
     Private Sub EditorSwitchNewButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchNewButton.Click
@@ -1351,11 +1369,176 @@
         End If
     End Sub
 
+    Private Sub EditorEditPanelChange(activepanel As Panel)
+        ActiveEditWindow = ""
+        EditorEditPanel.Visible = True
+        EditorEditCharPanel.Visible = False
+        EditorEditAblPanel.Visible = False
+        EditorEditAliasPanel.Visible = False
+        EditorEditArenaPanel.Visible = False
+        EditorEditCharmsPanel.Visible = False
+        EditorEditClassPanel.Visible = False
+        EditorEditDestinyPanel.Visible = False
+        EditorEditEffectsPanel.Visible = False
+        EditorEditHeldsPanel.Visible = False
+        EditorEditItemsPanel.Visible = False
+        EditorEditRelPanel.Visible = False
+        EditorEditStatusPanel.Visible = False
+        EditorEditTeamsPanel.Visible = False
+        EditorEditVersePanel.Visible = False
+        EditorEditWearsPanel.Visible = False
+        activepanel.Visible = True
+    End Sub
+
+    Private Sub EditorCharButton_Click(sender As Object, e As EventArgs) Handles EditorCharButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditCharPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Characters"
+        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbToons", "toonID", "toonName")
+    End Sub
+
+    Private Sub EditorEditDelButtonChange(action As Boolean)
+        EditorEditDelButton.Enabled = action
+        Appearance.RefreshColors()
+    End Sub
+
+    Private Sub EditorEditList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EditorEditList.SelectedIndexChanged
+        If EditorEditList.SelectedIndex > -1 Then EditorEditDelButtonChange(True) Else EditorEditDelButtonChange(False)
+    End Sub
+
+    Private Sub EditorAblButton_Click(sender As Object, e As EventArgs) Handles EditorAblButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditAblPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Abilities"
+        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbAbl", "ablID", "ablName")
+    End Sub
+
+    Private Sub EditorAliasButton_Click(sender As Object, e As EventArgs) Handles EditorAliasButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditAliasPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Aliases"
+        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbAlias", "aliasID", "aliasName")
+    End Sub
+
+    Private Sub EditorArenaButton_Click(sender As Object, e As EventArgs) Handles EditorArenaButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditArenaPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Arenas"
+        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbArenas", "arenaID", "arenaName")
+    End Sub
+
+    Private Sub EditorCharmsButton_Click(sender As Object, e As EventArgs) Handles EditorCharmsButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditCharmsPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Charms"
+        Tools.PopulateListWithCustom(ActiveEditWindow, EditorEditList, {"dbItems.itemID.itemName.itemClass = '2'."})
+    End Sub
+
+    Private Sub EditorClassButton_Click(sender As Object, e As EventArgs) Handles EditorClassButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditClassPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Classifications"
+        Tools.PopulateListWithCustom(ActiveEditWindow, EditorEditList, {"dbRace.raceID.raceName.raceName NOT NULL.R",
+            "dbClass.classID.className.className NOT NULL.C", "dbJobs.jobID.jobName.jobName NOT NULL.J"})
+    End Sub
+
+    Private Sub EditorDestinyButton_Click(sender As Object, e As EventArgs) Handles EditorDestinyButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditDestinyPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Destinies"
+        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbDestiny", "destinyID", "destinyName")
+    End Sub
+
+    Private Sub EditorEffectsButton_Click(sender As Object, e As EventArgs) Handles EditorEffectsButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditEffectsPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Effects"
+        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbEff", "effID", "effName")
+    End Sub
+
+    Private Sub EditorHeldButton_Click(sender As Object, e As EventArgs) Handles EditorHeldButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditHeldsPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Handhelds"
+        Tools.PopulateListWithCustom(ActiveEditWindow, EditorEditList, {"dbItems.itemID.itemName.itemClass = '0'."})
+    End Sub
+
+    Private Sub EditorItemButton_Click(sender As Object, e As EventArgs) Handles EditorItemButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditItemsPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Items"
+        Tools.PopulateListWithCustom(ActiveEditWindow, EditorEditList, {"dbItems.itemID.itemName.itemClass = '3'.",
+            "dbItems.itemID.itemName.itemClass = '4'.Relic"})
+    End Sub
+
+    Private Sub EditorVerseButton_Click(sender As Object, e As EventArgs) Handles EditorVerseButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditVersePanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Universes"
+        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbVerse", "verseID", "verseName")
+    End Sub
+
+    Private Sub EditorRelButton_Click(sender As Object, e As EventArgs) Handles EditorRelButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditRelPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Relationships"
+        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbRelation", "relationID", "relationName")
+    End Sub
+
+    Private Sub EditorStatusButton_Click(sender As Object, e As EventArgs) Handles EditorStatusButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditStatusPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Statuses"
+        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbStatus", "statusID", "statusName")
+    End Sub
+
+    Private Sub EditorTeamsButton_Click(sender As Object, e As EventArgs) Handles EditorTeamsButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditTeamsPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Teams"
+        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbTeam", "teamID", "teamName")
+    End Sub
+
+    Private Sub EditorWearButton_Click(sender As Object, e As EventArgs) Handles EditorWearButton.Click
+        EditorPanelChange(EditorEditPanel)
+        EditorEditPanelChange(EditorEditWearsPanel)
+        EditorEditDelButtonChange(False)
+        ActiveEditWindow = "Wearables"
+        Tools.PopulateListWithCustom(ActiveEditWindow, EditorEditList, {"dbItems.itemID.itemName.itemClass = '1'."})
+    End Sub
+
+    Private Sub MainMenuBar_Click(sender As Object, e As EventArgs) Handles MainMenuBar.Click
+        If WelcomePanel.Visible = False Then
+            Dim answer As Integer = MsgBox("Are you sure you want to return to the Main Menu?", vbYesNo)
+            If answer = vbYes Then
+                Initialize.InitPanels()
+            Else
+                MsgBox("Action Cancelled", vbOKOnly)
+            End If
+            ResetEditPath()
+        End If
+    End Sub
+
+
     'Start Game Section
 
     Private Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
-        MsgBox("Yeah, we are excited about the game too, but it's not ready yet.  Be patient.  Thanks!" & vbCrLf & vbCrLf & "- Geoff", vbExclamation + vbOKOnly)
         Initialize.InitPanels()
+        MsgBox("Yeah, we are excited about the game too, but it's not ready yet.  Be patient.  Thanks!" & vbCrLf & vbCrLf & "- Geoff", vbExclamation + vbOKOnly)
         ResetEditPath()
     End Sub
 

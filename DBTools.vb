@@ -126,5 +126,10 @@ Public Class DBTools
             findcol & " = '" & findval & "';", "value", Enumerable.Empty(Of String).ToArray)
     End Function
 
+    Public Shared Function GetMulti(path As String, filename As String, table As String,
+                                    column As String, findstring As String) As String
+        GetMulti = QuerySQL(path, filename, "SELECT " & column & " FROM " & table & " WHERE " &
+            findstring & ";", "multi", Enumerable.Empty(Of String).ToArray)
+    End Function
 
 End Class

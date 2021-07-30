@@ -82,9 +82,9 @@
             CREATE TABLE 'dbEffType' ('efftypeID' TEXT NOT NULL, 'efftypeName' TEXT NOT NULL, 'efftypeDesc' TEXT,
             'efftypeCode' TEXT);
             CREATE TABLE 'dbItems' ('itemID' TEXT NOT NULL, 'itemName' TEXT NOT NULL, 'itemDesc' TEXT, 
-            'itemType' TEXT NOT NULL, 'itemSizeR' TEXT, 'itemRaceR' TEXT, 'itemClassR' TEXT, 'itemEffR' TEXT, 
-            'itemAlignR' TEXT, 'itemStats' TEXT, 'itemBio' TEXT, 'itemAbl' TEXT, 'itemEff' TEXT, 'itemElement' TEXT,
-            'itemCode' TEXT);
+            'itemClass' TEXT NOT NULL,'itemType' TEXT NOT NULL, 'itemSizeR' TEXT, 'itemRaceR' TEXT, 'itemClassR' TEXT, 
+            'itemEffR' TEXT, 'itemAlignR' TEXT, 'itemStats' TEXT, 'itemBio' TEXT, 'itemAbl' TEXT, 'itemEff' TEXT, 
+            'itemElement' TEXT, 'itemCode' TEXT);
             CREATE TABLE 'dbItemType' ('itemtypeID' TEXT NOT NULL, 'itemtypeName' TEXT NOT NULL, 'itemtypeClass' TEXT NOT NULL,
             'itemtypeCode' TEXT NOT NULL);
             CREATE TABLE 'dbItemClass' ('itemclassID' TEXT NOT NULL, 'itemclassname' TEXT NOT NULL, 

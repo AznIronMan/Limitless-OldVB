@@ -47,20 +47,7 @@ Partial Class MainWindow
         Me.StartButton = New System.Windows.Forms.Button()
         Me.EditorPanel = New System.Windows.Forms.Panel()
         Me.EditorTitleText = New System.Windows.Forms.Label()
-        Me.EditorSwitchPanel = New System.Windows.Forms.Panel()
-        Me.EditorSwitchDelButton = New System.Windows.Forms.Button()
-        Me.EditorSwitchDupButton = New System.Windows.Forms.Button()
-        Me.EditorSwitchNewBox = New System.Windows.Forms.TextBox()
-        Me.EditorSwitchNewCheck = New System.Windows.Forms.CheckBox()
-        Me.EditorSwitchVerBox = New System.Windows.Forms.Label()
-        Me.EditorSwitchTarBox = New System.Windows.Forms.Label()
-        Me.EditorSwitchSDBButton = New System.Windows.Forms.Button()
-        Me.EditorSwitchNewButton = New System.Windows.Forms.Button()
-        Me.EditorSwitchSDBDrop = New System.Windows.Forms.ComboBox()
-        Me.EditorSwitchSDBText = New System.Windows.Forms.Label()
-        Me.EditorSwitchCurBox = New System.Windows.Forms.Label()
-        Me.EditorSwitchCurText = New System.Windows.Forms.Label()
-        Me.EditorSwitchBackButton = New System.Windows.Forms.Button()
+        Me.EditorDBText = New System.Windows.Forms.Label()
         Me.EditorMenuPanel = New System.Windows.Forms.Panel()
         Me.EditorExportButton = New System.Windows.Forms.Button()
         Me.EditorImportButton = New System.Windows.Forms.Button()
@@ -80,7 +67,55 @@ Partial Class MainWindow
         Me.EditorAblButton = New System.Windows.Forms.Button()
         Me.EditorClassButton = New System.Windows.Forms.Button()
         Me.EditorCharButton = New System.Windows.Forms.Button()
-        Me.EditorDBText = New System.Windows.Forms.Label()
+        Me.EditorEditPanel = New System.Windows.Forms.Panel()
+        Me.EditorEditDelButton = New System.Windows.Forms.Button()
+        Me.EditorEditAddButton = New System.Windows.Forms.Button()
+        Me.EditorEditBackButton = New System.Windows.Forms.Button()
+        Me.EditorEditList = New System.Windows.Forms.ListBox()
+        Me.EditorEditCharPanel = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.EditorEditWearsPanel = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.EditorEditTeamsPanel = New System.Windows.Forms.Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.EditorEditStatusPanel = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.EditorEditRelPanel = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.EditorEditVersePanel = New System.Windows.Forms.Panel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.EditorEditItemsPanel = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.EditorEditHeldsPanel = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.EditorEditEffectsPanel = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.EditorEditDestinyPanel = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.EditorEditClassPanel = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.EditorEditCharmsPanel = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.EditorEditArenaPanel = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.EditorEditAliasPanel = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.EditorEditAblPanel = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.EditorSwitchPanel = New System.Windows.Forms.Panel()
+        Me.EditorSwitchDelButton = New System.Windows.Forms.Button()
+        Me.EditorSwitchDupButton = New System.Windows.Forms.Button()
+        Me.EditorSwitchNewBox = New System.Windows.Forms.TextBox()
+        Me.EditorSwitchNewCheck = New System.Windows.Forms.CheckBox()
+        Me.EditorSwitchVerBox = New System.Windows.Forms.Label()
+        Me.EditorSwitchTarBox = New System.Windows.Forms.Label()
+        Me.EditorSwitchSDBButton = New System.Windows.Forms.Button()
+        Me.EditorSwitchNewButton = New System.Windows.Forms.Button()
+        Me.EditorSwitchSDBDrop = New System.Windows.Forms.ComboBox()
+        Me.EditorSwitchSDBText = New System.Windows.Forms.Label()
+        Me.EditorSwitchCurBox = New System.Windows.Forms.Label()
+        Me.EditorSwitchCurText = New System.Windows.Forms.Label()
+        Me.EditorSwitchBackButton = New System.Windows.Forms.Button()
         Me.OptionsPanel = New System.Windows.Forms.Panel()
         Me.CustomLibsGroup = New System.Windows.Forms.GroupBox()
         Me.CustomLibsOmega = New System.Windows.Forms.Label()
@@ -166,8 +201,24 @@ Partial Class MainWindow
         Me.MainMenuPanel.SuspendLayout()
         Me.MainMenuBar.SuspendLayout()
         Me.EditorPanel.SuspendLayout()
-        Me.EditorSwitchPanel.SuspendLayout()
         Me.EditorMenuPanel.SuspendLayout()
+        Me.EditorEditPanel.SuspendLayout()
+        Me.EditorEditCharPanel.SuspendLayout()
+        Me.EditorEditWearsPanel.SuspendLayout()
+        Me.EditorEditTeamsPanel.SuspendLayout()
+        Me.EditorEditStatusPanel.SuspendLayout()
+        Me.EditorEditRelPanel.SuspendLayout()
+        Me.EditorEditVersePanel.SuspendLayout()
+        Me.EditorEditItemsPanel.SuspendLayout()
+        Me.EditorEditHeldsPanel.SuspendLayout()
+        Me.EditorEditEffectsPanel.SuspendLayout()
+        Me.EditorEditDestinyPanel.SuspendLayout()
+        Me.EditorEditClassPanel.SuspendLayout()
+        Me.EditorEditCharmsPanel.SuspendLayout()
+        Me.EditorEditArenaPanel.SuspendLayout()
+        Me.EditorEditAliasPanel.SuspendLayout()
+        Me.EditorEditAblPanel.SuspendLayout()
+        Me.EditorSwitchPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
         Me.CustomLibsGroup.SuspendLayout()
         Me.CustomLibsPreviewMusic.SuspendLayout()
@@ -404,8 +455,9 @@ Partial Class MainWindow
         '
         Me.EditorPanel.Controls.Add(Me.EditorTitleText)
         Me.EditorPanel.Controls.Add(Me.EditorDBText)
-        Me.EditorPanel.Controls.Add(Me.EditorSwitchPanel)
         Me.EditorPanel.Controls.Add(Me.EditorMenuPanel)
+        Me.EditorPanel.Controls.Add(Me.EditorEditPanel)
+        Me.EditorPanel.Controls.Add(Me.EditorSwitchPanel)
         resources.ApplyResources(Me.EditorPanel, "EditorPanel")
         Me.EditorPanel.Name = "EditorPanel"
         '
@@ -413,6 +465,413 @@ Partial Class MainWindow
         '
         resources.ApplyResources(Me.EditorTitleText, "EditorTitleText")
         Me.EditorTitleText.Name = "EditorTitleText"
+        '
+        'EditorDBText
+        '
+        Me.EditorDBText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.EditorDBText, "EditorDBText")
+        Me.EditorDBText.Name = "EditorDBText"
+        '
+        'EditorMenuPanel
+        '
+        Me.EditorMenuPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.EditorMenuPanel.Controls.Add(Me.EditorExportButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorImportButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorAliasButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorEffectsButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorDBButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorRelButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorArenaButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorVerseButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorDestinyButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorStatusButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorTeamsButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorItemButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorWearButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorCharmsButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorHeldButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorAblButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorClassButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorCharButton)
+        resources.ApplyResources(Me.EditorMenuPanel, "EditorMenuPanel")
+        Me.EditorMenuPanel.Name = "EditorMenuPanel"
+        '
+        'EditorExportButton
+        '
+        resources.ApplyResources(Me.EditorExportButton, "EditorExportButton")
+        Me.EditorExportButton.Name = "EditorExportButton"
+        Me.MenuTips.SetToolTip(Me.EditorExportButton, resources.GetString("EditorExportButton.ToolTip"))
+        Me.EditorExportButton.UseVisualStyleBackColor = True
+        '
+        'EditorImportButton
+        '
+        resources.ApplyResources(Me.EditorImportButton, "EditorImportButton")
+        Me.EditorImportButton.Name = "EditorImportButton"
+        Me.MenuTips.SetToolTip(Me.EditorImportButton, resources.GetString("EditorImportButton.ToolTip"))
+        Me.EditorImportButton.UseVisualStyleBackColor = True
+        '
+        'EditorAliasButton
+        '
+        resources.ApplyResources(Me.EditorAliasButton, "EditorAliasButton")
+        Me.EditorAliasButton.Name = "EditorAliasButton"
+        Me.MenuTips.SetToolTip(Me.EditorAliasButton, resources.GetString("EditorAliasButton.ToolTip"))
+        Me.EditorAliasButton.UseVisualStyleBackColor = True
+        '
+        'EditorEffectsButton
+        '
+        resources.ApplyResources(Me.EditorEffectsButton, "EditorEffectsButton")
+        Me.EditorEffectsButton.Name = "EditorEffectsButton"
+        Me.MenuTips.SetToolTip(Me.EditorEffectsButton, resources.GetString("EditorEffectsButton.ToolTip"))
+        Me.EditorEffectsButton.UseVisualStyleBackColor = True
+        '
+        'EditorDBButton
+        '
+        resources.ApplyResources(Me.EditorDBButton, "EditorDBButton")
+        Me.EditorDBButton.Name = "EditorDBButton"
+        Me.MenuTips.SetToolTip(Me.EditorDBButton, resources.GetString("EditorDBButton.ToolTip"))
+        Me.EditorDBButton.UseVisualStyleBackColor = True
+        '
+        'EditorRelButton
+        '
+        resources.ApplyResources(Me.EditorRelButton, "EditorRelButton")
+        Me.EditorRelButton.Name = "EditorRelButton"
+        Me.MenuTips.SetToolTip(Me.EditorRelButton, resources.GetString("EditorRelButton.ToolTip"))
+        Me.EditorRelButton.UseVisualStyleBackColor = True
+        '
+        'EditorArenaButton
+        '
+        resources.ApplyResources(Me.EditorArenaButton, "EditorArenaButton")
+        Me.EditorArenaButton.Name = "EditorArenaButton"
+        Me.MenuTips.SetToolTip(Me.EditorArenaButton, resources.GetString("EditorArenaButton.ToolTip"))
+        Me.EditorArenaButton.UseVisualStyleBackColor = True
+        '
+        'EditorVerseButton
+        '
+        resources.ApplyResources(Me.EditorVerseButton, "EditorVerseButton")
+        Me.EditorVerseButton.Name = "EditorVerseButton"
+        Me.MenuTips.SetToolTip(Me.EditorVerseButton, resources.GetString("EditorVerseButton.ToolTip"))
+        Me.EditorVerseButton.UseVisualStyleBackColor = True
+        '
+        'EditorDestinyButton
+        '
+        resources.ApplyResources(Me.EditorDestinyButton, "EditorDestinyButton")
+        Me.EditorDestinyButton.Name = "EditorDestinyButton"
+        Me.MenuTips.SetToolTip(Me.EditorDestinyButton, resources.GetString("EditorDestinyButton.ToolTip"))
+        Me.EditorDestinyButton.UseVisualStyleBackColor = True
+        '
+        'EditorStatusButton
+        '
+        resources.ApplyResources(Me.EditorStatusButton, "EditorStatusButton")
+        Me.EditorStatusButton.Name = "EditorStatusButton"
+        Me.MenuTips.SetToolTip(Me.EditorStatusButton, resources.GetString("EditorStatusButton.ToolTip"))
+        Me.EditorStatusButton.UseVisualStyleBackColor = True
+        '
+        'EditorTeamsButton
+        '
+        resources.ApplyResources(Me.EditorTeamsButton, "EditorTeamsButton")
+        Me.EditorTeamsButton.Name = "EditorTeamsButton"
+        Me.MenuTips.SetToolTip(Me.EditorTeamsButton, resources.GetString("EditorTeamsButton.ToolTip"))
+        Me.EditorTeamsButton.UseVisualStyleBackColor = True
+        '
+        'EditorItemButton
+        '
+        resources.ApplyResources(Me.EditorItemButton, "EditorItemButton")
+        Me.EditorItemButton.Name = "EditorItemButton"
+        Me.MenuTips.SetToolTip(Me.EditorItemButton, resources.GetString("EditorItemButton.ToolTip"))
+        Me.EditorItemButton.UseVisualStyleBackColor = True
+        '
+        'EditorWearButton
+        '
+        resources.ApplyResources(Me.EditorWearButton, "EditorWearButton")
+        Me.EditorWearButton.Name = "EditorWearButton"
+        Me.MenuTips.SetToolTip(Me.EditorWearButton, resources.GetString("EditorWearButton.ToolTip"))
+        Me.EditorWearButton.UseVisualStyleBackColor = True
+        '
+        'EditorCharmsButton
+        '
+        resources.ApplyResources(Me.EditorCharmsButton, "EditorCharmsButton")
+        Me.EditorCharmsButton.Name = "EditorCharmsButton"
+        Me.MenuTips.SetToolTip(Me.EditorCharmsButton, resources.GetString("EditorCharmsButton.ToolTip"))
+        Me.EditorCharmsButton.UseVisualStyleBackColor = True
+        '
+        'EditorHeldButton
+        '
+        resources.ApplyResources(Me.EditorHeldButton, "EditorHeldButton")
+        Me.EditorHeldButton.Name = "EditorHeldButton"
+        Me.MenuTips.SetToolTip(Me.EditorHeldButton, resources.GetString("EditorHeldButton.ToolTip"))
+        Me.EditorHeldButton.UseVisualStyleBackColor = True
+        '
+        'EditorAblButton
+        '
+        resources.ApplyResources(Me.EditorAblButton, "EditorAblButton")
+        Me.EditorAblButton.Name = "EditorAblButton"
+        Me.MenuTips.SetToolTip(Me.EditorAblButton, resources.GetString("EditorAblButton.ToolTip"))
+        Me.EditorAblButton.UseVisualStyleBackColor = True
+        '
+        'EditorClassButton
+        '
+        resources.ApplyResources(Me.EditorClassButton, "EditorClassButton")
+        Me.EditorClassButton.Name = "EditorClassButton"
+        Me.MenuTips.SetToolTip(Me.EditorClassButton, resources.GetString("EditorClassButton.ToolTip"))
+        Me.EditorClassButton.UseVisualStyleBackColor = True
+        '
+        'EditorCharButton
+        '
+        resources.ApplyResources(Me.EditorCharButton, "EditorCharButton")
+        Me.EditorCharButton.Name = "EditorCharButton"
+        Me.MenuTips.SetToolTip(Me.EditorCharButton, resources.GetString("EditorCharButton.ToolTip"))
+        Me.EditorCharButton.UseVisualStyleBackColor = True
+        '
+        'EditorEditPanel
+        '
+        Me.EditorEditPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditDelButton)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditAddButton)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditBackButton)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditList)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditCharPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditWearsPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditTeamsPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditStatusPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditRelPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditVersePanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditItemsPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditHeldsPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditEffectsPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditDestinyPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditClassPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditCharmsPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditArenaPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditAliasPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditAblPanel)
+        resources.ApplyResources(Me.EditorEditPanel, "EditorEditPanel")
+        Me.EditorEditPanel.Name = "EditorEditPanel"
+        '
+        'EditorEditDelButton
+        '
+        Me.EditorEditDelButton.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.EditorEditDelButton, "EditorEditDelButton")
+        Me.EditorEditDelButton.Name = "EditorEditDelButton"
+        Me.EditorEditDelButton.UseVisualStyleBackColor = False
+        '
+        'EditorEditAddButton
+        '
+        Me.EditorEditAddButton.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.EditorEditAddButton, "EditorEditAddButton")
+        Me.EditorEditAddButton.Name = "EditorEditAddButton"
+        Me.EditorEditAddButton.UseVisualStyleBackColor = False
+        '
+        'EditorEditBackButton
+        '
+        Me.EditorEditBackButton.BackColor = System.Drawing.SystemColors.WindowText
+        resources.ApplyResources(Me.EditorEditBackButton, "EditorEditBackButton")
+        Me.EditorEditBackButton.Name = "EditorEditBackButton"
+        Me.EditorEditBackButton.UseVisualStyleBackColor = False
+        '
+        'EditorEditList
+        '
+        Me.EditorEditList.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditList.ForeColor = System.Drawing.SystemColors.Window
+        Me.EditorEditList.FormattingEnabled = True
+        resources.ApplyResources(Me.EditorEditList, "EditorEditList")
+        Me.EditorEditList.Name = "EditorEditList"
+        Me.EditorEditList.Sorted = True
+        '
+        'EditorEditCharPanel
+        '
+        Me.EditorEditCharPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditCharPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditCharPanel.Controls.Add(Me.Label1)
+        Me.EditorEditCharPanel.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.EditorEditCharPanel, "EditorEditCharPanel")
+        Me.EditorEditCharPanel.Name = "EditorEditCharPanel"
+        '
+        'Label1
+        '
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.Label1.Name = "Label1"
+        '
+        'EditorEditWearsPanel
+        '
+        Me.EditorEditWearsPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditWearsPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditWearsPanel.Controls.Add(Me.Label15)
+        resources.ApplyResources(Me.EditorEditWearsPanel, "EditorEditWearsPanel")
+        Me.EditorEditWearsPanel.Name = "EditorEditWearsPanel"
+        '
+        'Label15
+        '
+        resources.ApplyResources(Me.Label15, "Label15")
+        Me.Label15.Name = "Label15"
+        '
+        'EditorEditTeamsPanel
+        '
+        Me.EditorEditTeamsPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditTeamsPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditTeamsPanel.Controls.Add(Me.Label14)
+        resources.ApplyResources(Me.EditorEditTeamsPanel, "EditorEditTeamsPanel")
+        Me.EditorEditTeamsPanel.Name = "EditorEditTeamsPanel"
+        '
+        'Label14
+        '
+        resources.ApplyResources(Me.Label14, "Label14")
+        Me.Label14.Name = "Label14"
+        '
+        'EditorEditStatusPanel
+        '
+        Me.EditorEditStatusPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditStatusPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditStatusPanel.Controls.Add(Me.Label13)
+        resources.ApplyResources(Me.EditorEditStatusPanel, "EditorEditStatusPanel")
+        Me.EditorEditStatusPanel.Name = "EditorEditStatusPanel"
+        '
+        'Label13
+        '
+        resources.ApplyResources(Me.Label13, "Label13")
+        Me.Label13.Name = "Label13"
+        '
+        'EditorEditRelPanel
+        '
+        Me.EditorEditRelPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditRelPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditRelPanel.Controls.Add(Me.Label12)
+        resources.ApplyResources(Me.EditorEditRelPanel, "EditorEditRelPanel")
+        Me.EditorEditRelPanel.Name = "EditorEditRelPanel"
+        '
+        'Label12
+        '
+        resources.ApplyResources(Me.Label12, "Label12")
+        Me.Label12.Name = "Label12"
+        '
+        'EditorEditVersePanel
+        '
+        Me.EditorEditVersePanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditVersePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditVersePanel.Controls.Add(Me.Label11)
+        resources.ApplyResources(Me.EditorEditVersePanel, "EditorEditVersePanel")
+        Me.EditorEditVersePanel.Name = "EditorEditVersePanel"
+        '
+        'Label11
+        '
+        resources.ApplyResources(Me.Label11, "Label11")
+        Me.Label11.Name = "Label11"
+        '
+        'EditorEditItemsPanel
+        '
+        Me.EditorEditItemsPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditItemsPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditItemsPanel.Controls.Add(Me.Label10)
+        resources.ApplyResources(Me.EditorEditItemsPanel, "EditorEditItemsPanel")
+        Me.EditorEditItemsPanel.Name = "EditorEditItemsPanel"
+        '
+        'Label10
+        '
+        resources.ApplyResources(Me.Label10, "Label10")
+        Me.Label10.Name = "Label10"
+        '
+        'EditorEditHeldsPanel
+        '
+        Me.EditorEditHeldsPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditHeldsPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditHeldsPanel.Controls.Add(Me.Label9)
+        resources.ApplyResources(Me.EditorEditHeldsPanel, "EditorEditHeldsPanel")
+        Me.EditorEditHeldsPanel.Name = "EditorEditHeldsPanel"
+        '
+        'Label9
+        '
+        resources.ApplyResources(Me.Label9, "Label9")
+        Me.Label9.Name = "Label9"
+        '
+        'EditorEditEffectsPanel
+        '
+        Me.EditorEditEffectsPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditEffectsPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditEffectsPanel.Controls.Add(Me.Label8)
+        resources.ApplyResources(Me.EditorEditEffectsPanel, "EditorEditEffectsPanel")
+        Me.EditorEditEffectsPanel.Name = "EditorEditEffectsPanel"
+        '
+        'Label8
+        '
+        resources.ApplyResources(Me.Label8, "Label8")
+        Me.Label8.Name = "Label8"
+        '
+        'EditorEditDestinyPanel
+        '
+        Me.EditorEditDestinyPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditDestinyPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditDestinyPanel.Controls.Add(Me.Label7)
+        resources.ApplyResources(Me.EditorEditDestinyPanel, "EditorEditDestinyPanel")
+        Me.EditorEditDestinyPanel.Name = "EditorEditDestinyPanel"
+        '
+        'Label7
+        '
+        resources.ApplyResources(Me.Label7, "Label7")
+        Me.Label7.Name = "Label7"
+        '
+        'EditorEditClassPanel
+        '
+        Me.EditorEditClassPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditClassPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditClassPanel.Controls.Add(Me.Label6)
+        resources.ApplyResources(Me.EditorEditClassPanel, "EditorEditClassPanel")
+        Me.EditorEditClassPanel.Name = "EditorEditClassPanel"
+        '
+        'Label6
+        '
+        resources.ApplyResources(Me.Label6, "Label6")
+        Me.Label6.Name = "Label6"
+        '
+        'EditorEditCharmsPanel
+        '
+        Me.EditorEditCharmsPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditCharmsPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditCharmsPanel.Controls.Add(Me.Label5)
+        resources.ApplyResources(Me.EditorEditCharmsPanel, "EditorEditCharmsPanel")
+        Me.EditorEditCharmsPanel.Name = "EditorEditCharmsPanel"
+        '
+        'Label5
+        '
+        resources.ApplyResources(Me.Label5, "Label5")
+        Me.Label5.Name = "Label5"
+        '
+        'EditorEditArenaPanel
+        '
+        Me.EditorEditArenaPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditArenaPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditArenaPanel.Controls.Add(Me.Label4)
+        resources.ApplyResources(Me.EditorEditArenaPanel, "EditorEditArenaPanel")
+        Me.EditorEditArenaPanel.Name = "EditorEditArenaPanel"
+        '
+        'Label4
+        '
+        resources.ApplyResources(Me.Label4, "Label4")
+        Me.Label4.Name = "Label4"
+        '
+        'EditorEditAliasPanel
+        '
+        Me.EditorEditAliasPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditAliasPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditAliasPanel.Controls.Add(Me.Label3)
+        resources.ApplyResources(Me.EditorEditAliasPanel, "EditorEditAliasPanel")
+        Me.EditorEditAliasPanel.Name = "EditorEditAliasPanel"
+        '
+        'Label3
+        '
+        resources.ApplyResources(Me.Label3, "Label3")
+        Me.Label3.Name = "Label3"
+        '
+        'EditorEditAblPanel
+        '
+        Me.EditorEditAblPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditAblPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditAblPanel.Controls.Add(Me.Label2)
+        resources.ApplyResources(Me.EditorEditAblPanel, "EditorEditAblPanel")
+        Me.EditorEditAblPanel.Name = "EditorEditAblPanel"
+        '
+        'Label2
+        '
+        resources.ApplyResources(Me.Label2, "Label2")
+        Me.Label2.Name = "Label2"
         '
         'EditorSwitchPanel
         '
@@ -510,143 +969,6 @@ Partial Class MainWindow
         resources.ApplyResources(Me.EditorSwitchBackButton, "EditorSwitchBackButton")
         Me.EditorSwitchBackButton.Name = "EditorSwitchBackButton"
         Me.EditorSwitchBackButton.UseVisualStyleBackColor = True
-        '
-        'EditorMenuPanel
-        '
-        Me.EditorMenuPanel.Controls.Add(Me.EditorExportButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorImportButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorAliasButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorEffectsButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorDBButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorRelButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorArenaButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorVerseButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorDestinyButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorStatusButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorTeamsButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorItemButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorWearButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorCharmsButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorHeldButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorAblButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorClassButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorCharButton)
-        resources.ApplyResources(Me.EditorMenuPanel, "EditorMenuPanel")
-        Me.EditorMenuPanel.Name = "EditorMenuPanel"
-        '
-        'EditorExportButton
-        '
-        resources.ApplyResources(Me.EditorExportButton, "EditorExportButton")
-        Me.EditorExportButton.Name = "EditorExportButton"
-        Me.EditorExportButton.UseVisualStyleBackColor = True
-        '
-        'EditorImportButton
-        '
-        resources.ApplyResources(Me.EditorImportButton, "EditorImportButton")
-        Me.EditorImportButton.Name = "EditorImportButton"
-        Me.EditorImportButton.UseVisualStyleBackColor = True
-        '
-        'EditorAliasButton
-        '
-        resources.ApplyResources(Me.EditorAliasButton, "EditorAliasButton")
-        Me.EditorAliasButton.Name = "EditorAliasButton"
-        Me.EditorAliasButton.UseVisualStyleBackColor = True
-        '
-        'EditorEffectsButton
-        '
-        resources.ApplyResources(Me.EditorEffectsButton, "EditorEffectsButton")
-        Me.EditorEffectsButton.Name = "EditorEffectsButton"
-        Me.EditorEffectsButton.UseVisualStyleBackColor = True
-        '
-        'EditorDBButton
-        '
-        resources.ApplyResources(Me.EditorDBButton, "EditorDBButton")
-        Me.EditorDBButton.Name = "EditorDBButton"
-        Me.EditorDBButton.UseVisualStyleBackColor = True
-        '
-        'EditorRelButton
-        '
-        resources.ApplyResources(Me.EditorRelButton, "EditorRelButton")
-        Me.EditorRelButton.Name = "EditorRelButton"
-        Me.EditorRelButton.UseVisualStyleBackColor = True
-        '
-        'EditorArenaButton
-        '
-        resources.ApplyResources(Me.EditorArenaButton, "EditorArenaButton")
-        Me.EditorArenaButton.Name = "EditorArenaButton"
-        Me.EditorArenaButton.UseVisualStyleBackColor = True
-        '
-        'EditorVerseButton
-        '
-        resources.ApplyResources(Me.EditorVerseButton, "EditorVerseButton")
-        Me.EditorVerseButton.Name = "EditorVerseButton"
-        Me.EditorVerseButton.UseVisualStyleBackColor = True
-        '
-        'EditorDestinyButton
-        '
-        resources.ApplyResources(Me.EditorDestinyButton, "EditorDestinyButton")
-        Me.EditorDestinyButton.Name = "EditorDestinyButton"
-        Me.EditorDestinyButton.UseVisualStyleBackColor = True
-        '
-        'EditorStatusButton
-        '
-        resources.ApplyResources(Me.EditorStatusButton, "EditorStatusButton")
-        Me.EditorStatusButton.Name = "EditorStatusButton"
-        Me.EditorStatusButton.UseVisualStyleBackColor = True
-        '
-        'EditorTeamsButton
-        '
-        resources.ApplyResources(Me.EditorTeamsButton, "EditorTeamsButton")
-        Me.EditorTeamsButton.Name = "EditorTeamsButton"
-        Me.EditorTeamsButton.UseVisualStyleBackColor = True
-        '
-        'EditorItemButton
-        '
-        resources.ApplyResources(Me.EditorItemButton, "EditorItemButton")
-        Me.EditorItemButton.Name = "EditorItemButton"
-        Me.EditorItemButton.UseVisualStyleBackColor = True
-        '
-        'EditorWearButton
-        '
-        resources.ApplyResources(Me.EditorWearButton, "EditorWearButton")
-        Me.EditorWearButton.Name = "EditorWearButton"
-        Me.EditorWearButton.UseVisualStyleBackColor = True
-        '
-        'EditorCharmsButton
-        '
-        resources.ApplyResources(Me.EditorCharmsButton, "EditorCharmsButton")
-        Me.EditorCharmsButton.Name = "EditorCharmsButton"
-        Me.EditorCharmsButton.UseVisualStyleBackColor = True
-        '
-        'EditorHeldButton
-        '
-        resources.ApplyResources(Me.EditorHeldButton, "EditorHeldButton")
-        Me.EditorHeldButton.Name = "EditorHeldButton"
-        Me.EditorHeldButton.UseVisualStyleBackColor = True
-        '
-        'EditorAblButton
-        '
-        resources.ApplyResources(Me.EditorAblButton, "EditorAblButton")
-        Me.EditorAblButton.Name = "EditorAblButton"
-        Me.EditorAblButton.UseVisualStyleBackColor = True
-        '
-        'EditorClassButton
-        '
-        resources.ApplyResources(Me.EditorClassButton, "EditorClassButton")
-        Me.EditorClassButton.Name = "EditorClassButton"
-        Me.EditorClassButton.UseVisualStyleBackColor = True
-        '
-        'EditorCharButton
-        '
-        resources.ApplyResources(Me.EditorCharButton, "EditorCharButton")
-        Me.EditorCharButton.Name = "EditorCharButton"
-        Me.EditorCharButton.UseVisualStyleBackColor = True
-        '
-        'EditorDBText
-        '
-        Me.EditorDBText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.EditorDBText, "EditorDBText")
-        Me.EditorDBText.Name = "EditorDBText"
         '
         'OptionsPanel
         '
@@ -1271,9 +1593,40 @@ Partial Class MainWindow
         Me.MainMenuPanel.ResumeLayout(False)
         Me.MainMenuBar.ResumeLayout(False)
         Me.EditorPanel.ResumeLayout(False)
+        Me.EditorMenuPanel.ResumeLayout(False)
+        Me.EditorEditPanel.ResumeLayout(False)
+        Me.EditorEditCharPanel.ResumeLayout(False)
+        Me.EditorEditCharPanel.PerformLayout()
+        Me.EditorEditWearsPanel.ResumeLayout(False)
+        Me.EditorEditWearsPanel.PerformLayout()
+        Me.EditorEditTeamsPanel.ResumeLayout(False)
+        Me.EditorEditTeamsPanel.PerformLayout()
+        Me.EditorEditStatusPanel.ResumeLayout(False)
+        Me.EditorEditStatusPanel.PerformLayout()
+        Me.EditorEditRelPanel.ResumeLayout(False)
+        Me.EditorEditRelPanel.PerformLayout()
+        Me.EditorEditVersePanel.ResumeLayout(False)
+        Me.EditorEditVersePanel.PerformLayout()
+        Me.EditorEditItemsPanel.ResumeLayout(False)
+        Me.EditorEditItemsPanel.PerformLayout()
+        Me.EditorEditHeldsPanel.ResumeLayout(False)
+        Me.EditorEditHeldsPanel.PerformLayout()
+        Me.EditorEditEffectsPanel.ResumeLayout(False)
+        Me.EditorEditEffectsPanel.PerformLayout()
+        Me.EditorEditDestinyPanel.ResumeLayout(False)
+        Me.EditorEditDestinyPanel.PerformLayout()
+        Me.EditorEditClassPanel.ResumeLayout(False)
+        Me.EditorEditClassPanel.PerformLayout()
+        Me.EditorEditCharmsPanel.ResumeLayout(False)
+        Me.EditorEditCharmsPanel.PerformLayout()
+        Me.EditorEditArenaPanel.ResumeLayout(False)
+        Me.EditorEditArenaPanel.PerformLayout()
+        Me.EditorEditAliasPanel.ResumeLayout(False)
+        Me.EditorEditAliasPanel.PerformLayout()
+        Me.EditorEditAblPanel.ResumeLayout(False)
+        Me.EditorEditAblPanel.PerformLayout()
         Me.EditorSwitchPanel.ResumeLayout(False)
         Me.EditorSwitchPanel.PerformLayout()
-        Me.EditorMenuPanel.ResumeLayout(False)
         Me.OptionsPanel.ResumeLayout(False)
         Me.CustomLibsGroup.ResumeLayout(False)
         Me.CustomLibsGroup.PerformLayout()
@@ -1449,4 +1802,39 @@ Partial Class MainWindow
     Friend WithEvents EditorSwitchNewCheck As CheckBox
     Friend WithEvents EditorSwitchDelButton As Button
     Friend WithEvents EditorSwitchDupButton As Button
+    Friend WithEvents EditorEditPanel As Panel
+    Friend WithEvents EditorEditList As ListBox
+    Friend WithEvents EditorEditCharPanel As Panel
+    Friend WithEvents EditorEditBackButton As Button
+    Friend WithEvents EditorEditDelButton As Button
+    Friend WithEvents EditorEditAddButton As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents EditorEditAblPanel As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents EditorEditArenaPanel As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents EditorEditAliasPanel As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents EditorEditCharmsPanel As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents EditorEditEffectsPanel As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents EditorEditDestinyPanel As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents EditorEditClassPanel As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents EditorEditWearsPanel As Panel
+    Friend WithEvents Label15 As Label
+    Friend WithEvents EditorEditTeamsPanel As Panel
+    Friend WithEvents Label14 As Label
+    Friend WithEvents EditorEditStatusPanel As Panel
+    Friend WithEvents Label13 As Label
+    Friend WithEvents EditorEditRelPanel As Panel
+    Friend WithEvents Label12 As Label
+    Friend WithEvents EditorEditVersePanel As Panel
+    Friend WithEvents Label11 As Label
+    Friend WithEvents EditorEditItemsPanel As Panel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents EditorEditHeldsPanel As Panel
+    Friend WithEvents Label9 As Label
 End Class
