@@ -72,6 +72,16 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
+ALPHA 0.1.006.0004 / 2021.08.01 - The Editor Update - Character Menu
+
+- integrated aliases into character menu and changed alias button to language button
+- added character editor fields and dropdowns along with image for avatar
+- added placeholder label for system testing fields to be displayed
+- added language table to database and default database
+- added multiverse, language, and misc field for characters in database
+
+[PREVIOUS UPDATES]
+
 ALPHA 0.1.006.0003 / 2021.07.29 - The Editor Update
 
 - create pages for each editor section with functional query list
@@ -93,8 +103,6 @@ ALPHA 0.1.006.0003 / 2021.07.29 - The Editor Update
 - fixed issue with dark/lite mode checkboxes not working correctly
 - fixed issue with settings not saving in certain scenarios
 - added image resizer for imported avatars
-
-[PREVIOUS UPDATES]
 
 ALPHA 0.1.005.0002 / 2021.07.22 - The Updater Update
 

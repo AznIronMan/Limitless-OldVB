@@ -90,14 +90,14 @@
         EditorAblButton.MouseHover, EditorArenaButton.MouseHover, EditorCharmsButton.MouseHover, EditorCharButton.MouseHover, EditorClassButton.MouseHover,
         EditorDestinyButton.MouseHover, EditorItemButton.MouseHover, EditorRelButton.MouseHover, EditorStatusButton.MouseHover,
         EditorVerseButton.MouseHover, EditorHeldButton.MouseHover, EditorWearButton.MouseHover, EditorDBButton.MouseHover,
-        EditorImportButton.MouseHover, EditorExportButton.MouseHover, EditorAliasButton.MouseHover, EditorTeamsButton.MouseHover,
+        EditorImportButton.MouseHover, EditorExportButton.MouseHover, EditorLangButton.MouseHover, EditorTeamsButton.MouseHover,
         EditorSwitchNewButton.MouseHover, EditorSwitchBackButton.MouseHover, EditorSwitchSDBButton.MouseHover, EditorSwitchDupButton.MouseHover,
         EditorSwitchDelButton.MouseHover, EditorEditBackButton.MouseHover, EditorEditAddButton.MouseHover, EditorEditDelButton.MouseHover,
         StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp,
         UpdateInstallButton.MouseUp, EditorAblButton.MouseUp, EditorArenaButton.MouseUp, EditorCharmsButton.MouseUp, EditorCharButton.MouseUp,
         EditorClassButton.MouseUp, EditorDestinyButton.MouseUp, EditorItemButton.MouseUp, EditorRelButton.MouseUp,
         EditorStatusButton.MouseUp, EditorVerseButton.MouseUp, EditorHeldButton.MouseUp, EditorWearButton.MouseUp, EditorDBButton.MouseUp,
-        EditorImportButton.MouseUp, EditorExportButton.MouseUp, EditorAliasButton.MouseUp, EditorTeamsButton.MouseUp,
+        EditorImportButton.MouseUp, EditorExportButton.MouseUp, EditorLangButton.MouseUp, EditorTeamsButton.MouseUp,
         EditorSwitchNewButton.MouseUp, EditorSwitchBackButton.MouseUp, EditorSwitchSDBButton.MouseUp, EditorSwitchDupButton.MouseUp,
         EditorSwitchDelButton.MouseUp, EditorEditBackButton.MouseUp, EditorEditAddButton.MouseUp, EditorEditDelButton.MouseUp
         HoverOverEffect(sender)
@@ -108,7 +108,7 @@
         EditorAblButton.MouseLeave, EditorArenaButton.MouseLeave, EditorCharmsButton.MouseLeave, EditorCharButton.MouseLeave, EditorClassButton.MouseLeave,
         EditorDestinyButton.MouseLeave, EditorItemButton.MouseLeave, EditorRelButton.MouseLeave, EditorStatusButton.MouseLeave,
         EditorVerseButton.MouseLeave, EditorHeldButton.MouseLeave, EditorWearButton.MouseLeave, EditorDBButton.MouseLeave,
-        EditorImportButton.MouseLeave, EditorExportButton.MouseLeave, EditorAliasButton.MouseLeave, EditorTeamsButton.MouseLeave,
+        EditorImportButton.MouseLeave, EditorExportButton.MouseLeave, EditorLangButton.MouseLeave, EditorTeamsButton.MouseLeave,
         EditorSwitchNewButton.MouseLeave, EditorSwitchBackButton.MouseLeave, EditorSwitchSDBButton.MouseLeave, EditorSwitchDupButton.MouseLeave,
         EditorSwitchDelButton.MouseLeave, EditorEditBackButton.MouseLeave, EditorEditAddButton.MouseLeave, EditorEditDelButton.MouseLeave
         LeaveObjEffect(sender)
@@ -119,7 +119,7 @@
         EditorAblButton.MouseDown, EditorArenaButton.MouseDown, EditorCharmsButton.MouseDown, EditorCharButton.MouseDown, EditorClassButton.MouseDown,
         EditorDestinyButton.MouseDown, EditorItemButton.MouseDown, EditorRelButton.MouseDown, EditorStatusButton.MouseDown,
         EditorVerseButton.MouseDown, EditorHeldButton.MouseDown, EditorWearButton.MouseDown, EditorDBButton.MouseDown,
-        EditorImportButton.MouseDown, EditorExportButton.MouseDown, EditorAliasButton.MouseDown, EditorTeamsButton.MouseDown,
+        EditorImportButton.MouseDown, EditorExportButton.MouseDown, EditorLangButton.MouseDown, EditorTeamsButton.MouseDown,
         EditorSwitchNewButton.MouseDown, EditorSwitchBackButton.MouseDown, EditorSwitchSDBButton.MouseDown, EditorSwitchDupButton.MouseDown,
         EditorSwitchDelButton.MouseDown, EditorEditBackButton.MouseDown, EditorEditAddButton.MouseDown, EditorEditDelButton.MouseDown
         MouseDownEffect(sender)
@@ -1172,8 +1172,8 @@
                         End Try
                     End If
                     CustomLibsListPop(True)
-                    Else
-                        MsgBox("Invalid file extension.  Please be sure to select a " & Ext & " file.", vbOKOnly + vbCritical)
+                Else
+                    MsgBox("Invalid file extension.  Please be sure to select a " & Ext & " file.", vbOKOnly + vbCritical)
                 End If
             Next
         End If
@@ -1374,7 +1374,7 @@
         EditorEditPanel.Visible = True
         EditorEditCharPanel.Visible = False
         EditorEditAblPanel.Visible = False
-        EditorEditAliasPanel.Visible = False
+        EditorEditLangPanel.Visible = False
         EditorEditArenaPanel.Visible = False
         EditorEditCharmsPanel.Visible = False
         EditorEditClassPanel.Visible = False
@@ -1415,12 +1415,12 @@
         Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbAbl", "ablID", "ablName")
     End Sub
 
-    Private Sub EditorAliasButton_Click(sender As Object, e As EventArgs) Handles EditorAliasButton.Click
+    Private Sub EditorLangButton_Click(sender As Object, e As EventArgs) Handles EditorLangButton.Click
         EditorPanelChange(EditorEditPanel)
-        EditorEditPanelChange(EditorEditAliasPanel)
+        EditorEditPanelChange(EditorEditLangPanel)
         EditorEditDelButtonChange(False)
-        ActiveEditWindow = "Aliases"
-        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbAlias", "aliasID", "aliasName")
+        ActiveEditWindow = "Languages"
+        Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbLang", "langID", "langName")
     End Sub
 
     Private Sub EditorArenaButton_Click(sender As Object, e As EventArgs) Handles EditorArenaButton.Click
@@ -1532,7 +1532,6 @@
             ResetEditPath()
         End If
     End Sub
-
 
     'Start Game Section
 

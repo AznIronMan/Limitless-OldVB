@@ -861,40 +861,40 @@
   <data name="&gt;&gt;EditorImportButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="EditorAliasButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="EditorLangButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="EditorAliasButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditorLangButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Lucida Console, 8.25pt</value>
   </data>
-  <data name="EditorAliasButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditorLangButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditorAliasButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 150</value>
+  <data name="EditorLangButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>975, 250</value>
   </data>
-  <data name="EditorAliasButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditorLangButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 23</value>
   </data>
-  <data name="EditorAliasButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="EditorLangButton.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="EditorAliasButton.Text" xml:space="preserve">
-    <value>Aliases</value>
+  <data name="EditorLangButton.Text" xml:space="preserve">
+    <value>Languages</value>
   </data>
-  <data name="EditorAliasButton.ToolTip" xml:space="preserve">
+  <data name="EditorLangButton.ToolTip" xml:space="preserve">
     <value>Manage aliases of characters.</value>
   </data>
-  <data name="&gt;&gt;EditorAliasButton.Name" xml:space="preserve">
-    <value>EditorAliasButton</value>
+  <data name="&gt;&gt;EditorLangButton.Name" xml:space="preserve">
+    <value>EditorLangButton</value>
   </data>
-  <data name="&gt;&gt;EditorAliasButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditorLangButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditorAliasButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditorLangButton.Parent" xml:space="preserve">
     <value>EditorMenuPanel</value>
   </data>
-  <data name="&gt;&gt;EditorAliasButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditorLangButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="EditorEffectsButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -907,13 +907,13 @@
     <value>NoControl</value>
   </data>
   <data name="EditorEffectsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>575, 250</value>
+    <value>375, 250</value>
   </data>
   <data name="EditorEffectsButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 23</value>
   </data>
   <data name="EditorEffectsButton.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="EditorEffectsButton.Text" xml:space="preserve">
     <value>Effects</value>
@@ -1012,13 +1012,13 @@
     <value>NoControl</value>
   </data>
   <data name="EditorArenaButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>575, 150</value>
+    <value>375, 150</value>
   </data>
   <data name="EditorArenaButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 23</value>
   </data>
   <data name="EditorArenaButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="EditorArenaButton.Text" xml:space="preserve">
     <value>Arenas</value>
@@ -1084,13 +1084,13 @@
     <value>NoControl</value>
   </data>
   <data name="EditorDestinyButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 250</value>
+    <value>175, 250</value>
   </data>
   <data name="EditorDestinyButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 23</value>
   </data>
   <data name="EditorDestinyButton.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="EditorDestinyButton.Text" xml:space="preserve">
     <value>Destinies</value>
@@ -1192,13 +1192,13 @@
     <value>NoControl</value>
   </data>
   <data name="EditorItemButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>975, 250</value>
+    <value>775, 250</value>
   </data>
   <data name="EditorItemButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 23</value>
   </data>
   <data name="EditorItemButton.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="EditorItemButton.Text" xml:space="preserve">
     <value>Items</value>
@@ -1264,13 +1264,13 @@
     <value>NoControl</value>
   </data>
   <data name="EditorCharmsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>975, 150</value>
+    <value>775, 150</value>
   </data>
   <data name="EditorCharmsButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 23</value>
   </data>
   <data name="EditorCharmsButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="EditorCharmsButton.Text" xml:space="preserve">
     <value>Charms</value>
@@ -1300,13 +1300,13 @@
     <value>NoControl</value>
   </data>
   <data name="EditorHeldButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>775, 250</value>
+    <value>575, 250</value>
   </data>
   <data name="EditorHeldButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 23</value>
   </data>
   <data name="EditorHeldButton.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="EditorHeldButton.Text" xml:space="preserve">
     <value>Handhelds</value>
@@ -1372,13 +1372,13 @@
     <value>NoControl</value>
   </data>
   <data name="EditorClassButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 250</value>
+    <value>976, 150</value>
   </data>
   <data name="EditorClassButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 23</value>
   </data>
   <data name="EditorClassButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="EditorClassButton.Text" xml:space="preserve">
     <value>Classifications</value>
@@ -1405,13 +1405,13 @@
     <value>Lucida Console, 8.25pt</value>
   </data>
   <data name="EditorCharButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>775, 150</value>
+    <value>575, 150</value>
   </data>
   <data name="EditorCharButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 23</value>
   </data>
   <data name="EditorCharButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="EditorCharButton.Text" xml:space="preserve">
     <value>Characters</value>
@@ -1566,20 +1566,446 @@
   <data name="&gt;&gt;EditorEditList.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="PictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>476, 196</value>
+  <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>897, 263</value>
   </data>
-  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 11</value>
+  <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 80</value>
   </data>
-  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="PictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
+    <value>PictureBox1</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="TextBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>840, 353</value>
+  </data>
+  <data name="TextBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 18</value>
+  </data>
+  <data name="TextBox6.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="TextBox6.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TextBox6.Name" xml:space="preserve">
+    <value>TextBox6</value>
+  </data>
+  <data name="&gt;&gt;TextBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBox6.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;TextBox6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TextBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>840, 207</value>
+  </data>
+  <data name="TextBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 18</value>
+  </data>
+  <data name="TextBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="TextBox5.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TextBox5.Name" xml:space="preserve">
+    <value>TextBox5</value>
+  </data>
+  <data name="&gt;&gt;TextBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBox5.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;TextBox5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="Button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>840, 376</value>
+  </data>
+  <data name="Button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 23</value>
+  </data>
+  <data name="Button2.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="Button2.Text" xml:space="preserve">
+    <value>Change Battle Theme</value>
+  </data>
+  <data name="&gt;&gt;Button2.Name" xml:space="preserve">
+    <value>Button2</value>
+  </data>
+  <data name="&gt;&gt;Button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Button2.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;Button2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="Button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>840, 230</value>
+  </data>
+  <data name="Button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 23</value>
+  </data>
+  <data name="Button1.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="Button1.Text" xml:space="preserve">
+    <value>Change Avatar</value>
+  </data>
+  <data name="&gt;&gt;Button1.Name" xml:space="preserve">
+    <value>Button1</value>
+  </data>
+  <data name="&gt;&gt;Button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Button1.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;Button1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TextBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>454, 207</value>
+  </data>
+  <data name="TextBox4.MaxLength" type="System.Int32, mscorlib">
+    <value>512</value>
+  </data>
+  <data name="TextBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 18</value>
+  </data>
+  <data name="TextBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="TextBox4.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.Name" xml:space="preserve">
+    <value>TextBox4</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Label22.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>390, 205</value>
+  </data>
+  <data name="Label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 18</value>
+  </data>
+  <data name="Label22.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="Label22.Text" xml:space="preserve">
+    <value>Web Bio:</value>
+  </data>
+  <data name="Label22.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;Label22.Name" xml:space="preserve">
+    <value>Label22</value>
+  </data>
+  <data name="&gt;&gt;Label22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label22.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;Label22.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="EditorCharID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>714, 1</value>
+  </data>
+  <data name="EditorCharID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 12</value>
+  </data>
+  <data name="EditorCharID.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditorCharID.Text" xml:space="preserve">
+    <value>ID • UID</value>
+  </data>
+  <data name="EditorCharID.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;EditorCharID.Name" xml:space="preserve">
+    <value>EditorCharID</value>
+  </data>
+  <data name="&gt;&gt;EditorCharID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharID.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharID.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="TextBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>390, 10</value>
+  </data>
+  <data name="TextBox3.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TextBox3.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="TextBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>440, 195</value>
+  </data>
+  <data name="TextBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="TextBox3.Text" xml:space="preserve">
+    <value>[Generated Bio Here]</value>
+  </data>
+  <data name="&gt;&gt;TextBox3.Name" xml:space="preserve">
+    <value>TextBox3</value>
+  </data>
+  <data name="&gt;&gt;TextBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBox3.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;TextBox3.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Label21.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 208</value>
+  </data>
+  <data name="Label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 14</value>
+  </data>
+  <data name="Label21.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="Label21.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="Label21.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label21.Name" xml:space="preserve">
+    <value>Label21</value>
+  </data>
+  <data name="&gt;&gt;Label21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label21.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;Label21.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 183</value>
+  </data>
+  <data name="Label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 14</value>
+  </data>
+  <data name="Label20.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="Label20.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="Label20.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label20.Name" xml:space="preserve">
+    <value>Label20</value>
+  </data>
+  <data name="&gt;&gt;Label20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label20.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;Label20.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="Label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 158</value>
+  </data>
+  <data name="Label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 14</value>
+  </data>
+  <data name="Label19.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="Label19.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="Label19.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label19.Name" xml:space="preserve">
+    <value>Label19</value>
+  </data>
+  <data name="&gt;&gt;Label19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label19.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;Label19.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 133</value>
+  </data>
+  <data name="Label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 14</value>
+  </data>
+  <data name="Label18.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="Label18.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="Label18.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label18.Name" xml:space="preserve">
+    <value>Label18</value>
+  </data>
+  <data name="&gt;&gt;Label18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label18.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;Label18.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="Label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 108</value>
+  </data>
+  <data name="Label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 14</value>
+  </data>
+  <data name="Label17.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="Label17.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="Label17.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label17.Name" xml:space="preserve">
+    <value>Label17</value>
+  </data>
+  <data name="&gt;&gt;Label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label17.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;Label17.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="Label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 83</value>
+  </data>
+  <data name="Label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 14</value>
+  </data>
+  <data name="Label16.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="Label16.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="Label16.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label16.Name" xml:space="preserve">
+    <value>Label16</value>
+  </data>
+  <data name="&gt;&gt;Label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label16.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;Label16.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 58</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 14</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
   <data name="Label1.Text" xml:space="preserve">
-    <value>Placeholder - Characters</value>
+    <value>?</value>
+  </data>
+  <data name="Label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;Label1.Name" xml:space="preserve">
     <value>Label1</value>
@@ -1591,7 +2017,559 @@
     <value>EditorEditCharPanel</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="EditorCharTypeHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorCharTypeHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 33</value>
+  </data>
+  <data name="EditorCharTypeHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 14</value>
+  </data>
+  <data name="EditorCharTypeHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="EditorCharTypeHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="EditorCharTypeHelp.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeHelp.Name" xml:space="preserve">
+    <value>EditorCharTypeHelp</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeHelp.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeHelp.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="ComboBox5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="ComboBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 208</value>
+  </data>
+  <data name="ComboBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 19</value>
+  </data>
+  <data name="ComboBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;ComboBox5.Name" xml:space="preserve">
+    <value>ComboBox5</value>
+  </data>
+  <data name="&gt;&gt;ComboBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox5.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;ComboBox5.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="TextBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 183</value>
+  </data>
+  <data name="TextBox2.MaxLength" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="TextBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 18</value>
+  </data>
+  <data name="TextBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="TextBox2.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TextBox2.Name" xml:space="preserve">
+    <value>TextBox2</value>
+  </data>
+  <data name="&gt;&gt;TextBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBox2.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;TextBox2.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="TextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 158</value>
+  </data>
+  <data name="TextBox1.MaxLength" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="TextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 18</value>
+  </data>
+  <data name="TextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="TextBox1.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TextBox1.Name" xml:space="preserve">
+    <value>TextBox1</value>
+  </data>
+  <data name="&gt;&gt;TextBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBox1.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;TextBox1.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="ComboBox4.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="ComboBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 133</value>
+  </data>
+  <data name="ComboBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 19</value>
+  </data>
+  <data name="ComboBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;ComboBox4.Name" xml:space="preserve">
+    <value>ComboBox4</value>
+  </data>
+  <data name="&gt;&gt;ComboBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox4.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;ComboBox4.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="ComboBox3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="ComboBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 108</value>
+  </data>
+  <data name="ComboBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 19</value>
+  </data>
+  <data name="ComboBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;ComboBox3.Name" xml:space="preserve">
+    <value>ComboBox3</value>
+  </data>
+  <data name="&gt;&gt;ComboBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox3.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;ComboBox3.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="ComboBox2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="ComboBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 83</value>
+  </data>
+  <data name="ComboBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 19</value>
+  </data>
+  <data name="ComboBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;ComboBox2.Name" xml:space="preserve">
+    <value>ComboBox2</value>
+  </data>
+  <data name="&gt;&gt;ComboBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox2.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;ComboBox2.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="ComboBox1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="ComboBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 58</value>
+  </data>
+  <data name="ComboBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 19</value>
+  </data>
+  <data name="ComboBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;ComboBox1.Name" xml:space="preserve">
+    <value>ComboBox1</value>
+  </data>
+  <data name="&gt;&gt;ComboBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox1.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;ComboBox1.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="EditorCharTypeDrop.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="EditorCharTypeDrop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 33</value>
+  </data>
+  <data name="EditorCharTypeDrop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 19</value>
+  </data>
+  <data name="EditorCharTypeDrop.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeDrop.Name" xml:space="preserve">
+    <value>EditorCharTypeDrop</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeDrop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeDrop.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeDrop.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="EditorCharDestinyText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorCharDestinyText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 205</value>
+  </data>
+  <data name="EditorCharDestinyText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 18</value>
+  </data>
+  <data name="EditorCharDestinyText.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="EditorCharDestinyText.Text" xml:space="preserve">
+    <value>Destiny:</value>
+  </data>
+  <data name="EditorCharDestinyText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;EditorCharDestinyText.Name" xml:space="preserve">
+    <value>EditorCharDestinyText</value>
+  </data>
+  <data name="&gt;&gt;EditorCharDestinyText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharDestinyText.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharDestinyText.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="EditorCharImageBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorCharImageBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>840, 5</value>
+  </data>
+  <data name="EditorCharImageBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 195</value>
+  </data>
+  <data name="EditorCharImageBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="EditorCharImageBox.Text" xml:space="preserve">
+    <value>[Image]</value>
+  </data>
+  <data name="EditorCharImageBox.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;EditorCharImageBox.Name" xml:space="preserve">
+    <value>EditorCharImageBox</value>
+  </data>
+  <data name="&gt;&gt;EditorCharImageBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharImageBox.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharImageBox.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="EditorCharLevelText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorCharLevelText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 180</value>
+  </data>
+  <data name="EditorCharLevelText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 18</value>
+  </data>
+  <data name="EditorCharLevelText.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="EditorCharLevelText.Text" xml:space="preserve">
+    <value>Starting Level:</value>
+  </data>
+  <data name="EditorCharLevelText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;EditorCharLevelText.Name" xml:space="preserve">
+    <value>EditorCharLevelText</value>
+  </data>
+  <data name="&gt;&gt;EditorCharLevelText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharLevelText.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharLevelText.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="EditorCharAgeText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorCharAgeText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 155</value>
+  </data>
+  <data name="EditorCharAgeText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 18</value>
+  </data>
+  <data name="EditorCharAgeText.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="EditorCharAgeText.Text" xml:space="preserve">
+    <value>Age:</value>
+  </data>
+  <data name="EditorCharAgeText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;EditorCharAgeText.Name" xml:space="preserve">
+    <value>EditorCharAgeText</value>
+  </data>
+  <data name="&gt;&gt;EditorCharAgeText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharAgeText.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharAgeText.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="EditorCharGenderText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorCharGenderText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 130</value>
+  </data>
+  <data name="EditorCharGenderText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 18</value>
+  </data>
+  <data name="EditorCharGenderText.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditorCharGenderText.Text" xml:space="preserve">
+    <value>Gender:</value>
+  </data>
+  <data name="EditorCharGenderText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;EditorCharGenderText.Name" xml:space="preserve">
+    <value>EditorCharGenderText</value>
+  </data>
+  <data name="&gt;&gt;EditorCharGenderText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharGenderText.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharGenderText.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="EditorCharAlignText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorCharAlignText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 105</value>
+  </data>
+  <data name="EditorCharAlignText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 18</value>
+  </data>
+  <data name="EditorCharAlignText.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditorCharAlignText.Text" xml:space="preserve">
+    <value>Alignment:</value>
+  </data>
+  <data name="EditorCharAlignText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;EditorCharAlignText.Name" xml:space="preserve">
+    <value>EditorCharAlignText</value>
+  </data>
+  <data name="&gt;&gt;EditorCharAlignText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharAlignText.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharAlignText.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="EditorCharClassText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorCharClassText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 80</value>
+  </data>
+  <data name="EditorCharClassText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 18</value>
+  </data>
+  <data name="EditorCharClassText.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditorCharClassText.Text" xml:space="preserve">
+    <value>Class:</value>
+  </data>
+  <data name="EditorCharClassText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;EditorCharClassText.Name" xml:space="preserve">
+    <value>EditorCharClassText</value>
+  </data>
+  <data name="&gt;&gt;EditorCharClassText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharClassText.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharClassText.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="EditorCharRaceText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorCharRaceText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 55</value>
+  </data>
+  <data name="EditorCharRaceText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 18</value>
+  </data>
+  <data name="EditorCharRaceText.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditorCharRaceText.Text" xml:space="preserve">
+    <value>Race:</value>
+  </data>
+  <data name="EditorCharRaceText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;EditorCharRaceText.Name" xml:space="preserve">
+    <value>EditorCharRaceText</value>
+  </data>
+  <data name="&gt;&gt;EditorCharRaceText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharRaceText.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharRaceText.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="EditorCharNameText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="EditorCharNameText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 18</value>
+  </data>
+  <data name="EditorCharNameText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="EditorCharNameText.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="EditorCharNameText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;EditorCharNameText.Name" xml:space="preserve">
+    <value>EditorCharNameText</value>
+  </data>
+  <data name="&gt;&gt;EditorCharNameText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharNameText.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharNameText.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="EditorCharTypeText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditorCharTypeText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 30</value>
+  </data>
+  <data name="EditorCharTypeText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 18</value>
+  </data>
+  <data name="EditorCharTypeText.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="EditorCharTypeText.Text" xml:space="preserve">
+    <value>Existence:</value>
+  </data>
+  <data name="EditorCharTypeText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeText.Name" xml:space="preserve">
+    <value>EditorCharTypeText</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeText.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharTypeText.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="EditorCharNameBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 7</value>
+  </data>
+  <data name="EditorCharNameBox.MaxLength" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="EditorCharNameBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 18</value>
+  </data>
+  <data name="EditorCharNameBox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="EditorCharNameBox.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;EditorCharNameBox.Name" xml:space="preserve">
+    <value>EditorCharNameBox</value>
+  </data>
+  <data name="&gt;&gt;EditorCharNameBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorCharNameBox.Parent" xml:space="preserve">
+    <value>EditorEditCharPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorCharNameBox.ZOrder" xml:space="preserve">
+    <value>35</value>
   </data>
   <data name="EditorEditCharPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>216, 8</value>
@@ -2266,13 +3244,13 @@
     <value>418, 192</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 11</value>
+    <value>131, 11</value>
   </data>
   <data name="Label3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="Label3.Text" xml:space="preserve">
-    <value>Placeholder - Alias</value>
+    <value>Placeholder - Lang</value>
   </data>
   <data name="&gt;&gt;Label3.Name" xml:space="preserve">
     <value>Label3</value>
@@ -2281,33 +3259,33 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
-    <value>EditorEditAliasPanel</value>
+    <value>EditorEditLangPanel</value>
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="EditorEditAliasPanel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditorEditLangPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>216, 8</value>
   </data>
-  <data name="EditorEditAliasPanel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditorEditLangPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>1050, 438</value>
   </data>
-  <data name="EditorEditAliasPanel.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditorEditLangPanel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="EditorEditAliasPanel.Visible" type="System.Boolean, mscorlib">
+  <data name="EditorEditLangPanel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;EditorEditAliasPanel.Name" xml:space="preserve">
-    <value>EditorEditAliasPanel</value>
+  <data name="&gt;&gt;EditorEditLangPanel.Name" xml:space="preserve">
+    <value>EditorEditLangPanel</value>
   </data>
-  <data name="&gt;&gt;EditorEditAliasPanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditorEditLangPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditorEditAliasPanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditorEditLangPanel.Parent" xml:space="preserve">
     <value>EditorEditPanel</value>
   </data>
-  <data name="&gt;&gt;EditorEditAliasPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditorEditLangPanel.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">

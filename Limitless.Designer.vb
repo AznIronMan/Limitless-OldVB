@@ -51,7 +51,7 @@ Partial Class MainWindow
         Me.EditorMenuPanel = New System.Windows.Forms.Panel()
         Me.EditorExportButton = New System.Windows.Forms.Button()
         Me.EditorImportButton = New System.Windows.Forms.Button()
-        Me.EditorAliasButton = New System.Windows.Forms.Button()
+        Me.EditorLangButton = New System.Windows.Forms.Button()
         Me.EditorEffectsButton = New System.Windows.Forms.Button()
         Me.EditorDBButton = New System.Windows.Forms.Button()
         Me.EditorRelButton = New System.Windows.Forms.Button()
@@ -73,7 +73,42 @@ Partial Class MainWindow
         Me.EditorEditBackButton = New System.Windows.Forms.Button()
         Me.EditorEditList = New System.Windows.Forms.ListBox()
         Me.EditorEditCharPanel = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.EditorCharID = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.EditorCharTypeHelp = New System.Windows.Forms.Label()
+        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.EditorCharTypeDrop = New System.Windows.Forms.ComboBox()
+        Me.EditorCharDestinyText = New System.Windows.Forms.Label()
+        Me.EditorCharImageBox = New System.Windows.Forms.Label()
+        Me.EditorCharLevelText = New System.Windows.Forms.Label()
+        Me.EditorCharAgeText = New System.Windows.Forms.Label()
+        Me.EditorCharGenderText = New System.Windows.Forms.Label()
+        Me.EditorCharAlignText = New System.Windows.Forms.Label()
+        Me.EditorCharClassText = New System.Windows.Forms.Label()
+        Me.EditorCharRaceText = New System.Windows.Forms.Label()
+        Me.EditorCharNameText = New System.Windows.Forms.Label()
+        Me.EditorCharTypeText = New System.Windows.Forms.Label()
+        Me.EditorCharNameBox = New System.Windows.Forms.TextBox()
         Me.EditorEditWearsPanel = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.EditorEditTeamsPanel = New System.Windows.Forms.Panel()
@@ -98,7 +133,7 @@ Partial Class MainWindow
         Me.Label5 = New System.Windows.Forms.Label()
         Me.EditorEditArenaPanel = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.EditorEditAliasPanel = New System.Windows.Forms.Panel()
+        Me.EditorEditLangPanel = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.EditorEditAblPanel = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -204,6 +239,7 @@ Partial Class MainWindow
         Me.EditorMenuPanel.SuspendLayout()
         Me.EditorEditPanel.SuspendLayout()
         Me.EditorEditCharPanel.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EditorEditWearsPanel.SuspendLayout()
         Me.EditorEditTeamsPanel.SuspendLayout()
         Me.EditorEditStatusPanel.SuspendLayout()
@@ -216,7 +252,7 @@ Partial Class MainWindow
         Me.EditorEditClassPanel.SuspendLayout()
         Me.EditorEditCharmsPanel.SuspendLayout()
         Me.EditorEditArenaPanel.SuspendLayout()
-        Me.EditorEditAliasPanel.SuspendLayout()
+        Me.EditorEditLangPanel.SuspendLayout()
         Me.EditorEditAblPanel.SuspendLayout()
         Me.EditorSwitchPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
@@ -477,7 +513,7 @@ Partial Class MainWindow
         Me.EditorMenuPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.EditorMenuPanel.Controls.Add(Me.EditorExportButton)
         Me.EditorMenuPanel.Controls.Add(Me.EditorImportButton)
-        Me.EditorMenuPanel.Controls.Add(Me.EditorAliasButton)
+        Me.EditorMenuPanel.Controls.Add(Me.EditorLangButton)
         Me.EditorMenuPanel.Controls.Add(Me.EditorEffectsButton)
         Me.EditorMenuPanel.Controls.Add(Me.EditorDBButton)
         Me.EditorMenuPanel.Controls.Add(Me.EditorRelButton)
@@ -510,12 +546,12 @@ Partial Class MainWindow
         Me.MenuTips.SetToolTip(Me.EditorImportButton, resources.GetString("EditorImportButton.ToolTip"))
         Me.EditorImportButton.UseVisualStyleBackColor = True
         '
-        'EditorAliasButton
+        'EditorLangButton
         '
-        resources.ApplyResources(Me.EditorAliasButton, "EditorAliasButton")
-        Me.EditorAliasButton.Name = "EditorAliasButton"
-        Me.MenuTips.SetToolTip(Me.EditorAliasButton, resources.GetString("EditorAliasButton.ToolTip"))
-        Me.EditorAliasButton.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.EditorLangButton, "EditorLangButton")
+        Me.EditorLangButton.Name = "EditorLangButton"
+        Me.MenuTips.SetToolTip(Me.EditorLangButton, resources.GetString("EditorLangButton.ToolTip"))
+        Me.EditorLangButton.UseVisualStyleBackColor = True
         '
         'EditorEffectsButton
         '
@@ -642,7 +678,7 @@ Partial Class MainWindow
         Me.EditorEditPanel.Controls.Add(Me.EditorEditClassPanel)
         Me.EditorEditPanel.Controls.Add(Me.EditorEditCharmsPanel)
         Me.EditorEditPanel.Controls.Add(Me.EditorEditArenaPanel)
-        Me.EditorEditPanel.Controls.Add(Me.EditorEditAliasPanel)
+        Me.EditorEditPanel.Controls.Add(Me.EditorEditLangPanel)
         Me.EditorEditPanel.Controls.Add(Me.EditorEditAblPanel)
         resources.ApplyResources(Me.EditorEditPanel, "EditorEditPanel")
         Me.EditorEditPanel.Name = "EditorEditPanel"
@@ -681,15 +717,273 @@ Partial Class MainWindow
         '
         Me.EditorEditCharPanel.BackColor = System.Drawing.SystemColors.ControlText
         Me.EditorEditCharPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditCharPanel.Controls.Add(Me.PictureBox1)
+        Me.EditorEditCharPanel.Controls.Add(Me.TextBox6)
+        Me.EditorEditCharPanel.Controls.Add(Me.TextBox5)
+        Me.EditorEditCharPanel.Controls.Add(Me.Button2)
+        Me.EditorEditCharPanel.Controls.Add(Me.Button1)
+        Me.EditorEditCharPanel.Controls.Add(Me.TextBox4)
+        Me.EditorEditCharPanel.Controls.Add(Me.Label22)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharID)
+        Me.EditorEditCharPanel.Controls.Add(Me.TextBox3)
+        Me.EditorEditCharPanel.Controls.Add(Me.Label21)
+        Me.EditorEditCharPanel.Controls.Add(Me.Label20)
+        Me.EditorEditCharPanel.Controls.Add(Me.Label19)
+        Me.EditorEditCharPanel.Controls.Add(Me.Label18)
+        Me.EditorEditCharPanel.Controls.Add(Me.Label17)
+        Me.EditorEditCharPanel.Controls.Add(Me.Label16)
         Me.EditorEditCharPanel.Controls.Add(Me.Label1)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharTypeHelp)
+        Me.EditorEditCharPanel.Controls.Add(Me.ComboBox5)
+        Me.EditorEditCharPanel.Controls.Add(Me.TextBox2)
+        Me.EditorEditCharPanel.Controls.Add(Me.TextBox1)
+        Me.EditorEditCharPanel.Controls.Add(Me.ComboBox4)
+        Me.EditorEditCharPanel.Controls.Add(Me.ComboBox3)
+        Me.EditorEditCharPanel.Controls.Add(Me.ComboBox2)
+        Me.EditorEditCharPanel.Controls.Add(Me.ComboBox1)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharTypeDrop)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharDestinyText)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharImageBox)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharLevelText)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharAgeText)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharGenderText)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharAlignText)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharClassText)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharRaceText)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharNameText)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharTypeText)
+        Me.EditorEditCharPanel.Controls.Add(Me.EditorCharNameBox)
         Me.EditorEditCharPanel.ForeColor = System.Drawing.SystemColors.Window
         resources.ApplyResources(Me.EditorEditCharPanel, "EditorEditCharPanel")
         Me.EditorEditCharPanel.Name = "EditorEditCharPanel"
         '
+        'PictureBox1
+        '
+        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.TabStop = False
+        '
+        'TextBox6
+        '
+        Me.TextBox6.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TextBox6.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.TextBox6, "TextBox6")
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
+        '
+        'TextBox5
+        '
+        Me.TextBox5.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TextBox5.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.TextBox5, "TextBox5")
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ReadOnly = True
+        '
+        'Button2
+        '
+        resources.ApplyResources(Me.Button2, "Button2")
+        Me.Button2.Name = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        resources.ApplyResources(Me.Button1, "Button1")
+        Me.Button1.Name = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox4
+        '
+        Me.TextBox4.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TextBox4.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.TextBox4, "TextBox4")
+        Me.TextBox4.Name = "TextBox4"
+        '
+        'Label22
+        '
+        resources.ApplyResources(Me.Label22, "Label22")
+        Me.Label22.Name = "Label22"
+        '
+        'EditorCharID
+        '
+        resources.ApplyResources(Me.EditorCharID, "EditorCharID")
+        Me.EditorCharID.Name = "EditorCharID"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox3.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.TextBox3, "TextBox3")
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        '
+        'Label21
+        '
+        Me.Label21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.Label21, "Label21")
+        Me.Label21.Name = "Label21"
+        '
+        'Label20
+        '
+        Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.Label20, "Label20")
+        Me.Label20.Name = "Label20"
+        '
+        'Label19
+        '
+        Me.Label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.Label19, "Label19")
+        Me.Label19.Name = "Label19"
+        '
+        'Label18
+        '
+        Me.Label18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.Label18, "Label18")
+        Me.Label18.Name = "Label18"
+        '
+        'Label17
+        '
+        Me.Label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.Label17, "Label17")
+        Me.Label17.Name = "Label17"
+        '
+        'Label16
+        '
+        Me.Label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.Label16, "Label16")
+        Me.Label16.Name = "Label16"
+        '
         'Label1
         '
+        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
+        '
+        'EditorCharTypeHelp
+        '
+        Me.EditorCharTypeHelp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.EditorCharTypeHelp, "EditorCharTypeHelp")
+        Me.EditorCharTypeHelp.Name = "EditorCharTypeHelp"
+        '
+        'ComboBox5
+        '
+        Me.ComboBox5.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.ComboBox5, "ComboBox5")
+        Me.ComboBox5.ForeColor = System.Drawing.SystemColors.Window
+        Me.ComboBox5.FormattingEnabled = True
+        Me.ComboBox5.Name = "ComboBox5"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TextBox2.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.TextBox2, "TextBox2")
+        Me.TextBox2.Name = "TextBox2"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TextBox1.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.TextBox1, "TextBox1")
+        Me.TextBox1.Name = "TextBox1"
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.ComboBox4, "ComboBox4")
+        Me.ComboBox4.ForeColor = System.Drawing.SystemColors.Window
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Name = "ComboBox4"
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.ComboBox3, "ComboBox3")
+        Me.ComboBox3.ForeColor = System.Drawing.SystemColors.Window
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Name = "ComboBox3"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.ComboBox2, "ComboBox2")
+        Me.ComboBox2.ForeColor = System.Drawing.SystemColors.Window
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Name = "ComboBox2"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.ComboBox1, "ComboBox1")
+        Me.ComboBox1.ForeColor = System.Drawing.SystemColors.Window
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Name = "ComboBox1"
+        '
+        'EditorCharTypeDrop
+        '
+        Me.EditorCharTypeDrop.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.EditorCharTypeDrop, "EditorCharTypeDrop")
+        Me.EditorCharTypeDrop.ForeColor = System.Drawing.SystemColors.Window
+        Me.EditorCharTypeDrop.FormattingEnabled = True
+        Me.EditorCharTypeDrop.Name = "EditorCharTypeDrop"
+        '
+        'EditorCharDestinyText
+        '
+        resources.ApplyResources(Me.EditorCharDestinyText, "EditorCharDestinyText")
+        Me.EditorCharDestinyText.Name = "EditorCharDestinyText"
+        '
+        'EditorCharImageBox
+        '
+        Me.EditorCharImageBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.EditorCharImageBox, "EditorCharImageBox")
+        Me.EditorCharImageBox.Name = "EditorCharImageBox"
+        '
+        'EditorCharLevelText
+        '
+        resources.ApplyResources(Me.EditorCharLevelText, "EditorCharLevelText")
+        Me.EditorCharLevelText.Name = "EditorCharLevelText"
+        '
+        'EditorCharAgeText
+        '
+        resources.ApplyResources(Me.EditorCharAgeText, "EditorCharAgeText")
+        Me.EditorCharAgeText.Name = "EditorCharAgeText"
+        '
+        'EditorCharGenderText
+        '
+        resources.ApplyResources(Me.EditorCharGenderText, "EditorCharGenderText")
+        Me.EditorCharGenderText.Name = "EditorCharGenderText"
+        '
+        'EditorCharAlignText
+        '
+        resources.ApplyResources(Me.EditorCharAlignText, "EditorCharAlignText")
+        Me.EditorCharAlignText.Name = "EditorCharAlignText"
+        '
+        'EditorCharClassText
+        '
+        resources.ApplyResources(Me.EditorCharClassText, "EditorCharClassText")
+        Me.EditorCharClassText.Name = "EditorCharClassText"
+        '
+        'EditorCharRaceText
+        '
+        resources.ApplyResources(Me.EditorCharRaceText, "EditorCharRaceText")
+        Me.EditorCharRaceText.Name = "EditorCharRaceText"
+        '
+        'EditorCharNameText
+        '
+        resources.ApplyResources(Me.EditorCharNameText, "EditorCharNameText")
+        Me.EditorCharNameText.Name = "EditorCharNameText"
+        '
+        'EditorCharTypeText
+        '
+        resources.ApplyResources(Me.EditorCharTypeText, "EditorCharTypeText")
+        Me.EditorCharTypeText.Name = "EditorCharTypeText"
+        '
+        'EditorCharNameBox
+        '
+        Me.EditorCharNameBox.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorCharNameBox.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.EditorCharNameBox, "EditorCharNameBox")
+        Me.EditorCharNameBox.Name = "EditorCharNameBox"
         '
         'EditorEditWearsPanel
         '
@@ -847,13 +1141,13 @@ Partial Class MainWindow
         resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
         '
-        'EditorEditAliasPanel
+        'EditorEditLangPanel
         '
-        Me.EditorEditAliasPanel.BackColor = System.Drawing.SystemColors.ControlText
-        Me.EditorEditAliasPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.EditorEditAliasPanel.Controls.Add(Me.Label3)
-        resources.ApplyResources(Me.EditorEditAliasPanel, "EditorEditAliasPanel")
-        Me.EditorEditAliasPanel.Name = "EditorEditAliasPanel"
+        Me.EditorEditLangPanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.EditorEditLangPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.EditorEditLangPanel.Controls.Add(Me.Label3)
+        resources.ApplyResources(Me.EditorEditLangPanel, "EditorEditLangPanel")
+        Me.EditorEditLangPanel.Name = "EditorEditLangPanel"
         '
         'Label3
         '
@@ -1597,6 +1891,7 @@ Partial Class MainWindow
         Me.EditorEditPanel.ResumeLayout(False)
         Me.EditorEditCharPanel.ResumeLayout(False)
         Me.EditorEditCharPanel.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.EditorEditWearsPanel.ResumeLayout(False)
         Me.EditorEditWearsPanel.PerformLayout()
         Me.EditorEditTeamsPanel.ResumeLayout(False)
@@ -1621,8 +1916,8 @@ Partial Class MainWindow
         Me.EditorEditCharmsPanel.PerformLayout()
         Me.EditorEditArenaPanel.ResumeLayout(False)
         Me.EditorEditArenaPanel.PerformLayout()
-        Me.EditorEditAliasPanel.ResumeLayout(False)
-        Me.EditorEditAliasPanel.PerformLayout()
+        Me.EditorEditLangPanel.ResumeLayout(False)
+        Me.EditorEditLangPanel.PerformLayout()
         Me.EditorEditAblPanel.ResumeLayout(False)
         Me.EditorEditAblPanel.PerformLayout()
         Me.EditorSwitchPanel.ResumeLayout(False)
@@ -1767,13 +2062,10 @@ Partial Class MainWindow
     Friend WithEvents EditorRelButton As Button
     Friend WithEvents EditorArenaButton As Button
     Friend WithEvents EditorVerseButton As Button
-    Friend WithEvents EditorDestinyButton As Button
     Friend WithEvents EditorStatusButton As Button
     Friend WithEvents EditorTeamsButton As Button
-    Friend WithEvents EditorItemButton As Button
     Friend WithEvents EditorWearButton As Button
     Friend WithEvents EditorCharmsButton As Button
-    Friend WithEvents EditorHeldButton As Button
     Friend WithEvents EditorAblButton As Button
     Friend WithEvents EditorClassButton As Button
     Friend WithEvents EditorCharButton As Button
@@ -1784,10 +2076,9 @@ Partial Class MainWindow
     Friend WithEvents WelcomeImage08 As PictureBox
     Friend WithEvents WelcomeImage09 As PictureBox
     Friend WithEvents WelcomeImage11 As PictureBox
-    Friend WithEvents EditorEffectsButton As Button
     Friend WithEvents EditorExportButton As Button
     Friend WithEvents EditorImportButton As Button
-    Friend WithEvents EditorAliasButton As Button
+    Friend WithEvents EditorLangButton As Button
     Friend WithEvents EditorSwitchPanel As Panel
     Friend WithEvents EditorSwitchCurText As Label
     Friend WithEvents EditorSwitchBackButton As Button
@@ -1808,12 +2099,11 @@ Partial Class MainWindow
     Friend WithEvents EditorEditBackButton As Button
     Friend WithEvents EditorEditDelButton As Button
     Friend WithEvents EditorEditAddButton As Button
-    Friend WithEvents Label1 As Label
     Friend WithEvents EditorEditAblPanel As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents EditorEditArenaPanel As Panel
     Friend WithEvents Label4 As Label
-    Friend WithEvents EditorEditAliasPanel As Panel
+    Friend WithEvents EditorEditLangPanel As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents EditorEditCharmsPanel As Panel
     Friend WithEvents Label5 As Label
@@ -1837,4 +2127,44 @@ Partial Class MainWindow
     Friend WithEvents Label10 As Label
     Friend WithEvents EditorEditHeldsPanel As Panel
     Friend WithEvents Label9 As Label
+    Friend WithEvents EditorCharLevelText As Label
+    Friend WithEvents EditorCharAgeText As Label
+    Friend WithEvents EditorCharGenderText As Label
+    Friend WithEvents EditorCharAlignText As Label
+    Friend WithEvents EditorCharClassText As Label
+    Friend WithEvents EditorCharRaceText As Label
+    Friend WithEvents EditorCharID As Label
+    Friend WithEvents EditorCharNameText As Label
+    Friend WithEvents EditorCharTypeText As Label
+    Friend WithEvents EditorCharImageBox As Label
+    Friend WithEvents EditorCharNameBox As TextBox
+    Friend WithEvents EditorCharDestinyText As Label
+    Friend WithEvents ComboBox5 As ComboBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents EditorCharTypeDrop As ComboBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents EditorCharTypeHelp As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents EditorEffectsButton As Button
+    Friend WithEvents EditorDestinyButton As Button
+    Friend WithEvents EditorItemButton As Button
+    Friend WithEvents EditorHeldButton As Button
 End Class

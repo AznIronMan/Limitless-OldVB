@@ -55,14 +55,17 @@
             'toonAge' TEXT NOT NULL, 'toonStartLv' TEXT NOT NULL, 'toonBio' TEXT NOT NULL, 'toonImage' TEXT NOT NULL, 
             'toonAbl' TEXT NOT NULL, 'toonEff' TEXT NOT NULL, 'toonHeld' TEXT NOT NULL, 'toonWear' TEXT NOT NULL, 
             'toonCharms' TEXT NOT NULL, 'toonInv' TEXT NOT NULL, 'toonForce' TEXT NOT NULL, 'toonAlias'  TEXT NOT NULL, 
-            'toonDestiny' TEXT NOT NULL, 'toonTheme' TEXT NOT NULL);
+            'toonDestiny' TEXT NOT NULL, 'toonTheme' TEXT NOT NULL, 'toonVerse' TEXT NOT NULL, 'toonLang' TEXT, 
+            'toonCode' TEXT);
             CREATE TABLE 'dbRace' ('raceID' TEXT NOT NULL, 'raceName' TEXT NOT NULL, 'raceDesc' TEXT, 
             'raceSize' TEXT NOT NULL, 'raceGender' TEXT NOT NULL, 'raceAge' TEXT NOT NULL, 'raceStats' TEXT NOT NULL, 
-            'raceBio' TEXT NOT NULL, 'raceAbl' TEXT, 'raceEff' TEXT, 'raceAblType' TEXT, 'raceForce' TEXT);
+            'raceBio' TEXT NOT NULL, 'raceAbl' TEXT, 'raceEff' TEXT, 'raceAblType' TEXT, 'raceForce' TEXT,
+            'raceCode' TEXT);
             CREATE TABLE 'dbClass' ('classID' TEXT NOT NULL, 'className' TEXT NOT NULL, 'classDesc' TEXT, 
-            'classStats' TEXT NOT NULL, 'classBio' TEXT NOT NULL, 'classAbl' TEXT, 'classEff' TEXT, 'classAblType' TEXT);
+            'classStats' TEXT NOT NULL, 'classBio' TEXT NOT NULL, 'classAbl' TEXT, 'classEff' TEXT, 'classAblType' TEXT,
+            'classCode' TEXT);
             CREATE TABLE 'dbSize' ('sizeID' TEXT NOT NULL, 'sizeName' TEXT NOT NULL, 'sizeDesc' TEXT, 
-            'sizeStats' TEXT, 'sizeBio' TEXT NOT NULL, 'sizeAbl' TEXT, 'sizeEff' TEXT);
+            'sizeStats' TEXT, 'sizeBio' TEXT NOT NULL, 'sizeAbl' TEXT, 'sizeEff' TEXT, 'sizeCode' TEXT);
             CREATE TABLE 'dbAlign' ('alignID' TEXT NOT NULL, 'alignName' TEXT NOT NULL, 'alignDesc' TEXT, 
             'alignRank' TEXT NOT NULL, 'alignStats' TEXT, 'alignRep' TEXT NOT NULL, 'alignBio' TEXT NOT NULL, 
             'alignAbl' TEXT, 'alignEff' TEXT, 'alignAblType' TEXT, 'alignCode' TEXT);
@@ -73,7 +76,7 @@
             'ageDesc' TEXT NOT NULL, 'ageCode' TEXT);
             CREATE TABLE 'dbAbl' ('ablID' TEXT NOT NULL, 'ablName' TEXT NOT NULL, 'ablDesc' TEXT, 'ablType' TEXT NOT NULL, 
             'ablCost' TEXT NOT NULL, 'ablTarget' TEXT NOT NULL, 'ablImpact' TEXT NOT NULL, 'ablBase' TEXT NOT NULL, 
-            'ablElem' TEXT, 'ablEff' TEXT, 'ablChance' TEXT);
+            'ablElem' TEXT, 'ablEff' TEXT, 'ablChance' TEXT, 'ablCode' TEXT);
             CREATE TABLE 'dbAblType' ('abltypeID' TEXT NOT NULL, 'abltypeName' TEXT NOT NULL, 'abltypeCode' TEXT);
             CREATE TABLE 'dbEff' ('effID' TEXT NOT NULL, 'effName' TEXT NOT NULL, 'effDesc' TEXT, 'effType' TEXT NOT NULL, 
             'effCriteria' TEXT, 'effImpact' TEXT, 'effIncRate' TEXT, 'effElemAbs' TEXT, 'effElemPos' TEXT, 
@@ -93,7 +96,7 @@
             'forceObtain' TEXT NOT NULL, 'forceOwner' TEXT NOT NULL, 'forceDesc' TEXT, 'forceCode' TEXT);
             CREATE TABLE 'dbAlias' ('aliasID' TEXT NOT NULL, 'aliasName' TEXT NOT NULL, 'aliasType' TEXT NOT NULL, 
             'aliasRace' TEXT NOT NULL,'aliasAlign' TEXT NOT NULL, 'aliasGender' TEXT NOT NULL, 'aliasJob' TEXT, 
-            'aliasBio' TEXT, 'aliasImage' TEXT, 'aliasKnown' TEXT);
+            'aliasBio' TEXT, 'aliasImage' TEXT, 'aliasKnown' TEXT, 'aliasCode' TEXT);
             CREATE TABLE 'dbDestiny' ('destinyID' TEXT NOT NULL, 'destinyName' TEXT NOT NULL, 'destinyDesc' TEXT, 
             'destinyCode' TEXT);
             CREATE TABLE 'dbEnviro' ('enviroID' TEXT NOT NULL, 'enviroName' TEXT NOT NULL, 'enviroEff' TEXT, 'enviroDesc' TEXT, 
@@ -102,14 +105,16 @@
             'genericClass' TEXT NOT NULL, 'genericAlignMin' TEXT NOT NULL, 'genericAlignMax' TEXT NOT NULL, 
             'genericGender' TEXT NOT NULL, 'genericMinLv' TEXT NOT NULL, 'genericMaxLv' TEXT NOT NULL, 
             'genericBio' TEXT, 'genericImage' TEXT, 'genericAbl' TEXT, 'genericEff' TEXT, 'genericHeld' TEXT, 
-            'genericWear' TEXT, 'genericCharms' TEXT, 'genericInv' TEXT, 'genericMax' TEXT);
+            'genericWear' TEXT, 'genericCharms' TEXT, 'genericInv' TEXT, 'genericMax' TEXT, 'genericCode' TEXT);
             CREATE TABLE 'dbJobs' ('jobID' TEXT NOT NULL, 'jobName' TEXT NOT NULL, 'jobRace' TEXT, 'jobClass' TEXT, 
             'jobBio' TEXT NOT NULL, 'jobHeld' TEXT, 'jobWear' TEXT, 'jobCharms' TEXT, 'jobInv' TEXT, 'jobCode' TEXT);
             CREATE TABLE 'dbStatus' ('statusID' TEXT NOT NULL, 'statusName' TEXT NOT NULL, 'statusColor' TEXT NOT NULL, 
-            'statusDesc' TEXT NOT NULL, 'statusBio' TEXT NOT NULL, 'statusEffRank' TEXT NOT NULL, 'statusEff' TEXT NOT NULL);
+            'statusDesc' TEXT NOT NULL, 'statusBio' TEXT NOT NULL, 'statusEffRank' TEXT NOT NULL, 'statusEff' TEXT NOT NULL,
+            'statusCode' TEXT);
             CREATE TABLE 'dbArenas' ('arenaID' TEXT NOT NULL, 'arenaName' TEXT NOT NULL, 'arenaVerse' TEXT NOT NULL, 
             'arenaDesc' TEXT,'arenaX' TEXT NOT NULL, 'arenaY' TEXT NOT NULL, 'arenaZ' TEXT NOT NULL, 'arenaActive' TEXT NOT NULL, 
-            'arenaSpace' TEXT NOT NULL,'arenaHell' TEXT NOT NULL, 'arenaUnder' TEXT NOT NULL, 'areanCeiling' TEXT NOT NULL);
+            'arenaSpace' TEXT NOT NULL,'arenaHell' TEXT NOT NULL, 'arenaUnder' TEXT NOT NULL, 'areanCeiling' TEXT NOT NULL,
+            'arenaCode' TEXT);
             CREATE TABLE 'dbSections' ('sectionID' TEXT NOT NULL, 'sectionArena' TEXT NOT NULL, 'sectionName' TEXT NOT NULL, 
             'sectionStart' TEXT NOT NULL, 'sectionEnd' TEXT NOT NULL, 'sectionEnv' TEXT, 'sectionColor' TEXT,
             'sectionDesc' TEXT NOT NULL, 'sectionSpawn' TEXT NOT NULL, 'sectionCode' TEXT);
@@ -121,10 +126,12 @@
             'teamBio' TEXT, 'teamTheme' TEXT, 'teamType' TEXT NOT NULL, 'teamCode' TEXT);
             CREATE TABLE 'dbRelation' ('relationID' TEXT NOT NULL, 'relationName' TEXT NOT NULL, 'relation1' TEXT NOT NULL,
             'relation2' TEXT NOT NULL, 'relationType' TEXT NOT NULL, 'relationDate' TEXT NOT NULL, 
-            'relationActive' TEXT NOT NULL);
+            'relationActive' TEXT NOT NULL, 'relationCode' TEXT);
+            CREATE TABLE 'dbLang' ('langID' TEXT NOT NULL, 'langName' TEXT NOT NULL, 'langRace' TEXT NOT NULL, 'langBio' TEXT,
+            'langDesc' TEXT, 'langLearn' TEXT NOT NULL, 'langEncrypt' TEXT, 'langCode' TEXT);
             "
             )
-        'Toon:      UID 0:Normal,1:Generic,2:Split,3:Clone,4:Variant,5:Twin,6:Shapeshifter,7:Alternative
+        'Toon:      UID 0:Prime,1:Generic,2:Split,3:Clone,4:Variant,5:Twin,6:Shapeshifter,7:Alternative
         'Effects:   Type 0:Perm,1:Temp,2:PermInc,3:TempInc,4:Attr // Rate T:Turn,M:Minute,H:Hour,D:Day,Y:Year // Reflect 0:Off,1:On //
         '           Team 1:ChangeTeam,N:NoTeam // Align: +1:IncreaseRank,-1:DecreaseRank,N:for50(Neutral)
         'Force:     Text 0:none,1:toonname's item, 2:item of toonname // obtain 0:physical,1:magical,2:specialitem(xItem),3:enchanted(xItem) //
@@ -137,7 +144,26 @@
         'Section    Start/End: x.y.z,scaledTo0.1.2=x.y,scaledTo0.1.2.3.4=z // Env 0:Normal,#:Environment // Spawn 0:no,1:yes
         'Team       Type: 0:Standard,1:Alliance,2:Partners,3:Family,4:Unstable,5:Mercenary
 
-        'Add Default Tables
+        'dbAbl
+        DBTools.RunSQL(SavePath, savename & SaveExt, "
+            INSERT INTO 'dbAbl' VALUES ('0','Punch',NULL,'0','Z','AT','Z','Z',NULL,NULL,NULL,NULL);
+            INSERT INTO 'dbAbl' VALUES ('1','Kick',NULL,'0','Z','AT','Z','Z',NULL,NULL,NULL,NULL);
+            INSERT INTO 'dbAbl' VALUES ('2','Defend',NULL,'1','Z','SA','Z','Z',NULL,NULL,NULL,NULL);
+            "
+            )
+
+        DBTools.RunSQL(SavePath, savename & SaveExt, "
+            INSERT INTO 'dbAblType' VALUES ('0','Attack',NULL);
+            INSERT INTO 'dbAblType' VALUES ('1','Defense',NULL);
+            INSERT INTO 'dbAblType' VALUES ('2','Passive',NULL);
+            INSERT INTO 'dbAblType' VALUES ('3','Holy',NULL);
+            INSERT INTO 'dbAblType' VALUES ('4','Dark',NULL);
+            INSERT INTO 'dbAblType' VALUES ('5','Effect',NULL);
+            INSERT INTO 'dbAblType' VALUES ('6','Ninja',NULL);
+            "
+            )
+
+
         'dbAge
         DBTools.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbAge' VALUES ('0','Baby','<1 or 2%','Newborn to very young',NULL);
@@ -166,7 +192,18 @@
 
         'dbArenas
         DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbArenas' VALUES ('0','The Arena','0',
-            'This is the default arena.','3','3','3','1','1','1','5','0');")
+            'This is the default arena.','3','3','3','1','1','1','5','0',NULL);")
+
+        'dbDestiny
+        DBTools.RunSQL(SavePath, savename & SaveExt, "
+            INSERT INTO 'dbDestiny' VALUES ('0','Competitive','Competes in Arenas (Default).',NULL);
+            INSERT INTO 'dbDestiny' VALUES ('1','Passive','Non-competitive.',NULL);
+            INSERT INTO 'dbDestiny' VALUES ('2','Justice','Focuses on making injustices right.',NULL);
+            INSERT INTO 'dbDestiny' VALUES ('3','Chaos','Focuses on causing as much chaos as possible.',NULL);
+            INSERT INTO 'dbDestiny' VALUES ('4','Universe Balance','Focuses on gathering Relics to bring balance to the Universe by halving the population of all living beings.',NULL);
+            INSERT INTO 'dbDestiny' VALUES ('5','Death','Focuses on no mercy and death to all without basis.',NULL);
+            "
+            )
 
         'dbElements
         DBTools.RunSQL(SavePath, savename & SaveExt, "
@@ -232,17 +269,20 @@
 
         'dbSize
         DBTools.RunSQL(SavePath, savename & SaveExt, "
-            INSERT INTO 'dbSize' VALUES ('0','Micro','Less than 6 Inches : Under 1/8 lb.',NULL,'a Micro-Sized',NULL,NULL);
-            INSERT INTO 'dbSize' VALUES ('1','Mini','Between 6 inches and 1 foot : Between 1/8 lb. and 1 lb.',NULL,'a Mini-Sized',NULL,NULL);
-            INSERT INTO 'dbSize' VALUES ('2','Tiny','Between 1 foot and 2 feet : Between 1 lb. and 8 lbs.',NULL,'a Tiny',NULL,NULL);
-            INSERT INTO 'dbSize' VALUES ('3','Small','Between 2 feet and 4 feet : Between 8 lbs. and 40 lbs.',NULL,'a Small',NULL,NULL);
-            INSERT INTO 'dbSize' VALUES ('4','Average','Between 4 feet and 8 feet : Between 60 lbs. and 500 lbs.',NULL,'an Average-Sized',NULL,NULL);
-            INSERT INTO 'dbSize' VALUES ('5','Large','Between 8 feet and 16 feet : 500 lbs. and 2 tons',NULL,'a Large',NULL,NULL);
-            INSERT INTO 'dbSize' VALUES ('6','Huge','Between 16 feet and 32 feet : Between 2 tons and 16 tons',NULL,'a Huge',NULL,NULL);
-            INSERT INTO 'dbSize' VALUES ('7','Enormous','Between 32 feet and 64 feet : Between 16 tons and 125 tons',NULL,'an Enormous',NULL,NULL);
-            INSERT INTO 'dbSize' VALUES ('8','Ginormous','More than 64 foot : More than 125 tons',NULL,'a Ginormous',NULL,NULL);
+            INSERT INTO 'dbSize' VALUES ('0','Micro','Less than 6 Inches : Under 1/8 lb.',NULL,'a Micro-Sized',NULL,NULL,NULL);
+            INSERT INTO 'dbSize' VALUES ('1','Mini','Between 6 inches and 1 foot : Between 1/8 lb. and 1 lb.',NULL,'a Mini-Sized',NULL,NULL,NULL);
+            INSERT INTO 'dbSize' VALUES ('2','Tiny','Between 1 foot and 2 feet : Between 1 lb. and 8 lbs.',NULL,'a Tiny',NULL,NULL,NULL);
+            INSERT INTO 'dbSize' VALUES ('3','Small','Between 2 feet and 4 feet : Between 8 lbs. and 40 lbs.',NULL,'a Small',NULL,NULL,NULL);
+            INSERT INTO 'dbSize' VALUES ('4','Average','Between 4 feet and 8 feet : Between 60 lbs. and 500 lbs.',NULL,'an Average-Sized',NULL,NULL,NULL);
+            INSERT INTO 'dbSize' VALUES ('5','Large','Between 8 feet and 16 feet : 500 lbs. and 2 tons',NULL,'a Large',NULL,NULL,NULL);
+            INSERT INTO 'dbSize' VALUES ('6','Huge','Between 16 feet and 32 feet : Between 2 tons and 16 tons',NULL,'a Huge',NULL,NULL,NULL);
+            INSERT INTO 'dbSize' VALUES ('7','Enormous','Between 32 feet and 64 feet : Between 16 tons and 125 tons',NULL,'an Enormous',NULL,NULL,NULL);
+            INSERT INTO 'dbSize' VALUES ('8','Ginormous','More than 64 foot : More than 125 tons',NULL,'a Ginormous',NULL,NULL,NULL);
             "
             )
+
+        'dbStatus
+        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbStatus' VALUES ('0','Normal','green','All is good.','is in Normal Health','99','0',NULL);")
 
         'dbVerse
         DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbVerse' VALUES ('0','LimitlessVerse',
