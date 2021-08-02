@@ -52,10 +52,9 @@
             CREATE TABLE 'dbInfo' ('dbName' TEXT NOT NULL, 'dbVersion' TEXT NOT NULL);
             CREATE TABLE 'dbToons' ('toonID' TEXT NOT NULL, 'toonName' TEXT NOT NULL, 'toonUID' TEXT NOT NULL,
             'toonRace' TEXT NOT NULL, 'toonClass' TEXT NOT NULL, 'toonAlign' TEXT NOT NULL, 'toonGender' TEXT NOT NULL, 
-            'toonAge' TEXT NOT NULL, 'toonStartLv' TEXT NOT NULL, 'toonBio' TEXT NOT NULL, 'toonImage' TEXT NOT NULL, 
-            'toonAbl' TEXT NOT NULL, 'toonEff' TEXT NOT NULL, 'toonHeld' TEXT NOT NULL, 'toonWear' TEXT NOT NULL, 
-            'toonCharms' TEXT NOT NULL, 'toonInv' TEXT NOT NULL, 'toonForce' TEXT NOT NULL, 'toonAlias'  TEXT NOT NULL, 
-            'toonDestiny' TEXT NOT NULL, 'toonTheme' TEXT NOT NULL, 'toonVerse' TEXT NOT NULL, 'toonLang' TEXT, 
+            'toonAge' TEXT NOT NULL, 'toonStartLv' TEXT NOT NULL, 'toonBio' TEXT, 'toonImage' TEXT, 'toonAbl' TEXT, 
+            'toonEff' TEXT, 'toonHeld' TEXT, 'toonWear' TEXT, 'toonCharms' TEXT, 'toonInv' TEXT, 'toonForce' TEXT NOT NULL, 
+            'toonAlias'  TEXT, 'toonDestiny' TEXT NOT NULL, 'toonTheme' TEXT, 'toonVerse' TEXT NOT NULL, 'toonLang' TEXT, 
             'toonCode' TEXT);
             CREATE TABLE 'dbRace' ('raceID' TEXT NOT NULL, 'raceName' TEXT NOT NULL, 'raceDesc' TEXT, 
             'raceSize' TEXT NOT NULL, 'raceGender' TEXT NOT NULL, 'raceAge' TEXT NOT NULL, 'raceStats' TEXT NOT NULL, 
@@ -87,13 +86,15 @@
             CREATE TABLE 'dbItems' ('itemID' TEXT NOT NULL, 'itemName' TEXT NOT NULL, 'itemDesc' TEXT, 
             'itemClass' TEXT NOT NULL,'itemType' TEXT NOT NULL, 'itemSizeR' TEXT, 'itemRaceR' TEXT, 'itemClassR' TEXT, 
             'itemEffR' TEXT, 'itemAlignR' TEXT, 'itemStats' TEXT, 'itemBio' TEXT, 'itemAbl' TEXT, 'itemEff' TEXT, 
-            'itemElement' TEXT, 'itemCode' TEXT);
+            'itemElement' TEXT, 'itemMax' TEXT NOT NULL, 'itemCode' TEXT);
             CREATE TABLE 'dbItemType' ('itemtypeID' TEXT NOT NULL, 'itemtypeName' TEXT NOT NULL, 'itemtypeClass' TEXT NOT NULL,
             'itemtypeCode' TEXT NOT NULL);
             CREATE TABLE 'dbItemClass' ('itemclassID' TEXT NOT NULL, 'itemclassname' TEXT NOT NULL, 
             'itemclassCode' TEXT);
             CREATE TABLE 'dbForce' ('forceID' TEXT NOT NULL, 'forceName' TEXT NOT NULL, 'forceText' TEXT NOT NULL, 
             'forceObtain' TEXT NOT NULL, 'forceOwner' TEXT NOT NULL, 'forceDesc' TEXT, 'forceCode' TEXT);
+            CREATE TABLE 'dbForceObtain' ('forceOID' TEXT NOT NULL, 'forceOName' TEXT NOT NULL, 'forceOText' TEXT NOT NULL,
+            'forceOCode' TEXT);
             CREATE TABLE 'dbAlias' ('aliasID' TEXT NOT NULL, 'aliasName' TEXT NOT NULL, 'aliasType' TEXT NOT NULL, 
             'aliasRace' TEXT NOT NULL,'aliasAlign' TEXT NOT NULL, 'aliasGender' TEXT NOT NULL, 'aliasJob' TEXT, 
             'aliasBio' TEXT, 'aliasImage' TEXT, 'aliasKnown' TEXT, 'aliasCode' TEXT);
@@ -129,6 +130,8 @@
             'relationActive' TEXT NOT NULL, 'relationCode' TEXT);
             CREATE TABLE 'dbLang' ('langID' TEXT NOT NULL, 'langName' TEXT NOT NULL, 'langRace' TEXT NOT NULL, 'langBio' TEXT,
             'langDesc' TEXT, 'langLearn' TEXT NOT NULL, 'langEncrypt' TEXT, 'langCode' TEXT);
+            CREATE TABLE 'dbExistence' ('existID' TEXT NOT NULL, 'existName' TEXT NOT NULL, 'existDesc' TEXT, 'existBio' TEXT NOT NULL,
+            'existUID' TEXT NOT NULL, 'existCode' TEXT);
             "
             )
         'Toon:      UID 0:Prime,1:Generic,2:Split,3:Clone,4:Variant,5:Twin,6:Shapeshifter,7:Alternative
@@ -194,6 +197,18 @@
         DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbArenas' VALUES ('0','The Arena','0',
             'This is the default arena.','3','3','3','1','1','1','5','0',NULL);")
 
+        'dbExistence
+        DBTools.RunSQL(SavePath, savename & SaveExt, "
+            INSERT INTO 'dbExistence' VALUES ('0', 'Prime', 'Original form of this character.','is the Prime version of','O',NULL);
+            INSERT INTO 'dbExistence' VALUES ('1', 'Generic', 'Designed to be a non-named character in mass volume.','is the Generic version of','G',NULL);
+            INSERT INTO 'dbExistence' VALUES ('2', 'Split', 'Created from Prime with a Split ability.  Usually half the status as Prime.','is the Split version of','S',NULL);
+            INSERT INTO 'dbExistence' VALUES ('3', 'Clone', 'Duplicate created from a Prime.  Identical but not the original.','is the Clone version of','C',NULL);
+            INSERT INTO 'dbExistence' VALUES ('4', 'Variant', 'An alternate version of the Prime from a different timeline.','is the Variant version of','V',NULL);
+            INSERT INTO 'dbExistence' VALUES ('5', 'Twin', 'Considered Prime but born with an exact twin at birth.','is the Twin version of','T',NULL);
+            INSERT INTO 'dbExistence' VALUES ('6', 'Shapeshifter', 'Hidden stat (except if player is shifting).  Hides as Prime of a character but is actually a clone.','is the Prime version of','F',NULL);
+            "
+            )
+
         'dbDestiny
         DBTools.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbDestiny' VALUES ('0','Competitive','Competes in Arenas (Default).',NULL);
@@ -222,6 +237,12 @@
 
         'dbEnviro
         DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbEnviro' VALUES ('0','Normal',NULL,'Everything is Normal.',NULL);")
+
+        'dbForce
+        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbForce' VALUES ('0','Heart','the Heart of','1','1',NULL,NULL);")
+
+        'dbForceObtain
+        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbForce' VALUES ('0','Heart','the Heart of','1','1',NULL,NULL);")
 
         'dbGender
         DBTools.RunSQL(SavePath, savename & SaveExt, "

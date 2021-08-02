@@ -116,4 +116,116 @@ Public Class Tools
         DBTools.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
 
+    Public Shared Sub PopulateCListFromDB(type As String, list As CheckedListBox, table As String, idcol As String, namecol As String)
+        list.Items.Clear()
+        list.Enabled = True
+        Dim NoneAvailable As String = "<No " & Converters.UppercaseEachFirstLetter(type) & " Available>"
+        Dim DBName As String = Settings.SettingsLastDB & "." & MemoryBank.SavesExt
+        Dim IDsFromDB() As String
+        Try
+            IDsFromDB = DBTools.GetCol(MemoryBank.DataDir, DBName, table, idcol).Split(",")
+        Catch
+            IDsFromDB = Nothing
+        End Try
+        If IDsFromDB IsNot Nothing Then
+            For Each ID In IDsFromDB
+                Dim ItemName As String = DBTools.GetValue(MemoryBank.DataDir, DBName, table, namecol, idcol, ID)
+                list.Items.Add(ItemName)
+            Next
+        Else
+            list.Items.Add(NoneAvailable)
+            list.Enabled = False
+        End If
+        DBTools.CloseSQL(MemoryBank.DataDir, DBName)
+    End Sub
+
+    Public Shared Sub PopulateCListWithCustom(type As String, list As CheckedListBox, criteria() As String)
+        'criteria format:  table.idcol.namecol.findstring.modifier, etc.
+        list.Items.Clear()
+        list.Enabled = True
+        Dim NoneAvailable As String = "<No " & Converters.UppercaseEachFirstLetter(type) & " Available>"
+        Dim DBName As String = Settings.SettingsLastDB & "." & MemoryBank.SavesExt
+        For Each Request In criteria
+            Dim RequestSplit() As String = Request.Split(".")
+            Dim ReqTable As String = RequestSplit(0), ReqID As String = RequestSplit(1),
+                ReqName As String = RequestSplit(2), ReqStr As String = RequestSplit(3),
+                ReqMod As String = RequestSplit(4)
+            Dim Results() As String
+            Try
+                Results = DBTools.GetMulti(MemoryBank.DataDir, DBName, ReqTable, ReqID, ReqStr).Split(",")
+            Catch
+                Results = Nothing
+            End Try
+            If Results IsNot Nothing Then
+                For Each ID In Results
+                    Dim ItemName As String = DBTools.GetValue(MemoryBank.DataDir, DBName, ReqTable, ReqName, ReqID, ID)
+                    If ReqMod.Length > 0 Then ItemName = "[" & ReqMod & "] " & ItemName
+                    list.Items.Add(ItemName)
+                Next
+            End If
+        Next
+        If list.Items.Count = 0 Then
+            list.Items.Add(NoneAvailable)
+            list.Enabled = False
+        End If
+        DBTools.CloseSQL(MemoryBank.DataDir, DBName)
+    End Sub
+
+    Public Shared Sub PopulateDropFromDB(type As String, drop As ComboBox, table As String, idcol As String, namecol As String)
+        drop.Items.Clear()
+        drop.Enabled = True
+        Dim NoneAvailable As String = "<No " & Converters.UppercaseEachFirstLetter(type) & " Available>"
+        Dim DBName As String = Settings.SettingsLastDB & "." & MemoryBank.SavesExt
+        Dim IDsFromDB() As String
+        Try
+            IDsFromDB = DBTools.GetCol(MemoryBank.DataDir, DBName, table, idcol).Split(",")
+        Catch
+            IDsFromDB = Nothing
+        End Try
+        If IDsFromDB IsNot Nothing Then
+            For Each ID In IDsFromDB
+                Dim ItemName As String = DBTools.GetValue(MemoryBank.DataDir, DBName, table, namecol, idcol, ID)
+                drop.Items.Add(ItemName)
+            Next
+        Else
+            drop.Items.Add(NoneAvailable)
+            drop.Enabled = False
+        End If
+        drop.SelectedIndex = 0
+        DBTools.CloseSQL(MemoryBank.DataDir, DBName)
+    End Sub
+
+    Public Shared Sub PopulateDropWithCustom(type As String, drop As ComboBox, criteria() As String)
+        'criteria format:  table.idcol.namecol.findstring.modifier, etc.
+        drop.Items.Clear()
+        drop.Enabled = True
+        Dim NoneAvailable As String = "<No " & Converters.UppercaseEachFirstLetter(type) & " Available>"
+        Dim DBName As String = Settings.SettingsLastDB & "." & MemoryBank.SavesExt
+        For Each Request In criteria
+            Dim RequestSplit() As String = Request.Split(".")
+            Dim ReqTable As String = RequestSplit(0), ReqID As String = RequestSplit(1),
+                ReqName As String = RequestSplit(2), ReqStr As String = RequestSplit(3),
+                ReqMod As String = RequestSplit(4)
+            Dim Results() As String
+            Try
+                Results = DBTools.GetMulti(MemoryBank.DataDir, DBName, ReqTable, ReqID, ReqStr).Split(",")
+            Catch
+                Results = Nothing
+            End Try
+            If Results IsNot Nothing Then
+                For Each ID In Results
+                    Dim ItemName As String = DBTools.GetValue(MemoryBank.DataDir, DBName, ReqTable, ReqName, ReqID, ID)
+                    If ReqMod.Length > 0 Then ItemName = "[" & ReqMod & "] " & ItemName
+                    drop.Items.Add(ItemName)
+                Next
+            End If
+        Next
+        If drop.Items.Count = 0 Then
+            drop.Items.Add(NoneAvailable)
+            drop.Enabled = False
+        End If
+        drop.SelectedIndex = 0
+        DBTools.CloseSQL(MemoryBank.DataDir, DBName)
+    End Sub
+
 End Class

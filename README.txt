@@ -1,6 +1,6 @@
 =============================================
 LIMITLESS by Geoff Clark
-VERSION ALPHA 0.1.006.0003
+VERSION ALPHA 0.1.006.0006
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -72,8 +72,16 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.006.0004 / 2021.08.01 - The Editor Update - Character Menu
+ALPHA 0.1.006.0006 / 2021.08.02 - The Editor Update - Character Menu
 
+- added heart as default life force item
+- added itemMax to items table
+- added ForceObtain and Existence tables to database
+- added functionality to the + button to add new characters from character menu
+- added queries for various fields in character menu to populate dropdowns and list
+- completed character editor design and quickadd and inventory management design windows
+- fixed global issue with listboxes not deslecting when focus is lost
+- added all fields and effects for buttons for character menu
 - integrated aliases into character menu and changed alias button to language button
 - added character editor fields and dropdowns along with image for avatar
 - added placeholder label for system testing fields to be displayed

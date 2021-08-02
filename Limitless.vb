@@ -93,13 +93,27 @@
         EditorImportButton.MouseHover, EditorExportButton.MouseHover, EditorLangButton.MouseHover, EditorTeamsButton.MouseHover,
         EditorSwitchNewButton.MouseHover, EditorSwitchBackButton.MouseHover, EditorSwitchSDBButton.MouseHover, EditorSwitchDupButton.MouseHover,
         EditorSwitchDelButton.MouseHover, EditorEditBackButton.MouseHover, EditorEditAddButton.MouseHover, EditorEditDelButton.MouseHover,
+        EditorCharRaceQAdd.MouseHover, EditorCharClassQAdd.MouseHover, EditorCharDestinyQAdd.MouseHover, EditorCharVerseQAdd.MouseHover,
+        EditorCharAliasNewB.MouseHover, EditorCharAliasAddB.MouseHover, EditorCharAliasRemB.MouseHover, EditorCharEffQAdd.MouseHover,
+        EditorCharEffAddB.MouseHover, EditorCharAvatarButton.MouseHover, EditorCharEffRemB.MouseHover, EditorCharEffInvButton.MouseHover,
+        EditorCharMusicPlay.MouseHover, EditorCharMusicStop.MouseHover, EditorCharThemeButton.MouseHover, EditorCharSaveButton.MouseHover,
+        EditorCharCancelButton.MouseHover, EditorCharAblQAdd.MouseHover, EditorCharLangQAdd.MouseHover, EditorCharQAddButton.MouseHover,
+        EditorCharQAddCancel.MouseHover, EditorCharInvAddButton.MouseHover, EditorCharInvEquipButton.MouseHover, EditorCharInvUnequipButton.MouseHover,
+        EditorCharInvRemoveButton.MouseHover, EditorCharInvDoneButton.MouseHover, EditorCharInvSwitchButton.MouseHover,
         StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp,
         UpdateInstallButton.MouseUp, EditorAblButton.MouseUp, EditorArenaButton.MouseUp, EditorCharmsButton.MouseUp, EditorCharButton.MouseUp,
         EditorClassButton.MouseUp, EditorDestinyButton.MouseUp, EditorItemButton.MouseUp, EditorRelButton.MouseUp,
         EditorStatusButton.MouseUp, EditorVerseButton.MouseUp, EditorHeldButton.MouseUp, EditorWearButton.MouseUp, EditorDBButton.MouseUp,
         EditorImportButton.MouseUp, EditorExportButton.MouseUp, EditorLangButton.MouseUp, EditorTeamsButton.MouseUp,
         EditorSwitchNewButton.MouseUp, EditorSwitchBackButton.MouseUp, EditorSwitchSDBButton.MouseUp, EditorSwitchDupButton.MouseUp,
-        EditorSwitchDelButton.MouseUp, EditorEditBackButton.MouseUp, EditorEditAddButton.MouseUp, EditorEditDelButton.MouseUp
+        EditorSwitchDelButton.MouseUp, EditorEditBackButton.MouseUp, EditorEditAddButton.MouseUp, EditorEditDelButton.MouseUp,
+        EditorCharRaceQAdd.MouseUp, EditorCharClassQAdd.MouseUp, EditorCharDestinyQAdd.MouseUp, EditorCharVerseQAdd.MouseUp,
+        EditorCharAliasNewB.MouseUp, EditorCharAliasAddB.MouseUp, EditorCharAliasRemB.MouseUp, EditorCharEffQAdd.MouseUp,
+        EditorCharEffAddB.MouseUp, EditorCharAvatarButton.MouseUp, EditorCharEffRemB.MouseUp, EditorCharEffInvButton.MouseUp,
+        EditorCharMusicPlay.MouseUp, EditorCharMusicStop.MouseUp, EditorCharThemeButton.MouseUp, EditorCharSaveButton.MouseUp,
+        EditorCharCancelButton.MouseUp, EditorCharAblQAdd.MouseUp, EditorCharLangQAdd.MouseUp, EditorCharQAddButton.MouseUp, EditorCharQAddCancel.MouseUp,
+        EditorCharInvAddButton.MouseUp, EditorCharInvEquipButton.MouseUp, EditorCharInvUnequipButton.MouseUp, EditorCharInvRemoveButton.MouseUp,
+        EditorCharInvDoneButton.MouseUp, EditorCharInvSwitchButton.MouseUp
         HoverOverEffect(sender)
     End Sub
 
@@ -110,7 +124,14 @@
         EditorVerseButton.MouseLeave, EditorHeldButton.MouseLeave, EditorWearButton.MouseLeave, EditorDBButton.MouseLeave,
         EditorImportButton.MouseLeave, EditorExportButton.MouseLeave, EditorLangButton.MouseLeave, EditorTeamsButton.MouseLeave,
         EditorSwitchNewButton.MouseLeave, EditorSwitchBackButton.MouseLeave, EditorSwitchSDBButton.MouseLeave, EditorSwitchDupButton.MouseLeave,
-        EditorSwitchDelButton.MouseLeave, EditorEditBackButton.MouseLeave, EditorEditAddButton.MouseLeave, EditorEditDelButton.MouseLeave
+        EditorSwitchDelButton.MouseLeave, EditorEditBackButton.MouseLeave, EditorEditAddButton.MouseLeave, EditorEditDelButton.MouseLeave,
+        EditorCharRaceQAdd.MouseLeave, EditorCharClassQAdd.MouseLeave, EditorCharDestinyQAdd.MouseLeave, EditorCharVerseQAdd.MouseLeave,
+        EditorCharAliasNewB.MouseLeave, EditorCharAliasAddB.MouseLeave, EditorCharAliasRemB.MouseLeave, EditorCharEffQAdd.MouseLeave,
+        EditorCharEffAddB.MouseLeave, EditorCharAvatarButton.MouseLeave, EditorCharEffRemB.MouseLeave, EditorCharEffInvButton.MouseLeave,
+        EditorCharMusicPlay.MouseLeave, EditorCharMusicStop.MouseLeave, EditorCharThemeButton.MouseLeave, EditorCharSaveButton.MouseLeave,
+        EditorCharCancelButton.MouseLeave, EditorCharAblQAdd.MouseLeave, EditorCharLangQAdd.MouseLeave, EditorCharQAddButton.MouseLeave,
+        EditorCharQAddCancel.MouseLeave, EditorCharInvAddButton.MouseLeave, EditorCharInvEquipButton.MouseLeave, EditorCharInvUnequipButton.MouseLeave,
+        EditorCharInvRemoveButton.MouseLeave, EditorCharInvDoneButton.MouseLeave, EditorCharInvSwitchButton.MouseLeave
         LeaveObjEffect(sender)
     End Sub
 
@@ -121,7 +142,14 @@
         EditorVerseButton.MouseDown, EditorHeldButton.MouseDown, EditorWearButton.MouseDown, EditorDBButton.MouseDown,
         EditorImportButton.MouseDown, EditorExportButton.MouseDown, EditorLangButton.MouseDown, EditorTeamsButton.MouseDown,
         EditorSwitchNewButton.MouseDown, EditorSwitchBackButton.MouseDown, EditorSwitchSDBButton.MouseDown, EditorSwitchDupButton.MouseDown,
-        EditorSwitchDelButton.MouseDown, EditorEditBackButton.MouseDown, EditorEditAddButton.MouseDown, EditorEditDelButton.MouseDown
+        EditorSwitchDelButton.MouseDown, EditorEditBackButton.MouseDown, EditorEditAddButton.MouseDown, EditorEditDelButton.MouseDown,
+        EditorCharRaceQAdd.MouseDown, EditorCharClassQAdd.MouseDown, EditorCharDestinyQAdd.MouseDown, EditorCharVerseQAdd.MouseDown,
+        EditorCharAliasNewB.MouseDown, EditorCharAliasAddB.MouseDown, EditorCharAliasRemB.MouseDown, EditorCharEffQAdd.MouseDown,
+        EditorCharEffAddB.MouseDown, EditorCharAvatarButton.MouseDown, EditorCharEffRemB.MouseDown, EditorCharEffInvButton.MouseDown,
+        EditorCharMusicPlay.MouseDown, EditorCharMusicStop.MouseDown, EditorCharThemeButton.MouseDown, EditorCharSaveButton.MouseDown,
+        EditorCharCancelButton.MouseDown, EditorCharAblQAdd.MouseDown, EditorCharLangQAdd.MouseDown, EditorCharQAddButton.MouseDown,
+        EditorCharQAddCancel.MouseDown, EditorCharInvAddButton.MouseDown, EditorCharInvEquipButton.MouseDown, EditorCharInvUnequipButton.MouseDown,
+        EditorCharInvRemoveButton.MouseDown, EditorCharInvDoneButton.MouseDown, EditorCharInvSwitchButton.MouseDown
         MouseDownEffect(sender)
     End Sub
 
@@ -149,6 +177,12 @@
         EditorPanel.Visible = False
         UpdatePanel.Visible = False
         activepanel.Visible = True
+    End Sub
+
+    Private Sub ListLostFocus(sender As Object, e As EventArgs) Handles EditorEditList.LostFocus, EditorCharAliasList.LostFocus, EditorCharLangCList.LostFocus, EditorCharAblList.LostFocus,
+            EditorCharEffList.LostFocus, EditorCharInvList.LostFocus, CustomLibsList.LostFocus, EditorCharInvList.LostFocus, EditorCharInvResList.LostFocus, EditorCharInvAblList.LostFocus,
+            EditorCharInvEffList.LostFocus, EditorCharInvHeldList.LostFocus, EditorCharInvWearList.LostFocus, EditorCharInvCharmList.LostFocus, EditorCharInvItemList.LostFocus
+        sender.ClearSelected()
     End Sub
 
     'Exit Button
@@ -1185,7 +1219,7 @@
         SelectTrackChanges(sender)
     End Sub
 
-    'Editor Section
+    'Editor Menu Section
 
     Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
         MenuButtonPressed(EditorPanel)
@@ -1243,10 +1277,8 @@
         End If
         If EditorSwitchSDBDrop.Items.Count < 2 Then
             EditorSwitchDelButton.Enabled = False
-            'Appearance.AssignColor(EditorSwitchDelButton, "Button")
         Else
             EditorSwitchDelButton.Enabled = True
-            'Appearance.AssignColor(EditorSwitchDelButton, "Button")
         End If
         Appearance.RefreshColors()
     End Sub
@@ -1267,10 +1299,8 @@
         DBTools.CloseSQL(MemoryBank.DataDir, EditorSwitchSDBDrop.SelectedItem & "." & MemoryBank.SavesExt)
         If LCase(EditorSwitchTarBox.Text) = LCase(EditorSwitchCurBox.Text) Then
             EditorSwitchSDBButton.Enabled = False
-            'Appearance.AssignColor(EditorSwitchSDBButton, "Button")
         Else
             EditorSwitchSDBButton.Enabled = True
-            'Appearance.AssignColor(EditorSwitchSDBButton, "Button")
         End If
         Appearance.RefreshColors()
     End Sub
@@ -1289,10 +1319,8 @@
     Private Sub EditorSwitchNewBox_KeyPress(sender As Object, e As EventArgs) Handles EditorSwitchNewBox.TextChanged
         If EditorSwitchNewBox.TextLength > 0 Then
             EditorSwitchNewButton.Enabled = True
-            'Appearance.AssignColor(EditorSwitchNewButton, "Button")
         Else
             EditorSwitchNewButton.Enabled = False
-            'Appearance.AssignColor(EditorSwitchNewButton, "Button")
         End If
         Appearance.RefreshColors()
     End Sub
@@ -1396,6 +1424,7 @@
         EditorEditDelButtonChange(False)
         ActiveEditWindow = "Characters"
         Tools.PopulateListFromDB(ActiveEditWindow, EditorEditList, "dbToons", "toonID", "toonName")
+        EditorCharPanelLoad()
     End Sub
 
     Private Sub EditorEditDelButtonChange(action As Boolean)
@@ -1532,6 +1561,534 @@
             ResetEditPath()
         End If
     End Sub
+
+    Private Sub EditorEditAddButton_Click(sender As Object, e As EventArgs) Handles EditorEditAddButton.Click
+        StartButton.Enabled = False
+        LoadButton.Enabled = False
+        EditButton.Enabled = False
+        OptionsButton.Enabled = False
+        UpdateButton.Enabled = False
+        DonateButton.Enabled = False
+        AboutButton.Enabled = False
+        EditorEditAddButton.Enabled = False
+        EditorEditBackButton.Enabled = False
+        Select Case (ActiveEditWindow)
+            Case "Characters"
+                EditorEditList.Enabled = False
+                EditorEditList.ClearSelected()
+                EditorCharPanelNew()
+        End Select
+    End Sub
+
+    'Character Editor Section
+    Private Sub EditorCharPanelClearFields()
+        EditorCharNameBox.Text = ""
+        EditorCharAgeBox.Text = ""
+        EditorCharLevelBox.Text = ""
+        EditorCharForceBox.Text = ""
+        EditorCharBioBox.Text = ""
+        EditorCharWebBox.Text = ""
+        EditorCharAvatarBox.Text = ""
+        EditorCharThemeBox.Text = ""
+        EditorCharImageBox.Text = ""
+        EditorCharMusicBox.Text = ""
+        EditorCharAliasCheck.Checked = CheckState.Unchecked
+        EditorCharForceCheck.Checked = CheckState.Unchecked
+        EditorCharAvatarCheck.Checked = CheckState.Unchecked
+        EditorCharThemeCheck.Checked = CheckState.Unchecked
+        EditorCharAliasList.Items.Clear()
+        EditorCharLangCList.Items.Clear()
+        EditorCharAblList.Items.Clear()
+        EditorCharEffList.Items.Clear()
+        EditorCharEffInvList.Items.Clear()
+        EditorCharTypeDrop.Items.Clear()
+        EditorCharRaceDrop.Items.Clear()
+        EditorCharClassDrop.Items.Clear()
+        EditorCharDestinyDrop.Items.Clear()
+        EditorCharAlignDrop.Items.Clear()
+        EditorCharGenderDrop.Items.Clear()
+        EditorCharVerseDrop.Items.Clear()
+        EditorCharForceDrop.Items.Clear()
+        EditorCharQAddNewBox.Text = ""
+        EditorCharQAddLikeDrop.Items.Clear()
+        EditorCharInvList.Items.Clear()
+        EditorCharInvNameText.Text = ""
+        EditorCharInvClassText.Text = ""
+        EditorCharInvTypeText.Text = ""
+        EditorCharInvResList.Items.Clear()
+        EditorCharInvAblList.Items.Clear()
+        EditorCharInvEffList.Items.Clear()
+        EditorCharInvElemText.Text = ""
+        EditorCharInvQtyText.Text = ""
+        EditorCharInvHeldList.Items.Clear()
+        EditorCharInvWearList.Items.Clear()
+        EditorCharInvCharmList.Items.Clear()
+        EditorCharInvItemList.Items.Clear()
+    End Sub
+
+    Private Sub EditorCharPanelActivate(action As Boolean)
+        EditorCharEffInvText.Enabled = action
+        EditorCharDebugText.Enabled = action
+        EditorCharNameBox.Enabled = action
+        EditorCharAgeBox.Enabled = action
+        EditorCharLevelBox.Enabled = action
+        EditorCharForceBox.Enabled = action
+        EditorCharBioBox.Enabled = action
+        EditorCharWebBox.Enabled = action
+        EditorCharAvatarBox.Enabled = action
+        EditorCharThemeBox.Enabled = action
+        EditorCharImageBox.Enabled = action
+        EditorCharMusicBox.Enabled = action
+        EditorCharAliasCheck.Enabled = action
+        EditorCharForceCheck.Enabled = action
+        EditorCharAvatarCheck.Enabled = action
+        EditorCharThemeCheck.Enabled = action
+        EditorCharAliasList.Enabled = action
+        EditorCharLangCList.Enabled = action
+        EditorCharAblList.Enabled = action
+        EditorCharEffList.Enabled = action
+        EditorCharEffInvList.Enabled = action
+        EditorCharTypeDrop.Enabled = action
+        EditorCharRaceDrop.Enabled = action
+        EditorCharClassDrop.Enabled = action
+        EditorCharAlignDrop.Enabled = action
+        EditorCharDestinyDrop.Enabled = action
+        EditorCharGenderDrop.Enabled = action
+        EditorCharVerseDrop.Enabled = action
+        EditorCharForceDrop.Enabled = action
+        EditorCharTypeHelp.Enabled = action
+        EditorCharRaceHelp.Enabled = action
+        EditorCharClassHelp.Enabled = action
+        EditorCharAlignHelp.Enabled = action
+        EditorCharGenderHelp.Enabled = action
+        EditorCharAgeHelp.Enabled = action
+        EditorCharLevelHelp.Enabled = action
+        EditorCharDestinyHelp.Enabled = action
+        EditorCharVerseHelp.Enabled = action
+        EditorCharAliasHelp.Enabled = action
+        EditorCharLangHelp.Enabled = action
+        EditorCharForceHelp.Enabled = action
+        EditorCharForceHelp2.Enabled = action
+        EditorCharWebHelp.Enabled = action
+        EditorCharAblHelp.Enabled = action
+        EditorCharEffHelp.Enabled = action
+        EditorCharEffInvHelp.Enabled = action
+        EditorCharEffInvHelp2.Enabled = action
+        EditorCharAvatarHelp.Enabled = action
+        EditorCharRaceQAdd.Enabled = action
+        EditorCharClassQAdd.Enabled = action
+        EditorCharDestinyQAdd.Enabled = action
+        EditorCharVerseQAdd.Enabled = action
+        EditorCharAliasNewB.Enabled = action
+        EditorCharAliasAddB.Enabled = action
+        EditorCharAliasRemB.Enabled = action
+        EditorCharLangQAdd.Enabled = action
+        EditorCharAblQAdd.Enabled = action
+        EditorCharAblAddB.Enabled = action
+        EditorCharAblRemB.Enabled = action
+        EditorCharEffQAdd.Enabled = action
+        EditorCharEffAddB.Enabled = action
+        EditorCharAvatarButton.Enabled = action
+        EditorCharEffRemB.Enabled = action
+        EditorCharEffInvButton.Enabled = action
+        EditorCharMusicPlay.Enabled = action
+        EditorCharMusicStop.Enabled = action
+        EditorCharThemeButton.Enabled = action
+        EditorCharSaveButton.Enabled = action
+        EditorCharCancelButton.Enabled = action
+        EditorCharQAddPanel.Visible = False
+        EditorCharQAddName.Visible = False
+        EditorCharQAddNewText.Visible = False
+        EditorCharQAddNewBox.Visible = False
+        EditorCharQAddLikeText.Visible = False
+        EditorCharQAddLikeDrop.Visible = False
+        EditorCharQAddButton.Visible = False
+        EditorCharQAddCancel.Visible = False
+        EditorCharQAddHelp.Visible = False
+        EditorCharQAddRemindText.Visible = False
+        EditorCharQAddPanel.Enabled = False
+        EditorCharQAddName.Enabled = False
+        EditorCharQAddNewText.Enabled = False
+        EditorCharQAddNewBox.Enabled = False
+        EditorCharQAddLikeText.Enabled = False
+        EditorCharQAddLikeDrop.Enabled = False
+        EditorCharQAddButton.Enabled = False
+        EditorCharQAddCancel.Enabled = False
+        EditorCharQAddHelp.Enabled = False
+        EditorCharQAddRemindText.Enabled = False
+        EditorCharInvPanel.Visible = False
+        EditorCharInvText.Visible = False
+        EditorCharInvHelp.Visible = False
+        EditorCharInvList.Visible = False
+        EditorCharInvAddButton.Visible = False
+        EditorCharInvEquipButton.Visible = False
+        EditorCharInvNameText.Visible = False
+        EditorCharInvClassText.Visible = False
+        EditorCharInvTypeText.Visible = False
+        EditorCharInvResList.Visible = False
+        EditorCharInvAblList.Visible = False
+        EditorCharInvEffList.Visible = False
+        EditorCharInvElemText.Visible = False
+        EditorCharInvQtyText.Visible = False
+        EditorCharInvHeldText.Visible = False
+        EditorCharInvHeldList.Visible = False
+        EditorCharInvWearText.Visible = False
+        EditorCharInvWearList.Visible = False
+        EditorCharInvCharmText.Visible = False
+        EditorCharInvCharmList.Visible = False
+        EditorCharInvItemText.Visible = False
+        EditorCharInvItemList.Visible = False
+        EditorCharInvDoneButton.Visible = False
+        EditorCharInvUnequipButton.Visible = False
+        EditorCharInvRemoveButton.Visible = False
+        EditorCharInvSwitchButton.Visible = False
+        EditorCharInvPanel.Enabled = False
+        EditorCharInvText.Enabled = False
+        EditorCharInvHelp.Enabled = False
+        EditorCharInvList.Enabled = False
+        EditorCharInvAddButton.Enabled = False
+        EditorCharInvEquipButton.Enabled = False
+        EditorCharInvNameText.Enabled = False
+        EditorCharInvClassText.Enabled = False
+        EditorCharInvTypeText.Enabled = False
+        EditorCharInvResList.Enabled = False
+        EditorCharInvAblList.Enabled = False
+        EditorCharInvEffList.Enabled = False
+        EditorCharInvElemText.Enabled = False
+        EditorCharInvQtyText.Enabled = False
+        EditorCharInvHeldText.Enabled = False
+        EditorCharInvHeldList.Enabled = False
+        EditorCharInvWearText.Enabled = False
+        EditorCharInvWearList.Enabled = False
+        EditorCharInvCharmText.Enabled = False
+        EditorCharInvCharmList.Enabled = False
+        EditorCharInvItemText.Enabled = False
+        EditorCharInvItemList.Enabled = False
+        EditorCharInvDoneButton.Enabled = False
+        EditorCharInvUnequipButton.Enabled = False
+        EditorCharInvRemoveButton.Enabled = False
+        EditorCharInvSwitchButton.Enabled = False
+        Appearance.RefreshColors()
+    End Sub
+
+    Private Sub EditorCharQAddPanelActivate(action As Boolean)
+        Dim Reaction As Boolean
+        If action = True Then Reaction = False Else Reaction = True
+        EditorCharDebugText.Enabled = Reaction
+        EditorCharNameBox.Enabled = Reaction
+        EditorCharAgeBox.Enabled = Reaction
+        EditorCharLevelBox.Enabled = Reaction
+        EditorCharForceBox.Enabled = Reaction
+        EditorCharBioBox.Enabled = Reaction
+        EditorCharWebBox.Enabled = Reaction
+        EditorCharAvatarBox.Enabled = Reaction
+        EditorCharThemeBox.Enabled = Reaction
+        EditorCharImageBox.Enabled = Reaction
+        EditorCharMusicBox.Enabled = Reaction
+        EditorCharAliasCheck.Enabled = Reaction
+        EditorCharForceCheck.Enabled = Reaction
+        EditorCharAvatarCheck.Enabled = Reaction
+        EditorCharThemeCheck.Enabled = Reaction
+        EditorCharAliasList.Enabled = Reaction
+        EditorCharLangCList.Enabled = Reaction
+        EditorCharAblList.Enabled = Reaction
+        EditorCharEffList.Enabled = Reaction
+        EditorCharEffInvList.Enabled = Reaction
+        EditorCharTypeDrop.Enabled = Reaction
+        EditorCharRaceDrop.Enabled = Reaction
+        EditorCharClassDrop.Enabled = Reaction
+        EditorCharDestinyDrop.Enabled = Reaction
+        EditorCharAlignDrop.Enabled = Reaction
+        EditorCharGenderDrop.Enabled = Reaction
+        EditorCharVerseDrop.Enabled = Reaction
+        EditorCharForceDrop.Enabled = Reaction
+        EditorCharTypeHelp.Enabled = Reaction
+        EditorCharRaceHelp.Enabled = Reaction
+        EditorCharClassHelp.Enabled = Reaction
+        EditorCharAlignHelp.Enabled = Reaction
+        EditorCharGenderHelp.Enabled = Reaction
+        EditorCharAgeHelp.Enabled = Reaction
+        EditorCharLevelHelp.Enabled = Reaction
+        EditorCharDestinyHelp.Enabled = Reaction
+        EditorCharVerseHelp.Enabled = Reaction
+        EditorCharAliasHelp.Enabled = Reaction
+        EditorCharLangHelp.Enabled = Reaction
+        EditorCharForceHelp.Enabled = Reaction
+        EditorCharForceHelp2.Enabled = Reaction
+        EditorCharWebHelp.Enabled = Reaction
+        EditorCharAblHelp.Enabled = Reaction
+        EditorCharEffHelp.Enabled = Reaction
+        EditorCharEffInvHelp.Enabled = Reaction
+        EditorCharEffInvHelp2.Enabled = Reaction
+        EditorCharAvatarHelp.Enabled = Reaction
+        EditorCharRaceQAdd.Enabled = Reaction
+        EditorCharClassQAdd.Enabled = Reaction
+        EditorCharDestinyQAdd.Enabled = Reaction
+        EditorCharVerseQAdd.Enabled = Reaction
+        EditorCharAliasNewB.Enabled = Reaction
+        EditorCharAliasAddB.Enabled = Reaction
+        EditorCharAliasRemB.Enabled = Reaction
+        EditorCharLangQAdd.Enabled = Reaction
+        EditorCharAblQAdd.Enabled = Reaction
+        EditorCharAblAddB.Enabled = Reaction
+        EditorCharAblRemB.Enabled = Reaction
+        EditorCharEffQAdd.Enabled = Reaction
+        EditorCharEffAddB.Enabled = Reaction
+        EditorCharAvatarButton.Enabled = Reaction
+        EditorCharEffRemB.Enabled = Reaction
+        EditorCharEffInvButton.Enabled = Reaction
+        EditorCharMusicPlay.Enabled = Reaction
+        EditorCharMusicStop.Enabled = Reaction
+        EditorCharThemeButton.Enabled = Reaction
+        EditorCharSaveButton.Enabled = Reaction
+        EditorCharCancelButton.Enabled = Reaction
+        EditorCharQAddPanel.Visible = action
+        EditorCharQAddName.Visible = action
+        EditorCharQAddNewText.Visible = action
+        EditorCharQAddNewBox.Visible = action
+        EditorCharQAddLikeText.Visible = action
+        EditorCharQAddLikeDrop.Visible = action
+        EditorCharQAddButton.Visible = action
+        EditorCharQAddCancel.Visible = action
+        EditorCharQAddHelp.Visible = action
+        EditorCharQAddRemindText.Visible = action
+        EditorCharQAddPanel.Enabled = action
+        EditorCharQAddName.Enabled = action
+        EditorCharQAddNewText.Enabled = action
+        EditorCharQAddNewBox.Enabled = action
+        EditorCharQAddLikeText.Enabled = action
+        EditorCharQAddLikeDrop.Enabled = action
+        EditorCharQAddButton.Enabled = action
+        EditorCharQAddCancel.Enabled = action
+        EditorCharQAddHelp.Enabled = action
+        EditorCharQAddRemindText.Enabled = action
+        EditorCharInvPanel.Visible = False
+        EditorCharInvText.Visible = False
+        EditorCharInvHelp.Visible = False
+        EditorCharInvList.Visible = False
+        EditorCharInvAddButton.Visible = False
+        EditorCharInvEquipButton.Visible = False
+        EditorCharInvNameText.Visible = False
+        EditorCharInvClassText.Visible = False
+        EditorCharInvTypeText.Visible = False
+        EditorCharInvResList.Visible = False
+        EditorCharInvAblList.Visible = False
+        EditorCharInvEffList.Visible = False
+        EditorCharInvElemText.Visible = False
+        EditorCharInvQtyText.Visible = False
+        EditorCharInvHeldText.Visible = False
+        EditorCharInvHeldList.Visible = False
+        EditorCharInvWearText.Visible = False
+        EditorCharInvWearList.Visible = False
+        EditorCharInvCharmText.Visible = False
+        EditorCharInvCharmList.Visible = False
+        EditorCharInvItemText.Visible = False
+        EditorCharInvItemList.Visible = False
+        EditorCharInvDoneButton.Visible = False
+        EditorCharInvUnequipButton.Visible = False
+        EditorCharInvRemoveButton.Visible = False
+        EditorCharInvSwitchButton.Visible = False
+        EditorCharInvPanel.Enabled = False
+        EditorCharInvText.Enabled = False
+        EditorCharInvHelp.Enabled = False
+        EditorCharInvList.Enabled = False
+        EditorCharInvAddButton.Enabled = False
+        EditorCharInvEquipButton.Enabled = False
+        EditorCharInvNameText.Enabled = False
+        EditorCharInvClassText.Enabled = False
+        EditorCharInvTypeText.Enabled = False
+        EditorCharInvResList.Enabled = False
+        EditorCharInvAblList.Enabled = False
+        EditorCharInvEffList.Enabled = False
+        EditorCharInvElemText.Enabled = False
+        EditorCharInvQtyText.Enabled = False
+        EditorCharInvHeldText.Enabled = False
+        EditorCharInvHeldList.Enabled = False
+        EditorCharInvWearText.Enabled = False
+        EditorCharInvWearList.Enabled = False
+        EditorCharInvCharmText.Enabled = False
+        EditorCharInvCharmList.Enabled = False
+        EditorCharInvItemText.Enabled = False
+        EditorCharInvItemList.Enabled = False
+        EditorCharInvDoneButton.Enabled = False
+        EditorCharInvUnequipButton.Enabled = False
+        EditorCharInvRemoveButton.Enabled = False
+        EditorCharInvSwitchButton.Enabled = False
+        Appearance.RefreshColors()
+    End Sub
+
+    Private Sub EditorCharInvPanelActivate(action As Boolean)
+        Dim Reaction As Boolean
+        If action = True Then Reaction = False Else Reaction = True
+        EditorCharDebugText.Enabled = Reaction
+        EditorCharNameBox.Enabled = Reaction
+        EditorCharAgeBox.Enabled = Reaction
+        EditorCharLevelBox.Enabled = Reaction
+        EditorCharForceBox.Enabled = Reaction
+        EditorCharBioBox.Enabled = Reaction
+        EditorCharWebBox.Enabled = Reaction
+        EditorCharAvatarBox.Enabled = Reaction
+        EditorCharThemeBox.Enabled = Reaction
+        EditorCharImageBox.Enabled = Reaction
+        EditorCharMusicBox.Enabled = Reaction
+        EditorCharAliasCheck.Enabled = Reaction
+        EditorCharForceCheck.Enabled = Reaction
+        EditorCharAvatarCheck.Enabled = Reaction
+        EditorCharThemeCheck.Enabled = Reaction
+        EditorCharAliasList.Enabled = Reaction
+        EditorCharLangCList.Enabled = Reaction
+        EditorCharAblList.Enabled = Reaction
+        EditorCharEffList.Enabled = Reaction
+        EditorCharEffInvList.Enabled = Reaction
+        EditorCharTypeDrop.Enabled = Reaction
+        EditorCharRaceDrop.Enabled = Reaction
+        EditorCharDestinyDrop.Enabled = Reaction
+        EditorCharClassDrop.Enabled = Reaction
+        EditorCharAlignDrop.Enabled = Reaction
+        EditorCharGenderDrop.Enabled = Reaction
+        EditorCharVerseDrop.Enabled = Reaction
+        EditorCharForceDrop.Enabled = Reaction
+        EditorCharTypeHelp.Enabled = Reaction
+        EditorCharRaceHelp.Enabled = Reaction
+        EditorCharClassHelp.Enabled = Reaction
+        EditorCharAlignHelp.Enabled = Reaction
+        EditorCharGenderHelp.Enabled = Reaction
+        EditorCharAgeHelp.Enabled = Reaction
+        EditorCharLevelHelp.Enabled = Reaction
+        EditorCharDestinyHelp.Enabled = Reaction
+        EditorCharVerseHelp.Enabled = Reaction
+        EditorCharAliasHelp.Enabled = Reaction
+        EditorCharLangHelp.Enabled = Reaction
+        EditorCharForceHelp.Enabled = Reaction
+        EditorCharForceHelp2.Enabled = Reaction
+        EditorCharWebHelp.Enabled = Reaction
+        EditorCharAblHelp.Enabled = Reaction
+        EditorCharEffHelp.Enabled = Reaction
+        EditorCharEffInvHelp.Enabled = Reaction
+        EditorCharEffInvHelp2.Enabled = Reaction
+        EditorCharAvatarHelp.Enabled = Reaction
+        EditorCharRaceQAdd.Enabled = Reaction
+        EditorCharClassQAdd.Enabled = Reaction
+        EditorCharDestinyQAdd.Enabled = Reaction
+        EditorCharVerseQAdd.Enabled = Reaction
+        EditorCharAliasNewB.Enabled = Reaction
+        EditorCharAliasAddB.Enabled = Reaction
+        EditorCharAliasRemB.Enabled = Reaction
+        EditorCharLangQAdd.Enabled = Reaction
+        EditorCharAblQAdd.Enabled = Reaction
+        EditorCharAblAddB.Enabled = Reaction
+        EditorCharAblRemB.Enabled = Reaction
+        EditorCharEffQAdd.Enabled = Reaction
+        EditorCharEffAddB.Enabled = Reaction
+        EditorCharAvatarButton.Enabled = Reaction
+        EditorCharEffRemB.Enabled = Reaction
+        EditorCharEffInvButton.Enabled = Reaction
+        EditorCharMusicPlay.Enabled = Reaction
+        EditorCharMusicStop.Enabled = Reaction
+        EditorCharThemeButton.Enabled = Reaction
+        EditorCharSaveButton.Enabled = Reaction
+        EditorCharCancelButton.Enabled = Reaction
+        EditorCharQAddPanel.Visible = False
+        EditorCharQAddName.Visible = False
+        EditorCharQAddNewText.Visible = False
+        EditorCharQAddNewBox.Visible = False
+        EditorCharQAddLikeText.Visible = False
+        EditorCharQAddLikeDrop.Visible = False
+        EditorCharQAddButton.Visible = False
+        EditorCharQAddCancel.Visible = False
+        EditorCharQAddHelp.Visible = False
+        EditorCharQAddRemindText.Visible = False
+        EditorCharQAddPanel.Enabled = False
+        EditorCharQAddName.Enabled = False
+        EditorCharQAddNewText.Enabled = False
+        EditorCharQAddNewBox.Enabled = False
+        EditorCharQAddLikeText.Enabled = False
+        EditorCharQAddLikeDrop.Enabled = False
+        EditorCharQAddButton.Enabled = False
+        EditorCharQAddCancel.Enabled = False
+        EditorCharQAddHelp.Enabled = False
+        EditorCharQAddRemindText.Enabled = False
+        EditorCharInvPanel.Visible = action
+        EditorCharInvText.Visible = action
+        EditorCharInvHelp.Visible = action
+        EditorCharInvList.Visible = action
+        EditorCharInvAddButton.Visible = action
+        EditorCharInvEquipButton.Visible = action
+        EditorCharInvNameText.Visible = action
+        EditorCharInvClassText.Visible = action
+        EditorCharInvTypeText.Visible = action
+        EditorCharInvResList.Visible = action
+        EditorCharInvAblList.Visible = action
+        EditorCharInvEffList.Visible = action
+        EditorCharInvElemText.Visible = action
+        EditorCharInvQtyText.Visible = action
+        EditorCharInvHeldText.Visible = action
+        EditorCharInvHeldList.Visible = action
+        EditorCharInvWearText.Visible = action
+        EditorCharInvWearList.Visible = action
+        EditorCharInvCharmText.Visible = action
+        EditorCharInvCharmList.Visible = action
+        EditorCharInvItemText.Visible = action
+        EditorCharInvItemList.Visible = action
+        EditorCharInvDoneButton.Visible = action
+        EditorCharInvUnequipButton.Visible = action
+        EditorCharInvRemoveButton.Visible = action
+        EditorCharInvSwitchButton.Visible = action
+        EditorCharInvPanel.Enabled = action
+        EditorCharInvText.Enabled = action
+        EditorCharInvHelp.Enabled = action
+        EditorCharInvList.Enabled = action
+        EditorCharInvAddButton.Enabled = action
+        EditorCharInvEquipButton.Enabled = action
+        EditorCharInvNameText.Enabled = action
+        EditorCharInvClassText.Enabled = action
+        EditorCharInvTypeText.Enabled = action
+        EditorCharInvResList.Enabled = action
+        EditorCharInvAblList.Enabled = action
+        EditorCharInvEffList.Enabled = action
+        EditorCharInvElemText.Enabled = action
+        EditorCharInvQtyText.Enabled = action
+        EditorCharInvHeldText.Enabled = action
+        EditorCharInvHeldList.Enabled = action
+        EditorCharInvWearText.Enabled = action
+        EditorCharInvWearList.Enabled = action
+        EditorCharInvCharmText.Enabled = action
+        EditorCharInvCharmList.Enabled = action
+        EditorCharInvItemText.Enabled = action
+        EditorCharInvItemList.Enabled = action
+        EditorCharInvDoneButton.Enabled = action
+        EditorCharInvUnequipButton.Enabled = action
+        EditorCharInvRemoveButton.Enabled = action
+        EditorCharInvSwitchButton.Enabled = action
+        Appearance.RefreshColors()
+    End Sub
+    Private Sub EditorCharPanelLoad()
+        EditorEditCharPanel.Visible = True
+        EditorCharPanelActivate(False)
+        EditorCharPanelClearFields()
+    End Sub
+
+    Private Sub EditorCharPanelNew()
+        EditorEditCharPanel.Visible = True
+        EditorCharPanelActivate(True)
+        EditorCharPanelClearFields()
+        EditorCharNewPop()
+    End Sub
+
+    Private Sub EditorCharNewPop()
+        Tools.PopulateDropFromDB("Existences", EditorCharTypeDrop, "dbExistence", "existID", "existName")
+        Tools.PopulateDropFromDB("Races", EditorCharRaceDrop, "dbRace", "raceID", "raceName")
+        Tools.PopulateDropFromDB("Classes", EditorCharClassDrop, "dbClass", "classID", "className")
+        Tools.PopulateDropFromDB("Alignments", EditorCharAlignDrop, "dbAlign", "alignID", "alignName")
+        Tools.PopulateDropFromDB("Genders", EditorCharGenderDrop, "dbGender", "genderID", "genderName")
+        Tools.PopulateDropFromDB("Destinies", EditorCharDestinyDrop, "dbDestiny", "destinyID", "destinyName")
+        Tools.PopulateDropFromDB("Universes", EditorCharVerseDrop, "dbVerse", "verseID", "verseName")
+        Tools.PopulateCListFromDB("Languages", EditorCharLangCList, "dbLang", "langID", "langName")
+        Tools.PopulateDropWithCustom("Relics", EditorCharForceDrop, {"dbItems.itemID.itemName.itemMax = '1'."})
+    End Sub
+
+
+
 
     'Start Game Section
 
