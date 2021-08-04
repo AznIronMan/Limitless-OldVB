@@ -12,7 +12,6 @@
             UpdateChanges("Your Game Is Current!", MemoryBank.DonateForeColor, False, "No Update Available")
         End If
     End Sub
-
     Private Shared Sub UpdateChanges(text As String, color As Color, enable As Boolean, buttontext As String)
         MainWindow.UpdateSubText.Text = text
         MainWindow.UpdateSubText.ForeColor = color
@@ -20,14 +19,14 @@
         MainWindow.UpdateInstallButton.Text = buttontext
         Appearance.RefreshColors()
     End Sub
-
     Public Shared Sub InstallUpdate()
-        Dim pHelp As New ProcessStartInfo
-        pHelp.FileName = ".\" & MemoryBank.UpdaterName & ".exe"
-        pHelp.Arguments = "-Path " & Application.ProductName & " -Dir " &
-            (System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase)).Substring(6)
-        pHelp.UseShellExecute = True
-        pHelp.WindowStyle = ProcessWindowStyle.Normal
+        Dim pHelp As New ProcessStartInfo With {
+            .FileName = ".\" & MemoryBank.UpdaterName & MemoryBank.FileExtL,
+            .Arguments = "-Path " & Application.ProductName & " -Dir " &
+            (System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase)).Substring(6),
+            .UseShellExecute = True,
+            .WindowStyle = ProcessWindowStyle.Normal
+        }
         Dim proc As Process = Process.Start(pHelp)
     End Sub
 

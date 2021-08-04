@@ -1,7 +1,4 @@
 ﻿Module Appearance
-
-    Dim AppearanceMode As String = "Dark"
-
     Private Sub DarkModeColors()
         MemoryBank.TitleBarBackColor = Color.DarkBlue
         MemoryBank.TitleBarForeColor = Color.WhiteSmoke
@@ -50,7 +47,6 @@
         MemoryBank.GroupBackColor = SystemColors.Control
         MemoryBank.GroupForeColor = SystemColors.ControlText
     End Sub
-
     Public Sub AssignMode(mode As String)
         If mode.ToLower = "ugly" Then
             LiteModeColors()
@@ -297,11 +293,9 @@
         AssignColor(MainWindow.EditorCharInvRemoveButton, "Button")
         AssignColor(MainWindow.EditorCharInvSwitchButton, "Button")
     End Sub
-
     Public Sub SetButtonStyle(button As Button)
         button.FlatAppearance.MouseDownBackColor = MemoryBank.ButtonMouseDownBack
     End Sub
-
     Public Sub AssignColor(obj As Control, type As String)
         Select Case type
             Case "TitleBar"
@@ -353,7 +347,6 @@
                 obj.ForeColor = MemoryBank.PagesForeColor
         End Select
     End Sub
-
     Public Sub RefreshColors()
         If Settings.SettingsMode = "Lite" Then
             Appearance.AssignMode("Ugly")
@@ -361,6 +354,5 @@
             Appearance.AssignMode("Default")
         End If
     End Sub
-
 
 End Module

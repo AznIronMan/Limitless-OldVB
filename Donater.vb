@@ -1,8 +1,5 @@
 ﻿Public Class Donater
 
-    Public Shared PT As String = "https://www.patreon.com/clarktribegames"
-    Public Shared PP As String = "https://www.paypal.com/paypalme/aznblusuazn"
-
     Public Shared Sub TheDonater(type As String, buttonname As String)
         Select Case type
             Case "Message"
@@ -11,7 +8,6 @@
                 DonateClick(buttonname)
         End Select
     End Sub
-
     Private Shared Sub DonateMessage()
         Dim DonateMessage As String = "Welcome to Limitless!" & vbCrLf & vbCrLf &
             "This title is still under development.  Please be patient." & vbCrLf & vbCrLf &
@@ -20,13 +16,12 @@
             "- Geoff Clark @ ClarkTribeGames LLC"
         Tools.TypeWriter(MainWindow.DonateText, 15, DonateMessage)
     End Sub
-
     Private Shared Sub DonateClick(buttonname As String)
         Select Case (buttonname)
             Case "donateptbutton"
-                Tools.GoToWeb(Donater.PT)
+                Tools.GoToWeb(MemoryBank.PT)
             Case "donateppbutton"
-                Tools.GoToWeb(Donater.PP)
+                Tools.GoToWeb(MemoryBank.PP)
         End Select
     End Sub
 

@@ -1,25 +1,20 @@
-﻿Imports System.IO
-Imports NAudio.Wave
+﻿Module Jukebox
 
-Module Jukebox
-
-    Dim ActiveSong As BlockAlignReductionStream = Nothing
+    Dim ActiveSong As NAudio.Wave.BlockAlignReductionStream = Nothing
     Dim SongOutput As New NAudio.Wave.WaveOut
     Public SongPlaying As Boolean = False
-    Dim SongLoaded As Boolean = False
-    Dim SongPosition As Long = 0
     Public IntroInPlay As Boolean = False
-
+    Dim SongLoaded As Boolean = False
     Public Function NewSong(mp3file As Byte()) As Boolean
         If SongPlaying Then
             StopSong()
         End If
         If mp3file IsNot Nothing Then
-            Dim Songfile As MemoryStream = New MemoryStream(mp3file)
-            Dim pcm As WaveStream = WaveFormatConversionStream.CreatePcmStream(New Mp3FileReader(Songfile))
-            ActiveSong = New BlockAlignReductionStream(pcm)
-            SongOutput = New WaveOut
-            Dim [loop] As LoopStream = New LoopStream(ActiveSong)
+            Dim Songfile As New System.IO.MemoryStream(mp3file)
+            Dim pcm As NAudio.Wave.WaveStream = NAudio.Wave.WaveFormatConversionStream.CreatePcmStream(New NAudio.Wave.Mp3FileReader(Songfile))
+            ActiveSong = New NAudio.Wave.BlockAlignReductionStream(pcm)
+            SongOutput = New NAudio.Wave.WaveOut
+            Dim [loop] As New LoopStream(ActiveSong)
             SongOutput.Init([loop])
             NewSong = True
         Else
@@ -27,28 +22,22 @@ Module Jukebox
             ActiveSong = Nothing
             SongPlaying = False
         End If
-
     End Function
-
     Public Sub PlayMp3(mp3file As String)
         PlaySong(NewSong(FileToStreamSong(mp3file)))
     End Sub
-
     Public Function FileToStreamSong(mp3file As String) As Byte()
         FileToStreamSong = System.IO.File.ReadAllBytes(mp3file)
     End Function
-
     Public Sub PlaySong(isitloaded As Boolean)
         SongLoaded = isitloaded
         If SongLoaded Then
             SongOutput.Play()
             SongPlaying = True
         End If
-
     End Sub
-
     Public Sub StopSong()
-        If SongOutput.PlaybackState = PlaybackState.Playing Or SongOutput.PlaybackState = PlaybackState.Paused Then
+        If SongOutput.PlaybackState = NAudio.Wave.PlaybackState.Playing Or SongOutput.PlaybackState = NAudio.Wave.PlaybackState.Paused Then
             SongOutput.Stop()
             SongOutput.Dispose()
         End If
@@ -58,7 +47,6 @@ Module Jukebox
         SongOutput.Stop()
         SongOutput.Dispose()
     End Sub
-
     Public Sub ReturnToIntro(stopbutton As Button, playbutton As Button, optionslist As ListBox, activebox As CheckBox,
         editbutton As Button, message As Label, colorgroup As GroupBox, musicgroup As GroupBox, managegroup As GroupBox,
         importbutton As Button, deletebutton As Button)
@@ -78,7 +66,6 @@ Module Jukebox
             SwitchToIntro()
         End If
     End Sub
-
     Public Sub SwitchToIntro()
         If IntroInPlay = False Then
             StopSong()
@@ -98,28 +85,23 @@ End Module
 
 Public Class LoopStream
 
-    Inherits WaveStream
-    Dim SourceStream As WaveStream
-
-    Public Sub New(ByVal sourceStream As WaveStream)
+    Inherits NAudio.Wave.WaveStream
+    ReadOnly SourceStream As NAudio.Wave.WaveStream
+    Public Sub New(ByVal sourceStream As NAudio.Wave.WaveStream)
         Me.SourceStream = sourceStream
         Me.EnableLooping = True
     End Sub
-
     Public Property EnableLooping As Boolean
-
-    Public Overrides ReadOnly Property WaveFormat As WaveFormat
+    Public Overrides ReadOnly Property WaveFormat As NAudio.Wave.WaveFormat
         Get
             Return SourceStream.WaveFormat
         End Get
     End Property
-
     Public Overrides ReadOnly Property Length As Long
         Get
             Return SourceStream.Length
         End Get
     End Property
-
     Public Overrides Property Position As Long
         Get
             Return SourceStream.Position
@@ -128,7 +110,6 @@ Public Class LoopStream
             SourceStream.Position = value
         End Set
     End Property
-
     Public Overrides Function Read(ByVal buffer As Byte(), ByVal offset As Integer, ByVal count As Integer) As Integer
         Dim totalBytesRead As Integer = 0
         While totalBytesRead < count
@@ -143,4 +124,5 @@ Public Class LoopStream
         End While
         Return totalBytesRead
     End Function
+
 End Class

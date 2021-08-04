@@ -1,10 +1,8 @@
 ﻿Public Class Database
 
-    Public Shared SavePath As String = MemoryBank.DataDir & "\"
-    Public Shared DefaultSave As String = Settings.SettingsDefaultDB
-    Public Shared SaveExt As String = "." & MemoryBank.SavesExt
-
-
+    Shared ReadOnly SavePath As String = MemoryBank.DataDir & "\"
+    Shared DefaultSave As String = Settings.SettingsDefaultDB
+    Shared ReadOnly SaveExt As String = MemoryBank.SavesExtL
     Public Shared Sub CheckForDB(savename As String)
         DefaultSave = Settings.SettingsDefaultDB
         Dim DBExists As Boolean = System.IO.File.Exists(SavePath & savename & SaveExt),
@@ -42,11 +40,9 @@
             End If
         End If
     End Sub
-
     Public Shared Function GetDBName(savename As String) As String
         Return DBTools.GetCol(MemoryBank.DataDir, savename, "dbInfo", "dbName").Split(",")(0)
     End Function
-
     Public Shared Sub CreateEmptyDB(savename As String)
         DBTools.CreateDB(SavePath, savename & SaveExt, "
             CREATE TABLE 'dbInfo' ('dbName' TEXT NOT NULL, 'dbVersion' TEXT NOT NULL);
@@ -132,8 +128,8 @@
             'langDesc' TEXT, 'langLearn' TEXT NOT NULL, 'langEncrypt' TEXT, 'langCode' TEXT);
             CREATE TABLE 'dbExistence' ('existID' TEXT NOT NULL, 'existName' TEXT NOT NULL, 'existDesc' TEXT, 'existBio' TEXT NOT NULL,
             'existUID' TEXT NOT NULL, 'existCode' TEXT);
-            "
-            )
+            ")
+
         'Toon:      UID 0:Prime,1:Generic,2:Split,3:Clone,4:Variant,5:Twin,6:Shapeshifter,7:Alternative
         'Effects:   Type 0:Perm,1:Temp,2:PermInc,3:TempInc,4:Attr // Rate T:Turn,M:Minute,H:Hour,D:Day,Y:Year // Reflect 0:Off,1:On //
         '           Team 1:ChangeTeam,N:NoTeam // Align: +1:IncreaseRank,-1:DecreaseRank,N:for50(Neutral)
@@ -152,8 +148,7 @@
             INSERT INTO 'dbAbl' VALUES ('0','Punch',NULL,'0','Z','AT','Z','Z',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbAbl' VALUES ('1','Kick',NULL,'0','Z','AT','Z','Z',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbAbl' VALUES ('2','Defend',NULL,'1','Z','SA','Z','Z',NULL,NULL,NULL,NULL);
-            "
-            )
+            ")
 
         DBTools.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbAblType' VALUES ('0','Attack',NULL);
@@ -163,9 +158,7 @@
             INSERT INTO 'dbAblType' VALUES ('4','Dark',NULL);
             INSERT INTO 'dbAblType' VALUES ('5','Effect',NULL);
             INSERT INTO 'dbAblType' VALUES ('6','Ninja',NULL);
-            "
-            )
-
+            ")
 
         'dbAge
         DBTools.RunSQL(SavePath, savename & SaveExt, "
@@ -177,8 +170,8 @@
             INSERT INTO 'dbAge' VALUES ('5','Old','>=50% and <80%','Past Prime, Starting to Show Age',NULL);
             INSERT INTO 'dbAge' VALUES ('6','Elder','>=80% and <200','Late Stage of Life, Very Aged',NULL);
             INSERT INTO 'dbAge' VALUES ('7','Ancient','>=85% and >200','Centuries Old',NULL);
-            "
-            )
+            ")
+
         'dbAlign
         DBTools.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbAlign' VALUES ('0','Lawful Good','Always does the right thing no matter what','100',NULL,'4','a Lawful Good',NULL,NULL,NULL,NULL);
@@ -190,8 +183,7 @@
             INSERT INTO 'dbAlign' VALUES ('6','Lawful Evil','The law but does things dark','25',NULL,'2','a Lawful Evil',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbAlign' VALUES ('7','Neutral Evil','Bad in a sense but not all the way dark','13',NULL,'3','a Neutral Evil',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbAlign' VALUES ('8','Chaotic Evil','Chaos makes this one happy','0',NULL,'4','a Chaotic Evil',NULL,NULL,NULL,NULL);
-            "
-            )
+            ")
 
         'dbArenas
         DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbArenas' VALUES ('0','The Arena','0',
@@ -206,8 +198,7 @@
             INSERT INTO 'dbExistence' VALUES ('4', 'Variant', 'An alternate version of the Prime from a different timeline.','is the Variant version of','V',NULL);
             INSERT INTO 'dbExistence' VALUES ('5', 'Twin', 'Considered Prime but born with an exact twin at birth.','is the Twin version of','T',NULL);
             INSERT INTO 'dbExistence' VALUES ('6', 'Shapeshifter', 'Hidden stat (except if player is shifting).  Hides as Prime of a character but is actually a clone.','is the Prime version of','F',NULL);
-            "
-            )
+            ")
 
         'dbDestiny
         DBTools.RunSQL(SavePath, savename & SaveExt, "
@@ -217,8 +208,7 @@
             INSERT INTO 'dbDestiny' VALUES ('3','Chaos','Focuses on causing as much chaos as possible.',NULL);
             INSERT INTO 'dbDestiny' VALUES ('4','Universe Balance','Focuses on gathering Relics to bring balance to the Universe by halving the population of all living beings.',NULL);
             INSERT INTO 'dbDestiny' VALUES ('5','Death','Focuses on no mercy and death to all without basis.',NULL);
-            "
-            )
+            ")
 
         'dbElements
         DBTools.RunSQL(SavePath, savename & SaveExt, "
@@ -232,8 +222,7 @@
             INSERT INTO 'dbElements' VALUES ('7','Holy',NULL,NULL);
             INSERT INTO 'dbElements' VALUES ('8','Dark',NULL,NULL);
             INSERT INTO 'dbElements' VALUES ('9','Venom',NULL,NULL);
-            "
-            )
+            ")
 
         'dbEnviro
         DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbEnviro' VALUES ('0','Normal',NULL,'Everything is Normal.',NULL);")
@@ -250,8 +239,7 @@
             INSERT INTO 'dbGender' VALUES ('1','Female',NULL,NULL,'Female','she',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbGender' VALUES ('2','Transgender',NULL,NULL,'Transgender','it',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbGender' VALUES ('3','Ungendered',NULL,NULL,'Ungendered','it',NULL,NULL,NULL,NULL);
-            "
-            )
+            ")
 
         Dim VersionParts = Strings.Split((System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()), ".", 4)
         Dim VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
@@ -267,8 +255,7 @@
             INSERT INTO 'dbItemClass' VALUES ('2','Charm',NULL);
             INSERT INTO 'dbItemClass' VALUES ('3','Item',NULL);
             INSERT INTO 'dbItemClass' VALUES ('4','Relic',NULL);
-            "
-            )
+            ")
 
         'dbSections
         DBTools.RunSQL(SavePath, savename & SaveExt, "
@@ -285,8 +272,7 @@
             INSERT INTO 'dbSections' VALUES ('10','0','Underground','0x0x3','2x2x3','0','brown','Underground','0',NULL);
             INSERT INTO 'dbSections' VALUES ('11','0','In Space','0x0x0','2x2x0','0','purple','In Space','0',NULL);
             INSERT INTO 'dbSections' VALUES ('12','0','In Hell','0x0x4','2x2x4','0','red','In Hell','0',NULL);
-            "
-            )
+            ")
 
         'dbSize
         DBTools.RunSQL(SavePath, savename & SaveExt, "
@@ -299,8 +285,7 @@
             INSERT INTO 'dbSize' VALUES ('6','Huge','Between 16 feet and 32 feet : Between 2 tons and 16 tons',NULL,'a Huge',NULL,NULL,NULL);
             INSERT INTO 'dbSize' VALUES ('7','Enormous','Between 32 feet and 64 feet : Between 16 tons and 125 tons',NULL,'an Enormous',NULL,NULL,NULL);
             INSERT INTO 'dbSize' VALUES ('8','Ginormous','More than 64 foot : More than 125 tons',NULL,'a Ginormous',NULL,NULL,NULL);
-            "
-            )
+            ")
 
         'dbStatus
         DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbStatus' VALUES ('0','Normal','green','All is good.','is in Normal Health','99','0',NULL);")

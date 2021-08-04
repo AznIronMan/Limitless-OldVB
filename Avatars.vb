@@ -1,8 +1,6 @@
 ﻿Public Class Avatars
-
     Public Shared Sub TitleScreen()
-
-        Dim AvatarCount As Integer = FilesFolders.CountFiles(MemoryBank.AvatarsDir, "*.png")
+        Dim AvatarCount As Integer = FilesFolders.CountFiles(MemoryBank.AvatarsDir, MemoryBank.AvatarsExtF)
         Dim AvatarsNeeded As Integer
         Dim picks As New List(Of Int32)
         Dim pick As Int32
@@ -115,23 +113,21 @@
                 SetAvatar(GetAvatarFile(Files, picks, 10), MainWindow.WelcomeImage10)
                 SetAvatar(GetAvatarFile(Files, picks, 10), MainWindow.WelcomeImage11)
         End Select
-
     End Sub
-
     Public Shared Function GetAvatarFile(files As IO.FileInfo(), picks As List(Of Int32), whichone As Integer) As String
         GetAvatarFile = (From f In files Order By f.LastWriteTime Select f).Skip(picks(whichone)).First().ToString
     End Function
-
     Public Shared Sub SetAvatar(file As String, box As Object)
         box.Visible = True
         box.ImageLocation = (MemoryBank.AvatarsDir & "\" & file)
     End Sub
-
     Public Shared Sub ReleaseAvatarFromBox(pbox As PictureBox)
         Dim tmpImg = pbox.Image
         pbox.Image = Nothing
         tmpImg.Dispose()
+#Disable Warning IDE0059
         tmpImg = Nothing
+#Enable Warning IDE0059
     End Sub
 
 End Class

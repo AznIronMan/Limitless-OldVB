@@ -45,83 +45,6 @@ Partial Class MainWindow
         Me.EditButton = New System.Windows.Forms.Button()
         Me.LoadButton = New System.Windows.Forms.Button()
         Me.StartButton = New System.Windows.Forms.Button()
-        Me.OptionsPanel = New System.Windows.Forms.Panel()
-        Me.CustomLibsGroup = New System.Windows.Forms.GroupBox()
-        Me.CustomLibsOmega = New System.Windows.Forms.Label()
-        Me.CustomLibsSave = New System.Windows.Forms.Button()
-        Me.CustomLibsAuto = New System.Windows.Forms.CheckBox()
-        Me.CustomLibsPath = New System.Windows.Forms.TextBox()
-        Me.CustomLibsEdit = New System.Windows.Forms.Button()
-        Me.CustomLibsActive = New System.Windows.Forms.CheckBox()
-        Me.CustomLibsDelete = New System.Windows.Forms.Button()
-        Me.CustomLibsImport = New System.Windows.Forms.Button()
-        Me.CustomLibsList = New System.Windows.Forms.ListBox()
-        Me.CustomLibsPreviewMusic = New System.Windows.Forms.GroupBox()
-        Me.CustomLibsMusicMsg = New System.Windows.Forms.Label()
-        Me.CustomLibsMusicImage = New System.Windows.Forms.PictureBox()
-        Me.CustomLibsPreviewStop = New System.Windows.Forms.Button()
-        Me.CustomLibsPreviewPlay = New System.Windows.Forms.Button()
-        Me.CustomLibsPreviewAvatar = New System.Windows.Forms.GroupBox()
-        Me.CustomLibsPreviewImage = New System.Windows.Forms.PictureBox()
-        Me.OptionsManageGroup = New System.Windows.Forms.GroupBox()
-        Me.OptionsManageSound = New System.Windows.Forms.Button()
-        Me.OptionsManageMusic = New System.Windows.Forms.Button()
-        Me.OptionsManageAvatars = New System.Windows.Forms.Button()
-        Me.OptionsMusicGroup = New System.Windows.Forms.GroupBox()
-        Me.OptionsAudioTextDefeat = New System.Windows.Forms.Label()
-        Me.OptionsAudioTextVictory = New System.Windows.Forms.Label()
-        Me.OptionsAudioTextBattle = New System.Windows.Forms.Label()
-        Me.OptionsAudioTextIntro = New System.Windows.Forms.Label()
-        Me.OptionsAudioSelectDefeat = New System.Windows.Forms.Button()
-        Me.OptionsAudioSelectVictory = New System.Windows.Forms.Button()
-        Me.OptionsAudioSelectBattle = New System.Windows.Forms.Button()
-        Me.OptionsAudioSelectIntro = New System.Windows.Forms.Button()
-        Me.OptionsAudioCheckSound = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckDefeat = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckVictory = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckBattle = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckIntro = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckCustom = New System.Windows.Forms.CheckBox()
-        Me.OptionsAudioCheckMusic = New System.Windows.Forms.CheckBox()
-        Me.OptionsColorGroup = New System.Windows.Forms.GroupBox()
-        Me.OptionsColorCustom = New System.Windows.Forms.CheckBox()
-        Me.OptionsColorLite = New System.Windows.Forms.CheckBox()
-        Me.OptionsColorDark = New System.Windows.Forms.CheckBox()
-        Me.OptionsHost = New System.Windows.Forms.Label()
-        Me.OptionsTitle = New System.Windows.Forms.Label()
-        Me.AboutPanel = New System.Windows.Forms.Panel()
-        Me.AboutBSButton = New System.Windows.Forms.Button()
-        Me.AboutYTButton = New System.Windows.Forms.Button()
-        Me.AboutDCButton = New System.Windows.Forms.Button()
-        Me.AboutFBButton = New System.Windows.Forms.Button()
-        Me.AboutText = New System.Windows.Forms.TextBox()
-        Me.AboutTitle = New System.Windows.Forms.Label()
-        Me.WelcomePanel = New System.Windows.Forms.Panel()
-        Me.WelcomeImage06 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage10 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage05 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage01 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage02 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage07 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage08 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage09 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage00 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage04 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage11 = New System.Windows.Forms.PictureBox()
-        Me.WelcomeImage03 = New System.Windows.Forms.PictureBox()
-        Me.DonatePanel = New System.Windows.Forms.Panel()
-        Me.DonatePPButton = New System.Windows.Forms.Button()
-        Me.DonatePTButton = New System.Windows.Forms.Button()
-        Me.DonateText = New System.Windows.Forms.TextBox()
-        Me.DonateTitle = New System.Windows.Forms.Label()
-        Me.UpdatePanel = New System.Windows.Forms.Panel()
-        Me.UpdateAvaBox = New System.Windows.Forms.TextBox()
-        Me.UpdateCurBox = New System.Windows.Forms.TextBox()
-        Me.UpdateInstallButton = New System.Windows.Forms.Button()
-        Me.UpdateAvaText = New System.Windows.Forms.Label()
-        Me.UpdateCurText = New System.Windows.Forms.Label()
-        Me.UpdateSubText = New System.Windows.Forms.Label()
-        Me.UpdateTitleText = New System.Windows.Forms.Label()
         Me.EditorPanel = New System.Windows.Forms.Panel()
         Me.EditorDBText = New System.Windows.Forms.Label()
         Me.EditorEditPanel = New System.Windows.Forms.Panel()
@@ -314,6 +237,83 @@ Partial Class MainWindow
         Me.EditorClassButton = New System.Windows.Forms.Button()
         Me.EditorCharButton = New System.Windows.Forms.Button()
         Me.EditorTitleText = New System.Windows.Forms.Label()
+        Me.OptionsPanel = New System.Windows.Forms.Panel()
+        Me.CustomLibsGroup = New System.Windows.Forms.GroupBox()
+        Me.CustomLibsOmega = New System.Windows.Forms.Label()
+        Me.CustomLibsSave = New System.Windows.Forms.Button()
+        Me.CustomLibsAuto = New System.Windows.Forms.CheckBox()
+        Me.CustomLibsPath = New System.Windows.Forms.TextBox()
+        Me.CustomLibsEdit = New System.Windows.Forms.Button()
+        Me.CustomLibsActive = New System.Windows.Forms.CheckBox()
+        Me.CustomLibsDelete = New System.Windows.Forms.Button()
+        Me.CustomLibsImport = New System.Windows.Forms.Button()
+        Me.CustomLibsList = New System.Windows.Forms.ListBox()
+        Me.CustomLibsPreviewMusic = New System.Windows.Forms.GroupBox()
+        Me.CustomLibsMusicMsg = New System.Windows.Forms.Label()
+        Me.CustomLibsMusicImage = New System.Windows.Forms.PictureBox()
+        Me.CustomLibsPreviewStop = New System.Windows.Forms.Button()
+        Me.CustomLibsPreviewPlay = New System.Windows.Forms.Button()
+        Me.CustomLibsPreviewAvatar = New System.Windows.Forms.GroupBox()
+        Me.CustomLibsPreviewImage = New System.Windows.Forms.PictureBox()
+        Me.OptionsManageGroup = New System.Windows.Forms.GroupBox()
+        Me.OptionsManageSound = New System.Windows.Forms.Button()
+        Me.OptionsManageMusic = New System.Windows.Forms.Button()
+        Me.OptionsManageAvatars = New System.Windows.Forms.Button()
+        Me.OptionsMusicGroup = New System.Windows.Forms.GroupBox()
+        Me.OptionsAudioTextDefeat = New System.Windows.Forms.Label()
+        Me.OptionsAudioTextVictory = New System.Windows.Forms.Label()
+        Me.OptionsAudioTextBattle = New System.Windows.Forms.Label()
+        Me.OptionsAudioTextIntro = New System.Windows.Forms.Label()
+        Me.OptionsAudioSelectDefeat = New System.Windows.Forms.Button()
+        Me.OptionsAudioSelectVictory = New System.Windows.Forms.Button()
+        Me.OptionsAudioSelectBattle = New System.Windows.Forms.Button()
+        Me.OptionsAudioSelectIntro = New System.Windows.Forms.Button()
+        Me.OptionsAudioCheckSound = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckDefeat = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckVictory = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckBattle = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckIntro = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckCustom = New System.Windows.Forms.CheckBox()
+        Me.OptionsAudioCheckMusic = New System.Windows.Forms.CheckBox()
+        Me.OptionsColorGroup = New System.Windows.Forms.GroupBox()
+        Me.OptionsColorCustom = New System.Windows.Forms.CheckBox()
+        Me.OptionsColorLite = New System.Windows.Forms.CheckBox()
+        Me.OptionsColorDark = New System.Windows.Forms.CheckBox()
+        Me.OptionsHost = New System.Windows.Forms.Label()
+        Me.OptionsTitle = New System.Windows.Forms.Label()
+        Me.AboutPanel = New System.Windows.Forms.Panel()
+        Me.AboutBSButton = New System.Windows.Forms.Button()
+        Me.AboutYTButton = New System.Windows.Forms.Button()
+        Me.AboutDCButton = New System.Windows.Forms.Button()
+        Me.AboutFBButton = New System.Windows.Forms.Button()
+        Me.AboutText = New System.Windows.Forms.TextBox()
+        Me.AboutTitle = New System.Windows.Forms.Label()
+        Me.WelcomePanel = New System.Windows.Forms.Panel()
+        Me.WelcomeImage06 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage10 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage05 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage01 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage02 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage07 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage08 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage09 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage00 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage04 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage11 = New System.Windows.Forms.PictureBox()
+        Me.WelcomeImage03 = New System.Windows.Forms.PictureBox()
+        Me.DonatePanel = New System.Windows.Forms.Panel()
+        Me.DonatePPButton = New System.Windows.Forms.Button()
+        Me.DonatePTButton = New System.Windows.Forms.Button()
+        Me.DonateText = New System.Windows.Forms.TextBox()
+        Me.DonateTitle = New System.Windows.Forms.Label()
+        Me.UpdatePanel = New System.Windows.Forms.Panel()
+        Me.UpdateAvaBox = New System.Windows.Forms.TextBox()
+        Me.UpdateCurBox = New System.Windows.Forms.TextBox()
+        Me.UpdateInstallButton = New System.Windows.Forms.Button()
+        Me.UpdateAvaText = New System.Windows.Forms.Label()
+        Me.UpdateCurText = New System.Windows.Forms.Label()
+        Me.UpdateSubText = New System.Windows.Forms.Label()
+        Me.UpdateTitleText = New System.Windows.Forms.Label()
         Me.MenuTips = New System.Windows.Forms.ToolTip(Me.components)
         Me.TitleBarPanel.SuspendLayout()
         Me.MinimizeButton.SuspendLayout()
@@ -321,6 +321,27 @@ Partial Class MainWindow
         Me.BackgroundPanel.SuspendLayout()
         Me.MainMenuPanel.SuspendLayout()
         Me.MainMenuBar.SuspendLayout()
+        Me.EditorPanel.SuspendLayout()
+        Me.EditorEditPanel.SuspendLayout()
+        Me.EditorEditCharPanel.SuspendLayout()
+        Me.EditorCharInvPanel.SuspendLayout()
+        Me.EditorCharQAddPanel.SuspendLayout()
+        Me.EditorEditWearsPanel.SuspendLayout()
+        Me.EditorEditTeamsPanel.SuspendLayout()
+        Me.EditorEditStatusPanel.SuspendLayout()
+        Me.EditorEditRelPanel.SuspendLayout()
+        Me.EditorEditVersePanel.SuspendLayout()
+        Me.EditorEditItemsPanel.SuspendLayout()
+        Me.EditorEditHeldsPanel.SuspendLayout()
+        Me.EditorEditEffectsPanel.SuspendLayout()
+        Me.EditorEditDestinyPanel.SuspendLayout()
+        Me.EditorEditClassPanel.SuspendLayout()
+        Me.EditorEditCharmsPanel.SuspendLayout()
+        Me.EditorEditArenaPanel.SuspendLayout()
+        Me.EditorEditLangPanel.SuspendLayout()
+        Me.EditorEditAblPanel.SuspendLayout()
+        Me.EditorSwitchPanel.SuspendLayout()
+        Me.EditorMenuPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
         Me.CustomLibsGroup.SuspendLayout()
         Me.CustomLibsPreviewMusic.SuspendLayout()
@@ -346,27 +367,6 @@ Partial Class MainWindow
         CType(Me.WelcomeImage03, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DonatePanel.SuspendLayout()
         Me.UpdatePanel.SuspendLayout()
-        Me.EditorPanel.SuspendLayout()
-        Me.EditorEditPanel.SuspendLayout()
-        Me.EditorEditCharPanel.SuspendLayout()
-        Me.EditorCharInvPanel.SuspendLayout()
-        Me.EditorCharQAddPanel.SuspendLayout()
-        Me.EditorEditWearsPanel.SuspendLayout()
-        Me.EditorEditTeamsPanel.SuspendLayout()
-        Me.EditorEditStatusPanel.SuspendLayout()
-        Me.EditorEditRelPanel.SuspendLayout()
-        Me.EditorEditVersePanel.SuspendLayout()
-        Me.EditorEditItemsPanel.SuspendLayout()
-        Me.EditorEditHeldsPanel.SuspendLayout()
-        Me.EditorEditEffectsPanel.SuspendLayout()
-        Me.EditorEditDestinyPanel.SuspendLayout()
-        Me.EditorEditClassPanel.SuspendLayout()
-        Me.EditorEditCharmsPanel.SuspendLayout()
-        Me.EditorEditArenaPanel.SuspendLayout()
-        Me.EditorEditLangPanel.SuspendLayout()
-        Me.EditorEditAblPanel.SuspendLayout()
-        Me.EditorSwitchPanel.SuspendLayout()
-        Me.EditorMenuPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'TitleLabel
@@ -573,605 +573,6 @@ Partial Class MainWindow
         Me.StartButton.Name = "StartButton"
         Me.MenuTips.SetToolTip(Me.StartButton, resources.GetString("StartButton.ToolTip"))
         Me.StartButton.UseVisualStyleBackColor = False
-        '
-        'OptionsPanel
-        '
-        Me.OptionsPanel.Controls.Add(Me.CustomLibsGroup)
-        Me.OptionsPanel.Controls.Add(Me.OptionsManageGroup)
-        Me.OptionsPanel.Controls.Add(Me.OptionsMusicGroup)
-        Me.OptionsPanel.Controls.Add(Me.OptionsColorGroup)
-        Me.OptionsPanel.Controls.Add(Me.OptionsHost)
-        Me.OptionsPanel.Controls.Add(Me.OptionsTitle)
-        resources.ApplyResources(Me.OptionsPanel, "OptionsPanel")
-        Me.OptionsPanel.Name = "OptionsPanel"
-        '
-        'CustomLibsGroup
-        '
-        Me.CustomLibsGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsOmega)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsSave)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsAuto)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsPath)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsEdit)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsActive)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsDelete)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsImport)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsList)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsPreviewMusic)
-        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsPreviewAvatar)
-        Me.CustomLibsGroup.ForeColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.CustomLibsGroup, "CustomLibsGroup")
-        Me.CustomLibsGroup.Name = "CustomLibsGroup"
-        Me.CustomLibsGroup.TabStop = False
-        '
-        'CustomLibsOmega
-        '
-        resources.ApplyResources(Me.CustomLibsOmega, "CustomLibsOmega")
-        Me.CustomLibsOmega.Name = "CustomLibsOmega"
-        '
-        'CustomLibsSave
-        '
-        Me.CustomLibsSave.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.CustomLibsSave, "CustomLibsSave")
-        Me.CustomLibsSave.Name = "CustomLibsSave"
-        Me.CustomLibsSave.UseVisualStyleBackColor = False
-        '
-        'CustomLibsAuto
-        '
-        resources.ApplyResources(Me.CustomLibsAuto, "CustomLibsAuto")
-        Me.CustomLibsAuto.Name = "CustomLibsAuto"
-        Me.CustomLibsAuto.UseVisualStyleBackColor = True
-        '
-        'CustomLibsPath
-        '
-        Me.CustomLibsPath.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        resources.ApplyResources(Me.CustomLibsPath, "CustomLibsPath")
-        Me.CustomLibsPath.ForeColor = System.Drawing.SystemColors.Window
-        Me.CustomLibsPath.Name = "CustomLibsPath"
-        '
-        'CustomLibsEdit
-        '
-        Me.CustomLibsEdit.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.CustomLibsEdit, "CustomLibsEdit")
-        Me.CustomLibsEdit.Name = "CustomLibsEdit"
-        Me.CustomLibsEdit.UseVisualStyleBackColor = False
-        '
-        'CustomLibsActive
-        '
-        resources.ApplyResources(Me.CustomLibsActive, "CustomLibsActive")
-        Me.CustomLibsActive.Name = "CustomLibsActive"
-        Me.CustomLibsActive.UseVisualStyleBackColor = True
-        '
-        'CustomLibsDelete
-        '
-        Me.CustomLibsDelete.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.CustomLibsDelete, "CustomLibsDelete")
-        Me.CustomLibsDelete.Name = "CustomLibsDelete"
-        Me.CustomLibsDelete.UseVisualStyleBackColor = False
-        '
-        'CustomLibsImport
-        '
-        Me.CustomLibsImport.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.CustomLibsImport, "CustomLibsImport")
-        Me.CustomLibsImport.Name = "CustomLibsImport"
-        Me.CustomLibsImport.UseVisualStyleBackColor = False
-        '
-        'CustomLibsList
-        '
-        Me.CustomLibsList.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.CustomLibsList.ForeColor = System.Drawing.SystemColors.Control
-        Me.CustomLibsList.FormattingEnabled = True
-        Me.CustomLibsList.Items.AddRange(New Object() {resources.GetString("CustomLibsList.Items")})
-        resources.ApplyResources(Me.CustomLibsList, "CustomLibsList")
-        Me.CustomLibsList.Name = "CustomLibsList"
-        Me.CustomLibsList.Sorted = True
-        '
-        'CustomLibsPreviewMusic
-        '
-        Me.CustomLibsPreviewMusic.Controls.Add(Me.CustomLibsMusicMsg)
-        Me.CustomLibsPreviewMusic.Controls.Add(Me.CustomLibsMusicImage)
-        Me.CustomLibsPreviewMusic.Controls.Add(Me.CustomLibsPreviewStop)
-        Me.CustomLibsPreviewMusic.Controls.Add(Me.CustomLibsPreviewPlay)
-        Me.CustomLibsPreviewMusic.ForeColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.CustomLibsPreviewMusic, "CustomLibsPreviewMusic")
-        Me.CustomLibsPreviewMusic.Name = "CustomLibsPreviewMusic"
-        Me.CustomLibsPreviewMusic.TabStop = False
-        '
-        'CustomLibsMusicMsg
-        '
-        resources.ApplyResources(Me.CustomLibsMusicMsg, "CustomLibsMusicMsg")
-        Me.CustomLibsMusicMsg.Name = "CustomLibsMusicMsg"
-        '
-        'CustomLibsMusicImage
-        '
-        resources.ApplyResources(Me.CustomLibsMusicImage, "CustomLibsMusicImage")
-        Me.CustomLibsMusicImage.Name = "CustomLibsMusicImage"
-        Me.CustomLibsMusicImage.TabStop = False
-        '
-        'CustomLibsPreviewStop
-        '
-        Me.CustomLibsPreviewStop.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.CustomLibsPreviewStop, "CustomLibsPreviewStop")
-        Me.CustomLibsPreviewStop.Name = "CustomLibsPreviewStop"
-        Me.CustomLibsPreviewStop.UseVisualStyleBackColor = False
-        '
-        'CustomLibsPreviewPlay
-        '
-        Me.CustomLibsPreviewPlay.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.CustomLibsPreviewPlay, "CustomLibsPreviewPlay")
-        Me.CustomLibsPreviewPlay.Name = "CustomLibsPreviewPlay"
-        Me.CustomLibsPreviewPlay.UseVisualStyleBackColor = False
-        '
-        'CustomLibsPreviewAvatar
-        '
-        Me.CustomLibsPreviewAvatar.Controls.Add(Me.CustomLibsPreviewImage)
-        Me.CustomLibsPreviewAvatar.ForeColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.CustomLibsPreviewAvatar, "CustomLibsPreviewAvatar")
-        Me.CustomLibsPreviewAvatar.Name = "CustomLibsPreviewAvatar"
-        Me.CustomLibsPreviewAvatar.TabStop = False
-        '
-        'CustomLibsPreviewImage
-        '
-        resources.ApplyResources(Me.CustomLibsPreviewImage, "CustomLibsPreviewImage")
-        Me.CustomLibsPreviewImage.Name = "CustomLibsPreviewImage"
-        Me.CustomLibsPreviewImage.TabStop = False
-        '
-        'OptionsManageGroup
-        '
-        Me.OptionsManageGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.OptionsManageGroup.Controls.Add(Me.OptionsManageSound)
-        Me.OptionsManageGroup.Controls.Add(Me.OptionsManageMusic)
-        Me.OptionsManageGroup.Controls.Add(Me.OptionsManageAvatars)
-        Me.OptionsManageGroup.ForeColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.OptionsManageGroup, "OptionsManageGroup")
-        Me.OptionsManageGroup.Name = "OptionsManageGroup"
-        Me.OptionsManageGroup.TabStop = False
-        '
-        'OptionsManageSound
-        '
-        Me.OptionsManageSound.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsManageSound, "OptionsManageSound")
-        Me.OptionsManageSound.Name = "OptionsManageSound"
-        Me.OptionsManageSound.UseVisualStyleBackColor = False
-        '
-        'OptionsManageMusic
-        '
-        Me.OptionsManageMusic.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsManageMusic, "OptionsManageMusic")
-        Me.OptionsManageMusic.Name = "OptionsManageMusic"
-        Me.OptionsManageMusic.UseVisualStyleBackColor = False
-        '
-        'OptionsManageAvatars
-        '
-        Me.OptionsManageAvatars.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsManageAvatars, "OptionsManageAvatars")
-        Me.OptionsManageAvatars.Name = "OptionsManageAvatars"
-        Me.OptionsManageAvatars.UseVisualStyleBackColor = False
-        '
-        'OptionsMusicGroup
-        '
-        Me.OptionsMusicGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextDefeat)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextVictory)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextBattle)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextIntro)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectDefeat)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectVictory)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectBattle)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectIntro)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckSound)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckDefeat)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckVictory)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckBattle)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckIntro)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckCustom)
-        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckMusic)
-        Me.OptionsMusicGroup.ForeColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.OptionsMusicGroup, "OptionsMusicGroup")
-        Me.OptionsMusicGroup.Name = "OptionsMusicGroup"
-        Me.OptionsMusicGroup.TabStop = False
-        '
-        'OptionsAudioTextDefeat
-        '
-        resources.ApplyResources(Me.OptionsAudioTextDefeat, "OptionsAudioTextDefeat")
-        Me.OptionsAudioTextDefeat.Name = "OptionsAudioTextDefeat"
-        '
-        'OptionsAudioTextVictory
-        '
-        resources.ApplyResources(Me.OptionsAudioTextVictory, "OptionsAudioTextVictory")
-        Me.OptionsAudioTextVictory.Name = "OptionsAudioTextVictory"
-        '
-        'OptionsAudioTextBattle
-        '
-        resources.ApplyResources(Me.OptionsAudioTextBattle, "OptionsAudioTextBattle")
-        Me.OptionsAudioTextBattle.Name = "OptionsAudioTextBattle"
-        '
-        'OptionsAudioTextIntro
-        '
-        resources.ApplyResources(Me.OptionsAudioTextIntro, "OptionsAudioTextIntro")
-        Me.OptionsAudioTextIntro.Name = "OptionsAudioTextIntro"
-        '
-        'OptionsAudioSelectDefeat
-        '
-        Me.OptionsAudioSelectDefeat.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsAudioSelectDefeat, "OptionsAudioSelectDefeat")
-        Me.OptionsAudioSelectDefeat.Name = "OptionsAudioSelectDefeat"
-        Me.OptionsAudioSelectDefeat.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioSelectVictory
-        '
-        Me.OptionsAudioSelectVictory.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsAudioSelectVictory, "OptionsAudioSelectVictory")
-        Me.OptionsAudioSelectVictory.Name = "OptionsAudioSelectVictory"
-        Me.OptionsAudioSelectVictory.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioSelectBattle
-        '
-        Me.OptionsAudioSelectBattle.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsAudioSelectBattle, "OptionsAudioSelectBattle")
-        Me.OptionsAudioSelectBattle.Name = "OptionsAudioSelectBattle"
-        Me.OptionsAudioSelectBattle.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioSelectIntro
-        '
-        Me.OptionsAudioSelectIntro.BackColor = System.Drawing.SystemColors.ControlText
-        resources.ApplyResources(Me.OptionsAudioSelectIntro, "OptionsAudioSelectIntro")
-        Me.OptionsAudioSelectIntro.Name = "OptionsAudioSelectIntro"
-        Me.OptionsAudioSelectIntro.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioCheckSound
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckSound, "OptionsAudioCheckSound")
-        Me.OptionsAudioCheckSound.Checked = True
-        Me.OptionsAudioCheckSound.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.OptionsAudioCheckSound.Name = "OptionsAudioCheckSound"
-        Me.OptionsAudioCheckSound.UseVisualStyleBackColor = True
-        '
-        'OptionsAudioCheckDefeat
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckDefeat, "OptionsAudioCheckDefeat")
-        Me.OptionsAudioCheckDefeat.Name = "OptionsAudioCheckDefeat"
-        Me.OptionsAudioCheckDefeat.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioCheckVictory
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckVictory, "OptionsAudioCheckVictory")
-        Me.OptionsAudioCheckVictory.Name = "OptionsAudioCheckVictory"
-        Me.OptionsAudioCheckVictory.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioCheckBattle
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckBattle, "OptionsAudioCheckBattle")
-        Me.OptionsAudioCheckBattle.Name = "OptionsAudioCheckBattle"
-        Me.OptionsAudioCheckBattle.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioCheckIntro
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckIntro, "OptionsAudioCheckIntro")
-        Me.OptionsAudioCheckIntro.Name = "OptionsAudioCheckIntro"
-        Me.OptionsAudioCheckIntro.UseVisualStyleBackColor = False
-        '
-        'OptionsAudioCheckCustom
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckCustom, "OptionsAudioCheckCustom")
-        Me.OptionsAudioCheckCustom.Name = "OptionsAudioCheckCustom"
-        Me.OptionsAudioCheckCustom.UseVisualStyleBackColor = True
-        '
-        'OptionsAudioCheckMusic
-        '
-        resources.ApplyResources(Me.OptionsAudioCheckMusic, "OptionsAudioCheckMusic")
-        Me.OptionsAudioCheckMusic.Name = "OptionsAudioCheckMusic"
-        Me.OptionsAudioCheckMusic.UseVisualStyleBackColor = True
-        '
-        'OptionsColorGroup
-        '
-        Me.OptionsColorGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.OptionsColorGroup.Controls.Add(Me.OptionsColorCustom)
-        Me.OptionsColorGroup.Controls.Add(Me.OptionsColorLite)
-        Me.OptionsColorGroup.Controls.Add(Me.OptionsColorDark)
-        Me.OptionsColorGroup.ForeColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.OptionsColorGroup, "OptionsColorGroup")
-        Me.OptionsColorGroup.Name = "OptionsColorGroup"
-        Me.OptionsColorGroup.TabStop = False
-        '
-        'OptionsColorCustom
-        '
-        resources.ApplyResources(Me.OptionsColorCustom, "OptionsColorCustom")
-        Me.OptionsColorCustom.Name = "OptionsColorCustom"
-        Me.OptionsColorCustom.UseVisualStyleBackColor = False
-        '
-        'OptionsColorLite
-        '
-        resources.ApplyResources(Me.OptionsColorLite, "OptionsColorLite")
-        Me.OptionsColorLite.Name = "OptionsColorLite"
-        Me.OptionsColorLite.UseVisualStyleBackColor = True
-        '
-        'OptionsColorDark
-        '
-        resources.ApplyResources(Me.OptionsColorDark, "OptionsColorDark")
-        Me.OptionsColorDark.Name = "OptionsColorDark"
-        Me.OptionsColorDark.UseVisualStyleBackColor = True
-        '
-        'OptionsHost
-        '
-        resources.ApplyResources(Me.OptionsHost, "OptionsHost")
-        Me.OptionsHost.Name = "OptionsHost"
-        '
-        'OptionsTitle
-        '
-        resources.ApplyResources(Me.OptionsTitle, "OptionsTitle")
-        Me.OptionsTitle.Name = "OptionsTitle"
-        '
-        'AboutPanel
-        '
-        Me.AboutPanel.Controls.Add(Me.AboutBSButton)
-        Me.AboutPanel.Controls.Add(Me.AboutYTButton)
-        Me.AboutPanel.Controls.Add(Me.AboutDCButton)
-        Me.AboutPanel.Controls.Add(Me.AboutFBButton)
-        Me.AboutPanel.Controls.Add(Me.AboutText)
-        Me.AboutPanel.Controls.Add(Me.AboutTitle)
-        resources.ApplyResources(Me.AboutPanel, "AboutPanel")
-        Me.AboutPanel.Name = "AboutPanel"
-        '
-        'AboutBSButton
-        '
-        Me.AboutBSButton.BackColor = System.Drawing.SystemColors.Control
-        Me.AboutBSButton.BackgroundImage = Global.Limitless.My.Resources.Resources.bs
-        resources.ApplyResources(Me.AboutBSButton, "AboutBSButton")
-        Me.AboutBSButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AboutBSButton.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.AboutBSButton.Name = "AboutBSButton"
-        Me.AboutBSButton.UseVisualStyleBackColor = False
-        '
-        'AboutYTButton
-        '
-        Me.AboutYTButton.BackColor = System.Drawing.SystemColors.Control
-        Me.AboutYTButton.BackgroundImage = Global.Limitless.My.Resources.Resources.yt
-        resources.ApplyResources(Me.AboutYTButton, "AboutYTButton")
-        Me.AboutYTButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AboutYTButton.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.AboutYTButton.Name = "AboutYTButton"
-        Me.AboutYTButton.UseVisualStyleBackColor = False
-        '
-        'AboutDCButton
-        '
-        Me.AboutDCButton.BackColor = System.Drawing.SystemColors.Control
-        Me.AboutDCButton.BackgroundImage = Global.Limitless.My.Resources.Resources.dc
-        resources.ApplyResources(Me.AboutDCButton, "AboutDCButton")
-        Me.AboutDCButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AboutDCButton.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.AboutDCButton.Name = "AboutDCButton"
-        Me.AboutDCButton.UseVisualStyleBackColor = False
-        '
-        'AboutFBButton
-        '
-        Me.AboutFBButton.BackColor = System.Drawing.SystemColors.Control
-        Me.AboutFBButton.BackgroundImage = Global.Limitless.My.Resources.Resources.fb
-        resources.ApplyResources(Me.AboutFBButton, "AboutFBButton")
-        Me.AboutFBButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AboutFBButton.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.AboutFBButton.Name = "AboutFBButton"
-        Me.AboutFBButton.UseVisualStyleBackColor = False
-        '
-        'AboutText
-        '
-        Me.AboutText.BackColor = System.Drawing.SystemColors.ControlText
-        Me.AboutText.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.AboutText.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.AboutText.ForeColor = System.Drawing.SystemColors.Control
-        resources.ApplyResources(Me.AboutText, "AboutText")
-        Me.AboutText.Name = "AboutText"
-        Me.AboutText.ReadOnly = True
-        Me.AboutText.TabStop = False
-        '
-        'AboutTitle
-        '
-        resources.ApplyResources(Me.AboutTitle, "AboutTitle")
-        Me.AboutTitle.Name = "AboutTitle"
-        '
-        'WelcomePanel
-        '
-        Me.WelcomePanel.BackColor = System.Drawing.SystemColors.ControlText
-        Me.WelcomePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage06)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage10)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage05)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage01)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage02)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage07)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage08)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage09)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage00)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage04)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage11)
-        Me.WelcomePanel.Controls.Add(Me.WelcomeImage03)
-        resources.ApplyResources(Me.WelcomePanel, "WelcomePanel")
-        Me.WelcomePanel.Name = "WelcomePanel"
-        '
-        'WelcomeImage06
-        '
-        Me.WelcomeImage06.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage06, "WelcomeImage06")
-        Me.WelcomeImage06.Name = "WelcomeImage06"
-        Me.WelcomeImage06.TabStop = False
-        '
-        'WelcomeImage10
-        '
-        Me.WelcomeImage10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage10, "WelcomeImage10")
-        Me.WelcomeImage10.Name = "WelcomeImage10"
-        Me.WelcomeImage10.TabStop = False
-        '
-        'WelcomeImage05
-        '
-        Me.WelcomeImage05.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage05, "WelcomeImage05")
-        Me.WelcomeImage05.Name = "WelcomeImage05"
-        Me.WelcomeImage05.TabStop = False
-        '
-        'WelcomeImage01
-        '
-        Me.WelcomeImage01.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage01, "WelcomeImage01")
-        Me.WelcomeImage01.Name = "WelcomeImage01"
-        Me.WelcomeImage01.TabStop = False
-        '
-        'WelcomeImage02
-        '
-        Me.WelcomeImage02.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage02, "WelcomeImage02")
-        Me.WelcomeImage02.Name = "WelcomeImage02"
-        Me.WelcomeImage02.TabStop = False
-        '
-        'WelcomeImage07
-        '
-        Me.WelcomeImage07.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage07, "WelcomeImage07")
-        Me.WelcomeImage07.Name = "WelcomeImage07"
-        Me.WelcomeImage07.TabStop = False
-        '
-        'WelcomeImage08
-        '
-        Me.WelcomeImage08.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage08, "WelcomeImage08")
-        Me.WelcomeImage08.Name = "WelcomeImage08"
-        Me.WelcomeImage08.TabStop = False
-        '
-        'WelcomeImage09
-        '
-        Me.WelcomeImage09.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage09, "WelcomeImage09")
-        Me.WelcomeImage09.Name = "WelcomeImage09"
-        Me.WelcomeImage09.TabStop = False
-        '
-        'WelcomeImage00
-        '
-        Me.WelcomeImage00.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage00, "WelcomeImage00")
-        Me.WelcomeImage00.Name = "WelcomeImage00"
-        Me.WelcomeImage00.TabStop = False
-        '
-        'WelcomeImage04
-        '
-        Me.WelcomeImage04.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage04, "WelcomeImage04")
-        Me.WelcomeImage04.Name = "WelcomeImage04"
-        Me.WelcomeImage04.TabStop = False
-        '
-        'WelcomeImage11
-        '
-        Me.WelcomeImage11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage11, "WelcomeImage11")
-        Me.WelcomeImage11.Name = "WelcomeImage11"
-        Me.WelcomeImage11.TabStop = False
-        '
-        'WelcomeImage03
-        '
-        Me.WelcomeImage03.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.WelcomeImage03, "WelcomeImage03")
-        Me.WelcomeImage03.Name = "WelcomeImage03"
-        Me.WelcomeImage03.TabStop = False
-        '
-        'DonatePanel
-        '
-        Me.DonatePanel.Controls.Add(Me.DonatePPButton)
-        Me.DonatePanel.Controls.Add(Me.DonatePTButton)
-        Me.DonatePanel.Controls.Add(Me.DonateText)
-        Me.DonatePanel.Controls.Add(Me.DonateTitle)
-        resources.ApplyResources(Me.DonatePanel, "DonatePanel")
-        Me.DonatePanel.Name = "DonatePanel"
-        '
-        'DonatePPButton
-        '
-        Me.DonatePPButton.BackColor = System.Drawing.SystemColors.Control
-        Me.DonatePPButton.BackgroundImage = Global.Limitless.My.Resources.Resources.pp
-        resources.ApplyResources(Me.DonatePPButton, "DonatePPButton")
-        Me.DonatePPButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DonatePPButton.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.DonatePPButton.Name = "DonatePPButton"
-        Me.DonatePPButton.UseVisualStyleBackColor = False
-        '
-        'DonatePTButton
-        '
-        Me.DonatePTButton.BackColor = System.Drawing.SystemColors.Control
-        Me.DonatePTButton.BackgroundImage = Global.Limitless.My.Resources.Resources.pt
-        resources.ApplyResources(Me.DonatePTButton, "DonatePTButton")
-        Me.DonatePTButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DonatePTButton.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.DonatePTButton.Name = "DonatePTButton"
-        Me.DonatePTButton.UseVisualStyleBackColor = False
-        '
-        'DonateText
-        '
-        Me.DonateText.BackColor = System.Drawing.SystemColors.ControlText
-        Me.DonateText.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DonateText.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.DonateText.ForeColor = System.Drawing.SystemColors.Control
-        resources.ApplyResources(Me.DonateText, "DonateText")
-        Me.DonateText.Name = "DonateText"
-        Me.DonateText.ReadOnly = True
-        Me.DonateText.TabStop = False
-        '
-        'DonateTitle
-        '
-        resources.ApplyResources(Me.DonateTitle, "DonateTitle")
-        Me.DonateTitle.Name = "DonateTitle"
-        '
-        'UpdatePanel
-        '
-        Me.UpdatePanel.Controls.Add(Me.UpdateAvaBox)
-        Me.UpdatePanel.Controls.Add(Me.UpdateCurBox)
-        Me.UpdatePanel.Controls.Add(Me.UpdateInstallButton)
-        Me.UpdatePanel.Controls.Add(Me.UpdateAvaText)
-        Me.UpdatePanel.Controls.Add(Me.UpdateCurText)
-        Me.UpdatePanel.Controls.Add(Me.UpdateSubText)
-        Me.UpdatePanel.Controls.Add(Me.UpdateTitleText)
-        resources.ApplyResources(Me.UpdatePanel, "UpdatePanel")
-        Me.UpdatePanel.Name = "UpdatePanel"
-        '
-        'UpdateAvaBox
-        '
-        Me.UpdateAvaBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.UpdateAvaBox.ForeColor = System.Drawing.SystemColors.Window
-        resources.ApplyResources(Me.UpdateAvaBox, "UpdateAvaBox")
-        Me.UpdateAvaBox.Name = "UpdateAvaBox"
-        Me.UpdateAvaBox.ReadOnly = True
-        Me.UpdateAvaBox.TabStop = False
-        '
-        'UpdateCurBox
-        '
-        Me.UpdateCurBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.UpdateCurBox.ForeColor = System.Drawing.SystemColors.Window
-        resources.ApplyResources(Me.UpdateCurBox, "UpdateCurBox")
-        Me.UpdateCurBox.Name = "UpdateCurBox"
-        Me.UpdateCurBox.ReadOnly = True
-        Me.UpdateCurBox.TabStop = False
-        '
-        'UpdateInstallButton
-        '
-        resources.ApplyResources(Me.UpdateInstallButton, "UpdateInstallButton")
-        Me.UpdateInstallButton.Name = "UpdateInstallButton"
-        Me.UpdateInstallButton.UseVisualStyleBackColor = True
-        '
-        'UpdateAvaText
-        '
-        resources.ApplyResources(Me.UpdateAvaText, "UpdateAvaText")
-        Me.UpdateAvaText.Name = "UpdateAvaText"
-        '
-        'UpdateCurText
-        '
-        resources.ApplyResources(Me.UpdateCurText, "UpdateCurText")
-        Me.UpdateCurText.Name = "UpdateCurText"
-        '
-        'UpdateSubText
-        '
-        resources.ApplyResources(Me.UpdateSubText, "UpdateSubText")
-        Me.UpdateSubText.Name = "UpdateSubText"
-        '
-        'UpdateTitleText
-        '
-        resources.ApplyResources(Me.UpdateTitleText, "UpdateTitleText")
-        Me.UpdateTitleText.Name = "UpdateTitleText"
         '
         'EditorPanel
         '
@@ -2617,6 +2018,605 @@ Partial Class MainWindow
         resources.ApplyResources(Me.EditorTitleText, "EditorTitleText")
         Me.EditorTitleText.Name = "EditorTitleText"
         '
+        'OptionsPanel
+        '
+        Me.OptionsPanel.Controls.Add(Me.CustomLibsGroup)
+        Me.OptionsPanel.Controls.Add(Me.OptionsManageGroup)
+        Me.OptionsPanel.Controls.Add(Me.OptionsMusicGroup)
+        Me.OptionsPanel.Controls.Add(Me.OptionsColorGroup)
+        Me.OptionsPanel.Controls.Add(Me.OptionsHost)
+        Me.OptionsPanel.Controls.Add(Me.OptionsTitle)
+        resources.ApplyResources(Me.OptionsPanel, "OptionsPanel")
+        Me.OptionsPanel.Name = "OptionsPanel"
+        '
+        'CustomLibsGroup
+        '
+        Me.CustomLibsGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsOmega)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsSave)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsAuto)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsPath)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsEdit)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsActive)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsDelete)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsImport)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsList)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsPreviewMusic)
+        Me.CustomLibsGroup.Controls.Add(Me.CustomLibsPreviewAvatar)
+        Me.CustomLibsGroup.ForeColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.CustomLibsGroup, "CustomLibsGroup")
+        Me.CustomLibsGroup.Name = "CustomLibsGroup"
+        Me.CustomLibsGroup.TabStop = False
+        '
+        'CustomLibsOmega
+        '
+        resources.ApplyResources(Me.CustomLibsOmega, "CustomLibsOmega")
+        Me.CustomLibsOmega.Name = "CustomLibsOmega"
+        '
+        'CustomLibsSave
+        '
+        Me.CustomLibsSave.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.CustomLibsSave, "CustomLibsSave")
+        Me.CustomLibsSave.Name = "CustomLibsSave"
+        Me.CustomLibsSave.UseVisualStyleBackColor = False
+        '
+        'CustomLibsAuto
+        '
+        resources.ApplyResources(Me.CustomLibsAuto, "CustomLibsAuto")
+        Me.CustomLibsAuto.Name = "CustomLibsAuto"
+        Me.CustomLibsAuto.UseVisualStyleBackColor = True
+        '
+        'CustomLibsPath
+        '
+        Me.CustomLibsPath.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        resources.ApplyResources(Me.CustomLibsPath, "CustomLibsPath")
+        Me.CustomLibsPath.ForeColor = System.Drawing.SystemColors.Window
+        Me.CustomLibsPath.Name = "CustomLibsPath"
+        '
+        'CustomLibsEdit
+        '
+        Me.CustomLibsEdit.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.CustomLibsEdit, "CustomLibsEdit")
+        Me.CustomLibsEdit.Name = "CustomLibsEdit"
+        Me.CustomLibsEdit.UseVisualStyleBackColor = False
+        '
+        'CustomLibsActive
+        '
+        resources.ApplyResources(Me.CustomLibsActive, "CustomLibsActive")
+        Me.CustomLibsActive.Name = "CustomLibsActive"
+        Me.CustomLibsActive.UseVisualStyleBackColor = True
+        '
+        'CustomLibsDelete
+        '
+        Me.CustomLibsDelete.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.CustomLibsDelete, "CustomLibsDelete")
+        Me.CustomLibsDelete.Name = "CustomLibsDelete"
+        Me.CustomLibsDelete.UseVisualStyleBackColor = False
+        '
+        'CustomLibsImport
+        '
+        Me.CustomLibsImport.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.CustomLibsImport, "CustomLibsImport")
+        Me.CustomLibsImport.Name = "CustomLibsImport"
+        Me.CustomLibsImport.UseVisualStyleBackColor = False
+        '
+        'CustomLibsList
+        '
+        Me.CustomLibsList.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.CustomLibsList.ForeColor = System.Drawing.SystemColors.Control
+        Me.CustomLibsList.FormattingEnabled = True
+        Me.CustomLibsList.Items.AddRange(New Object() {resources.GetString("CustomLibsList.Items")})
+        resources.ApplyResources(Me.CustomLibsList, "CustomLibsList")
+        Me.CustomLibsList.Name = "CustomLibsList"
+        Me.CustomLibsList.Sorted = True
+        '
+        'CustomLibsPreviewMusic
+        '
+        Me.CustomLibsPreviewMusic.Controls.Add(Me.CustomLibsMusicMsg)
+        Me.CustomLibsPreviewMusic.Controls.Add(Me.CustomLibsMusicImage)
+        Me.CustomLibsPreviewMusic.Controls.Add(Me.CustomLibsPreviewStop)
+        Me.CustomLibsPreviewMusic.Controls.Add(Me.CustomLibsPreviewPlay)
+        Me.CustomLibsPreviewMusic.ForeColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.CustomLibsPreviewMusic, "CustomLibsPreviewMusic")
+        Me.CustomLibsPreviewMusic.Name = "CustomLibsPreviewMusic"
+        Me.CustomLibsPreviewMusic.TabStop = False
+        '
+        'CustomLibsMusicMsg
+        '
+        resources.ApplyResources(Me.CustomLibsMusicMsg, "CustomLibsMusicMsg")
+        Me.CustomLibsMusicMsg.Name = "CustomLibsMusicMsg"
+        '
+        'CustomLibsMusicImage
+        '
+        resources.ApplyResources(Me.CustomLibsMusicImage, "CustomLibsMusicImage")
+        Me.CustomLibsMusicImage.Name = "CustomLibsMusicImage"
+        Me.CustomLibsMusicImage.TabStop = False
+        '
+        'CustomLibsPreviewStop
+        '
+        Me.CustomLibsPreviewStop.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.CustomLibsPreviewStop, "CustomLibsPreviewStop")
+        Me.CustomLibsPreviewStop.Name = "CustomLibsPreviewStop"
+        Me.CustomLibsPreviewStop.UseVisualStyleBackColor = False
+        '
+        'CustomLibsPreviewPlay
+        '
+        Me.CustomLibsPreviewPlay.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.CustomLibsPreviewPlay, "CustomLibsPreviewPlay")
+        Me.CustomLibsPreviewPlay.Name = "CustomLibsPreviewPlay"
+        Me.CustomLibsPreviewPlay.UseVisualStyleBackColor = False
+        '
+        'CustomLibsPreviewAvatar
+        '
+        Me.CustomLibsPreviewAvatar.Controls.Add(Me.CustomLibsPreviewImage)
+        Me.CustomLibsPreviewAvatar.ForeColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.CustomLibsPreviewAvatar, "CustomLibsPreviewAvatar")
+        Me.CustomLibsPreviewAvatar.Name = "CustomLibsPreviewAvatar"
+        Me.CustomLibsPreviewAvatar.TabStop = False
+        '
+        'CustomLibsPreviewImage
+        '
+        resources.ApplyResources(Me.CustomLibsPreviewImage, "CustomLibsPreviewImage")
+        Me.CustomLibsPreviewImage.Name = "CustomLibsPreviewImage"
+        Me.CustomLibsPreviewImage.TabStop = False
+        '
+        'OptionsManageGroup
+        '
+        Me.OptionsManageGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.OptionsManageGroup.Controls.Add(Me.OptionsManageSound)
+        Me.OptionsManageGroup.Controls.Add(Me.OptionsManageMusic)
+        Me.OptionsManageGroup.Controls.Add(Me.OptionsManageAvatars)
+        Me.OptionsManageGroup.ForeColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.OptionsManageGroup, "OptionsManageGroup")
+        Me.OptionsManageGroup.Name = "OptionsManageGroup"
+        Me.OptionsManageGroup.TabStop = False
+        '
+        'OptionsManageSound
+        '
+        Me.OptionsManageSound.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsManageSound, "OptionsManageSound")
+        Me.OptionsManageSound.Name = "OptionsManageSound"
+        Me.OptionsManageSound.UseVisualStyleBackColor = False
+        '
+        'OptionsManageMusic
+        '
+        Me.OptionsManageMusic.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsManageMusic, "OptionsManageMusic")
+        Me.OptionsManageMusic.Name = "OptionsManageMusic"
+        Me.OptionsManageMusic.UseVisualStyleBackColor = False
+        '
+        'OptionsManageAvatars
+        '
+        Me.OptionsManageAvatars.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsManageAvatars, "OptionsManageAvatars")
+        Me.OptionsManageAvatars.Name = "OptionsManageAvatars"
+        Me.OptionsManageAvatars.UseVisualStyleBackColor = False
+        '
+        'OptionsMusicGroup
+        '
+        Me.OptionsMusicGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextDefeat)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextVictory)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextBattle)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioTextIntro)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectDefeat)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectVictory)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectBattle)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioSelectIntro)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckSound)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckDefeat)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckVictory)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckBattle)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckIntro)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckCustom)
+        Me.OptionsMusicGroup.Controls.Add(Me.OptionsAudioCheckMusic)
+        Me.OptionsMusicGroup.ForeColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.OptionsMusicGroup, "OptionsMusicGroup")
+        Me.OptionsMusicGroup.Name = "OptionsMusicGroup"
+        Me.OptionsMusicGroup.TabStop = False
+        '
+        'OptionsAudioTextDefeat
+        '
+        resources.ApplyResources(Me.OptionsAudioTextDefeat, "OptionsAudioTextDefeat")
+        Me.OptionsAudioTextDefeat.Name = "OptionsAudioTextDefeat"
+        '
+        'OptionsAudioTextVictory
+        '
+        resources.ApplyResources(Me.OptionsAudioTextVictory, "OptionsAudioTextVictory")
+        Me.OptionsAudioTextVictory.Name = "OptionsAudioTextVictory"
+        '
+        'OptionsAudioTextBattle
+        '
+        resources.ApplyResources(Me.OptionsAudioTextBattle, "OptionsAudioTextBattle")
+        Me.OptionsAudioTextBattle.Name = "OptionsAudioTextBattle"
+        '
+        'OptionsAudioTextIntro
+        '
+        resources.ApplyResources(Me.OptionsAudioTextIntro, "OptionsAudioTextIntro")
+        Me.OptionsAudioTextIntro.Name = "OptionsAudioTextIntro"
+        '
+        'OptionsAudioSelectDefeat
+        '
+        Me.OptionsAudioSelectDefeat.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsAudioSelectDefeat, "OptionsAudioSelectDefeat")
+        Me.OptionsAudioSelectDefeat.Name = "OptionsAudioSelectDefeat"
+        Me.OptionsAudioSelectDefeat.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioSelectVictory
+        '
+        Me.OptionsAudioSelectVictory.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsAudioSelectVictory, "OptionsAudioSelectVictory")
+        Me.OptionsAudioSelectVictory.Name = "OptionsAudioSelectVictory"
+        Me.OptionsAudioSelectVictory.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioSelectBattle
+        '
+        Me.OptionsAudioSelectBattle.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsAudioSelectBattle, "OptionsAudioSelectBattle")
+        Me.OptionsAudioSelectBattle.Name = "OptionsAudioSelectBattle"
+        Me.OptionsAudioSelectBattle.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioSelectIntro
+        '
+        Me.OptionsAudioSelectIntro.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.OptionsAudioSelectIntro, "OptionsAudioSelectIntro")
+        Me.OptionsAudioSelectIntro.Name = "OptionsAudioSelectIntro"
+        Me.OptionsAudioSelectIntro.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioCheckSound
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckSound, "OptionsAudioCheckSound")
+        Me.OptionsAudioCheckSound.Checked = True
+        Me.OptionsAudioCheckSound.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.OptionsAudioCheckSound.Name = "OptionsAudioCheckSound"
+        Me.OptionsAudioCheckSound.UseVisualStyleBackColor = True
+        '
+        'OptionsAudioCheckDefeat
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckDefeat, "OptionsAudioCheckDefeat")
+        Me.OptionsAudioCheckDefeat.Name = "OptionsAudioCheckDefeat"
+        Me.OptionsAudioCheckDefeat.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioCheckVictory
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckVictory, "OptionsAudioCheckVictory")
+        Me.OptionsAudioCheckVictory.Name = "OptionsAudioCheckVictory"
+        Me.OptionsAudioCheckVictory.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioCheckBattle
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckBattle, "OptionsAudioCheckBattle")
+        Me.OptionsAudioCheckBattle.Name = "OptionsAudioCheckBattle"
+        Me.OptionsAudioCheckBattle.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioCheckIntro
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckIntro, "OptionsAudioCheckIntro")
+        Me.OptionsAudioCheckIntro.Name = "OptionsAudioCheckIntro"
+        Me.OptionsAudioCheckIntro.UseVisualStyleBackColor = False
+        '
+        'OptionsAudioCheckCustom
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckCustom, "OptionsAudioCheckCustom")
+        Me.OptionsAudioCheckCustom.Name = "OptionsAudioCheckCustom"
+        Me.OptionsAudioCheckCustom.UseVisualStyleBackColor = True
+        '
+        'OptionsAudioCheckMusic
+        '
+        resources.ApplyResources(Me.OptionsAudioCheckMusic, "OptionsAudioCheckMusic")
+        Me.OptionsAudioCheckMusic.Name = "OptionsAudioCheckMusic"
+        Me.OptionsAudioCheckMusic.UseVisualStyleBackColor = True
+        '
+        'OptionsColorGroup
+        '
+        Me.OptionsColorGroup.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.OptionsColorGroup.Controls.Add(Me.OptionsColorCustom)
+        Me.OptionsColorGroup.Controls.Add(Me.OptionsColorLite)
+        Me.OptionsColorGroup.Controls.Add(Me.OptionsColorDark)
+        Me.OptionsColorGroup.ForeColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.OptionsColorGroup, "OptionsColorGroup")
+        Me.OptionsColorGroup.Name = "OptionsColorGroup"
+        Me.OptionsColorGroup.TabStop = False
+        '
+        'OptionsColorCustom
+        '
+        resources.ApplyResources(Me.OptionsColorCustom, "OptionsColorCustom")
+        Me.OptionsColorCustom.Name = "OptionsColorCustom"
+        Me.OptionsColorCustom.UseVisualStyleBackColor = False
+        '
+        'OptionsColorLite
+        '
+        resources.ApplyResources(Me.OptionsColorLite, "OptionsColorLite")
+        Me.OptionsColorLite.Name = "OptionsColorLite"
+        Me.OptionsColorLite.UseVisualStyleBackColor = True
+        '
+        'OptionsColorDark
+        '
+        resources.ApplyResources(Me.OptionsColorDark, "OptionsColorDark")
+        Me.OptionsColorDark.Name = "OptionsColorDark"
+        Me.OptionsColorDark.UseVisualStyleBackColor = True
+        '
+        'OptionsHost
+        '
+        resources.ApplyResources(Me.OptionsHost, "OptionsHost")
+        Me.OptionsHost.Name = "OptionsHost"
+        '
+        'OptionsTitle
+        '
+        resources.ApplyResources(Me.OptionsTitle, "OptionsTitle")
+        Me.OptionsTitle.Name = "OptionsTitle"
+        '
+        'AboutPanel
+        '
+        Me.AboutPanel.Controls.Add(Me.AboutBSButton)
+        Me.AboutPanel.Controls.Add(Me.AboutYTButton)
+        Me.AboutPanel.Controls.Add(Me.AboutDCButton)
+        Me.AboutPanel.Controls.Add(Me.AboutFBButton)
+        Me.AboutPanel.Controls.Add(Me.AboutText)
+        Me.AboutPanel.Controls.Add(Me.AboutTitle)
+        resources.ApplyResources(Me.AboutPanel, "AboutPanel")
+        Me.AboutPanel.Name = "AboutPanel"
+        '
+        'AboutBSButton
+        '
+        Me.AboutBSButton.BackColor = System.Drawing.SystemColors.Control
+        Me.AboutBSButton.BackgroundImage = Global.Limitless.My.Resources.Resources.bs
+        resources.ApplyResources(Me.AboutBSButton, "AboutBSButton")
+        Me.AboutBSButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AboutBSButton.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.AboutBSButton.Name = "AboutBSButton"
+        Me.AboutBSButton.UseVisualStyleBackColor = False
+        '
+        'AboutYTButton
+        '
+        Me.AboutYTButton.BackColor = System.Drawing.SystemColors.Control
+        Me.AboutYTButton.BackgroundImage = Global.Limitless.My.Resources.Resources.yt
+        resources.ApplyResources(Me.AboutYTButton, "AboutYTButton")
+        Me.AboutYTButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AboutYTButton.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.AboutYTButton.Name = "AboutYTButton"
+        Me.AboutYTButton.UseVisualStyleBackColor = False
+        '
+        'AboutDCButton
+        '
+        Me.AboutDCButton.BackColor = System.Drawing.SystemColors.Control
+        Me.AboutDCButton.BackgroundImage = Global.Limitless.My.Resources.Resources.dc
+        resources.ApplyResources(Me.AboutDCButton, "AboutDCButton")
+        Me.AboutDCButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AboutDCButton.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.AboutDCButton.Name = "AboutDCButton"
+        Me.AboutDCButton.UseVisualStyleBackColor = False
+        '
+        'AboutFBButton
+        '
+        Me.AboutFBButton.BackColor = System.Drawing.SystemColors.Control
+        Me.AboutFBButton.BackgroundImage = Global.Limitless.My.Resources.Resources.fb
+        resources.ApplyResources(Me.AboutFBButton, "AboutFBButton")
+        Me.AboutFBButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AboutFBButton.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.AboutFBButton.Name = "AboutFBButton"
+        Me.AboutFBButton.UseVisualStyleBackColor = False
+        '
+        'AboutText
+        '
+        Me.AboutText.BackColor = System.Drawing.SystemColors.ControlText
+        Me.AboutText.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.AboutText.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.AboutText.ForeColor = System.Drawing.SystemColors.Control
+        resources.ApplyResources(Me.AboutText, "AboutText")
+        Me.AboutText.Name = "AboutText"
+        Me.AboutText.ReadOnly = True
+        Me.AboutText.TabStop = False
+        '
+        'AboutTitle
+        '
+        resources.ApplyResources(Me.AboutTitle, "AboutTitle")
+        Me.AboutTitle.Name = "AboutTitle"
+        '
+        'WelcomePanel
+        '
+        Me.WelcomePanel.BackColor = System.Drawing.SystemColors.ControlText
+        Me.WelcomePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage06)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage10)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage05)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage01)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage02)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage07)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage08)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage09)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage00)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage04)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage11)
+        Me.WelcomePanel.Controls.Add(Me.WelcomeImage03)
+        resources.ApplyResources(Me.WelcomePanel, "WelcomePanel")
+        Me.WelcomePanel.Name = "WelcomePanel"
+        '
+        'WelcomeImage06
+        '
+        Me.WelcomeImage06.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage06, "WelcomeImage06")
+        Me.WelcomeImage06.Name = "WelcomeImage06"
+        Me.WelcomeImage06.TabStop = False
+        '
+        'WelcomeImage10
+        '
+        Me.WelcomeImage10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage10, "WelcomeImage10")
+        Me.WelcomeImage10.Name = "WelcomeImage10"
+        Me.WelcomeImage10.TabStop = False
+        '
+        'WelcomeImage05
+        '
+        Me.WelcomeImage05.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage05, "WelcomeImage05")
+        Me.WelcomeImage05.Name = "WelcomeImage05"
+        Me.WelcomeImage05.TabStop = False
+        '
+        'WelcomeImage01
+        '
+        Me.WelcomeImage01.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage01, "WelcomeImage01")
+        Me.WelcomeImage01.Name = "WelcomeImage01"
+        Me.WelcomeImage01.TabStop = False
+        '
+        'WelcomeImage02
+        '
+        Me.WelcomeImage02.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage02, "WelcomeImage02")
+        Me.WelcomeImage02.Name = "WelcomeImage02"
+        Me.WelcomeImage02.TabStop = False
+        '
+        'WelcomeImage07
+        '
+        Me.WelcomeImage07.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage07, "WelcomeImage07")
+        Me.WelcomeImage07.Name = "WelcomeImage07"
+        Me.WelcomeImage07.TabStop = False
+        '
+        'WelcomeImage08
+        '
+        Me.WelcomeImage08.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage08, "WelcomeImage08")
+        Me.WelcomeImage08.Name = "WelcomeImage08"
+        Me.WelcomeImage08.TabStop = False
+        '
+        'WelcomeImage09
+        '
+        Me.WelcomeImage09.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage09, "WelcomeImage09")
+        Me.WelcomeImage09.Name = "WelcomeImage09"
+        Me.WelcomeImage09.TabStop = False
+        '
+        'WelcomeImage00
+        '
+        Me.WelcomeImage00.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage00, "WelcomeImage00")
+        Me.WelcomeImage00.Name = "WelcomeImage00"
+        Me.WelcomeImage00.TabStop = False
+        '
+        'WelcomeImage04
+        '
+        Me.WelcomeImage04.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage04, "WelcomeImage04")
+        Me.WelcomeImage04.Name = "WelcomeImage04"
+        Me.WelcomeImage04.TabStop = False
+        '
+        'WelcomeImage11
+        '
+        Me.WelcomeImage11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage11, "WelcomeImage11")
+        Me.WelcomeImage11.Name = "WelcomeImage11"
+        Me.WelcomeImage11.TabStop = False
+        '
+        'WelcomeImage03
+        '
+        Me.WelcomeImage03.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        resources.ApplyResources(Me.WelcomeImage03, "WelcomeImage03")
+        Me.WelcomeImage03.Name = "WelcomeImage03"
+        Me.WelcomeImage03.TabStop = False
+        '
+        'DonatePanel
+        '
+        Me.DonatePanel.Controls.Add(Me.DonatePPButton)
+        Me.DonatePanel.Controls.Add(Me.DonatePTButton)
+        Me.DonatePanel.Controls.Add(Me.DonateText)
+        Me.DonatePanel.Controls.Add(Me.DonateTitle)
+        resources.ApplyResources(Me.DonatePanel, "DonatePanel")
+        Me.DonatePanel.Name = "DonatePanel"
+        '
+        'DonatePPButton
+        '
+        Me.DonatePPButton.BackColor = System.Drawing.SystemColors.Control
+        Me.DonatePPButton.BackgroundImage = Global.Limitless.My.Resources.Resources.pp
+        resources.ApplyResources(Me.DonatePPButton, "DonatePPButton")
+        Me.DonatePPButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DonatePPButton.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.DonatePPButton.Name = "DonatePPButton"
+        Me.DonatePPButton.UseVisualStyleBackColor = False
+        '
+        'DonatePTButton
+        '
+        Me.DonatePTButton.BackColor = System.Drawing.SystemColors.Control
+        Me.DonatePTButton.BackgroundImage = Global.Limitless.My.Resources.Resources.pt
+        resources.ApplyResources(Me.DonatePTButton, "DonatePTButton")
+        Me.DonatePTButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DonatePTButton.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.DonatePTButton.Name = "DonatePTButton"
+        Me.DonatePTButton.UseVisualStyleBackColor = False
+        '
+        'DonateText
+        '
+        Me.DonateText.BackColor = System.Drawing.SystemColors.ControlText
+        Me.DonateText.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DonateText.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.DonateText.ForeColor = System.Drawing.SystemColors.Control
+        resources.ApplyResources(Me.DonateText, "DonateText")
+        Me.DonateText.Name = "DonateText"
+        Me.DonateText.ReadOnly = True
+        Me.DonateText.TabStop = False
+        '
+        'DonateTitle
+        '
+        resources.ApplyResources(Me.DonateTitle, "DonateTitle")
+        Me.DonateTitle.Name = "DonateTitle"
+        '
+        'UpdatePanel
+        '
+        Me.UpdatePanel.Controls.Add(Me.UpdateAvaBox)
+        Me.UpdatePanel.Controls.Add(Me.UpdateCurBox)
+        Me.UpdatePanel.Controls.Add(Me.UpdateInstallButton)
+        Me.UpdatePanel.Controls.Add(Me.UpdateAvaText)
+        Me.UpdatePanel.Controls.Add(Me.UpdateCurText)
+        Me.UpdatePanel.Controls.Add(Me.UpdateSubText)
+        Me.UpdatePanel.Controls.Add(Me.UpdateTitleText)
+        resources.ApplyResources(Me.UpdatePanel, "UpdatePanel")
+        Me.UpdatePanel.Name = "UpdatePanel"
+        '
+        'UpdateAvaBox
+        '
+        Me.UpdateAvaBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.UpdateAvaBox.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.UpdateAvaBox, "UpdateAvaBox")
+        Me.UpdateAvaBox.Name = "UpdateAvaBox"
+        Me.UpdateAvaBox.ReadOnly = True
+        Me.UpdateAvaBox.TabStop = False
+        '
+        'UpdateCurBox
+        '
+        Me.UpdateCurBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
+        Me.UpdateCurBox.ForeColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.UpdateCurBox, "UpdateCurBox")
+        Me.UpdateCurBox.Name = "UpdateCurBox"
+        Me.UpdateCurBox.ReadOnly = True
+        Me.UpdateCurBox.TabStop = False
+        '
+        'UpdateInstallButton
+        '
+        resources.ApplyResources(Me.UpdateInstallButton, "UpdateInstallButton")
+        Me.UpdateInstallButton.Name = "UpdateInstallButton"
+        Me.UpdateInstallButton.UseVisualStyleBackColor = True
+        '
+        'UpdateAvaText
+        '
+        resources.ApplyResources(Me.UpdateAvaText, "UpdateAvaText")
+        Me.UpdateAvaText.Name = "UpdateAvaText"
+        '
+        'UpdateCurText
+        '
+        resources.ApplyResources(Me.UpdateCurText, "UpdateCurText")
+        Me.UpdateCurText.Name = "UpdateCurText"
+        '
+        'UpdateSubText
+        '
+        resources.ApplyResources(Me.UpdateSubText, "UpdateSubText")
+        Me.UpdateSubText.Name = "UpdateSubText"
+        '
+        'UpdateTitleText
+        '
+        resources.ApplyResources(Me.UpdateTitleText, "UpdateTitleText")
+        Me.UpdateTitleText.Name = "UpdateTitleText"
+        '
         'MainWindow
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -2639,36 +2639,6 @@ Partial Class MainWindow
         Me.BackgroundPanel.ResumeLayout(False)
         Me.MainMenuPanel.ResumeLayout(False)
         Me.MainMenuBar.ResumeLayout(False)
-        Me.OptionsPanel.ResumeLayout(False)
-        Me.CustomLibsGroup.ResumeLayout(False)
-        Me.CustomLibsGroup.PerformLayout()
-        Me.CustomLibsPreviewMusic.ResumeLayout(False)
-        CType(Me.CustomLibsMusicImage, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.CustomLibsPreviewAvatar.ResumeLayout(False)
-        CType(Me.CustomLibsPreviewImage, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.OptionsManageGroup.ResumeLayout(False)
-        Me.OptionsMusicGroup.ResumeLayout(False)
-        Me.OptionsMusicGroup.PerformLayout()
-        Me.OptionsColorGroup.ResumeLayout(False)
-        Me.AboutPanel.ResumeLayout(False)
-        Me.AboutPanel.PerformLayout()
-        Me.WelcomePanel.ResumeLayout(False)
-        CType(Me.WelcomeImage06, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage05, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage01, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage02, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage07, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage08, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage09, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage00, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage04, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WelcomeImage03, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.DonatePanel.ResumeLayout(False)
-        Me.DonatePanel.PerformLayout()
-        Me.UpdatePanel.ResumeLayout(False)
-        Me.UpdatePanel.PerformLayout()
         Me.EditorPanel.ResumeLayout(False)
         Me.EditorEditPanel.ResumeLayout(False)
         Me.EditorEditCharPanel.ResumeLayout(False)
@@ -2707,6 +2677,36 @@ Partial Class MainWindow
         Me.EditorSwitchPanel.ResumeLayout(False)
         Me.EditorSwitchPanel.PerformLayout()
         Me.EditorMenuPanel.ResumeLayout(False)
+        Me.OptionsPanel.ResumeLayout(False)
+        Me.CustomLibsGroup.ResumeLayout(False)
+        Me.CustomLibsGroup.PerformLayout()
+        Me.CustomLibsPreviewMusic.ResumeLayout(False)
+        CType(Me.CustomLibsMusicImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CustomLibsPreviewAvatar.ResumeLayout(False)
+        CType(Me.CustomLibsPreviewImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.OptionsManageGroup.ResumeLayout(False)
+        Me.OptionsMusicGroup.ResumeLayout(False)
+        Me.OptionsMusicGroup.PerformLayout()
+        Me.OptionsColorGroup.ResumeLayout(False)
+        Me.AboutPanel.ResumeLayout(False)
+        Me.AboutPanel.PerformLayout()
+        Me.WelcomePanel.ResumeLayout(False)
+        CType(Me.WelcomeImage06, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage05, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage01, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage02, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage07, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage08, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage09, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage00, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage04, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WelcomeImage03, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DonatePanel.ResumeLayout(False)
+        Me.DonatePanel.PerformLayout()
+        Me.UpdatePanel.ResumeLayout(False)
+        Me.UpdatePanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

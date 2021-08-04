@@ -1,13 +1,11 @@
-﻿Imports System.IO
-
-Public Module Initialize
-
+﻿Public Module Initialize
     Public Sub InitLoad()
         InitProcess()
         Settings.UpdateSettings()
         Dim VersionParts() As String = Strings.Split((System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()), ".", 4)
-        MainWindow.VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
-        MainWindow.UpdateCurBox.Text = MainWindow.VersionNumber
+        MemoryBank.VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." &
+            Converters.VersionConverter(VersionParts(3), 4)
+        MainWindow.UpdateCurBox.Text = MemoryBank.VersionNumber
         Database.CheckForDB(Settings.SettingsLastDB)
         Try
             MainWindow.UpdateAvaBox.Text = Tools.GetWebText(MemoryBank.VersionURL)
@@ -22,16 +20,14 @@ Public Module Initialize
         End Try
         If Settings.SettingsMusic.ToLower = "on" Then
             If Settings.SettingsCustM = "on" And Settings.SettingsCustI.StartsWith("on") Then
-                Dim customintro As String = MemoryBank.MusicDir & "/" & Settings.SettingsCustI.Substring(3) & ".mp3"
+                Dim customintro As String = MemoryBank.MusicDir & "/" & Settings.SettingsCustI.Substring(3) & MemoryBank.MusicExtL
                 If System.IO.File.Exists(customintro) Then Jukebox.PlayMp3(customintro) Else Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
             Else
                 Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
             End If
             Jukebox.IntroInPlay = True
         End If
-
     End Sub
-
     Public Sub InitProcess()
         InitFolders()
         InitUpdater()
@@ -40,7 +36,6 @@ Public Module Initialize
         InitPanels()
         Avatars.TitleScreen()
     End Sub
-
     Private Sub InitFolders()
         FilesFolders.CreateDirectory(MemoryBank.AvatarsDir)
         FilesFolders.CreateDirectory(MemoryBank.DataDir)
@@ -49,22 +44,17 @@ Public Module Initialize
         FilesFolders.CreateDirectory(MemoryBank.SoundDir)
         FilesFolders.CreateDirectory(MemoryBank.LogDir)
     End Sub
-
     Private Sub InitUpdater()
-        If Not File.Exists(MemoryBank.UpdaterName & ".exe") Then System.IO.File.WriteAllBytes(MemoryBank.UpdaterName & ".exe",
-            My.Resources.CTGUpdater)
+        If Not System.IO.File.Exists(MemoryBank.UpdaterName & MemoryBank.FileExtL) Then System.IO.File.WriteAllBytes(MemoryBank.UpdaterName &
+            MemoryBank.FileExtL, My.Resources.CTGUpdater)
     End Sub
-
     Private Sub InitHide()
         FilesFolders.HideFolder(MemoryBank.LibDir)
-        FilesFolders.HideFile(LCase(Application.ProductName) & ".exe.config")
-        FilesFolders.HideFile(MemoryBank.UpdaterName & ".exe")
+        FilesFolders.HideFile(LCase(Application.ProductName) & MemoryBank.FileExtL & ".config")
+        FilesFolders.HideFile(MemoryBank.UpdaterName & MemoryBank.FileExtL)
     End Sub
-
     Private Sub InitSettings()
-
-        If Not File.Exists(MemoryBank.SettingsFile & "." &
-                           MemoryBank.SettingsExt) Then
+        If Not System.IO.File.Exists(MemoryBank.SettingsFile & MemoryBank.SettingsExtL) Then
             Settings.CreateSettings()
             Settings.BuildDefault()
         Else
@@ -75,9 +65,7 @@ Public Module Initialize
         Else
             Appearance.AssignMode("Default")
         End If
-
     End Sub
-
     Public Sub InitPanels()
         MainWindow.WelcomePanel.Visible = True
         MainWindow.AboutPanel.Visible = False

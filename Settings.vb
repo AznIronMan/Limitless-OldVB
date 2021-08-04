@@ -1,7 +1,7 @@
 ﻿Public Class Settings
 
     Public Shared SettingsPath As String = ".\"
-    Public Shared SettingsName As String = "Limitless.Settings"
+    Public Shared SettingsName As String = "Limitless" & MemoryBank.SettingsExtL
     Public Shared SettingsUID As String = Environment.MachineName
     Public Shared SettingsVersion As String = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString())
     Public Shared SettingsMode As String = "Dark"
@@ -16,12 +16,10 @@
     Public Shared SettingsDefaultDB As String = "default"
     Public Shared SettingsLastDB As String = "default"
     Public Shared SettingsAutoSave As String = "on"
-
     Public Shared Sub CreateSettings()
         DBTools.CreateDB(SettingsPath, SettingsName,
             "CREATE TABLE 'mainSettings' ('settingName' TEXT NOT NULL, 'settingConfig' TEXT);")
     End Sub
-
     Public Shared Sub BuildDefault()
         DBTools.InsertData(SettingsPath, SettingsName, "mainSettings",
         {"'uid', '" & SettingsUID & "'", "'version', '" & SettingsVersion &
@@ -33,7 +31,6 @@
         SettingsDefaultDB & "'", "'lastdb', '" & SettingsLastDB & "'",
         "'autosave', '" & SettingsAutoSave & "'"})
     End Sub
-
     Public Shared Sub GetSettings()
         Dim CurrentSettings() As String = (DBTools.GetCol(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingConfig").Split(","))
         SettingsUID = CurrentSettings(0)
@@ -51,7 +48,6 @@
         SettingsLastDB = CurrentSettings(12)
         SettingsAutoSave = CurrentSettings(13)
     End Sub
-
     Public Shared Sub UpdateSettings()
         If Settings.SettingsMode.ToLower = "lite" Then
             MainWindow.OptionsColorLite.CheckState = CheckState.Checked
@@ -90,7 +86,6 @@
             "." & Converters.VersionConverter(VersionParts(3), 4)
         MainWindow.OptionsHost.Text = Settings.SettingsUID & " • " & ReleaseType & "VERSION " & VersionNumber
     End Sub
-
     Private Shared Sub OptionsCheckUncheck(setting As String, checkbox As CheckBox)
         If setting.ToLower.StartsWith("on") Then
             checkbox.CheckState = CheckState.Checked
