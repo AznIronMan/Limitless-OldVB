@@ -52,4 +52,51 @@
         SettingsAutoSave = CurrentSettings(13)
     End Sub
 
+    Public Shared Sub UpdateSettings()
+        If Settings.SettingsMode.ToLower = "lite" Then
+            MainWindow.OptionsColorLite.CheckState = CheckState.Checked
+            MainWindow.OptionsColorLite.Enabled = False
+            MainWindow.OptionsColorDark.CheckState = CheckState.Unchecked
+            MainWindow.OptionsColorDark.Enabled = True
+            MainWindow.OptionsColorCustom.CheckState = CheckState.Unchecked
+            'MainWindow.OptionsColorCustom.Enabled = True
+        Else
+            MainWindow.OptionsColorDark.CheckState = CheckState.Checked
+            MainWindow.OptionsColorDark.Enabled = False
+            MainWindow.OptionsColorLite.CheckState = CheckState.Unchecked
+            MainWindow.OptionsColorLite.Enabled = True
+            MainWindow.OptionsColorCustom.CheckState = CheckState.Unchecked
+            'MainWindow.OptionsColorCustom.Enabled = True
+        End If
+        If Settings.SettingsMusic.ToLower.StartsWith("on") Then
+            MainWindow.OptionsAudioCheckMusic.CheckState = CheckState.Checked
+            MainWindow.OptionsAudioCheckCustom.Enabled = True
+        Else
+            Optioner.FlipMusicOptions("options", False)
+            MainWindow.OptionsAudioCheckCustom.Enabled = False
+            MainWindow.OptionsAudioCheckMusic.CheckState = CheckState.Unchecked
+        End If
+        Appearance.RefreshColors()
+        OptionsCheckUncheck(Settings.SettingsCustM, MainWindow.OptionsAudioCheckCustom)
+        OptionsCheckUncheck(Settings.SettingsCustI, MainWindow.OptionsAudioCheckIntro)
+        OptionsCheckUncheck(Settings.SettingsCustB, MainWindow.OptionsAudioCheckBattle)
+        OptionsCheckUncheck(Settings.SettingsCustW, MainWindow.OptionsAudioCheckVictory)
+        OptionsCheckUncheck(Settings.SettingsCustL, MainWindow.OptionsAudioCheckDefeat)
+        OptionsCheckUncheck(Settings.SettingsSound, MainWindow.OptionsAudioCheckSound)
+        OptionsCheckUncheck(Settings.SettingsAutoSave, MainWindow.CustomLibsAuto)
+        Dim ReleaseType As String = "ALPHA "
+        Dim VersionParts() As String = Strings.Split(Settings.SettingsVersion, ".", 4)
+        Dim VersionNumber As String = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) &
+            "." & Converters.VersionConverter(VersionParts(3), 4)
+        MainWindow.OptionsHost.Text = Settings.SettingsUID & " • " & ReleaseType & "VERSION " & VersionNumber
+    End Sub
+
+    Private Shared Sub OptionsCheckUncheck(setting As String, checkbox As CheckBox)
+        If setting.ToLower.StartsWith("on") Then
+            checkbox.CheckState = CheckState.Checked
+        Else
+            checkbox.CheckState = CheckState.Unchecked
+        End If
+    End Sub
+
 End Class

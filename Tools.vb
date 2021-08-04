@@ -228,4 +228,19 @@ Public Class Tools
         DBTools.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
 
+    Public Shared Function TestKeyPress(sender As Object, key As String) As Boolean
+        Dim AllowedKeys As String = ""
+        Select Case Converters.ControlToString(sender)
+            Case "customlibspath"
+                AllowedKeys = "abcdefghijklmnopqrstuvwxyz -.0123456789"
+            Case "editorswitchnewbox"
+                AllowedKeys = "abcdefghijklmnopqrstuvwxyz-0123456789"
+        End Select
+        If Not AllowedKeys.Contains(key) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
 End Class

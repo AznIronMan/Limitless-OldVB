@@ -11,9 +11,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Limitless")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("ClarkTribeGames")>
+<Assembly: AssemblyCompany("ClarkTribeGames LLC")>
 <Assembly: AssemblyProduct("Limitless")>
-<Assembly: AssemblyCopyright("Copyright ©  2021  ClarkTribeGames")>
+<Assembly: AssemblyCopyright("Copyright ©  2021  ClarkTribeGames LLC")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.1.006.0004")>
-<Assembly: AssemblyFileVersion("0.1.006.0004")>
+<Assembly: AssemblyVersion("0.1.006.0007")>
+<Assembly: AssemblyFileVersion("0.1.006.0007")>
 <Assembly: NeutralResourcesLanguage("")>

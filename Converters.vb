@@ -62,4 +62,8 @@ Public Class Converters
         End Using
     End Sub
 
+    Public Shared Function ControlToString(sender As Object) As String
+        Return DirectCast(sender, Object).Name.ToLower.Replace("clear", "")
+    End Function
+
 End Class
