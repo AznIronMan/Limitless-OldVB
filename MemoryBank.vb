@@ -2,7 +2,7 @@
 
     'Environmental
     Public Shared BasePath As String = System.IO.Path.Combine(My.Computer.FileSystem.CurrentDirectory)
-    Public Shared VersionURL As String = "http://svr.clarktribegames.com:19762/limitless.txt"
+    Public Shared VersionURL As String = "http://svr.clarktribegames.com:19763/limitless.txt"
     Public Shared UpdaterName As String = "CTGUpdater"
     Public Shared AvatarsDir As String = "avatars"
     Public Shared AvatarsExtF As String = "*.png"
@@ -34,7 +34,12 @@
     Public Shared LogExtL As String = LogExtF.Substring(1)
     Public Shared LogExt As String = LogExtF.Substring(2)
     Public Shared VersionNumber As String = ""
+    Public Shared WindowDrag As Boolean
+    Public Shared WindowMouseX, WindowMouseY As Integer
+    Public Shared StartupInProgress As Boolean = True
 
+    'Editor
+    Public Shared ActiveEditorWindow As String = ""
 
     'Options
     Public Shared OptionsGroupLoc As String = "mid"

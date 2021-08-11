@@ -1272,23 +1272,11 @@ Items listed here are those in the inventory of the character.
   <data name="&gt;&gt;EditorCharEffInvHelp.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="EditorCharEffInvList.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="EditorCharEffInvList.ItemHeight" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="EditorCharEffInvList.Items" xml:space="preserve">
-    <value>Item1</value>
-  </data>
-  <data name="EditorCharEffInvList.Items1" xml:space="preserve">
-    <value>Item2</value>
-  </data>
-  <data name="EditorCharEffInvList.Items2" xml:space="preserve">
-    <value>Item3</value>
-  </data>
-  <data name="EditorCharEffInvList.Items3" xml:space="preserve">
-    <value>Item4</value>
-  </data>
-  <data name="EditorCharEffInvList.Items4" xml:space="preserve">
-    <value>Item5</value>
   </data>
   <data name="EditorCharEffInvList.Location" type="System.Drawing.Point, System.Drawing">
     <value>632, 253</value>
@@ -1551,23 +1539,11 @@ Use the "Abilities" menu in the Editor to edit afterwards.</value>
   <data name="&gt;&gt;EditorCharAblHelp.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
+  <data name="EditorCharEffList.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="EditorCharEffList.ItemHeight" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="EditorCharEffList.Items" xml:space="preserve">
-    <value>Eff1</value>
-  </data>
-  <data name="EditorCharEffList.Items1" xml:space="preserve">
-    <value>Eff2</value>
-  </data>
-  <data name="EditorCharEffList.Items2" xml:space="preserve">
-    <value>Eff3</value>
-  </data>
-  <data name="EditorCharEffList.Items3" xml:space="preserve">
-    <value>Eff4</value>
-  </data>
-  <data name="EditorCharEffList.Items4" xml:space="preserve">
-    <value>Eff5</value>
   </data>
   <data name="EditorCharEffList.Location" type="System.Drawing.Point, System.Drawing">
     <value>469, 330</value>
@@ -1620,20 +1596,11 @@ Use the "Abilities" menu in the Editor to edit afterwards.</value>
   <data name="&gt;&gt;EditorCharEffText.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
+  <data name="EditorCharAblList.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="EditorCharAblList.ItemHeight" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="EditorCharAblList.Items" xml:space="preserve">
-    <value>Abl1</value>
-  </data>
-  <data name="EditorCharAblList.Items1" xml:space="preserve">
-    <value>Abl2</value>
-  </data>
-  <data name="EditorCharAblList.Items2" xml:space="preserve">
-    <value>Abl3</value>
-  </data>
-  <data name="EditorCharAblList.Items3" xml:space="preserve">
-    <value>Abl4</value>
   </data>
   <data name="EditorCharAblList.Location" type="System.Drawing.Point, System.Drawing">
     <value>469, 233</value>
@@ -2092,21 +2059,6 @@ Themes are managed in the Options (gear icon) menu under "Manage Music".</value>
   <data name="&gt;&gt;EditorCharThemeCheck.ZOrder" xml:space="preserve">
     <value>36</value>
   </data>
-  <data name="EditorCharLangCList.Items" xml:space="preserve">
-    <value>Language1</value>
-  </data>
-  <data name="EditorCharLangCList.Items1" xml:space="preserve">
-    <value>Language2</value>
-  </data>
-  <data name="EditorCharLangCList.Items2" xml:space="preserve">
-    <value>Language3</value>
-  </data>
-  <data name="EditorCharLangCList.Items3" xml:space="preserve">
-    <value>Language4</value>
-  </data>
-  <data name="EditorCharLangCList.Items4" xml:space="preserve">
-    <value>Language5</value>
-  </data>
   <data name="EditorCharLangCList.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 330</value>
   </data>
@@ -2333,17 +2285,11 @@ Use the "Multiverses" menu in the Editor to edit afterwards.
   <data name="&gt;&gt;EditorCharAliasAddB.ZOrder" xml:space="preserve">
     <value>43</value>
   </data>
+  <data name="EditorCharAliasList.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="EditorCharAliasList.ItemHeight" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="EditorCharAliasList.Items" xml:space="preserve">
-    <value>Alias1</value>
-  </data>
-  <data name="EditorCharAliasList.Items1" xml:space="preserve">
-    <value>Alias2</value>
-  </data>
-  <data name="EditorCharAliasList.Items2" xml:space="preserve">
-    <value>Alias3</value>
   </data>
   <data name="EditorCharAliasList.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 253</value>
@@ -2516,6 +2462,12 @@ Use the "Multiverses" menu in the Editor to edit afterwards.
   <data name="EditorCharThemeBox.TabIndex" type="System.Int32, mscorlib">
     <value>77</value>
   </data>
+  <data name="EditorCharThemeBox.Text" xml:space="preserve">
+    <value>&lt;Default&gt;</value>
+  </data>
+  <data name="EditorCharThemeBox.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="EditorCharThemeBox.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2539,6 +2491,12 @@ Use the "Multiverses" menu in the Editor to edit afterwards.
   </data>
   <data name="EditorCharAvatarBox.TabIndex" type="System.Int32, mscorlib">
     <value>75</value>
+  </data>
+  <data name="EditorCharAvatarBox.Text" xml:space="preserve">
+    <value>&lt;Default&gt;</value>
+  </data>
+  <data name="EditorCharAvatarBox.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="EditorCharAvatarBox.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>

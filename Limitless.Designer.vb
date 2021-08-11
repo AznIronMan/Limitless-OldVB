@@ -822,11 +822,11 @@ Partial Class MainWindow
         'EditorCharEffInvList
         '
         Me.EditorCharEffInvList.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.EditorCharEffInvList, "EditorCharEffInvList")
         Me.EditorCharEffInvList.ForeColor = System.Drawing.SystemColors.Window
         Me.EditorCharEffInvList.FormattingEnabled = True
-        resources.ApplyResources(Me.EditorCharEffInvList, "EditorCharEffInvList")
-        Me.EditorCharEffInvList.Items.AddRange(New Object() {resources.GetString("EditorCharEffInvList.Items"), resources.GetString("EditorCharEffInvList.Items1"), resources.GetString("EditorCharEffInvList.Items2"), resources.GetString("EditorCharEffInvList.Items3"), resources.GetString("EditorCharEffInvList.Items4")})
         Me.EditorCharEffInvList.Name = "EditorCharEffInvList"
+        Me.EditorCharEffInvList.Sorted = True
         '
         'EditorCharEffInvText
         '
@@ -874,11 +874,11 @@ Partial Class MainWindow
         'EditorCharEffList
         '
         Me.EditorCharEffList.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.EditorCharEffList, "EditorCharEffList")
         Me.EditorCharEffList.ForeColor = System.Drawing.SystemColors.Window
         Me.EditorCharEffList.FormattingEnabled = True
-        resources.ApplyResources(Me.EditorCharEffList, "EditorCharEffList")
-        Me.EditorCharEffList.Items.AddRange(New Object() {resources.GetString("EditorCharEffList.Items"), resources.GetString("EditorCharEffList.Items1"), resources.GetString("EditorCharEffList.Items2"), resources.GetString("EditorCharEffList.Items3"), resources.GetString("EditorCharEffList.Items4")})
         Me.EditorCharEffList.Name = "EditorCharEffList"
+        Me.EditorCharEffList.Sorted = True
         '
         'EditorCharEffText
         '
@@ -888,11 +888,11 @@ Partial Class MainWindow
         'EditorCharAblList
         '
         Me.EditorCharAblList.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.EditorCharAblList, "EditorCharAblList")
         Me.EditorCharAblList.ForeColor = System.Drawing.SystemColors.Window
         Me.EditorCharAblList.FormattingEnabled = True
-        resources.ApplyResources(Me.EditorCharAblList, "EditorCharAblList")
-        Me.EditorCharAblList.Items.AddRange(New Object() {resources.GetString("EditorCharAblList.Items"), resources.GetString("EditorCharAblList.Items1"), resources.GetString("EditorCharAblList.Items2"), resources.GetString("EditorCharAblList.Items3")})
         Me.EditorCharAblList.Name = "EditorCharAblList"
+        Me.EditorCharAblList.Sorted = True
         '
         'EditorCharAblText
         '
@@ -914,6 +914,7 @@ Partial Class MainWindow
         Me.EditorCharForceDrop.ForeColor = System.Drawing.SystemColors.Window
         Me.EditorCharForceDrop.FormattingEnabled = True
         Me.EditorCharForceDrop.Name = "EditorCharForceDrop"
+        Me.EditorCharForceDrop.Sorted = True
         '
         'EditorCharForceCheck
         '
@@ -972,12 +973,16 @@ Partial Class MainWindow
         '
         'EditorCharAvatarCheck
         '
+        Me.EditorCharAvatarCheck.Checked = True
+        Me.EditorCharAvatarCheck.CheckState = System.Windows.Forms.CheckState.Checked
         resources.ApplyResources(Me.EditorCharAvatarCheck, "EditorCharAvatarCheck")
         Me.EditorCharAvatarCheck.Name = "EditorCharAvatarCheck"
         Me.EditorCharAvatarCheck.UseVisualStyleBackColor = True
         '
         'EditorCharThemeCheck
         '
+        Me.EditorCharThemeCheck.Checked = True
+        Me.EditorCharThemeCheck.CheckState = System.Windows.Forms.CheckState.Checked
         resources.ApplyResources(Me.EditorCharThemeCheck, "EditorCharThemeCheck")
         Me.EditorCharThemeCheck.Name = "EditorCharThemeCheck"
         Me.EditorCharThemeCheck.UseVisualStyleBackColor = True
@@ -987,7 +992,6 @@ Partial Class MainWindow
         Me.EditorCharLangCList.BackColor = System.Drawing.SystemColors.ControlText
         Me.EditorCharLangCList.ForeColor = System.Drawing.SystemColors.Window
         Me.EditorCharLangCList.FormattingEnabled = True
-        Me.EditorCharLangCList.Items.AddRange(New Object() {resources.GetString("EditorCharLangCList.Items"), resources.GetString("EditorCharLangCList.Items1"), resources.GetString("EditorCharLangCList.Items2"), resources.GetString("EditorCharLangCList.Items3"), resources.GetString("EditorCharLangCList.Items4")})
         resources.ApplyResources(Me.EditorCharLangCList, "EditorCharLangCList")
         Me.EditorCharLangCList.Name = "EditorCharLangCList"
         '
@@ -1031,10 +1035,9 @@ Partial Class MainWindow
         'EditorCharAliasList
         '
         Me.EditorCharAliasList.BackColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.EditorCharAliasList, "EditorCharAliasList")
         Me.EditorCharAliasList.ForeColor = System.Drawing.SystemColors.Window
         Me.EditorCharAliasList.FormattingEnabled = True
-        resources.ApplyResources(Me.EditorCharAliasList, "EditorCharAliasList")
-        Me.EditorCharAliasList.Items.AddRange(New Object() {resources.GetString("EditorCharAliasList.Items"), resources.GetString("EditorCharAliasList.Items1"), resources.GetString("EditorCharAliasList.Items2")})
         Me.EditorCharAliasList.Name = "EditorCharAliasList"
         '
         'EditorCharAliasCheck
@@ -1051,6 +1054,7 @@ Partial Class MainWindow
         Me.EditorCharVerseDrop.ForeColor = System.Drawing.SystemColors.Window
         Me.EditorCharVerseDrop.FormattingEnabled = True
         Me.EditorCharVerseDrop.Name = "EditorCharVerseDrop"
+        Me.EditorCharVerseDrop.Sorted = True
         '
         'EditorCharVerseText
         '
@@ -1216,6 +1220,7 @@ Partial Class MainWindow
         Me.EditorCharClassDrop.ForeColor = System.Drawing.SystemColors.Window
         Me.EditorCharClassDrop.FormattingEnabled = True
         Me.EditorCharClassDrop.Name = "EditorCharClassDrop"
+        Me.EditorCharClassDrop.Sorted = True
         '
         'EditorCharRaceDrop
         '
@@ -1225,6 +1230,7 @@ Partial Class MainWindow
         Me.EditorCharRaceDrop.ForeColor = System.Drawing.SystemColors.Window
         Me.EditorCharRaceDrop.FormattingEnabled = True
         Me.EditorCharRaceDrop.Name = "EditorCharRaceDrop"
+        Me.EditorCharRaceDrop.Sorted = True
         '
         'EditorCharTypeDrop
         '

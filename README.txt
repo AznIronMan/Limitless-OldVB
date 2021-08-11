@@ -1,6 +1,7 @@
 =============================================
 LIMITLESS by Geoff Clark
-VERSION ALPHA 0.1.006.0008
+PUBLISHED by CLARKTRIBEGAMES LLC
+VERSION ALPHA 0.1.006.0010
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -72,8 +73,9 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.006.0008 / 2021.08.04 - The Editor Update - Character Menu
+ALPHA 0.1.006.0010 / 2021.08.11 - The Editor Update - Character Menu
 
+- added race specific force, ability, and effect assignments in character editor
 - added character edit cancel button functionality
 - added heart as default life force item
 - added itemMax to items table
@@ -88,8 +90,10 @@ ALPHA 0.1.006.0008 / 2021.08.04 - The Editor Update - Character Menu
 - added placeholder label for system testing fields to be displayed
 - added language table to database and default database
 - added multiverse, language, and misc field for characters in database
-- added about, donate, exit, update, and options modules and removed them from main
-- transfer of mini modules from main to respective locations in progress
+- added about, donate, exit, update, options, settings, and editor modules and removed them from main
+- transfer of mini modules from main to respective locations
+- reduced the number of library files required to be physically in install folder, now embedded into game
+- added newgame module for future use
 - added ClarkTribeGames LLC digitial signature
 
 [PREVIOUS UPDATES]

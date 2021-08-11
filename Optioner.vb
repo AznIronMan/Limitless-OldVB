@@ -164,7 +164,6 @@
         MainWindow.CustomLibsActive.CheckState = check
         MainWindow.CustomLibsActive.ForeColor = color
     End Sub
-
     Private Shared Sub CustomLibsPrivatePick(action As Boolean)
         Dim Reaction As Boolean
         If action = True Then Reaction = False Else Reaction = True
@@ -226,7 +225,7 @@
             My.Computer.FileSystem.RenameFile(dir & "/" & oldname & ext, newname & ext)
         Catch ex As Exception
             Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " " &
-            Converters.UppercaseFirstLetter(action), "Rename Attempt", ex)
+            Converters.UppercaseEachFirstLetter(action), "Rename Attempt", ex)
             MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
         End Try
         checkbox.Enabled = True
@@ -414,7 +413,7 @@
         Dim Ext As String = WhichExt(LCase(MemoryBank.CustomLibsSelected))
         Dim SourceFiles() As String, NewFile As String
         Dim fd As New OpenFileDialog With {
-            .Title = "Custom " & Converters.UppercaseFirstLetter(MemoryBank.CustomLibsSelected) & " File(s) To Import",
+            .Title = "Custom " & Converters.UppercaseEachFirstLetter(MemoryBank.CustomLibsSelected) & " File(s) To Import",
             .InitialDirectory = SelectedDir,
             .Filter = Replace(Ext, ".", "") & " Files (*" & Ext & ")|*" & Ext,
             .FilterIndex = 1,
@@ -462,7 +461,7 @@
             MainWindow.CustomLibsActive, MainWindow.CustomLibsEdit, MainWindow.CustomLibsMusicMsg, MainWindow.OptionsColorGroup,
             MainWindow.OptionsMusicGroup, MainWindow.OptionsManageGroup, MainWindow.CustomLibsImport, MainWindow.CustomLibsDelete)
     End Sub
-    Public Shared Sub OptionsAudioCheckChange(checkbox As CheckBox, button As Button, setting As String)
+    Private Shared Sub OptionsAudioCheckChange(checkbox As CheckBox, button As Button, setting As String)
         Dim SettingsVariable As String, CurrentSetting As String = DBTools.GetValue(Settings.SettingsPath,
             Settings.SettingsName, "mainSettings", "settingConfig", "settingName", setting).Substring(3)
         If MainWindow.OptionsAudioCheckCustom.Checked And MainWindow.OptionsAudioCheckCustom.Enabled Then
@@ -490,7 +489,10 @@
             DBTools.CloseSQL(Settings.SettingsPath, Settings.SettingsName)
         End If
     End Sub
-    Public Shared Sub FlipMusicOptions(type As String, action As Boolean)
+    Public Shared Sub DisableMusicOptions()
+        FlipMusicOptions("options", False)
+    End Sub
+    Private Shared Sub FlipMusicOptions(type As String, action As Boolean)
         Select Case LCase(type)
             Case "options"
                 MainWindow.OptionsAudioCheckIntro.Enabled = action
@@ -542,7 +544,7 @@
         End Select
         Appearance.RefreshColors()
     End Sub
-    Public Shared Sub CheckCustomMusicOptions()
+    Private Shared Sub CheckCustomMusicOptions()
         If MainWindow.OptionsAudioCheckIntro.Enabled And MainWindow.OptionsAudioCheckIntro.CheckState = CheckState.Checked Then
             FlipMusicOptions("custommusicintro", True)
         End If
@@ -556,7 +558,10 @@
             FlipMusicOptions("custommusicdefeat", True)
         End If
     End Sub
-    Public Shared Sub CheckCustomTracks(type As String)
+    Public Shared Sub CheckAllCustomTracks()
+        CheckCustomTracks("all")
+    End Sub
+    Private Shared Sub CheckCustomTracks(type As String)
         Select Case LCase(type)
             Case "intro"
                 CheckCustomTracksProcess(Settings.SettingsCustI, MainWindow.OptionsAudioSelectIntro, MainWindow.OptionsAudioTextIntro, MainWindow.OptionsAudioCheckIntro)
@@ -652,7 +657,7 @@
         MainWindow.OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
         MemoryBank.SelectCustomTrack = ""
     End Sub
-    Public Shared Sub CustomLibsListPop(omega As Boolean)
+    Private Shared Sub CustomLibsListPop(omega As Boolean)
         Select Case LCase(MemoryBank.CustomLibsSelected)
             Case "avatars"
                 Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.AvatarsDir, MemoryBank.AvatarsExtF,

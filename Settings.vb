@@ -68,7 +68,7 @@
             MainWindow.OptionsAudioCheckMusic.CheckState = CheckState.Checked
             MainWindow.OptionsAudioCheckCustom.Enabled = True
         Else
-            Optioner.FlipMusicOptions("options", False)
+            Optioner.DisableMusicOptions()
             MainWindow.OptionsAudioCheckCustom.Enabled = False
             MainWindow.OptionsAudioCheckMusic.CheckState = CheckState.Unchecked
         End If

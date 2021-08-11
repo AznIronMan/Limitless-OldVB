@@ -103,6 +103,7 @@
             list.Items.Add(NoneAvailable)
             list.Enabled = False
         End If
+        ClearDupes(list)
         DBTools.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
     Public Shared Sub PopulateCListFromDB(type As String, list As CheckedListBox, table As String, idcol As String, namecol As String)
@@ -125,6 +126,7 @@
             list.Items.Add(NoneAvailable)
             list.Enabled = False
         End If
+        ClearDupes(list)
         DBTools.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
     Public Shared Sub PopulateCListWithCustom(type As String, list As CheckedListBox, criteria() As String)
@@ -156,6 +158,7 @@
             list.Items.Add(NoneAvailable)
             list.Enabled = False
         End If
+        ClearDupes(list)
         DBTools.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
     Public Shared Sub PopulateDropFromDB(type As String, drop As ComboBox, table As String, idcol As String, namecol As String)
@@ -178,6 +181,7 @@
             drop.Items.Add(NoneAvailable)
             drop.Enabled = False
         End If
+        ClearDupes(drop)
         drop.SelectedIndex = 0
         DBTools.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
@@ -210,6 +214,7 @@
             drop.Items.Add(NoneAvailable)
             drop.Enabled = False
         End If
+        ClearDupes(drop)
         drop.SelectedIndex = 0
         DBTools.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
@@ -227,5 +232,16 @@
             Return False
         End If
     End Function
+    Public Shared Sub ButtonChange(button As Button, action As Boolean)
+        button.Enabled = action
+        Appearance.RefreshColors()
+    End Sub
+
+    Public Shared Sub ClearDupes(list As Object)
+        Dim items(list.Items.Count - 1) As Object
+        list.Items.CopyTo(items, 0)
+        list.Items.Clear()
+        list.Items.AddRange(items.AsEnumerable().Distinct().ToArray())
+    End Sub
 
 End Class

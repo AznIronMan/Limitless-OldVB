@@ -1,5 +1,4 @@
 ﻿Public Class Donater
-
     Public Shared Sub TheDonater(type As String, buttonname As String)
         Select Case type
             Case "Message"

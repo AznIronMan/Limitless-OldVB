@@ -7,6 +7,7 @@
             Converters.VersionConverter(VersionParts(3), 4)
         MainWindow.UpdateCurBox.Text = MemoryBank.VersionNumber
         Database.CheckForDB(Settings.SettingsLastDB)
+        'TO DO: Add Database Version Check Here
         Try
             MainWindow.UpdateAvaBox.Text = Tools.GetWebText(MemoryBank.VersionURL)
             MainWindow.UpdateSubText.ForeColor = MemoryBank.PagesForeColor
@@ -28,7 +29,8 @@
             Jukebox.IntroInPlay = True
         End If
     End Sub
-    Public Sub InitProcess()
+    Private Sub InitProcess()
+        Libraries.InitLibs()
         InitFolders()
         InitUpdater()
         InitHide()
