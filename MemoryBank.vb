@@ -17,7 +17,10 @@
     Public Shared SettingsExtF As String = "*.settings"
     Public Shared SettingsExtL As String = SettingsExtF.Substring(1)
     'Public Shared SettingsExt As String = SettingsExtF.Substring(2)
-    Public Shared LibDir As String = "lib"
+    Public Shared SQLiteFile As String = "System.Data.SQLite"
+    Public Shared LibExtF As String = "*.dll"
+    Public Shared LibExtL As String = LibExtF.Substring(1)
+    Public Shared LibExt As String = LibExtF.Substring(2)
     Public Shared MusicDir As String = "music"
     Public Shared MusicExtF As String = "*.mp3"
     Public Shared MusicExtL As String = MusicExtF.Substring(1)

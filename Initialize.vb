@@ -9,7 +9,7 @@
         Database.CheckForDB(Settings.SettingsLastDB)
         'TO DO: Add Database Version Check Here
         Try
-            MainWindow.UpdateAvaBox.Text = Tools.GetWebText(MemoryBank.VersionURL)
+            MainWindow.UpdateAvaBox.Text = CTGMySQL.CTGMySQL.Query(LCase(System.Reflection.Assembly.GetExecutingAssembly.GetName.Name.ToString()))
             MainWindow.UpdateSubText.ForeColor = MemoryBank.PagesForeColor
             Updater.CheckForUpdate(MainWindow.UpdateCurBox.Text, MainWindow.UpdateAvaBox.Text)
         Catch ex As Exception
@@ -30,9 +30,8 @@
         End If
     End Sub
     Private Sub InitProcess()
-        Libraries.InitLibs()
         InitFolders()
-        InitUpdater()
+        InitFiles()
         InitHide()
         InitSettings()
         InitPanels()
@@ -46,14 +45,16 @@
         FilesFolders.CreateDirectory(MemoryBank.SoundDir)
         FilesFolders.CreateDirectory(MemoryBank.LogDir)
     End Sub
-    Private Sub InitUpdater()
+    Private Sub InitFiles()
+        If Not System.IO.File.Exists(MemoryBank.SQLiteFile & MemoryBank.LibExtL) Then System.IO.File.WriteAllBytes(MemoryBank.SQLiteFile &
+            MemoryBank.LibExtL, My.Resources.System_Data_SQLite)
         If Not System.IO.File.Exists(MemoryBank.UpdaterName & MemoryBank.FileExtL) Then System.IO.File.WriteAllBytes(MemoryBank.UpdaterName &
             MemoryBank.FileExtL, My.Resources.CTGUpdater)
     End Sub
     Private Sub InitHide()
-        FilesFolders.HideFolder(MemoryBank.LibDir)
-        FilesFolders.HideFile(LCase(Application.ProductName) & MemoryBank.FileExtL & ".config")
         FilesFolders.HideFile(MemoryBank.UpdaterName & MemoryBank.FileExtL)
+        FilesFolders.HideFile(MemoryBank.SQLiteFile & MemoryBank.LibExtL)
+        FilesFolders.HideFolder("en-US")
     End Sub
     Private Sub InitSettings()
         If Not System.IO.File.Exists(MemoryBank.SettingsFile & MemoryBank.SettingsExtL) Then
