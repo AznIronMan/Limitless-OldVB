@@ -2,7 +2,8 @@
 
     'Environmental
     Public Shared BasePath As String = System.IO.Path.Combine(My.Computer.FileSystem.CurrentDirectory)
-    Public Shared VersionURL As String = "http://svr.clarktribegames.com:19763/limitless.txt"
+    Public Shared Version() As String = {"dbversions", "svr.clarktribe.com", "13306", "vChecker"}
+    Public Shared VFields() As String = {"Database=", ";Data Source=", ";Port=", ";User Id="}
     Public Shared UpdaterName As String = "CTGUpdater"
     Public Shared AvatarsDir As String = "avatars"
     Public Shared AvatarsExtF As String = "*.png"
@@ -18,6 +19,7 @@
     Public Shared SettingsExtL As String = SettingsExtF.Substring(1)
     'Public Shared SettingsExt As String = SettingsExtF.Substring(2)
     Public Shared SQLiteFile As String = "System.Data.SQLite"
+    Public Shared CTGFile As String = "ClarkTribeGames"
     Public Shared LibExtF As String = "*.dll"
     Public Shared LibExtL As String = LibExtF.Substring(1)
     Public Shared LibExt As String = LibExtF.Substring(2)
@@ -32,6 +34,9 @@
     Public Shared FileExtF As String = "*.exe"
     Public Shared FileExtL As String = FileExtF.Substring(1)
     Public Shared FileExt As String = FileExtF.Substring(2)
+    Public Shared ConfigExtF As String = "*.config"
+    Public Shared ConfigExtL As String = ConfigExtF.Substring(1)
+    Public Shared ConfigExt As String = ConfigExtF.Substring(2)
     Public Shared LogDir As String = "logs"
     Public Shared LogExtF As String = "*.log"
     Public Shared LogExtL As String = LogExtF.Substring(1)
@@ -40,6 +45,8 @@
     Public Shared WindowDrag As Boolean
     Public Shared WindowMouseX, WindowMouseY As Integer
     Public Shared StartupInProgress As Boolean = True
+    Public Shared VChecker As String = "Try Again Dearie"
+    Public Shared VFieldL As String = ";Password="
 
     'Editor
     Public Shared ActiveEditorWindow As String = ""

@@ -14,7 +14,7 @@
             If DefaultExists Then
                 MsgBox(Converters.UppercaseEachFirstLetter(savename) & " not available.  Switching to " &
                    Converters.UppercaseEachFirstLetter(DefaultSave) & ".")
-                DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
+                ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
                     "lastdb", {"settingConfig"}, {DefaultSave})
                 Settings.SettingsLastDB = LCase(DefaultSave)
                 MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
@@ -29,9 +29,9 @@
                     Converters.UppercaseEachFirstLetter(DefaultSave) & " Database.")
                 End If
                 CreateEmptyDB(Converters.UppercaseEachFirstLetter(DefaultSave))
-                DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
+                ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
                     "defaultdb", {"settingConfig"}, {DefaultSave})
-                DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
+                ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
                     "lastdb", {"settingConfig"}, {DefaultSave})
                 Settings.SettingsLastDB = LCase(DefaultSave)
                 Settings.SettingsDefaultDB = LCase(DefaultSave)
@@ -41,10 +41,10 @@
         End If
     End Sub
     Public Shared Function GetDBName(savename As String) As String
-        Return DBTools.GetCol(MemoryBank.DataDir, savename, "dbInfo", "dbName").Split(",")(0)
+        Return ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, savename, "dbInfo", "dbName").Split(",")(0)
     End Function
     Public Shared Sub CreateEmptyDB(savename As String)
-        DBTools.CreateDB(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.CreateDB(SavePath, savename & SaveExt, "
             CREATE TABLE 'dbInfo' ('dbName' TEXT NOT NULL, 'dbVersion' TEXT NOT NULL);
             CREATE TABLE 'dbToons' ('toonID' TEXT NOT NULL, 'toonName' TEXT NOT NULL, 'toonUID' TEXT NOT NULL,
             'toonRace' TEXT NOT NULL, 'toonClass' TEXT NOT NULL, 'toonAlign' TEXT NOT NULL, 'toonGender' TEXT NOT NULL, 
@@ -144,13 +144,13 @@
         'Team       Type: 0:Standard,1:Alliance,2:Partners,3:Family,4:Unstable,5:Mercenary
 
         'dbAbl
-        DBTools.RunSQL(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbAbl' VALUES ('0','Punch',NULL,'0','Z','AT','Z','Z',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbAbl' VALUES ('1','Kick',NULL,'0','Z','AT','Z','Z',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbAbl' VALUES ('2','Defend',NULL,'1','Z','SA','Z','Z',NULL,NULL,NULL,NULL);
             ")
 
-        DBTools.RunSQL(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbAblType' VALUES ('0','Attack',NULL);
             INSERT INTO 'dbAblType' VALUES ('1','Defense',NULL);
             INSERT INTO 'dbAblType' VALUES ('2','Passive',NULL);
@@ -161,7 +161,7 @@
             ")
 
         'dbAge
-        DBTools.RunSQL(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbAge' VALUES ('0','Baby','<1 or 2%','Newborn to very young',NULL);
             INSERT INTO 'dbAge' VALUES ('1','Adolescent','>=1 and <12%','Child age to teenager',NULL);
             INSERT INTO 'dbAge' VALUES ('2','Youthful','>=12% and <20%','Early Adult Life',NULL);
@@ -173,7 +173,7 @@
             ")
 
         'dbAlign
-        DBTools.RunSQL(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbAlign' VALUES ('0','Lawful Good','Always does the right thing no matter what','100',NULL,'4','a Lawful Good',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbAlign' VALUES ('1','Neutral Good','Does right but never takes a side','87',NULL,'3','a Neutral Good',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbAlign' VALUES ('2','Chaotic Good','Does the right thing but at any means necessary','75',NULL,'2','a Chaotic Good',NULL,NULL,NULL,NULL);
@@ -186,11 +186,11 @@
             ")
 
         'dbArenas
-        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbArenas' VALUES ('0','The Arena','0',
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbArenas' VALUES ('0','The Arena','0',
             'This is the default arena.','3','3','3','1','1','1','5','0',NULL);")
 
         'dbExistence
-        DBTools.RunSQL(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbExistence' VALUES ('0', 'Prime', 'Original form of this character.','is the Prime version of','O',NULL);
             INSERT INTO 'dbExistence' VALUES ('1', 'Generic', 'Designed to be a non-named character in mass volume.','is the Generic version of','G',NULL);
             INSERT INTO 'dbExistence' VALUES ('2', 'Split', 'Created from Prime with a Split ability.  Usually half the status as Prime.','is the Split version of','S',NULL);
@@ -201,7 +201,7 @@
             ")
 
         'dbDestiny
-        DBTools.RunSQL(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbDestiny' VALUES ('0','Competitive','Competes in Arenas (Default).',NULL);
             INSERT INTO 'dbDestiny' VALUES ('1','Passive','Non-competitive.',NULL);
             INSERT INTO 'dbDestiny' VALUES ('2','Justice','Focuses on making injustices right.',NULL);
@@ -211,7 +211,7 @@
             ")
 
         'dbElements
-        DBTools.RunSQL(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbElements' VALUES ('0','Fire',NULL,NULL);
             INSERT INTO 'dbElements' VALUES ('1','Ice',NULL,NULL);
             INSERT INTO 'dbElements' VALUES ('2','Wind',NULL,NULL);
@@ -225,16 +225,16 @@
             ")
 
         'dbEnviro
-        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbEnviro' VALUES ('0','Normal',NULL,'Everything is Normal.',NULL);")
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbEnviro' VALUES ('0','Normal',NULL,'Everything is Normal.',NULL);")
 
         'dbForce
-        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbForce' VALUES ('0','Heart','the Heart of','1','1',NULL,NULL);")
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbForce' VALUES ('0','Heart','the Heart of','1','1',NULL,NULL);")
 
         'dbForceObtain
-        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbForce' VALUES ('0','Heart','the Heart of','1','1',NULL,NULL);")
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbForce' VALUES ('0','Heart','the Heart of','1','1',NULL,NULL);")
 
         'dbGender
-        DBTools.RunSQL(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbGender' VALUES ('0','Male',NULL,NULL,'Male','he',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbGender' VALUES ('1','Female',NULL,NULL,'Female','she',NULL,NULL,NULL,NULL);
             INSERT INTO 'dbGender' VALUES ('2','Transgender',NULL,NULL,'Transgender','it',NULL,NULL,NULL,NULL);
@@ -245,11 +245,11 @@
         Dim VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
 
         'dbInfo
-        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbInfo' VALUES ('" & savename & "','" &
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbInfo' VALUES ('" & savename & "','" &
             VersionNumber & "');")
 
         'dbItemClass
-        DBTools.RunSQL(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbItemClass' VALUES ('0','Handheld',NULL);
             INSERT INTO 'dbItemClass' VALUES ('1','Wearable',NULL);
             INSERT INTO 'dbItemClass' VALUES ('2','Charm',NULL);
@@ -258,7 +258,7 @@
             ")
 
         'dbSections
-        DBTools.RunSQL(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbSections' VALUES ('0','0','Center Stage','1x1x2','1x1x2','0',NULL,'Center Stage Ground','0',NULL);
             INSERT INTO 'dbSections' VALUES ('1','0','North West','0x0x2','0x0x2','0',NULL,'North West Ground','1',NULL);
             INSERT INTO 'dbSections' VALUES ('2','0','North Area','0x1x2','0x1x2','0',NULL,'North Area Ground','1',NULL);
@@ -275,7 +275,7 @@
             ")
 
         'dbSize
-        DBTools.RunSQL(SavePath, savename & SaveExt, "
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
             INSERT INTO 'dbSize' VALUES ('0','Micro','Less than 6 Inches : Under 1/8 lb.',NULL,'a Micro-Sized',NULL,NULL,NULL);
             INSERT INTO 'dbSize' VALUES ('1','Mini','Between 6 inches and 1 foot : Between 1/8 lb. and 1 lb.',NULL,'a Mini-Sized',NULL,NULL,NULL);
             INSERT INTO 'dbSize' VALUES ('2','Tiny','Between 1 foot and 2 feet : Between 1 lb. and 8 lbs.',NULL,'a Tiny',NULL,NULL,NULL);
@@ -288,10 +288,10 @@
             ")
 
         'dbStatus
-        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbStatus' VALUES ('0','Normal','green','All is good.','is in Normal Health','99','0',NULL);")
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbStatus' VALUES ('0','Normal','green','All is good.','is in Normal Health','99','0',NULL);")
 
         'dbVerse
-        DBTools.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbVerse' VALUES ('0','LimitlessVerse',
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbVerse' VALUES ('0','LimitlessVerse',
             'This is the LimitlessVerse where The Arena is located.',NULL,'1',NULL,NULL);")
 
     End Sub

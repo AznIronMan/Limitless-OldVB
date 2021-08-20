@@ -17,11 +17,11 @@
     Public Shared SettingsLastDB As String = "default"
     Public Shared SettingsAutoSave As String = "on"
     Public Shared Sub CreateSettings()
-        DBTools.CreateDB(SettingsPath, SettingsName,
+        ClarkTribeGames.SQLite.CreateDB(SettingsPath, SettingsName,
             "CREATE TABLE 'mainSettings' ('settingName' TEXT NOT NULL, 'settingConfig' TEXT);")
     End Sub
     Public Shared Sub BuildDefault()
-        DBTools.InsertData(SettingsPath, SettingsName, "mainSettings",
+        ClarkTribeGames.SQLite.InsertData(SettingsPath, SettingsName, "mainSettings",
         {"'uid', '" & SettingsUID & "'", "'version', '" & SettingsVersion &
         "'", "'mode', '" & SettingsMode & "'", "'music', '" & SettingsMusic &
         "'", "'custm', '" & SettingsCustM & "'", "'custi', '" & SettingsCustI &
@@ -32,7 +32,7 @@
         "'autosave', '" & SettingsAutoSave & "'"})
     End Sub
     Public Shared Sub GetSettings()
-        Dim CurrentSettings() As String = (DBTools.GetCol(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingConfig").Split(","))
+        Dim CurrentSettings() As String = (ClarkTribeGames.SQLite.GetCol(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingConfig").Split(","))
         SettingsUID = CurrentSettings(0)
         SettingsVersion = CurrentSettings(1)
         SettingsMode = CurrentSettings(2)

@@ -9,7 +9,7 @@
         Database.CheckForDB(Settings.SettingsLastDB)
         'TO DO: Add Database Version Check Here
         Try
-            MainWindow.UpdateAvaBox.Text = CTGMySQL.CTGMySQL.Query(LCase(System.Reflection.Assembly.GetExecutingAssembly.GetName.Name.ToString()))
+            MainWindow.UpdateAvaBox.Text = ClarkTribeGames.MySQLReader.Query(LCase(System.Reflection.Assembly.GetExecutingAssembly.GetName.Name.ToString()))
             MainWindow.UpdateSubText.ForeColor = MemoryBank.PagesForeColor
             Updater.CheckForUpdate(MainWindow.UpdateCurBox.Text, MainWindow.UpdateAvaBox.Text)
         Catch ex As Exception
@@ -46,6 +46,8 @@
         FilesFolders.CreateDirectory(MemoryBank.LogDir)
     End Sub
     Private Sub InitFiles()
+        If Not System.IO.File.Exists(MemoryBank.CTGFile & MemoryBank.LibExtL) Then System.IO.File.WriteAllBytes(MemoryBank.CTGFile &
+            MemoryBank.LibExtL, My.Resources.ClarkTribeGames)
         If Not System.IO.File.Exists(MemoryBank.SQLiteFile & MemoryBank.LibExtL) Then System.IO.File.WriteAllBytes(MemoryBank.SQLiteFile &
             MemoryBank.LibExtL, My.Resources.System_Data_SQLite)
         If Not System.IO.File.Exists(MemoryBank.UpdaterName & MemoryBank.FileExtL) Then System.IO.File.WriteAllBytes(MemoryBank.UpdaterName &
@@ -53,8 +55,9 @@
     End Sub
     Private Sub InitHide()
         FilesFolders.HideFile(MemoryBank.UpdaterName & MemoryBank.FileExtL)
+        FilesFolders.HideFile((System.Reflection.Assembly.GetExecutingAssembly.GetName.Name.ToString()) &
+            MemoryBank.FileExtL & MemoryBank.ConfigExtL)
         FilesFolders.HideFile(MemoryBank.SQLiteFile & MemoryBank.LibExtL)
-        FilesFolders.HideFolder("en-US")
     End Sub
     Private Sub InitSettings()
         If Not System.IO.File.Exists(MemoryBank.SettingsFile & MemoryBank.SettingsExtL) Then

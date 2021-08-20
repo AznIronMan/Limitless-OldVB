@@ -122,7 +122,7 @@
                     If DefaultDBFound = False And (LCase(DBName) = LCase(Settings.SettingsDefaultDB)) Then DefaultDBFound = True
                     drop.Items.Add(Converters.UppercaseEachFirstLetter(DropName))
                     drop.Sorted = True
-                    DBTools.CloseSQL(MemoryBank.DataDir, FileName.Replace(MemoryBank.DataDir & "\", ""))
+                    ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, FileName.Replace(MemoryBank.DataDir & "\", ""))
                 End If
             Next
         End If
@@ -159,9 +159,9 @@
     End Sub
     Private Shared Sub EditorSwitchSDBDropProcess(drop As ComboBox, target As Label, version As Label, current As Label, swbutton As Button)
         target.Text = Database.GetDBName(drop.SelectedItem & MemoryBank.SavesExtL)
-        version.Text = DBTools.GetCol(MemoryBank.DataDir, drop.SelectedItem &
+        version.Text = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, drop.SelectedItem &
             MemoryBank.SavesExtL, "dbInfo", "dbVersion").Split(",")(0)
-        DBTools.CloseSQL(MemoryBank.DataDir, drop.SelectedItem & MemoryBank.SavesExtL)
+        ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, drop.SelectedItem & MemoryBank.SavesExtL)
         If LCase(target.Text) = LCase(current.Text) Then
             swbutton.Enabled = False
         Else
@@ -227,7 +227,7 @@
                     Dim FileToGo As String = MemoryBank.DataDir & "\" & drop.Text & MemoryBank.SavesExtL
                     If answer = vbYes Then
                         Try
-                            DBTools.CloseSQL(MemoryBank.DataDir, drop.SelectedItem & MemoryBank.SavesExtL)
+                            ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, drop.SelectedItem & MemoryBank.SavesExtL)
                             If drop.SelectedIndex = 0 Then
                                 drop.SelectedIndex = 1
                             Else
@@ -538,30 +538,30 @@
     Public Shared Sub EditorCharRaceDropChange(racedrop As ComboBox, forcebox As TextBox, abllist As ListBox, efflist As ListBox, bio As TextBox)
         Dim RaceName As String = racedrop.Text
         Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
-        Dim ForceID As String = DBTools.GetValue(MemoryBank.DataDir, DBName, "dbRace", "raceForce", "raceName", RaceName)
-        forcebox.Text = DBTools.GetValue(MemoryBank.DataDir, DBName, "dbForce", "forceName", "forceID", ForceID)
+        Dim ForceID As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbRace", "raceForce", "raceName", RaceName)
+        forcebox.Text = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbForce", "forceName", "forceID", ForceID)
         EditorCharBuildAblList(MemoryBank.DataDir, DBName, abllist, RaceName)
         EditorCharBuildEffList(MemoryBank.DataDir, DBName, efflist, RaceName)
-        Dim EffIDString As String = DBTools.GetValue(MemoryBank.DataDir, DBName, "dbRace", "raceEff", "raceName", RaceName)
+        Dim EffIDString As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbRace", "raceEff", "raceName", RaceName)
         If EffIDString.Length > 0 Then
             Dim EffIDs() As String = EffIDString.Split("x")
             efflist.Items.Remove("<None>")
             For Each EffID In EffIDs
-                efflist.Items.Add(DBTools.GetValue(MemoryBank.DataDir, DBName, "dbEff", "effName", "effID", EffID))
+                efflist.Items.Add(ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbEff", "effName", "effID", EffID))
             Next
         End If
         'TO DO: Bio Builder Here
-        DBTools.CloseSQL(MemoryBank.DataDir, DBName)
+        ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
 
     Private Shared Sub EditorCharBuildAblList(dir As String, db As String, abllist As ListBox, race As String)
         abllist.Items.Clear()
         abllist.Enabled = True
-        Dim AblIDString As String = DBTools.GetValue(dir, db, "dbRace", "raceAbl", "raceName", race)
+        Dim AblIDString As String = ClarkTribeGames.SQLite.GetValue(dir, db, "dbRace", "raceAbl", "raceName", race)
         If AblIDString.Length > 0 Then
             Dim AblIDs() As String = AblIDString.Split("x")
             For Each AblID In AblIDs
-                abllist.Items.Add("[" & DBTools.GetValue(dir, db, "dbAbl", "ablName", "ablID", AblID & "]"))
+                abllist.Items.Add("[" & ClarkTribeGames.SQLite.GetValue(dir, db, "dbAbl", "ablName", "ablID", AblID & "]"))
             Next
         End If
         Tools.ClearDupes(abllist)
@@ -574,11 +574,11 @@
     Private Shared Sub EditorCharBuildEffList(dir As String, db As String, efflist As ListBox, race As String)
         efflist.Items.Clear()
         efflist.Enabled = True
-        Dim EffIDString As String = DBTools.GetValue(dir, db, "dbRace", "raceEff", "raceName", race)
+        Dim EffIDString As String = ClarkTribeGames.SQLite.GetValue(dir, db, "dbRace", "raceEff", "raceName", race)
         If EffIDString.Length > 0 Then
             Dim EffIDs() As String = EffIDString.Split("x")
             For Each EffID In EffIDs
-                efflist.Items.Add("[" & DBTools.GetValue(dir, db, "dbEff", "effName", "effID", EffID & "]"))
+                efflist.Items.Add("[" & ClarkTribeGames.SQLite.GetValue(dir, db, "dbEff", "effName", "effID", EffID & "]"))
             Next
         End If
         Tools.ClearDupes(efflist)

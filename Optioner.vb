@@ -395,7 +395,7 @@
                                 MainWindow.OptionsAudioTextDefeat.Visible = True
                                 MainWindow.OptionsAudioTextDefeat.Text = SelectedName
                         End Select
-                        DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", SelectedType, {"settingConfig"}, {CustSetting})
+                        ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", SelectedType, {"settingConfig"}, {CustSetting})
                         Optioner.CheckCustomTracks("all")
                         If SelectedType = "custi" Then
                             Jukebox.IntroInPlay = False
@@ -462,7 +462,7 @@
             MainWindow.OptionsMusicGroup, MainWindow.OptionsManageGroup, MainWindow.CustomLibsImport, MainWindow.CustomLibsDelete)
     End Sub
     Private Shared Sub OptionsAudioCheckChange(checkbox As CheckBox, button As Button, setting As String)
-        Dim SettingsVariable As String, CurrentSetting As String = DBTools.GetValue(Settings.SettingsPath,
+        Dim SettingsVariable As String, CurrentSetting As String = ClarkTribeGames.SQLite.GetValue(Settings.SettingsPath,
             Settings.SettingsName, "mainSettings", "settingConfig", "settingName", setting).Substring(3)
         If MainWindow.OptionsAudioCheckCustom.Checked And MainWindow.OptionsAudioCheckCustom.Enabled Then
             If checkbox.Checked Then
@@ -485,8 +485,8 @@
                 Case "custl"
                     Settings.SettingsCustL = SettingsVariable
             End Select
-            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", setting, {"settingConfig"}, {SettingsVariable})
-            DBTools.CloseSQL(Settings.SettingsPath, Settings.SettingsName)
+            ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", setting, {"settingConfig"}, {SettingsVariable})
+            ClarkTribeGames.SQLite.CloseSQL(Settings.SettingsPath, Settings.SettingsName)
         End If
     End Sub
     Public Shared Sub DisableMusicOptions()
@@ -698,13 +698,13 @@
                         FlipMusicOptions("checkboxes", True)
                         CheckCustomMusicOptions()
                     End If
-                    DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"on"})
+                    ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"on"})
                     Settings.SettingsMusic = "on"
                 Else
                     FlipMusicOptions("options", False)
                     custom.Enabled = False
                     Jukebox.StopSong()
-                    DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"no"})
+                    ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"no"})
                     Settings.SettingsMusic = "off"
                 End If
                 Appearance.RefreshColors()
@@ -714,11 +714,11 @@
                         FlipMusicOptions("checkboxes", True)
                         CheckCustomMusicOptions()
                         CheckCustomTracks("all")
-                        DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"on"})
+                        ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"on"})
                         Settings.SettingsCustM = "on"
                     Else
                         FlipMusicOptions("options", False)
-                        DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"no"})
+                        ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "custm", {"settingConfig"}, {"no"})
                         Settings.SettingsCustM = "off"
                         FlipMusicOptions("customtracks)", False)
                     End If
@@ -752,7 +752,7 @@
                         button = MainWindow.OptionsAudioSelectDefeat
                 End Select
                 If checkbox.Checked = CheckState.Unchecked Then
-                    DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", cust, {"settingConfig"}, {"off"})
+                    ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", cust, {"settingConfig"}, {"off"})
                     textbox.Visible = False
                     button.Visible = False
                 Else
@@ -779,7 +779,7 @@
         If active.Checked Then
             other1.CheckState = CheckState.Unchecked
             other2.CheckState = CheckState.Unchecked
-            DBTools.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {setting})
+            ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {setting})
             Settings.SettingsMode = setting
             If Not LCase(MemoryBank.ColorModeAtStart) = LCase(setting) Then
                 ColorModeChecks(Settings.SettingsMode)

@@ -59,20 +59,20 @@
         Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
         Dim IDsFromDB() As String
         Try
-            IDsFromDB = DBTools.GetCol(MemoryBank.DataDir, DBName, table, idcol).Split(",")
+            IDsFromDB = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, DBName, table, idcol).Split(",")
         Catch
             IDsFromDB = Nothing
         End Try
         If IDsFromDB IsNot Nothing Then
             For Each ID In IDsFromDB
-                Dim ItemName As String = DBTools.GetValue(MemoryBank.DataDir, DBName, table, namecol, idcol, ID)
+                Dim ItemName As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, table, namecol, idcol, ID)
                 list.Items.Add(ItemName)
             Next
         Else
             list.Items.Add(NoneAvailable)
             list.Enabled = False
         End If
-        DBTools.CloseSQL(MemoryBank.DataDir, DBName)
+        ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
     Public Shared Sub PopulateListWithCustom(type As String, list As ListBox, criteria() As String)
         'criteria format:  table.idcol.namecol.findstring.modifier, etc.
@@ -87,13 +87,13 @@
                 ReqMod As String = RequestSplit(4)
             Dim Results() As String
             Try
-                Results = DBTools.GetMulti(MemoryBank.DataDir, DBName, ReqTable, ReqID, ReqStr).Split(",")
+                Results = ClarkTribeGames.SQLite.GetMulti(MemoryBank.DataDir, DBName, ReqTable, ReqID, ReqStr).Split(",")
             Catch
                 Results = Nothing
             End Try
             If Results IsNot Nothing Then
                 For Each ID In Results
-                    Dim ItemName As String = DBTools.GetValue(MemoryBank.DataDir, DBName, ReqTable, ReqName, ReqID, ID)
+                    Dim ItemName As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, ReqTable, ReqName, ReqID, ID)
                     If ReqMod.Length > 0 Then ItemName = "[" & ReqMod & "] " & ItemName
                     list.Items.Add(ItemName)
                 Next
@@ -104,7 +104,7 @@
             list.Enabled = False
         End If
         ClearDupes(list)
-        DBTools.CloseSQL(MemoryBank.DataDir, DBName)
+        ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
     Public Shared Sub PopulateCListFromDB(type As String, list As CheckedListBox, table As String, idcol As String, namecol As String)
         list.Items.Clear()
@@ -113,13 +113,13 @@
         Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
         Dim IDsFromDB() As String
         Try
-            IDsFromDB = DBTools.GetCol(MemoryBank.DataDir, DBName, table, idcol).Split(",")
+            IDsFromDB = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, DBName, table, idcol).Split(",")
         Catch
             IDsFromDB = Nothing
         End Try
         If IDsFromDB IsNot Nothing Then
             For Each ID In IDsFromDB
-                Dim ItemName As String = DBTools.GetValue(MemoryBank.DataDir, DBName, table, namecol, idcol, ID)
+                Dim ItemName As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, table, namecol, idcol, ID)
                 list.Items.Add(ItemName)
             Next
         Else
@@ -127,7 +127,7 @@
             list.Enabled = False
         End If
         ClearDupes(list)
-        DBTools.CloseSQL(MemoryBank.DataDir, DBName)
+        ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
     Public Shared Sub PopulateCListWithCustom(type As String, list As CheckedListBox, criteria() As String)
         'criteria format:  table.idcol.namecol.findstring.modifier, etc.
@@ -142,13 +142,13 @@
                 ReqMod As String = RequestSplit(4)
             Dim Results() As String
             Try
-                Results = DBTools.GetMulti(MemoryBank.DataDir, DBName, ReqTable, ReqID, ReqStr).Split(",")
+                Results = ClarkTribeGames.SQLite.GetMulti(MemoryBank.DataDir, DBName, ReqTable, ReqID, ReqStr).Split(",")
             Catch
                 Results = Nothing
             End Try
             If Results IsNot Nothing Then
                 For Each ID In Results
-                    Dim ItemName As String = DBTools.GetValue(MemoryBank.DataDir, DBName, ReqTable, ReqName, ReqID, ID)
+                    Dim ItemName As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, ReqTable, ReqName, ReqID, ID)
                     If ReqMod.Length > 0 Then ItemName = "[" & ReqMod & "] " & ItemName
                     list.Items.Add(ItemName)
                 Next
@@ -159,7 +159,7 @@
             list.Enabled = False
         End If
         ClearDupes(list)
-        DBTools.CloseSQL(MemoryBank.DataDir, DBName)
+        ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
     Public Shared Sub PopulateDropFromDB(type As String, drop As ComboBox, table As String, idcol As String, namecol As String)
         drop.Items.Clear()
@@ -168,13 +168,13 @@
         Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
         Dim IDsFromDB() As String
         Try
-            IDsFromDB = DBTools.GetCol(MemoryBank.DataDir, DBName, table, idcol).Split(",")
+            IDsFromDB = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, DBName, table, idcol).Split(",")
         Catch
             IDsFromDB = Nothing
         End Try
         If IDsFromDB IsNot Nothing Then
             For Each ID In IDsFromDB
-                Dim ItemName As String = DBTools.GetValue(MemoryBank.DataDir, DBName, table, namecol, idcol, ID)
+                Dim ItemName As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, table, namecol, idcol, ID)
                 drop.Items.Add(ItemName)
             Next
         Else
@@ -183,7 +183,7 @@
         End If
         ClearDupes(drop)
         drop.SelectedIndex = 0
-        DBTools.CloseSQL(MemoryBank.DataDir, DBName)
+        ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
     Public Shared Sub PopulateDropWithCustom(type As String, drop As ComboBox, criteria() As String)
         'criteria format:  table.idcol.namecol.findstring.modifier, etc.
@@ -198,13 +198,13 @@
                 ReqMod As String = RequestSplit(4)
             Dim Results() As String
             Try
-                Results = DBTools.GetMulti(MemoryBank.DataDir, DBName, ReqTable, ReqID, ReqStr).Split(",")
+                Results = ClarkTribeGames.SQLite.GetMulti(MemoryBank.DataDir, DBName, ReqTable, ReqID, ReqStr).Split(",")
             Catch
                 Results = Nothing
             End Try
             If Results IsNot Nothing Then
                 For Each ID In Results
-                    Dim ItemName As String = DBTools.GetValue(MemoryBank.DataDir, DBName, ReqTable, ReqName, ReqID, ID)
+                    Dim ItemName As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, ReqTable, ReqName, ReqID, ID)
                     If ReqMod.Length > 0 Then ItemName = "[" & ReqMod & "] " & ItemName
                     drop.Items.Add(ItemName)
                 Next
@@ -216,7 +216,7 @@
         End If
         ClearDupes(drop)
         drop.SelectedIndex = 0
-        DBTools.CloseSQL(MemoryBank.DataDir, DBName)
+        ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
     Public Shared Function TestKeyPress(sender As Object, key As String) As Boolean
         Dim AllowedKeys As String = ""
