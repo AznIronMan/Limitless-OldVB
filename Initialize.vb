@@ -81,9 +81,9 @@
         MainWindow.WelcomePanel.Visible = True
         MainWindow.AboutPanel.Visible = False
         MainWindow.DonatePanel.Visible = False
-        MainWindow.OptionsPanel.Visible = False
+        'MainWindow.OptionsPanel.Visible = False
         MainWindow.UpdatePanel.Visible = False
-        MainWindow.EditorPanel.Visible = False
+        'MainWindow.EditorPanel.Visible = False
     End Sub
 
 End Module

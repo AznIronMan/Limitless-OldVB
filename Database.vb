@@ -8,8 +8,8 @@
         Dim DBExists As Boolean = System.IO.File.Exists(SavePath & savename & SaveExt),
             DefaultExists As Boolean = System.IO.File.Exists(SavePath & DefaultSave & SaveExt)
         If DBExists Then
-            MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(savename)
-            MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(savename)
+            'MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(savename)
+            'MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(savename)
         Else
             If DefaultExists Then
                 MsgBox(Converters.UppercaseEachFirstLetter(savename) & " not available.  Switching to " &
@@ -17,8 +17,8 @@
                 ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
                     "lastdb", {"settingConfig"}, {DefaultSave})
                 Settings.SettingsLastDB = LCase(DefaultSave)
-                MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
-                MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
+                'MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
+                'MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
             Else
                 If savename = DefaultSave Then
                     MsgBox(Converters.UppercaseEachFirstLetter(savename) & " not available.  Generating a new " &
@@ -35,8 +35,8 @@
                     "lastdb", {"settingConfig"}, {DefaultSave})
                 Settings.SettingsLastDB = LCase(DefaultSave)
                 Settings.SettingsDefaultDB = LCase(DefaultSave)
-                MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
-                MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
+                'MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
+                'MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
             End If
         End If
     End Sub

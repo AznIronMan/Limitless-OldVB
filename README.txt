@@ -1,7 +1,7 @@
 =============================================
 LIMITLESS by Geoff Clark
 PUBLISHED by CLARKTRIBEGAMES LLC
-VERSION ALPHA 0.1.007.0001
+VERSION ALPHA 0.1.007.0002
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -73,8 +73,11 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.007.0001 / 2021.11.11 - Menu Revamp
+ALPHA 0.1.007.0002 / 2021.11.11 - The Revamp
 
+- redesigned the gui to have the menu buttons on the left
+- removed the options and editor for redesign
+- nulled out the functions for options and editor
 - fixed issue with some dll calls crashing the game
 - updated the updater method for new update server
 - removed some unused code

@@ -45,85 +45,34 @@
     End Sub
     Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles StartButton.MouseHover, UpdateButton.MouseHover, OptionsButton.MouseHover,
         LoadButton.MouseHover, ExitButton.MouseHover, EditButton.MouseHover, DonateButton.MouseHover, AboutButton.MouseHover, UpdateInstallButton.MouseHover,
-        EditorAblButton.MouseHover, EditorArenaButton.MouseHover, EditorCharmsButton.MouseHover, EditorCharButton.MouseHover, EditorClassButton.MouseHover,
-        EditorDestinyButton.MouseHover, EditorItemButton.MouseHover, EditorRelButton.MouseHover, EditorStatusButton.MouseHover,
-        EditorVerseButton.MouseHover, EditorHeldButton.MouseHover, EditorWearButton.MouseHover, EditorDBButton.MouseHover,
-        EditorImportButton.MouseHover, EditorExportButton.MouseHover, EditorLangButton.MouseHover, EditorTeamsButton.MouseHover,
-        EditorSwitchNewButton.MouseHover, EditorSwitchBackButton.MouseHover, EditorSwitchSDBButton.MouseHover, EditorSwitchDupButton.MouseHover,
-        EditorSwitchDelButton.MouseHover, EditorEditBackButton.MouseHover, EditorEditAddButton.MouseHover, EditorEditDelButton.MouseHover,
-        EditorCharRaceQAdd.MouseHover, EditorCharClassQAdd.MouseHover, EditorCharDestinyQAdd.MouseHover, EditorCharVerseQAdd.MouseHover,
-        EditorCharAliasNewB.MouseHover, EditorCharAliasAddB.MouseHover, EditorCharAliasRemB.MouseHover, EditorCharEffQAdd.MouseHover,
-        EditorCharEffAddB.MouseHover, EditorCharAvatarButton.MouseHover, EditorCharEffRemB.MouseHover, EditorCharEffInvButton.MouseHover,
-        EditorCharMusicPlay.MouseHover, EditorCharMusicStop.MouseHover, EditorCharThemeButton.MouseHover, EditorCharSaveButton.MouseHover,
-        EditorCharCancelButton.MouseHover, EditorCharAblQAdd.MouseHover, EditorCharLangQAdd.MouseHover, EditorCharQAddButton.MouseHover,
-        EditorCharQAddCancel.MouseHover, EditorCharInvAddButton.MouseHover, EditorCharInvEquipButton.MouseHover, EditorCharInvUnequipButton.MouseHover,
-        EditorCharInvRemoveButton.MouseHover, EditorCharInvDoneButton.MouseHover, EditorCharInvSwitchButton.MouseHover,
         StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp,
-        UpdateInstallButton.MouseUp, EditorAblButton.MouseUp, EditorArenaButton.MouseUp, EditorCharmsButton.MouseUp, EditorCharButton.MouseUp,
-        EditorClassButton.MouseUp, EditorDestinyButton.MouseUp, EditorItemButton.MouseUp, EditorRelButton.MouseUp,
-        EditorStatusButton.MouseUp, EditorVerseButton.MouseUp, EditorHeldButton.MouseUp, EditorWearButton.MouseUp, EditorDBButton.MouseUp,
-        EditorImportButton.MouseUp, EditorExportButton.MouseUp, EditorLangButton.MouseUp, EditorTeamsButton.MouseUp,
-        EditorSwitchNewButton.MouseUp, EditorSwitchBackButton.MouseUp, EditorSwitchSDBButton.MouseUp, EditorSwitchDupButton.MouseUp,
-        EditorSwitchDelButton.MouseUp, EditorEditBackButton.MouseUp, EditorEditAddButton.MouseUp, EditorEditDelButton.MouseUp,
-        EditorCharRaceQAdd.MouseUp, EditorCharClassQAdd.MouseUp, EditorCharDestinyQAdd.MouseUp, EditorCharVerseQAdd.MouseUp,
-        EditorCharAliasNewB.MouseUp, EditorCharAliasAddB.MouseUp, EditorCharAliasRemB.MouseUp, EditorCharEffQAdd.MouseUp,
-        EditorCharEffAddB.MouseUp, EditorCharAvatarButton.MouseUp, EditorCharEffRemB.MouseUp, EditorCharEffInvButton.MouseUp,
-        EditorCharMusicPlay.MouseUp, EditorCharMusicStop.MouseUp, EditorCharThemeButton.MouseUp, EditorCharSaveButton.MouseUp,
-        EditorCharCancelButton.MouseUp, EditorCharAblQAdd.MouseUp, EditorCharLangQAdd.MouseUp, EditorCharQAddButton.MouseUp, EditorCharQAddCancel.MouseUp,
-        EditorCharInvAddButton.MouseUp, EditorCharInvEquipButton.MouseUp, EditorCharInvUnequipButton.MouseUp, EditorCharInvRemoveButton.MouseUp,
-        EditorCharInvDoneButton.MouseUp, EditorCharInvSwitchButton.MouseUp
+        UpdateInstallButton.MouseUp
         HoverOverEffect(sender)
     End Sub
     Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles StartButton.MouseLeave, UpdateButton.MouseLeave, OptionsButton.MouseLeave,
-        LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, AboutButton.MouseLeave, UpdateInstallButton.MouseLeave,
-        EditorAblButton.MouseLeave, EditorArenaButton.MouseLeave, EditorCharmsButton.MouseLeave, EditorCharButton.MouseLeave, EditorClassButton.MouseLeave,
-        EditorDestinyButton.MouseLeave, EditorItemButton.MouseLeave, EditorRelButton.MouseLeave, EditorStatusButton.MouseLeave,
-        EditorVerseButton.MouseLeave, EditorHeldButton.MouseLeave, EditorWearButton.MouseLeave, EditorDBButton.MouseLeave,
-        EditorImportButton.MouseLeave, EditorExportButton.MouseLeave, EditorLangButton.MouseLeave, EditorTeamsButton.MouseLeave,
-        EditorSwitchNewButton.MouseLeave, EditorSwitchBackButton.MouseLeave, EditorSwitchSDBButton.MouseLeave, EditorSwitchDupButton.MouseLeave,
-        EditorSwitchDelButton.MouseLeave, EditorEditBackButton.MouseLeave, EditorEditAddButton.MouseLeave, EditorEditDelButton.MouseLeave,
-        EditorCharRaceQAdd.MouseLeave, EditorCharClassQAdd.MouseLeave, EditorCharDestinyQAdd.MouseLeave, EditorCharVerseQAdd.MouseLeave,
-        EditorCharAliasNewB.MouseLeave, EditorCharAliasAddB.MouseLeave, EditorCharAliasRemB.MouseLeave, EditorCharEffQAdd.MouseLeave,
-        EditorCharEffAddB.MouseLeave, EditorCharAvatarButton.MouseLeave, EditorCharEffRemB.MouseLeave, EditorCharEffInvButton.MouseLeave,
-        EditorCharMusicPlay.MouseLeave, EditorCharMusicStop.MouseLeave, EditorCharThemeButton.MouseLeave, EditorCharSaveButton.MouseLeave,
-        EditorCharCancelButton.MouseLeave, EditorCharAblQAdd.MouseLeave, EditorCharLangQAdd.MouseLeave, EditorCharQAddButton.MouseLeave,
-        EditorCharQAddCancel.MouseLeave, EditorCharInvAddButton.MouseLeave, EditorCharInvEquipButton.MouseLeave, EditorCharInvUnequipButton.MouseLeave,
-        EditorCharInvRemoveButton.MouseLeave, EditorCharInvDoneButton.MouseLeave, EditorCharInvSwitchButton.MouseLeave
+        LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, AboutButton.MouseLeave, UpdateInstallButton.MouseLeave
         LeaveObjEffect(sender)
     End Sub
     Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles StartButton.MouseDown, UpdateButton.MouseDown, OptionsButton.MouseDown,
-        LoadButton.MouseDown, ExitButton.MouseDown, EditButton.MouseDown, DonateButton.MouseDown, AboutButton.MouseDown, UpdateInstallButton.MouseDown,
-        EditorAblButton.MouseDown, EditorArenaButton.MouseDown, EditorCharmsButton.MouseDown, EditorCharButton.MouseDown, EditorClassButton.MouseDown,
-        EditorDestinyButton.MouseDown, EditorItemButton.MouseDown, EditorRelButton.MouseDown, EditorStatusButton.MouseDown,
-        EditorVerseButton.MouseDown, EditorHeldButton.MouseDown, EditorWearButton.MouseDown, EditorDBButton.MouseDown,
-        EditorImportButton.MouseDown, EditorExportButton.MouseDown, EditorLangButton.MouseDown, EditorTeamsButton.MouseDown,
-        EditorSwitchNewButton.MouseDown, EditorSwitchBackButton.MouseDown, EditorSwitchSDBButton.MouseDown, EditorSwitchDupButton.MouseDown,
-        EditorSwitchDelButton.MouseDown, EditorEditBackButton.MouseDown, EditorEditAddButton.MouseDown, EditorEditDelButton.MouseDown,
-        EditorCharRaceQAdd.MouseDown, EditorCharClassQAdd.MouseDown, EditorCharDestinyQAdd.MouseDown, EditorCharVerseQAdd.MouseDown,
-        EditorCharAliasNewB.MouseDown, EditorCharAliasAddB.MouseDown, EditorCharAliasRemB.MouseDown, EditorCharEffQAdd.MouseDown,
-        EditorCharEffAddB.MouseDown, EditorCharAvatarButton.MouseDown, EditorCharEffRemB.MouseDown, EditorCharEffInvButton.MouseDown,
-        EditorCharMusicPlay.MouseDown, EditorCharMusicStop.MouseDown, EditorCharThemeButton.MouseDown, EditorCharSaveButton.MouseDown,
-        EditorCharCancelButton.MouseDown, EditorCharAblQAdd.MouseDown, EditorCharLangQAdd.MouseDown, EditorCharQAddButton.MouseDown,
-        EditorCharQAddCancel.MouseDown, EditorCharInvAddButton.MouseDown, EditorCharInvEquipButton.MouseDown, EditorCharInvUnequipButton.MouseDown,
-        EditorCharInvRemoveButton.MouseDown, EditorCharInvDoneButton.MouseDown, EditorCharInvSwitchButton.MouseDown
+        LoadButton.MouseDown, ExitButton.MouseDown, EditButton.MouseDown, DonateButton.MouseDown, AboutButton.MouseDown, UpdateInstallButton.MouseDown
         MouseDownEffect(sender)
     End Sub
     Private Sub TitleBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseUp, TitleLabel.MouseUp, TitleBarIcon.MouseUp
         MemoryBank.WindowDrag = False
     End Sub
-    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CustomLibsPath.KeyPress, EditorSwitchNewBox.KeyPress
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Tools.TestKeyPress(sender, e.KeyChar.ToString.ToLower)
     End Sub
     Private Sub MenuButtonPressed(activepanel As Panel)
         SwitchToIntro()
-        If activepanel.Name = "OptionsPanel" Then
-            Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
-        End If
+        'If activepanel.Name = "OptionsPanel" Then
+        '    Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+        'End If
         WelcomePanel.Visible = False
         AboutPanel.Visible = False
         DonatePanel.Visible = False
-        OptionsPanel.Visible = False
-        EditorPanel.Visible = False
+        'OptionsPanel.Visible = False
+        'EditorPanel.Visible = False
         UpdatePanel.Visible = False
         activepanel.Visible = True
     End Sub
@@ -138,7 +87,7 @@
             Else
                 MsgBox("Action Cancelled", vbOKOnly)
             End If
-            Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+            'Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
         End If
     End Sub
 
@@ -155,101 +104,99 @@
         OptionsButtonPressed()
     End Sub
     Private Sub OptionsButtonPressed()
-        MenuButtonPressed(OptionsPanel)
+        'MenuButtonPressed(OptionsPanel)
         Optioner.OptionsGroupMove("mid")
         Optioner.FlipOptionsGroups(True)
         Optioner.CheckAllCustomTracks()
     End Sub
-    Private Sub OptionsManageAvatars_Click(sender As Object, e As EventArgs) Handles OptionsManageAvatars.Click
+    Private Sub OptionsManageAvatars_Click(sender As Object, e As EventArgs)
         Optioner.MoveGroup("avatars")
     End Sub
-    Private Sub OptionsManageMusic_Click(sender As Object, e As EventArgs) Handles OptionsManageMusic.Click
+    Private Sub OptionsManageMusic_Click(sender As Object, e As EventArgs)
         Optioner.MoveGroup("music")
     End Sub
-    Private Sub OptionsManageSound_Click(sender As Object, e As EventArgs) Handles OptionsManageSound.Click
+    Private Sub OptionsManageSound_Click(sender As Object, e As EventArgs)
         Optioner.MoveGroup("sound")
     End Sub
-    Private Sub OptionsColorDark_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsColorDark.CheckStateChanged
+    Private Sub OptionsColorDark_CheckedChanged(sender As Object, e As EventArgs)
         Optioner.ColorModeChange("dark")
     End Sub
-    Private Sub OptionsColorLite_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsColorLite.CheckStateChanged
+    Private Sub OptionsColorLite_CheckedChanged(sender As Object, e As EventArgs)
         Optioner.ColorModeChange("lite")
     End Sub
-    Private Sub OptionsColorCustom_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsColorCustom.CheckedChanged
+    Private Sub OptionsColorCustom_CheckedChanged(sender As Object, e As EventArgs)
         'TO DO:  Add Custom Color Feature in Optioner.vb
         Optioner.ColorModeChange("custom")
     End Sub
-    Private Sub OptionsAudioCheckMusic_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckMusic.CheckedChanged
-        Optioner.OptionsAudioCheckMusic("music", OptionsAudioCheckMusic, OptionsAudioCheckCustom)
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    Private Sub OptionsAudioCheckMusic_CheckedChanged(sender As Object, e As EventArgs)
+        'Optioner.OptionsAudioCheckMusic("music", OptionsAudioCheckMusic, OptionsAudioCheckCustom)
+        'Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
     End Sub
-    Private Sub OptionsAudioCheckCustom_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckCustom.CheckedChanged
-        Optioner.OptionsAudioCheckMusic("custom", OptionsAudioCheckCustom, OptionsAudioCheckCustom)
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    Private Sub OptionsAudioCheckCustom_CheckedChanged(sender As Object, e As EventArgs)
+        'Optioner.OptionsAudioCheckMusic("custom", OptionsAudioCheckCustom, OptionsAudioCheckCustom)
+        'Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
     End Sub
-    Private Sub OptionsAudioCheckIntro_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckIntro.CheckedChanged
-        Optioner.OptionsAudioCheckMusic("intro", OptionsAudioCheckIntro, OptionsAudioCheckCustom)
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    Private Sub OptionsAudioCheckIntro_CheckedChanged(sender As Object, e As EventArgs)
+        'Optioner.OptionsAudioCheckMusic("intro", OptionsAudioCheckIntro, OptionsAudioCheckCustom)
+        'Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
     End Sub
-    Private Sub OptionsAudioCheckBattle_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckBattle.CheckedChanged
-        Optioner.OptionsAudioCheckMusic("battle", OptionsAudioCheckBattle, OptionsAudioCheckCustom)
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    Private Sub OptionsAudioCheckBattle_CheckedChanged(sender As Object, e As EventArgs)
+        'Optioner.OptionsAudioCheckMusic("battle", OptionsAudioCheckBattle, OptionsAudioCheckCustom)
+        'Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
     End Sub
-    Private Sub OptionsAudioCheckVictory_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckVictory.CheckedChanged
-        Optioner.OptionsAudioCheckMusic("victory", OptionsAudioCheckVictory, OptionsAudioCheckCustom)
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    Private Sub OptionsAudioCheckVictory_CheckedChanged(sender As Object, e As EventArgs)
+        'Optioner.OptionsAudioCheckMusic("victory", OptionsAudioCheckVictory, OptionsAudioCheckCustom)
+        'Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
     End Sub
-    Private Sub OptionsAudioCheckDefeat_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckDefeat.CheckedChanged
-        Optioner.OptionsAudioCheckMusic("defeat", OptionsAudioCheckDefeat, OptionsAudioCheckCustom)
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    Private Sub OptionsAudioCheckDefeat_CheckedChanged(sender As Object, e As EventArgs)
+        'Optioner.OptionsAudioCheckMusic("defeat", OptionsAudioCheckDefeat, OptionsAudioCheckCustom)
+        'Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
     End Sub
-    Private Sub OptionsAudioCheckSound_CheckedChanged(sender As Object, e As EventArgs) Handles OptionsAudioCheckSound.CheckedChanged
-        Optioner.OptionsAudioCheckMusic("sound", OptionsAudioCheckSound, OptionsAudioCheckCustom)
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    Private Sub OptionsAudioCheckSound_CheckedChanged(sender As Object, e As EventArgs)
+        'Optioner.OptionsAudioCheckMusic("sound", OptionsAudioCheckSound, OptionsAudioCheckCustom)
+        'Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
     End Sub
-    Private Sub CustomLibsGroup_Updater(sender As Object, e As EventArgs) Handles OptionsManageAvatars.ForeColorChanged,
-        OptionsManageMusic.ForeColorChanged, OptionsManageSound.ForeColorChanged, CustomLibsGroup.VisibleChanged
-        CustomLibsGroup.Text = ("Custom " & Converters.UppercaseEachFirstLetter(MemoryBank.CustomLibsSelected))
+    Private Sub CustomLibsGroup_Updater(sender As Object, e As EventArgs)
+        'CustomLibsGroup.Text = ("Custom " & Converters.UppercaseEachFirstLetter(MemoryBank.CustomLibsSelected))
     End Sub
-    Private Sub CustomLibsAuto_CheckedChanged(sender As Object, e As EventArgs) Handles CustomLibsAuto.CheckedChanged
-        If CustomLibsActive.CheckState = CheckState.Checked Then
-            ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "autosave", {"settingConfig"}, {"on"})
-            Settings.SettingsAutoSave = "on"
-        Else
-            ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "autosave", {"settingConfig"}, {"no"})
-            Settings.SettingsAutoSave = "off"
-        End If
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    Private Sub CustomLibsAuto_CheckedChanged(sender As Object, e As EventArgs)
+        'If CustomLibsActive.CheckState = CheckState.Checked Then
+        '    ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "autosave", {"settingConfig"}, {"on"})
+        '    Settings.SettingsAutoSave = "on"
+        'Else
+        '    ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "autosave", {"settingConfig"}, {"no"})
+        '    Settings.SettingsAutoSave = "off"
+        'End If
+        'Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
     End Sub
-    Private Sub CustomLibsList_Changed(sender As Object, e As EventArgs) Handles CustomLibsList.SelectedIndexChanged
-        Optioner.CustomLibsListChanged()
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
-    End Sub
-    Private Sub CustomLibsActive_CheckedChanged(sender As Object, e As EventArgs) Handles CustomLibsActive.Click
-        Optioner.CustomLibsActiveChanged(CustomLibsActive, CustomLibsList)
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
-    End Sub
-    Private Sub CustomLibsPreviewPlay_Click(sender As Object, e As EventArgs) Handles CustomLibsPreviewPlay.Click
-        Optioner.CustomLibsPreviewPlay(CustomLibsList, CustomLibsPreviewPlay, OptionsAudioCheckMusic)
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
-    End Sub
-    Private Sub CustomLibsPreviewStop_Click(sender As Object, e As EventArgs) Handles CustomLibsPreviewStop.Click
-        Optioner.CustomLibsPreviewStop()
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
-    End Sub
-    Private Sub CustomLibsEdit_Click(sender As Object, e As EventArgs) Handles CustomLibsEdit.Click
-        Optioner.CustomLibsEditButton(CustomLibsList, CustomLibsEdit, CustomLibsPath, CustomLibsPreviewImage)
-    End Sub
-    Private Sub CustomLibsDelete_Click(sender As Object, e As EventArgs) Handles CustomLibsDelete.Click
-        Optioner.CustomLibsDeleteButton(CustomLibsList, CustomLibsDelete, CustomLibsPreviewImage)
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
-    End Sub
-    Private Sub CustomLibsImport_Click(sender As Object, e As EventArgs) Handles CustomLibsImport.Click
-        Optioner.CustomLibsImportButton()
-        Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
-    End Sub
-    Private Sub SelectTrack_Click(sender As Object, e As EventArgs) Handles OptionsAudioSelectIntro.Click, OptionsAudioSelectBattle.Click,
-        OptionsAudioSelectVictory.Click, OptionsAudioSelectDefeat.Click
+    'Private Sub CustomLibsList_Changed(sender As Object, e As EventArgs)
+    '    Optioner.CustomLibsListChanged()
+    '    Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    'End Sub
+    'Private Sub CustomLibsActive_CheckedChanged(sender As Object, e As EventArgs)
+    '    Optioner.CustomLibsActiveChanged(CustomLibsActive, CustomLibsList)
+    '    Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    'End Sub
+    'Private Sub CustomLibsPreviewPlay_Click(sender As Object, e As EventArgs)
+    '    Optioner.CustomLibsPreviewPlay(CustomLibsList, CustomLibsPreviewPlay, OptionsAudioCheckMusic)
+    '    Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    'End Sub
+    'Private Sub CustomLibsPreviewStop_Click(sender As Object, e As EventArgs)
+    '    Optioner.CustomLibsPreviewStop()
+    '    Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    'End Sub
+    'Private Sub CustomLibsEdit_Click(sender As Object, e As EventArgs)
+    '    Optioner.CustomLibsEditButton(CustomLibsList, CustomLibsEdit, CustomLibsPath, CustomLibsPreviewImage)
+    'End Sub
+    'Private Sub CustomLibsDelete_Click(sender As Object, e As EventArgs)
+    '    Optioner.CustomLibsDeleteButton(CustomLibsList, CustomLibsDelete, CustomLibsPreviewImage)
+    '    Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    'End Sub
+    'Private Sub CustomLibsImport_Click(sender As Object, e As EventArgs)
+    '    Optioner.CustomLibsImportButton()
+    '    Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    'End Sub
+    Private Sub SelectTrack_Click(sender As Object, e As EventArgs)
         Optioner.SelectTrackChanges(sender)
     End Sub
 
@@ -313,108 +260,109 @@
     End Sub
 
     'Editor Menu Section
-    Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
-        MenuButtonPressed(EditorPanel)
-        Editor.FlipEditorPanels(EditorMenuPanel)
-    End Sub
-    Private Sub EditorBackButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchBackButton.Click, EditorEditBackButton.Click
-        Editor.FlipEditorPanels(EditorMenuPanel)
-        MemoryBank.ActiveEditorWindow = ""
-    End Sub
-    Private Sub EditorDBButton_Click(sender As Object, e As EventArgs) Handles EditorDBButton.Click
-        Editor.EditorGenDBDrop(EditorSwitchSDBDrop, EditorSwitchDelButton)
-    End Sub
-    Private Sub EditorSwitchSDBDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EditorSwitchSDBDrop.SelectedIndexChanged
-        Editor.EditorSwitchSDBDrop(EditorSwitchSDBDrop, EditorSwitchTarBox, EditorSwitchVerBox, EditorSwitchCurBox, EditorSwitchSDBButton)
-    End Sub
-    Private Sub EditorSwitchNewCheck_CheckedChanged(sender As Object, e As EventArgs) Handles EditorSwitchNewCheck.CheckedChanged
-        Editor.EditorSwitchNewActions("check", EditorSwitchNewCheck, EditorSwitchNewBox, EditorSwitchNewButton)
-    End Sub
-    Private Sub EditorSwitchNewBox_KeyPress(sender As Object, e As EventArgs) Handles EditorSwitchNewBox.TextChanged
-        Editor.EditorSwitchNewActions("key", EditorSwitchNewCheck, EditorSwitchNewBox, EditorSwitchNewButton)
-    End Sub
-    Private Sub EditorSwitchNewButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchNewButton.Click
-        Editor.EditorSwitchNewActions("button", EditorSwitchNewCheck, EditorSwitchNewBox, EditorSwitchNewButton)
-    End Sub
-    Private Sub EditorSwitchSDBButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchSDBButton.Click
-        Editor.EditorSwitchButtonActions("switch", EditorSwitchSDBButton, EditorSwitchSDBDrop, EditorSwitchDelButton)
-    End Sub
-    Private Sub EditorSwitchDelButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchDelButton.Click
-        Editor.EditorSwitchButtonActions("delete", EditorSwitchDelButton, EditorSwitchSDBDrop, EditorSwitchDelButton)
-    End Sub
-    Private Sub EditorSwitchDupButton_Click(sender As Object, e As EventArgs) Handles EditorSwitchDupButton.Click
-        Editor.EditorSwitchButtonActions("dupe", EditorSwitchDupButton, EditorSwitchSDBDrop, EditorSwitchDelButton)
-    End Sub
-    Private Sub EditorEditList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EditorEditList.SelectedIndexChanged
-        Editor.EditorEditDelButtonUpdate(EditorEditList, EditorEditDelButton)
-    End Sub
-    Private Sub EditorCharButton_Click(sender As Object, e As EventArgs) Handles EditorCharButton.Click
-        Editor.EditorButtonActions("Characters", EditorEditPanel, EditorEditCharPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorAblButton_Click(sender As Object, e As EventArgs) Handles EditorAblButton.Click
-        Editor.EditorButtonActions("Abilities", EditorEditPanel, EditorEditAblPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorLangButton_Click(sender As Object, e As EventArgs) Handles EditorLangButton.Click
-        Editor.EditorButtonActions("Languages", EditorEditPanel, EditorEditLangPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorArenaButton_Click(sender As Object, e As EventArgs) Handles EditorArenaButton.Click
-        Editor.EditorButtonActions("Arenas", EditorEditPanel, EditorEditArenaPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorCharmsButton_Click(sender As Object, e As EventArgs) Handles EditorCharmsButton.Click
-        Editor.EditorButtonActions("Charms", EditorEditPanel, EditorEditCharmsPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorClassButton_Click(sender As Object, e As EventArgs) Handles EditorClassButton.Click
-        Editor.EditorButtonActions("Classifications", EditorEditPanel, EditorEditClassPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorDestinyButton_Click(sender As Object, e As EventArgs) Handles EditorDestinyButton.Click
-        Editor.EditorButtonActions("Destinies", EditorEditPanel, EditorEditDestinyPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorEffectsButton_Click(sender As Object, e As EventArgs) Handles EditorEffectsButton.Click
-        Editor.EditorButtonActions("Effects", EditorEditPanel, EditorEditEffectsPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorHeldButton_Click(sender As Object, e As EventArgs) Handles EditorHeldButton.Click
-        Editor.EditorButtonActions("Handhelds", EditorEditPanel, EditorEditHeldsPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorItemButton_Click(sender As Object, e As EventArgs) Handles EditorItemButton.Click
-        Editor.EditorButtonActions("Items", EditorEditPanel, EditorEditItemsPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorVerseButton_Click(sender As Object, e As EventArgs) Handles EditorVerseButton.Click
-        Editor.EditorButtonActions("Universes", EditorEditPanel, EditorEditVersePanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorRelButton_Click(sender As Object, e As EventArgs) Handles EditorRelButton.Click
-        Editor.EditorButtonActions("Relationships", EditorEditPanel, EditorEditRelPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorStatusButton_Click(sender As Object, e As EventArgs) Handles EditorStatusButton.Click
-        Editor.EditorButtonActions("Statuses", EditorEditPanel, EditorEditStatusPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorTeamsButton_Click(sender As Object, e As EventArgs) Handles EditorTeamsButton.Click
-        Editor.EditorButtonActions("Teams", EditorEditPanel, EditorEditTeamsPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorWearButton_Click(sender As Object, e As EventArgs) Handles EditorWearButton.Click
-        Editor.EditorButtonActions("Wearables", EditorEditPanel, EditorEditWearsPanel, EditorEditDelButton, EditorEditList)
-    End Sub
-    Private Sub EditorEditAddButton_Click(sender As Object, e As EventArgs) Handles EditorEditAddButton.Click
-        Editor.EditorEditAddButtonUpdate(EditorEditAddButton, EditorEditBackButton, EditorEditList)
-    End Sub
-    Private Sub EditorCharCancelButton_Click(sender As Object, e As EventArgs) Handles EditorCharCancelButton.Click
-        Editor.EditorCharCancelButtonUpdate(EditorEditAddButton, EditorEditBackButton, EditorEditList)
-    End Sub
-    Private Sub EditorCharAliasCheck_CheckedChanged(sender As Object, e As EventArgs) Handles EditorCharAliasCheck.CheckStateChanged
-        Editor.EditorCharCheckBoxes("standard", EditorCharAliasCheck, EditorCharAliasList)
-    End Sub
-    Private Sub EditorCharForceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles EditorCharForceCheck.CheckStateChanged
-        Editor.EditorCharCheckBoxes("standard", EditorCharForceCheck, EditorCharForceDrop)
-    End Sub
+    'Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
+    '    MenuButtonPressed(EditorPanel)
+    '    Editor.FlipEditorPanels(EditorMenuPanel)
+    'End Sub
+    'Private Sub EditorBackButton_Click(sender As Object, e As EventArgs)
+    '    Editor.FlipEditorPanels(EditorMenuPanel)
+    '    MemoryBank.ActiveEditorWindow = ""
+    'End Sub
+    'Private Sub EditorDBButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorGenDBDrop(EditorSwitchSDBDrop, EditorSwitchDelButton)
+    'End Sub
+    'Private Sub EditorSwitchSDBDrop_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    Editor.EditorSwitchSDBDrop(EditorSwitchSDBDrop, EditorSwitchTarBox, EditorSwitchVerBox, EditorSwitchCurBox, EditorSwitchSDBButton)
+    'End Sub
+    'Private Sub EditorSwitchNewCheck_CheckedChanged(sender As Object, e As EventArgs)
+    '    Editor.EditorSwitchNewActions("check", EditorSwitchNewCheck, EditorSwitchNewBox, EditorSwitchNewButton)
+    'End Sub
+    'Private Sub EditorSwitchNewBox_KeyPress(sender As Object, e As EventArgs)
+    '    Editor.EditorSwitchNewActions("key", EditorSwitchNewCheck, EditorSwitchNewBox, EditorSwitchNewButton)
+    'End Sub
+    'Private Sub EditorSwitchNewButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorSwitchNewActions("button", EditorSwitchNewCheck, EditorSwitchNewBox, EditorSwitchNewButton)
+    'End Sub
+    'Private Sub EditorSwitchSDBButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorSwitchButtonActions("switch", EditorSwitchSDBButton, EditorSwitchSDBDrop, EditorSwitchDelButton)
+    'End Sub
+    'Private Sub EditorSwitchDelButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorSwitchButtonActions("delete", EditorSwitchDelButton, EditorSwitchSDBDrop, EditorSwitchDelButton)
+    'End Sub
+    'Private Sub EditorSwitchDupButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorSwitchButtonActions("dupe", EditorSwitchDupButton, EditorSwitchSDBDrop, EditorSwitchDelButton)
+    'End Sub
+    'Private Sub EditorEditList_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    Editor.EditorEditDelButtonUpdate(EditorEditList, EditorEditDelButton)
+    'End Sub
+    'Private Sub EditorCharButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Characters", EditorEditPanel, EditorEditCharPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorAblButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Abilities", EditorEditPanel, EditorEditAblPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorLangButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Languages", EditorEditPanel, EditorEditLangPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorArenaButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Arenas", EditorEditPanel, EditorEditArenaPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorCharmsButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Charms", EditorEditPanel, EditorEditCharmsPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorClassButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Classifications", EditorEditPanel, EditorEditClassPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorDestinyButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Destinies", EditorEditPanel, EditorEditDestinyPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorEffectsButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Effects", EditorEditPanel, EditorEditEffectsPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorHeldButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Handhelds", EditorEditPanel, EditorEditHeldsPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorItemButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Items", EditorEditPanel, EditorEditItemsPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorVerseButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Universes", EditorEditPanel, EditorEditVersePanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorRelButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Relationships", EditorEditPanel, EditorEditRelPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorStatusButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Statuses", EditorEditPanel, EditorEditStatusPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorTeamsButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Teams", EditorEditPanel, EditorEditTeamsPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorWearButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorButtonActions("Wearables", EditorEditPanel, EditorEditWearsPanel, EditorEditDelButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorEditAddButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorEditAddButtonUpdate(EditorEditAddButton, EditorEditBackButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorCharCancelButton_Click(sender As Object, e As EventArgs)
+    '    Editor.EditorCharCancelButtonUpdate(EditorEditAddButton, EditorEditBackButton, EditorEditList)
+    'End Sub
+    'Private Sub EditorCharAliasCheck_CheckedChanged(sender As Object, e As EventArgs)
+    '    Editor.EditorCharCheckBoxes("standard", EditorCharAliasCheck, EditorCharAliasList)
+    'End Sub
+    'Private Sub EditorCharForceCheck_CheckedChanged(sender As Object, e As EventArgs)
+    '    Editor.EditorCharCheckBoxes("standard", EditorCharForceCheck, EditorCharForceDrop)
+    'End Sub
 
-    Private Sub EditorCharAvatarCheck_CheckedChanged(sender As Object, e As EventArgs) Handles EditorCharAvatarCheck.CheckStateChanged
-        Editor.EditorCharCheckBoxes("none", EditorCharAvatarCheck, EditorCharAvatarBox)
-    End Sub
+    'Private Sub EditorCharAvatarCheck_CheckedChanged(sender As Object, e As EventArgs)
+    '    Editor.EditorCharCheckBoxes("none", EditorCharAvatarCheck, EditorCharAvatarBox)
+    'End Sub
 
-    Private Sub EditorCharThemeCheck_CheckedChanged(sender As Object, e As EventArgs) Handles EditorCharThemeCheck.CheckStateChanged
-        Editor.EditorCharCheckBoxes("none", EditorCharThemeCheck, EditorCharThemeBox)
-    End Sub
-    Private Sub EditorCharRaceDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EditorCharRaceDrop.SelectedIndexChanged
-        Editor.EditorCharRaceDropChange(EditorCharRaceDrop, EditorCharForceBox, EditorCharAblList, EditorCharEffList, EditorCharBioBox)
+    'Private Sub EditorCharThemeCheck_CheckedChanged(sender As Object, e As EventArgs)
+    '    Editor.EditorCharCheckBoxes("none", EditorCharThemeCheck, EditorCharThemeBox)
+    'End Sub
+    'Private Sub EditorCharRaceDrop_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    Editor.EditorCharRaceDropChange(EditorCharRaceDrop, EditorCharForceBox, EditorCharAblList, EditorCharEffList, EditorCharBioBox)
 
-    End Sub
+    'End Sub
+
 End Class

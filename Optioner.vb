@@ -39,82 +39,82 @@
     Public Shared Sub MoveGroup(type As String)
         Select Case LCase(type)
             Case "avatars"
-                ShiftGroup(MainWindow.OptionsManageAvatars, "avatars", MainWindow.OptionsManageMusic, MainWindow.OptionsManageSound)
+                'ShiftGroup(MainWindow.OptionsManageAvatars, "avatars", MainWindow.OptionsManageMusic, MainWindow.OptionsManageSound)
             Case "music"
-                ShiftGroup(MainWindow.OptionsManageMusic, "music", MainWindow.OptionsManageAvatars, MainWindow.OptionsManageSound)
+                'ShiftGroup(MainWindow.OptionsManageMusic, "music", MainWindow.OptionsManageAvatars, MainWindow.OptionsManageSound)
             Case "sound"
-                ShiftGroup(MainWindow.OptionsManageSound, "sound", MainWindow.OptionsManageAvatars, MainWindow.OptionsManageMusic)
+                'ShiftGroup(MainWindow.OptionsManageSound, "sound", MainWindow.OptionsManageAvatars, MainWindow.OptionsManageMusic)
         End Select
     End Sub
     Private Shared Sub ShiftGroup(button As Button, type As String, other1 As Button, other2 As Button)
-        If (MainWindow.CustomLibsGroup.Visible = False And button.ForeColor = MemoryBank.ButtonForeColor) Or (MainWindow.CustomLibsGroup.Visible = True And
-            (other1.ForeColor = MemoryBank.ClickForeColor Or other2.ForeColor = MemoryBank.ClickForeColor)) Then
-            button.ForeColor = MemoryBank.ClickForeColor
-            MemoryBank.CustomLibsSelected = type
-            OptionsGroupToLeft()
-            MainWindow.CustomLibsGroup.Visible = True
-            other1.ForeColor = MemoryBank.ButtonForeColor
-            other2.ForeColor = MemoryBank.ButtonForeColor
-        Else
-            button.ForeColor = MemoryBank.ButtonForeColor
-            other1.ForeColor = MemoryBank.ButtonForeColor
-            other2.ForeColor = MemoryBank.ButtonForeColor
-            MemoryBank.CustomLibsSelected = vbNull
-            OptionsGroupToMid()
-            MainWindow.CustomLibsGroup.Visible = False
-        End If
-        Select Case type
-            Case "avatars"
-                FlipTracksChanges()
-                MainWindow.CustomLibsPreviewAvatar.Visible = True
-                MainWindow.CustomLibsPreviewImage.Image = Nothing
-                MainWindow.CustomLibsPreviewMusic.Visible = False
-                CustomLibsListPop(True)
-            Case Else
-                If IntroInPlay = False Then Jukebox.StopSong()
-                FlipTracksChanges()
-                MainWindow.CustomLibsPreviewAvatar.Visible = False
-                MainWindow.CustomLibsPreviewImage.Image = Nothing
-                MainWindow.CustomLibsPreviewMusic.Visible = True
-                MainWindow.CustomLibsPreviewPlay.Enabled = False
-                MainWindow.CustomLibsPreviewStop.Enabled = False
-                Appearance.RefreshColors()
-                CustomLibsListPop(True)
-        End Select
-        ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
+        'If (MainWindow.CustomLibsGroup.Visible = False And button.ForeColor = MemoryBank.ButtonForeColor) Or (MainWindow.CustomLibsGroup.Visible = True And
+        '    (other1.ForeColor = MemoryBank.ClickForeColor Or other2.ForeColor = MemoryBank.ClickForeColor)) Then
+        '    button.ForeColor = MemoryBank.ClickForeColor
+        '    MemoryBank.CustomLibsSelected = type
+        '    OptionsGroupToLeft()
+        '    MainWindow.CustomLibsGroup.Visible = True
+        '    other1.ForeColor = MemoryBank.ButtonForeColor
+        '    other2.ForeColor = MemoryBank.ButtonForeColor
+        'Else
+        '    button.ForeColor = MemoryBank.ButtonForeColor
+        '    other1.ForeColor = MemoryBank.ButtonForeColor
+        '    other2.ForeColor = MemoryBank.ButtonForeColor
+        '    MemoryBank.CustomLibsSelected = vbNull
+        '    OptionsGroupToMid()
+        '    MainWindow.CustomLibsGroup.Visible = False
+        'End If
+        'Select Case type
+        '    Case "avatars"
+        '        FlipTracksChanges()
+        '        MainWindow.CustomLibsPreviewAvatar.Visible = True
+        '        MainWindow.CustomLibsPreviewImage.Image = Nothing
+        '        MainWindow.CustomLibsPreviewMusic.Visible = False
+        '        CustomLibsListPop(True)
+        '    Case Else
+        '        If IntroInPlay = False Then Jukebox.StopSong()
+        '        FlipTracksChanges()
+        '        MainWindow.CustomLibsPreviewAvatar.Visible = False
+        '        MainWindow.CustomLibsPreviewImage.Image = Nothing
+        '        MainWindow.CustomLibsPreviewMusic.Visible = True
+        '        MainWindow.CustomLibsPreviewPlay.Enabled = False
+        '        MainWindow.CustomLibsPreviewStop.Enabled = False
+        '        Appearance.RefreshColors()
+        '        CustomLibsListPop(True)
+        'End Select
+        'ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
     End Sub
     Private Shared Sub OptionsGroupLocationMove(x As Integer, y As Integer, groupbox As GroupBox)
         groupbox.Location = New Point(x, y)
     End Sub
     Private Shared Sub OptionsGroupToLeft()
-        OptionsGroupLocationMove(180, 180, MainWindow.OptionsColorGroup)
-        OptionsGroupLocationMove(180, 250, MainWindow.OptionsMusicGroup)
-        OptionsGroupLocationMove(180, 450, MainWindow.OptionsManageGroup)
-        MemoryBank.OptionsGroupLoc = "left"
-        ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
+        'OptionsGroupLocationMove(180, 180, MainWindow.OptionsColorGroup)
+        'OptionsGroupLocationMove(180, 250, MainWindow.OptionsMusicGroup)
+        'OptionsGroupLocationMove(180, 450, MainWindow.OptionsManageGroup)
+        'MemoryBank.OptionsGroupLoc = "left"
+        'ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
     End Sub
     Private Shared Sub OptionsGroupToMid()
-        OptionsGroupLocationMove(420, 180, MainWindow.OptionsColorGroup)
-        OptionsGroupLocationMove(420, 250, MainWindow.OptionsMusicGroup)
-        OptionsGroupLocationMove(420, 450, MainWindow.OptionsManageGroup)
-        MemoryBank.OptionsGroupLoc = "mid"
-        ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
+        'OptionsGroupLocationMove(420, 180, MainWindow.OptionsColorGroup)
+        'OptionsGroupLocationMove(420, 250, MainWindow.OptionsMusicGroup)
+        'OptionsGroupLocationMove(420, 450, MainWindow.OptionsManageGroup)
+        'MemoryBank.OptionsGroupLoc = "mid"
+        'ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
     End Sub
     Public Shared Sub FlipOptionsGroups(action As Boolean)
         Dim Reaction As Boolean
         If action = True Then Reaction = False Else Reaction = True
-        MainWindow.CustomLibsGroup.Visible = Reaction
-        MainWindow.OptionsManageGroup.Enabled = action
-        MainWindow.OptionsMusicGroup.Enabled = action
-        MainWindow.OptionsColorGroup.Enabled = action
-        MainWindow.OptionsAudioSelectIntro.ForeColor = MemoryBank.ButtonForeColor
-        MainWindow.OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
-        MainWindow.OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
-        MainWindow.OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
+        'MainWindow.CustomLibsGroup.Visible = Reaction
+        'MainWindow.OptionsManageGroup.Enabled = action
+        'MainWindow.OptionsMusicGroup.Enabled = action
+        'MainWindow.OptionsColorGroup.Enabled = action
+        'MainWindow.OptionsAudioSelectIntro.ForeColor = MemoryBank.ButtonForeColor
+        'MainWindow.OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
+        'MainWindow.OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
+        'MainWindow.OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
         Appearance.RefreshColors()
     End Sub
     Public Shared Sub CustomLibsListChanged()
-        CustomLibsListChangeProcess(MainWindow.CustomLibsList)
+        'CustomLibsListChangeProcess(MainWindow.CustomLibsList)
     End Sub
     Private Shared Sub CustomLibsListChangeProcess(listname As ListBox)
         If listname.Enabled = True And listname.SelectedIndex >= 0 Then
@@ -137,38 +137,38 @@
                         Select Case LCase(MemoryBank.CustomLibsSelected)
                             Case "avatars"
                                 CustomLibsPrivatePick(False)
-                                MainWindow.CustomLibsPreviewImage.Image = Image.FromFile(Filename)
-                                MainWindow.CustomLibsPreviewImage.SizeMode = PictureBoxSizeMode.StretchImage
+                                'MainWindow.CustomLibsPreviewImage.Image = Image.FromFile(Filename)
+                                'MainWindow.CustomLibsPreviewImage.SizeMode = PictureBoxSizeMode.StretchImage
                             Case Else
                                 CustomLibsPrivatePick(True)
-                                MainWindow.CustomLibsPreviewPlay.Enabled = True
-                                MainWindow.CustomLibsMusicImage.BackgroundImage =
-                                    Global.Limitless.My.Resources.Resources.mp3sound
+                                'MainWindow.CustomLibsPreviewPlay.Enabled = True
+                                'MainWindow.CustomLibsMusicImage.BackgroundImage =
+                                '    Global.Limitless.My.Resources.Resources.mp3sound
                         End Select
                     End If
                 End If
             Next
         Else
-            MainWindow.CustomLibsEdit.Enabled = False
-            MainWindow.CustomLibsDelete.Enabled = False
-            MainWindow.CustomLibsPath.Text = ""
+            'MainWindow.CustomLibsEdit.Enabled = False
+            'MainWindow.CustomLibsDelete.Enabled = False
+            'MainWindow.CustomLibsPath.Text = ""
         End If
         Appearance.RefreshColors()
     End Sub
     Private Shared Sub CustomLibsNameFound(action As Boolean, name As String, check As CheckState, color As Color)
-        MainWindow.CustomLibsPath.Enabled = action
-        MainWindow.CustomLibsPath.Text = name
-        MainWindow.CustomLibsDelete.Enabled = action
-        MainWindow.CustomLibsEdit.Enabled = action
-        MainWindow.CustomLibsActive.Enabled = action
-        MainWindow.CustomLibsActive.CheckState = check
-        MainWindow.CustomLibsActive.ForeColor = color
+        '    MainWindow.CustomLibsPath.Enabled = action
+        '    MainWindow.CustomLibsPath.Text = name
+        '    MainWindow.CustomLibsDelete.Enabled = action
+        '    MainWindow.CustomLibsEdit.Enabled = action
+        '    MainWindow.CustomLibsActive.Enabled = action
+        '    MainWindow.CustomLibsActive.CheckState = check
+        '    MainWindow.CustomLibsActive.ForeColor = color
     End Sub
     Private Shared Sub CustomLibsPrivatePick(action As Boolean)
         Dim Reaction As Boolean
         If action = True Then Reaction = False Else Reaction = True
-        MainWindow.CustomLibsPreviewMusic.Visible = action
-        MainWindow.CustomLibsPreviewAvatar.Visible = Reaction
+        'MainWindow.CustomLibsPreviewMusic.Visible = action
+        'MainWindow.CustomLibsPreviewAvatar.Visible = Reaction
     End Sub
     Public Shared Sub CustomLibsActiveChanged(check As CheckBox, list As ListBox)
         CustomLibsActiveChangeProcess(check, list)
@@ -219,7 +219,7 @@
     End Sub
     Private Shared Sub CustomLibsActiveChangeAction(checkbox As CheckBox, list As ListBox, dir As String, ext As String,
         action As String, oldname As String, newname As String, checkstate As CheckState, color As Color)
-        If LCase(MemoryBank.CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(MainWindow.CustomLibsPreviewImage)
+        'If LCase(MemoryBank.CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(MainWindow.CustomLibsPreviewImage)
         If Not LCase(MemoryBank.CustomLibsSelected) = "avatars" Then JukeboxIntro()
         Try
             My.Computer.FileSystem.RenameFile(dir & "/" & oldname & ext, newname & ext)
@@ -252,17 +252,17 @@
     Private Shared Sub FlipCustomOptions(action As Boolean)
         Dim Reaction As Boolean
         If action = True Then Reaction = False Else Reaction = True
-        MainWindow.CustomLibsPreviewPlay.Enabled = action
-        MainWindow.CustomLibsList.Enabled = action
-        MainWindow.CustomLibsPreviewStop.Enabled = Reaction
-        MainWindow.CustomLibsActive.Enabled = action
-        MainWindow.CustomLibsEdit.Enabled = action
-        MainWindow.CustomLibsMusicMsg.Visible = Reaction
-        MainWindow.OptionsColorGroup.Enabled = action
-        MainWindow.OptionsMusicGroup.Enabled = action
-        MainWindow.OptionsManageGroup.Enabled = action
-        MainWindow.CustomLibsImport.Enabled = action
-        MainWindow.CustomLibsDelete.Enabled = action
+        'MainWindow.CustomLibsPreviewPlay.Enabled = action
+        'MainWindow.CustomLibsList.Enabled = action
+        'MainWindow.CustomLibsPreviewStop.Enabled = Reaction
+        'MainWindow.CustomLibsActive.Enabled = action
+        'MainWindow.CustomLibsEdit.Enabled = action
+        'MainWindow.CustomLibsMusicMsg.Visible = Reaction
+        'MainWindow.OptionsColorGroup.Enabled = action
+        'MainWindow.OptionsMusicGroup.Enabled = action
+        'MainWindow.OptionsManageGroup.Enabled = action
+        'MainWindow.CustomLibsImport.Enabled = action
+        'MainWindow.CustomLibsDelete.Enabled = action
         'OptionsManageSound.Enabled = action
     End Sub
     Public Shared Sub CustomLibsPreviewStop()
@@ -282,17 +282,17 @@
         OldFileName = SelectedDir & "/" & Replace(SelectedName, "Ω ", "Ω") & Ext
         Select Case button.Text
             Case "Edit Name"
-                If MainWindow.CustomLibsEdit.Enabled = True Then
-                    If System.IO.File.Exists(OldFileName) Then
-                        Dim TempValue As String = text.Text
-                        text.BackColor = Color.Red
-                        text.Text = TempValue.Substring(0, TempValue.Length - 4)
-                        text.ReadOnly = False
-                        button.Text = "Confirm"
-                    Else
-                        MsgBox("Error: Could not verify file exists, please try again.", vbOKOnly)
-                    End If
-                End If
+                'If MainWindow.CustomLibsEdit.Enabled = True Then
+                '    If System.IO.File.Exists(OldFileName) Then
+                '        Dim TempValue As String = text.Text
+                '        text.BackColor = Color.Red
+                '        text.Text = TempValue.Substring(0, TempValue.Length - 4)
+                '        text.ReadOnly = False
+                '        button.Text = "Confirm"
+                '    Else
+                '        MsgBox("Error: Could not verify file exists, please try again.", vbOKOnly)
+                '    End If
+                'End If
             Case "Confirm"
                 Dim ClearToGo As Boolean = True
                 Dim CheckName = SelectedDir & "/" & Replace(text.Text, "Ω ", "Ω") & Ext
@@ -374,26 +374,26 @@
                     End If
                     If answer = vbYes Then
                         Select Case MemoryBank.SelectCustomTrack
-                            Case MainWindow.OptionsAudioSelectIntro.Name.ToString
-                                SelectedType = "custi"
-                                Settings.SettingsCustI = CustSetting
-                                MainWindow.OptionsAudioTextIntro.Visible = True
-                                MainWindow.OptionsAudioTextIntro.Text = SelectedName
-                            Case MainWindow.OptionsAudioSelectBattle.Name.ToString
-                                SelectedType = "custb"
-                                Settings.SettingsCustB = CustSetting
-                                MainWindow.OptionsAudioTextBattle.Visible = True
-                                MainWindow.OptionsAudioTextBattle.Text = SelectedName
-                            Case MainWindow.OptionsAudioSelectVictory.Name.ToString
-                                SelectedType = "custw"
-                                Settings.SettingsCustW = CustSetting
-                                MainWindow.OptionsAudioTextVictory.Visible = True
-                                MainWindow.OptionsAudioTextVictory.Text = SelectedName
-                            Case MainWindow.OptionsAudioSelectDefeat.Name.ToString
-                                SelectedType = "custl"
-                                Settings.SettingsCustL = CustSetting
-                                MainWindow.OptionsAudioTextDefeat.Visible = True
-                                MainWindow.OptionsAudioTextDefeat.Text = SelectedName
+                            'Case MainWindow.OptionsAudioSelectIntro.Name.ToString
+                            '    SelectedType = "custi"
+                            '    Settings.SettingsCustI = CustSetting
+                            '    MainWindow.OptionsAudioTextIntro.Visible = True
+                            '    MainWindow.OptionsAudioTextIntro.Text = SelectedName
+                            'Case MainWindow.OptionsAudioSelectBattle.Name.ToString
+                            '    SelectedType = "custb"
+                            '    Settings.SettingsCustB = CustSetting
+                            '    MainWindow.OptionsAudioTextBattle.Visible = True
+                            '    MainWindow.OptionsAudioTextBattle.Text = SelectedName
+                            'Case MainWindow.OptionsAudioSelectVictory.Name.ToString
+                            '    SelectedType = "custw"
+                            '    Settings.SettingsCustW = CustSetting
+                            '    MainWindow.OptionsAudioTextVictory.Visible = True
+                            '    MainWindow.OptionsAudioTextVictory.Text = SelectedName
+                            'Case MainWindow.OptionsAudioSelectDefeat.Name.ToString
+                            '    SelectedType = "custl"
+                            '    Settings.SettingsCustL = CustSetting
+                            '    MainWindow.OptionsAudioTextDefeat.Visible = True
+                            '    MainWindow.OptionsAudioTextDefeat.Text = SelectedName
                         End Select
                         ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", SelectedType, {"settingConfig"}, {CustSetting})
                         Optioner.CheckCustomTracks("all")
@@ -457,37 +457,37 @@
     End Sub
     'Audio Section
     Private Shared Sub JukeboxIntro()
-        Jukebox.ReturnToIntro(MainWindow.CustomLibsPreviewStop, MainWindow.CustomLibsPreviewPlay, MainWindow.CustomLibsList,
-            MainWindow.CustomLibsActive, MainWindow.CustomLibsEdit, MainWindow.CustomLibsMusicMsg, MainWindow.OptionsColorGroup,
-            MainWindow.OptionsMusicGroup, MainWindow.OptionsManageGroup, MainWindow.CustomLibsImport, MainWindow.CustomLibsDelete)
+        'Jukebox.ReturnToIntro(MainWindow.CustomLibsPreviewStop, MainWindow.CustomLibsPreviewPlay, MainWindow.CustomLibsList,
+        '    MainWindow.CustomLibsActive, MainWindow.CustomLibsEdit, MainWindow.CustomLibsMusicMsg, MainWindow.OptionsColorGroup,
+        '    MainWindow.OptionsMusicGroup, MainWindow.OptionsManageGroup, MainWindow.CustomLibsImport, MainWindow.CustomLibsDelete)
     End Sub
     Private Shared Sub OptionsAudioCheckChange(checkbox As CheckBox, button As Button, setting As String)
-        Dim SettingsVariable As String, CurrentSetting As String = ClarkTribeGames.SQLite.GetValue(Settings.SettingsPath,
-            Settings.SettingsName, "mainSettings", "settingConfig", "settingName", setting).Substring(3)
-        If MainWindow.OptionsAudioCheckCustom.Checked And MainWindow.OptionsAudioCheckCustom.Enabled Then
-            If checkbox.Checked Then
-                button.Enabled = True
-                button.Visible = True
-                SettingsVariable = "on" & "-" & CurrentSetting
-            Else
-                button.Enabled = False
-                button.Visible = False
-                SettingsVariable = "of" & "-" & CurrentSetting
-            End If
-            Appearance.RefreshColors()
-            Select Case LCase(setting)
-                Case "custi"
-                    Settings.SettingsCustI = SettingsVariable
-                Case "custb"
-                    Settings.SettingsCustB = SettingsVariable
-                Case "custw"
-                    Settings.SettingsCustW = SettingsVariable
-                Case "custl"
-                    Settings.SettingsCustL = SettingsVariable
-            End Select
-            ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", setting, {"settingConfig"}, {SettingsVariable})
-            ClarkTribeGames.SQLite.CloseSQL(Settings.SettingsPath, Settings.SettingsName)
-        End If
+        'Dim SettingsVariable As String, CurrentSetting As String = ClarkTribeGames.SQLite.GetValue(Settings.SettingsPath,
+        '    Settings.SettingsName, "mainSettings", "settingConfig", "settingName", setting).Substring(3)
+        'If MainWindow.OptionsAudioCheckCustom.Checked And MainWindow.OptionsAudioCheckCustom.Enabled Then
+        '    If checkbox.Checked Then
+        '        button.Enabled = True
+        '        button.Visible = True
+        '        SettingsVariable = "on" & "-" & CurrentSetting
+        '    Else
+        '        button.Enabled = False
+        '        button.Visible = False
+        '        SettingsVariable = "of" & "-" & CurrentSetting
+        '    End If
+        '    Appearance.RefreshColors()
+        '    Select Case LCase(setting)
+        '        Case "custi"
+        '            Settings.SettingsCustI = SettingsVariable
+        '        Case "custb"
+        '            Settings.SettingsCustB = SettingsVariable
+        '        Case "custw"
+        '            Settings.SettingsCustW = SettingsVariable
+        '        Case "custl"
+        '            Settings.SettingsCustL = SettingsVariable
+        '    End Select
+        '    ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", setting, {"settingConfig"}, {SettingsVariable})
+        '    ClarkTribeGames.SQLite.CloseSQL(Settings.SettingsPath, Settings.SettingsName)
+        'End If
     End Sub
     Public Shared Sub DisableMusicOptions()
         FlipMusicOptions("options", False)
@@ -495,82 +495,82 @@
     Private Shared Sub FlipMusicOptions(type As String, action As Boolean)
         Select Case LCase(type)
             Case "options"
-                MainWindow.OptionsAudioCheckIntro.Enabled = action
-                MainWindow.OptionsAudioCheckBattle.Enabled = action
-                MainWindow.OptionsAudioCheckVictory.Enabled = action
-                MainWindow.OptionsAudioCheckDefeat.Enabled = action
-                MainWindow.OptionsAudioSelectIntro.Enabled = action
-                MainWindow.OptionsAudioSelectBattle.Enabled = action
-                MainWindow.OptionsAudioSelectVictory.Enabled = action
-                MainWindow.OptionsAudioSelectDefeat.Enabled = action
-                MainWindow.OptionsAudioSelectIntro.Visible = action
-                MainWindow.OptionsAudioSelectBattle.Visible = action
-                MainWindow.OptionsAudioSelectVictory.Visible = action
-                MainWindow.OptionsAudioSelectDefeat.Visible = action
-                MainWindow.OptionsAudioTextIntro.Visible = action
-                MainWindow.OptionsAudioTextBattle.Visible = action
-                MainWindow.OptionsAudioTextVictory.Visible = action
-                MainWindow.OptionsAudioTextDefeat.Visible = action
+                'MainWindow.OptionsAudioCheckIntro.Enabled = action
+                'MainWindow.OptionsAudioCheckBattle.Enabled = action
+                'MainWindow.OptionsAudioCheckVictory.Enabled = action
+                'MainWindow.OptionsAudioCheckDefeat.Enabled = action
+                'MainWindow.OptionsAudioSelectIntro.Enabled = action
+                'MainWindow.OptionsAudioSelectBattle.Enabled = action
+                'MainWindow.OptionsAudioSelectVictory.Enabled = action
+                'MainWindow.OptionsAudioSelectDefeat.Enabled = action
+                'MainWindow.OptionsAudioSelectIntro.Visible = action
+                'MainWindow.OptionsAudioSelectBattle.Visible = action
+                'MainWindow.OptionsAudioSelectVictory.Visible = action
+                'MainWindow.OptionsAudioSelectDefeat.Visible = action
+                'MainWindow.OptionsAudioTextIntro.Visible = action
+                'MainWindow.OptionsAudioTextBattle.Visible = action
+                'MainWindow.OptionsAudioTextVictory.Visible = action
+                'MainWindow.OptionsAudioTextDefeat.Visible = action
             Case "checkboxes"
-                MainWindow.OptionsAudioCheckIntro.Enabled = action
-                MainWindow.OptionsAudioCheckBattle.Enabled = action
-                MainWindow.OptionsAudioCheckVictory.Enabled = action
-                MainWindow.OptionsAudioCheckDefeat.Enabled = action
+                'MainWindow.OptionsAudioCheckIntro.Enabled = action
+                'MainWindow.OptionsAudioCheckBattle.Enabled = action
+                'MainWindow.OptionsAudioCheckVictory.Enabled = action
+                'MainWindow.OptionsAudioCheckDefeat.Enabled = action
             Case "custommusicintro"
-                MainWindow.OptionsAudioSelectIntro.Enabled = action
-                MainWindow.OptionsAudioSelectIntro.Visible = action
-                MainWindow.OptionsAudioTextIntro.Visible = action
+                'MainWindow.OptionsAudioSelectIntro.Enabled = action
+                'MainWindow.OptionsAudioSelectIntro.Visible = action
+                'MainWindow.OptionsAudioTextIntro.Visible = action
             Case "custommusicbattle"
-                MainWindow.OptionsAudioSelectBattle.Enabled = action
-                MainWindow.OptionsAudioSelectBattle.Visible = action
-                MainWindow.OptionsAudioTextBattle.Visible = action
+                'MainWindow.OptionsAudioSelectBattle.Enabled = action
+                'MainWindow.OptionsAudioSelectBattle.Visible = action
+                'MainWindow.OptionsAudioTextBattle.Visible = action
             Case "custommusicvictory"
-                MainWindow.OptionsAudioSelectVictory.Enabled = action
-                MainWindow.OptionsAudioSelectVictory.Visible = action
-                MainWindow.OptionsAudioTextVictory.Visible = action
+                'MainWindow.OptionsAudioSelectVictory.Enabled = action
+                'MainWindow.OptionsAudioSelectVictory.Visible = action
+                'MainWindow.OptionsAudioTextVictory.Visible = action
             Case "custommusicdefeat"
-                MainWindow.OptionsAudioSelectDefeat.Enabled = action
-                MainWindow.OptionsAudioSelectDefeat.Visible = action
-                MainWindow.OptionsAudioTextDefeat.Visible = action
+                'MainWindow.OptionsAudioSelectDefeat.Enabled = action
+                'MainWindow.OptionsAudioSelectDefeat.Visible = action
+                'MainWindow.OptionsAudioTextDefeat.Visible = action
             Case "customtracks"
-                MainWindow.OptionsAudioTextIntro.Visible = action
-                MainWindow.OptionsAudioTextBattle.Visible = action
-                MainWindow.OptionsAudioTextVictory.Visible = action
-                MainWindow.OptionsAudioTextDefeat.Visible = action
-                MainWindow.OptionsAudioSelectIntro.Visible = action
-                MainWindow.OptionsAudioSelectBattle.Visible = action
-                MainWindow.OptionsAudioSelectVictory.Visible = action
-                MainWindow.OptionsAudioSelectDefeat.Visible = action
+                'MainWindow.OptionsAudioTextIntro.Visible = action
+                'MainWindow.OptionsAudioTextBattle.Visible = action
+                'MainWindow.OptionsAudioTextVictory.Visible = action
+                'MainWindow.OptionsAudioTextDefeat.Visible = action
+                'MainWindow.OptionsAudioSelectIntro.Visible = action
+                'MainWindow.OptionsAudioSelectBattle.Visible = action
+                'MainWindow.OptionsAudioSelectVictory.Visible = action
+                'MainWindow.OptionsAudioSelectDefeat.Visible = action
         End Select
         Appearance.RefreshColors()
     End Sub
     Private Shared Sub CheckCustomMusicOptions()
-        If MainWindow.OptionsAudioCheckIntro.Enabled And MainWindow.OptionsAudioCheckIntro.CheckState = CheckState.Checked Then
-            FlipMusicOptions("custommusicintro", True)
-        End If
-        If MainWindow.OptionsAudioCheckBattle.Enabled And MainWindow.OptionsAudioCheckBattle.CheckState = CheckState.Checked Then
-            FlipMusicOptions("custommusicbattle", True)
-        End If
-        If MainWindow.OptionsAudioCheckVictory.Enabled And MainWindow.OptionsAudioCheckVictory.CheckState = CheckState.Checked Then
-            FlipMusicOptions("custommusicvictory", True)
-        End If
-        If MainWindow.OptionsAudioCheckDefeat.Enabled And MainWindow.OptionsAudioCheckIntro.CheckState = CheckState.Checked Then
-            FlipMusicOptions("custommusicdefeat", True)
-        End If
+        'If MainWindow.OptionsAudioCheckIntro.Enabled And MainWindow.OptionsAudioCheckIntro.CheckState = CheckState.Checked Then
+        '    FlipMusicOptions("custommusicintro", True)
+        'End If
+        'If MainWindow.OptionsAudioCheckBattle.Enabled And MainWindow.OptionsAudioCheckBattle.CheckState = CheckState.Checked Then
+        '    FlipMusicOptions("custommusicbattle", True)
+        'End If
+        'If MainWindow.OptionsAudioCheckVictory.Enabled And MainWindow.OptionsAudioCheckVictory.CheckState = CheckState.Checked Then
+        '    FlipMusicOptions("custommusicvictory", True)
+        'End If
+        'If MainWindow.OptionsAudioCheckDefeat.Enabled And MainWindow.OptionsAudioCheckIntro.CheckState = CheckState.Checked Then
+        '    FlipMusicOptions("custommusicdefeat", True)
+        'End If
     End Sub
     Public Shared Sub CheckAllCustomTracks()
         CheckCustomTracks("all")
     End Sub
     Private Shared Sub CheckCustomTracks(type As String)
         Select Case LCase(type)
-            Case "intro"
-                CheckCustomTracksProcess(Settings.SettingsCustI, MainWindow.OptionsAudioSelectIntro, MainWindow.OptionsAudioTextIntro, MainWindow.OptionsAudioCheckIntro)
-            Case "battle"
-                CheckCustomTracksProcess(Settings.SettingsCustB, MainWindow.OptionsAudioSelectBattle, MainWindow.OptionsAudioTextBattle, MainWindow.OptionsAudioCheckBattle)
-            Case "victory"
-                CheckCustomTracksProcess(Settings.SettingsCustW, MainWindow.OptionsAudioSelectVictory, MainWindow.OptionsAudioTextVictory, MainWindow.OptionsAudioCheckVictory)
-            Case "defeat"
-                CheckCustomTracksProcess(Settings.SettingsCustL, MainWindow.OptionsAudioSelectDefeat, MainWindow.OptionsAudioTextDefeat, MainWindow.OptionsAudioCheckDefeat)
+            'Case "intro"
+            '    CheckCustomTracksProcess(Settings.SettingsCustI, MainWindow.OptionsAudioSelectIntro, MainWindow.OptionsAudioTextIntro, MainWindow.OptionsAudioCheckIntro)
+            'Case "battle"
+            '    CheckCustomTracksProcess(Settings.SettingsCustB, MainWindow.OptionsAudioSelectBattle, MainWindow.OptionsAudioTextBattle, MainWindow.OptionsAudioCheckBattle)
+            'Case "victory"
+            '    CheckCustomTracksProcess(Settings.SettingsCustW, MainWindow.OptionsAudioSelectVictory, MainWindow.OptionsAudioTextVictory, MainWindow.OptionsAudioCheckVictory)
+            'Case "defeat"
+            '    CheckCustomTracksProcess(Settings.SettingsCustL, MainWindow.OptionsAudioSelectDefeat, MainWindow.OptionsAudioTextDefeat, MainWindow.OptionsAudioCheckDefeat)
             Case "all"
                 CheckCustomTracks("intro")
                 CheckCustomTracks("battle")
@@ -598,40 +598,40 @@
         End If
     End Sub
     Public Shared Sub SelectTrackChanges(button As Button)
-        MemoryBank.SelectCustomTrack = ""
-        If (MainWindow.CustomLibsGroup.Visible = False) Or (MainWindow.CustomLibsGroup.Visible = True And
-            Not button.ForeColor = MemoryBank.ClickForeColor) Then
-            MemoryBank.SelectCustomTrack = button.Name.ToString
-            OptionsGroupToLeft()
-            MainWindow.OptionsAudioSelectIntro.ForeColor = MemoryBank.ButtonForeColor
-            MainWindow.OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
-            MainWindow.OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
-            MainWindow.OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
-            button.ForeColor = MemoryBank.ClickForeColor
-            If IntroInPlay = False Then Jukebox.StopSong()
-            OptionsGroupToLeft()
-            MainWindow.CustomLibsGroup.Visible = True
-            MainWindow.CustomLibsPreviewAvatar.Visible = False
-            MainWindow.CustomLibsPreviewImage.Image = Nothing
-            MainWindow.CustomLibsPreviewMusic.Visible = True
-            MainWindow.CustomLibsPreviewPlay.Enabled = False
-            MainWindow.CustomLibsPreviewStop.Enabled = False
-            Appearance.RefreshColors()
-            MainWindow.CustomLibsActive.Visible = False
-            MainWindow.CustomLibsEdit.Visible = False
-            MainWindow.CustomLibsOmega.Visible = False
-            MainWindow.CustomLibsSave.Visible = False
-            MainWindow.CustomLibsAuto.Visible = False
-            MainWindow.CustomLibsImport.Visible = False
-            MainWindow.CustomLibsDelete.Text = "Select"
-            MemoryBank.CustomLibsSelected = "tracks"
-            CustomLibsListPop(False)
-        Else
-            OptionsGroupToMid()
-            MainWindow.CustomLibsGroup.Visible = False
-            FlipTracksChanges()
-            SelectTrackButtonReverse()
-        End If
+        'MemoryBank.SelectCustomTrack = ""
+        'If (MainWindow.CustomLibsGroup.Visible = False) Or (MainWindow.CustomLibsGroup.Visible = True And
+        '    Not button.ForeColor = MemoryBank.ClickForeColor) Then
+        '    MemoryBank.SelectCustomTrack = button.Name.ToString
+        '    OptionsGroupToLeft()
+        '    MainWindow.OptionsAudioSelectIntro.ForeColor = MemoryBank.ButtonForeColor
+        '    MainWindow.OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
+        '    MainWindow.OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
+        '    MainWindow.OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
+        '    button.ForeColor = MemoryBank.ClickForeColor
+        '    If IntroInPlay = False Then Jukebox.StopSong()
+        '    OptionsGroupToLeft()
+        '    MainWindow.CustomLibsGroup.Visible = True
+        '    MainWindow.CustomLibsPreviewAvatar.Visible = False
+        '    MainWindow.CustomLibsPreviewImage.Image = Nothing
+        '    MainWindow.CustomLibsPreviewMusic.Visible = True
+        '    MainWindow.CustomLibsPreviewPlay.Enabled = False
+        '    MainWindow.CustomLibsPreviewStop.Enabled = False
+        '    Appearance.RefreshColors()
+        '    MainWindow.CustomLibsActive.Visible = False
+        '    MainWindow.CustomLibsEdit.Visible = False
+        '    MainWindow.CustomLibsOmega.Visible = False
+        '    MainWindow.CustomLibsSave.Visible = False
+        '    MainWindow.CustomLibsAuto.Visible = False
+        '    MainWindow.CustomLibsImport.Visible = False
+        '    MainWindow.CustomLibsDelete.Text = "Select"
+        '    MemoryBank.CustomLibsSelected = "tracks"
+        '    CustomLibsListPop(False)
+        'Else
+        '    OptionsGroupToMid()
+        '    MainWindow.CustomLibsGroup.Visible = False
+        '    FlipTracksChanges()
+        '    SelectTrackButtonReverse()
+        'End If
     End Sub
     Public Shared Sub OptionsGroupMove(direction As String)
         Select Case LCase(direction)
@@ -642,50 +642,50 @@
         End Select
     End Sub
     Private Shared Sub FlipTracksChanges()
-        MainWindow.CustomLibsActive.Visible = True
-        MainWindow.CustomLibsEdit.Visible = True
-        MainWindow.CustomLibsOmega.Visible = True
-        MainWindow.CustomLibsSave.Visible = True
-        MainWindow.CustomLibsAuto.Visible = True
-        MainWindow.CustomLibsImport.Visible = True
-        MainWindow.CustomLibsDelete.Text = "Delete"
+        'MainWindow.CustomLibsActive.Visible = True
+        'MainWindow.CustomLibsEdit.Visible = True
+        'MainWindow.CustomLibsOmega.Visible = True
+        'MainWindow.CustomLibsSave.Visible = True
+        'MainWindow.CustomLibsAuto.Visible = True
+        'MainWindow.CustomLibsImport.Visible = True
+        'MainWindow.CustomLibsDelete.Text = "Delete"
     End Sub
     Private Shared Sub SelectTrackButtonReverse()
-        MainWindow.OptionsAudioSelectIntro.ForeColor = MemoryBank.ButtonForeColor
-        MainWindow.OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
-        MainWindow.OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
-        MainWindow.OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
-        MemoryBank.SelectCustomTrack = ""
+        'MainWindow.OptionsAudioSelectIntro.ForeColor = MemoryBank.ButtonForeColor
+        'MainWindow.OptionsAudioSelectBattle.ForeColor = MemoryBank.ButtonForeColor
+        'MainWindow.OptionsAudioSelectVictory.ForeColor = MemoryBank.ButtonForeColor
+        'MainWindow.OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
+        'MemoryBank.SelectCustomTrack = ""
     End Sub
     Private Shared Sub CustomLibsListPop(omega As Boolean)
         Select Case LCase(MemoryBank.CustomLibsSelected)
-            Case "avatars"
-                Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.AvatarsDir, MemoryBank.AvatarsExtF,
-                    MainWindow.CustomLibsImport, omega)
-            Case "music"
-                Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.MusicDir, MemoryBank.MusicExtF,
-                    MainWindow.CustomLibsImport, omega)
-            Case "sounds"
-                Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.SoundDir, MemoryBank.SoundExtF,
-                    MainWindow.CustomLibsImport, omega)
-            Case "tracks"
-                Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.MusicDir, MemoryBank.MusicExtF,
-                    MainWindow.CustomLibsDelete, omega)
-            Case Else
-                '
+            'Case "avatars"
+            '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.AvatarsDir, MemoryBank.AvatarsExtF,
+            '        MainWindow.CustomLibsImport, omega)
+            'Case "music"
+            '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.MusicDir, MemoryBank.MusicExtF,
+            '        MainWindow.CustomLibsImport, omega)
+            'Case "sounds"
+            '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.SoundDir, MemoryBank.SoundExtF,
+            '        MainWindow.CustomLibsImport, omega)
+            'Case "tracks"
+            '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.MusicDir, MemoryBank.MusicExtF,
+            '        MainWindow.CustomLibsDelete, omega)
+            'Case Else
+            '    '
         End Select
-        MainWindow.CustomLibsPath.Text = ""
-        If Not LCase(MemoryBank.CustomLibsSelected) = "tracks" Then
-            MainWindow.CustomLibsActive.Enabled = False
-            MainWindow.CustomLibsActive.CheckState = CheckState.Unchecked
-            MainWindow.CustomLibsEdit.Enabled = False
-            MainWindow.CustomLibsDelete.Enabled = False
-            MainWindow.CustomLibsSave.Visible = False
-        Else
-            MainWindow.CustomLibsSave.Visible = True
-        End If
+        'MainWindow.CustomLibsPath.Text = ""
+        'If Not LCase(MemoryBank.CustomLibsSelected) = "tracks" Then
+        '    MainWindow.CustomLibsActive.Enabled = False
+        '    MainWindow.CustomLibsActive.CheckState = CheckState.Unchecked
+        '    MainWindow.CustomLibsEdit.Enabled = False
+        '    MainWindow.CustomLibsDelete.Enabled = False
+        '    MainWindow.CustomLibsSave.Visible = False
+        'Else
+        '    MainWindow.CustomLibsSave.Visible = True
+        'End If
         Appearance.RefreshColors()
-        Optioner.ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
+        'Optioner.ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
     End Sub
     Public Shared Sub OptionsAudioCheckMusic(type As String, checkbox As CheckBox, custom As CheckBox)
         Select Case LCase(type)
@@ -732,33 +732,33 @@
                     'Future process to turn off sound
                 End If
             Case Else
-                Dim cust As String = "", textbox As Label = MainWindow.OptionsAudioTextIntro, button As Button = MainWindow.OptionsAudioSelectIntro
-                Select Case type
-                    Case "intro"
-                        cust = "custi"
-                        textbox = MainWindow.OptionsAudioTextIntro
-                        button = MainWindow.OptionsAudioSelectIntro
-                    Case "battle"
-                        cust = "custb"
-                        textbox = MainWindow.OptionsAudioTextBattle
-                        button = MainWindow.OptionsAudioSelectBattle
-                    Case "victory"
-                        cust = "custw"
-                        textbox = MainWindow.OptionsAudioTextVictory
-                        button = MainWindow.OptionsAudioSelectVictory
-                    Case "defeat"
-                        cust = "custl"
-                        textbox = MainWindow.OptionsAudioTextDefeat
-                        button = MainWindow.OptionsAudioSelectDefeat
-                End Select
-                If checkbox.Checked = CheckState.Unchecked Then
-                    ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", cust, {"settingConfig"}, {"off"})
-                    textbox.Visible = False
-                    button.Visible = False
-                Else
-                    OptionsAudioCheckChange(checkbox, button, "custi")
-                    CheckCustomTracks("intro")
-                End If
+                'Dim cust As String = "", textbox As Label = MainWindow.OptionsAudioTextIntro, button As Button = MainWindow.OptionsAudioSelectIntro
+                'Select Case type
+                '    Case "intro"
+                '        cust = "custi"
+                '        textbox = MainWindow.OptionsAudioTextIntro
+                '        button = MainWindow.OptionsAudioSelectIntro
+                '    Case "battle"
+                '        cust = "custb"
+                '        textbox = MainWindow.OptionsAudioTextBattle
+                '        button = MainWindow.OptionsAudioSelectBattle
+                '    Case "victory"
+                '        cust = "custw"
+                '        textbox = MainWindow.OptionsAudioTextVictory
+                '        button = MainWindow.OptionsAudioSelectVictory
+                '    Case "defeat"
+                '        cust = "custl"
+                '        textbox = MainWindow.OptionsAudioTextDefeat
+                '        button = MainWindow.OptionsAudioSelectDefeat
+                'End Select
+                'If checkbox.Checked = CheckState.Unchecked Then
+                '    ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", cust, {"settingConfig"}, {"off"})
+                '    textbox.Visible = False
+                '    button.Visible = False
+                'Else
+                '    OptionsAudioCheckChange(checkbox, button, "custi")
+                '    CheckCustomTracks("intro")
+                'End If
                 Jukebox.IntroInPlay = False
                 Jukebox.SwitchToIntro()
         End Select
@@ -767,12 +767,12 @@
     'Color Section
     Public Shared Sub ColorModeChange(type As String)
         Select Case LCase(type)
-            Case "dark"
-                ColorModeCheckChange(MainWindow.OptionsColorDark, MainWindow.OptionsColorLite, MainWindow.OptionsColorCustom, "Dark")
-            Case "lite"
-                ColorModeCheckChange(MainWindow.OptionsColorLite, MainWindow.OptionsColorDark, MainWindow.OptionsColorCustom, "Lite")
-            Case "custom"
-                ColorModeCheckChange(MainWindow.OptionsColorCustom, MainWindow.OptionsColorLite, MainWindow.OptionsColorDark, "Custom")
+            'Case "dark"
+            '    ColorModeCheckChange(MainWindow.OptionsColorDark, MainWindow.OptionsColorLite, MainWindow.OptionsColorCustom, "Dark")
+            'Case "lite"
+            '    ColorModeCheckChange(MainWindow.OptionsColorLite, MainWindow.OptionsColorDark, MainWindow.OptionsColorCustom, "Lite")
+            'Case "custom"
+            '    ColorModeCheckChange(MainWindow.OptionsColorCustom, MainWindow.OptionsColorLite, MainWindow.OptionsColorDark, "Custom")
         End Select
     End Sub
     Private Shared Sub ColorModeCheckChange(active As CheckBox, other1 As CheckBox, other2 As CheckBox, setting As String)
@@ -786,21 +786,21 @@
             End If
         End If
         Appearance.RefreshColors()
-        Optioner.ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
+        'Optioner.ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
     End Sub
     Private Shared Sub ColorModeChecks(type As String)
         Select Case LCase(type)
             Case "lite"
-                MainWindow.OptionsColorLite.CheckState = CheckState.Checked
-                MainWindow.OptionsColorDark.CheckState = CheckState.Unchecked
-                MainWindow.OptionsColorLite.Enabled = False
-                MainWindow.OptionsColorDark.Enabled = True
+                'MainWindow.OptionsColorLite.CheckState = CheckState.Checked
+                'MainWindow.OptionsColorDark.CheckState = CheckState.Unchecked
+                'MainWindow.OptionsColorLite.Enabled = False
+                'MainWindow.OptionsColorDark.Enabled = True
                 MemoryBank.ColorModeAtStart = "lite"
             Case "dark"
-                MainWindow.OptionsColorLite.CheckState = CheckState.Unchecked
-                MainWindow.OptionsColorDark.CheckState = CheckState.Checked
-                MainWindow.OptionsColorLite.Enabled = True
-                MainWindow.OptionsColorDark.Enabled = False
+                'MainWindow.OptionsColorLite.CheckState = CheckState.Unchecked
+                'MainWindow.OptionsColorDark.CheckState = CheckState.Checked
+                'MainWindow.OptionsColorLite.Enabled = True
+                'MainWindow.OptionsColorDark.Enabled = False
                 MemoryBank.ColorModeAtStart = "dark"
             Case Else
                 'Future Custom Goes Here
