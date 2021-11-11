@@ -23,7 +23,6 @@ Partial Class MainWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
         Me.TitleLabel = New System.Windows.Forms.Label()
         Me.TitleBarPanel = New System.Windows.Forms.Panel()
         Me.TitleBarIcon = New System.Windows.Forms.Panel()
@@ -985,7 +984,6 @@ Partial Class MainWindow
         Me.EditorCharEffInvHelp2.TabIndex = 73
         Me.EditorCharEffInvHelp2.Text = "i"
         Me.EditorCharEffInvHelp2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharEffInvHelp2, resources.GetString("EditorCharEffInvHelp2.ToolTip"))
         '
         'EditorCharEffInvButton
         '
@@ -1008,7 +1006,6 @@ Partial Class MainWindow
         Me.EditorCharEffInvHelp.TabIndex = 72
         Me.EditorCharEffInvHelp.Text = "i"
         Me.EditorCharEffInvHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharEffInvHelp, resources.GetString("EditorCharEffInvHelp.ToolTip"))
         '
         'EditorCharEffInvList
         '
@@ -1088,7 +1085,6 @@ Partial Class MainWindow
         Me.EditorCharEffHelp.TabIndex = 70
         Me.EditorCharEffHelp.Text = "i"
         Me.EditorCharEffHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharEffHelp, resources.GetString("EditorCharEffHelp.ToolTip"))
         '
         'EditorCharAblHelp
         '
@@ -1100,7 +1096,6 @@ Partial Class MainWindow
         Me.EditorCharAblHelp.TabIndex = 68
         Me.EditorCharAblHelp.Text = "i"
         Me.EditorCharAblHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharAblHelp, resources.GetString("EditorCharAblHelp.ToolTip"))
         '
         'EditorCharEffList
         '
@@ -1158,7 +1153,6 @@ Partial Class MainWindow
         Me.EditorCharForceHelp2.TabIndex = 63
         Me.EditorCharForceHelp2.Text = "i"
         Me.EditorCharForceHelp2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharForceHelp2, resources.GetString("EditorCharForceHelp2.ToolTip"))
         '
         'EditorCharForceDrop
         '
@@ -1207,7 +1201,6 @@ Partial Class MainWindow
         Me.EditorCharForceHelp.TabIndex = 62
         Me.EditorCharForceHelp.Text = "i"
         Me.EditorCharForceHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharForceHelp, resources.GetString("EditorCharForceHelp.ToolTip"))
         '
         'EditorCharForceText
         '
@@ -1229,7 +1222,6 @@ Partial Class MainWindow
         Me.EditorCharLangHelp.TabIndex = 54
         Me.EditorCharLangHelp.Text = "i"
         Me.EditorCharLangHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharLangHelp, resources.GetString("EditorCharLangHelp.ToolTip"))
         '
         'EditorCharWebHelp
         '
@@ -1255,7 +1247,6 @@ Partial Class MainWindow
         Me.EditorCharAvatarHelp.TabIndex = 76
         Me.EditorCharAvatarHelp.Text = "i"
         Me.EditorCharAvatarHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharAvatarHelp, resources.GetString("EditorCharAvatarHelp.ToolTip"))
         '
         'Label27
         '
@@ -1267,7 +1258,6 @@ Partial Class MainWindow
         Me.Label27.TabIndex = 78
         Me.Label27.Text = "i"
         Me.Label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.Label27, resources.GetString("Label27.ToolTip"))
         '
         'EditorCharAvatarCheck
         '
@@ -1325,7 +1315,6 @@ Partial Class MainWindow
         Me.EditorCharAliasHelp.TabIndex = 58
         Me.EditorCharAliasHelp.Text = "i"
         Me.EditorCharAliasHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharAliasHelp, resources.GetString("EditorCharAliasHelp.ToolTip"))
         '
         'EditorCharVerseHelp
         '
@@ -1337,7 +1326,6 @@ Partial Class MainWindow
         Me.EditorCharVerseHelp.TabIndex = 57
         Me.EditorCharVerseHelp.Text = "i"
         Me.EditorCharVerseHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharVerseHelp, resources.GetString("EditorCharVerseHelp.ToolTip"))
         '
         'EditorCharAliasRemB
         '
@@ -1519,7 +1507,6 @@ Partial Class MainWindow
         Me.EditorCharDestinyHelp.TabIndex = 55
         Me.EditorCharDestinyHelp.Text = "i"
         Me.EditorCharDestinyHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharDestinyHelp, resources.GetString("EditorCharDestinyHelp.ToolTip"))
         '
         'EditorCharLevelHelp
         '
@@ -1555,7 +1542,6 @@ Partial Class MainWindow
         Me.EditorCharGenderHelp.TabIndex = 51
         Me.EditorCharGenderHelp.Text = "i"
         Me.EditorCharGenderHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharGenderHelp, resources.GetString("EditorCharGenderHelp.ToolTip"))
         '
         'EditorCharAlignHelp
         '
@@ -1567,7 +1553,6 @@ Partial Class MainWindow
         Me.EditorCharAlignHelp.TabIndex = 49
         Me.EditorCharAlignHelp.Text = "i"
         Me.EditorCharAlignHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharAlignHelp, resources.GetString("EditorCharAlignHelp.ToolTip"))
         '
         'EditorCharClassHelp
         '
@@ -1579,7 +1564,6 @@ Partial Class MainWindow
         Me.EditorCharClassHelp.TabIndex = 47
         Me.EditorCharClassHelp.Text = "i"
         Me.EditorCharClassHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharClassHelp, resources.GetString("EditorCharClassHelp.ToolTip"))
         '
         'EditorCharRaceHelp
         '
@@ -1605,7 +1589,6 @@ Partial Class MainWindow
         Me.EditorCharTypeHelp.TabIndex = 43
         Me.EditorCharTypeHelp.Text = "i"
         Me.EditorCharTypeHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharTypeHelp, resources.GetString("EditorCharTypeHelp.ToolTip"))
         '
         'EditorCharDestinyDrop
         '
@@ -2020,7 +2003,6 @@ Partial Class MainWindow
         Me.EditorCharInvHelp.TabIndex = 1
         Me.EditorCharInvHelp.Text = "i"
         Me.EditorCharInvHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MenuTips.SetToolTip(Me.EditorCharInvHelp, resources.GetString("EditorCharInvHelp.ToolTip"))
         '
         'EditorCharInvQtyText
         '
@@ -3633,7 +3615,6 @@ Partial Class MainWindow
         Me.AboutText.Size = New System.Drawing.Size(700, 225)
         Me.AboutText.TabIndex = 1
         Me.AboutText.TabStop = False
-        Me.AboutText.Text = resources.GetString("AboutText.Text")
         '
         'AboutTitle
         '
@@ -3641,7 +3622,7 @@ Partial Class MainWindow
         Me.AboutTitle.Font = New System.Drawing.Font("Lucida Console", 24.0!, System.Drawing.FontStyle.Bold)
         Me.AboutTitle.Location = New System.Drawing.Point(490, 70)
         Me.AboutTitle.Name = "AboutTitle"
-        Me.AboutTitle.Size = New System.Drawing.Size(315, 32)
+        Me.AboutTitle.Size = New System.Drawing.Size(314, 32)
         Me.AboutTitle.TabIndex = 0
         Me.AboutTitle.Text = "About Limitless"
         '
@@ -3862,7 +3843,7 @@ Partial Class MainWindow
         Me.DonateTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.DonateTitle.Location = New System.Drawing.Point(450, 70)
         Me.DonateTitle.Name = "DonateTitle"
-        Me.DonateTitle.Size = New System.Drawing.Size(395, 32)
+        Me.DonateTitle.Size = New System.Drawing.Size(394, 32)
         Me.DonateTitle.TabIndex = 0
         Me.DonateTitle.Text = "Donate To The Cause"
         '

@@ -1,7 +1,7 @@
 =============================================
 LIMITLESS by Geoff Clark
 PUBLISHED by CLARKTRIBEGAMES LLC
-VERSION ALPHA 0.1.006.0011
+VERSION ALPHA 0.1.007.0001
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -73,6 +73,14 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
+ALPHA 0.1.007.0001 / 2021.11.11 - Menu Revamp
+
+- fixed issue with some dll calls crashing the game
+- updated the updater method for new update server
+- removed some unused code
+
+[PREVIOUS UPDATES]
+
 ALPHA 0.1.006.0011 / 2021.08.18 - The Editor Update - Character Menu
 
 - added race specific force, ability, and effect assignments in character editor
@@ -97,8 +105,6 @@ ALPHA 0.1.006.0011 / 2021.08.18 - The Editor Update - Character Menu
 - change update version check to use new update server
 - added assembly encryption
 - added ClarkTribeGames LLC digitial signature
-
-[PREVIOUS UPDATES]
 
 ALPHA 0.1.006.0003 / 2021.07.29 - The Editor Update
 

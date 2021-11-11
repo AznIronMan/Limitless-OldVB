@@ -2,9 +2,10 @@
 
     'Environmental
     Public Shared BasePath As String = System.IO.Path.Combine(My.Computer.FileSystem.CurrentDirectory)
-    Public Shared Version() As String = {"dbversions", "svr.clarktribe.com", "13306", "vChecker"}
-    Public Shared VFields() As String = {"Database=", ";Data Source=", ";Port=", ";User Id="}
+    'Public Shared Version() As String = {"dbversions", "svr.clarktribe.com", "13306", "vChecker"}
+    'Public Shared VFields() As String = {"Database=", ";Data Source=", ";Port=", ";User Id="}
     Public Shared UpdaterName As String = "CTGUpdater"
+    Public Shared UpdaterDate As String
     Public Shared AvatarsDir As String = "avatars"
     Public Shared AvatarsExtF As String = "*.png"
     Public Shared AvatarsExtL As String = AvatarsExtF.Substring(1)

@@ -29,24 +29,5 @@
         }
         Dim proc As Process = Process.Start(pHelp)
     End Sub
-    'Public Shared Function VersionQuery(app As String) As String
-    '    Dim cs As String = MemoryBank.VFields(0) & MemoryBank.Version(0) & MemoryBank.VFields(1) & MemoryBank.Version(1) &
-    '        MemoryBank.VFields(2) & MemoryBank.Version(2) & MemoryBank.VFields(3) & MemoryBank.Version(3) & MemoryBank.VFieldL &
-    '        MemoryBank.VChecker.Replace(" ", "") & Chr(35) & CStr(7 * 3)
-    '    Dim stm As String = "SELECT itemver FROM tbversion WHERE itemname = '" & app & "'"
-    '    Dim version As String
-    '    Dim conn As MySqlConnector.MySqlConnection
-    '    Try
-    '        conn = New MySqlConnector.MySqlConnection(cs)
-    '        conn.Open()
-    '        Dim cmd As New MySqlConnector.MySqlCommand(stm, conn)
-    '        version = Convert.ToString(cmd.ExecuteScalar())
-    '        conn.Close()
-    '        Return version
-    '    Catch ex As MySqlConnector.MySqlException
-    '        Return ""
-    '    End Try
-    'End Function
-
 
 End Class

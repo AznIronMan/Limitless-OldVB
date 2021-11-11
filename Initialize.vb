@@ -5,6 +5,7 @@
         Dim VersionParts() As String = Strings.Split((System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()), ".", 4)
         MemoryBank.VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." &
             Converters.VersionConverter(VersionParts(3), 4)
+        MemoryBank.UpdaterDate = ClarkTribeGames.MySQLReader.QueryDate(LCase(MemoryBank.UpdaterName))
         MainWindow.UpdateCurBox.Text = MemoryBank.VersionNumber
         Database.CheckForDB(Settings.SettingsLastDB)
         'TO DO: Add Database Version Check Here
@@ -46,12 +47,16 @@
         FilesFolders.CreateDirectory(MemoryBank.LogDir)
     End Sub
     Private Sub InitFiles()
-        If Not System.IO.File.Exists(MemoryBank.CTGFile & MemoryBank.LibExtL) Then System.IO.File.WriteAllBytes(MemoryBank.CTGFile &
-            MemoryBank.LibExtL, My.Resources.ClarkTribeGames)
         If Not System.IO.File.Exists(MemoryBank.SQLiteFile & MemoryBank.LibExtL) Then System.IO.File.WriteAllBytes(MemoryBank.SQLiteFile &
             MemoryBank.LibExtL, My.Resources.System_Data_SQLite)
-        If Not System.IO.File.Exists(MemoryBank.UpdaterName & MemoryBank.FileExtL) Then System.IO.File.WriteAllBytes(MemoryBank.UpdaterName &
-            MemoryBank.FileExtL, My.Resources.CTGUpdater)
+        If System.IO.File.Exists(MemoryBank.UpdaterName & MemoryBank.FileExtL) Then
+            If System.IO.File.GetLastWriteTime(MemoryBank.UpdaterName & MemoryBank.FileExtL) < Convert.ToDateTime(MemoryBank.UpdaterDate) Then
+                System.IO.File.Delete(MemoryBank.UpdaterName & MemoryBank.FileExtL)
+                System.IO.File.WriteAllBytes(MemoryBank.UpdaterName & MemoryBank.FileExtL, My.Resources.CTGUpdater)
+            End If
+        Else
+            System.IO.File.WriteAllBytes(MemoryBank.UpdaterName & MemoryBank.FileExtL, My.Resources.CTGUpdater)
+        End If
     End Sub
     Private Sub InitHide()
         FilesFolders.HideFile(MemoryBank.UpdaterName & MemoryBank.FileExtL)
