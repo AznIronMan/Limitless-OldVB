@@ -23,8 +23,9 @@
         Dim pHelp As New ProcessStartInfo With {
             .FileName = ".\" & MemoryBank.UpdaterName & MemoryBank.FileExtL,
             .Arguments = "-Path " & Application.ProductName & " -Dir " &
-            (System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase)).Substring(6),
-            .UseShellExecute = True,
+            (System.IO.Path.GetDirectoryName(System.Reflection.Assembly.
+            GetExecutingAssembly().CodeBase)).Substring(6) & " -URL " &
+            MemoryBank.UpdaterURL,
             .WindowStyle = ProcessWindowStyle.Normal
         }
         Dim proc As Process = Process.Start(pHelp)

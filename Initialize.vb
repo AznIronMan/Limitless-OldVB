@@ -1,16 +1,17 @@
 ﻿Public Module Initialize
     Public Sub InitLoad()
+        MemoryBank.UpdaterDate = ClarkTribeGames.MySQLReader.Query(LCase(MemoryBank.UpdaterName), "d")
         InitProcess()
         Settings.UpdateSettings()
         Dim VersionParts() As String = Strings.Split((System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()), ".", 4)
         MemoryBank.VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." &
             Converters.VersionConverter(VersionParts(3), 4)
-        MemoryBank.UpdaterDate = ClarkTribeGames.MySQLReader.QueryDate(LCase(MemoryBank.UpdaterName))
+        MemoryBank.UpdaterURL = ClarkTribeGames.MySQLReader.Query(LCase(MemoryBank.UpdaterName), "u")
         MainWindow.UpdateCurBox.Text = MemoryBank.VersionNumber
         Database.CheckForDB(Settings.SettingsLastDB)
         'TO DO: Add Database Version Check Here
         Try
-            MainWindow.UpdateAvaBox.Text = ClarkTribeGames.MySQLReader.Query(LCase(System.Reflection.Assembly.GetExecutingAssembly.GetName.Name.ToString()))
+            MainWindow.UpdateAvaBox.Text = ClarkTribeGames.MySQLReader.Query(LCase(System.Reflection.Assembly.GetExecutingAssembly.GetName.Name.ToString()), "v")
             MainWindow.UpdateSubText.ForeColor = MemoryBank.PagesForeColor
             Updater.CheckForUpdate(MainWindow.UpdateCurBox.Text, MainWindow.UpdateAvaBox.Text)
         Catch ex As Exception
@@ -52,10 +53,10 @@
         If System.IO.File.Exists(MemoryBank.UpdaterName & MemoryBank.FileExtL) Then
             If System.IO.File.GetLastWriteTime(MemoryBank.UpdaterName & MemoryBank.FileExtL) < Convert.ToDateTime(MemoryBank.UpdaterDate) Then
                 System.IO.File.Delete(MemoryBank.UpdaterName & MemoryBank.FileExtL)
-                System.IO.File.WriteAllBytes(MemoryBank.UpdaterName & MemoryBank.FileExtL, My.Resources.CTGUpdater)
+                ClarkTribeGames.Updater.GetUpdater()
             End If
         Else
-            System.IO.File.WriteAllBytes(MemoryBank.UpdaterName & MemoryBank.FileExtL, My.Resources.CTGUpdater)
+            ClarkTribeGames.Updater.GetUpdater()
         End If
     End Sub
     Private Sub InitHide()
