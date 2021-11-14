@@ -64,7 +64,7 @@
         e.Handled = Tools.TestKeyPress(sender, e.KeyChar.ToString.ToLower)
     End Sub
     Private Sub MenuButtonPressed(activepanel As Panel)
-        SwitchToIntro()
+        Tools.SwitchToIntro()
         'If activepanel.Name = "OptionsPanel" Then
         '    Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
         'End If
@@ -225,7 +225,7 @@
         DonateButtonPressed()
     End Sub
     Private Sub DonateImage_Click(sender As Object, e As EventArgs) Handles DonatePTButton.Click, DonatePPButton.Click
-        Donater.TheDonater("Button", Converters.ControlToString(sender))
+        Donater.TheDonater("Button", ClarkTribeGames.Converters.ControlToString(sender))
     End Sub
 
     'Update Menu Section
@@ -236,7 +236,7 @@
         MenuButtonPressed(UpdatePanel)
     End Sub
     Private Sub UpdateInstallButton_Click(sender As Object, e As EventArgs) Handles UpdateInstallButton.Click
-        Updater.InstallUpdate()
+        ClarkTribeGames.Updater.InstallUpdate(Application.ProductName, MemoryBank.UpdaterURL)
     End Sub
 
     'About Menu Section
@@ -244,7 +244,7 @@
         AboutButtonPressed()
     End Sub
     Private Sub AboutImage_Click(sender As Object, e As EventArgs) Handles AboutFBButton.Click, AboutDCButton.Click, AboutYTButton.Click, AboutBSButton.Click
-        Abouter.TheAbouter("Button", Converters.ControlToString(sender))
+        Abouter.TheAbouter("Button", ClarkTribeGames.Converters.ControlToString(sender))
     End Sub
     Private Sub AboutText_Enter(sender As Object, e As EventArgs) Handles AboutText.Enter
         AboutTitle.Select()

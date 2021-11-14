@@ -1,6 +1,6 @@
 ﻿Public Class Avatars
     Public Shared Sub TitleScreen()
-        Dim AvatarCount As Integer = FilesFolders.CountFiles(MemoryBank.AvatarsDir, MemoryBank.AvatarsExtF)
+        Dim AvatarCount As Integer = ClarkTribeGames.FilesFolders.CountFiles(MemoryBank.AvatarsDir, MemoryBank.AvatarsExtF)
         Dim AvatarsNeeded As Integer
         Dim picks As New List(Of Int32)
         Dim pick As Int32

@@ -111,8 +111,8 @@
         'FlipEditorPanels(MainWindow.EditorSwitchPanel)
         Dim LastDBFound As Boolean = False, DefaultDBFound As Boolean = False, NotFound As String = "<None Available>"
         drop.Items.Clear()
-        If FilesFolders.CountFiles(MemoryBank.DataDir, MemoryBank.SavesExtF) > 0 Then
-            For Each FileName In FilesFolders.GetFilesInFolder(MemoryBank.DataDir)
+        If ClarkTribeGames.FilesFolders.CountFiles(MemoryBank.DataDir, MemoryBank.SavesExtF) > 0 Then
+            For Each FileName In ClarkTribeGames.FilesFolders.GetFilesInFolder(MemoryBank.DataDir)
                 EditorSDBEffects(True)
                 If FileName.EndsWith(MemoryBank.SavesExt) Then
                     Dim DBName As String = Database.GetDBName(FileName.Replace(MemoryBank.DataDir & "\", ""))
@@ -120,7 +120,7 @@
                         (FileName.Replace(MemoryBank.DataDir & "\", "")).Length - ((MemoryBank.SavesExt).Length + 1))
                     If LastDBFound = False And (LCase(DBName) = LCase(Settings.SettingsLastDB)) Then LastDBFound = True
                     If DefaultDBFound = False And (LCase(DBName) = LCase(Settings.SettingsDefaultDB)) Then DefaultDBFound = True
-                    drop.Items.Add(Converters.UppercaseEachFirstLetter(DropName))
+                    drop.Items.Add(ClarkTribeGames.Converters.UppercaseEachFirstLetter(DropName))
                     drop.Sorted = True
                     ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, FileName.Replace(MemoryBank.DataDir & "\", ""))
                 End If
@@ -190,7 +190,7 @@
                 End If
             Case "button"
                 If button.Enabled = True Then
-                    Dim NewDBName As String = (Converters.UppercaseEachFirstLetter(textbox.Text))
+                    Dim NewDBName As String = (ClarkTribeGames.Converters.UppercaseEachFirstLetter(textbox.Text))
                     If Not System.IO.File.Exists(MemoryBank.DataDir & "\" & NewDBName & MemoryBank.SavesExtL) Then
                         Database.CreateEmptyDB(NewDBName)
                         MsgBox("New Database " & NewDBName & " Created!", vbOKOnly)
@@ -212,7 +212,7 @@
             Case "switch"
                 If button.Enabled = True Then
                     Dim answer As Integer = MsgBox("Are you sure you want to switch to the " &
-                        Converters.UppercaseEachFirstLetter(drop.Text) & " database file?", vbYesNo)
+                        ClarkTribeGames.Converters.UppercaseEachFirstLetter(drop.Text) & " database file?", vbYesNo)
                     If answer = vbYes Then
                         Database.CheckForDB(drop.Text)
                         Editor.EditorGenDBDrop(drop, delbutton)
@@ -223,7 +223,7 @@
             Case "delete"
                 If button.Enabled = True Then
                     Dim answer As Integer = MsgBox("Are you sure you want to permanently delete the " &
-                        Converters.UppercaseEachFirstLetter(drop.Text) & " database file?", vbYesNo)
+                        ClarkTribeGames.Converters.UppercaseEachFirstLetter(drop.Text) & " database file?", vbYesNo)
                     Dim FileToGo As String = MemoryBank.DataDir & "\" & drop.Text & MemoryBank.SavesExtL
                     If answer = vbYes Then
                         Try
@@ -233,7 +233,7 @@
                             Else
                                 drop.SelectedIndex = 0
                             End If
-                            FilesFolders.DeleteFile(FileToGo)
+                            ClarkTribeGames.FilesFolders.DeleteFile(FileToGo)
                             Editor.EditorGenDBDrop(drop, delbutton)
                             Database.CheckForDB(drop.SelectedItem.ToString)
                         Catch ex As Exception
@@ -247,11 +247,11 @@
             Case "dupe"
                 If button.Enabled = True Then
                     Dim answer As Integer = MsgBox("Are you sure you want to clone the " &
-                        Converters.UppercaseEachFirstLetter(drop.Text) & " database file?", vbYesNo)
+                        ClarkTribeGames.Converters.UppercaseEachFirstLetter(drop.Text) & " database file?", vbYesNo)
                     Dim FileToClone As String = MemoryBank.DataDir & "\" & drop.Text & MemoryBank.SavesExtL
                     If answer = vbYes Then
                         Try
-                            FilesFolders.CopyFile(MemoryBank.DataDir & "\" & drop.Text, MemoryBank.SavesExt)
+                            ClarkTribeGames.FilesFolders.CopyFile(MemoryBank.DataDir & "\" & drop.Text, MemoryBank.SavesExt)
                             Editor.EditorGenDBDrop(drop, delbutton)
                         Catch ex As Exception
                             Logger.WriteToLog("Database " & FileToClone & " Clone", "Clone Attempt", ex)

@@ -12,8 +12,8 @@
             'MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(savename)
         Else
             If DefaultExists Then
-                MsgBox(Converters.UppercaseEachFirstLetter(savename) & " not available.  Switching to " &
-                   Converters.UppercaseEachFirstLetter(DefaultSave) & ".")
+                MsgBox(ClarkTribeGames.Converters.UppercaseEachFirstLetter(savename) & " not available.  Switching to " &
+                   ClarkTribeGames.Converters.UppercaseEachFirstLetter(DefaultSave) & ".")
                 ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
                     "lastdb", {"settingConfig"}, {DefaultSave})
                 Settings.SettingsLastDB = LCase(DefaultSave)
@@ -21,14 +21,14 @@
                 'MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
             Else
                 If savename = DefaultSave Then
-                    MsgBox(Converters.UppercaseEachFirstLetter(savename) & " not available.  Generating a new " &
-                    Converters.UppercaseEachFirstLetter(DefaultSave) & " Database.")
+                    MsgBox(ClarkTribeGames.Converters.UppercaseEachFirstLetter(savename) & " not available.  Generating a new " &
+                    ClarkTribeGames.Converters.UppercaseEachFirstLetter(DefaultSave) & " Database.")
                 Else
-                    MsgBox(Converters.UppercaseEachFirstLetter(savename) & " and " &
-                    Converters.UppercaseEachFirstLetter(DefaultSave) & " not available.  Generating a new " &
-                    Converters.UppercaseEachFirstLetter(DefaultSave) & " Database.")
+                    MsgBox(ClarkTribeGames.Converters.UppercaseEachFirstLetter(savename) & " and " &
+                    ClarkTribeGames.Converters.UppercaseEachFirstLetter(DefaultSave) & " not available.  Generating a new " &
+                    ClarkTribeGames.Converters.UppercaseEachFirstLetter(DefaultSave) & " Database.")
                 End If
-                CreateEmptyDB(Converters.UppercaseEachFirstLetter(DefaultSave))
+                CreateEmptyDB(ClarkTribeGames.Converters.UppercaseEachFirstLetter(DefaultSave))
                 ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
                     "defaultdb", {"settingConfig"}, {DefaultSave})
                 ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
@@ -242,7 +242,7 @@
             ")
 
         Dim VersionParts = Strings.Split((System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()), ".", 4)
-        Dim VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & Converters.VersionConverter(VersionParts(2), 3) & "." & Converters.VersionConverter(VersionParts(3), 4)
+        Dim VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & ClarkTribeGames.Converters.VersionConverter(VersionParts(2), 3) & "." & ClarkTribeGames.Converters.VersionConverter(VersionParts(3), 4)
 
         'dbInfo
         ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbInfo' VALUES ('" & savename & "','" &

@@ -18,9 +18,17 @@
     Private Shared Sub DonateClick(buttonname As String)
         Select Case (buttonname)
             Case "donateptbutton"
-                Tools.GoToWeb(MemoryBank.PT)
+                Try
+                    ClarkTribeGames.Web.PT()
+                Catch ex As Exception
+                    MsgBox("Error with Browser!" & vbCrLf & ex.ToString, vbExclamation)
+                End Try
             Case "donateppbutton"
-                Tools.GoToWeb(MemoryBank.PP)
+                Try
+                    ClarkTribeGames.Web.PP()
+                Catch ex As Exception
+                    MsgBox("Error with Browser!" & vbCrLf & ex.ToString, vbExclamation)
+                End Try
         End Select
     End Sub
 

@@ -16,25 +16,46 @@
                      End Sub)
         End If
     End Sub
-    Public Shared Sub GoToWeb(url As String)
-        Try
-            Process.Start(url)
-        Catch ex As Exception
-            Logger.WriteToLog("GoToWeb", "Failed URL : " & url, ex)
-            MessageBox.Show("Logged Error:  Something went wrong with launching system your browser." & vbCrLf _
-                & vbCrLf & "Please try going to " & url & " manually." & vbCrLf & vbCrLf & "Thank you.")
-        End Try
+
+    Public Shared Sub ReturnToIntro(stopbutton As Button, playbutton As Button, optionslist As ListBox, activebox As CheckBox,
+        editbutton As Button, message As Label, colorgroup As GroupBox, musicgroup As GroupBox, managegroup As GroupBox,
+        importbutton As Button, deletebutton As Button)
+        'Specific for the Custom Music/Sound Menu
+        If stopbutton.Enabled = True Then
+            playbutton.Enabled = True
+            optionslist.Enabled = True
+            stopbutton.Enabled = False
+            activebox.Enabled = True
+            editbutton.Enabled = True
+            message.Visible = False
+            colorgroup.Enabled = True
+            musicgroup.Enabled = True
+            managegroup.Enabled = True
+            importbutton.Enabled = True
+            deletebutton.Enabled = True
+            SwitchToIntro()
+        End If
     End Sub
-    Public Shared Function GetWebText(url As String) As String
-        Dim client As New System.Net.WebClient()
-        Dim reader As New System.IO.StreamReader(client.OpenRead(url))
-        Return reader.ReadToEnd
-    End Function
+    Public Shared Sub SwitchToIntro()
+        If ClarkTribeGames.Jukebox.IntroInPlay = False Then
+            ClarkTribeGames.Jukebox.StopSong()
+            If Settings.SettingsMusic.ToLower = "on" Then
+                If Settings.SettingsCustM = "on" And Settings.SettingsCustI.StartsWith("on") Then
+                    Dim customintro As String = MemoryBank.MusicDir & "/" & Settings.SettingsCustI.Substring(3) & ".mp3"
+                    If System.IO.File.Exists(customintro) Then ClarkTribeGames.Jukebox.PlayMp3(customintro) Else ClarkTribeGames.Jukebox.PlaySong(ClarkTribeGames.Jukebox.NewSong(My.Resources.intro))
+                Else
+                    ClarkTribeGames.Jukebox.PlaySong(ClarkTribeGames.Jukebox.NewSong(My.Resources.intro))
+                End If
+                ClarkTribeGames.Jukebox.IntroInPlay = True
+            End If
+        End If
+    End Sub
+
     Public Shared Sub CustomLibsListBuilder(list As ListBox, dir As String, ext As String, importbutton As Button, omega As Boolean)
-        If FilesFolders.CountFiles(dir, ext) > 0 Then
+        If ClarkTribeGames.FilesFolders.CountFiles(dir, ext) > 0 Then
             list.Items.Clear()
             list.Enabled = True
-            For Each Filename In FilesFolders.GetFilesInFolder(dir)
+            For Each Filename In ClarkTribeGames.FilesFolders.GetFilesInFolder(dir)
                 Dim FoundName As String = Replace(Filename, dir & "\", "", 1)
                 Dim NameToAdd = FoundName.Trim().Substring(0, FoundName.Length - 4)
                 If NameToAdd.StartsWith("Ω") = True Then
@@ -55,7 +76,7 @@
     Public Shared Sub PopulateListFromDB(type As String, list As ListBox, table As String, idcol As String, namecol As String)
         list.Items.Clear()
         list.Enabled = True
-        Dim NoneAvailable As String = "<No " & Converters.UppercaseEachFirstLetter(type) & " Available>"
+        Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
         Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
         Dim IDsFromDB() As String
         Try
@@ -78,7 +99,7 @@
         'criteria format:  table.idcol.namecol.findstring.modifier, etc.
         list.Items.Clear()
         list.Enabled = True
-        Dim NoneAvailable As String = "<No " & Converters.UppercaseEachFirstLetter(type) & " Available>"
+        Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
         Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
         For Each Request In criteria
             Dim RequestSplit() As String = Request.Split(".")
@@ -109,7 +130,7 @@
     Public Shared Sub PopulateCListFromDB(type As String, list As CheckedListBox, table As String, idcol As String, namecol As String)
         list.Items.Clear()
         list.Enabled = True
-        Dim NoneAvailable As String = "<No " & Converters.UppercaseEachFirstLetter(type) & " Available>"
+        Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
         Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
         Dim IDsFromDB() As String
         Try
@@ -133,7 +154,7 @@
         'criteria format:  table.idcol.namecol.findstring.modifier, etc.
         list.Items.Clear()
         list.Enabled = True
-        Dim NoneAvailable As String = "<No " & Converters.UppercaseEachFirstLetter(type) & " Available>"
+        Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
         Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
         For Each Request In criteria
             Dim RequestSplit() As String = Request.Split(".")
@@ -164,7 +185,7 @@
     Public Shared Sub PopulateDropFromDB(type As String, drop As ComboBox, table As String, idcol As String, namecol As String)
         drop.Items.Clear()
         drop.Enabled = True
-        Dim NoneAvailable As String = "<No " & Converters.UppercaseEachFirstLetter(type) & " Available>"
+        Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
         Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
         Dim IDsFromDB() As String
         Try
@@ -189,7 +210,7 @@
         'criteria format:  table.idcol.namecol.findstring.modifier, etc.
         drop.Items.Clear()
         drop.Enabled = True
-        Dim NoneAvailable As String = "<No " & Converters.UppercaseEachFirstLetter(type) & " Available>"
+        Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
         Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
         For Each Request In criteria
             Dim RequestSplit() As String = Request.Split(".")
@@ -220,7 +241,7 @@
     End Sub
     Public Shared Function TestKeyPress(sender As Object, key As String) As Boolean
         Dim AllowedKeys As String = ""
-        Select Case Converters.ControlToString(sender)
+        Select Case ClarkTribeGames.Converters.ControlToString(sender)
             Case "customlibspath"
                 AllowedKeys = "abcdefghijklmnopqrstuvwxyz -.0123456789"
             Case "editorswitchnewbox"

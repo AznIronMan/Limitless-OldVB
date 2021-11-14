@@ -21,15 +21,35 @@
     Private Shared Sub AboutClick(buttonname As String)
         Select Case (buttonname)
             Case "aboutfbbutton"
-                Tools.GoToWeb(MemoryBank.FB)
+                Try
+                    ClarkTribeGames.Web.FB()
+                Catch ex As Exception
+                    MsgBox("Error with Browser!" & vbCrLf & ex.ToString, vbExclamation)
+                End Try
             Case "aboutdcbutton"
-                Tools.GoToWeb(MemoryBank.DC)
+                Try
+                    ClarkTribeGames.Web.DS()
+                Catch ex As Exception
+                    MsgBox("Error with Browser!" & vbCrLf & ex.ToString, vbExclamation)
+                End Try
             Case "aboutytbutton"
-                Tools.GoToWeb(MemoryBank.YT)
+                Try
+                    ClarkTribeGames.Web.YT()
+                Catch ex As Exception
+                    MsgBox("Error with Browser!" & vbCrLf & ex.ToString, vbExclamation)
+                End Try
             Case "aboutbsbutton"
-                Tools.GoToWeb(MemoryBank.BS)
+                Try
+                    ClarkTribeGames.Web.BS()
+                Catch ex As Exception
+                    MsgBox("Error with Browser!" & vbCrLf & ex.ToString, vbExclamation)
+                End Try
             Case "aboutcwbutton"
-                Tools.GoToWeb(MemoryBank.CW)
+                Try
+                    ClarkTribeGames.Web.CW()
+                Catch ex As Exception
+                    MsgBox("Error with Browser!" & vbCrLf & ex.ToString, vbExclamation)
+                End Try
         End Select
     End Sub
 

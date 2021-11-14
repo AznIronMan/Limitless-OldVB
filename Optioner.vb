@@ -121,7 +121,7 @@
             Dim SelectedName As String = listname.SelectedItem.ToString
             Dim SelectedDir As String = WhichDir(LCase(MemoryBank.CustomLibsSelected))
             Dim FoundIt As Boolean = False
-            For Each Filename In FilesFolders.GetFilesInFolder(SelectedDir)
+            For Each Filename In ClarkTribeGames.FilesFolders.GetFilesInFolder(SelectedDir)
                 If FoundIt = False Then
                     Dim ShortFileName As String = Replace(Filename, SelectedDir & "\", "", 1)
                     Dim FoundName As String = ShortFileName.Trim().Substring(0, ShortFileName.Length - 4)
@@ -225,7 +225,7 @@
             My.Computer.FileSystem.RenameFile(dir & "/" & oldname & ext, newname & ext)
         Catch ex As Exception
             Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " " &
-            Converters.UppercaseEachFirstLetter(action), "Rename Attempt", ex)
+            ClarkTribeGames.Converters.UppercaseEachFirstLetter(action), "Rename Attempt", ex)
             MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
         End Try
         checkbox.Enabled = True
@@ -239,12 +239,12 @@
     Private Shared Sub CustomLibsPreviewPlayAction(list As ListBox, button As Button, check As CheckBox)
         If button.Enabled = True And check.CheckState = CheckState.Checked Then
             Dim SongFile As String = MemoryBank.MusicDir & "/" & Replace(list.SelectedItem, "Ω ", "Ω") & MemoryBank.MusicExtL
-            Jukebox.StopSong()
-            Do Until Jukebox.SongPlaying = False
-                Jukebox.StopSong()
+            ClarkTribeGames.Jukebox.StopSong()
+            Do Until ClarkTribeGames.Jukebox.SongPlaying = False
+                ClarkTribeGames.Jukebox.StopSong()
             Loop
-            Jukebox.IntroInPlay = False
-            Jukebox.PlayMp3(SongFile)
+            ClarkTribeGames.Jukebox.IntroInPlay = False
+            ClarkTribeGames.Jukebox.PlayMp3(SongFile)
             FlipCustomOptions(False)
         End If
         Appearance.RefreshColors()
@@ -349,7 +349,7 @@
                                 If LCase(MemoryBank.CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(avatar)
                                 If Not LCase(MemoryBank.CustomLibsSelected) = "avatars" Then JukeboxIntro()
                                 Try
-                                    FilesFolders.DeleteFile(FileToGo)
+                                    ClarkTribeGames.FilesFolders.DeleteFile(FileToGo)
                                     Optioner.CustomLibsListPop(True)
                                 Catch ex As Exception
                                     Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Delete", "Delete Attempt", ex)
@@ -398,8 +398,8 @@
                         ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", SelectedType, {"settingConfig"}, {CustSetting})
                         Optioner.CheckCustomTracks("all")
                         If SelectedType = "custi" Then
-                            Jukebox.IntroInPlay = False
-                            Jukebox.SwitchToIntro()
+                            ClarkTribeGames.Jukebox.IntroInPlay = False
+                            Tools.SwitchToIntro()
                         End If
                     End If
             End Select
@@ -413,7 +413,7 @@
         Dim Ext As String = WhichExt(LCase(MemoryBank.CustomLibsSelected))
         Dim SourceFiles() As String, NewFile As String
         Dim fd As New OpenFileDialog With {
-            .Title = "Custom " & Converters.UppercaseEachFirstLetter(MemoryBank.CustomLibsSelected) & " File(s) To Import",
+            .Title = "Custom " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(MemoryBank.CustomLibsSelected) & " File(s) To Import",
             .InitialDirectory = SelectedDir,
             .Filter = Replace(Ext, ".", "") & " Files (*" & Ext & ")|*" & Ext,
             .FilterIndex = 1,
@@ -439,8 +439,8 @@
                         Try
                             NewFile = LCase(NewFile)
                             NewFile = NewFile.Replace(Ext & Ext, Ext)
-                            NewFile = Converters.UppercaseEachFirstLetter(NewFile)
-                            Converters.ResizeImage(SourceFile, NewFile, 200, 200)
+                            NewFile = ClarkTribeGames.Converters.UppercaseEachFirstLetter(NewFile)
+                            ClarkTribeGames.Converters.ResizeImage(SourceFile, NewFile, 200, 200)
                             'Converters.ResizeImage(SourceFile, NewFile.Substring(0, NewFile.Length - 4), 200, 200)
                         Catch ex As Exception
                             Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Import", "Import Attempt - " &
@@ -692,8 +692,8 @@
             Case "music"
                 If checkbox.CheckState = CheckState.Checked Then
                     custom.Enabled = True
-                    Jukebox.PlaySong(Jukebox.NewSong(My.Resources.intro))
-                    Jukebox.IntroInPlay = True
+                    ClarkTribeGames.Jukebox.PlaySong(ClarkTribeGames.Jukebox.NewSong(My.Resources.intro))
+                    ClarkTribeGames.Jukebox.IntroInPlay = True
                     If custom.CheckState = CheckState.Checked Then
                         FlipMusicOptions("checkboxes", True)
                         CheckCustomMusicOptions()
@@ -703,7 +703,7 @@
                 Else
                     FlipMusicOptions("options", False)
                     custom.Enabled = False
-                    Jukebox.StopSong()
+                    ClarkTribeGames.Jukebox.StopSong()
                     ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "music", {"settingConfig"}, {"no"})
                     Settings.SettingsMusic = "off"
                 End If
@@ -723,8 +723,8 @@
                         FlipMusicOptions("customtracks)", False)
                     End If
                 End If
-                Jukebox.IntroInPlay = False
-                Jukebox.SwitchToIntro()
+                ClarkTribeGames.Jukebox.IntroInPlay = False
+                Tools.SwitchToIntro()
             Case "sound"
                 If (checkbox.Enabled = True And checkbox.CheckState = CheckState.Checked) Or checkbox.Enabled = False Then
                     'Future process to turn on sound
@@ -759,8 +759,8 @@
                 '    OptionsAudioCheckChange(checkbox, button, "custi")
                 '    CheckCustomTracks("intro")
                 'End If
-                Jukebox.IntroInPlay = False
-                Jukebox.SwitchToIntro()
+                ClarkTribeGames.Jukebox.IntroInPlay = False
+                Tools.SwitchToIntro()
         End Select
     End Sub
 
