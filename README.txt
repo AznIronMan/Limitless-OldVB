@@ -1,7 +1,7 @@
 =============================================
 LIMITLESS by Geoff Clark
 PUBLISHED by CLARKTRIBEGAMES LLC
-VERSION ALPHA 0.1.007.0002
+VERSION ALPHA 0.1.007.0004
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -73,7 +73,7 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.007.0002 / 2021.11.11 - The Revamp
+ALPHA 0.1.007.0004 / 2021.11.15 - The Revamp
 
 - redesigned the gui to have the menu buttons on the left
 - removed the options and editor for redesign
@@ -81,6 +81,20 @@ ALPHA 0.1.007.0002 / 2021.11.11 - The Revamp
 - fixed issue with some dll calls crashing the game
 - updated the updater method for new update server
 - removed some unused code
+- expanded about section, adding reddit, twitter, web, email
+- removed donate section and merged paypal and patreon links into about
+- shifted main menu buttons around
+- corrected a grammar error in about and added names of my kids :)
+- added borders for update and about pages
+- disabled editor and option buttons (for now)
+- removed about panel in exchange for an about dialog box
+- hid other buttons for future use
+- added readme and license info access to about page
+- added built in doc reader for text files
+- removed typewriter effect from about page to prevent thread crashes
+- removed update panel in exchange for an update dialog box
+- added current/recommended database versions to update section
+- removed redundant logger and jukebox modules
 
 [PREVIOUS UPDATES]
 

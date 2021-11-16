@@ -82,8 +82,7 @@
         'OptionsCheckUncheck(Settings.SettingsAutoSave, MainWindow.CustomLibsAuto)
         Dim ReleaseType As String = "ALPHA "
         Dim VersionParts() As String = Strings.Split(Settings.SettingsVersion, ".", 4)
-        Dim VersionNumber As String = VersionParts(0) & "." & VersionParts(1) & "." & ClarkTribeGames.Converters.VersionConverter(VersionParts(2), 3) &
-            "." & ClarkTribeGames.Converters.VersionConverter(VersionParts(3), 4)
+        Dim VersionNumber As String = ClarkTribeGames.Converters.GetVersion(Application.ProductVersion)
         'MainWindow.OptionsHost.Text = Settings.SettingsUID & " • " & ReleaseType & "VERSION " & VersionNumber
     End Sub
     Private Shared Sub OptionsCheckUncheck(setting As String, checkbox As CheckBox)

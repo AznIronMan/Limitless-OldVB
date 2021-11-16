@@ -37,10 +37,6 @@
     Public Shared ConfigExtF As String = "*.config"
     Public Shared ConfigExtL As String = ConfigExtF.Substring(1)
     Public Shared ConfigExt As String = ConfigExtF.Substring(2)
-    Public Shared LogDir As String = "logs"
-    Public Shared LogExtF As String = "*.log"
-    Public Shared LogExtL As String = LogExtF.Substring(1)
-    Public Shared LogExt As String = LogExtF.Substring(2)
     Public Shared VersionNumber As String = ""
     Public Shared WindowDrag As Boolean
     Public Shared WindowMouseX, WindowMouseY As Integer
@@ -48,23 +44,18 @@
     Public Shared VChecker As String = "Try Again Dearie"
     Public Shared VFieldL As String = ";Password="
 
+    'DocReader
+    Public Shared DocToRead As String
+
     'Editor
     Public Shared ActiveEditorWindow As String = ""
 
     'Options
+    Public Shared OptionsDrop() As String = {"[Select Option]", "Audio", "Colors", "Avatars", "Databases"}
     Public Shared OptionsGroupLoc As String = "mid"
     Public Shared SelectCustomTrack As String = ""
     Public Shared CustomLibsSelected As String = "avatars"
     Public Shared ColorModeAtStart As String = ""
-
-    'URLs
-    Public Shared PT As String = "https://www.patreon.com/clarktribegames"
-    Public Shared PP As String = "https://www.paypal.com/paypalme/aznblusuazn"
-    Public Shared FB As String = "https://www.facebook.com/clarktribe.games"
-    Public Shared DC As String = "https://discord.gg/6kW4der"
-    Public Shared YT As String = "https://www.youtube.com/channel/UCjcPw3ApuFduiETIdmAhFAQ"
-    Public Shared BS As String = "https://www.bensound.com"
-    Public Shared CW As String = "https://www.facebook.com/WimbleyDesignCo"
 
     'Colors
     Public Shared TitleBarBackColor As Color

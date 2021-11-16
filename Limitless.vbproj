@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>0.1.007.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -118,22 +118,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abouter.vb" />
     <Compile Include="Appearance.vb" />
     <Compile Include="Avatars.vb" />
     <Compile Include="Database.vb" />
-    <Compile Include="Donater.vb" />
     <Compile Include="Editor.vb" />
     <Compile Include="Exiter.vb" />
+    <Compile Include="DocReader.Designer.vb">
+      <DependentUpon>DocReader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DocReader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abouter.Designer.vb">
+      <DependentUpon>Abouter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Abouter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Initialize.vb" />
-    <Compile Include="Jukebox.vb" />
     <Compile Include="Limitless.Designer.vb">
       <DependentUpon>Limitless.vb</DependentUpon>
     </Compile>
     <Compile Include="Limitless.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logger.vb" />
     <Compile Include="MemoryBank.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -155,16 +163,31 @@
     <Compile Include="Optioner.vb" />
     <Compile Include="Settings.vb" />
     <Compile Include="Tools.vb" />
+    <Compile Include="Updater.Designer.vb">
+      <DependentUpon>Updater.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Updater.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Abouter.resx">
+      <DependentUpon>Abouter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocReader.resx">
+      <DependentUpon>DocReader.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Limitless.resx">
       <DependentUpon>Limitless.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Updater.resx">
+      <DependentUpon>Updater.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

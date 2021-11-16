@@ -50,7 +50,7 @@
         MainWindow.EditButton.Enabled = action
         MainWindow.OptionsButton.Enabled = action
         MainWindow.UpdateButton.Enabled = action
-        MainWindow.DonateButton.Enabled = action
+        MainWindow.BackButton.Enabled = action
         MainWindow.AboutButton.Enabled = action
         button.Enabled = action
         backbutton.Enabled = action
@@ -237,7 +237,7 @@
                             Editor.EditorGenDBDrop(drop, delbutton)
                             Database.CheckForDB(drop.SelectedItem.ToString)
                         Catch ex As Exception
-                            Logger.WriteToLog("Database " & FileToGo & " Delete", "Delete Attempt", ex)
+                            ClarkTribeGames.Logger.WriteToLog("Database " & FileToGo & " Delete", "Delete Attempt", ex)
                             MsgBox("Logged Error:  File locked, please try again." & vbCrLf, vbOKOnly)
                         End Try
                     Else
@@ -254,7 +254,7 @@
                             ClarkTribeGames.FilesFolders.CopyFile(MemoryBank.DataDir & "\" & drop.Text, MemoryBank.SavesExt)
                             Editor.EditorGenDBDrop(drop, delbutton)
                         Catch ex As Exception
-                            Logger.WriteToLog("Database " & FileToClone & " Clone", "Clone Attempt", ex)
+                            ClarkTribeGames.Logger.WriteToLog("Database " & FileToClone & " Clone", "Clone Attempt", ex)
                             MsgBox("Logged Error:  File locked, please try again." & vbCrLf, vbOKOnly)
                         End Try
                     Else

@@ -40,11 +40,34 @@
             End If
         End If
     End Sub
+
+    Public Shared Sub VersionChecker()
+        Dim DBOnline As String = ClarkTribeGames.MySQLReader.Query(LCase(Application.ProductName & "db"), "v")
+        Dim DBLocal As String = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, Settings.SettingsDefaultDB &
+            MemoryBank.SavesExtL, "dbInfo", "dbVersion").Split(",")(0)
+        If (CInt(DBOnline.Replace(".", "")) > CInt(DBLocal.Replace(".", ""))) Then
+            Dim answer As Integer = MsgBox("Newer version " & DBOnline & " of Default Database available!" &
+                vbCrLf & vbCrLf & "Do you want to replace your existing " & DBLocal & " with the newer version?",
+                vbYesNo)
+            If answer = vbYes Then
+                Using client = New System.Net.WebClient()
+                    client.DownloadFile(ClarkTribeGames.MySQLReader.Query(LCase(Application.ProductName & "db"), "u"),
+                        MemoryBank.DataDir & "/Default" & MemoryBank.SavesExtL)
+                End Using
+            Else
+                MsgBox("Please consider an upgrade to the default database as the existing version may not work with " &
+                    "this version of the game.")
+            End If
+        End If
+    End Sub
+
     Public Shared Function GetDBName(savename As String) As String
         Return ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, savename, "dbInfo", "dbName").Split(",")(0)
     End Function
     Public Shared Sub CreateEmptyDB(savename As String)
         ClarkTribeGames.SQLite.CreateDB(SavePath, savename & SaveExt, "
+            CREATE TABLE 'all_Index' ('idxID' TEXT NOT NULL UNIQUE,'idxName' TEXT NOT NULL, 'idxDesc' TEXT, 
+            'idxActive' TEXT NOT NULL DEFAULT 1, PRIMARY KEY('idxID'));
             CREATE TABLE 'dbInfo' ('dbName' TEXT NOT NULL, 'dbVersion' TEXT NOT NULL);
             CREATE TABLE 'dbToons' ('toonID' TEXT NOT NULL, 'toonName' TEXT NOT NULL, 'toonUID' TEXT NOT NULL,
             'toonRace' TEXT NOT NULL, 'toonClass' TEXT NOT NULL, 'toonAlign' TEXT NOT NULL, 'toonGender' TEXT NOT NULL, 
@@ -142,6 +165,25 @@
         '           Under: 0:No,#:NumOfLayers
         'Section    Start/End: x.y.z,scaledTo0.1.2=x.y,scaledTo0.1.2.3.4=z // Env 0:Normal,#:Environment // Spawn 0:no,1:yes
         'Team       Type: 0:Standard,1:Alliance,2:Partners,3:Family,4:Unstable,5:Mercenary
+
+        'all_Index
+        ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
+            INSERT INTO 'all_Index' VALUES ('1','Abilities',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('2','Aliases',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('3','Arenas',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('4','Characters',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('5','Charms',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('6','Classifications',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('7','Destinies',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('8','Effects',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('9','Handhelds',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('10','Items',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('11','Multiverse',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('12','Relationships',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('13','Statuses',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('14','Teams',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('15','Abilities',NULL,'1');
+            ")
 
         'dbAbl
         ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
@@ -242,7 +284,7 @@
             ")
 
         Dim VersionParts = Strings.Split((System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()), ".", 4)
-        Dim VersionNumber = VersionParts(0) & "." & VersionParts(1) & "." & ClarkTribeGames.Converters.VersionConverter(VersionParts(2), 3) & "." & ClarkTribeGames.Converters.VersionConverter(VersionParts(3), 4)
+        Dim VersionNumber = ClarkTribeGames.Converters.GetVersion(Application.ProductVersion)
 
         'dbInfo
         ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbInfo' VALUES ('" & savename & "','" &

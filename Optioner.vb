@@ -224,7 +224,7 @@
         Try
             My.Computer.FileSystem.RenameFile(dir & "/" & oldname & ext, newname & ext)
         Catch ex As Exception
-            Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " " &
+            ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " " &
             ClarkTribeGames.Converters.UppercaseEachFirstLetter(action), "Rename Attempt", ex)
             MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
         End Try
@@ -317,7 +317,7 @@
                             Optioner.ResetEditPath(button, text)
                             Optioner.CustomLibsListPop(True)
                         Catch ex As Exception
-                            Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Rename", "Rename Attempt", ex)
+                            ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Rename", "Rename Attempt", ex)
                             MsgBox(("Logged Error:  File locked, please try again." & vbCrLf), vbOKOnly)
                         End Try
                     End If
@@ -352,7 +352,7 @@
                                     ClarkTribeGames.FilesFolders.DeleteFile(FileToGo)
                                     Optioner.CustomLibsListPop(True)
                                 Catch ex As Exception
-                                    Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Delete", "Delete Attempt", ex)
+                                    ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Delete", "Delete Attempt", ex)
                                     MsgBox("Logged Error:  File locked, please try again." & vbCrLf, vbOKOnly)
                                 End Try
                             Else
@@ -431,7 +431,7 @@
                         Try
                             FileSystem.FileCopy(SourceFile, NewFile)
                         Catch ex As Exception
-                            Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Import", "Import Attempt - " &
+                            ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Import", "Import Attempt - " &
                                 SourceName & Ext, ex)
                             MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
                         End Try
@@ -443,7 +443,7 @@
                             ClarkTribeGames.Converters.ResizeImage(SourceFile, NewFile, 200, 200)
                             'Converters.ResizeImage(SourceFile, NewFile.Substring(0, NewFile.Length - 4), 200, 200)
                         Catch ex As Exception
-                            Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Import", "Import Attempt - " &
+                            ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Import", "Import Attempt - " &
                                 SourceName & Ext, ex)
                             MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
                         End Try

@@ -44,17 +44,17 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
     Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles StartButton.MouseHover, UpdateButton.MouseHover, OptionsButton.MouseHover,
-        LoadButton.MouseHover, ExitButton.MouseHover, EditButton.MouseHover, DonateButton.MouseHover, AboutButton.MouseHover, UpdateInstallButton.MouseHover,
-        StartButton.MouseUp, UpdateButton.MouseUp, OptionsButton.MouseUp, LoadButton.MouseUp, ExitButton.MouseUp, EditButton.MouseUp, AboutButton.MouseUp,
-        UpdateInstallButton.MouseUp
+        LoadButton.MouseHover, ExitButton.MouseHover, EditButton.MouseHover, BackButton.MouseHover, AboutButton.MouseHover, UpdateInstallButton.MouseHover
         HoverOverEffect(sender)
     End Sub
     Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles StartButton.MouseLeave, UpdateButton.MouseLeave, OptionsButton.MouseLeave,
-        LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, AboutButton.MouseLeave, UpdateInstallButton.MouseLeave
+        LoadButton.MouseLeave, ExitButton.MouseLeave, EditButton.MouseLeave, BackButton.MouseHover, AboutButton.MouseLeave, UpdateInstallButton.MouseLeave,
+        StartButton.MouseClick, UpdateButton.MouseClick, OptionsButton.MouseClick, LoadButton.MouseClick, ExitButton.MouseClick, EditButton.MouseClick,
+        BackButton.MouseClick, AboutButton.MouseClick, UpdateInstallButton.MouseClick
         LeaveObjEffect(sender)
     End Sub
     Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles StartButton.MouseDown, UpdateButton.MouseDown, OptionsButton.MouseDown,
-        LoadButton.MouseDown, ExitButton.MouseDown, EditButton.MouseDown, DonateButton.MouseDown, AboutButton.MouseDown, UpdateInstallButton.MouseDown
+        LoadButton.MouseDown, ExitButton.MouseDown, EditButton.MouseDown, BackButton.MouseDown, AboutButton.MouseDown, UpdateInstallButton.MouseDown
         MouseDownEffect(sender)
     End Sub
     Private Sub TitleBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TitleBarPanel.MouseUp, TitleLabel.MouseUp, TitleBarIcon.MouseUp
@@ -69,31 +69,34 @@
         '    Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
         'End If
         WelcomePanel.Visible = False
-        AboutPanel.Visible = False
-        DonatePanel.Visible = False
-        'OptionsPanel.Visible = False
-        'EditorPanel.Visible = False
         UpdatePanel.Visible = False
         activepanel.Visible = True
+        activepanel.Focus()
+        If Not WelcomePanel.Visible = True Then BackButton.Visible = True Else BackButton.Visible = False
     End Sub
     Private Sub ListLostFocus(listname As Object)
         listname.ClearSelected()
     End Sub
-    Private Sub MainMenuBar_Click(sender As Object, e As EventArgs) Handles MainMenuBar.Click
-        If WelcomePanel.Visible = False Then
-            Dim answer As Integer = MsgBox("Are you sure you want to return to the Main Menu?", vbYesNo)
-            If answer = vbYes Then
-                Initialize.InitPanels()
-            Else
-                MsgBox("Action Cancelled", vbOKOnly)
-            End If
-            'Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
-        End If
-    End Sub
+    'Private Sub MainMenuBar_Click(sender As Object, e As EventArgs) Handles MainMenuBar.Click
+    '    If WelcomePanel.Visible = False Then
+    '        Dim answer As Integer = MsgBox("Are you sure you want to return to the Main Menu?", vbYesNo)
+    '        If answer = vbYes Then
+    '            Initialize.InitPanels()
+    '        Else
+    '            MsgBox("Action Cancelled", vbOKOnly)
+    '        End If
+    '        'Optioner.ResetEditPath(CustomLibsEdit, CustomLibsPath)
+    '    End If
+    'End Sub
 
     'Start Game Menu Section
     Private Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
         NewGame.PrepNewGame()
+    End Sub
+
+    Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
+        'TO DO:  Save check here
+        MenuButtonPressed(WelcomePanel)
     End Sub
 
     'Load Game Menu Section
@@ -104,10 +107,13 @@
         OptionsButtonPressed()
     End Sub
     Private Sub OptionsButtonPressed()
-        'MenuButtonPressed(OptionsPanel)
-        Optioner.OptionsGroupMove("mid")
-        Optioner.FlipOptionsGroups(True)
-        Optioner.CheckAllCustomTracks()
+        MsgBox("Option Window here")
+        'OptionsDrop.Items.Clear()
+        'OptionsDrop.Items.AddRange(MemoryBank.OptionsDrop)
+        'OptionsDrop.SelectedIndex = 0
+        'Optioner.OptionsGroupMove("mid")
+        'Optioner.FlipOptionsGroups(True)
+        'Optioner.CheckAllCustomTracks()
     End Sub
     Private Sub OptionsManageAvatars_Click(sender As Object, e As EventArgs)
         Optioner.MoveGroup("avatars")
@@ -206,34 +212,13 @@
     'Future Use Button Section
     'RESERVED FOR FUTURE USE.
 
-    'Donate Menu Section
-    Private Sub DonateButtonPressed()
-        MenuButtonPressed(DonatePanel)
-        Donater.TheDonater("Message", vbNull)
-    End Sub
-    Private Sub DonateText_Enter(sender As Object, e As EventArgs) Handles DonateText.Enter
-        DonateTitle.Select()
-    End Sub
-    Private Sub DonateButton_MouseLeave(sender As Object, e As EventArgs) Handles DonateButton.MouseLeave
-        AssignColor(sender, "Donate")
-    End Sub
-    Private Sub DonateButton_MouseHover(sender As Object, e As EventArgs) Handles DonateButton.MouseHover, DonateButton.MouseUp
-        sender.BackColor = MemoryBank.HoverBackColor
-        sender.ForeColor = MemoryBank.DonateHoverOver
-    End Sub
-    Private Sub DonateButton_Click(sender As Object, e As EventArgs) Handles DonateButton.Click
-        DonateButtonPressed()
-    End Sub
-    Private Sub DonateImage_Click(sender As Object, e As EventArgs) Handles DonatePTButton.Click, DonatePPButton.Click
-        Donater.TheDonater("Button", ClarkTribeGames.Converters.ControlToString(sender))
-    End Sub
-
     'Update Menu Section
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
-        UpdateButtonPressed()
+        Updater.ShowDialog()
+        'UpdateButtonPressed()
     End Sub
     Private Sub UpdateButtonPressed()
-        MenuButtonPressed(UpdatePanel)
+        'MenuButtonPressed(UpdatePanel)
     End Sub
     Private Sub UpdateInstallButton_Click(sender As Object, e As EventArgs) Handles UpdateInstallButton.Click
         ClarkTribeGames.Updater.InstallUpdate(Application.ProductName, MemoryBank.UpdaterURL)
@@ -241,23 +226,14 @@
 
     'About Menu Section
     Private Sub AboutButton_Click(sender As Object, e As EventArgs) Handles AboutButton.Click
-        AboutButtonPressed()
-    End Sub
-    Private Sub AboutImage_Click(sender As Object, e As EventArgs) Handles AboutFBButton.Click, AboutDCButton.Click, AboutYTButton.Click, AboutBSButton.Click
-        Abouter.TheAbouter("Button", ClarkTribeGames.Converters.ControlToString(sender))
-    End Sub
-    Private Sub AboutText_Enter(sender As Object, e As EventArgs) Handles AboutText.Enter
-        AboutTitle.Select()
-    End Sub
-    Private Sub AboutButtonPressed()
-        MenuButtonPressed(AboutPanel)
-        Abouter.TheAbouter("Message", vbNull)
+        Abouter.ShowDialog()
     End Sub
 
     'Exit Menu Section
     Private Sub Exit_Program(sender As Object, e As MouseEventArgs) Handles TitleBarIcon.DoubleClick, CloseButton.MouseDown, CloseText.MouseDown, ExitButton.MouseClick
         Exiter.ExitTheGame()
     End Sub
+
 
     'Editor Menu Section
     'Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
