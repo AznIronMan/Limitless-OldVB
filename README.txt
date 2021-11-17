@@ -1,7 +1,7 @@
 =============================================
 LIMITLESS by Geoff Clark
 PUBLISHED by CLARKTRIBEGAMES LLC
-VERSION ALPHA 0.1.007.0004
+VERSION ALPHA 0.1.007.0005
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -73,7 +73,7 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.007.0004 / 2021.11.15 - The Revamp
+ALPHA 0.1.007.0005 / 2021.11.17 - The Revamp
 
 - redesigned the gui to have the menu buttons on the left
 - removed the options and editor for redesign
@@ -95,6 +95,10 @@ ALPHA 0.1.007.0004 / 2021.11.15 - The Revamp
 - removed update panel in exchange for an update dialog box
 - added current/recommended database versions to update section
 - removed redundant logger and jukebox modules
+- fixed query errors when there is no internet connection
+- added query of database versions in updater
+- left future functionality of database update available in updater
+- removed options panel in exchange for an options dialog box
 
 [PREVIOUS UPDATES]
 

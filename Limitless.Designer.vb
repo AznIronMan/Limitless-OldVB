@@ -44,14 +44,6 @@ Partial Class MainWindow
         Me.LoadButton = New System.Windows.Forms.Button()
         Me.StartButton = New System.Windows.Forms.Button()
         Me.BackButton = New System.Windows.Forms.Button()
-        Me.UpdatePanel = New System.Windows.Forms.Panel()
-        Me.UpdateAvaBox = New System.Windows.Forms.TextBox()
-        Me.UpdateCurBox = New System.Windows.Forms.TextBox()
-        Me.UpdateInstallButton = New System.Windows.Forms.Button()
-        Me.UpdateAvaText = New System.Windows.Forms.Label()
-        Me.UpdateCurText = New System.Windows.Forms.Label()
-        Me.UpdateSubText = New System.Windows.Forms.Label()
-        Me.UpdateTitleText = New System.Windows.Forms.Label()
         Me.WelcomePanel = New System.Windows.Forms.Panel()
         Me.WelcomeImage11 = New System.Windows.Forms.PictureBox()
         Me.WelcomeImage10 = New System.Windows.Forms.PictureBox()
@@ -74,7 +66,6 @@ Partial Class MainWindow
         Me.BackgroundPanel.SuspendLayout()
         Me.MainMenuPanel.SuspendLayout()
         Me.MainMenuBar.SuspendLayout()
-        Me.UpdatePanel.SuspendLayout()
         Me.WelcomePanel.SuspendLayout()
         CType(Me.WelcomeImage11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WelcomeImage10, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -195,7 +186,6 @@ Partial Class MainWindow
         '
         Me.MainMenuPanel.BackColor = System.Drawing.SystemColors.ControlText
         Me.MainMenuPanel.Controls.Add(Me.MainMenuBar)
-        Me.MainMenuPanel.Controls.Add(Me.UpdatePanel)
         Me.MainMenuPanel.Controls.Add(Me.WelcomePanel)
         Me.MainMenuPanel.Location = New System.Drawing.Point(15, 11)
         Me.MainMenuPanel.Name = "MainMenuPanel"
@@ -393,96 +383,6 @@ Partial Class MainWindow
         Me.MenuTips.SetToolTip(Me.BackButton, "Back To Main Menu")
         Me.BackButton.UseVisualStyleBackColor = False
         Me.BackButton.Visible = False
-        '
-        'UpdatePanel
-        '
-        Me.UpdatePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.UpdatePanel.Controls.Add(Me.UpdateAvaBox)
-        Me.UpdatePanel.Controls.Add(Me.UpdateCurBox)
-        Me.UpdatePanel.Controls.Add(Me.UpdateInstallButton)
-        Me.UpdatePanel.Controls.Add(Me.UpdateAvaText)
-        Me.UpdatePanel.Controls.Add(Me.UpdateCurText)
-        Me.UpdatePanel.Controls.Add(Me.UpdateSubText)
-        Me.UpdatePanel.Controls.Add(Me.UpdateTitleText)
-        Me.UpdatePanel.Location = New System.Drawing.Point(75, 10)
-        Me.UpdatePanel.Name = "UpdatePanel"
-        Me.UpdatePanel.Size = New System.Drawing.Size(1240, 650)
-        Me.UpdatePanel.TabIndex = 10
-        Me.UpdatePanel.Visible = False
-        '
-        'UpdateAvaBox
-        '
-        Me.UpdateAvaBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.UpdateAvaBox.ForeColor = System.Drawing.SystemColors.Window
-        Me.UpdateAvaBox.Location = New System.Drawing.Point(655, 255)
-        Me.UpdateAvaBox.Name = "UpdateAvaBox"
-        Me.UpdateAvaBox.ReadOnly = True
-        Me.UpdateAvaBox.Size = New System.Drawing.Size(150, 20)
-        Me.UpdateAvaBox.TabIndex = 6
-        Me.UpdateAvaBox.TabStop = False
-        '
-        'UpdateCurBox
-        '
-        Me.UpdateCurBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.UpdateCurBox.ForeColor = System.Drawing.SystemColors.Window
-        Me.UpdateCurBox.Location = New System.Drawing.Point(655, 205)
-        Me.UpdateCurBox.Name = "UpdateCurBox"
-        Me.UpdateCurBox.ReadOnly = True
-        Me.UpdateCurBox.Size = New System.Drawing.Size(150, 20)
-        Me.UpdateCurBox.TabIndex = 5
-        Me.UpdateCurBox.TabStop = False
-        '
-        'UpdateInstallButton
-        '
-        Me.UpdateInstallButton.Enabled = False
-        Me.UpdateInstallButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.UpdateInstallButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
-        Me.UpdateInstallButton.Location = New System.Drawing.Point(565, 360)
-        Me.UpdateInstallButton.Name = "UpdateInstallButton"
-        Me.UpdateInstallButton.Size = New System.Drawing.Size(150, 23)
-        Me.UpdateInstallButton.TabIndex = 4
-        Me.UpdateInstallButton.Text = "Install Update"
-        Me.UpdateInstallButton.UseVisualStyleBackColor = True
-        '
-        'UpdateAvaText
-        '
-        Me.UpdateAvaText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.UpdateAvaText.Location = New System.Drawing.Point(460, 260)
-        Me.UpdateAvaText.Name = "UpdateAvaText"
-        Me.UpdateAvaText.Size = New System.Drawing.Size(160, 13)
-        Me.UpdateAvaText.TabIndex = 3
-        Me.UpdateAvaText.Text = "Available Version:"
-        Me.UpdateAvaText.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'UpdateCurText
-        '
-        Me.UpdateCurText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.UpdateCurText.Location = New System.Drawing.Point(460, 210)
-        Me.UpdateCurText.Name = "UpdateCurText"
-        Me.UpdateCurText.Size = New System.Drawing.Size(160, 13)
-        Me.UpdateCurText.TabIndex = 2
-        Me.UpdateCurText.Text = "Installed Version:"
-        Me.UpdateCurText.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'UpdateSubText
-        '
-        Me.UpdateSubText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.UpdateSubText.Location = New System.Drawing.Point(3, 110)
-        Me.UpdateSubText.Name = "UpdateSubText"
-        Me.UpdateSubText.Size = New System.Drawing.Size(1234, 13)
-        Me.UpdateSubText.TabIndex = 1
-        Me.UpdateSubText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'UpdateTitleText
-        '
-        Me.UpdateTitleText.Font = New System.Drawing.Font("Lucida Console", 24.0!, System.Drawing.FontStyle.Bold)
-        Me.UpdateTitleText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.UpdateTitleText.Location = New System.Drawing.Point(0, 0)
-        Me.UpdateTitleText.Name = "UpdateTitleText"
-        Me.UpdateTitleText.Size = New System.Drawing.Size(1234, 32)
-        Me.UpdateTitleText.TabIndex = 0
-        Me.UpdateTitleText.Text = "Check For Updates"
-        Me.UpdateTitleText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'WelcomePanel
         '
@@ -684,8 +584,6 @@ Partial Class MainWindow
         Me.BackgroundPanel.ResumeLayout(False)
         Me.MainMenuPanel.ResumeLayout(False)
         Me.MainMenuBar.ResumeLayout(False)
-        Me.UpdatePanel.ResumeLayout(False)
-        Me.UpdatePanel.PerformLayout()
         Me.WelcomePanel.ResumeLayout(False)
         CType(Me.WelcomeImage11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WelcomeImage10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -736,14 +634,6 @@ Partial Class MainWindow
     Friend WithEvents OptionsButton As Button
     Friend WithEvents SaveButton As Button
     Friend WithEvents MenuTips As ToolTip
-    Friend WithEvents UpdatePanel As Panel
-    Friend WithEvents UpdateSubText As Label
-    Friend WithEvents UpdateTitleText As Label
-    Friend WithEvents UpdateAvaText As Label
-    Friend WithEvents UpdateCurText As Label
-    Friend WithEvents UpdateInstallButton As Button
-    Friend WithEvents UpdateAvaBox As TextBox
-    Friend WithEvents UpdateCurBox As TextBox
     Friend WithEvents WelcomeImage06 As PictureBox
     Friend WithEvents WelcomeImage05 As PictureBox
     Friend WithEvents WelcomeImage10 As PictureBox

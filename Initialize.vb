@@ -1,14 +1,20 @@
 ﻿Public Module Initialize
+
+    Private Sub Debugging()
+
+    End Sub
     Public Sub InitLoad()
-        MemoryBank.UpdaterDate = ClarkTribeGames.MySQLReader.Query(LCase(MemoryBank.UpdaterName), "d")
+        Debugging()
+        If (ClarkTribeGames.Web.CheckWeb()) Then
+            MemoryBank.UpdaterDate = ClarkTribeGames.MySQLReader.Query(LCase(MemoryBank.UpdaterName), "d")
+            MemoryBank.UpdaterURL = ClarkTribeGames.MySQLReader.Query(LCase(MemoryBank.UpdaterName), "u")
+        End If
+        MemoryBank.VersionNumber = ClarkTribeGames.Converters.GetVersion(Application.ProductVersion)
         InitProcess()
         Settings.UpdateSettings()
-        MemoryBank.VersionNumber = ClarkTribeGames.Converters.GetVersion(Application.ProductVersion)
-        MemoryBank.UpdaterURL = ClarkTribeGames.MySQLReader.Query(LCase(MemoryBank.UpdaterName), "u")
-        MainWindow.UpdateCurBox.Text = MemoryBank.VersionNumber
         Database.CheckForDB(Settings.SettingsLastDB)
         Database.VersionChecker()
-        Tools.CheckUpdate()
+        Updater.CheckUpdate()
         InitIntro()
     End Sub
     Private Sub InitProcess()
@@ -30,10 +36,14 @@
         If Not System.IO.File.Exists(MemoryBank.SQLiteFile & MemoryBank.LibExtL) Then System.IO.File.WriteAllBytes(MemoryBank.SQLiteFile &
             MemoryBank.LibExtL, My.Resources.System_Data_SQLite)
         If System.IO.File.Exists(MemoryBank.UpdaterName & MemoryBank.FileExtL) Then
-            If System.IO.File.GetLastWriteTime(MemoryBank.UpdaterName & MemoryBank.FileExtL) < Convert.ToDateTime(MemoryBank.UpdaterDate) Then
-                System.IO.File.Delete(MemoryBank.UpdaterName & MemoryBank.FileExtL)
-                ClarkTribeGames.Updater.GetUpdater()
-            End If
+            Try
+                If System.IO.File.GetLastWriteTime(MemoryBank.UpdaterName & MemoryBank.FileExtL) < Convert.ToDateTime(MemoryBank.UpdaterDate) Then
+                    System.IO.File.Delete(MemoryBank.UpdaterName & MemoryBank.FileExtL)
+                    ClarkTribeGames.Updater.GetUpdater()
+                End If
+            Catch ex As Exception
+                'This means there's no internet.
+            End Try
         Else
             ClarkTribeGames.Updater.GetUpdater()
         End If
@@ -72,7 +82,6 @@
 
     Public Sub InitPanels()
         MainWindow.WelcomePanel.Visible = True
-        MainWindow.UpdatePanel.Visible = False
     End Sub
 
 End Module

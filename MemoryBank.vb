@@ -37,7 +37,8 @@
     Public Shared ConfigExtF As String = "*.config"
     Public Shared ConfigExtL As String = ConfigExtF.Substring(1)
     Public Shared ConfigExt As String = ConfigExtF.Substring(2)
-    Public Shared VersionNumber As String = ""
+    Public Shared VersionNumber As String
+
     Public Shared WindowDrag As Boolean
     Public Shared WindowMouseX, WindowMouseY As Integer
     Public Shared StartupInProgress As Boolean = True
@@ -49,6 +50,11 @@
 
     'Editor
     Public Shared ActiveEditorWindow As String = ""
+
+    'Updater
+    Public Shared AvailableVer As String
+    Public Shared OnlineDBVer As String
+    Public Shared CurrentDBVer As String
 
     'Options
     Public Shared OptionsDrop() As String = {"[Select Option]", "Audio", "Colors", "Avatars", "Databases"}

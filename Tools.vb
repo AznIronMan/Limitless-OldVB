@@ -16,33 +16,6 @@
                      End Sub)
         End If
     End Sub
-    Public Shared Sub CheckUpdate()
-        Try
-            MainWindow.UpdateAvaBox.Text = ClarkTribeGames.MySQLReader.Query(LCase(Application.ProductName.ToString()), "v")
-            MainWindow.UpdateSubText.ForeColor = MemoryBank.PagesForeColor
-            If (ClarkTribeGames.Updater.Checker(MainWindow.UpdateCurBox.Text, MainWindow.UpdateAvaBox.Text)) Then
-                Dim updatetext = "Update " & MainWindow.UpdateAvaBox.Text & " Available!"
-                UpdateChanges(updatetext, MemoryBank.DonateForeColor, True, "Install Update")
-                ClarkTribeGames.Jukebox.StopSong()
-                MsgBox(updatetext & vbCrLf & vbCrLf & "Please Update via the Update Button!", vbOKOnly + vbExclamation)
-            Else
-                UpdateChanges("Your Game Is Current!", MemoryBank.DonateForeColor, False, "No Update Available")
-            End If
-        Catch ex As Exception
-            MainWindow.UpdateAvaBox.Text = "Not Available"
-            MainWindow.UpdateSubText.Text = "Error Checking Update Server - Please Check Your Internet Settings"
-            MainWindow.UpdateSubText.ForeColor = MemoryBank.DonateForeColor
-            MainWindow.UpdateInstallButton.Text = "Not Available"
-            ClarkTribeGames.Logger.WriteToLog("UpdateCheck", "Could not find update server.", ex)
-        End Try
-    End Sub
-    Private Shared Sub UpdateChanges(text As String, color As Color, enable As Boolean, buttontext As String)
-        MainWindow.UpdateSubText.Text = text
-        MainWindow.UpdateSubText.ForeColor = color
-        MainWindow.UpdateInstallButton.Enabled = enable
-        MainWindow.UpdateInstallButton.Text = buttontext
-        Appearance.RefreshColors()
-    End Sub
     Public Shared Sub ReturnToIntro(stopbutton As Button, playbutton As Button, optionslist As ListBox, activebox As CheckBox,
         editbutton As Button, message As Label, colorgroup As GroupBox, musicgroup As GroupBox, managegroup As GroupBox,
         importbutton As Button, deletebutton As Button)

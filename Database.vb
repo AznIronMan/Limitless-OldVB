@@ -41,22 +41,35 @@
         End If
     End Sub
 
+    Public Shared Function DBFolderQuery() As List(Of String)
+        Dim list As New List(Of String)
+        For Each Item In ClarkTribeGames.FilesFolders.GetFilesInFolder(MemoryBank.DataDir)
+            If Item.Contains(MemoryBank.SavesExtL) Then
+                list.Add(Item.Replace(MemoryBank.DataDir & "\", ""))
+            End If
+        Next
+        Return list
+    End Function
+
+
     Public Shared Sub VersionChecker()
-        Dim DBOnline As String = ClarkTribeGames.MySQLReader.Query(LCase(Application.ProductName & "db"), "v")
-        Dim DBLocal As String = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, Settings.SettingsDefaultDB &
+        If ClarkTribeGames.Web.CheckWeb() Then
+            Dim DBOnline As String = ClarkTribeGames.MySQLReader.Query(LCase(Application.ProductName & "db"), "v")
+            Dim DBLocal As String = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, Settings.SettingsDefaultDB &
             MemoryBank.SavesExtL, "dbInfo", "dbVersion").Split(",")(0)
-        If (CInt(DBOnline.Replace(".", "")) > CInt(DBLocal.Replace(".", ""))) Then
-            Dim answer As Integer = MsgBox("Newer version " & DBOnline & " of Default Database available!" &
-                vbCrLf & vbCrLf & "Do you want to replace your existing " & DBLocal & " with the newer version?",
-                vbYesNo)
-            If answer = vbYes Then
-                Using client = New System.Net.WebClient()
-                    client.DownloadFile(ClarkTribeGames.MySQLReader.Query(LCase(Application.ProductName & "db"), "u"),
-                        MemoryBank.DataDir & "/Default" & MemoryBank.SavesExtL)
-                End Using
-            Else
-                MsgBox("Please consider an upgrade to the default database as the existing version may not work with " &
-                    "this version of the game.")
+            If (CInt(DBOnline.Replace(".", "")) > CInt(DBLocal.Replace(".", ""))) Then
+                Dim answer As Integer = MsgBox("Newer version " & DBOnline & " of Default Database available!" &
+                    vbCrLf & vbCrLf & "Do you want to replace your existing " & DBLocal & " with the newer version?",
+                    vbYesNo)
+                If answer = vbYes Then
+                    Using client = New System.Net.WebClient()
+                        client.DownloadFile(ClarkTribeGames.MySQLReader.Query(LCase(Application.ProductName & "db"), "u"),
+                            MemoryBank.DataDir & "/Default" & MemoryBank.SavesExtL)
+                    End Using
+                Else
+                    MsgBox("Please consider an upgrade to the default database as the existing version may not work with " &
+                        "this version of the game.")
+                End If
             End If
         End If
     End Sub
