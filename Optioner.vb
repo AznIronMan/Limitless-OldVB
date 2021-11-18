@@ -1,138 +1,110 @@
 ﻿Public Class Optioner
 
+    Dim ActivePanel As String
     Private Sub Optioner_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         BuildOptioner()
     End Sub
 
     Private Sub BuildOptioner()
         OptionsDrop.Items.Clear()
+        SystemText.Text = Settings.SettingsUID
+        VersionText.Text = MemoryBank.VersionNumber
+        ColorText.Text = Settings.SettingsMode
+        DBText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(Settings.SettingsLastDB)
+        MusicText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(Settings.SettingsMusic)
+        SoundsText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(Settings.SettingsSound)
         For Each item In MemoryBank.OptionsDrop
             OptionsDrop.Items.Add(item)
         Next
+        ActivePanel = ""
         OptionsDrop.SelectedIndex = 0
     End Sub
 
-    Private Sub OptionsList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OptionList.SelectedIndexChanged
-        If OptionList.Enabled = True And OptionList.SelectedIndex > -1 Then
-            DimText.Text = ClarkTribeGames.FilesFolders.GetDims(MemoryBank.AvatarsDir & "\" & OptionList.SelectedItem.ToString).Replace("x", " x ") & " pixels"
-            Avatars.SetAvatar(OptionList.SelectedItem.ToString, AvatarImage)
-            AvatarText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(OptionList.SelectedItem.ToString).Replace(MemoryBank.AvatarsExtL, "")
-            DimLabel.Visible = True
-            DimText.Visible = True
-            AvaRenameButton.Enabled = True
-            AvaDeleteButton.Enabled = True
-        Else
-            ResetAvatarPanel()
-        End If
-    End Sub
-
-    Private Sub AvaRenameButton_Click(sender As Object, e As EventArgs) Handles AvaRenameButton.Click
-        RenamePrompt()
-    End Sub
-
-    Private Sub RenamePrompt()
-        'TO DO:  Improve this with a separate form window
-        Dim newname As String = InputBox("Please enter a new name for the file:", "Rename File", AvatarText.Text)
-        If newname.Length = 0 Then
-            MsgBox("File name length Cannot be zero.")
-            RenamePrompt()
-        Else
-            If LCase(newname) = LCase(OptionList.SelectedItem.ToString.Replace(MemoryBank.AvatarsExtL, "")) Then
-                MsgBox("Same File Name, No Change.")
-                Exit Sub
-            Else
-                If System.IO.File.Exists(MemoryBank.AvatarsDir & "\" & newname & MemoryBank.AvatarsExtL) Then
-                    MsgBox("File name already exists!")
-                    RenamePrompt()
+    Private Sub OptionsList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OptionsList.SelectedIndexChanged
+        Select Case LCase(ActivePanel)
+            Case "avatars"
+                If OptionsList.Enabled = True And OptionsList.SelectedIndex > -1 Then
+                    DimText.Text = ClarkTribeGames.FilesFolders.GetDims(MemoryBank.AvatarsDir & "\" & OptionsList.SelectedItem.ToString).Replace("x", " x ") & " pixels"
+                    Avatars.SetAvatar(OptionsList.SelectedItem.ToString, AvatarImage)
+                    AvatarText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(OptionsList.SelectedItem.ToString).Replace(MemoryBank.AvatarsExtL, "")
+                    DimLabel.Visible = True
+                    DimText.Visible = True
                 Else
-                    RenameAvatar(AvatarText.Text, newname)
+                    ResetAvatar()
                 End If
-            End If
-        End If
+            Case "colors"
+                '
+            Case "databases"
+                '
+            Case "music"
+                '
+            Case "sounds"
+                '
+            Case Else
+                '
+        End Select
+        OptionsRenameButton.Enabled = True
+        OptionsDeleteButton.Enabled = True
     End Sub
-
-    Private Sub RenameAvatar(oldname As String, newname As String)
-        Avatars.ReleaseAvatarFromBox(AvatarImage)
-        Try
-            My.Computer.FileSystem.RenameFile(MemoryBank.AvatarsDir & "\" & oldname & MemoryBank.AvatarsExtL, newname & MemoryBank.AvatarsExtL)
-        Catch ex As Exception
-            ClarkTribeGames.Logger.WriteToLog("Avatar Rename", "Rename Attempt", ex)
-            MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
-        End Try
-        OptionDropUpdate()
-        OptionList.SelectedIndex = OptionList.FindStringExact(newname & MemoryBank.AvatarsExtL)
-    End Sub
-
-    Private Sub DeleteAvatar()
-        'TO DO:  Add "Are You Sure???"
-        Avatars.ReleaseAvatarFromBox(AvatarImage)
-        Try
-            ClarkTribeGames.FilesFolders.DeleteFile(MemoryBank.AvatarsDir & "\" & AvatarText.Text & MemoryBank.AvatarsExtL)
-        Catch ex As Exception
-            ClarkTribeGames.Logger.WriteToLog("Avatar Delete", "Delete Attempt", ex)
-            MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
-        End Try
-        OptionDropUpdate()
-        OptionList.SelectedIndex = -1
-    End Sub
-
-    Private Sub ResetAvatarPanel()
+    Private Sub ResetAvatar()
         AvatarImage.Image = My.Resources._empty_
         AvatarText.Text = "Select an Avatar"
         DimLabel.Visible = False
         DimText.Visible = False
-        AvaRenameButton.Enabled = False
+        OptionsRenameButton.Enabled = False
     End Sub
 
     Private Sub OptionsDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OptionsDrop.SelectedIndexChanged
         OptionDropUpdate()
     End Sub
     Private Sub OptionDropUpdate()
-        Dim SelOption As String = OptionsDrop.Text
-        OptionList.Enabled = True
-        OptionList.Items.Clear()
-        Select Case LCase(SelOption)
+        ActivePanel = OptionsDrop.Text
+        OptionsList.Enabled = True
+        OptionsList.Items.Clear()
+        Select Case LCase(ActivePanel)
             Case "avatars"
-                ResetAvatarPanel()
+                ResetAvatar()
                 For Each item In ListOfFiles(MemoryBank.AvatarsDir, MemoryBank.AvatarsExtL)
-                    OptionList.Items.Add(item)
+                    OptionsList.Items.Add(item)
                 Next
-                EmptyListCheck("<No " & LCase(SelOption) & " available>")
-                OptionsItemText.Text = SelOption & " In \" & MemoryBank.AvatarsDir & "\"
+                EmptyListCheck("<No " & LCase(ActivePanel) & " available>")
+                OptionsItemText.Text = ActivePanel & " In \" & MemoryBank.AvatarsDir & "\"
                 SwitchPanel(AvatarPanel, 0)
             Case "colors"
                 For Each item In ClarkTribeGames.SQLite.GetCol(Settings.SettingsPath, Settings.SettingsName, "colorSettings", "colorname").Split(",")
-                    OptionList.Items.Add(item)
+                    OptionsList.Items.Add(item)
                 Next
-                EmptyListCheck("<No " & LCase(SelOption) & " available>")
-                OptionsItemText.Text = SelOption & " Options"
+                EmptyListCheck("<No " & LCase(ActivePanel) & " available>")
+                OptionsItemText.Text = ActivePanel & " Options"
                 SwitchPanel(ColorsPanel, 0)
             Case "databases"
                 For Each item In ListOfFiles(MemoryBank.DataDir, MemoryBank.SavesExtL)
-                    OptionList.Items.Add(Replace(item, MemoryBank.SavesExtL, ""))
+                    OptionsList.Items.Add(Replace(item, MemoryBank.SavesExtL, ""))
                 Next
-                EmptyListCheck("<No " & LCase(SelOption) & " available>")
-                OptionsItemText.Text = SelOption & " In \" & MemoryBank.DataDir & "\"
+                EmptyListCheck("<No " & LCase(ActivePanel) & " available>")
+                OptionsItemText.Text = ActivePanel & " In \" & MemoryBank.DataDir & "\"
                 SwitchPanel(DBPanel, 0)
             Case "music"
                 For Each item In ListOfFiles(MemoryBank.MusicDir, MemoryBank.MusicExtL)
-                    OptionList.Items.Add(item)
+                    OptionsList.Items.Add(item)
                 Next
-                EmptyListCheck("<No " & LCase(SelOption) & " available>")
-                OptionsItemText.Text = SelOption & " In \" & MemoryBank.MusicDir & "\"
+                EmptyListCheck("<No " & LCase(ActivePanel) & " available>")
+                OptionsItemText.Text = ActivePanel & " In \" & MemoryBank.MusicDir & "\"
                 SwitchPanel(MusicPanel, 0)
             Case "sounds"
                 For Each item In ListOfFiles(MemoryBank.SoundDir, MemoryBank.SoundExtL)
-                    OptionList.Items.Add(item)
+                    OptionsList.Items.Add(item)
                 Next
-                EmptyListCheck("<No " & LCase(SelOption) & " available>")
-                OptionsItemText.Text = SelOption & " In \" & MemoryBank.SoundDir & "\"
+                EmptyListCheck("<No " & LCase(ActivePanel) & " available>")
+                OptionsItemText.Text = ActivePanel & " In \" & MemoryBank.SoundDir & "\"
                 SwitchPanel(SoundsPanel, 0)
             Case Else
+                ActivePanel = ""
                 EmptyListCheck("<No option selected>")
                 OptionsItemText.Text = ""
                 SwitchPanel(OptionsMainPanel, 1)
         End Select
+        Appearance.RefreshColors()
     End Sub
 
     Private Sub SwitchPanel(active As Panel, none As Integer)
@@ -156,44 +128,147 @@
         Return list
     End Function
     Private Sub EmptyListCheck(phrase As String)
-        If Not OptionList.Items.Count > 0 Then
-            OptionList.Items.Add(phrase)
-            OptionList.Enabled = False
+        If Not OptionsList.Items.Count > 0 Then
+            OptionsList.Items.Add(phrase)
+            OptionsList.Enabled = False
         End If
     End Sub
-
-    Private Sub OptionRefreshButton_Click(sender As Object, e As EventArgs) Handles OptionRefreshButton.Click
+    Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles OptionsAddButton.Click
+        AddProcess()
+    End Sub
+    Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles OptionsDeleteButton.Click
+        DeleteProcess()
+    End Sub
+    Private Sub RenameButton_Click(sender As Object, e As EventArgs) Handles OptionsRenameButton.Click
+        RenamePrompt()
+    End Sub
+    Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles OptionsRefreshButton.Click
         OptionDropUpdate()
     End Sub
-
-    Private Sub AvaDeleteButton_Click(sender As Object, e As EventArgs) Handles AvaDeleteButton.Click
-        DeleteAvatar()
+    Private Sub AddProcess()
+        Dim SelectedDir As String = WhichDir(LCase(ActivePanel))
+        Dim Ext As String = WhichExt(LCase(ActivePanel))
+        Dim SourceFiles() As String, NewFile As String
+        Dim FileType As String = ClarkTribeGames.Converters.UppercaseEachFirstLetter(ActivePanel)
+        If FileType.EndsWith("s") Then FileType.Substring(0, FileType.Length - 1)
+        Dim fd As New OpenFileDialog With {
+            .Title = "Custom " & FileType & " File(s) To Import",
+            .InitialDirectory = SelectedDir,
+            .Filter = Replace(Ext, ".", "") & " Files (*" & Ext & ")|*" & Ext,
+            .FilterIndex = 1,
+            .RestoreDirectory = True,
+            .Multiselect = True
+        }
+        If fd.ShowDialog() = DialogResult.OK Then
+            SourceFiles = fd.FileNames
+            For Each SourceFile In SourceFiles
+                Dim ConfirmExt As String = SourceFile.Substring(SourceFile.Length - 4, 4)
+                If LCase(ConfirmExt) = Ext Then
+                    Dim SourceName As String = Replace(SourceFile.Split("\").Last(), Ext, "")
+                    NewFile = SelectedDir & "/" & Replace(SourceName, "Ω ", "Ω") & Ext
+                    If Not LCase(ActivePanel) = "avatars" Then
+                        Try
+                            FileSystem.FileCopy(SourceFile, NewFile)
+                        Catch ex As Exception
+                            ClarkTribeGames.Logger.WriteToLog("Custom " & FileType & " Import", "Import Attempt - " &
+                                SourceName & Ext, ex)
+                            MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
+                        End Try
+                    Else
+                        Try
+                            NewFile = LCase(NewFile)
+                            NewFile = NewFile.Replace(Ext & Ext, Ext)
+                            NewFile = ClarkTribeGames.Converters.UppercaseEachFirstLetter(NewFile)
+                            ClarkTribeGames.Converters.ResizeImage(SourceFile, NewFile, 200, 200)
+                            'Converters.ResizeImage(SourceFile, NewFile.Substring(0, NewFile.Length - 4), 200, 200)
+                        Catch ex As Exception
+                            ClarkTribeGames.Logger.WriteToLog("Custom " & FileType & " Import", "Import Attempt - " &
+                                SourceName & Ext, ex)
+                            MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
+                        End Try
+                    End If
+                    'Optioner.CustomLibsListPop(True)
+                Else
+                    MsgBox("Invalid file extension.  Please be sure to select a " & Ext & " file.", vbOKOnly + vbCritical)
+                End If
+            Next
+        End If
+        OptionDropUpdate()
+    End Sub
+    Private Sub RenamePrompt()
+        Dim SelectedDir As String = WhichDir(LCase(ActivePanel))
+        Dim Ext As String = WhichExt(LCase(ActivePanel))
+        Dim FileName As String = OptionsList.SelectedItem.ToString.Replace(Ext, "")
+        'TO DO:  Improve this with a separate form window
+        If Not LCase(ActivePanel) = "colors" Then
+            Dim newname As String = InputBox("Please enter a new name for the file:", "Rename File", FileName)
+            If newname.Length = 0 Then
+                MsgBox("File name length Cannot be zero.")
+                RenamePrompt()
+            Else
+                If LCase(newname) = LCase(OptionsList.SelectedItem.ToString.Replace(Ext, "")) Then
+                    MsgBox("Same File Name, No Change.")
+                    Exit Sub
+                Else
+                    If System.IO.File.Exists(SelectedDir & "\" & newname & Ext) Then
+                        MsgBox("File name already exists!")
+                        RenamePrompt()
+                    Else
+                        RenameProcess(FileName, newname)
+                    End If
+                End If
+            End If
+        Else
+            'Rename Color Prompt and Process here
+        End If
+    End Sub
+    Private Sub RenameProcess(oldname As String, newname As String)
+        Dim SelectedDir As String = WhichDir(LCase(ActivePanel))
+        Dim Ext As String = WhichExt(LCase(ActivePanel))
+        If LCase(ActivePanel) = "avatars" Then
+            Avatars.ReleaseAvatarFromBox(AvatarImage)
+        End If
+        Try
+            My.Computer.FileSystem.RenameFile(SelectedDir & "\" & oldname & Ext, newname & Ext)
+        Catch ex As Exception
+            ClarkTribeGames.Logger.WriteToLog("Rename Process", "Rename Attempt", ex)
+            MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
+        End Try
+        OptionDropUpdate()
+        OptionsList.SelectedIndex = OptionsList.FindStringExact(newname & Ext)
     End Sub
 
-    Private Sub OptionAddButton_Click(sender As Object, e As EventArgs) Handles OptionAddButton.Click
-        MsgBox("Import Not Available")
-    End Sub
-
-    Private Sub AvaSizeButton_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    'Universal Controls
-    Public Shared Sub ResetEditPath(editbutton As Button, pathtext As TextBox)
-        editbutton.Text = "Edit Name"
-        pathtext.BackColor = MemoryBank.PagesBackColor
-        pathtext.ReadOnly = True
+    Private Sub DeleteProcess()
+        'TO DO:  Add "Are You Sure???"
+        If Not LCase(ActivePanel) = "colors" Then
+            Dim SelectedDir As String = WhichDir(LCase(ActivePanel))
+            Dim Ext As String = WhichExt(LCase(ActivePanel))
+            Dim FileName As String = OptionsList.SelectedItem.ToString.Replace(Ext, "")
+            If LCase(ActivePanel) = "avatars" Then
+                Avatars.ReleaseAvatarFromBox(AvatarImage)
+            End If
+            Try
+                ClarkTribeGames.FilesFolders.DeleteFile(SelectedDir & "\" & FileName & Ext)
+            Catch ex As Exception
+                ClarkTribeGames.Logger.WriteToLog("Delete Process", "Delete Attempt", ex)
+                MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
+            End Try
+        Else
+            'Delete Colors Process here
+        End If
+        OptionDropUpdate()
+        OptionsList.SelectedIndex = -1
     End Sub
     Private Shared Function WhichDir(type As String) As String
         Select Case type
             Case "avatars"
                 Return MemoryBank.AvatarsDir
+            Case "databases"
+                Return MemoryBank.SavesDir
             Case "music"
                 Return MemoryBank.MusicDir
-            Case "sound"
+            Case "sounds"
                 Return MemoryBank.SoundDir
-            Case "tracks"
-                Return MemoryBank.MusicDir
             Case Else
                 Return vbNull
         End Select
@@ -202,16 +277,23 @@
         Select Case type
             Case "avatars"
                 Return MemoryBank.AvatarsExtL
+            Case "databases"
+                Return MemoryBank.SavesExtL
             Case "music"
                 Return MemoryBank.MusicExtL
             Case "sound"
                 Return MemoryBank.SoundExtL
-            Case "tracks"
-                Return MemoryBank.MusicExtL
             Case Else
                 Return vbNull
         End Select
     End Function
+
+    'Universal Controls
+    Public Shared Sub ResetEditPath(editbutton As Button, pathtext As TextBox)
+        editbutton.Text = "Edit Name"
+        pathtext.BackColor = MemoryBank.PagesBackColor
+        pathtext.ReadOnly = True
+    End Sub
 
     'Group/Custom Section
     Public Shared Sub MoveGroup(type As String)
@@ -294,45 +376,45 @@
     Public Shared Sub CustomLibsListChanged()
         'CustomLibsListChangeProcess(MainWindow.CustomLibsList)
     End Sub
-    Private Shared Sub CustomLibsListChangeProcess(listname As ListBox)
-        If listname.Enabled = True And listname.SelectedIndex >= 0 Then
-            Dim SelectedName As String = listname.SelectedItem.ToString
-            Dim SelectedDir As String = WhichDir(LCase(MemoryBank.CustomLibsSelected))
-            Dim FoundIt As Boolean = False
-            For Each Filename In ClarkTribeGames.FilesFolders.GetFilesInFolder(SelectedDir)
-                If FoundIt = False Then
-                    Dim ShortFileName As String = Replace(Filename, SelectedDir & "\", "", 1)
-                    Dim FoundName As String = ShortFileName.Trim().Substring(0, ShortFileName.Length - 4)
-                    If FoundName = SelectedName Then
-                        FoundIt = True
-                        CustomLibsNameFound(True, ShortFileName, CheckState.Checked, MemoryBank.GroupForeColor)
-                    End If
-                    If Replace(SelectedName, "Ω ", "Ω") = FoundName And FoundIt = False Then
-                        FoundIt = True
-                        CustomLibsNameFound(True, ShortFileName, CheckState.Unchecked, Color.Red)
-                    End If
-                    If FoundIt = True Then
-                        Select Case LCase(MemoryBank.CustomLibsSelected)
-                            Case "avatars"
-                                CustomLibsPrivatePick(False)
-                                'MainWindow.CustomLibsPreviewImage.Image = Image.FromFile(Filename)
-                                'MainWindow.CustomLibsPreviewImage.SizeMode = PictureBoxSizeMode.StretchImage
-                            Case Else
-                                CustomLibsPrivatePick(True)
-                                'MainWindow.CustomLibsPreviewPlay.Enabled = True
-                                'MainWindow.CustomLibsMusicImage.BackgroundImage =
-                                '    Global.Limitless.My.Resources.Resources.mp3sound
-                        End Select
-                    End If
-                End If
-            Next
-        Else
-            'MainWindow.CustomLibsEdit.Enabled = False
-            'MainWindow.CustomLibsDelete.Enabled = False
-            'MainWindow.CustomLibsPath.Text = ""
-        End If
-        Appearance.RefreshColors()
-    End Sub
+    'Private Shared Sub CustomLibsListChangeProcess(listname As ListBox)
+    '    If listname.Enabled = True And listname.SelectedIndex >= 0 Then
+    '        Dim SelectedName As String = listname.SelectedItem.ToString
+    '        Dim SelectedDir As String = WhichDir(LCase(MemoryBank.CustomLibsSelected))
+    '        Dim FoundIt As Boolean = False
+    '        For Each Filename In ClarkTribeGames.FilesFolders.GetFilesInFolder(SelectedDir)
+    '            If FoundIt = False Then
+    '                Dim ShortFileName As String = Replace(Filename, SelectedDir & "\", "", 1)
+    '                Dim FoundName As String = ShortFileName.Trim().Substring(0, ShortFileName.Length - 4)
+    '                If FoundName = SelectedName Then
+    '                    FoundIt = True
+    '                    CustomLibsNameFound(True, ShortFileName, CheckState.Checked, MemoryBank.GroupForeColor)
+    '                End If
+    '                If Replace(SelectedName, "Ω ", "Ω") = FoundName And FoundIt = False Then
+    '                    FoundIt = True
+    '                    CustomLibsNameFound(True, ShortFileName, CheckState.Unchecked, Color.Red)
+    '                End If
+    '                If FoundIt = True Then
+    '                    Select Case LCase(MemoryBank.CustomLibsSelected)
+    '                        Case "avatars"
+    '                            CustomLibsPrivatePick(False)
+    '                            'MainWindow.CustomLibsPreviewImage.Image = Image.FromFile(Filename)
+    '                            'MainWindow.CustomLibsPreviewImage.SizeMode = PictureBoxSizeMode.StretchImage
+    '                        Case Else
+    '                            CustomLibsPrivatePick(True)
+    '                            'MainWindow.CustomLibsPreviewPlay.Enabled = True
+    '                            'MainWindow.CustomLibsMusicImage.BackgroundImage =
+    '                            '    Global.Limitless.My.Resources.Resources.mp3sound
+    '                    End Select
+    '                End If
+    '            End If
+    '        Next
+    '    Else
+    '        'MainWindow.CustomLibsEdit.Enabled = False
+    '        'MainWindow.CustomLibsDelete.Enabled = False
+    '        'MainWindow.CustomLibsPath.Text = ""
+    '    End If
+    '    Appearance.RefreshColors()
+    'End Sub
     Private Shared Sub CustomLibsNameFound(action As Boolean, name As String, check As CheckState, color As Color)
         '    MainWindow.CustomLibsPath.Enabled = action
         '    MainWindow.CustomLibsPath.Text = name
@@ -348,69 +430,69 @@
         'MainWindow.CustomLibsPreviewMusic.Visible = action
         'MainWindow.CustomLibsPreviewAvatar.Visible = Reaction
     End Sub
-    Public Shared Sub CustomLibsActiveChanged(check As CheckBox, list As ListBox)
-        CustomLibsActiveChangeProcess(check, list)
-    End Sub
-    Private Shared Sub CustomLibsActiveChangeProcess(checkbox As CheckBox, list As ListBox)
-        If checkbox.Enabled = True Then
-            Dim SelectedDir As String = WhichDir(LCase(MemoryBank.CustomLibsSelected))
-            Dim Ext As String = WhichExt(LCase(MemoryBank.CustomLibsSelected))
-            Dim SelectedFile As String = list.SelectedItem.ToString
-            Dim ItemActive As Boolean
-            Dim ChangePhrase As String, ChangeAction As String
-            If SelectedFile.StartsWith("Ω") = True Then ItemActive = False Else ItemActive = True
-            Select Case ItemActive
-                Case True
-                    ChangePhrase = "active"
-                    ChangeAction = "inactive"
-                Case Else
-                    ChangePhrase = "inactive"
-                    ChangeAction = "active"
-            End Select
-            Dim answer As Integer
-            Dim NewName = ""
-            If LCase(Settings.SettingsAutoSave) = "on" Then
-                answer = vbYes
-            Else
-                answer = MsgBox(("The File " & Chr(34) & SelectedFile & Chr(34) & " is currently " & ChangePhrase & "." &
-                    vbCrLf & vbCrLf & "Do you want to switch this file to " & ChangeAction & "?"), vbExclamation + vbYesNo)
-            End If
-            If answer = vbYes Then
-                If answer = vbYes And ItemActive = False Then
-                    Dim OldName As String = Replace(SelectedFile, "Ω ", "Ω")
-                    NewName = Replace(SelectedFile, "Ω ", "")
-                    CustomLibsActiveChangeAction(checkbox, list, SelectedDir, Ext, ChangeAction, OldName, NewName, CheckState.Checked,
-                        MemoryBank.GroupForeColor)
-                End If
-                If answer = vbYes And ItemActive = True Then
-                    NewName = "Ω" & SelectedFile
-                    CustomLibsActiveChangeAction(checkbox, list, SelectedDir, Ext, ChangeAction, SelectedFile, NewName, CheckState.Unchecked,
-                        Color.Red)
-                End If
-                If answer = vbYes Then
-                    Optioner.CustomLibsListPop(True)
-                    list.SelectedItem = Replace(NewName, "Ω", "Ω ")
-                End If
-                If Not answer = vbYes Then MsgBox("No Changes Made")
-            End If
-        End If
-    End Sub
-    Private Shared Sub CustomLibsActiveChangeAction(checkbox As CheckBox, list As ListBox, dir As String, ext As String,
-        action As String, oldname As String, newname As String, checkstate As CheckState, color As Color)
-        'If LCase(MemoryBank.CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(MainWindow.CustomLibsPreviewImage)
-        If Not LCase(MemoryBank.CustomLibsSelected) = "avatars" Then JukeboxIntro()
-        Try
-            My.Computer.FileSystem.RenameFile(dir & "/" & oldname & ext, newname & ext)
-        Catch ex As Exception
-            ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " " &
-            ClarkTribeGames.Converters.UppercaseEachFirstLetter(action), "Rename Attempt", ex)
-            MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
-        End Try
-        checkbox.Enabled = True
-        Appearance.RefreshColors()
-        checkbox.CheckState = checkstate
-        checkbox.ForeColor = color
-    End Sub
+    'Public Shared Sub CustomLibsActiveChanged(check As CheckBox, list As ListBox)
+    '    CustomLibsActiveChangeProcess(check, list)
+    'End Sub
+    'Private Shared Sub CustomLibsActiveChangeProcess(checkbox As CheckBox, list As ListBox)
+    '    If checkbox.Enabled = True Then
+    '        Dim SelectedDir As String = WhichDir(LCase(MemoryBank.CustomLibsSelected))
+    '        Dim Ext As String = WhichExt(LCase(MemoryBank.CustomLibsSelected))
+    '        Dim SelectedFile As String = list.SelectedItem.ToString
+    '        Dim ItemActive As Boolean
+    '        Dim ChangePhrase As String, ChangeAction As String
+    '        If SelectedFile.StartsWith("Ω") = True Then ItemActive = False Else ItemActive = True
+    '        Select Case ItemActive
+    '            Case True
+    '                ChangePhrase = "active"
+    '                ChangeAction = "inactive"
+    '            Case Else
+    '                ChangePhrase = "inactive"
+    '                ChangeAction = "active"
+    '        End Select
+    '        Dim answer As Integer
+    '        Dim NewName = ""
+    '        If LCase(Settings.SettingsAutoSave) = "on" Then
+    '            answer = vbYes
+    '        Else
+    '            answer = MsgBox(("The File " & Chr(34) & SelectedFile & Chr(34) & " is currently " & ChangePhrase & "." &
+    '                vbCrLf & vbCrLf & "Do you want to switch this file to " & ChangeAction & "?"), vbExclamation + vbYesNo)
+    '        End If
+    '        If answer = vbYes Then
+    '            If answer = vbYes And ItemActive = False Then
+    '                Dim OldName As String = Replace(SelectedFile, "Ω ", "Ω")
+    '                NewName = Replace(SelectedFile, "Ω ", "")
+    '                CustomLibsActiveChangeAction(checkbox, list, SelectedDir, Ext, ChangeAction, OldName, NewName, CheckState.Checked,
+    '                    MemoryBank.GroupForeColor)
+    '            End If
+    '            If answer = vbYes And ItemActive = True Then
+    '                NewName = "Ω" & SelectedFile
+    '                CustomLibsActiveChangeAction(checkbox, list, SelectedDir, Ext, ChangeAction, SelectedFile, NewName, CheckState.Unchecked,
+    '                    Color.Red)
+    '            End If
+    '            If answer = vbYes Then
+    '                Optioner.CustomLibsListPop(True)
+    '                list.SelectedItem = Replace(NewName, "Ω", "Ω ")
+    '            End If
+    '            If Not answer = vbYes Then MsgBox("No Changes Made")
+    '        End If
+    '    End If
+    'End Sub
+    'Private Shared Sub CustomLibsActiveChangeAction(checkbox As CheckBox, list As ListBox, dir As String, ext As String,
+    '    action As String, oldname As String, newname As String, checkstate As CheckState, color As Color)
+    '    'If LCase(MemoryBank.CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(MainWindow.CustomLibsPreviewImage)
+    '    If Not LCase(MemoryBank.CustomLibsSelected) = "avatars" Then JukeboxIntro()
+    '    Try
+    '        My.Computer.FileSystem.RenameFile(dir & "/" & oldname & ext, newname & ext)
+    '    Catch ex As Exception
+    '        ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " " &
+    '        ClarkTribeGames.Converters.UppercaseEachFirstLetter(action), "Rename Attempt", ex)
+    '        MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
+    '    End Try
+    '    checkbox.Enabled = True
+    '    Appearance.RefreshColors()
+    '    checkbox.CheckState = checkstate
+    '    checkbox.ForeColor = color
+    'End Sub
     Public Shared Sub CustomLibsPreviewPlay(list As ListBox, button As Button, check As CheckBox)
         CustomLibsPreviewPlayAction(list, button, check)
     End Sub
@@ -450,189 +532,143 @@
         JukeboxIntro()
         Appearance.RefreshColors()
     End Sub
-    Public Shared Sub CustomLibsEditButton(list As ListBox, button As Button, text As TextBox, avatar As PictureBox)
-        CustomLibsEditProcess(list, button, text, avatar)
-    End Sub
-    Private Shared Sub CustomLibsEditProcess(list As ListBox, button As Button, text As TextBox, avatar As PictureBox)
-        Dim SelectedDir As String = WhichDir(MemoryBank.CustomLibsSelected)
-        Dim Ext As String = WhichExt(MemoryBank.CustomLibsSelected)
-        Dim SelectedName As String = list.SelectedItem.ToString, OldFileName As String
-        OldFileName = SelectedDir & "/" & Replace(SelectedName, "Ω ", "Ω") & Ext
-        Select Case button.Text
-            Case "Edit Name"
-                'If MainWindow.CustomLibsEdit.Enabled = True Then
-                '    If System.IO.File.Exists(OldFileName) Then
-                '        Dim TempValue As String = text.Text
-                '        text.BackColor = Color.Red
-                '        text.Text = TempValue.Substring(0, TempValue.Length - 4)
-                '        text.ReadOnly = False
-                '        button.Text = "Confirm"
-                '    Else
-                '        MsgBox("Error: Could not verify file exists, please try again.", vbOKOnly)
-                '    End If
-                'End If
-            Case "Confirm"
-                Dim ClearToGo As Boolean = True
-                Dim CheckName = SelectedDir & "/" & Replace(text.Text, "Ω ", "Ω") & Ext
-                If System.IO.File.Exists(CheckName) Then
-                    ClearToGo = False
-                    MsgBox("The File Name " & text.Text & " already exists." & vbCrLf &
-                        vbCrLf & "Please try it again.", vbOKOnly + vbCritical)
-                End If
-                If ClearToGo = True Then
-                    Dim answer As Integer
-                    If LCase(Settings.SettingsAutoSave) = "on" Then
-                        answer = vbYes
-                    Else
-                        answer = MsgBox("Confirm:  Are you sure you want to rename " & OldFileName & " to " &
-                            Replace(text.Text, "Ω ", "Ω") & "?", vbYesNo)
-                    End If
-                    If answer = vbYes Then
-                        If LCase(MemoryBank.CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(avatar)
-                        If Not LCase(MemoryBank.CustomLibsSelected) = "avatars" Then JukeboxIntro()
-                        Try
-                            My.Computer.FileSystem.RenameFile(OldFileName, Replace(text.Text, "Ω ", "Ω") & Ext)
-                            Optioner.ResetEditPath(button, text)
-                            Optioner.CustomLibsListPop(True)
-                        Catch ex As Exception
-                            ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Rename", "Rename Attempt", ex)
-                            MsgBox(("Logged Error:  File locked, please try again." & vbCrLf), vbOKOnly)
-                        End Try
-                    End If
-                End If
-            Case Else
-                '
-        End Select
-    End Sub
-    Public Shared Sub CustomLibsDeleteButton(list As ListBox, button As Button, avatar As PictureBox)
-        CustomLibsDeleteProcess(list, button, avatar)
-    End Sub
-    Private Shared Sub CustomLibsDeleteProcess(list As ListBox, button As Button, avatar As PictureBox)
-        If list.Visible = True And button.Enabled = True Then
-            Dim SelectedDir = WhichDir(LCase(MemoryBank.CustomLibsSelected))
-            Dim Ext = WhichExt(LCase(MemoryBank.CustomLibsSelected))
-            Dim SelectedName As String = list.SelectedItem.ToString, FileToGo As String
-            Select Case (button.Text)
-                Case "Delete"
-                    FileToGo = SelectedDir & "/" & Replace(SelectedName, "Ω ", "Ω") & Ext
-                    If button.Enabled = True Then
-                        If System.IO.File.Exists(FileToGo) Then
-                            Dim answer As Integer
-                            If LCase(Settings.SettingsAutoSave) = "on" Then
-                                answer = vbYes
-                            Else
-                                answer = MsgBox("Confirm:  Do you want to delete " & Replace(SelectedName, "Ω ", "Ω") & "?", vbYesNo)
-                            End If
-                            If answer = vbYes Then
-                                If LCase(MemoryBank.CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(avatar)
-                                If Not LCase(MemoryBank.CustomLibsSelected) = "avatars" Then JukeboxIntro()
-                                Try
-                                    ClarkTribeGames.FilesFolders.DeleteFile(FileToGo)
-                                    Optioner.CustomLibsListPop(True)
-                                Catch ex As Exception
-                                    ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Delete", "Delete Attempt", ex)
-                                    MsgBox("Logged Error:  File locked, please try again." & vbCrLf, vbOKOnly)
-                                End Try
-                            Else
-                                MsgBox("Operation Cancelled.", vbOKOnly)
-                            End If
-                        Else
-                            MsgBox("Error: Could not verify file exists, please try again.", vbOKOnly)
-                        End If
-                    End If
-                Case "Select"
-                    Dim SelectedType As String = ""
-                    Dim CustSetting As String = "on-" & SelectedName
-                    Dim answer As Integer
-                    If LCase(Settings.SettingsAutoSave) = "on" Then
-                        answer = vbYes
-                    Else
-                        answer = MsgBox("Confirm:  Do you want to change the Custom " & MemoryBank.SelectCustomTrack.Replace("OptionsAudioSelect", "") _
-                            & " with " & SelectedName & "?", vbYesNo)
-                    End If
-                    If answer = vbYes Then
-                        Select Case MemoryBank.SelectCustomTrack
-                            'Case MainWindow.OptionsAudioSelectIntro.Name.ToString
-                            '    SelectedType = "custi"
-                            '    Settings.SettingsCustI = CustSetting
-                            '    MainWindow.OptionsAudioTextIntro.Visible = True
-                            '    MainWindow.OptionsAudioTextIntro.Text = SelectedName
-                            'Case MainWindow.OptionsAudioSelectBattle.Name.ToString
-                            '    SelectedType = "custb"
-                            '    Settings.SettingsCustB = CustSetting
-                            '    MainWindow.OptionsAudioTextBattle.Visible = True
-                            '    MainWindow.OptionsAudioTextBattle.Text = SelectedName
-                            'Case MainWindow.OptionsAudioSelectVictory.Name.ToString
-                            '    SelectedType = "custw"
-                            '    Settings.SettingsCustW = CustSetting
-                            '    MainWindow.OptionsAudioTextVictory.Visible = True
-                            '    MainWindow.OptionsAudioTextVictory.Text = SelectedName
-                            'Case MainWindow.OptionsAudioSelectDefeat.Name.ToString
-                            '    SelectedType = "custl"
-                            '    Settings.SettingsCustL = CustSetting
-                            '    MainWindow.OptionsAudioTextDefeat.Visible = True
-                            '    MainWindow.OptionsAudioTextDefeat.Text = SelectedName
-                        End Select
-                        ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", SelectedType, {"settingConfig"}, {CustSetting})
-                        Optioner.CheckCustomTracks("all")
-                        If SelectedType = "custi" Then
-                            ClarkTribeGames.Jukebox.IntroInPlay = False
-                            Tools.SwitchToIntro()
-                        End If
-                    End If
-            End Select
-        End If
-    End Sub
-    Public Shared Sub CustomLibsImportButton()
-        CustomLibsImportProcess()
-    End Sub
-    Private Shared Sub CustomLibsImportProcess()
-        Dim SelectedDir As String = WhichDir(LCase(MemoryBank.CustomLibsSelected))
-        Dim Ext As String = WhichExt(LCase(MemoryBank.CustomLibsSelected))
-        Dim SourceFiles() As String, NewFile As String
-        Dim fd As New OpenFileDialog With {
-            .Title = "Custom " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(MemoryBank.CustomLibsSelected) & " File(s) To Import",
-            .InitialDirectory = SelectedDir,
-            .Filter = Replace(Ext, ".", "") & " Files (*" & Ext & ")|*" & Ext,
-            .FilterIndex = 1,
-            .RestoreDirectory = True,
-            .Multiselect = True
-        }
-        If fd.ShowDialog() = DialogResult.OK Then
-            SourceFiles = fd.FileNames
-            For Each SourceFile In SourceFiles
-                Dim ConfirmExt As String = SourceFile.Substring(SourceFile.Length - 4, 4)
-                If LCase(ConfirmExt) = Ext Then
-                    Dim SourceName As String = Replace(SourceFile.Split("\").Last(), Ext, "")
-                    NewFile = SelectedDir & "/" & Replace(SourceName, "Ω ", "Ω") & Ext
-                    If Not LCase(MemoryBank.CustomLibsSelected) = "avatars" Then
-                        Try
-                            FileSystem.FileCopy(SourceFile, NewFile)
-                        Catch ex As Exception
-                            ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Import", "Import Attempt - " &
-                                SourceName & Ext, ex)
-                            MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
-                        End Try
-                    Else
-                        Try
-                            NewFile = LCase(NewFile)
-                            NewFile = NewFile.Replace(Ext & Ext, Ext)
-                            NewFile = ClarkTribeGames.Converters.UppercaseEachFirstLetter(NewFile)
-                            ClarkTribeGames.Converters.ResizeImage(SourceFile, NewFile, 200, 200)
-                            'Converters.ResizeImage(SourceFile, NewFile.Substring(0, NewFile.Length - 4), 200, 200)
-                        Catch ex As Exception
-                            ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Import", "Import Attempt - " &
-                                SourceName & Ext, ex)
-                            MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
-                        End Try
-                    End If
-                    Optioner.CustomLibsListPop(True)
-                Else
-                    MsgBox("Invalid file extension.  Please be sure to select a " & Ext & " file.", vbOKOnly + vbCritical)
-                End If
-            Next
-        End If
-    End Sub
+    'Public Shared Sub CustomLibsEditButton(list As ListBox, button As Button, text As TextBox, avatar As PictureBox)
+    '    CustomLibsEditProcess(list, button, text, avatar)
+    'End Sub
+    'Private Shared Sub CustomLibsEditProcess(list As ListBox, button As Button, text As TextBox, avatar As PictureBox)
+    '    Dim SelectedDir As String = WhichDir(MemoryBank.CustomLibsSelected)
+    '    Dim Ext As String = WhichExt(MemoryBank.CustomLibsSelected)
+    '    Dim SelectedName As String = list.SelectedItem.ToString, OldFileName As String
+    '    OldFileName = SelectedDir & "/" & Replace(SelectedName, "Ω ", "Ω") & Ext
+    '    Select Case button.Text
+    '        Case "Edit Name"
+    '            'If MainWindow.CustomLibsEdit.Enabled = True Then
+    '            '    If System.IO.File.Exists(OldFileName) Then
+    '            '        Dim TempValue As String = text.Text
+    '            '        text.BackColor = Color.Red
+    '            '        text.Text = TempValue.Substring(0, TempValue.Length - 4)
+    '            '        text.ReadOnly = False
+    '            '        button.Text = "Confirm"
+    '            '    Else
+    '            '        MsgBox("Error: Could not verify file exists, please try again.", vbOKOnly)
+    '            '    End If
+    '            'End If
+    '        Case "Confirm"
+    '            Dim ClearToGo As Boolean = True
+    '            Dim CheckName = SelectedDir & "/" & Replace(text.Text, "Ω ", "Ω") & Ext
+    '            If System.IO.File.Exists(CheckName) Then
+    '                ClearToGo = False
+    '                MsgBox("The File Name " & text.Text & " already exists." & vbCrLf &
+    '                    vbCrLf & "Please try it again.", vbOKOnly + vbCritical)
+    '            End If
+    '            If ClearToGo = True Then
+    '                Dim answer As Integer
+    '                If LCase(Settings.SettingsAutoSave) = "on" Then
+    '                    answer = vbYes
+    '                Else
+    '                    answer = MsgBox("Confirm:  Are you sure you want to rename " & OldFileName & " to " &
+    '                        Replace(text.Text, "Ω ", "Ω") & "?", vbYesNo)
+    '                End If
+    '                If answer = vbYes Then
+    '                    If LCase(MemoryBank.CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(avatar)
+    '                    If Not LCase(MemoryBank.CustomLibsSelected) = "avatars" Then JukeboxIntro()
+    '                    Try
+    '                        My.Computer.FileSystem.RenameFile(OldFileName, Replace(text.Text, "Ω ", "Ω") & Ext)
+    '                        Optioner.ResetEditPath(button, text)
+    '                        Optioner.CustomLibsListPop(True)
+    '                    Catch ex As Exception
+    '                        ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Rename", "Rename Attempt", ex)
+    '                        MsgBox(("Logged Error:  File locked, please try again." & vbCrLf), vbOKOnly)
+    '                    End Try
+    '                End If
+    '            End If
+    '        Case Else
+    '            '
+    '    End Select
+    'End Sub
+    'Public Shared Sub CustomLibsDeleteButton(list As ListBox, button As Button, avatar As PictureBox)
+    '    CustomLibsDeleteProcess(list, button, avatar)
+    'End Sub
+    'Private Shared Sub CustomLibsDeleteProcess(list As ListBox, button As Button, avatar As PictureBox)
+    '    If list.Visible = True And button.Enabled = True Then
+    '        Dim SelectedDir = WhichDir(LCase(MemoryBank.CustomLibsSelected))
+    '        Dim Ext = WhichExt(LCase(MemoryBank.CustomLibsSelected))
+    '        Dim SelectedName As String = list.SelectedItem.ToString, FileToGo As String
+    '        Select Case (button.Text)
+    '            Case "Delete"
+    '                FileToGo = SelectedDir & "/" & Replace(SelectedName, "Ω ", "Ω") & Ext
+    '                If button.Enabled = True Then
+    '                    If System.IO.File.Exists(FileToGo) Then
+    '                        Dim answer As Integer
+    '                        If LCase(Settings.SettingsAutoSave) = "on" Then
+    '                            answer = vbYes
+    '                        Else
+    '                            answer = MsgBox("Confirm:  Do you want to delete " & Replace(SelectedName, "Ω ", "Ω") & "?", vbYesNo)
+    '                        End If
+    '                        If answer = vbYes Then
+    '                            If LCase(MemoryBank.CustomLibsSelected) = "avatars" Then Avatars.ReleaseAvatarFromBox(avatar)
+    '                            If Not LCase(MemoryBank.CustomLibsSelected) = "avatars" Then JukeboxIntro()
+    '                            Try
+    '                                ClarkTribeGames.FilesFolders.DeleteFile(FileToGo)
+    '                                Optioner.CustomLibsListPop(True)
+    '                            Catch ex As Exception
+    '                                ClarkTribeGames.Logger.WriteToLog("Custom " & MemoryBank.CustomLibsSelected & " Delete", "Delete Attempt", ex)
+    '                                MsgBox("Logged Error:  File locked, please try again." & vbCrLf, vbOKOnly)
+    '                            End Try
+    '                        Else
+    '                            MsgBox("Operation Cancelled.", vbOKOnly)
+    '                        End If
+    '                    Else
+    '                        MsgBox("Error: Could not verify file exists, please try again.", vbOKOnly)
+    '                    End If
+    '                End If
+    '            Case "Select"
+    '                Dim SelectedType As String = ""
+    '                Dim CustSetting As String = "on-" & SelectedName
+    '                Dim answer As Integer
+    '                If LCase(Settings.SettingsAutoSave) = "on" Then
+    '                    answer = vbYes
+    '                Else
+    '                    answer = MsgBox("Confirm:  Do you want to change the Custom " & MemoryBank.SelectCustomTrack.Replace("OptionsAudioSelect", "") _
+    '                        & " with " & SelectedName & "?", vbYesNo)
+    '                End If
+    '                If answer = vbYes Then
+    '                    Select Case MemoryBank.SelectCustomTrack
+    '                        'Case MainWindow.OptionsAudioSelectIntro.Name.ToString
+    '                        '    SelectedType = "custi"
+    '                        '    Settings.SettingsCustI = CustSetting
+    '                        '    MainWindow.OptionsAudioTextIntro.Visible = True
+    '                        '    MainWindow.OptionsAudioTextIntro.Text = SelectedName
+    '                        'Case MainWindow.OptionsAudioSelectBattle.Name.ToString
+    '                        '    SelectedType = "custb"
+    '                        '    Settings.SettingsCustB = CustSetting
+    '                        '    MainWindow.OptionsAudioTextBattle.Visible = True
+    '                        '    MainWindow.OptionsAudioTextBattle.Text = SelectedName
+    '                        'Case MainWindow.OptionsAudioSelectVictory.Name.ToString
+    '                        '    SelectedType = "custw"
+    '                        '    Settings.SettingsCustW = CustSetting
+    '                        '    MainWindow.OptionsAudioTextVictory.Visible = True
+    '                        '    MainWindow.OptionsAudioTextVictory.Text = SelectedName
+    '                        'Case MainWindow.OptionsAudioSelectDefeat.Name.ToString
+    '                        '    SelectedType = "custl"
+    '                        '    Settings.SettingsCustL = CustSetting
+    '                        '    MainWindow.OptionsAudioTextDefeat.Visible = True
+    '                        '    MainWindow.OptionsAudioTextDefeat.Text = SelectedName
+    '                    End Select
+    '                    ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", SelectedType, {"settingConfig"}, {CustSetting})
+    '                    Optioner.CheckCustomTracks("all")
+    '                    If SelectedType = "custi" Then
+    '                        ClarkTribeGames.Jukebox.IntroInPlay = False
+    '                        Tools.SwitchToIntro()
+    '                    End If
+    '                End If
+    '        End Select
+    '    End If
+    'End Sub
+    'Public Shared Sub CustomLibsImportButton()
+    '    CustomLibsImportProcess()
+    'End Sub
+
     'Audio Section
     Private Shared Sub JukeboxIntro()
         'Jukebox.ReturnToIntro(MainWindow.CustomLibsPreviewStop, MainWindow.CustomLibsPreviewPlay, MainWindow.CustomLibsList,
@@ -835,36 +871,36 @@
         'MainWindow.OptionsAudioSelectDefeat.ForeColor = MemoryBank.ButtonForeColor
         'MemoryBank.SelectCustomTrack = ""
     End Sub
-    Private Shared Sub CustomLibsListPop(omega As Boolean)
-        Select Case LCase(MemoryBank.CustomLibsSelected)
-            'Case "avatars"
-            '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.AvatarsDir, MemoryBank.AvatarsExtF,
-            '        MainWindow.CustomLibsImport, omega)
-            'Case "music"
-            '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.MusicDir, MemoryBank.MusicExtF,
-            '        MainWindow.CustomLibsImport, omega)
-            'Case "sounds"
-            '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.SoundDir, MemoryBank.SoundExtF,
-            '        MainWindow.CustomLibsImport, omega)
-            'Case "tracks"
-            '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.MusicDir, MemoryBank.MusicExtF,
-            '        MainWindow.CustomLibsDelete, omega)
-            'Case Else
-            '    '
-        End Select
-        'MainWindow.CustomLibsPath.Text = ""
-        'If Not LCase(MemoryBank.CustomLibsSelected) = "tracks" Then
-        '    MainWindow.CustomLibsActive.Enabled = False
-        '    MainWindow.CustomLibsActive.CheckState = CheckState.Unchecked
-        '    MainWindow.CustomLibsEdit.Enabled = False
-        '    MainWindow.CustomLibsDelete.Enabled = False
-        '    MainWindow.CustomLibsSave.Visible = False
-        'Else
-        '    MainWindow.CustomLibsSave.Visible = True
-        'End If
-        Appearance.RefreshColors()
-        'Optioner.ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
-    End Sub
+    'Private Shared Sub CustomLibsListPop(omega As Boolean)
+    '    Select Case LCase(MemoryBank.CustomLibsSelected)
+    '        'Case "avatars"
+    '        '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.AvatarsDir, MemoryBank.AvatarsExtF,
+    '        '        MainWindow.CustomLibsImport, omega)
+    '        'Case "music"
+    '        '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.MusicDir, MemoryBank.MusicExtF,
+    '        '        MainWindow.CustomLibsImport, omega)
+    '        'Case "sounds"
+    '        '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.SoundDir, MemoryBank.SoundExtF,
+    '        '        MainWindow.CustomLibsImport, omega)
+    '        'Case "tracks"
+    '        '    Tools.CustomLibsListBuilder(MainWindow.CustomLibsList, MemoryBank.MusicDir, MemoryBank.MusicExtF,
+    '        '        MainWindow.CustomLibsDelete, omega)
+    '        'Case Else
+    '        '    '
+    '    End Select
+    '    'MainWindow.CustomLibsPath.Text = ""
+    '    'If Not LCase(MemoryBank.CustomLibsSelected) = "tracks" Then
+    '    '    MainWindow.CustomLibsActive.Enabled = False
+    '    '    MainWindow.CustomLibsActive.CheckState = CheckState.Unchecked
+    '    '    MainWindow.CustomLibsEdit.Enabled = False
+    '    '    MainWindow.CustomLibsDelete.Enabled = False
+    '    '    MainWindow.CustomLibsSave.Visible = False
+    '    'Else
+    '    '    MainWindow.CustomLibsSave.Visible = True
+    '    'End If
+    '    Appearance.RefreshColors()
+    '    'Optioner.ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
+    'End Sub
     Public Shared Sub OptionsAudioCheckMusic(type As String, checkbox As CheckBox, custom As CheckBox)
         Select Case LCase(type)
             Case "music"
