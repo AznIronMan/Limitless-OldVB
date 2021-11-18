@@ -111,7 +111,7 @@
                 SetAvatar(GetAvatarFile(Files, picks, 8), MainWindow.WelcomeImage08)
                 SetAvatar(GetAvatarFile(Files, picks, 9), MainWindow.WelcomeImage09)
                 SetAvatar(GetAvatarFile(Files, picks, 10), MainWindow.WelcomeImage10)
-                SetAvatar(GetAvatarFile(Files, picks, 10), MainWindow.WelcomeImage11)
+                SetAvatar(GetAvatarFile(Files, picks, 11), MainWindow.WelcomeImage11)
         End Select
     End Sub
     Public Shared Function GetAvatarFile(files As IO.FileInfo(), picks As List(Of Int32), whichone As Integer) As String

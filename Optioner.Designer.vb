@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Optioner
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Optioner
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TitleBarPanel = New System.Windows.Forms.Panel()
         Me.CloseButton = New System.Windows.Forms.Panel()
@@ -28,25 +28,41 @@ Partial Class Optioner
         Me.TitleLabel = New System.Windows.Forms.Label()
         Me.BackgroundPanel = New System.Windows.Forms.Panel()
         Me.OptionsPanel = New System.Windows.Forms.Panel()
-        Me.UpdaterBackButton = New System.Windows.Forms.Button()
-        Me.DBUpdateButton = New System.Windows.Forms.Button()
-        Me.OnlineDBBox = New System.Windows.Forms.TextBox()
-        Me.OnlineDBText = New System.Windows.Forms.Label()
-        Me.SelectDBDrop = New System.Windows.Forms.ComboBox()
-        Me.SelectDBText = New System.Windows.Forms.Label()
-        Me.InstallDBBox = New System.Windows.Forms.TextBox()
-        Me.InstallDBText = New System.Windows.Forms.Label()
-        Me.DBStatusText = New System.Windows.Forms.Label()
-        Me.AvailGameBox = New System.Windows.Forms.TextBox()
-        Me.InstallGameBox = New System.Windows.Forms.TextBox()
-        Me.GameUpdateButton = New System.Windows.Forms.Button()
-        Me.AvailGameText = New System.Windows.Forms.Label()
-        Me.InstallGameText = New System.Windows.Forms.Label()
-        Me.GameStatusText = New System.Windows.Forms.Label()
+        Me.OptionsMainPanel = New System.Windows.Forms.Panel()
+        Me.AvatarPanel = New System.Windows.Forms.Panel()
+        Me.AvaDeleteButton = New System.Windows.Forms.Button()
+        Me.AvaRenameButton = New System.Windows.Forms.Button()
+        Me.DimText = New System.Windows.Forms.Label()
+        Me.DimLabel = New System.Windows.Forms.Label()
+        Me.AvatarText = New System.Windows.Forms.Label()
+        Me.AvatarImage = New System.Windows.Forms.PictureBox()
+        Me.SoundsPanel = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.MusicPanel = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.DBPanel = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ColorsPanel = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.OptionSelectText = New System.Windows.Forms.Label()
+        Me.OptionList = New System.Windows.Forms.ListBox()
+        Me.OptionsItemText = New System.Windows.Forms.Label()
+        Me.OptionsFileText = New System.Windows.Forms.Label()
+        Me.OptionsDrop = New System.Windows.Forms.ComboBox()
+        Me.OptionAddButton = New System.Windows.Forms.Button()
+        Me.OptionRefreshButton = New System.Windows.Forms.Button()
+        Me.OptionerBackButton = New System.Windows.Forms.Button()
         Me.TitleBarPanel.SuspendLayout()
         Me.CloseButton.SuspendLayout()
         Me.BackgroundPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
+        Me.OptionsMainPanel.SuspendLayout()
+        Me.AvatarPanel.SuspendLayout()
+        CType(Me.AvatarImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SoundsPanel.SuspendLayout()
+        Me.MusicPanel.SuspendLayout()
+        Me.DBPanel.SuspendLayout()
+        Me.ColorsPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'TitleBarPanel
@@ -115,190 +131,279 @@ Partial Class Optioner
         '
         Me.OptionsPanel.BackColor = System.Drawing.SystemColors.ControlText
         Me.OptionsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.OptionsPanel.Controls.Add(Me.UpdaterBackButton)
-        Me.OptionsPanel.Controls.Add(Me.DBUpdateButton)
-        Me.OptionsPanel.Controls.Add(Me.OnlineDBBox)
-        Me.OptionsPanel.Controls.Add(Me.OnlineDBText)
-        Me.OptionsPanel.Controls.Add(Me.SelectDBDrop)
-        Me.OptionsPanel.Controls.Add(Me.SelectDBText)
-        Me.OptionsPanel.Controls.Add(Me.InstallDBBox)
-        Me.OptionsPanel.Controls.Add(Me.InstallDBText)
-        Me.OptionsPanel.Controls.Add(Me.DBStatusText)
-        Me.OptionsPanel.Controls.Add(Me.AvailGameBox)
-        Me.OptionsPanel.Controls.Add(Me.InstallGameBox)
-        Me.OptionsPanel.Controls.Add(Me.GameUpdateButton)
-        Me.OptionsPanel.Controls.Add(Me.AvailGameText)
-        Me.OptionsPanel.Controls.Add(Me.InstallGameText)
-        Me.OptionsPanel.Controls.Add(Me.GameStatusText)
+        Me.OptionsPanel.Controls.Add(Me.OptionsMainPanel)
+        Me.OptionsPanel.Controls.Add(Me.OptionSelectText)
+        Me.OptionsPanel.Controls.Add(Me.OptionList)
+        Me.OptionsPanel.Controls.Add(Me.OptionsItemText)
+        Me.OptionsPanel.Controls.Add(Me.OptionsFileText)
+        Me.OptionsPanel.Controls.Add(Me.OptionsDrop)
+        Me.OptionsPanel.Controls.Add(Me.OptionAddButton)
+        Me.OptionsPanel.Controls.Add(Me.OptionRefreshButton)
+        Me.OptionsPanel.Controls.Add(Me.OptionerBackButton)
         Me.OptionsPanel.Location = New System.Drawing.Point(10, 9)
         Me.OptionsPanel.Name = "OptionsPanel"
         Me.OptionsPanel.Size = New System.Drawing.Size(776, 544)
         Me.OptionsPanel.TabIndex = 11
         '
-        'UpdaterBackButton
+        'OptionsMainPanel
         '
-        Me.UpdaterBackButton.BackColor = System.Drawing.SystemColors.ControlText
-        Me.UpdaterBackButton.BackgroundImage = Global.Limitless.My.Resources.Resources.back
-        Me.UpdaterBackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.UpdaterBackButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.UpdaterBackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.UpdaterBackButton.ForeColor = System.Drawing.SystemColors.Control
-        Me.UpdaterBackButton.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.UpdaterBackButton.Location = New System.Drawing.Point(3, 489)
-        Me.UpdaterBackButton.Name = "UpdaterBackButton"
-        Me.UpdaterBackButton.Size = New System.Drawing.Size(50, 50)
-        Me.UpdaterBackButton.TabIndex = 32
-        Me.UpdaterBackButton.UseVisualStyleBackColor = False
+        Me.OptionsMainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.OptionsMainPanel.Controls.Add(Me.AvatarPanel)
+        Me.OptionsMainPanel.Controls.Add(Me.SoundsPanel)
+        Me.OptionsMainPanel.Controls.Add(Me.MusicPanel)
+        Me.OptionsMainPanel.Controls.Add(Me.DBPanel)
+        Me.OptionsMainPanel.Controls.Add(Me.ColorsPanel)
+        Me.OptionsMainPanel.Location = New System.Drawing.Point(6, 45)
+        Me.OptionsMainPanel.Name = "OptionsMainPanel"
+        Me.OptionsMainPanel.Size = New System.Drawing.Size(416, 441)
+        Me.OptionsMainPanel.TabIndex = 43
         '
-        'DBUpdateButton
+        'AvatarPanel
         '
-        Me.DBUpdateButton.Enabled = False
-        Me.DBUpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.DBUpdateButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
-        Me.DBUpdateButton.Location = New System.Drawing.Point(312, 495)
-        Me.DBUpdateButton.Name = "DBUpdateButton"
-        Me.DBUpdateButton.Size = New System.Drawing.Size(150, 23)
-        Me.DBUpdateButton.TabIndex = 20
-        Me.DBUpdateButton.Text = "Update Database"
-        Me.DBUpdateButton.UseVisualStyleBackColor = True
+        Me.AvatarPanel.Controls.Add(Me.AvaDeleteButton)
+        Me.AvatarPanel.Controls.Add(Me.AvaRenameButton)
+        Me.AvatarPanel.Controls.Add(Me.DimText)
+        Me.AvatarPanel.Controls.Add(Me.DimLabel)
+        Me.AvatarPanel.Controls.Add(Me.AvatarText)
+        Me.AvatarPanel.Controls.Add(Me.AvatarImage)
+        Me.AvatarPanel.Location = New System.Drawing.Point(8, 7)
+        Me.AvatarPanel.Name = "AvatarPanel"
+        Me.AvatarPanel.Size = New System.Drawing.Size(398, 423)
+        Me.AvatarPanel.TabIndex = 0
+        Me.AvatarPanel.Visible = False
         '
-        'OnlineDBBox
+        'AvaDeleteButton
         '
-        Me.OnlineDBBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.OnlineDBBox.ForeColor = System.Drawing.SystemColors.Window
-        Me.OnlineDBBox.Location = New System.Drawing.Point(406, 435)
-        Me.OnlineDBBox.Name = "OnlineDBBox"
-        Me.OnlineDBBox.ReadOnly = True
-        Me.OnlineDBBox.Size = New System.Drawing.Size(150, 20)
-        Me.OnlineDBBox.TabIndex = 19
-        Me.OnlineDBBox.TabStop = False
+        Me.AvaDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.AvaDeleteButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.AvaDeleteButton.Location = New System.Drawing.Point(207, 357)
+        Me.AvaDeleteButton.Name = "AvaDeleteButton"
+        Me.AvaDeleteButton.Size = New System.Drawing.Size(150, 23)
+        Me.AvaDeleteButton.TabIndex = 44
+        Me.AvaDeleteButton.Text = "Delete Avatar"
+        Me.AvaDeleteButton.UseVisualStyleBackColor = True
         '
-        'OnlineDBText
+        'AvaRenameButton
         '
-        Me.OnlineDBText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.OnlineDBText.Location = New System.Drawing.Point(145, 438)
-        Me.OnlineDBText.Name = "OnlineDBText"
-        Me.OnlineDBText.Size = New System.Drawing.Size(226, 13)
-        Me.OnlineDBText.TabIndex = 18
-        Me.OnlineDBText.Text = "Online Database Version:"
-        Me.OnlineDBText.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AvaRenameButton.Enabled = False
+        Me.AvaRenameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.AvaRenameButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.AvaRenameButton.Location = New System.Drawing.Point(40, 357)
+        Me.AvaRenameButton.Name = "AvaRenameButton"
+        Me.AvaRenameButton.Size = New System.Drawing.Size(150, 23)
+        Me.AvaRenameButton.TabIndex = 43
+        Me.AvaRenameButton.Text = "Rename Avatar"
+        Me.AvaRenameButton.UseVisualStyleBackColor = True
         '
-        'SelectDBDrop
+        'DimText
         '
-        Me.SelectDBDrop.BackColor = System.Drawing.SystemColors.ControlText
-        Me.SelectDBDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SelectDBDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SelectDBDrop.ForeColor = System.Drawing.SystemColors.Control
-        Me.SelectDBDrop.FormattingEnabled = True
-        Me.SelectDBDrop.Location = New System.Drawing.Point(406, 309)
-        Me.SelectDBDrop.Name = "SelectDBDrop"
-        Me.SelectDBDrop.Size = New System.Drawing.Size(150, 21)
-        Me.SelectDBDrop.TabIndex = 17
+        Me.DimText.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DimText.Location = New System.Drawing.Point(204, 306)
+        Me.DimText.Name = "DimText"
+        Me.DimText.Size = New System.Drawing.Size(155, 21)
+        Me.DimText.TabIndex = 42
+        Me.DimText.Text = "000 x 000 pixels"
+        Me.DimText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.DimText.Visible = False
         '
-        'SelectDBText
+        'DimLabel
         '
-        Me.SelectDBText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.SelectDBText.Location = New System.Drawing.Point(142, 318)
-        Me.SelectDBText.Name = "SelectDBText"
-        Me.SelectDBText.Size = New System.Drawing.Size(229, 13)
-        Me.SelectDBText.TabIndex = 16
-        Me.SelectDBText.Text = "Selected Database:"
-        Me.SelectDBText.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.DimLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DimLabel.Location = New System.Drawing.Point(40, 306)
+        Me.DimLabel.Name = "DimLabel"
+        Me.DimLabel.Size = New System.Drawing.Size(155, 21)
+        Me.DimLabel.TabIndex = 41
+        Me.DimLabel.Text = "Image Dimensions:"
+        Me.DimLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.DimLabel.Visible = False
         '
-        'InstallDBBox
+        'AvatarText
         '
-        Me.InstallDBBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.InstallDBBox.ForeColor = System.Drawing.SystemColors.Window
-        Me.InstallDBBox.Location = New System.Drawing.Point(406, 375)
-        Me.InstallDBBox.Name = "InstallDBBox"
-        Me.InstallDBBox.ReadOnly = True
-        Me.InstallDBBox.Size = New System.Drawing.Size(150, 20)
-        Me.InstallDBBox.TabIndex = 15
-        Me.InstallDBBox.TabStop = False
+        Me.AvatarText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.AvatarText.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AvatarText.Location = New System.Drawing.Point(40, 250)
+        Me.AvatarText.Name = "AvatarText"
+        Me.AvatarText.Size = New System.Drawing.Size(319, 21)
+        Me.AvatarText.TabIndex = 40
+        Me.AvatarText.Text = "Select an Avatar"
+        Me.AvatarText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'InstallDBText
+        'AvatarImage
         '
-        Me.InstallDBText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.InstallDBText.Location = New System.Drawing.Point(142, 378)
-        Me.InstallDBText.Name = "InstallDBText"
-        Me.InstallDBText.Size = New System.Drawing.Size(229, 13)
-        Me.InstallDBText.TabIndex = 14
-        Me.InstallDBText.Text = "Installed Database Version:"
-        Me.InstallDBText.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AvatarImage.BackgroundImage = Global.Limitless.My.Resources.Resources._empty_
+        Me.AvatarImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AvatarImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.AvatarImage.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AvatarImage.Location = New System.Drawing.Point(99, 20)
+        Me.AvatarImage.Name = "AvatarImage"
+        Me.AvatarImage.Size = New System.Drawing.Size(200, 200)
+        Me.AvatarImage.TabIndex = 4
+        Me.AvatarImage.TabStop = False
         '
-        'DBStatusText
+        'SoundsPanel
         '
-        Me.DBStatusText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DBStatusText.Location = New System.Drawing.Point(0, 255)
-        Me.DBStatusText.Name = "DBStatusText"
-        Me.DBStatusText.Size = New System.Drawing.Size(775, 21)
-        Me.DBStatusText.TabIndex = 13
-        Me.DBStatusText.Text = "Database Version"
-        Me.DBStatusText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.SoundsPanel.Controls.Add(Me.Label1)
+        Me.SoundsPanel.Location = New System.Drawing.Point(8, 7)
+        Me.SoundsPanel.Name = "SoundsPanel"
+        Me.SoundsPanel.Size = New System.Drawing.Size(398, 423)
+        Me.SoundsPanel.TabIndex = 5
+        Me.SoundsPanel.Visible = False
         '
-        'AvailGameBox
+        'Label1
         '
-        Me.AvailGameBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.AvailGameBox.ForeColor = System.Drawing.SystemColors.Window
-        Me.AvailGameBox.Location = New System.Drawing.Point(406, 135)
-        Me.AvailGameBox.Name = "AvailGameBox"
-        Me.AvailGameBox.ReadOnly = True
-        Me.AvailGameBox.Size = New System.Drawing.Size(150, 20)
-        Me.AvailGameBox.TabIndex = 12
-        Me.AvailGameBox.TabStop = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(170, 174)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(55, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Sounds"
         '
-        'InstallGameBox
+        'MusicPanel
         '
-        Me.InstallGameBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(5, Byte), Integer))
-        Me.InstallGameBox.ForeColor = System.Drawing.SystemColors.Window
-        Me.InstallGameBox.Location = New System.Drawing.Point(406, 75)
-        Me.InstallGameBox.Name = "InstallGameBox"
-        Me.InstallGameBox.ReadOnly = True
-        Me.InstallGameBox.Size = New System.Drawing.Size(150, 20)
-        Me.InstallGameBox.TabIndex = 11
-        Me.InstallGameBox.TabStop = False
+        Me.MusicPanel.Controls.Add(Me.Label2)
+        Me.MusicPanel.Location = New System.Drawing.Point(8, 7)
+        Me.MusicPanel.Name = "MusicPanel"
+        Me.MusicPanel.Size = New System.Drawing.Size(398, 423)
+        Me.MusicPanel.TabIndex = 4
+        Me.MusicPanel.Visible = False
         '
-        'GameUpdateButton
+        'Label2
         '
-        Me.GameUpdateButton.Enabled = False
-        Me.GameUpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GameUpdateButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
-        Me.GameUpdateButton.Location = New System.Drawing.Point(312, 195)
-        Me.GameUpdateButton.Name = "GameUpdateButton"
-        Me.GameUpdateButton.Size = New System.Drawing.Size(150, 23)
-        Me.GameUpdateButton.TabIndex = 10
-        Me.GameUpdateButton.Text = "Install Game Update"
-        Me.GameUpdateButton.UseVisualStyleBackColor = True
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(172, 205)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(47, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Music"
         '
-        'AvailGameText
+        'DBPanel
         '
-        Me.AvailGameText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.AvailGameText.Location = New System.Drawing.Point(145, 138)
-        Me.AvailGameText.Name = "AvailGameText"
-        Me.AvailGameText.Size = New System.Drawing.Size(226, 13)
-        Me.AvailGameText.TabIndex = 9
-        Me.AvailGameText.Text = "Available Game Version:"
-        Me.AvailGameText.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.DBPanel.Controls.Add(Me.Label3)
+        Me.DBPanel.Location = New System.Drawing.Point(8, 7)
+        Me.DBPanel.Name = "DBPanel"
+        Me.DBPanel.Size = New System.Drawing.Size(398, 423)
+        Me.DBPanel.TabIndex = 3
+        Me.DBPanel.Visible = False
         '
-        'InstallGameText
+        'Label3
         '
-        Me.InstallGameText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.InstallGameText.Location = New System.Drawing.Point(142, 78)
-        Me.InstallGameText.Name = "InstallGameText"
-        Me.InstallGameText.Size = New System.Drawing.Size(229, 13)
-        Me.InstallGameText.TabIndex = 8
-        Me.InstallGameText.Text = "Installed Game Version:"
-        Me.InstallGameText.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(172, 205)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(23, 13)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "DB"
         '
-        'GameStatusText
+        'ColorsPanel
         '
-        Me.GameStatusText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.GameStatusText.Location = New System.Drawing.Point(0, 15)
-        Me.GameStatusText.Name = "GameStatusText"
-        Me.GameStatusText.Size = New System.Drawing.Size(775, 21)
-        Me.GameStatusText.TabIndex = 7
-        Me.GameStatusText.Text = "Game Version"
-        Me.GameStatusText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ColorsPanel.Controls.Add(Me.Label4)
+        Me.ColorsPanel.Location = New System.Drawing.Point(8, 7)
+        Me.ColorsPanel.Name = "ColorsPanel"
+        Me.ColorsPanel.Size = New System.Drawing.Size(398, 423)
+        Me.ColorsPanel.TabIndex = 2
+        Me.ColorsPanel.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(172, 205)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(55, 13)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "Colors"
+        '
+        'OptionSelectText
+        '
+        Me.OptionSelectText.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.OptionSelectText.Location = New System.Drawing.Point(3, 5)
+        Me.OptionSelectText.Name = "OptionSelectText"
+        Me.OptionSelectText.Size = New System.Drawing.Size(147, 21)
+        Me.OptionSelectText.TabIndex = 42
+        Me.OptionSelectText.Text = "Option Selection:"
+        Me.OptionSelectText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'OptionList
+        '
+        Me.OptionList.BackColor = System.Drawing.SystemColors.ControlText
+        Me.OptionList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.OptionList.ForeColor = System.Drawing.SystemColors.Control
+        Me.OptionList.FormattingEnabled = True
+        Me.OptionList.Location = New System.Drawing.Point(442, 46)
+        Me.OptionList.Name = "OptionList"
+        Me.OptionList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.OptionList.Size = New System.Drawing.Size(319, 405)
+        Me.OptionList.Sorted = True
+        Me.OptionList.TabIndex = 41
+        '
+        'OptionsItemText
+        '
+        Me.OptionsItemText.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OptionsItemText.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.OptionsItemText.Location = New System.Drawing.Point(442, 5)
+        Me.OptionsItemText.Name = "OptionsItemText"
+        Me.OptionsItemText.Size = New System.Drawing.Size(317, 21)
+        Me.OptionsItemText.TabIndex = 40
+        Me.OptionsItemText.Text = "[Items] In [ItemDir]"
+        Me.OptionsItemText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'OptionsFileText
+        '
+        Me.OptionsFileText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.OptionsFileText.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.OptionsFileText.Location = New System.Drawing.Point(442, 465)
+        Me.OptionsFileText.Name = "OptionsFileText"
+        Me.OptionsFileText.Size = New System.Drawing.Size(319, 21)
+        Me.OptionsFileText.TabIndex = 39
+        Me.OptionsFileText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'OptionsDrop
+        '
+        Me.OptionsDrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.OptionsDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.OptionsDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.OptionsDrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.OptionsDrop.FormattingEnabled = True
+        Me.OptionsDrop.Location = New System.Drawing.Point(150, 5)
+        Me.OptionsDrop.Name = "OptionsDrop"
+        Me.OptionsDrop.Size = New System.Drawing.Size(272, 21)
+        Me.OptionsDrop.TabIndex = 37
+        '
+        'OptionAddButton
+        '
+        Me.OptionAddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.OptionAddButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.OptionAddButton.Location = New System.Drawing.Point(443, 503)
+        Me.OptionAddButton.Name = "OptionAddButton"
+        Me.OptionAddButton.Size = New System.Drawing.Size(150, 23)
+        Me.OptionAddButton.TabIndex = 36
+        Me.OptionAddButton.Text = "Import File"
+        Me.OptionAddButton.UseVisualStyleBackColor = True
+        '
+        'OptionRefreshButton
+        '
+        Me.OptionRefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.OptionRefreshButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.OptionRefreshButton.Location = New System.Drawing.Point(611, 503)
+        Me.OptionRefreshButton.Name = "OptionRefreshButton"
+        Me.OptionRefreshButton.Size = New System.Drawing.Size(150, 23)
+        Me.OptionRefreshButton.TabIndex = 33
+        Me.OptionRefreshButton.Text = "Refresh List"
+        Me.OptionRefreshButton.UseVisualStyleBackColor = True
+        '
+        'OptionerBackButton
+        '
+        Me.OptionerBackButton.BackColor = System.Drawing.SystemColors.ControlText
+        Me.OptionerBackButton.BackgroundImage = Global.Limitless.My.Resources.Resources.back
+        Me.OptionerBackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.OptionerBackButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.OptionerBackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.OptionerBackButton.ForeColor = System.Drawing.SystemColors.Control
+        Me.OptionerBackButton.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.OptionerBackButton.Location = New System.Drawing.Point(3, 489)
+        Me.OptionerBackButton.Name = "OptionerBackButton"
+        Me.OptionerBackButton.Size = New System.Drawing.Size(50, 50)
+        Me.OptionerBackButton.TabIndex = 32
+        Me.OptionerBackButton.UseVisualStyleBackColor = False
         '
         'Optioner
         '
@@ -319,7 +424,17 @@ Partial Class Optioner
         Me.CloseButton.PerformLayout()
         Me.BackgroundPanel.ResumeLayout(False)
         Me.OptionsPanel.ResumeLayout(False)
-        Me.OptionsPanel.PerformLayout()
+        Me.OptionsMainPanel.ResumeLayout(False)
+        Me.AvatarPanel.ResumeLayout(False)
+        CType(Me.AvatarImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SoundsPanel.ResumeLayout(False)
+        Me.SoundsPanel.PerformLayout()
+        Me.MusicPanel.ResumeLayout(False)
+        Me.MusicPanel.PerformLayout()
+        Me.DBPanel.ResumeLayout(False)
+        Me.DBPanel.PerformLayout()
+        Me.ColorsPanel.ResumeLayout(False)
+        Me.ColorsPanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -330,19 +445,28 @@ Partial Class Optioner
     Friend WithEvents TitleLabel As Label
     Friend WithEvents BackgroundPanel As Panel
     Friend WithEvents OptionsPanel As Panel
-    Friend WithEvents UpdaterBackButton As Button
-    Friend WithEvents DBUpdateButton As Button
-    Friend WithEvents OnlineDBBox As TextBox
-    Friend WithEvents OnlineDBText As Label
-    Friend WithEvents SelectDBDrop As ComboBox
-    Friend WithEvents SelectDBText As Label
-    Friend WithEvents InstallDBBox As TextBox
-    Friend WithEvents InstallDBText As Label
-    Friend WithEvents DBStatusText As Label
-    Friend WithEvents AvailGameBox As TextBox
-    Friend WithEvents InstallGameBox As TextBox
-    Friend WithEvents GameUpdateButton As Button
-    Friend WithEvents AvailGameText As Label
-    Friend WithEvents InstallGameText As Label
-    Friend WithEvents GameStatusText As Label
+    Friend WithEvents OptionerBackButton As Button
+    Friend WithEvents OptionAddButton As Button
+    Friend WithEvents OptionRefreshButton As Button
+    Friend WithEvents OptionsDrop As ComboBox
+    Friend WithEvents OptionsFileText As Label
+    Friend WithEvents OptionsItemText As Label
+    Friend WithEvents OptionList As ListBox
+    Friend WithEvents OptionsMainPanel As Panel
+    Friend WithEvents OptionSelectText As Label
+    Friend WithEvents AvatarPanel As Panel
+    Friend WithEvents ColorsPanel As Panel
+    Friend WithEvents MusicPanel As Panel
+    Friend WithEvents DBPanel As Panel
+    Friend WithEvents SoundsPanel As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents AvatarImage As PictureBox
+    Friend WithEvents AvaRenameButton As Button
+    Friend WithEvents DimText As Label
+    Friend WithEvents DimLabel As Label
+    Friend WithEvents AvatarText As Label
+    Friend WithEvents AvaDeleteButton As Button
 End Class

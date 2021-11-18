@@ -57,7 +57,7 @@
     Public Shared CurrentDBVer As String
 
     'Options
-    Public Shared OptionsDrop() As String = {"[Select Option]", "Audio", "Colors", "Avatars", "Databases"}
+    Public Shared OptionsDrop() As String = {"[Select Option]", "Avatars", "Colors", "Databases", "Music", "Sounds"}
     Public Shared OptionsGroupLoc As String = "mid"
     Public Shared SelectCustomTrack As String = ""
     Public Shared CustomLibsSelected As String = "avatars"

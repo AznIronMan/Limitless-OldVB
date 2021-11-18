@@ -1,7 +1,7 @@
 =============================================
 LIMITLESS by Geoff Clark
 PUBLISHED by CLARKTRIBEGAMES LLC
-VERSION ALPHA 0.1.007.0005
+VERSION ALPHA 0.1.007.0006
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -73,7 +73,7 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.007.0005 / 2021.11.17 - The Revamp
+ALPHA 0.1.007.0006 / 2021.11.17 - The Revamp
 
 - redesigned the gui to have the menu buttons on the left
 - removed the options and editor for redesign
@@ -99,6 +99,11 @@ ALPHA 0.1.007.0005 / 2021.11.17 - The Revamp
 - added query of database versions in updater
 - left future functionality of database update available in updater
 - removed options panel in exchange for an options dialog box
+
+- removed static color theme configs
+- added custom colors to settings with dark and lite modes as defaults
+- added avatar options panel
+- added features to display avatar image, dimensions, rename and delete avatars within the avatar dir
 
 [PREVIOUS UPDATES]
 

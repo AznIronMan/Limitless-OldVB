@@ -1,58 +1,87 @@
 ﻿Module Appearance
-    Private Sub DarkModeColors()
-        MemoryBank.TitleBarBackColor = Color.DarkBlue
-        MemoryBank.TitleBarForeColor = Color.WhiteSmoke
-        MemoryBank.TitleButtonBackColor = Color.DarkBlue
-        MemoryBank.TitleButtonForeColor = Color.WhiteSmoke
-        MemoryBank.BackgroundBackColor = Color.FromArgb(22, 22, 22)
-        MemoryBank.BackgroundForeColor = Color.WhiteSmoke
-        MemoryBank.PagesBackColor = Color.Black
-        MemoryBank.PagesForeColor = Color.WhiteSmoke
-        MemoryBank.ButtonBackColor = Color.Black
-        MemoryBank.ButtonForeColor = Color.WhiteSmoke
-        MemoryBank.DonateForeColor = Color.LightGreen
-        MemoryBank.DonateHoverOver = Color.Green
-        MemoryBank.ButtonMouseDownBack = Color.Black
-        MemoryBank.ButtonDisabledColor = Color.Gray
-        MemoryBank.HoverBackColor = Color.Black
-        MemoryBank.HoverForeColor = Color.Blue
-        MemoryBank.LeaveBackColor = Color.Black
-        MemoryBank.LeaveForeColor = Color.WhiteSmoke
-        MemoryBank.ClickBackColor = Color.Black
-        MemoryBank.ClickForeColor = Color.Red
-        MemoryBank.GroupBackColor = Color.FromArgb(5, 5, 5)
-        MemoryBank.GroupForeColor = Color.WhiteSmoke
-    End Sub
-    Private Sub LiteModeColors()
-        MemoryBank.TitleBarBackColor = SystemColors.Highlight
-        MemoryBank.TitleBarForeColor = SystemColors.WindowText
-        MemoryBank.TitleButtonBackColor = SystemColors.Highlight
-        MemoryBank.TitleButtonForeColor = SystemColors.WindowText
-        MemoryBank.BackgroundBackColor = SystemColors.Control
-        MemoryBank.BackgroundForeColor = SystemColors.ControlText
-        MemoryBank.PagesBackColor = SystemColors.Control
-        MemoryBank.PagesForeColor = SystemColors.ControlText
-        MemoryBank.ButtonBackColor = SystemColors.Control
-        MemoryBank.ButtonForeColor = SystemColors.ControlText
-        MemoryBank.DonateForeColor = Color.Green
-        MemoryBank.DonateHoverOver = Color.DarkGreen
-        MemoryBank.ButtonMouseDownBack = SystemColors.Control
-        MemoryBank.ButtonDisabledColor = Color.Gray
-        MemoryBank.HoverBackColor = SystemColors.Control
-        MemoryBank.HoverForeColor = Color.Blue
-        MemoryBank.LeaveBackColor = SystemColors.Control
-        MemoryBank.LeaveForeColor = SystemColors.ControlText
-        MemoryBank.ClickBackColor = SystemColors.Control
-        MemoryBank.ClickForeColor = Color.Red
-        MemoryBank.GroupBackColor = SystemColors.Control
-        MemoryBank.GroupForeColor = SystemColors.ControlText
+
+    Public Function Colorer(colorname As String) As Color
+        Select Case LCase(colorname)
+            Case "dblue"
+                Return Color.DarkBlue
+            Case "white"
+                Return Color.WhiteSmoke
+            Case "dgrey"
+                Return Color.FromArgb(22, 22, 22)
+            Case "black"
+                Return Color.Black
+            Case "lgreen"
+                Return Color.LightGreen
+            Case "grey"
+                Return Color.Gray
+            Case "blue"
+                Return Color.Blue
+            Case "red"
+                Return Color.Red
+            Case "ablack"
+                Return Color.FromArgb(5, 5, 5)
+            Case "green"
+                Return Color.Green
+            Case "purple"
+                Return Color.Violet
+            Case "cyan"
+                Return Color.Cyan
+            Case "orange"
+                Return Color.Orange
+            Case "indigo"
+                Return Color.Indigo
+            Case "sblue"
+                Return SystemColors.Highlight
+            Case "dgreen"
+                Return Color.DarkGreen
+        End Select
+    End Function
+    Private Sub AssignTheme(theme As String)
+        Dim found As Boolean = False
+        Dim coloroptions As String() = ClarkTribeGames.SQLite.GetCol(Settings.SettingsPath, Settings.SettingsName, "colorSettings", "colorname").Split(",")
+        For Each name In coloroptions
+            If name = theme Then found = True
+        Next
+        If (found) Then
+            Dim ColorSettings As String() = ClarkTribeGames.SQLite.GetRow(Settings.SettingsPath, Settings.SettingsName, "colorSettings",
+            "colorname", theme).Split(",")
+            MemoryBank.TitleBarBackColor = Colorer(ColorSettings(4))
+            MemoryBank.TitleBarForeColor = Colorer(ColorSettings(5))
+            MemoryBank.TitleButtonBackColor = Colorer(ColorSettings(6))
+            MemoryBank.TitleButtonForeColor = Colorer(ColorSettings(7))
+            MemoryBank.BackgroundBackColor = Colorer(ColorSettings(8))
+            MemoryBank.BackgroundForeColor = Colorer(ColorSettings(9))
+            MemoryBank.PagesBackColor = Colorer(ColorSettings(10))
+            MemoryBank.PagesForeColor = Colorer(ColorSettings(11))
+            MemoryBank.ButtonBackColor = Colorer(ColorSettings(12))
+            MemoryBank.ButtonForeColor = Colorer(ColorSettings(13))
+            MemoryBank.DonateForeColor = Colorer(ColorSettings(14))
+            MemoryBank.DonateHoverOver = Colorer(ColorSettings(15))
+            MemoryBank.ButtonMouseDownBack = Colorer(ColorSettings(16))
+            MemoryBank.ButtonDisabledColor = Colorer(ColorSettings(17))
+            MemoryBank.HoverBackColor = Colorer(ColorSettings(18))
+            MemoryBank.HoverForeColor = Colorer(ColorSettings(19))
+            MemoryBank.LeaveBackColor = Colorer(ColorSettings(20))
+            MemoryBank.LeaveForeColor = Colorer(ColorSettings(21))
+            MemoryBank.ClickBackColor = Colorer(ColorSettings(22))
+            MemoryBank.ClickForeColor = Colorer(ColorSettings(23))
+            MemoryBank.GroupBackColor = Colorer(ColorSettings(24))
+            MemoryBank.GroupForeColor = Colorer(ColorSettings(25))
+            Settings.SettingsMode = theme
+        Else
+            Settings.SettingsMode = "Dark Mode"
+            ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {"Dark Mode"})
+            If Not LCase(MemoryBank.ColorModeAtStart) = LCase("Dark Mode") Then
+                MemoryBank.ColorModeAtStart = "Dark Mode"
+            End If
+        End If
+
     End Sub
     Public Sub AssignMode(mode As String)
-        If mode.ToLower = "ugly" Then
-            LiteModeColors()
-        Else
-            DarkModeColors()
-        End If
+
+        AssignTheme(mode)
+
+        'MainWindow
         AssignColor(MainWindow.TitleBarPanel, "TitleBar")
         AssignColor(MainWindow.TitleLabel, "TitleBar")
         AssignColor(MainWindow.BackgroundPanel, "Background")
@@ -73,6 +102,14 @@
         AssignColor(MainWindow.AboutButton, "Button")
         AssignColor(MainWindow.ExitButton, "Button")
 
+        AssignColor(MainWindow.SaveButton, "Button")
+        AssignColor(MainWindow.NullButton, "Button")
+
+        'LoadWindow
+
+        'Editor
+
+        'DocReader
         AssignColor(DocReader.TitleBarPanel, "TitleBar")
         AssignColor(DocReader.TitleLabel, "TitleBar")
         AssignColor(DocReader.BackgroundPanel, "Background")
@@ -82,6 +119,7 @@
         AssignColor(DocReader.CloseDocButton, "Button")
         AssignColor(DocReader.DocText, "Pages")
 
+        'Abouter
         AssignColor(Abouter.TitleBarPanel, "TitleBar")
         AssignColor(Abouter.TitleLabel, "TitleBar")
         AssignColor(Abouter.BackgroundPanel, "Background")
@@ -103,6 +141,7 @@
         AssignColor(Abouter.AboutLicButton, "Button")
         AssignColor(Abouter.AboutReadButton, "Button")
 
+        'Updater
         AssignColor(Updater.TitleBarPanel, "TitleBar")
         AssignColor(Updater.TitleLabel, "TitleBar")
         AssignColor(Updater.BackgroundPanel, "Background")
@@ -117,215 +156,39 @@
         AssignColor(Updater.DBStatusText, "Pages")
         AssignColor(Updater.SelectDBText, "Pages")
         AssignColor(Updater.SelectDBDrop, "Pages")
+        AssignColor(Updater.InstallDBBox, "Pages")
         AssignColor(Updater.InstallDBText, "Pages")
         AssignColor(Updater.OnlineDBText, "Pages")
         AssignColor(Updater.OnlineDBBox, "Pages")
         AssignColor(Updater.DBUpdateButton, "Button")
         AssignColor(Updater.UpdaterBackButton, "Button")
 
-        'AssignColor(MainWindow.OptionsPanel, "Background")
-        'AssignColor(MainWindow.OptionsColorGroup, "Group")
-        'AssignColor(MainWindow.OptionsMusicGroup, "Group")
-        'AssignColor(MainWindow.OptionsManageGroup, "Group")
-        'AssignColor(MainWindow.OptionsAudioSelectBattle, "Button")
-        'AssignColor(MainWindow.OptionsAudioSelectDefeat, "Button")
-        'AssignColor(MainWindow.OptionsAudioSelectIntro, "Button")
-        'AssignColor(MainWindow.OptionsAudioSelectVictory, "Button")
-        'AssignColor(MainWindow.OptionsManageAvatars, "Button")
-        'AssignColor(MainWindow.OptionsManageMusic, "Button")
-        'AssignColor(MainWindow.OptionsManageSound, "Button")
-
-        'AssignColor(MainWindow.CustomLibsPreviewAvatar, "Group")
-        'AssignColor(MainWindow.CustomLibsPreviewMusic, "Group")
-        'AssignColor(MainWindow.CustomLibsPreviewPlay, "Button")
-        'AssignColor(MainWindow.CustomLibsPreviewStop, "Button")
-        'AssignColor(MainWindow.CustomLibsImport, "Button")
-        'AssignColor(MainWindow.CustomLibsDelete, "Button")
-        'AssignColor(MainWindow.CustomLibsList, "Group")
-        'AssignColor(MainWindow.CustomLibsOmega, "Group")
-        'AssignColor(MainWindow.CustomLibsPath, "Pages")
-        'AssignColor(MainWindow.CustomLibsSave, "Button")
-        'AssignColor(MainWindow.CustomLibsGroup, "Group")
-        'AssignColor(MainWindow.CustomLibsEdit, "Button")
-        'AssignColor(MainWindow.CustomLibsMusicMsg, "Group")
-        'AssignColor(MainWindow.CustomLibsMusicImage, "Group")
-        AssignColor(MainWindow.SaveButton, "Button")
-        AssignColor(MainWindow.NullButton, "Button")
-        'AssignColor(MainWindow.EditorPanel, "Pages")
-        'AssignColor(MainWindow.EditorTitleText, "Pages")
-        'AssignColor(MainWindow.EditorDBText, "Pages")
-        'AssignColor(MainWindow.EditorMenuPanel, "Background")
-        'AssignColor(MainWindow.EditorImportButton, "Button")
-        'AssignColor(MainWindow.EditorDBButton, "Button")
-        'AssignColor(MainWindow.EditorExportButton, "Button")
-        'AssignColor(MainWindow.EditorAblButton, "Button")
-        'AssignColor(MainWindow.EditorLangButton, "Button")
-        'AssignColor(MainWindow.EditorArenaButton, "Button")
-        'AssignColor(MainWindow.EditorCharButton, "Button")
-        'AssignColor(MainWindow.EditorCharmsButton, "Button")
-        'AssignColor(MainWindow.EditorClassButton, "Button")
-        'AssignColor(MainWindow.EditorDestinyButton, "Button")
-        'AssignColor(MainWindow.EditorEffectsButton, "Button")
-        'AssignColor(MainWindow.EditorHeldButton, "Button")
-        'AssignColor(MainWindow.EditorItemButton, "Button")
-        'AssignColor(MainWindow.EditorVerseButton, "Button")
-        'AssignColor(MainWindow.EditorRelButton, "Button")
-        'AssignColor(MainWindow.EditorStatusButton, "Button")
-        'AssignColor(MainWindow.EditorTeamsButton, "Button")
-        'AssignColor(MainWindow.EditorWearButton, "Button")
-        'AssignColor(MainWindow.EditorSwitchPanel, "Background")
-        'AssignColor(MainWindow.EditorSwitchCurText, "Pages")
-        'AssignColor(MainWindow.EditorSwitchSDBText, "Pages")
-        'AssignColor(MainWindow.EditorSwitchCurBox, "Pages")
-        'AssignColor(MainWindow.EditorSwitchTarBox, "Pages")
-        'AssignColor(MainWindow.EditorSwitchVerBox, "Pages")
-        'AssignColor(MainWindow.EditorSwitchSDBDrop, "Pages")
-        'AssignColor(MainWindow.EditorSwitchBackButton, "Button")
-        'AssignColor(MainWindow.EditorSwitchNewButton, "Button")
-        'AssignColor(MainWindow.EditorSwitchSDBButton, "Button")
-        'AssignColor(MainWindow.EditorSwitchNewBox, "Pages")
-        'AssignColor(MainWindow.EditorSwitchDupButton, "Button")
-        'AssignColor(MainWindow.EditorSwitchDelButton, "Button")
-        'AssignColor(MainWindow.EditorEditPanel, "Background")
-        'AssignColor(MainWindow.EditorEditList, "Pages")
-        'AssignColor(MainWindow.EditorEditCharPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditBackButton, "Button")
-        'AssignColor(MainWindow.EditorEditAddButton, "Button")
-        'AssignColor(MainWindow.EditorEditDelButton, "Button")
-        'AssignColor(MainWindow.EditorEditAblPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditLangPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditArenaPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditCharmsPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditClassPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditDestinyPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditEffectsPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditHeldsPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditItemsPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditRelPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditStatusPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditTeamsPanel, "Pages")
-        'AssignColor(MainWindow.EditorEditVersePanel, "Pages")
-        'AssignColor(MainWindow.EditorEditWearsPanel, "Pages")
-        'AssignColor(MainWindow.EditorCharNameText, "Pages")
-        'AssignColor(MainWindow.EditorCharTypeText, "Pages")
-        'AssignColor(MainWindow.EditorCharRaceText, "Pages")
-        'AssignColor(MainWindow.EditorCharClassText, "Pages")
-        'AssignColor(MainWindow.EditorCharAlignText, "Pages")
-        'AssignColor(MainWindow.EditorCharGenderText, "Pages")
-        'AssignColor(MainWindow.EditorCharAgeText, "Pages")
-        'AssignColor(MainWindow.EditorCharLevelText, "Pages")
-        'AssignColor(MainWindow.EditorCharDestinyText, "Pages")
-        'AssignColor(MainWindow.EditorCharVerseText, "Pages")
-        'AssignColor(MainWindow.EditorCharLangText, "Pages")
-        'AssignColor(MainWindow.EditorCharForceText, "Pages")
-        'AssignColor(MainWindow.EditorCharWebText, "Pages")
-        'AssignColor(MainWindow.EditorCharAblText, "Pages")
-        'AssignColor(MainWindow.EditorCharEffText, "Pages")
-        'AssignColor(MainWindow.EditorCharEffInvText, "Pages")
-        'AssignColor(MainWindow.EditorCharDebugText, "Pages")
-        'AssignColor(MainWindow.EditorCharNameBox, "Pages")
-        'AssignColor(MainWindow.EditorCharAgeBox, "Pages")
-        'AssignColor(MainWindow.EditorCharLevelBox, "Pages")
-        'AssignColor(MainWindow.EditorCharForceBox, "Pages")
-        'AssignColor(MainWindow.EditorCharBioBox, "Pages")
-        'AssignColor(MainWindow.EditorCharWebBox, "Pages")
-        'AssignColor(MainWindow.EditorCharAvatarBox, "Pages")
-        'AssignColor(MainWindow.EditorCharThemeBox, "Pages")
-        'AssignColor(MainWindow.EditorCharImageBox, "Group")
-        'AssignColor(MainWindow.EditorCharMusicBox, "Group")
-        'AssignColor(MainWindow.EditorCharAliasCheck, "Pages")
-        'AssignColor(MainWindow.EditorCharForceCheck, "Pages")
-        'AssignColor(MainWindow.EditorCharAvatarCheck, "Pages")
-        'AssignColor(MainWindow.EditorCharThemeCheck, "Pages")
-        'AssignColor(MainWindow.EditorCharAliasList, "Group")
-        'AssignColor(MainWindow.EditorCharLangCList, "Group")
-        'AssignColor(MainWindow.EditorCharAblList, "Group")
-        'AssignColor(MainWindow.EditorCharEffList, "Group")
-        'AssignColor(MainWindow.EditorCharEffInvList, "Group")
-        'AssignColor(MainWindow.EditorCharTypeDrop, "Pages")
-        'AssignColor(MainWindow.EditorCharRaceDrop, "Pages")
-        'AssignColor(MainWindow.EditorCharClassDrop, "Pages")
-        'AssignColor(MainWindow.EditorCharAlignDrop, "Pages")
-        'AssignColor(MainWindow.EditorCharDestinyDrop, "Pages")
-        'AssignColor(MainWindow.EditorCharGenderDrop, "Pages")
-        'AssignColor(MainWindow.EditorCharVerseDrop, "Pages")
-        'AssignColor(MainWindow.EditorCharForceDrop, "Pages")
-        'AssignColor(MainWindow.EditorCharTypeHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharRaceHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharClassHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharAlignHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharGenderHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharAgeHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharLevelHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharDestinyHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharVerseHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharAliasHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharLangHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharForceHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharForceHelp2, "Pages")
-        'AssignColor(MainWindow.EditorCharWebHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharAblHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharEffHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharEffInvHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharEffInvHelp2, "Pages")
-        'AssignColor(MainWindow.EditorCharAvatarHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharRaceQAdd, "Button")
-        'AssignColor(MainWindow.EditorCharClassQAdd, "Button")
-        'AssignColor(MainWindow.EditorCharDestinyQAdd, "Button")
-        'AssignColor(MainWindow.EditorCharVerseQAdd, "Button")
-        'AssignColor(MainWindow.EditorCharAliasNewB, "Button")
-        'AssignColor(MainWindow.EditorCharAliasAddB, "Button")
-        'AssignColor(MainWindow.EditorCharAliasRemB, "Button")
-        'AssignColor(MainWindow.EditorCharLangQAdd, "Button")
-        'AssignColor(MainWindow.EditorCharAblQAdd, "Button")
-        'AssignColor(MainWindow.EditorCharAblAddB, "Button")
-        'AssignColor(MainWindow.EditorCharAblRemB, "Button")
-        'AssignColor(MainWindow.EditorCharEffQAdd, "Button")
-        'AssignColor(MainWindow.EditorCharEffAddB, "Button")
-        'AssignColor(MainWindow.EditorCharAvatarButton, "Button")
-        'AssignColor(MainWindow.EditorCharEffRemB, "Button")
-        'AssignColor(MainWindow.EditorCharEffInvButton, "Button")
-        'AssignColor(MainWindow.EditorCharMusicPlay, "Button")
-        'AssignColor(MainWindow.EditorCharMusicStop, "Button")
-        'AssignColor(MainWindow.EditorCharThemeButton, "Button")
-        'AssignColor(MainWindow.EditorCharSaveButton, "Button")
-        'AssignColor(MainWindow.EditorCharCancelButton, "Button")
-        'AssignColor(MainWindow.EditorCharQAddPanel, "Pages")
-        'AssignColor(MainWindow.EditorCharQAddName, "Pages")
-        'AssignColor(MainWindow.EditorCharQAddNewText, "Pages")
-        'AssignColor(MainWindow.EditorCharQAddNewBox, "Pages")
-        'AssignColor(MainWindow.EditorCharQAddLikeText, "Pages")
-        'AssignColor(MainWindow.EditorCharQAddLikeDrop, "Pages")
-        'AssignColor(MainWindow.EditorCharQAddButton, "Button")
-        'AssignColor(MainWindow.EditorCharQAddCancel, "Button")
-        'AssignColor(MainWindow.EditorCharQAddHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharQAddRemindText, "Pages")
-        'AssignColor(MainWindow.EditorCharInvPanel, "Pages")
-        'AssignColor(MainWindow.EditorCharInvText, "Pages")
-        'AssignColor(MainWindow.EditorCharInvHelp, "Pages")
-        'AssignColor(MainWindow.EditorCharInvList, "Pages")
-        'AssignColor(MainWindow.EditorCharInvAddButton, "Button")
-        'AssignColor(MainWindow.EditorCharInvEquipButton, "Button")
-        'AssignColor(MainWindow.EditorCharInvNameText, "Pages")
-        'AssignColor(MainWindow.EditorCharInvClassText, "Pages")
-        'AssignColor(MainWindow.EditorCharInvTypeText, "Pages")
-        'AssignColor(MainWindow.EditorCharInvResList, "Pages")
-        'AssignColor(MainWindow.EditorCharInvAblList, "Pages")
-        'AssignColor(MainWindow.EditorCharInvEffList, "Pages")
-        'AssignColor(MainWindow.EditorCharInvElemText, "Pages")
-        'AssignColor(MainWindow.EditorCharInvQtyText, "Pages")
-        'AssignColor(MainWindow.EditorCharInvHeldText, "Pages")
-        'AssignColor(MainWindow.EditorCharInvHeldList, "Pages")
-        'AssignColor(MainWindow.EditorCharInvWearText, "Pages")
-        'AssignColor(MainWindow.EditorCharInvWearList, "Pages")
-        'AssignColor(MainWindow.EditorCharInvCharmText, "Pages")
-        'AssignColor(MainWindow.EditorCharInvCharmList, "Pages")
-        'AssignColor(MainWindow.EditorCharInvItemText, "Pages")
-        'AssignColor(MainWindow.EditorCharInvItemList, "Pages")
-        'AssignColor(MainWindow.EditorCharInvDoneButton, "Button")
-        'AssignColor(MainWindow.EditorCharInvUnequipButton, "Button")
-        'AssignColor(MainWindow.EditorCharInvRemoveButton, "Button")
-        'AssignColor(MainWindow.EditorCharInvSwitchButton, "Button")
+        'Optioner
+        AssignColor(Optioner.TitleBarPanel, "TitleBar")
+        AssignColor(Optioner.TitleLabel, "TitleBar")
+        AssignColor(Optioner.BackgroundPanel, "Background")
+        AssignColor(Optioner.CloseButton, "TitleButton")
+        AssignColor(Optioner.CloseText, "TitleButton")
+        AssignColor(Optioner.OptionsPanel, "Pages")
+        AssignColor(Optioner.OptionSelectText, "Pages")
+        AssignColor(Optioner.OptionsDrop, "Pages")
+        AssignColor(Optioner.OptionsItemText, "Pages")
+        AssignColor(Optioner.OptionsMainPanel, "Pages")
+        AssignColor(Optioner.AvatarPanel, "Pages")
+        AssignColor(Optioner.AvatarText, "Pages")
+        AssignColor(Optioner.DimLabel, "Pages")
+        AssignColor(Optioner.DimText, "Pages")
+        AssignColor(Optioner.AvaRenameButton, "Button")
+        AssignColor(Optioner.AvaDeleteButton, "Button")
+        AssignColor(Optioner.ColorsPanel, "Pages")
+        AssignColor(Optioner.DBPanel, "Pages")
+        AssignColor(Optioner.MusicPanel, "Pages")
+        AssignColor(Optioner.SoundsPanel, "Pages")
+        AssignColor(Optioner.OptionList, "Pages")
+        AssignColor(Optioner.OptionsFileText, "Pages")
+        AssignColor(Optioner.OptionAddButton, "Button")
+        AssignColor(Optioner.OptionRefreshButton, "Button")
+        AssignColor(Optioner.OptionerBackButton, "Button")
     End Sub
     Public Sub SetButtonStyle(button As Button)
         button.FlatAppearance.MouseDownBackColor = MemoryBank.ButtonMouseDownBack
@@ -382,11 +245,7 @@
         End Select
     End Sub
     Public Sub RefreshColors()
-        If Settings.SettingsMode = "Lite" Then
-            Appearance.AssignMode("Ugly")
-        Else
-            Appearance.AssignMode("Default")
-        End If
+        AssignTheme(Settings.SettingsMode)
     End Sub
 
 End Module

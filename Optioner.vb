@@ -5,6 +5,176 @@
     End Sub
 
     Private Sub BuildOptioner()
+        OptionsDrop.Items.Clear()
+        For Each item In MemoryBank.OptionsDrop
+            OptionsDrop.Items.Add(item)
+        Next
+        OptionsDrop.SelectedIndex = 0
+    End Sub
+
+    Private Sub OptionsList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OptionList.SelectedIndexChanged
+        If OptionList.Enabled = True And OptionList.SelectedIndex > -1 Then
+            DimText.Text = ClarkTribeGames.FilesFolders.GetDims(MemoryBank.AvatarsDir & "\" & OptionList.SelectedItem.ToString).Replace("x", " x ") & " pixels"
+            Avatars.SetAvatar(OptionList.SelectedItem.ToString, AvatarImage)
+            AvatarText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(OptionList.SelectedItem.ToString).Replace(MemoryBank.AvatarsExtL, "")
+            DimLabel.Visible = True
+            DimText.Visible = True
+            AvaRenameButton.Enabled = True
+            AvaDeleteButton.Enabled = True
+        Else
+            ResetAvatarPanel()
+        End If
+    End Sub
+
+    Private Sub AvaRenameButton_Click(sender As Object, e As EventArgs) Handles AvaRenameButton.Click
+        RenamePrompt()
+    End Sub
+
+    Private Sub RenamePrompt()
+        'TO DO:  Improve this with a separate form window
+        Dim newname As String = InputBox("Please enter a new name for the file:", "Rename File", AvatarText.Text)
+        If newname.Length = 0 Then
+            MsgBox("File name length Cannot be zero.")
+            RenamePrompt()
+        Else
+            If LCase(newname) = LCase(OptionList.SelectedItem.ToString.Replace(MemoryBank.AvatarsExtL, "")) Then
+                MsgBox("Same File Name, No Change.")
+                Exit Sub
+            Else
+                If System.IO.File.Exists(MemoryBank.AvatarsDir & "\" & newname & MemoryBank.AvatarsExtL) Then
+                    MsgBox("File name already exists!")
+                    RenamePrompt()
+                Else
+                    RenameAvatar(AvatarText.Text, newname)
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub RenameAvatar(oldname As String, newname As String)
+        Avatars.ReleaseAvatarFromBox(AvatarImage)
+        Try
+            My.Computer.FileSystem.RenameFile(MemoryBank.AvatarsDir & "\" & oldname & MemoryBank.AvatarsExtL, newname & MemoryBank.AvatarsExtL)
+        Catch ex As Exception
+            ClarkTribeGames.Logger.WriteToLog("Avatar Rename", "Rename Attempt", ex)
+            MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
+        End Try
+        OptionDropUpdate()
+        OptionList.SelectedIndex = OptionList.FindStringExact(newname & MemoryBank.AvatarsExtL)
+    End Sub
+
+    Private Sub DeleteAvatar()
+        'TO DO:  Add "Are You Sure???"
+        Avatars.ReleaseAvatarFromBox(AvatarImage)
+        Try
+            ClarkTribeGames.FilesFolders.DeleteFile(MemoryBank.AvatarsDir & "\" & AvatarText.Text & MemoryBank.AvatarsExtL)
+        Catch ex As Exception
+            ClarkTribeGames.Logger.WriteToLog("Avatar Delete", "Delete Attempt", ex)
+            MsgBox(("Logged Error:  File locked, please try again."), vbOKOnly)
+        End Try
+        OptionDropUpdate()
+        OptionList.SelectedIndex = -1
+    End Sub
+
+    Private Sub ResetAvatarPanel()
+        AvatarImage.Image = My.Resources._empty_
+        AvatarText.Text = "Select an Avatar"
+        DimLabel.Visible = False
+        DimText.Visible = False
+        AvaRenameButton.Enabled = False
+    End Sub
+
+    Private Sub OptionsDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OptionsDrop.SelectedIndexChanged
+        OptionDropUpdate()
+    End Sub
+    Private Sub OptionDropUpdate()
+        Dim SelOption As String = OptionsDrop.Text
+        OptionList.Enabled = True
+        OptionList.Items.Clear()
+        Select Case LCase(SelOption)
+            Case "avatars"
+                ResetAvatarPanel()
+                For Each item In ListOfFiles(MemoryBank.AvatarsDir, MemoryBank.AvatarsExtL)
+                    OptionList.Items.Add(item)
+                Next
+                EmptyListCheck("<No " & LCase(SelOption) & " available>")
+                OptionsItemText.Text = SelOption & " In \" & MemoryBank.AvatarsDir & "\"
+                SwitchPanel(AvatarPanel, 0)
+            Case "colors"
+                For Each item In ClarkTribeGames.SQLite.GetCol(Settings.SettingsPath, Settings.SettingsName, "colorSettings", "colorname").Split(",")
+                    OptionList.Items.Add(item)
+                Next
+                EmptyListCheck("<No " & LCase(SelOption) & " available>")
+                OptionsItemText.Text = SelOption & " Options"
+                SwitchPanel(ColorsPanel, 0)
+            Case "databases"
+                For Each item In ListOfFiles(MemoryBank.DataDir, MemoryBank.SavesExtL)
+                    OptionList.Items.Add(Replace(item, MemoryBank.SavesExtL, ""))
+                Next
+                EmptyListCheck("<No " & LCase(SelOption) & " available>")
+                OptionsItemText.Text = SelOption & " In \" & MemoryBank.DataDir & "\"
+                SwitchPanel(DBPanel, 0)
+            Case "music"
+                For Each item In ListOfFiles(MemoryBank.MusicDir, MemoryBank.MusicExtL)
+                    OptionList.Items.Add(item)
+                Next
+                EmptyListCheck("<No " & LCase(SelOption) & " available>")
+                OptionsItemText.Text = SelOption & " In \" & MemoryBank.MusicDir & "\"
+                SwitchPanel(MusicPanel, 0)
+            Case "sounds"
+                For Each item In ListOfFiles(MemoryBank.SoundDir, MemoryBank.SoundExtL)
+                    OptionList.Items.Add(item)
+                Next
+                EmptyListCheck("<No " & LCase(SelOption) & " available>")
+                OptionsItemText.Text = SelOption & " In \" & MemoryBank.SoundDir & "\"
+                SwitchPanel(SoundsPanel, 0)
+            Case Else
+                EmptyListCheck("<No option selected>")
+                OptionsItemText.Text = ""
+                SwitchPanel(OptionsMainPanel, 1)
+        End Select
+    End Sub
+
+    Private Sub SwitchPanel(active As Panel, none As Integer)
+        AvatarPanel.Visible = False
+        ColorsPanel.Visible = False
+        DBPanel.Visible = False
+        MusicPanel.Visible = False
+        SoundsPanel.Visible = False
+        If Not none > 0 Then
+            active.Visible = True
+        End If
+    End Sub
+
+    Private Function ListOfFiles(path As String, ext As String) As List(Of String)
+        Dim list As New List(Of String)
+        For Each item In ClarkTribeGames.FilesFolders.GetFilesInFolder(path)
+            If item.Contains(ext) Then
+                list.Add(Replace(item, path & "\", ""))
+            End If
+        Next
+        Return list
+    End Function
+    Private Sub EmptyListCheck(phrase As String)
+        If Not OptionList.Items.Count > 0 Then
+            OptionList.Items.Add(phrase)
+            OptionList.Enabled = False
+        End If
+    End Sub
+
+    Private Sub OptionRefreshButton_Click(sender As Object, e As EventArgs) Handles OptionRefreshButton.Click
+        OptionDropUpdate()
+    End Sub
+
+    Private Sub AvaDeleteButton_Click(sender As Object, e As EventArgs) Handles AvaDeleteButton.Click
+        DeleteAvatar()
+    End Sub
+
+    Private Sub OptionAddButton_Click(sender As Object, e As EventArgs) Handles OptionAddButton.Click
+        MsgBox("Import Not Available")
+    End Sub
+
+    Private Sub AvaSizeButton_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -790,29 +960,11 @@
             ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {setting})
             Settings.SettingsMode = setting
             If Not LCase(MemoryBank.ColorModeAtStart) = LCase(setting) Then
-                ColorModeChecks(Settings.SettingsMode)
+                MemoryBank.ColorModeAtStart = setting
             End If
         End If
         Appearance.RefreshColors()
         'Optioner.ResetEditPath(MainWindow.CustomLibsEdit, MainWindow.CustomLibsPath)
-    End Sub
-    Private Shared Sub ColorModeChecks(type As String)
-        Select Case LCase(type)
-            Case "lite"
-                'MainWindow.OptionsColorLite.CheckState = CheckState.Checked
-                'MainWindow.OptionsColorDark.CheckState = CheckState.Unchecked
-                'MainWindow.OptionsColorLite.Enabled = False
-                'MainWindow.OptionsColorDark.Enabled = True
-                MemoryBank.ColorModeAtStart = "lite"
-            Case "dark"
-                'MainWindow.OptionsColorLite.CheckState = CheckState.Unchecked
-                'MainWindow.OptionsColorDark.CheckState = CheckState.Checked
-                'MainWindow.OptionsColorLite.Enabled = True
-                'MainWindow.OptionsColorDark.Enabled = False
-                MemoryBank.ColorModeAtStart = "dark"
-            Case Else
-                'Future Custom Goes Here
-        End Select
     End Sub
 
     'Sound Section
@@ -848,20 +1000,19 @@
         MemoryBank.WindowDrag = False
     End Sub
 
-    Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles CloseButton.MouseHover, GameUpdateButton.MouseHover, DBUpdateButton.MouseHover,
-            UpdaterBackButton.MouseHover
+    Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles CloseButton.MouseHover,
+            OptionerBackButton.MouseHover
         HoverOverEffect(sender)
     End Sub
-    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles CloseButton.MouseLeave, GameUpdateButton.MouseLeave, DBUpdateButton.MouseLeave,
-            UpdaterBackButton.MouseLeave
+    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles CloseButton.MouseLeave,
+            OptionerBackButton.MouseLeave
         LeaveObjEffect(sender)
     End Sub
-    Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles CloseButton.MouseDown, GameUpdateButton.MouseDown, DBUpdateButton.MouseDown,
-            UpdaterBackButton.MouseDown
+    Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles CloseButton.MouseDown,
+            OptionerBackButton.MouseDown
         MouseDownEffect(sender)
     End Sub
-    Private Sub CloseWindow(sender As Object, e As MouseEventArgs) Handles CloseButton.MouseDown, CloseText.MouseDown, CloseButton.Click, UpdaterBackButton.Click
-        MemoryBank.DocToRead = ""
+    Private Sub CloseWindow(sender As Object, e As MouseEventArgs) Handles CloseButton.MouseDown, CloseText.MouseDown, CloseButton.Click, OptionerBackButton.Click
         Me.Close()
     End Sub
 

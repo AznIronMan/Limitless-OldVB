@@ -61,11 +61,7 @@
         Else
             Settings.GetSettings()
         End If
-        If Settings.SettingsMode = "Lite" Then
-            Appearance.AssignMode("Ugly")
-        Else
-            Appearance.AssignMode("Default")
-        End If
+        Appearance.AssignMode(Settings.SettingsMode)
     End Sub
     Private Sub InitIntro()
         If Settings.SettingsMusic.ToLower = "on" Then
