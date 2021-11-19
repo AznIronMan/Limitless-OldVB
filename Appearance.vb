@@ -2,41 +2,59 @@
 
     Public Function Colorer(colorname As String) As Color
         Select Case LCase(colorname)
-            Case "dblue"
-                Return Color.DarkBlue
-            Case "white"
-                Return Color.WhiteSmoke
-            Case "dgrey"
-                Return Color.FromArgb(22, 22, 22)
-            Case "black"
-                Return Color.Black
-            Case "lgreen"
-                Return Color.LightGreen
-            Case "grey"
-                Return Color.Gray
-            Case "blue"
-                Return Color.Blue
+            Case "dred"
+                Return Color.DarkRed
             Case "red"
                 Return Color.Red
-            Case "ablack"
-                Return Color.FromArgb(5, 5, 5)
-            Case "green"
-                Return Color.Green
-            Case "purple"
-                Return Color.Violet
-            Case "cyan"
-                Return Color.Cyan
+            Case "pink"
+                Return Color.Pink
             Case "orange"
                 Return Color.Orange
-            Case "indigo"
-                Return Color.Indigo
-            Case "sblue"
-                Return SystemColors.Highlight
+            Case "brown"
+                Return Color.Brown
+            Case "dgold"
+                Return Color.DarkGoldenrod
+            Case "yellow"
+                Return Color.Yellow
+            Case "ygreen"
+                Return Color.YellowGreen
+            Case "lgreen"
+                Return Color.LightGreen
+            Case "green"
+                Return Color.Green
             Case "dgreen"
                 Return Color.DarkGreen
+            Case "cyan"
+                Return Color.Cyan
+            Case "lblue"
+                Return Color.LightBlue
+            Case "sblue"
+                Return SystemColors.Highlight
+            Case "blue"
+                Return Color.Blue
+            Case "dblue"
+                Return Color.DarkBlue
+            Case "indigo"
+                Return Color.Indigo
+            Case "purple"
+                Return Color.Violet
+            Case "awhite"
+                Return Color.AntiqueWhite
+            Case "white"
+                Return Color.WhiteSmoke
+            Case "lgrey"
+                Return Color.LightGray
+            Case "grey"
+                Return Color.Gray
+            Case "dgrey"
+                Return Color.FromArgb(22, 22, 22)
+            Case "ablack"
+                Return Color.FromArgb(5, 5, 5)
+            Case "black"
+                Return Color.Black
         End Select
     End Function
-    Private Sub AssignTheme(theme As String)
+    Public Sub AssignTheme(theme As String)
         Dim found As Boolean = False
         Dim coloroptions As String() = ClarkTribeGames.SQLite.GetCol(Settings.SettingsPath, Settings.SettingsName, "colorSettings", "colorname").Split(",")
         For Each name In coloroptions
@@ -68,6 +86,7 @@
             MemoryBank.GroupBackColor = Colorer(ColorSettings(24))
             MemoryBank.GroupForeColor = Colorer(ColorSettings(25))
             Settings.SettingsMode = theme
+            ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {theme})
         Else
             Settings.SettingsMode = "Dark Mode"
             ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName", "mode", {"settingConfig"}, {"Dark Mode"})
@@ -75,11 +94,9 @@
                 MemoryBank.ColorModeAtStart = "Dark Mode"
             End If
         End If
-
+        AssignMode()
     End Sub
-    Public Sub AssignMode(mode As String)
-
-        AssignTheme(mode)
+    Private Sub AssignMode()
 
         'MainWindow
         AssignColor(MainWindow.TitleBarPanel, "TitleBar")
@@ -201,6 +218,39 @@
         AssignColor(Optioner.VersionLabel, "Pages")
         AssignColor(Optioner.SoundsLabel, "Pages")
         AssignColor(Optioner.SoundsText, "Pages")
+        AssignColor(Optioner.CThemeLabel, "Pages")
+        AssignColor(Optioner.CThemeText, "Pages")
+        AssignColor(Optioner.SThemeLabel, "Pages")
+        AssignColor(Optioner.SThemeText, "Pages")
+        AssignColor(Optioner.ResetThemeButton, "Button")
+        AssignColor(Optioner.OuterLabel, "Pages")
+        AssignColor(Optioner.InnerLabel, "Pages")
+        AssignColor(Optioner.TBarLabel, "Pages")
+        AssignColor(Optioner.TButLabel, "Pages")
+        AssignColor(Optioner.BGLabel, "Pages")
+        AssignColor(Optioner.TXLabel, "Pages")
+        AssignColor(Optioner.ButLabel, "Pages")
+        AssignColor(Optioner.DisLabel, "Pages")
+        AssignColor(Optioner.HOLabel, "Pages")
+        AssignColor(Optioner.TBarODrop, "Pages")
+        AssignColor(Optioner.TButODrop, "Pages")
+        AssignColor(Optioner.BGODrop, "Pages")
+        AssignColor(Optioner.TXODrop, "Pages")
+        AssignColor(Optioner.ButODrop, "Pages")
+        AssignColor(Optioner.DisDrop, "Pages")
+        AssignColor(Optioner.HOODrop, "Pages")
+        AssignColor(Optioner.ClickODrop, "Pages")
+        AssignColor(Optioner.TBarIDrop, "Pages")
+        AssignColor(Optioner.TButIDrop, "Pages")
+        AssignColor(Optioner.BGIDrop, "Pages")
+        AssignColor(Optioner.TXIDrop, "Pages")
+        AssignColor(Optioner.ButIDrop, "Pages")
+        AssignColor(Optioner.HOIDrop, "Pages")
+        AssignColor(Optioner.ClickIDrop, "Pages")
+        AssignColor(Optioner.CopyThemeButton, "Button")
+        AssignColor(Optioner.EditThemeButton, "Button")
+        AssignColor(Optioner.SaveThemeButton, "Button")
+        AssignColor(Optioner.SetActiveButton, "Button")
     End Sub
     Public Sub SetButtonStyle(button As Button)
         button.FlatAppearance.MouseDownBackColor = MemoryBank.ButtonMouseDownBack
@@ -257,7 +307,7 @@
         End Select
     End Sub
     Public Sub RefreshColors()
-        AssignTheme(Settings.SettingsMode)
+        AssignMode()
     End Sub
 
 End Module

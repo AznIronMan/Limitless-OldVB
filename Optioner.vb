@@ -20,40 +20,6 @@
         OptionsDrop.SelectedIndex = 0
     End Sub
 
-    Private Sub OptionsList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OptionsList.SelectedIndexChanged
-        Select Case LCase(ActivePanel)
-            Case "avatars"
-                If OptionsList.Enabled = True And OptionsList.SelectedIndex > -1 Then
-                    DimText.Text = ClarkTribeGames.FilesFolders.GetDims(MemoryBank.AvatarsDir & "\" & OptionsList.SelectedItem.ToString).Replace("x", " x ") & " pixels"
-                    Avatars.SetAvatar(OptionsList.SelectedItem.ToString, AvatarImage)
-                    AvatarText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(OptionsList.SelectedItem.ToString).Replace(MemoryBank.AvatarsExtL, "")
-                    DimLabel.Visible = True
-                    DimText.Visible = True
-                Else
-                    ResetAvatar()
-                End If
-            Case "colors"
-                '
-            Case "databases"
-                '
-            Case "music"
-                '
-            Case "sounds"
-                '
-            Case Else
-                '
-        End Select
-        OptionsRenameButton.Enabled = True
-        OptionsDeleteButton.Enabled = True
-    End Sub
-    Private Sub ResetAvatar()
-        AvatarImage.Image = My.Resources._empty_
-        AvatarText.Text = "Select an Avatar"
-        DimLabel.Visible = False
-        DimText.Visible = False
-        OptionsRenameButton.Enabled = False
-    End Sub
-
     Private Sub OptionsDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OptionsDrop.SelectedIndexChanged
         OptionDropUpdate()
     End Sub
@@ -77,6 +43,7 @@
                 EmptyListCheck("<No " & LCase(ActivePanel) & " available>")
                 OptionsItemText.Text = ActivePanel & " Options"
                 SwitchPanel(ColorsPanel, 0)
+                SetColors()
             Case "databases"
                 For Each item In ListOfFiles(MemoryBank.DataDir, MemoryBank.SavesExtL)
                     OptionsList.Items.Add(Replace(item, MemoryBank.SavesExtL, ""))
@@ -116,6 +83,8 @@
         If Not none > 0 Then
             active.Visible = True
         End If
+        OptionsDeleteButton.Enabled = False
+        OptionsRenameButton.Enabled = False
     End Sub
 
     Private Function ListOfFiles(path As String, ext As String) As List(Of String)
@@ -133,6 +102,340 @@
             OptionsList.Enabled = False
         End If
     End Sub
+
+    Private Sub OptionsList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OptionsList.SelectedIndexChanged
+        Select Case LCase(ActivePanel)
+            Case "avatars"
+                If OptionsList.Enabled = True And OptionsList.SelectedIndex > -1 Then
+                    DimText.Text = ClarkTribeGames.FilesFolders.GetDims(MemoryBank.AvatarsDir & "\" & OptionsList.SelectedItem.ToString).Replace("x", " x ") & " pixels"
+                    Avatars.SetAvatar(OptionsList.SelectedItem.ToString, AvatarImage)
+                    AvatarText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(OptionsList.SelectedItem.ToString).Replace(MemoryBank.AvatarsExtL, "")
+                    DimLabel.Visible = True
+                    DimText.Visible = True
+                    OptionsRenameButton.Enabled = True
+                    OptionsDeleteButton.Enabled = True
+                Else
+                    ResetAvatar()
+                End If
+            Case "colors"
+                If OptionsList.Enabled = True And OptionsList.SelectedIndex > -1 Then
+                    CThemeText.Text = Settings.SettingsMode
+                    SThemeLabel.Visible = True
+                    SThemeText.Visible = True
+                    SThemeText.Text = OptionsList.SelectedItem.ToString
+                    SetCDrops(ClarkTribeGames.SQLite.GetRow(Settings.SettingsPath, Settings.SettingsName, "colorSettings", "colorname", OptionsList.SelectedItem.ToString).Split(","))
+                    ResetThemeButton.Visible = False
+                    CopyThemeButton.Enabled = True
+                    SaveThemeButton.Enabled = False
+                    FlipCDrops(False)
+                    If Not SThemeText.Text = "Dark Mode" And Not SThemeText.Text = "Lite Mode" Then
+                        EditThemeButton.Enabled = True
+                        OptionsRenameButton.Enabled = True
+                        OptionsDeleteButton.Enabled = True
+                    Else
+                        EditThemeButton.Enabled = False
+                        OptionsRenameButton.Enabled = False
+                        OptionsDeleteButton.Enabled = False
+                    End If
+                    If CThemeText.Text = SThemeText.Text Then SetActiveButton.Enabled = False Else SetActiveButton.Enabled = True
+                Else
+                    SThemeLabel.Visible = False
+                    SThemeText.Visible = False
+                    SaveThemeButton.Enabled = False
+                    EditThemeButton.Enabled = False
+                    OptionsRenameButton.Enabled = False
+                    OptionsDeleteButton.Enabled = False
+                    SetActiveButton.Enabled = False
+                End If
+
+            Case "databases"
+                '
+            Case "music"
+                '
+            Case "sounds"
+                '
+            Case Else
+                '
+        End Select
+        Appearance.RefreshColors()
+    End Sub
+    Private Sub ResetAvatar()
+        AvatarImage.Image = My.Resources._empty_
+        AvatarText.Text = "Select an Avatar"
+        DimLabel.Visible = False
+        DimText.Visible = False
+        OptionsRenameButton.Enabled = False
+        OptionsDeleteButton.Enabled = False
+    End Sub
+
+    Private Sub SetColors()
+        CThemeText.Text = Settings.SettingsMode
+        SThemeLabel.Visible = False
+        SThemeText.Visible = False
+        SThemeText.Text = ""
+        ResetThemeButton.Visible = False
+        CopyThemeButton.Enabled = True
+        EditThemeButton.Enabled = False
+        SaveThemeButton.Enabled = False
+        SetActiveButton.Enabled = False
+        FillSpecDrop(TBarODrop)
+        FillSpecDrop(TBarIDrop)
+        FillSpecDrop(TButODrop)
+        FillSpecDrop(TButIDrop)
+        FillSpecDrop(BGODrop)
+        FillSpecDrop(BGIDrop)
+        FillSpecDrop(TXODrop)
+        FillSpecDrop(TXIDrop)
+        FillSpecDrop(ButODrop)
+        FillSpecDrop(ButIDrop)
+        FillSpecDrop(DisDrop)
+        FillSpecDrop(HOODrop)
+        FillSpecDrop(HOIDrop)
+        FillSpecDrop(ClickODrop)
+        FillSpecDrop(ClickIDrop)
+    End Sub
+
+    Private Sub FillSpecDrop(drop As Object)
+        drop.Items.Clear()
+        For Each colorname As String In MemoryBank.CSpectrum
+            drop.Items.Add(colorname)
+        Next
+    End Sub
+
+    Private Sub SpecDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TBarODrop.SelectedIndexChanged, TBarIDrop.SelectedIndexChanged, TButODrop.SelectedIndexChanged,
+        TButIDrop.SelectedIndexChanged, BGODrop.SelectedIndexChanged, BGIDrop.SelectedIndexChanged, TXODrop.SelectedIndexChanged, TXIDrop.SelectedIndexChanged, ButODrop.SelectedIndexChanged,
+        ButIDrop.SelectedIndexChanged, DisDrop.SelectedIndexChanged, HOODrop.SelectedIndexChanged, HOIDrop.SelectedIndexChanged,
+        ClickODrop.SelectedIndexChanged, ClickIDrop.SelectedIndexChanged
+        Dim dropname As String = ClarkTribeGames.Converters.ControlToString(sender)
+        FindColorBox(dropname).BackColor = FindColor(sender.text)
+    End Sub
+    Private Function FindColorBox(dropname As String) As Object
+        Select Case LCase(dropname)
+            Case "tbarodrop"
+                Return TBarOColor
+            Case "tbaridrop"
+                Return TBarIColor
+            Case "tbutodrop"
+                Return TButOColor
+            Case "tbutidrop"
+                Return TButIColor
+            Case "bgodrop"
+                Return BGOColor
+            Case "bgidrop"
+                Return BGIColor
+            Case "txodrop"
+                Return TXOColor
+            Case "txidrop"
+                Return TXIColor
+            Case "butodrop"
+                Return ButOColor
+            Case "butidrop"
+                Return ButIColor
+            Case "disdrop"
+                Return DisColor
+            Case "hoodrop"
+                Return HOOColor
+            Case "hoidrop"
+                Return HOIColor
+            Case "clickodrop"
+                Return ClickOColor
+            Case "clickidrop"
+                Return ClickIColor
+            Case Else
+                Return vbNull
+        End Select
+    End Function
+    Private Function FindColor(colorname As String) As Color
+        Select Case colorname
+            Case "Dark Red"
+                Return Appearance.Colorer("dred")
+            Case "Red"
+                Return Appearance.Colorer("red")
+            Case "Pink"
+                Return Appearance.Colorer("pink")
+            Case "Orange"
+                Return Appearance.Colorer("orange")
+            Case "Brown"
+                Return Appearance.Colorer("brown")
+            Case "Dark Gold"
+                Return Appearance.Colorer("dgold")
+            Case "Yellow"
+                Return Appearance.Colorer("yellow")
+            Case "Yellow Green"
+                Return Appearance.Colorer("ygreen")
+            Case "Light Green"
+                Return Appearance.Colorer("lgreen")
+            Case "Green"
+                Return Appearance.Colorer("green")
+            Case "Dark Green"
+                Return Appearance.Colorer("dgreen")
+            Case "Cyan"
+                Return Appearance.Colorer("cyan")
+            Case "Light Blue"
+                Return Appearance.Colorer("lblue")
+            Case "Blue"
+                Return Appearance.Colorer("blue")
+            Case "Dark Blue"
+                Return Appearance.Colorer("dblue")
+            Case "Sky Blue"
+                Return Appearance.Colorer("sblue")
+            Case "Indigo"
+                Return Appearance.Colorer("indigo")
+            Case "Purple"
+                Return Appearance.Colorer("purple")
+            Case "Antique White"
+                Return Appearance.Colorer("awhite")
+            Case "White"
+                Return Appearance.Colorer("white")
+            Case "Light Grey"
+                Return Appearance.Colorer("lgrey")
+            Case "Grey"
+                Return Appearance.Colorer("grey")
+            Case "Dark Grey"
+                Return Appearance.Colorer("dgrey")
+            Case "Black"
+                Return Appearance.Colorer("ablack")
+            Case "True Black"
+                Return Appearance.Colorer("black")
+            Case Else
+                Return Color.Transparent
+        End Select
+    End Function
+    Private Function FindColorText(colorname As String) As String
+        Select Case colorname
+            Case "dred"
+                Return "Dark Red"
+            Case "red"
+                Return "Red"
+            Case "pink"
+                Return "Pink"
+            Case "orange"
+                Return "Orange"
+            Case "brown"
+                Return "Brown"
+            Case "dgold"
+                Return "Dark Gold"
+            Case "yellow"
+                Return "Yellow"
+            Case "ygreen"
+                Return "Yellow Green"
+            Case "lgreen"
+                Return "Light Green"
+            Case "green"
+                Return "Green"
+            Case "dgreen"
+                Return "Dark Green"
+            Case "cyan"
+                Return "Cyan"
+            Case "lblue"
+                Return "Light Blue"
+            Case "blue"
+                Return "Blue"
+            Case "dblue"
+                Return "Dark Blue"
+            Case "sblue"
+                Return "Sky Blue"
+            Case "indigo"
+                Return "Indigo"
+            Case "purple"
+                Return "Purple"
+            Case "awhite"
+                Return "Antique White"
+            Case "white"
+                Return "White"
+            Case "lgrey"
+                Return "Light Grey"
+            Case "grey"
+                Return "Grey"
+            Case "dgrey"
+                Return "Dark Grey"
+            Case "ablack"
+                Return "Black"
+            Case "black"
+                Return "True Black"
+            Case Else
+                Return vbNull
+        End Select
+    End Function
+    Private Sub SetCDrops(colorset As String())
+        TBarODrop.SelectedIndex = TBarODrop.FindStringExact(FindColorText(colorset(4)))
+        TBarIDrop.SelectedIndex = TBarIDrop.FindStringExact(FindColorText(colorset(5)))
+        TButODrop.SelectedIndex = TButODrop.FindStringExact(FindColorText(colorset(6)))
+        TButIDrop.SelectedIndex = TButIDrop.FindStringExact(FindColorText(colorset(7)))
+        BGODrop.SelectedIndex = BGODrop.FindStringExact(FindColorText(colorset(8)))
+        BGIDrop.SelectedIndex = BGIDrop.FindStringExact(FindColorText(colorset(9)))
+        TXODrop.SelectedIndex = TXODrop.FindStringExact(FindColorText(colorset(10)))
+        TXIDrop.SelectedIndex = TXIDrop.FindStringExact(FindColorText(colorset(11)))
+        ButODrop.SelectedIndex = ButODrop.FindStringExact(FindColorText(colorset(12)))
+        ButIDrop.SelectedIndex = ButIDrop.FindStringExact(FindColorText(colorset(13)))
+        DisDrop.SelectedIndex = DisDrop.FindStringExact(FindColorText(colorset(17)))
+        HOODrop.SelectedIndex = HOODrop.FindStringExact(FindColorText(colorset(18)))
+        HOIDrop.SelectedIndex = HOIDrop.FindStringExact(FindColorText(colorset(19)))
+        ClickODrop.SelectedIndex = ClickODrop.FindStringExact(FindColorText(colorset(22)))
+        ClickIDrop.SelectedIndex = ClickIDrop.FindStringExact(FindColorText(colorset(23)))
+    End Sub
+    Private Sub FlipCDrops(status As Boolean)
+        TBarODrop.Enabled = status
+        TBarIDrop.Enabled = status
+        TButODrop.Enabled = status
+        TButIDrop.Enabled = status
+        BGODrop.Enabled = status
+        BGIDrop.Enabled = status
+        TXODrop.Enabled = status
+        TXIDrop.Enabled = status
+        ButODrop.Enabled = status
+        ButIDrop.Enabled = status
+        DisDrop.Enabled = status
+        HOODrop.Enabled = status
+        HOIDrop.Enabled = status
+        ClickODrop.Enabled = status
+        ClickIDrop.Enabled = status
+    End Sub
+    Private Sub ResetThemeButton_Click(sender As Object, e As EventArgs) Handles ResetThemeButton.Click
+
+    End Sub
+
+    Private Sub CopyThemeButton_Click(sender As Object, e As EventArgs) Handles CopyThemeButton.Click
+        MsgBox("TODO: Add Copying Existing Feature Here")
+    End Sub
+
+    Private Sub EditThemeButton_Click(sender As Object, e As EventArgs) Handles EditThemeButton.Click
+        If Not SThemeText.Text = "Dark Mode" And Not SThemeText.Text = "Lite Mode" Then
+            FlipCDrops(True)
+            EditThemeButton.Enabled = False
+            SaveThemeButton.Enabled = True
+            ResetThemeButton.Visible = True
+            ResetThemeButton.Enabled = True
+        End If
+    End Sub
+
+    Private Sub SaveThemeButton_Click(sender As Object, e As EventArgs) Handles SaveThemeButton.Click
+
+    End Sub
+
+    Private Sub SetActiveButton_Click(sender As Object, e As EventArgs) Handles SetActiveButton.Click
+        'TO DO: Create a pretty dialog box for this in a form.
+        Dim check As Integer
+        Dim newtheme As String = SThemeText.Text
+        Try
+            check = OptionsList.FindStringExact(newtheme)
+        Catch ex As Exception
+            check = -1
+        End Try
+        If check = -1 Then
+            MsgBox("Please Save The New Theme First!")
+            Exit Sub
+        End If
+        Dim answer As Integer = MsgBox("Are you sure you want to change the theme to " & newtheme & "?", vbYesNo)
+        If answer = vbYes Then
+            Appearance.AssignTheme(newtheme)
+        Else
+            MsgBox("Operation Cancelled.")
+            Exit Sub
+        End If
+        OptionsList.SelectedIndex = OptionsList.FindStringExact(newtheme)
+    End Sub
+
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles OptionsAddButton.Click
         AddProcess()
     End Sub
@@ -146,12 +449,13 @@
         OptionDropUpdate()
     End Sub
     Private Sub AddProcess()
-        Dim SelectedDir As String = WhichDir(LCase(ActivePanel))
-        Dim Ext As String = WhichExt(LCase(ActivePanel))
-        Dim SourceFiles() As String, NewFile As String
-        Dim FileType As String = ClarkTribeGames.Converters.UppercaseEachFirstLetter(ActivePanel)
-        If FileType.EndsWith("s") Then FileType.Substring(0, FileType.Length - 1)
-        Dim fd As New OpenFileDialog With {
+        If Not ActivePanel = "Colors" Then
+            Dim SelectedDir As String = WhichDir(LCase(ActivePanel))
+            Dim Ext As String = WhichExt(LCase(ActivePanel))
+            Dim SourceFiles() As String, NewFile As String
+            Dim FileType As String = ClarkTribeGames.Converters.UppercaseEachFirstLetter(ActivePanel)
+            If FileType.EndsWith("s") Then FileType.Substring(0, FileType.Length - 1)
+            Dim fd As New OpenFileDialog With {
             .Title = "Custom " & FileType & " File(s) To Import",
             .InitialDirectory = SelectedDir,
             .Filter = Replace(Ext, ".", "") & " Files (*" & Ext & ")|*" & Ext,
@@ -159,41 +463,42 @@
             .RestoreDirectory = True,
             .Multiselect = True
         }
-        If fd.ShowDialog() = DialogResult.OK Then
-            SourceFiles = fd.FileNames
-            For Each SourceFile In SourceFiles
-                Dim ConfirmExt As String = SourceFile.Substring(SourceFile.Length - 4, 4)
-                If LCase(ConfirmExt) = Ext Then
-                    Dim SourceName As String = Replace(SourceFile.Split("\").Last(), Ext, "")
-                    NewFile = SelectedDir & "/" & Replace(SourceName, "Ω ", "Ω") & Ext
-                    If Not LCase(ActivePanel) = "avatars" Then
-                        Try
-                            FileSystem.FileCopy(SourceFile, NewFile)
-                        Catch ex As Exception
-                            ClarkTribeGames.Logger.WriteToLog("Custom " & FileType & " Import", "Import Attempt - " &
+            If fd.ShowDialog() = DialogResult.OK Then
+                SourceFiles = fd.FileNames
+                For Each SourceFile In SourceFiles
+                    Dim ConfirmExt As String = SourceFile.Substring(SourceFile.Length - 4, 4)
+                    If LCase(ConfirmExt) = Ext Then
+                        Dim SourceName As String = Replace(SourceFile.Split("\").Last(), Ext, "")
+                        NewFile = SelectedDir & "/" & Replace(SourceName, "Ω ", "Ω") & Ext
+                        If Not LCase(ActivePanel) = "avatars" Then
+                            Try
+                                FileSystem.FileCopy(SourceFile, NewFile)
+                            Catch ex As Exception
+                                ClarkTribeGames.Logger.WriteToLog("Custom " & FileType & " Import", "Import Attempt - " &
                                 SourceName & Ext, ex)
-                            MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
-                        End Try
+                                MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
+                            End Try
+                        Else
+                            Try
+                                NewFile = LCase(NewFile)
+                                NewFile = NewFile.Replace(Ext & Ext, Ext)
+                                NewFile = ClarkTribeGames.Converters.UppercaseEachFirstLetter(NewFile)
+                                ClarkTribeGames.Converters.ResizeImage(SourceFile, NewFile, 200, 200)
+                            Catch ex As Exception
+                                ClarkTribeGames.Logger.WriteToLog("Custom " & FileType & " Import", "Import Attempt - " &
+                                SourceName & Ext, ex)
+                                MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
+                            End Try
+                        End If
                     Else
-                        Try
-                            NewFile = LCase(NewFile)
-                            NewFile = NewFile.Replace(Ext & Ext, Ext)
-                            NewFile = ClarkTribeGames.Converters.UppercaseEachFirstLetter(NewFile)
-                            ClarkTribeGames.Converters.ResizeImage(SourceFile, NewFile, 200, 200)
-                            'Converters.ResizeImage(SourceFile, NewFile.Substring(0, NewFile.Length - 4), 200, 200)
-                        Catch ex As Exception
-                            ClarkTribeGames.Logger.WriteToLog("Custom " & FileType & " Import", "Import Attempt - " &
-                                SourceName & Ext, ex)
-                            MsgBox(("Logged Error:  Internal copy error, please try again." & vbCrLf), vbOKOnly)
-                        End Try
+                        MsgBox("Invalid file extension.  Please be sure to select a " & Ext & " file.", vbOKOnly + vbCritical)
                     End If
-                    'Optioner.CustomLibsListPop(True)
-                Else
-                    MsgBox("Invalid file extension.  Please be sure to select a " & Ext & " file.", vbOKOnly + vbCritical)
-                End If
-            Next
+                Next
+            End If
+            OptionDropUpdate()
+        Else
+            MsgBox("TODO: Add New Color Feature Here")
         End If
-        OptionDropUpdate()
     End Sub
     Private Sub RenamePrompt()
         Dim SelectedDir As String = WhichDir(LCase(ActivePanel))

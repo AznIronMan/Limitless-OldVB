@@ -107,6 +107,10 @@ ALPHA 0.1.007.0007 / 2021.11.18 - The Revamp
 - added import feature for options
 - added game status dashboard at opening of options
 - removed some old optioner code
+- created colors options menu with full range editing
+- expanded colors in memory to full color spectrum range
+- created method to read color mode from settings and apply them to options
+- added ability to switch between modes in option menu
 
 [PREVIOUS UPDATES]
 

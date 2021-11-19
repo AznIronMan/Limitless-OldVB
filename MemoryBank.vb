@@ -61,6 +61,9 @@
     Public Shared OptionsGroupLoc As String = "mid"
     Public Shared SelectCustomTrack As String = ""
     Public Shared ColorModeAtStart As String = ""
+    Public Shared CSpectrum() As String = {"Dark Red", "Red", "Pink", "Orange", "Brown", "Dark Gold", "Yellow", "Yellow Green", "Light Green",
+        "Green", "Dark Green", "Cyan", "Light Blue", "Blue", "Dark Blue", "Sky Blue", "Indigo", "Purple", "Antique White", "White", "Light Grey",
+        "Grey", "Dark Grey", "Black", "True Black"}
 
     'Colors
     Public Shared TitleBarBackColor As Color

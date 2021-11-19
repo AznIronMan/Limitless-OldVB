@@ -44,13 +44,13 @@
         'hovef', 'leavb', 'leavf', 'clicb', 'clicf', 'groub', 'grouf') VALUES ('1', 'Dark Mode', '1', 
         'Easy on the eyes with a dark background and light letters theme.', 'dblue', 'white', 'dblue', 
         'white', 'dgrey', 'white', 'black', 'white', 'black', 'white', 'lgreen', 'green', 'black', 
-        'gray', 'black', 'blue', 'black', 'white', 'black', 'red', 'ablack', 'white');")
+        'grey', 'black', 'blue', 'black', 'white', 'black', 'red', 'ablack', 'white');")
         ClarkTribeGames.SQLite.RunSQL(SettingsPath, SettingsName, "INSERT INTO 'main'.'colorSettings'
         ('uid', 'colorname', 'coloract', 'colordesc', 'tbarb', 'tbarf', 'tbutb', 'tbutf', 'backb', 
         'backf', 'pageb', 'pagef', 'buttb', 'buttf', 'donaf', 'donah', 'buttmdb', 'buttdc', 'hoveb', 
         'hovef', 'leavb', 'leavf', 'clicb', 'clicf', 'groub', 'grouf') VALUES ('2', 'Lite Mode', '1', 
-        'Traditional black text on white background.', 'sblue', 'lack', 'sblue', 'black', 'white', 
-        'black', 'white', 'black', 'white', 'black', 'green', 'dgreen', 'white', 'gray', 'white', 
+        'Traditional black text on white background.', 'sblue', 'black', 'sblue', 'black', 'white', 
+        'black', 'white', 'black', 'white', 'black', 'green', 'dgreen', 'white', 'grey', 'white', 
         'blue', 'white', 'black', 'white', 'red', 'white', 'black');")
     End Sub
     Public Shared Sub GetSettings()

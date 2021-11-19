@@ -30,14 +30,62 @@ Partial Class Optioner
         Me.OptionsPanel = New System.Windows.Forms.Panel()
         Me.OptionsDeleteButton = New System.Windows.Forms.Button()
         Me.OptionsMainPanel = New System.Windows.Forms.Panel()
+        Me.ColorsPanel = New System.Windows.Forms.Panel()
+        Me.SetActiveButton = New System.Windows.Forms.Button()
+        Me.ClickIColor = New System.Windows.Forms.Label()
+        Me.ClickOColor = New System.Windows.Forms.Label()
+        Me.HOIColor = New System.Windows.Forms.Label()
+        Me.HOOColor = New System.Windows.Forms.Label()
+        Me.DisColor = New System.Windows.Forms.Label()
+        Me.ButIColor = New System.Windows.Forms.Label()
+        Me.ButOColor = New System.Windows.Forms.Label()
+        Me.TXIColor = New System.Windows.Forms.Label()
+        Me.TXOColor = New System.Windows.Forms.Label()
+        Me.BGIColor = New System.Windows.Forms.Label()
+        Me.BGOColor = New System.Windows.Forms.Label()
+        Me.TButIColor = New System.Windows.Forms.Label()
+        Me.TButOColor = New System.Windows.Forms.Label()
+        Me.TBarIColor = New System.Windows.Forms.Label()
+        Me.TBarOColor = New System.Windows.Forms.Label()
+        Me.ClickIDrop = New System.Windows.Forms.ComboBox()
+        Me.HOIDrop = New System.Windows.Forms.ComboBox()
+        Me.ButIDrop = New System.Windows.Forms.ComboBox()
+        Me.TXIDrop = New System.Windows.Forms.ComboBox()
+        Me.BGIDrop = New System.Windows.Forms.ComboBox()
+        Me.TButIDrop = New System.Windows.Forms.ComboBox()
+        Me.TBarIDrop = New System.Windows.Forms.ComboBox()
+        Me.ClickODrop = New System.Windows.Forms.ComboBox()
+        Me.HOODrop = New System.Windows.Forms.ComboBox()
+        Me.DisDrop = New System.Windows.Forms.ComboBox()
+        Me.ButODrop = New System.Windows.Forms.ComboBox()
+        Me.TXODrop = New System.Windows.Forms.ComboBox()
+        Me.BGODrop = New System.Windows.Forms.ComboBox()
+        Me.TButODrop = New System.Windows.Forms.ComboBox()
+        Me.TBarODrop = New System.Windows.Forms.ComboBox()
+        Me.CopyThemeButton = New System.Windows.Forms.Button()
+        Me.EditThemeButton = New System.Windows.Forms.Button()
+        Me.ResetThemeButton = New System.Windows.Forms.Button()
+        Me.SaveThemeButton = New System.Windows.Forms.Button()
+        Me.ClickLabel = New System.Windows.Forms.Label()
+        Me.HOLabel = New System.Windows.Forms.Label()
+        Me.DisLabel = New System.Windows.Forms.Label()
+        Me.ButLabel = New System.Windows.Forms.Label()
+        Me.TXLabel = New System.Windows.Forms.Label()
+        Me.BGLabel = New System.Windows.Forms.Label()
+        Me.TButLabel = New System.Windows.Forms.Label()
+        Me.InnerLabel = New System.Windows.Forms.Label()
+        Me.OuterLabel = New System.Windows.Forms.Label()
+        Me.TBarLabel = New System.Windows.Forms.Label()
+        Me.SThemeText = New System.Windows.Forms.Label()
+        Me.SThemeLabel = New System.Windows.Forms.Label()
+        Me.CThemeText = New System.Windows.Forms.Label()
+        Me.CThemeLabel = New System.Windows.Forms.Label()
         Me.SoundsPanel = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DBPanel = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.MusicPanel = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ColorsPanel = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.AvatarPanel = New System.Windows.Forms.Panel()
         Me.AvatarText = New System.Windows.Forms.Label()
         Me.AvatarImage = New System.Windows.Forms.PictureBox()
@@ -69,10 +117,10 @@ Partial Class Optioner
         Me.BackgroundPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
         Me.OptionsMainPanel.SuspendLayout()
+        Me.ColorsPanel.SuspendLayout()
         Me.SoundsPanel.SuspendLayout()
         Me.DBPanel.SuspendLayout()
         Me.MusicPanel.SuspendLayout()
-        Me.ColorsPanel.SuspendLayout()
         Me.AvatarPanel.SuspendLayout()
         CType(Me.AvatarImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -173,10 +221,10 @@ Partial Class Optioner
         'OptionsMainPanel
         '
         Me.OptionsMainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.OptionsMainPanel.Controls.Add(Me.ColorsPanel)
         Me.OptionsMainPanel.Controls.Add(Me.SoundsPanel)
         Me.OptionsMainPanel.Controls.Add(Me.DBPanel)
         Me.OptionsMainPanel.Controls.Add(Me.MusicPanel)
-        Me.OptionsMainPanel.Controls.Add(Me.ColorsPanel)
         Me.OptionsMainPanel.Controls.Add(Me.AvatarPanel)
         Me.OptionsMainPanel.Controls.Add(Me.SoundsText)
         Me.OptionsMainPanel.Controls.Add(Me.MusicText)
@@ -194,6 +242,549 @@ Partial Class Optioner
         Me.OptionsMainPanel.Name = "OptionsMainPanel"
         Me.OptionsMainPanel.Size = New System.Drawing.Size(416, 441)
         Me.OptionsMainPanel.TabIndex = 43
+        '
+        'ColorsPanel
+        '
+        Me.ColorsPanel.Controls.Add(Me.SetActiveButton)
+        Me.ColorsPanel.Controls.Add(Me.ClickIColor)
+        Me.ColorsPanel.Controls.Add(Me.ClickOColor)
+        Me.ColorsPanel.Controls.Add(Me.HOIColor)
+        Me.ColorsPanel.Controls.Add(Me.HOOColor)
+        Me.ColorsPanel.Controls.Add(Me.DisColor)
+        Me.ColorsPanel.Controls.Add(Me.ButIColor)
+        Me.ColorsPanel.Controls.Add(Me.ButOColor)
+        Me.ColorsPanel.Controls.Add(Me.TXIColor)
+        Me.ColorsPanel.Controls.Add(Me.TXOColor)
+        Me.ColorsPanel.Controls.Add(Me.BGIColor)
+        Me.ColorsPanel.Controls.Add(Me.BGOColor)
+        Me.ColorsPanel.Controls.Add(Me.TButIColor)
+        Me.ColorsPanel.Controls.Add(Me.TButOColor)
+        Me.ColorsPanel.Controls.Add(Me.TBarIColor)
+        Me.ColorsPanel.Controls.Add(Me.TBarOColor)
+        Me.ColorsPanel.Controls.Add(Me.ClickIDrop)
+        Me.ColorsPanel.Controls.Add(Me.HOIDrop)
+        Me.ColorsPanel.Controls.Add(Me.ButIDrop)
+        Me.ColorsPanel.Controls.Add(Me.TXIDrop)
+        Me.ColorsPanel.Controls.Add(Me.BGIDrop)
+        Me.ColorsPanel.Controls.Add(Me.TButIDrop)
+        Me.ColorsPanel.Controls.Add(Me.TBarIDrop)
+        Me.ColorsPanel.Controls.Add(Me.ClickODrop)
+        Me.ColorsPanel.Controls.Add(Me.HOODrop)
+        Me.ColorsPanel.Controls.Add(Me.DisDrop)
+        Me.ColorsPanel.Controls.Add(Me.ButODrop)
+        Me.ColorsPanel.Controls.Add(Me.TXODrop)
+        Me.ColorsPanel.Controls.Add(Me.BGODrop)
+        Me.ColorsPanel.Controls.Add(Me.TButODrop)
+        Me.ColorsPanel.Controls.Add(Me.TBarODrop)
+        Me.ColorsPanel.Controls.Add(Me.CopyThemeButton)
+        Me.ColorsPanel.Controls.Add(Me.EditThemeButton)
+        Me.ColorsPanel.Controls.Add(Me.ResetThemeButton)
+        Me.ColorsPanel.Controls.Add(Me.SaveThemeButton)
+        Me.ColorsPanel.Controls.Add(Me.ClickLabel)
+        Me.ColorsPanel.Controls.Add(Me.HOLabel)
+        Me.ColorsPanel.Controls.Add(Me.DisLabel)
+        Me.ColorsPanel.Controls.Add(Me.ButLabel)
+        Me.ColorsPanel.Controls.Add(Me.TXLabel)
+        Me.ColorsPanel.Controls.Add(Me.BGLabel)
+        Me.ColorsPanel.Controls.Add(Me.TButLabel)
+        Me.ColorsPanel.Controls.Add(Me.InnerLabel)
+        Me.ColorsPanel.Controls.Add(Me.OuterLabel)
+        Me.ColorsPanel.Controls.Add(Me.TBarLabel)
+        Me.ColorsPanel.Controls.Add(Me.SThemeText)
+        Me.ColorsPanel.Controls.Add(Me.SThemeLabel)
+        Me.ColorsPanel.Controls.Add(Me.CThemeText)
+        Me.ColorsPanel.Controls.Add(Me.CThemeLabel)
+        Me.ColorsPanel.Location = New System.Drawing.Point(8, 7)
+        Me.ColorsPanel.Name = "ColorsPanel"
+        Me.ColorsPanel.Size = New System.Drawing.Size(398, 423)
+        Me.ColorsPanel.TabIndex = 2
+        Me.ColorsPanel.Visible = False
+        '
+        'SetActiveButton
+        '
+        Me.SetActiveButton.Enabled = False
+        Me.SetActiveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SetActiveButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.SetActiveButton.Location = New System.Drawing.Point(300, 390)
+        Me.SetActiveButton.Name = "SetActiveButton"
+        Me.SetActiveButton.Size = New System.Drawing.Size(93, 23)
+        Me.SetActiveButton.TabIndex = 80
+        Me.SetActiveButton.Text = "Set Active"
+        Me.SetActiveButton.UseVisualStyleBackColor = True
+        '
+        'ClickIColor
+        '
+        Me.ClickIColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ClickIColor.Location = New System.Drawing.Point(373, 325)
+        Me.ClickIColor.Name = "ClickIColor"
+        Me.ClickIColor.Size = New System.Drawing.Size(20, 20)
+        Me.ClickIColor.TabIndex = 79
+        '
+        'ClickOColor
+        '
+        Me.ClickOColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ClickOColor.Location = New System.Drawing.Point(243, 325)
+        Me.ClickOColor.Name = "ClickOColor"
+        Me.ClickOColor.Size = New System.Drawing.Size(20, 20)
+        Me.ClickOColor.TabIndex = 78
+        '
+        'HOIColor
+        '
+        Me.HOIColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.HOIColor.Location = New System.Drawing.Point(373, 300)
+        Me.HOIColor.Name = "HOIColor"
+        Me.HOIColor.Size = New System.Drawing.Size(20, 20)
+        Me.HOIColor.TabIndex = 77
+        '
+        'HOOColor
+        '
+        Me.HOOColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.HOOColor.Location = New System.Drawing.Point(243, 300)
+        Me.HOOColor.Name = "HOOColor"
+        Me.HOOColor.Size = New System.Drawing.Size(20, 20)
+        Me.HOOColor.TabIndex = 76
+        '
+        'DisColor
+        '
+        Me.DisColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.DisColor.Location = New System.Drawing.Point(243, 275)
+        Me.DisColor.Name = "DisColor"
+        Me.DisColor.Size = New System.Drawing.Size(20, 20)
+        Me.DisColor.TabIndex = 74
+        '
+        'ButIColor
+        '
+        Me.ButIColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ButIColor.Location = New System.Drawing.Point(373, 250)
+        Me.ButIColor.Name = "ButIColor"
+        Me.ButIColor.Size = New System.Drawing.Size(20, 20)
+        Me.ButIColor.TabIndex = 73
+        '
+        'ButOColor
+        '
+        Me.ButOColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ButOColor.Location = New System.Drawing.Point(243, 250)
+        Me.ButOColor.Name = "ButOColor"
+        Me.ButOColor.Size = New System.Drawing.Size(20, 20)
+        Me.ButOColor.TabIndex = 72
+        '
+        'TXIColor
+        '
+        Me.TXIColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TXIColor.Location = New System.Drawing.Point(373, 225)
+        Me.TXIColor.Name = "TXIColor"
+        Me.TXIColor.Size = New System.Drawing.Size(20, 20)
+        Me.TXIColor.TabIndex = 71
+        '
+        'TXOColor
+        '
+        Me.TXOColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TXOColor.Location = New System.Drawing.Point(243, 225)
+        Me.TXOColor.Name = "TXOColor"
+        Me.TXOColor.Size = New System.Drawing.Size(20, 20)
+        Me.TXOColor.TabIndex = 70
+        '
+        'BGIColor
+        '
+        Me.BGIColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.BGIColor.Location = New System.Drawing.Point(373, 200)
+        Me.BGIColor.Name = "BGIColor"
+        Me.BGIColor.Size = New System.Drawing.Size(20, 20)
+        Me.BGIColor.TabIndex = 69
+        '
+        'BGOColor
+        '
+        Me.BGOColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.BGOColor.Location = New System.Drawing.Point(243, 200)
+        Me.BGOColor.Name = "BGOColor"
+        Me.BGOColor.Size = New System.Drawing.Size(20, 20)
+        Me.BGOColor.TabIndex = 68
+        '
+        'TButIColor
+        '
+        Me.TButIColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TButIColor.Location = New System.Drawing.Point(373, 175)
+        Me.TButIColor.Name = "TButIColor"
+        Me.TButIColor.Size = New System.Drawing.Size(20, 20)
+        Me.TButIColor.TabIndex = 67
+        '
+        'TButOColor
+        '
+        Me.TButOColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TButOColor.Location = New System.Drawing.Point(243, 175)
+        Me.TButOColor.Name = "TButOColor"
+        Me.TButOColor.Size = New System.Drawing.Size(20, 20)
+        Me.TButOColor.TabIndex = 66
+        '
+        'TBarIColor
+        '
+        Me.TBarIColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TBarIColor.Location = New System.Drawing.Point(373, 150)
+        Me.TBarIColor.Name = "TBarIColor"
+        Me.TBarIColor.Size = New System.Drawing.Size(20, 20)
+        Me.TBarIColor.TabIndex = 65
+        '
+        'TBarOColor
+        '
+        Me.TBarOColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TBarOColor.Location = New System.Drawing.Point(243, 150)
+        Me.TBarOColor.Name = "TBarOColor"
+        Me.TBarOColor.Size = New System.Drawing.Size(20, 20)
+        Me.TBarOColor.TabIndex = 64
+        '
+        'ClickIDrop
+        '
+        Me.ClickIDrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.ClickIDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ClickIDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ClickIDrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.ClickIDrop.FormattingEnabled = True
+        Me.ClickIDrop.Location = New System.Drawing.Point(269, 325)
+        Me.ClickIDrop.Name = "ClickIDrop"
+        Me.ClickIDrop.Size = New System.Drawing.Size(100, 21)
+        Me.ClickIDrop.TabIndex = 63
+        '
+        'HOIDrop
+        '
+        Me.HOIDrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.HOIDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.HOIDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.HOIDrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.HOIDrop.FormattingEnabled = True
+        Me.HOIDrop.Location = New System.Drawing.Point(269, 300)
+        Me.HOIDrop.Name = "HOIDrop"
+        Me.HOIDrop.Size = New System.Drawing.Size(100, 21)
+        Me.HOIDrop.TabIndex = 62
+        '
+        'ButIDrop
+        '
+        Me.ButIDrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.ButIDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ButIDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButIDrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.ButIDrop.FormattingEnabled = True
+        Me.ButIDrop.Location = New System.Drawing.Point(269, 250)
+        Me.ButIDrop.Name = "ButIDrop"
+        Me.ButIDrop.Size = New System.Drawing.Size(100, 21)
+        Me.ButIDrop.TabIndex = 60
+        '
+        'TXIDrop
+        '
+        Me.TXIDrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TXIDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TXIDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.TXIDrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.TXIDrop.FormattingEnabled = True
+        Me.TXIDrop.Location = New System.Drawing.Point(269, 225)
+        Me.TXIDrop.Name = "TXIDrop"
+        Me.TXIDrop.Size = New System.Drawing.Size(100, 21)
+        Me.TXIDrop.TabIndex = 59
+        '
+        'BGIDrop
+        '
+        Me.BGIDrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.BGIDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.BGIDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BGIDrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.BGIDrop.FormattingEnabled = True
+        Me.BGIDrop.Location = New System.Drawing.Point(269, 200)
+        Me.BGIDrop.Name = "BGIDrop"
+        Me.BGIDrop.Size = New System.Drawing.Size(100, 21)
+        Me.BGIDrop.TabIndex = 58
+        '
+        'TButIDrop
+        '
+        Me.TButIDrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TButIDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TButIDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.TButIDrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.TButIDrop.FormattingEnabled = True
+        Me.TButIDrop.Location = New System.Drawing.Point(269, 175)
+        Me.TButIDrop.Name = "TButIDrop"
+        Me.TButIDrop.Size = New System.Drawing.Size(100, 21)
+        Me.TButIDrop.TabIndex = 57
+        '
+        'TBarIDrop
+        '
+        Me.TBarIDrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TBarIDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TBarIDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.TBarIDrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.TBarIDrop.FormattingEnabled = True
+        Me.TBarIDrop.Location = New System.Drawing.Point(269, 150)
+        Me.TBarIDrop.Name = "TBarIDrop"
+        Me.TBarIDrop.Size = New System.Drawing.Size(100, 21)
+        Me.TBarIDrop.TabIndex = 56
+        '
+        'ClickODrop
+        '
+        Me.ClickODrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.ClickODrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ClickODrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ClickODrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.ClickODrop.FormattingEnabled = True
+        Me.ClickODrop.Location = New System.Drawing.Point(139, 325)
+        Me.ClickODrop.Name = "ClickODrop"
+        Me.ClickODrop.Size = New System.Drawing.Size(100, 21)
+        Me.ClickODrop.TabIndex = 55
+        '
+        'HOODrop
+        '
+        Me.HOODrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.HOODrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.HOODrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.HOODrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.HOODrop.FormattingEnabled = True
+        Me.HOODrop.Location = New System.Drawing.Point(139, 300)
+        Me.HOODrop.Name = "HOODrop"
+        Me.HOODrop.Size = New System.Drawing.Size(100, 21)
+        Me.HOODrop.TabIndex = 54
+        '
+        'DisDrop
+        '
+        Me.DisDrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.DisDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.DisDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DisDrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.DisDrop.FormattingEnabled = True
+        Me.DisDrop.Location = New System.Drawing.Point(139, 275)
+        Me.DisDrop.Name = "DisDrop"
+        Me.DisDrop.Size = New System.Drawing.Size(100, 21)
+        Me.DisDrop.TabIndex = 53
+        '
+        'ButODrop
+        '
+        Me.ButODrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.ButODrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ButODrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButODrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.ButODrop.FormattingEnabled = True
+        Me.ButODrop.Location = New System.Drawing.Point(139, 250)
+        Me.ButODrop.Name = "ButODrop"
+        Me.ButODrop.Size = New System.Drawing.Size(100, 21)
+        Me.ButODrop.TabIndex = 52
+        '
+        'TXODrop
+        '
+        Me.TXODrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TXODrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TXODrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.TXODrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.TXODrop.FormattingEnabled = True
+        Me.TXODrop.Location = New System.Drawing.Point(139, 225)
+        Me.TXODrop.Name = "TXODrop"
+        Me.TXODrop.Size = New System.Drawing.Size(100, 21)
+        Me.TXODrop.TabIndex = 51
+        '
+        'BGODrop
+        '
+        Me.BGODrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.BGODrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.BGODrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BGODrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.BGODrop.FormattingEnabled = True
+        Me.BGODrop.Location = New System.Drawing.Point(139, 200)
+        Me.BGODrop.Name = "BGODrop"
+        Me.BGODrop.Size = New System.Drawing.Size(100, 21)
+        Me.BGODrop.TabIndex = 50
+        '
+        'TButODrop
+        '
+        Me.TButODrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TButODrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TButODrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.TButODrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.TButODrop.FormattingEnabled = True
+        Me.TButODrop.Location = New System.Drawing.Point(139, 175)
+        Me.TButODrop.Name = "TButODrop"
+        Me.TButODrop.Size = New System.Drawing.Size(100, 21)
+        Me.TButODrop.TabIndex = 49
+        '
+        'TBarODrop
+        '
+        Me.TBarODrop.BackColor = System.Drawing.SystemColors.ControlText
+        Me.TBarODrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TBarODrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.TBarODrop.ForeColor = System.Drawing.SystemColors.Control
+        Me.TBarODrop.FormattingEnabled = True
+        Me.TBarODrop.Location = New System.Drawing.Point(139, 150)
+        Me.TBarODrop.Name = "TBarODrop"
+        Me.TBarODrop.Size = New System.Drawing.Size(100, 21)
+        Me.TBarODrop.TabIndex = 48
+        '
+        'CopyThemeButton
+        '
+        Me.CopyThemeButton.Enabled = False
+        Me.CopyThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CopyThemeButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.CopyThemeButton.Location = New System.Drawing.Point(7, 390)
+        Me.CopyThemeButton.Name = "CopyThemeButton"
+        Me.CopyThemeButton.Size = New System.Drawing.Size(93, 23)
+        Me.CopyThemeButton.TabIndex = 47
+        Me.CopyThemeButton.Text = "Copy Exist"
+        Me.CopyThemeButton.UseVisualStyleBackColor = True
+        '
+        'EditThemeButton
+        '
+        Me.EditThemeButton.Enabled = False
+        Me.EditThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.EditThemeButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.EditThemeButton.Location = New System.Drawing.Point(104, 390)
+        Me.EditThemeButton.Name = "EditThemeButton"
+        Me.EditThemeButton.Size = New System.Drawing.Size(93, 23)
+        Me.EditThemeButton.TabIndex = 46
+        Me.EditThemeButton.Text = "Edit"
+        Me.EditThemeButton.UseVisualStyleBackColor = True
+        '
+        'ResetThemeButton
+        '
+        Me.ResetThemeButton.Enabled = False
+        Me.ResetThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ResetThemeButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.ResetThemeButton.Location = New System.Drawing.Point(43, 100)
+        Me.ResetThemeButton.Name = "ResetThemeButton"
+        Me.ResetThemeButton.Size = New System.Drawing.Size(93, 23)
+        Me.ResetThemeButton.TabIndex = 45
+        Me.ResetThemeButton.Text = "Start Over"
+        Me.ResetThemeButton.UseVisualStyleBackColor = True
+        '
+        'SaveThemeButton
+        '
+        Me.SaveThemeButton.Enabled = False
+        Me.SaveThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SaveThemeButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.SaveThemeButton.Location = New System.Drawing.Point(202, 390)
+        Me.SaveThemeButton.Name = "SaveThemeButton"
+        Me.SaveThemeButton.Size = New System.Drawing.Size(93, 23)
+        Me.SaveThemeButton.TabIndex = 44
+        Me.SaveThemeButton.Text = "Save"
+        Me.SaveThemeButton.UseVisualStyleBackColor = True
+        '
+        'ClickLabel
+        '
+        Me.ClickLabel.Location = New System.Drawing.Point(4, 325)
+        Me.ClickLabel.Name = "ClickLabel"
+        Me.ClickLabel.Size = New System.Drawing.Size(135, 23)
+        Me.ClickLabel.TabIndex = 14
+        Me.ClickLabel.Text = "Click Button"
+        Me.ClickLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'HOLabel
+        '
+        Me.HOLabel.Location = New System.Drawing.Point(4, 300)
+        Me.HOLabel.Name = "HOLabel"
+        Me.HOLabel.Size = New System.Drawing.Size(135, 23)
+        Me.HOLabel.TabIndex = 13
+        Me.HOLabel.Text = "Hover Over"
+        Me.HOLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'DisLabel
+        '
+        Me.DisLabel.Location = New System.Drawing.Point(4, 275)
+        Me.DisLabel.Name = "DisLabel"
+        Me.DisLabel.Size = New System.Drawing.Size(135, 23)
+        Me.DisLabel.TabIndex = 12
+        Me.DisLabel.Text = "Disabled"
+        Me.DisLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'ButLabel
+        '
+        Me.ButLabel.Location = New System.Drawing.Point(4, 250)
+        Me.ButLabel.Name = "ButLabel"
+        Me.ButLabel.Size = New System.Drawing.Size(135, 23)
+        Me.ButLabel.TabIndex = 11
+        Me.ButLabel.Text = "Buttons"
+        Me.ButLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'TXLabel
+        '
+        Me.TXLabel.Location = New System.Drawing.Point(4, 225)
+        Me.TXLabel.Name = "TXLabel"
+        Me.TXLabel.Size = New System.Drawing.Size(135, 23)
+        Me.TXLabel.TabIndex = 10
+        Me.TXLabel.Text = "Text"
+        Me.TXLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'BGLabel
+        '
+        Me.BGLabel.Location = New System.Drawing.Point(4, 200)
+        Me.BGLabel.Name = "BGLabel"
+        Me.BGLabel.Size = New System.Drawing.Size(135, 23)
+        Me.BGLabel.TabIndex = 9
+        Me.BGLabel.Text = "Background"
+        Me.BGLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'TButLabel
+        '
+        Me.TButLabel.Location = New System.Drawing.Point(4, 175)
+        Me.TButLabel.Name = "TButLabel"
+        Me.TButLabel.Size = New System.Drawing.Size(135, 23)
+        Me.TButLabel.TabIndex = 8
+        Me.TButLabel.Text = "Title Button"
+        Me.TButLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'InnerLabel
+        '
+        Me.InnerLabel.Location = New System.Drawing.Point(287, 100)
+        Me.InnerLabel.Name = "InnerLabel"
+        Me.InnerLabel.Size = New System.Drawing.Size(56, 23)
+        Me.InnerLabel.TabIndex = 7
+        Me.InnerLabel.Text = "Inner"
+        Me.InnerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'OuterLabel
+        '
+        Me.OuterLabel.Location = New System.Drawing.Point(154, 100)
+        Me.OuterLabel.Name = "OuterLabel"
+        Me.OuterLabel.Size = New System.Drawing.Size(56, 23)
+        Me.OuterLabel.TabIndex = 6
+        Me.OuterLabel.Text = "Outer"
+        Me.OuterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'TBarLabel
+        '
+        Me.TBarLabel.Location = New System.Drawing.Point(4, 150)
+        Me.TBarLabel.Name = "TBarLabel"
+        Me.TBarLabel.Size = New System.Drawing.Size(135, 23)
+        Me.TBarLabel.TabIndex = 5
+        Me.TBarLabel.Text = "TitleBar"
+        Me.TBarLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'SThemeText
+        '
+        Me.SThemeText.Location = New System.Drawing.Point(136, 50)
+        Me.SThemeText.Name = "SThemeText"
+        Me.SThemeText.Size = New System.Drawing.Size(247, 23)
+        Me.SThemeText.TabIndex = 4
+        Me.SThemeText.Text = "THEMENAME"
+        Me.SThemeText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'SThemeLabel
+        '
+        Me.SThemeLabel.Location = New System.Drawing.Point(4, 50)
+        Me.SThemeLabel.Name = "SThemeLabel"
+        Me.SThemeLabel.Size = New System.Drawing.Size(132, 23)
+        Me.SThemeLabel.TabIndex = 3
+        Me.SThemeLabel.Text = "Selected Theme:"
+        Me.SThemeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'CThemeText
+        '
+        Me.CThemeText.Location = New System.Drawing.Point(136, 25)
+        Me.CThemeText.Name = "CThemeText"
+        Me.CThemeText.Size = New System.Drawing.Size(247, 23)
+        Me.CThemeText.TabIndex = 2
+        Me.CThemeText.Text = "THEMENAME"
+        Me.CThemeText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'CThemeLabel
+        '
+        Me.CThemeLabel.Location = New System.Drawing.Point(16, 25)
+        Me.CThemeLabel.Name = "CThemeLabel"
+        Me.CThemeLabel.Size = New System.Drawing.Size(120, 23)
+        Me.CThemeLabel.TabIndex = 1
+        Me.CThemeLabel.Text = "Current Theme:"
+        Me.CThemeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'SoundsPanel
         '
@@ -248,24 +839,6 @@ Partial Class Optioner
         Me.Label2.Size = New System.Drawing.Size(47, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Music"
-        '
-        'ColorsPanel
-        '
-        Me.ColorsPanel.Controls.Add(Me.Label4)
-        Me.ColorsPanel.Location = New System.Drawing.Point(8, 7)
-        Me.ColorsPanel.Name = "ColorsPanel"
-        Me.ColorsPanel.Size = New System.Drawing.Size(398, 423)
-        Me.ColorsPanel.TabIndex = 2
-        Me.ColorsPanel.Visible = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(172, 205)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(55, 13)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Colors"
         '
         'AvatarPanel
         '
@@ -557,14 +1130,13 @@ Partial Class Optioner
         Me.BackgroundPanel.ResumeLayout(False)
         Me.OptionsPanel.ResumeLayout(False)
         Me.OptionsMainPanel.ResumeLayout(False)
+        Me.ColorsPanel.ResumeLayout(False)
         Me.SoundsPanel.ResumeLayout(False)
         Me.SoundsPanel.PerformLayout()
         Me.DBPanel.ResumeLayout(False)
         Me.DBPanel.PerformLayout()
         Me.MusicPanel.ResumeLayout(False)
         Me.MusicPanel.PerformLayout()
-        Me.ColorsPanel.ResumeLayout(False)
-        Me.ColorsPanel.PerformLayout()
         Me.AvatarPanel.ResumeLayout(False)
         CType(Me.AvatarImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -594,7 +1166,7 @@ Partial Class Optioner
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents CThemeLabel As Label
     Friend WithEvents AvatarImage As PictureBox
     Friend WithEvents OptionsRenameButton As Button
     Friend WithEvents DimText As Label
@@ -613,4 +1185,52 @@ Partial Class Optioner
     Friend WithEvents ColorLabel As Label
     Friend WithEvents VersionLabel As Label
     Friend WithEvents SystemLabel As Label
+    Friend WithEvents SThemeText As Label
+    Friend WithEvents SThemeLabel As Label
+    Friend WithEvents CThemeText As Label
+    Friend WithEvents ClickIDrop As ComboBox
+    Friend WithEvents HOIDrop As ComboBox
+    Friend WithEvents ButIDrop As ComboBox
+    Friend WithEvents TXIDrop As ComboBox
+    Friend WithEvents BGIDrop As ComboBox
+    Friend WithEvents TButIDrop As ComboBox
+    Friend WithEvents TBarIDrop As ComboBox
+    Friend WithEvents ClickODrop As ComboBox
+    Friend WithEvents HOODrop As ComboBox
+    Friend WithEvents DisDrop As ComboBox
+    Friend WithEvents ButODrop As ComboBox
+    Friend WithEvents TXODrop As ComboBox
+    Friend WithEvents BGODrop As ComboBox
+    Friend WithEvents TButODrop As ComboBox
+    Friend WithEvents TBarODrop As ComboBox
+    Friend WithEvents CopyThemeButton As Button
+    Friend WithEvents EditThemeButton As Button
+    Friend WithEvents ResetThemeButton As Button
+    Friend WithEvents SaveThemeButton As Button
+    Friend WithEvents ClickLabel As Label
+    Friend WithEvents HOLabel As Label
+    Friend WithEvents DisLabel As Label
+    Friend WithEvents ButLabel As Label
+    Friend WithEvents TXLabel As Label
+    Friend WithEvents BGLabel As Label
+    Friend WithEvents TButLabel As Label
+    Friend WithEvents InnerLabel As Label
+    Friend WithEvents OuterLabel As Label
+    Friend WithEvents TBarLabel As Label
+    Friend WithEvents ClickIColor As Label
+    Friend WithEvents ClickOColor As Label
+    Friend WithEvents HOIColor As Label
+    Friend WithEvents HOOColor As Label
+    Friend WithEvents DisColor As Label
+    Friend WithEvents ButIColor As Label
+    Friend WithEvents ButOColor As Label
+    Friend WithEvents TXIColor As Label
+    Friend WithEvents TXOColor As Label
+    Friend WithEvents BGIColor As Label
+    Friend WithEvents BGOColor As Label
+    Friend WithEvents TButIColor As Label
+    Friend WithEvents TButOColor As Label
+    Friend WithEvents TBarIColor As Label
+    Friend WithEvents TBarOColor As Label
+    Friend WithEvents SetActiveButton As Button
 End Class

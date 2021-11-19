@@ -61,7 +61,7 @@
         Else
             Settings.GetSettings()
         End If
-        Appearance.AssignMode(Settings.SettingsMode)
+        Appearance.AssignTheme(Settings.SettingsMode)
     End Sub
     Private Sub InitIntro()
         If Settings.SettingsMusic.ToLower = "on" Then
