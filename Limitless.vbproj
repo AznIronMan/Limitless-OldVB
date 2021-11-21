@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>0.1.007.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -118,31 +118,31 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appearance.vb" />
-    <Compile Include="Avatars.vb" />
-    <Compile Include="Database.vb" />
+    <Compile Include="Classes\Appearance.vb" />
+    <Compile Include="Classes\Avatars.vb" />
+    <Compile Include="Classes\Database.vb" />
     <Compile Include="Editor.vb" />
-    <Compile Include="Exiter.vb" />
-    <Compile Include="DocReader.Designer.vb">
+    <Compile Include="Classes\Exiter.vb" />
+    <Compile Include="Forms\DocReader.Designer.vb">
       <DependentUpon>DocReader.vb</DependentUpon>
     </Compile>
-    <Compile Include="DocReader.vb">
+    <Compile Include="Forms\DocReader.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abouter.Designer.vb">
+    <Compile Include="Forms\Abouter.Designer.vb">
       <DependentUpon>Abouter.vb</DependentUpon>
     </Compile>
-    <Compile Include="Abouter.vb">
+    <Compile Include="Forms\Abouter.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Initialize.vb" />
-    <Compile Include="Limitless.Designer.vb">
+    <Compile Include="Classes\Initialize.vb" />
+    <Compile Include="Forms\Limitless.Designer.vb">
       <DependentUpon>Limitless.vb</DependentUpon>
     </Compile>
-    <Compile Include="Limitless.vb">
+    <Compile Include="Forms\Limitless.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MemoryBank.vb" />
+    <Compile Include="Classes\MemoryBank.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -160,29 +160,29 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="NewGame.vb" />
-    <Compile Include="Optioner.Designer.vb">
+    <Compile Include="Forms\Optioner.Designer.vb">
       <DependentUpon>Optioner.vb</DependentUpon>
     </Compile>
-    <Compile Include="Optioner.vb">
+    <Compile Include="Forms\Optioner.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings.vb" />
-    <Compile Include="Tools.vb" />
-    <Compile Include="Updater.Designer.vb">
+    <Compile Include="Classes\Settings.vb" />
+    <Compile Include="Classes\Tools.vb" />
+    <Compile Include="Forms\Updater.Designer.vb">
       <DependentUpon>Updater.vb</DependentUpon>
     </Compile>
-    <Compile Include="Updater.vb">
+    <Compile Include="Forms\Updater.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Abouter.resx">
+    <EmbeddedResource Include="Forms\Abouter.resx">
       <DependentUpon>Abouter.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocReader.resx">
+    <EmbeddedResource Include="Forms\DocReader.resx">
       <DependentUpon>DocReader.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Limitless.resx">
+    <EmbeddedResource Include="Forms\Limitless.resx">
       <DependentUpon>Limitless.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -191,10 +191,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Optioner.resx">
+    <EmbeddedResource Include="Forms\Optioner.resx">
       <DependentUpon>Optioner.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Updater.resx">
+    <EmbeddedResource Include="Forms\Updater.resx">
       <DependentUpon>Updater.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

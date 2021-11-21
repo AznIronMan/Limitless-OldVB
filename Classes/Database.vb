@@ -1,10 +1,10 @@
 ﻿Public Class Database
 
     Shared ReadOnly SavePath As String = MemoryBank.DataDir & "\"
-    Shared DefaultSave As String = Settings.SettingsDefaultDB
+    Shared DefaultSave As String = Settings.SettingsDB
     Shared ReadOnly SaveExt As String = MemoryBank.SavesExtL
     Public Shared Sub CheckForDB(savename As String)
-        DefaultSave = Settings.SettingsDefaultDB
+        DefaultSave = Settings.SettingsDB
         Dim DBExists As Boolean = System.IO.File.Exists(SavePath & savename & SaveExt),
             DefaultExists As Boolean = System.IO.File.Exists(SavePath & DefaultSave & SaveExt)
         If DBExists Then
@@ -16,7 +16,7 @@
                    ClarkTribeGames.Converters.UppercaseEachFirstLetter(DefaultSave) & ".")
                 ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
                     "lastdb", {"settingConfig"}, {DefaultSave})
-                Settings.SettingsLastDB = LCase(DefaultSave)
+                Settings.SettingsDB = LCase(DefaultSave)
                 'MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
                 'MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
             Else
@@ -31,10 +31,10 @@
                 CreateEmptyDB(ClarkTribeGames.Converters.UppercaseEachFirstLetter(DefaultSave))
                 ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
                     "defaultdb", {"settingConfig"}, {DefaultSave})
-                ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
-                    "lastdb", {"settingConfig"}, {DefaultSave})
-                Settings.SettingsLastDB = LCase(DefaultSave)
-                Settings.SettingsDefaultDB = LCase(DefaultSave)
+                'ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
+                '    "lastdb", {"settingConfig"}, {DefaultSave})
+                'Settings.SettingsLastDB = LCase(DefaultSave)
+                Settings.SettingsDB = LCase(DefaultSave)
                 'MainWindow.EditorDBText.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
                 'MainWindow.EditorSwitchCurBox.Text = Converters.UppercaseEachFirstLetter(DefaultSave)
             End If
@@ -55,7 +55,7 @@
     Public Shared Sub VersionChecker()
         If ClarkTribeGames.Web.CheckWeb() Then
             Dim DBOnline As String = ClarkTribeGames.MySQLReader.Query(LCase(Application.ProductName & "db"), "v")
-            Dim DBLocal As String = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, Settings.SettingsDefaultDB &
+            Dim DBLocal As String = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, Settings.SettingsDB &
             MemoryBank.SavesExtL, "dbInfo", "dbVersion").Split(",")(0)
             If (CInt(DBOnline.Replace(".", "")) > CInt(DBLocal.Replace(".", ""))) Then
                 Dim answer As Integer = MsgBox("Newer version " & DBOnline & " of Default Database available!" &
@@ -349,6 +349,7 @@
         ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "INSERT INTO 'dbVerse' VALUES ('0','LimitlessVerse',
             'This is the LimitlessVerse where The Arena is located.',NULL,'1',NULL,NULL);")
 
+        ClarkTribeGames.SQLite.CloseSQL(SavePath, savename & SaveExt)
     End Sub
 
 End Class

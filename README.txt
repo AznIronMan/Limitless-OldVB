@@ -1,7 +1,7 @@
 =============================================
 LIMITLESS by Geoff Clark
 PUBLISHED by CLARKTRIBEGAMES LLC
-VERSION ALPHA 0.1.007.0007
+VERSION ALPHA 0.1.007.0009
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -73,7 +73,7 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.007.0007 / 2021.11.18 - The Revamp
+ALPHA 0.1.007.0009 / 2021.11.20 - The Revamp
 
 - redesigned the gui to have the menu buttons on the left
 - removed the options and editor for redesign
@@ -111,6 +111,16 @@ ALPHA 0.1.007.0007 / 2021.11.18 - The Revamp
 - expanded colors in memory to full color spectrum range
 - created method to read color mode from settings and apply them to options
 - added ability to switch between modes in option menu
+- created internal folder structure to break out forms and classes
+- added ability to add new, delete, rename, set active, and copy themes
+- removed older colors related code from previous version
+- added theme description with ability to edit the description
+- added randomizer button and function for color themes as an option
+- added database option section
+- added ability to create new blank, duplicate, import, rename, delete, and set active database files
+- removed lastdb from settings and memory, only using defaultdb now
+- updated references to lastdb as defaultdb
+- removed old code again
 
 [PREVIOUS UPDATES]
 

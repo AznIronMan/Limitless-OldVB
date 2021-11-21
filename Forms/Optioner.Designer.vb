@@ -30,7 +30,10 @@ Partial Class Optioner
         Me.OptionsPanel = New System.Windows.Forms.Panel()
         Me.OptionsDeleteButton = New System.Windows.Forms.Button()
         Me.OptionsMainPanel = New System.Windows.Forms.Panel()
+        Me.DBPanel = New System.Windows.Forms.Panel()
         Me.ColorsPanel = New System.Windows.Forms.Panel()
+        Me.RandomThemeButton = New System.Windows.Forms.Button()
+        Me.CDescBox = New System.Windows.Forms.TextBox()
         Me.SetActiveButton = New System.Windows.Forms.Button()
         Me.ClickIColor = New System.Windows.Forms.Label()
         Me.ClickOColor = New System.Windows.Forms.Label()
@@ -82,8 +85,6 @@ Partial Class Optioner
         Me.CThemeLabel = New System.Windows.Forms.Label()
         Me.SoundsPanel = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DBPanel = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.MusicPanel = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.AvatarPanel = New System.Windows.Forms.Panel()
@@ -112,14 +113,21 @@ Partial Class Optioner
         Me.OptionsAddButton = New System.Windows.Forms.Button()
         Me.OptionsRefreshButton = New System.Windows.Forms.Button()
         Me.OptionerBackButton = New System.Windows.Forms.Button()
+        Me.SetActiveDBButton = New System.Windows.Forms.Button()
+        Me.CopyDBButton = New System.Windows.Forms.Button()
+        Me.SDBText = New System.Windows.Forms.Label()
+        Me.SDBLabel = New System.Windows.Forms.Label()
+        Me.CDBText = New System.Windows.Forms.Label()
+        Me.CDBLabel = New System.Windows.Forms.Label()
+        Me.BlankDBButton = New System.Windows.Forms.Button()
         Me.TitleBarPanel.SuspendLayout()
         Me.CloseButton.SuspendLayout()
         Me.BackgroundPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
         Me.OptionsMainPanel.SuspendLayout()
+        Me.DBPanel.SuspendLayout()
         Me.ColorsPanel.SuspendLayout()
         Me.SoundsPanel.SuspendLayout()
-        Me.DBPanel.SuspendLayout()
         Me.MusicPanel.SuspendLayout()
         Me.AvatarPanel.SuspendLayout()
         CType(Me.AvatarImage, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -221,11 +229,11 @@ Partial Class Optioner
         'OptionsMainPanel
         '
         Me.OptionsMainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.OptionsMainPanel.Controls.Add(Me.ColorsPanel)
-        Me.OptionsMainPanel.Controls.Add(Me.SoundsPanel)
         Me.OptionsMainPanel.Controls.Add(Me.DBPanel)
+        Me.OptionsMainPanel.Controls.Add(Me.SoundsPanel)
         Me.OptionsMainPanel.Controls.Add(Me.MusicPanel)
         Me.OptionsMainPanel.Controls.Add(Me.AvatarPanel)
+        Me.OptionsMainPanel.Controls.Add(Me.ColorsPanel)
         Me.OptionsMainPanel.Controls.Add(Me.SoundsText)
         Me.OptionsMainPanel.Controls.Add(Me.MusicText)
         Me.OptionsMainPanel.Controls.Add(Me.DBText)
@@ -243,8 +251,25 @@ Partial Class Optioner
         Me.OptionsMainPanel.Size = New System.Drawing.Size(416, 441)
         Me.OptionsMainPanel.TabIndex = 43
         '
+        'DBPanel
+        '
+        Me.DBPanel.Controls.Add(Me.BlankDBButton)
+        Me.DBPanel.Controls.Add(Me.SetActiveDBButton)
+        Me.DBPanel.Controls.Add(Me.CopyDBButton)
+        Me.DBPanel.Controls.Add(Me.SDBText)
+        Me.DBPanel.Controls.Add(Me.SDBLabel)
+        Me.DBPanel.Controls.Add(Me.CDBText)
+        Me.DBPanel.Controls.Add(Me.CDBLabel)
+        Me.DBPanel.Location = New System.Drawing.Point(8, 7)
+        Me.DBPanel.Name = "DBPanel"
+        Me.DBPanel.Size = New System.Drawing.Size(398, 423)
+        Me.DBPanel.TabIndex = 3
+        Me.DBPanel.Visible = False
+        '
         'ColorsPanel
         '
+        Me.ColorsPanel.Controls.Add(Me.RandomThemeButton)
+        Me.ColorsPanel.Controls.Add(Me.CDescBox)
         Me.ColorsPanel.Controls.Add(Me.SetActiveButton)
         Me.ColorsPanel.Controls.Add(Me.ClickIColor)
         Me.ColorsPanel.Controls.Add(Me.ClickOColor)
@@ -299,6 +324,33 @@ Partial Class Optioner
         Me.ColorsPanel.Size = New System.Drawing.Size(398, 423)
         Me.ColorsPanel.TabIndex = 2
         Me.ColorsPanel.Visible = False
+        '
+        'RandomThemeButton
+        '
+        Me.RandomThemeButton.Enabled = False
+        Me.RandomThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RandomThemeButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.RandomThemeButton.Location = New System.Drawing.Point(104, 357)
+        Me.RandomThemeButton.Name = "RandomThemeButton"
+        Me.RandomThemeButton.Size = New System.Drawing.Size(93, 23)
+        Me.RandomThemeButton.TabIndex = 82
+        Me.RandomThemeButton.Text = "Randomizer"
+        Me.RandomThemeButton.UseVisualStyleBackColor = True
+        '
+        'CDescBox
+        '
+        Me.CDescBox.BackColor = System.Drawing.SystemColors.ControlText
+        Me.CDescBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.CDescBox.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.CDescBox.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CDescBox.ForeColor = System.Drawing.SystemColors.Window
+        Me.CDescBox.Location = New System.Drawing.Point(10, 75)
+        Me.CDescBox.MaxLength = 128
+        Me.CDescBox.Multiline = True
+        Me.CDescBox.Name = "CDescBox"
+        Me.CDescBox.ReadOnly = True
+        Me.CDescBox.Size = New System.Drawing.Size(380, 42)
+        Me.CDescBox.TabIndex = 81
         '
         'SetActiveButton
         '
@@ -641,7 +693,7 @@ Partial Class Optioner
         Me.ResetThemeButton.Enabled = False
         Me.ResetThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ResetThemeButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
-        Me.ResetThemeButton.Location = New System.Drawing.Point(43, 100)
+        Me.ResetThemeButton.Location = New System.Drawing.Point(202, 357)
         Me.ResetThemeButton.Name = "ResetThemeButton"
         Me.ResetThemeButton.Size = New System.Drawing.Size(93, 23)
         Me.ResetThemeButton.TabIndex = 45
@@ -725,7 +777,7 @@ Partial Class Optioner
         '
         'InnerLabel
         '
-        Me.InnerLabel.Location = New System.Drawing.Point(287, 100)
+        Me.InnerLabel.Location = New System.Drawing.Point(287, 125)
         Me.InnerLabel.Name = "InnerLabel"
         Me.InnerLabel.Size = New System.Drawing.Size(56, 23)
         Me.InnerLabel.TabIndex = 7
@@ -734,7 +786,7 @@ Partial Class Optioner
         '
         'OuterLabel
         '
-        Me.OuterLabel.Location = New System.Drawing.Point(154, 100)
+        Me.OuterLabel.Location = New System.Drawing.Point(154, 125)
         Me.OuterLabel.Name = "OuterLabel"
         Me.OuterLabel.Size = New System.Drawing.Size(56, 23)
         Me.OuterLabel.TabIndex = 6
@@ -752,7 +804,7 @@ Partial Class Optioner
         '
         'SThemeText
         '
-        Me.SThemeText.Location = New System.Drawing.Point(136, 50)
+        Me.SThemeText.Location = New System.Drawing.Point(136, 40)
         Me.SThemeText.Name = "SThemeText"
         Me.SThemeText.Size = New System.Drawing.Size(247, 23)
         Me.SThemeText.TabIndex = 4
@@ -761,7 +813,8 @@ Partial Class Optioner
         '
         'SThemeLabel
         '
-        Me.SThemeLabel.Location = New System.Drawing.Point(4, 50)
+        Me.SThemeLabel.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SThemeLabel.Location = New System.Drawing.Point(4, 40)
         Me.SThemeLabel.Name = "SThemeLabel"
         Me.SThemeLabel.Size = New System.Drawing.Size(132, 23)
         Me.SThemeLabel.TabIndex = 3
@@ -770,7 +823,7 @@ Partial Class Optioner
         '
         'CThemeText
         '
-        Me.CThemeText.Location = New System.Drawing.Point(136, 25)
+        Me.CThemeText.Location = New System.Drawing.Point(136, 15)
         Me.CThemeText.Name = "CThemeText"
         Me.CThemeText.Size = New System.Drawing.Size(247, 23)
         Me.CThemeText.TabIndex = 2
@@ -779,7 +832,8 @@ Partial Class Optioner
         '
         'CThemeLabel
         '
-        Me.CThemeLabel.Location = New System.Drawing.Point(16, 25)
+        Me.CThemeLabel.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CThemeLabel.Location = New System.Drawing.Point(16, 15)
         Me.CThemeLabel.Name = "CThemeLabel"
         Me.CThemeLabel.Size = New System.Drawing.Size(120, 23)
         Me.CThemeLabel.TabIndex = 1
@@ -803,24 +857,6 @@ Partial Class Optioner
         Me.Label1.Size = New System.Drawing.Size(55, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Sounds"
-        '
-        'DBPanel
-        '
-        Me.DBPanel.Controls.Add(Me.Label3)
-        Me.DBPanel.Location = New System.Drawing.Point(8, 7)
-        Me.DBPanel.Name = "DBPanel"
-        Me.DBPanel.Size = New System.Drawing.Size(398, 423)
-        Me.DBPanel.TabIndex = 3
-        Me.DBPanel.Visible = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(172, 205)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(23, 13)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "DB"
         '
         'MusicPanel
         '
@@ -1110,6 +1146,81 @@ Partial Class Optioner
         Me.OptionerBackButton.TabIndex = 32
         Me.OptionerBackButton.UseVisualStyleBackColor = False
         '
+        'SetActiveDBButton
+        '
+        Me.SetActiveDBButton.Enabled = False
+        Me.SetActiveDBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SetActiveDBButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.SetActiveDBButton.Location = New System.Drawing.Point(118, 350)
+        Me.SetActiveDBButton.Name = "SetActiveDBButton"
+        Me.SetActiveDBButton.Size = New System.Drawing.Size(162, 23)
+        Me.SetActiveDBButton.TabIndex = 87
+        Me.SetActiveDBButton.Text = "Set As Active DB"
+        Me.SetActiveDBButton.UseVisualStyleBackColor = True
+        '
+        'CopyDBButton
+        '
+        Me.CopyDBButton.Enabled = False
+        Me.CopyDBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CopyDBButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.CopyDBButton.Location = New System.Drawing.Point(118, 300)
+        Me.CopyDBButton.Name = "CopyDBButton"
+        Me.CopyDBButton.Size = New System.Drawing.Size(162, 23)
+        Me.CopyDBButton.TabIndex = 86
+        Me.CopyDBButton.Text = "Duplicate To New DB"
+        Me.CopyDBButton.UseVisualStyleBackColor = True
+        '
+        'SDBText
+        '
+        Me.SDBText.Location = New System.Drawing.Point(163, 150)
+        Me.SDBText.Name = "SDBText"
+        Me.SDBText.Size = New System.Drawing.Size(221, 23)
+        Me.SDBText.TabIndex = 84
+        Me.SDBText.Text = "DBNAME"
+        Me.SDBText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.SDBText.Visible = False
+        '
+        'SDBLabel
+        '
+        Me.SDBLabel.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SDBLabel.Location = New System.Drawing.Point(5, 150)
+        Me.SDBLabel.Name = "SDBLabel"
+        Me.SDBLabel.Size = New System.Drawing.Size(156, 23)
+        Me.SDBLabel.TabIndex = 83
+        Me.SDBLabel.Text = "Selected Database:"
+        Me.SDBLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.SDBLabel.Visible = False
+        '
+        'CDBText
+        '
+        Me.CDBText.Location = New System.Drawing.Point(163, 50)
+        Me.CDBText.Name = "CDBText"
+        Me.CDBText.Size = New System.Drawing.Size(221, 23)
+        Me.CDBText.TabIndex = 82
+        Me.CDBText.Text = "DBNAME"
+        Me.CDBText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'CDBLabel
+        '
+        Me.CDBLabel.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CDBLabel.Location = New System.Drawing.Point(3, 50)
+        Me.CDBLabel.Name = "CDBLabel"
+        Me.CDBLabel.Size = New System.Drawing.Size(158, 23)
+        Me.CDBLabel.TabIndex = 81
+        Me.CDBLabel.Text = "Active Database:"
+        Me.CDBLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'BlankDBButton
+        '
+        Me.BlankDBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BlankDBButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.BlankDBButton.Location = New System.Drawing.Point(118, 250)
+        Me.BlankDBButton.Name = "BlankDBButton"
+        Me.BlankDBButton.Size = New System.Drawing.Size(162, 23)
+        Me.BlankDBButton.TabIndex = 88
+        Me.BlankDBButton.Text = "Create Blank New DB"
+        Me.BlankDBButton.UseVisualStyleBackColor = True
+        '
         'Optioner
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -1130,11 +1241,11 @@ Partial Class Optioner
         Me.BackgroundPanel.ResumeLayout(False)
         Me.OptionsPanel.ResumeLayout(False)
         Me.OptionsMainPanel.ResumeLayout(False)
+        Me.DBPanel.ResumeLayout(False)
         Me.ColorsPanel.ResumeLayout(False)
+        Me.ColorsPanel.PerformLayout()
         Me.SoundsPanel.ResumeLayout(False)
         Me.SoundsPanel.PerformLayout()
-        Me.DBPanel.ResumeLayout(False)
-        Me.DBPanel.PerformLayout()
         Me.MusicPanel.ResumeLayout(False)
         Me.MusicPanel.PerformLayout()
         Me.AvatarPanel.ResumeLayout(False)
@@ -1165,7 +1276,6 @@ Partial Class Optioner
     Friend WithEvents SoundsPanel As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents CThemeLabel As Label
     Friend WithEvents AvatarImage As PictureBox
     Friend WithEvents OptionsRenameButton As Button
@@ -1233,4 +1343,13 @@ Partial Class Optioner
     Friend WithEvents TBarIColor As Label
     Friend WithEvents TBarOColor As Label
     Friend WithEvents SetActiveButton As Button
+    Friend WithEvents CDescBox As TextBox
+    Friend WithEvents RandomThemeButton As Button
+    Friend WithEvents SetActiveDBButton As Button
+    Friend WithEvents CopyDBButton As Button
+    Friend WithEvents SDBText As Label
+    Friend WithEvents SDBLabel As Label
+    Friend WithEvents CDBText As Label
+    Friend WithEvents CDBLabel As Label
+    Friend WithEvents BlankDBButton As Button
 End Class

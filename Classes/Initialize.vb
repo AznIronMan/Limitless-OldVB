@@ -11,8 +11,8 @@
         End If
         MemoryBank.VersionNumber = ClarkTribeGames.Converters.GetVersion(Application.ProductVersion)
         InitProcess()
-        Settings.UpdateSettings()
-        Database.CheckForDB(Settings.SettingsLastDB)
+        Appearance.RefreshColors()
+        Database.CheckForDB(Settings.SettingsDB)
         Database.VersionChecker()
         Updater.CheckUpdate()
         InitIntro()

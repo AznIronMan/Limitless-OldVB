@@ -76,7 +76,7 @@
         list.Items.Clear()
         list.Enabled = True
         Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
-        Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
+        Dim DBName As String = Settings.SettingsDB & MemoryBank.SavesExtL
         Dim IDsFromDB() As String
         Try
             IDsFromDB = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, DBName, table, idcol).Split(",")
@@ -99,7 +99,7 @@
         list.Items.Clear()
         list.Enabled = True
         Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
-        Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
+        Dim DBName As String = Settings.SettingsDB & MemoryBank.SavesExtL
         For Each Request In criteria
             Dim RequestSplit() As String = Request.Split(".")
             Dim ReqTable As String = RequestSplit(0), ReqID As String = RequestSplit(1),
@@ -130,7 +130,7 @@
         list.Items.Clear()
         list.Enabled = True
         Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
-        Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
+        Dim DBName As String = Settings.SettingsDB & MemoryBank.SavesExtL
         Dim IDsFromDB() As String
         Try
             IDsFromDB = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, DBName, table, idcol).Split(",")
@@ -154,7 +154,7 @@
         list.Items.Clear()
         list.Enabled = True
         Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
-        Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
+        Dim DBName As String = Settings.SettingsDB & MemoryBank.SavesExtL
         For Each Request In criteria
             Dim RequestSplit() As String = Request.Split(".")
             Dim ReqTable As String = RequestSplit(0), ReqID As String = RequestSplit(1),
@@ -185,7 +185,7 @@
         drop.Items.Clear()
         drop.Enabled = True
         Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
-        Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
+        Dim DBName As String = Settings.SettingsDB & MemoryBank.SavesExtL
         Dim IDsFromDB() As String
         Try
             IDsFromDB = ClarkTribeGames.SQLite.GetCol(MemoryBank.DataDir, DBName, table, idcol).Split(",")
@@ -210,7 +210,7 @@
         drop.Items.Clear()
         drop.Enabled = True
         Dim NoneAvailable As String = "<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>"
-        Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
+        Dim DBName As String = Settings.SettingsDB & MemoryBank.SavesExtL
         For Each Request In criteria
             Dim RequestSplit() As String = Request.Split(".")
             Dim ReqTable As String = RequestSplit(0), ReqID As String = RequestSplit(1),

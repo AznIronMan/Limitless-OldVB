@@ -118,8 +118,8 @@
                     Dim DBName As String = Database.GetDBName(FileName.Replace(MemoryBank.DataDir & "\", ""))
                     Dim DropName As String = (FileName.Replace(MemoryBank.DataDir & "\", "")).Substring(0,
                         (FileName.Replace(MemoryBank.DataDir & "\", "")).Length - ((MemoryBank.SavesExt).Length + 1))
-                    If LastDBFound = False And (LCase(DBName) = LCase(Settings.SettingsLastDB)) Then LastDBFound = True
-                    If DefaultDBFound = False And (LCase(DBName) = LCase(Settings.SettingsDefaultDB)) Then DefaultDBFound = True
+                    'If LastDBFound = False And (LCase(DBName) = LCase(Settings.SettingsLastDB)) Then LastDBFound = True
+                    If DefaultDBFound = False And (LCase(DBName) = LCase(Settings.SettingsDB)) Then DefaultDBFound = True
                     drop.Items.Add(ClarkTribeGames.Converters.UppercaseEachFirstLetter(DropName))
                     drop.Sorted = True
                     ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, FileName.Replace(MemoryBank.DataDir & "\", ""))
@@ -131,10 +131,10 @@
             EditorSDBEffects(False)
         End If
         If Not drop.SelectedItem = NotFound And LastDBFound = True Then
-            drop.SelectedIndex = drop.FindString(Settings.SettingsLastDB)
+            'drop.SelectedIndex = drop.FindString(Settings.SettingsLastDB)
         Else
             If Not drop.SelectedItem = NotFound And DefaultDBFound = True Then
-                drop.SelectedIndex = drop.FindString(Settings.SettingsDefaultDB)
+                drop.SelectedIndex = drop.FindString(Settings.SettingsDB)
             Else
                 drop.SelectedIndex = 0
             End If
@@ -536,22 +536,22 @@
         Appearance.AssignColor(box, "Pages")
     End Sub
     Public Shared Sub EditorCharRaceDropChange(racedrop As ComboBox, forcebox As TextBox, abllist As ListBox, efflist As ListBox, bio As TextBox)
-        Dim RaceName As String = racedrop.Text
-        Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
-        Dim ForceID As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbRace", "raceForce", "raceName", RaceName)
-        forcebox.Text = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbForce", "forceName", "forceID", ForceID)
-        EditorCharBuildAblList(MemoryBank.DataDir, DBName, abllist, RaceName)
-        EditorCharBuildEffList(MemoryBank.DataDir, DBName, efflist, RaceName)
-        Dim EffIDString As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbRace", "raceEff", "raceName", RaceName)
-        If EffIDString.Length > 0 Then
-            Dim EffIDs() As String = EffIDString.Split("x")
-            efflist.Items.Remove("<None>")
-            For Each EffID In EffIDs
-                efflist.Items.Add(ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbEff", "effName", "effID", EffID))
-            Next
-        End If
-        'TO DO: Bio Builder Here
-        ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, DBName)
+        'Dim RaceName As String = racedrop.Text
+        ''Dim DBName As String = Settings.SettingsLastDB & MemoryBank.SavesExtL
+        'Dim ForceID As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbRace", "raceForce", "raceName", RaceName)
+        'forcebox.Text = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbForce", "forceName", "forceID", ForceID)
+        'EditorCharBuildAblList(MemoryBank.DataDir, DBName, abllist, RaceName)
+        'EditorCharBuildEffList(MemoryBank.DataDir, DBName, efflist, RaceName)
+        'Dim EffIDString As String = ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbRace", "raceEff", "raceName", RaceName)
+        'If EffIDString.Length > 0 Then
+        '    Dim EffIDs() As String = EffIDString.Split("x")
+        '    efflist.Items.Remove("<None>")
+        '    For Each EffID In EffIDs
+        '        efflist.Items.Add(ClarkTribeGames.SQLite.GetValue(MemoryBank.DataDir, DBName, "dbEff", "effName", "effID", EffID))
+        '    Next
+        'End If
+        ''TO DO: Bio Builder Here
+        'ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
 
     Private Shared Sub EditorCharBuildAblList(dir As String, db As String, abllist As ListBox, race As String)

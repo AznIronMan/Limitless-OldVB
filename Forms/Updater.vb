@@ -11,12 +11,7 @@
         If SelectDBDrop.Items.Count > 0 Then
             DBUpdateButton.Enabled = True
             SelectDBDrop.Enabled = True
-            Dim lastdb As String = ClarkTribeGames.Converters.UppercaseEachFirstLetter(Settings.SettingsLastDB)
-            If SelectDBDrop.Items.Contains(lastdb) Then
-                SelectDBDrop.SelectedIndex = SelectDBDrop.FindStringExact(lastdb)
-            Else
-                SelectDBDrop.SelectedIndex = SelectDBDrop.FindStringExact(ClarkTribeGames.Converters.UppercaseEachFirstLetter(Settings.SettingsDefaultDB))
-            End If
+            SelectDBDrop.SelectedIndex = SelectDBDrop.FindStringExact(ClarkTribeGames.Converters.UppercaseEachFirstLetter(Settings.SettingsDB))
         Else
             SelectDBDrop.Items.Add("<No Database Files Available>")
             SelectDBDrop.Enabled = False
