@@ -17,6 +17,8 @@
         For Each item In MemoryBank.OptionsDrop
             OptionsDrop.Items.Add(item)
         Next
+        OptionsDrop.Items.Remove("Sounds")
+        'TO DO: Add Sounds Feature and move the above line!
         ActivePanel = ""
         OptionsDrop.SelectedIndex = 0
     End Sub
@@ -27,6 +29,7 @@
         ActivePanel = OptionsDrop.Text
         OptionsList.Enabled = True
         OptionsList.Items.Clear()
+        If ClarkTribeGames.Jukebox.IntroInPlay = False Then Initialize.InitIntro()
         Select Case LCase(ActivePanel)
             Case "avatars"
                 ResetAvatar()
@@ -60,11 +63,16 @@
                 SwitchPanel(DBPanel, 0)
                 SetDatabases()
             Case "music"
+                OptionsList.Items.Add("*Default Main Theme")
+                OptionsList.Items.Add("*Default Battle Theme")
+                OptionsList.Items.Add("*Default Victory Theme")
+                OptionsList.Items.Add("*Default Defeat Theme")
                 For Each item In ListOfFiles(MemoryBank.MusicDir, MemoryBank.MusicExtL)
                     OptionsList.Items.Add(item)
                 Next
                 EmptyListCheck("<No " & LCase(ActivePanel) & " available>")
                 OptionsItemText.Text = ActivePanel & " In \" & MemoryBank.MusicDir & "\"
+                SetMusic()
                 SwitchPanel(MusicPanel, 0)
             Case "sounds"
                 For Each item In ListOfFiles(MemoryBank.SoundDir, MemoryBank.SoundExtL)
@@ -108,7 +116,6 @@
             OptionsList.Enabled = False
         End If
     End Sub
-
     Private Sub OptionsList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OptionsList.SelectedIndexChanged
         Select Case LCase(ActivePanel)
             Case "avatars"
@@ -182,11 +189,59 @@
                     OptionsRenameButton.Enabled = False
                 End If
             Case "music"
-                '
+                SetMusic()
+                If OptionsList.Enabled = True And OptionsList.SelectedIndex > -1 Then
+                    FlipMusic(True)
+                    Dim selecteditem = ClarkTribeGames.Converters.UppercaseEachFirstLetter(OptionsList.SelectedItem.ToString)
+                    If selecteditem.Contains("*Default") Then
+                        OptionsDeleteButton.Enabled = False
+                        OptionsRenameButton.Enabled = False
+                        MusicFileText.Text = "Internal File - " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(selecteditem.Replace("*Default ", ""))
+                        Select Case LCase(selecteditem)
+                            Case "*default main theme"
+                                MusicFileLenText.Text = "2 minutes 4 seconds"
+                                MusicMainButton.Enabled = True
+                                MusicBattleButton.Enabled = False
+                                MusicVictoryButton.Enabled = False
+                                MusicDefeatButton.Enabled = False
+                            Case "*default battle theme"
+                                MusicFileLenText.Text = "2 minutes 58 seconds"
+                                MusicMainButton.Enabled = False
+                                MusicBattleButton.Enabled = True
+                                MusicVictoryButton.Enabled = False
+                                MusicDefeatButton.Enabled = False
+                            Case "*default victory theme"
+                                MusicFileLenText.Text = "3 minutes"
+                                MusicMainButton.Enabled = False
+                                MusicBattleButton.Enabled = False
+                                MusicVictoryButton.Enabled = True
+                                MusicDefeatButton.Enabled = False
+                            Case "*default defeat theme"
+                                MusicFileLenText.Text = "5 minutes 13 seconds"
+                                MusicMainButton.Enabled = False
+                                MusicBattleButton.Enabled = False
+                                MusicVictoryButton.Enabled = False
+                                MusicDefeatButton.Enabled = True
+                        End Select
+                    Else
+                        OptionsDeleteButton.Enabled = True
+                        OptionsRenameButton.Enabled = True
+                        MusicMainButton.Enabled = True
+                        MusicBattleButton.Enabled = True
+                        MusicVictoryButton.Enabled = True
+                        MusicDefeatButton.Enabled = True
+                        MusicFileText.Text = selecteditem.Replace(MemoryBank.MusicExtL, "")
+                        MusicFileLenText.Text = ClarkTribeGames.Converters.DurationConverter(ClarkTribeGames.Jukebox.GetLength(MemoryBank.MusicDir & "\" & selecteditem))
+                    End If
+                Else
+                    MusicFileText.Text = "Select an Audio File"
+                    MusicFileLenText.Text = ""
+                    FlipMusic(False)
+                End If
             Case "sounds"
-                '
+                'TO DO: Add Sounds options later
             Case Else
-                '
+                'This is intentionally blank.
         End Select
         Appearance.RefreshColors()
     End Sub
@@ -880,17 +935,202 @@
                 Return vbNull
         End Select
     End Function
-
-
-    'Music Section
-    Private Shared Sub JukeboxIntro()
-        'Jukebox.ReturnToIntro(MainWindow.CustomLibsPreviewStop, MainWindow.CustomLibsPreviewPlay, MainWindow.CustomLibsList,
-        '    MainWindow.CustomLibsActive, MainWindow.CustomLibsEdit, MainWindow.CustomLibsMusicMsg, MainWindow.OptionsColorGroup,
-        '    MainWindow.OptionsMusicGroup, MainWindow.OptionsManageGroup, MainWindow.CustomLibsImport, MainWindow.CustomLibsDelete)
+    Private Sub SetMusic()
+        If Settings.SettingsMusic = "on" Then
+            MusicOnButton.Enabled = False
+            MusicOffButton.Enabled = True
+            OptionsList.Enabled = True
+        Else
+            MusicOnButton.Enabled = True
+            MusicOffButton.Enabled = False
+            OptionsList.Enabled = False
+        End If
+        If Settings.SettingsCustI = "off" Then
+            MusicMainText.Text = "Default Main Theme"
+        Else
+            Dim filename As String = ClarkTribeGames.Converters.UppercaseEachFirstLetter(Settings.SettingsCustI).Substring(3)
+            If System.IO.File.Exists(MemoryBank.MusicDir & "/" & filename & MemoryBank.MusicExtL) Then
+                MusicMainText.Text = filename
+            Else
+                SetTrack("custi", "off")
+                MusicMainText.Text = "Default Main Theme"
+            End If
+        End If
+        If Settings.SettingsCustB = "off" Then
+            MusicBattleText.Text = "Default Battle Theme"
+        Else
+            Dim filename As String = ClarkTribeGames.Converters.UppercaseEachFirstLetter(Settings.SettingsCustB).Substring(3)
+            If System.IO.File.Exists(MemoryBank.MusicDir & "/" & filename & MemoryBank.MusicExtL) Then
+                MusicBattleText.Text = filename
+            Else
+                SetTrack("custb", "off")
+                MusicBattleText.Text = "Default Battle Theme"
+            End If
+        End If
+        If Settings.SettingsCustW = "off" Then
+            MusicVictoryText.Text = "Default Victory Theme"
+        Else
+            Dim filename As String = ClarkTribeGames.Converters.UppercaseEachFirstLetter(Settings.SettingsCustW).Substring(3)
+            If System.IO.File.Exists(MemoryBank.MusicDir & "/" & filename & MemoryBank.MusicExtL) Then
+                MusicVictoryText.Text = filename
+            Else
+                SetTrack("custw", "off")
+                MusicVictoryText.Text = "Default Victory Theme"
+            End If
+        End If
+        If Settings.SettingsCustL = "off" Then
+            MusicDefeatText.Text = "Default Defeat Theme"
+        Else
+            Dim filename As String = ClarkTribeGames.Converters.UppercaseEachFirstLetter(Settings.SettingsCustL).Substring(3)
+            If System.IO.File.Exists(MemoryBank.MusicDir & "/" & filename & MemoryBank.MusicExtL) Then
+                MusicDefeatText.Text = filename
+            Else
+                SetTrack("custl", "off")
+                MusicDefeatText.Text = "Default Defeat Theme"
+            End If
+        End If
     End Sub
-
-    'Sound Section
-
+    Private Sub FlipMusic(mode As Boolean)
+        MusicFileLenText.Visible = mode
+        MusicPlayButton.Enabled = mode
+        MusicStopButton.Enabled = mode
+        MusicMainButton.Enabled = mode
+        MusicBattleButton.Enabled = mode
+        MusicVictoryButton.Enabled = mode
+        MusicDefeatButton.Enabled = mode
+        MusicResetButton.Enabled = mode
+        MusicMainButton.Enabled = mode
+        MusicBattleButton.Enabled = mode
+        MusicVictoryButton.Enabled = mode
+        MusicDefeatButton.Enabled = mode
+    End Sub
+    Private Function AudioExistinList(songname As String, list As ListBox) As Boolean
+        Dim result As Integer = list.FindStringExact(ClarkTribeGames.Converters.UppercaseEachFirstLetter(songname))
+        If result > -1 Then Return True Else Return False
+    End Function
+    Private Sub SetTrack(type As String, songname As String)
+        Select Case LCase(songname)
+            Case "*default main theme"
+                Settings.SettingsCustI = "off"
+                ClarkTribeGames.SQLite.RunSQL(Settings.SettingsPath, Settings.SettingsName,
+                    "UPDATE mainSettings SET settingConfig = 'off' WHERE settingName like '" & type & "';")
+            Case "*default battle theme"
+                Settings.SettingsCustB = "off"
+                ClarkTribeGames.SQLite.RunSQL(Settings.SettingsPath, Settings.SettingsName,
+                    "UPDATE mainSettings SET settingConfig = 'off' WHERE settingName like '" & type & "';")
+            Case "*default victory theme"
+                Settings.SettingsCustW = "off"
+                ClarkTribeGames.SQLite.RunSQL(Settings.SettingsPath, Settings.SettingsName,
+                    "UPDATE mainSettings SET settingConfig = 'off' WHERE settingName like '" & type & "';")
+            Case "*default defeat theme"
+                Settings.SettingsCustL = "off"
+                ClarkTribeGames.SQLite.RunSQL(Settings.SettingsPath, Settings.SettingsName,
+                    "UPDATE mainSettings SET settingConfig = 'off' WHERE settingName like '" & type & "';")
+            Case Else
+                ClarkTribeGames.SQLite.RunSQL(Settings.SettingsPath, Settings.SettingsName, "UPDATE mainSettings SET settingConfig = '" &
+                    "on_" & LCase(songname) & "' WHERE settingName like '" & type & "';")
+                If LCase(songname) = "off" Then
+                    Select Case LCase(type)
+                        Case "custi"
+                            Settings.SettingsCustI = "off"
+                        Case "custb"
+                            Settings.SettingsCustB = "off"
+                        Case "custw"
+                            Settings.SettingsCustW = "off"
+                        Case "custl"
+                            Settings.SettingsCustL = "off"
+                    End Select
+                    ClarkTribeGames.SQLite.RunSQL(Settings.SettingsPath, Settings.SettingsName,
+                        "UPDATE mainSettings SET settingConfig = 'off' WHERE settingName like '" & type & "';")
+                Else
+                    Select Case LCase(type)
+                        Case "custi"
+                            Settings.SettingsCustI = "on_" & ClarkTribeGames.Converters.UppercaseEachFirstLetter(songname)
+                        Case "custb"
+                            Settings.SettingsCustB = "on_" & ClarkTribeGames.Converters.UppercaseEachFirstLetter(songname)
+                        Case "custw"
+                            Settings.SettingsCustW = "on_" & ClarkTribeGames.Converters.UppercaseEachFirstLetter(songname)
+                        Case "custl"
+                            Settings.SettingsCustL = "on_" & ClarkTribeGames.Converters.UppercaseEachFirstLetter(songname)
+                    End Select
+                End If
+        End Select
+        Select Case LCase(type)
+            Case "custi"
+                MusicMainText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(songname.Replace("*", ""))
+            Case "custb"
+                MusicBattleText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(songname.Replace("*", ""))
+            Case "custw"
+                MusicVictoryText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(songname.Replace("*", ""))
+            Case "custl"
+                MusicDefeatText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(songname.Replace("*", ""))
+        End Select
+    End Sub
+    Private Sub MusicPlayButton_Click(sender As Object, e As EventArgs) Handles MusicPlayButton.Click
+        ClarkTribeGames.Jukebox.StopSong()
+        Select Case LCase(OptionsList.SelectedItem.ToString)
+            Case "*default main theme"
+                ClarkTribeGames.Jukebox.PlaySong(ClarkTribeGames.Jukebox.NewSong(My.Resources.intro))
+            Case "*default battle theme"
+                ClarkTribeGames.Jukebox.PlaySong(ClarkTribeGames.Jukebox.NewSong(My.Resources.battle))
+            Case "*default victory theme"
+                ClarkTribeGames.Jukebox.PlaySong(ClarkTribeGames.Jukebox.NewSong(My.Resources.victory))
+            Case "*default defeat theme"
+                ClarkTribeGames.Jukebox.PlaySong(ClarkTribeGames.Jukebox.NewSong(My.Resources.loss))
+            Case Else
+                ClarkTribeGames.Jukebox.PlayMp3(MemoryBank.MusicDir & "/" & LCase(OptionsList.SelectedItem.ToString).Replace(MemoryBank.MusicExtL, "") & MemoryBank.MusicExtL)
+        End Select
+        ClarkTribeGames.Jukebox.IntroInPlay = False
+    End Sub
+    Private Sub MusicStopButton_Click(sender As Object, e As EventArgs) Handles MusicStopButton.Click
+        MusicStopButtonClick()
+    End Sub
+    Private Sub MusicStopButtonClick()
+        ClarkTribeGames.Jukebox.StopSong()
+        Initialize.InitIntro()
+    End Sub
+    Private Sub MusicMainButton_Click(sender As Object, e As EventArgs) Handles MusicMainButton.Click
+        SetTrack("custi", LCase(OptionsList.SelectedItem.ToString).Replace(MemoryBank.MusicExtL, ""))
+        MusicStopButtonClick()
+    End Sub
+    Private Sub MusicBattleButton_Click(sender As Object, e As EventArgs) Handles MusicBattleButton.Click
+        SetTrack("custb", LCase(OptionsList.SelectedItem.ToString).Replace(MemoryBank.MusicExtL, ""))
+    End Sub
+    Private Sub MusicVictoryButton_Click(sender As Object, e As EventArgs) Handles MusicVictoryButton.Click
+        SetTrack("custw", LCase(OptionsList.SelectedItem.ToString).Replace(MemoryBank.MusicExtL, ""))
+    End Sub
+    Private Sub MusicDefeatButton_Click(sender As Object, e As EventArgs) Handles MusicDefeatButton.Click
+        SetTrack("custl", LCase(OptionsList.SelectedItem.ToString).Replace(MemoryBank.MusicExtL, ""))
+    End Sub
+    Private Sub MusicSwitch(mode As String)
+        Settings.SettingsMusic = LCase(mode)
+        ClarkTribeGames.SQLite.RunSQL(Settings.SettingsPath, Settings.SettingsName,
+            "UPDATE mainSettings SET settingConfig = '" & LCase(mode) & "' WHERE settingName like 'music';")
+        ClarkTribeGames.Jukebox.StopSong()
+        Initialize.InitIntro()
+        If LCase(mode) = "on" Then
+            MusicOnButton.Enabled = False
+            MusicOffButton.Enabled = True
+        Else
+            MusicOnButton.Enabled = True
+            MusicOffButton.Enabled = False
+        End If
+        OptionDropUpdate()
+    End Sub
+    Private Sub MusicOnButton_Click(sender As Object, e As EventArgs) Handles MusicOnButton.Click
+        MusicSwitch("on")
+    End Sub
+    Private Sub MusicOffButton_Click(sender As Object, e As EventArgs) Handles MusicOffButton.Click
+        MusicSwitch("off")
+    End Sub
+    Private Sub MusicResetButton_Click(sender As Object, e As EventArgs) Handles MusicResetButton.Click
+        SetTrack("custi", "*default main theme")
+        SetTrack("custb", "*default battle theme")
+        SetTrack("custw", "*default victory theme")
+        SetTrack("custl", "*default defeat theme")
+        ClarkTribeGames.Jukebox.StopSong()
+        Initialize.InitIntro()
+    End Sub
     Private Sub HoverOverEffect(obj As Object)
         If obj.Enabled Then
             Appearance.AssignColor(obj, "Hover")
@@ -934,6 +1174,9 @@
         MouseDownEffect(sender)
     End Sub
     Private Sub CloseWindow(sender As Object, e As MouseEventArgs) Handles CloseButton.MouseDown, CloseText.MouseDown, CloseButton.Click, OptionerBackButton.Click
+        ClarkTribeGames.Jukebox.StopSong()
+        Initialize.InitIntro()
         Me.Close()
     End Sub
+
 End Class

@@ -63,9 +63,9 @@
         End If
         Appearance.AssignTheme(Settings.SettingsMode)
     End Sub
-    Private Sub InitIntro()
+    Public Sub InitIntro()
         If Settings.SettingsMusic.ToLower = "on" Then
-            If Settings.SettingsCustM = "on" And Settings.SettingsCustI.StartsWith("on") Then
+            If Settings.SettingsCustI.StartsWith("on") Then
                 Dim customintro As String = MemoryBank.MusicDir & "/" & Settings.SettingsCustI.Substring(3) & MemoryBank.MusicExtL
                 If System.IO.File.Exists(customintro) Then ClarkTribeGames.Jukebox.PlayMp3(customintro) Else ClarkTribeGames.Jukebox.
                     PlaySong(ClarkTribeGames.Jukebox.NewSong(My.Resources.intro))

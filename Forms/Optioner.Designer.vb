@@ -30,7 +30,34 @@ Partial Class Optioner
         Me.OptionsPanel = New System.Windows.Forms.Panel()
         Me.OptionsDeleteButton = New System.Windows.Forms.Button()
         Me.OptionsMainPanel = New System.Windows.Forms.Panel()
-        Me.DBPanel = New System.Windows.Forms.Panel()
+        Me.MusicPanel = New System.Windows.Forms.Panel()
+        Me.MusicOffButton = New System.Windows.Forms.Button()
+        Me.MusicOnButton = New System.Windows.Forms.Button()
+        Me.MusicDefeatButton = New System.Windows.Forms.Button()
+        Me.MusicVictoryButton = New System.Windows.Forms.Button()
+        Me.MusicBattleButton = New System.Windows.Forms.Button()
+        Me.MusicMainButton = New System.Windows.Forms.Button()
+        Me.MusicDefeatText = New System.Windows.Forms.Label()
+        Me.MusicVictoryText = New System.Windows.Forms.Label()
+        Me.MusicBattleText = New System.Windows.Forms.Label()
+        Me.MusicMainText = New System.Windows.Forms.Label()
+        Me.MusicLowText = New System.Windows.Forms.Label()
+        Me.MusicTopText = New System.Windows.Forms.Label()
+        Me.MusicDefeatLabel = New System.Windows.Forms.Label()
+        Me.MusicVictoryLabel = New System.Windows.Forms.Label()
+        Me.MusicBattleLabel = New System.Windows.Forms.Label()
+        Me.MusicStopButton = New System.Windows.Forms.Button()
+        Me.MusicPlayButton = New System.Windows.Forms.Button()
+        Me.MusicFileLenText = New System.Windows.Forms.Label()
+        Me.MusicFileText = New System.Windows.Forms.Label()
+        Me.MusicFileImage = New System.Windows.Forms.PictureBox()
+        Me.MusicResetButton = New System.Windows.Forms.Button()
+        Me.MusicMainLabel = New System.Windows.Forms.Label()
+        Me.AvatarPanel = New System.Windows.Forms.Panel()
+        Me.AvatarText = New System.Windows.Forms.Label()
+        Me.AvatarImage = New System.Windows.Forms.PictureBox()
+        Me.DimText = New System.Windows.Forms.Label()
+        Me.DimLabel = New System.Windows.Forms.Label()
         Me.ColorsPanel = New System.Windows.Forms.Panel()
         Me.RandomThemeButton = New System.Windows.Forms.Button()
         Me.CDescBox = New System.Windows.Forms.TextBox()
@@ -83,15 +110,16 @@ Partial Class Optioner
         Me.SThemeLabel = New System.Windows.Forms.Label()
         Me.CThemeText = New System.Windows.Forms.Label()
         Me.CThemeLabel = New System.Windows.Forms.Label()
+        Me.DBPanel = New System.Windows.Forms.Panel()
+        Me.BlankDBButton = New System.Windows.Forms.Button()
+        Me.SetActiveDBButton = New System.Windows.Forms.Button()
+        Me.CopyDBButton = New System.Windows.Forms.Button()
+        Me.SDBText = New System.Windows.Forms.Label()
+        Me.SDBLabel = New System.Windows.Forms.Label()
+        Me.CDBText = New System.Windows.Forms.Label()
+        Me.CDBLabel = New System.Windows.Forms.Label()
         Me.SoundsPanel = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.MusicPanel = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.AvatarPanel = New System.Windows.Forms.Panel()
-        Me.AvatarText = New System.Windows.Forms.Label()
-        Me.AvatarImage = New System.Windows.Forms.PictureBox()
-        Me.DimText = New System.Windows.Forms.Label()
-        Me.DimLabel = New System.Windows.Forms.Label()
         Me.SoundsText = New System.Windows.Forms.Label()
         Me.MusicText = New System.Windows.Forms.Label()
         Me.DBText = New System.Windows.Forms.Label()
@@ -113,24 +141,18 @@ Partial Class Optioner
         Me.OptionsAddButton = New System.Windows.Forms.Button()
         Me.OptionsRefreshButton = New System.Windows.Forms.Button()
         Me.OptionerBackButton = New System.Windows.Forms.Button()
-        Me.SetActiveDBButton = New System.Windows.Forms.Button()
-        Me.CopyDBButton = New System.Windows.Forms.Button()
-        Me.SDBText = New System.Windows.Forms.Label()
-        Me.SDBLabel = New System.Windows.Forms.Label()
-        Me.CDBText = New System.Windows.Forms.Label()
-        Me.CDBLabel = New System.Windows.Forms.Label()
-        Me.BlankDBButton = New System.Windows.Forms.Button()
         Me.TitleBarPanel.SuspendLayout()
         Me.CloseButton.SuspendLayout()
         Me.BackgroundPanel.SuspendLayout()
         Me.OptionsPanel.SuspendLayout()
         Me.OptionsMainPanel.SuspendLayout()
-        Me.DBPanel.SuspendLayout()
-        Me.ColorsPanel.SuspendLayout()
-        Me.SoundsPanel.SuspendLayout()
         Me.MusicPanel.SuspendLayout()
+        CType(Me.MusicFileImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AvatarPanel.SuspendLayout()
         CType(Me.AvatarImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ColorsPanel.SuspendLayout()
+        Me.DBPanel.SuspendLayout()
+        Me.SoundsPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'TitleBarPanel
@@ -229,11 +251,11 @@ Partial Class Optioner
         'OptionsMainPanel
         '
         Me.OptionsMainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.OptionsMainPanel.Controls.Add(Me.DBPanel)
-        Me.OptionsMainPanel.Controls.Add(Me.SoundsPanel)
         Me.OptionsMainPanel.Controls.Add(Me.MusicPanel)
         Me.OptionsMainPanel.Controls.Add(Me.AvatarPanel)
         Me.OptionsMainPanel.Controls.Add(Me.ColorsPanel)
+        Me.OptionsMainPanel.Controls.Add(Me.DBPanel)
+        Me.OptionsMainPanel.Controls.Add(Me.SoundsPanel)
         Me.OptionsMainPanel.Controls.Add(Me.SoundsText)
         Me.OptionsMainPanel.Controls.Add(Me.MusicText)
         Me.OptionsMainPanel.Controls.Add(Me.DBText)
@@ -251,20 +273,322 @@ Partial Class Optioner
         Me.OptionsMainPanel.Size = New System.Drawing.Size(416, 441)
         Me.OptionsMainPanel.TabIndex = 43
         '
-        'DBPanel
+        'MusicPanel
         '
-        Me.DBPanel.Controls.Add(Me.BlankDBButton)
-        Me.DBPanel.Controls.Add(Me.SetActiveDBButton)
-        Me.DBPanel.Controls.Add(Me.CopyDBButton)
-        Me.DBPanel.Controls.Add(Me.SDBText)
-        Me.DBPanel.Controls.Add(Me.SDBLabel)
-        Me.DBPanel.Controls.Add(Me.CDBText)
-        Me.DBPanel.Controls.Add(Me.CDBLabel)
-        Me.DBPanel.Location = New System.Drawing.Point(8, 7)
-        Me.DBPanel.Name = "DBPanel"
-        Me.DBPanel.Size = New System.Drawing.Size(398, 423)
-        Me.DBPanel.TabIndex = 3
-        Me.DBPanel.Visible = False
+        Me.MusicPanel.Controls.Add(Me.MusicOffButton)
+        Me.MusicPanel.Controls.Add(Me.MusicOnButton)
+        Me.MusicPanel.Controls.Add(Me.MusicDefeatButton)
+        Me.MusicPanel.Controls.Add(Me.MusicVictoryButton)
+        Me.MusicPanel.Controls.Add(Me.MusicBattleButton)
+        Me.MusicPanel.Controls.Add(Me.MusicMainButton)
+        Me.MusicPanel.Controls.Add(Me.MusicDefeatText)
+        Me.MusicPanel.Controls.Add(Me.MusicVictoryText)
+        Me.MusicPanel.Controls.Add(Me.MusicBattleText)
+        Me.MusicPanel.Controls.Add(Me.MusicMainText)
+        Me.MusicPanel.Controls.Add(Me.MusicLowText)
+        Me.MusicPanel.Controls.Add(Me.MusicTopText)
+        Me.MusicPanel.Controls.Add(Me.MusicDefeatLabel)
+        Me.MusicPanel.Controls.Add(Me.MusicVictoryLabel)
+        Me.MusicPanel.Controls.Add(Me.MusicBattleLabel)
+        Me.MusicPanel.Controls.Add(Me.MusicStopButton)
+        Me.MusicPanel.Controls.Add(Me.MusicPlayButton)
+        Me.MusicPanel.Controls.Add(Me.MusicFileLenText)
+        Me.MusicPanel.Controls.Add(Me.MusicFileText)
+        Me.MusicPanel.Controls.Add(Me.MusicFileImage)
+        Me.MusicPanel.Controls.Add(Me.MusicResetButton)
+        Me.MusicPanel.Controls.Add(Me.MusicMainLabel)
+        Me.MusicPanel.Location = New System.Drawing.Point(8, 7)
+        Me.MusicPanel.Name = "MusicPanel"
+        Me.MusicPanel.Size = New System.Drawing.Size(398, 423)
+        Me.MusicPanel.TabIndex = 4
+        Me.MusicPanel.Visible = False
+        '
+        'MusicOffButton
+        '
+        Me.MusicOffButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MusicOffButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.MusicOffButton.Location = New System.Drawing.Point(133, 387)
+        Me.MusicOffButton.Name = "MusicOffButton"
+        Me.MusicOffButton.Size = New System.Drawing.Size(114, 23)
+        Me.MusicOffButton.TabIndex = 103
+        Me.MusicOffButton.Text = "Turn Music Off"
+        Me.MusicOffButton.UseVisualStyleBackColor = True
+        '
+        'MusicOnButton
+        '
+        Me.MusicOnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MusicOnButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.MusicOnButton.Location = New System.Drawing.Point(10, 387)
+        Me.MusicOnButton.Name = "MusicOnButton"
+        Me.MusicOnButton.Size = New System.Drawing.Size(110, 23)
+        Me.MusicOnButton.TabIndex = 102
+        Me.MusicOnButton.Text = "Turn Music On"
+        Me.MusicOnButton.UseVisualStyleBackColor = True
+        '
+        'MusicDefeatButton
+        '
+        Me.MusicDefeatButton.Enabled = False
+        Me.MusicDefeatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MusicDefeatButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.MusicDefeatButton.Location = New System.Drawing.Point(348, 306)
+        Me.MusicDefeatButton.Name = "MusicDefeatButton"
+        Me.MusicDefeatButton.Size = New System.Drawing.Size(40, 23)
+        Me.MusicDefeatButton.TabIndex = 101
+        Me.MusicDefeatButton.Text = "Set"
+        Me.MusicDefeatButton.UseVisualStyleBackColor = True
+        '
+        'MusicVictoryButton
+        '
+        Me.MusicVictoryButton.Enabled = False
+        Me.MusicVictoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MusicVictoryButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.MusicVictoryButton.Location = New System.Drawing.Point(348, 278)
+        Me.MusicVictoryButton.Name = "MusicVictoryButton"
+        Me.MusicVictoryButton.Size = New System.Drawing.Size(40, 23)
+        Me.MusicVictoryButton.TabIndex = 100
+        Me.MusicVictoryButton.Text = "Set"
+        Me.MusicVictoryButton.UseVisualStyleBackColor = True
+        '
+        'MusicBattleButton
+        '
+        Me.MusicBattleButton.Enabled = False
+        Me.MusicBattleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MusicBattleButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.MusicBattleButton.Location = New System.Drawing.Point(348, 249)
+        Me.MusicBattleButton.Name = "MusicBattleButton"
+        Me.MusicBattleButton.Size = New System.Drawing.Size(40, 23)
+        Me.MusicBattleButton.TabIndex = 99
+        Me.MusicBattleButton.Text = "Set"
+        Me.MusicBattleButton.UseVisualStyleBackColor = True
+        '
+        'MusicMainButton
+        '
+        Me.MusicMainButton.Enabled = False
+        Me.MusicMainButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MusicMainButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.MusicMainButton.Location = New System.Drawing.Point(348, 221)
+        Me.MusicMainButton.Name = "MusicMainButton"
+        Me.MusicMainButton.Size = New System.Drawing.Size(40, 23)
+        Me.MusicMainButton.TabIndex = 98
+        Me.MusicMainButton.Text = "Set"
+        Me.MusicMainButton.UseVisualStyleBackColor = True
+        '
+        'MusicDefeatText
+        '
+        Me.MusicDefeatText.Location = New System.Drawing.Point(130, 311)
+        Me.MusicDefeatText.Name = "MusicDefeatText"
+        Me.MusicDefeatText.Size = New System.Drawing.Size(213, 23)
+        Me.MusicDefeatText.TabIndex = 97
+        Me.MusicDefeatText.Text = "FILENAME"
+        Me.MusicDefeatText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'MusicVictoryText
+        '
+        Me.MusicVictoryText.Location = New System.Drawing.Point(130, 281)
+        Me.MusicVictoryText.Name = "MusicVictoryText"
+        Me.MusicVictoryText.Size = New System.Drawing.Size(213, 23)
+        Me.MusicVictoryText.TabIndex = 96
+        Me.MusicVictoryText.Text = "FILENAME"
+        Me.MusicVictoryText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'MusicBattleText
+        '
+        Me.MusicBattleText.Location = New System.Drawing.Point(130, 250)
+        Me.MusicBattleText.Name = "MusicBattleText"
+        Me.MusicBattleText.Size = New System.Drawing.Size(213, 23)
+        Me.MusicBattleText.TabIndex = 95
+        Me.MusicBattleText.Text = "FILENAME"
+        Me.MusicBattleText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'MusicMainText
+        '
+        Me.MusicMainText.Location = New System.Drawing.Point(130, 221)
+        Me.MusicMainText.Name = "MusicMainText"
+        Me.MusicMainText.Size = New System.Drawing.Size(213, 23)
+        Me.MusicMainText.TabIndex = 94
+        Me.MusicMainText.Text = "FILENAME"
+        Me.MusicMainText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'MusicLowText
+        '
+        Me.MusicLowText.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MusicLowText.Location = New System.Drawing.Point(3, 339)
+        Me.MusicLowText.Name = "MusicLowText"
+        Me.MusicLowText.Size = New System.Drawing.Size(392, 36)
+        Me.MusicLowText.TabIndex = 93
+        Me.MusicLowText.Text = "Does not impact character/group/event audio."
+        Me.MusicLowText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'MusicTopText
+        '
+        Me.MusicTopText.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MusicTopText.Location = New System.Drawing.Point(3, 193)
+        Me.MusicTopText.Name = "MusicTopText"
+        Me.MusicTopText.Size = New System.Drawing.Size(392, 23)
+        Me.MusicTopText.TabIndex = 92
+        Me.MusicTopText.Text = "To change track, select from list -> click Set"
+        Me.MusicTopText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'MusicDefeatLabel
+        '
+        Me.MusicDefeatLabel.Location = New System.Drawing.Point(5, 311)
+        Me.MusicDefeatLabel.Name = "MusicDefeatLabel"
+        Me.MusicDefeatLabel.Size = New System.Drawing.Size(125, 23)
+        Me.MusicDefeatLabel.TabIndex = 91
+        Me.MusicDefeatLabel.Text = "Defeat Theme:"
+        Me.MusicDefeatLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'MusicVictoryLabel
+        '
+        Me.MusicVictoryLabel.Location = New System.Drawing.Point(5, 281)
+        Me.MusicVictoryLabel.Name = "MusicVictoryLabel"
+        Me.MusicVictoryLabel.Size = New System.Drawing.Size(125, 23)
+        Me.MusicVictoryLabel.TabIndex = 90
+        Me.MusicVictoryLabel.Text = "Victory Theme:"
+        Me.MusicVictoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'MusicBattleLabel
+        '
+        Me.MusicBattleLabel.Location = New System.Drawing.Point(5, 251)
+        Me.MusicBattleLabel.Name = "MusicBattleLabel"
+        Me.MusicBattleLabel.Size = New System.Drawing.Size(125, 23)
+        Me.MusicBattleLabel.TabIndex = 89
+        Me.MusicBattleLabel.Text = "Battle Theme:"
+        Me.MusicBattleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'MusicStopButton
+        '
+        Me.MusicStopButton.Enabled = False
+        Me.MusicStopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MusicStopButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.MusicStopButton.Location = New System.Drawing.Point(203, 158)
+        Me.MusicStopButton.Name = "MusicStopButton"
+        Me.MusicStopButton.Size = New System.Drawing.Size(93, 23)
+        Me.MusicStopButton.TabIndex = 88
+        Me.MusicStopButton.Text = "Stop Track"
+        Me.MusicStopButton.UseVisualStyleBackColor = True
+        '
+        'MusicPlayButton
+        '
+        Me.MusicPlayButton.Enabled = False
+        Me.MusicPlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MusicPlayButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.MusicPlayButton.Location = New System.Drawing.Point(104, 158)
+        Me.MusicPlayButton.Name = "MusicPlayButton"
+        Me.MusicPlayButton.Size = New System.Drawing.Size(93, 23)
+        Me.MusicPlayButton.TabIndex = 87
+        Me.MusicPlayButton.Text = "Play Track"
+        Me.MusicPlayButton.UseVisualStyleBackColor = True
+        '
+        'MusicFileLenText
+        '
+        Me.MusicFileLenText.Location = New System.Drawing.Point(40, 95)
+        Me.MusicFileLenText.Name = "MusicFileLenText"
+        Me.MusicFileLenText.Size = New System.Drawing.Size(319, 23)
+        Me.MusicFileLenText.TabIndex = 86
+        Me.MusicFileLenText.Text = "LENGTH"
+        Me.MusicFileLenText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MusicFileLenText.Visible = False
+        '
+        'MusicFileText
+        '
+        Me.MusicFileText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.MusicFileText.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.MusicFileText.Location = New System.Drawing.Point(40, 125)
+        Me.MusicFileText.Name = "MusicFileText"
+        Me.MusicFileText.Size = New System.Drawing.Size(319, 21)
+        Me.MusicFileText.TabIndex = 85
+        Me.MusicFileText.Text = "Select an Audio File"
+        Me.MusicFileText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'MusicFileImage
+        '
+        Me.MusicFileImage.BackgroundImage = Global.Limitless.My.Resources.Resources.mp3sound
+        Me.MusicFileImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MusicFileImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.MusicFileImage.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.MusicFileImage.Location = New System.Drawing.Point(162, 15)
+        Me.MusicFileImage.Name = "MusicFileImage"
+        Me.MusicFileImage.Size = New System.Drawing.Size(75, 75)
+        Me.MusicFileImage.TabIndex = 84
+        Me.MusicFileImage.TabStop = False
+        '
+        'MusicResetButton
+        '
+        Me.MusicResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MusicResetButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.MusicResetButton.Location = New System.Drawing.Point(261, 387)
+        Me.MusicResetButton.Name = "MusicResetButton"
+        Me.MusicResetButton.Size = New System.Drawing.Size(127, 23)
+        Me.MusicResetButton.TabIndex = 83
+        Me.MusicResetButton.Text = "Reset to Default"
+        Me.MusicResetButton.UseVisualStyleBackColor = True
+        '
+        'MusicMainLabel
+        '
+        Me.MusicMainLabel.Location = New System.Drawing.Point(5, 221)
+        Me.MusicMainLabel.Name = "MusicMainLabel"
+        Me.MusicMainLabel.Size = New System.Drawing.Size(125, 23)
+        Me.MusicMainLabel.TabIndex = 82
+        Me.MusicMainLabel.Text = "Main Theme:"
+        Me.MusicMainLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'AvatarPanel
+        '
+        Me.AvatarPanel.Controls.Add(Me.AvatarText)
+        Me.AvatarPanel.Controls.Add(Me.AvatarImage)
+        Me.AvatarPanel.Controls.Add(Me.DimText)
+        Me.AvatarPanel.Controls.Add(Me.DimLabel)
+        Me.AvatarPanel.Location = New System.Drawing.Point(8, 7)
+        Me.AvatarPanel.Name = "AvatarPanel"
+        Me.AvatarPanel.Size = New System.Drawing.Size(398, 423)
+        Me.AvatarPanel.TabIndex = 0
+        Me.AvatarPanel.Visible = False
+        '
+        'AvatarText
+        '
+        Me.AvatarText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.AvatarText.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AvatarText.Location = New System.Drawing.Point(40, 280)
+        Me.AvatarText.Name = "AvatarText"
+        Me.AvatarText.Size = New System.Drawing.Size(319, 21)
+        Me.AvatarText.TabIndex = 40
+        Me.AvatarText.Text = "Select an Avatar"
+        Me.AvatarText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AvatarImage
+        '
+        Me.AvatarImage.BackgroundImage = Global.Limitless.My.Resources.Resources._empty_
+        Me.AvatarImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AvatarImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.AvatarImage.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AvatarImage.Location = New System.Drawing.Point(99, 40)
+        Me.AvatarImage.Name = "AvatarImage"
+        Me.AvatarImage.Size = New System.Drawing.Size(200, 200)
+        Me.AvatarImage.TabIndex = 4
+        Me.AvatarImage.TabStop = False
+        '
+        'DimText
+        '
+        Me.DimText.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DimText.Location = New System.Drawing.Point(204, 330)
+        Me.DimText.Name = "DimText"
+        Me.DimText.Size = New System.Drawing.Size(155, 21)
+        Me.DimText.TabIndex = 42
+        Me.DimText.Text = "000 x 000 pixels"
+        Me.DimText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.DimText.Visible = False
+        '
+        'DimLabel
+        '
+        Me.DimLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DimLabel.Location = New System.Drawing.Point(40, 330)
+        Me.DimLabel.Name = "DimLabel"
+        Me.DimLabel.Size = New System.Drawing.Size(155, 21)
+        Me.DimLabel.TabIndex = 41
+        Me.DimLabel.Text = "Image Dimensions:"
+        Me.DimLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.DimLabel.Visible = False
         '
         'ColorsPanel
         '
@@ -840,6 +1164,96 @@ Partial Class Optioner
         Me.CThemeLabel.Text = "Current Theme:"
         Me.CThemeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'DBPanel
+        '
+        Me.DBPanel.Controls.Add(Me.BlankDBButton)
+        Me.DBPanel.Controls.Add(Me.SetActiveDBButton)
+        Me.DBPanel.Controls.Add(Me.CopyDBButton)
+        Me.DBPanel.Controls.Add(Me.SDBText)
+        Me.DBPanel.Controls.Add(Me.SDBLabel)
+        Me.DBPanel.Controls.Add(Me.CDBText)
+        Me.DBPanel.Controls.Add(Me.CDBLabel)
+        Me.DBPanel.Location = New System.Drawing.Point(8, 7)
+        Me.DBPanel.Name = "DBPanel"
+        Me.DBPanel.Size = New System.Drawing.Size(398, 423)
+        Me.DBPanel.TabIndex = 3
+        Me.DBPanel.Visible = False
+        '
+        'BlankDBButton
+        '
+        Me.BlankDBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BlankDBButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.BlankDBButton.Location = New System.Drawing.Point(118, 250)
+        Me.BlankDBButton.Name = "BlankDBButton"
+        Me.BlankDBButton.Size = New System.Drawing.Size(162, 23)
+        Me.BlankDBButton.TabIndex = 88
+        Me.BlankDBButton.Text = "Create Blank New DB"
+        Me.BlankDBButton.UseVisualStyleBackColor = True
+        '
+        'SetActiveDBButton
+        '
+        Me.SetActiveDBButton.Enabled = False
+        Me.SetActiveDBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SetActiveDBButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.SetActiveDBButton.Location = New System.Drawing.Point(118, 350)
+        Me.SetActiveDBButton.Name = "SetActiveDBButton"
+        Me.SetActiveDBButton.Size = New System.Drawing.Size(162, 23)
+        Me.SetActiveDBButton.TabIndex = 87
+        Me.SetActiveDBButton.Text = "Set As Active DB"
+        Me.SetActiveDBButton.UseVisualStyleBackColor = True
+        '
+        'CopyDBButton
+        '
+        Me.CopyDBButton.Enabled = False
+        Me.CopyDBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CopyDBButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
+        Me.CopyDBButton.Location = New System.Drawing.Point(118, 300)
+        Me.CopyDBButton.Name = "CopyDBButton"
+        Me.CopyDBButton.Size = New System.Drawing.Size(162, 23)
+        Me.CopyDBButton.TabIndex = 86
+        Me.CopyDBButton.Text = "Duplicate To New DB"
+        Me.CopyDBButton.UseVisualStyleBackColor = True
+        '
+        'SDBText
+        '
+        Me.SDBText.Location = New System.Drawing.Point(163, 150)
+        Me.SDBText.Name = "SDBText"
+        Me.SDBText.Size = New System.Drawing.Size(221, 23)
+        Me.SDBText.TabIndex = 84
+        Me.SDBText.Text = "DBNAME"
+        Me.SDBText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.SDBText.Visible = False
+        '
+        'SDBLabel
+        '
+        Me.SDBLabel.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SDBLabel.Location = New System.Drawing.Point(5, 150)
+        Me.SDBLabel.Name = "SDBLabel"
+        Me.SDBLabel.Size = New System.Drawing.Size(156, 23)
+        Me.SDBLabel.TabIndex = 83
+        Me.SDBLabel.Text = "Selected Database:"
+        Me.SDBLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.SDBLabel.Visible = False
+        '
+        'CDBText
+        '
+        Me.CDBText.Location = New System.Drawing.Point(163, 50)
+        Me.CDBText.Name = "CDBText"
+        Me.CDBText.Size = New System.Drawing.Size(221, 23)
+        Me.CDBText.TabIndex = 82
+        Me.CDBText.Text = "DBNAME"
+        Me.CDBText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'CDBLabel
+        '
+        Me.CDBLabel.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CDBLabel.Location = New System.Drawing.Point(3, 50)
+        Me.CDBLabel.Name = "CDBLabel"
+        Me.CDBLabel.Size = New System.Drawing.Size(158, 23)
+        Me.CDBLabel.TabIndex = 81
+        Me.CDBLabel.Text = "Active Database:"
+        Me.CDBLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'SoundsPanel
         '
         Me.SoundsPanel.Controls.Add(Me.Label1)
@@ -857,81 +1271,6 @@ Partial Class Optioner
         Me.Label1.Size = New System.Drawing.Size(55, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Sounds"
-        '
-        'MusicPanel
-        '
-        Me.MusicPanel.Controls.Add(Me.Label2)
-        Me.MusicPanel.Location = New System.Drawing.Point(8, 7)
-        Me.MusicPanel.Name = "MusicPanel"
-        Me.MusicPanel.Size = New System.Drawing.Size(398, 423)
-        Me.MusicPanel.TabIndex = 4
-        Me.MusicPanel.Visible = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(172, 205)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Music"
-        '
-        'AvatarPanel
-        '
-        Me.AvatarPanel.Controls.Add(Me.AvatarText)
-        Me.AvatarPanel.Controls.Add(Me.AvatarImage)
-        Me.AvatarPanel.Controls.Add(Me.DimText)
-        Me.AvatarPanel.Controls.Add(Me.DimLabel)
-        Me.AvatarPanel.Location = New System.Drawing.Point(8, 7)
-        Me.AvatarPanel.Name = "AvatarPanel"
-        Me.AvatarPanel.Size = New System.Drawing.Size(398, 423)
-        Me.AvatarPanel.TabIndex = 0
-        Me.AvatarPanel.Visible = False
-        '
-        'AvatarText
-        '
-        Me.AvatarText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.AvatarText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.AvatarText.Location = New System.Drawing.Point(40, 280)
-        Me.AvatarText.Name = "AvatarText"
-        Me.AvatarText.Size = New System.Drawing.Size(319, 21)
-        Me.AvatarText.TabIndex = 40
-        Me.AvatarText.Text = "Select an Avatar"
-        Me.AvatarText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'AvatarImage
-        '
-        Me.AvatarImage.BackgroundImage = Global.Limitless.My.Resources.Resources._empty_
-        Me.AvatarImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.AvatarImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.AvatarImage.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.AvatarImage.Location = New System.Drawing.Point(99, 40)
-        Me.AvatarImage.Name = "AvatarImage"
-        Me.AvatarImage.Size = New System.Drawing.Size(200, 200)
-        Me.AvatarImage.TabIndex = 4
-        Me.AvatarImage.TabStop = False
-        '
-        'DimText
-        '
-        Me.DimText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DimText.Location = New System.Drawing.Point(204, 330)
-        Me.DimText.Name = "DimText"
-        Me.DimText.Size = New System.Drawing.Size(155, 21)
-        Me.DimText.TabIndex = 42
-        Me.DimText.Text = "000 x 000 pixels"
-        Me.DimText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.DimText.Visible = False
-        '
-        'DimLabel
-        '
-        Me.DimLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DimLabel.Location = New System.Drawing.Point(40, 330)
-        Me.DimLabel.Name = "DimLabel"
-        Me.DimLabel.Size = New System.Drawing.Size(155, 21)
-        Me.DimLabel.TabIndex = 41
-        Me.DimLabel.Text = "Image Dimensions:"
-        Me.DimLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.DimLabel.Visible = False
         '
         'SoundsText
         '
@@ -1146,81 +1485,6 @@ Partial Class Optioner
         Me.OptionerBackButton.TabIndex = 32
         Me.OptionerBackButton.UseVisualStyleBackColor = False
         '
-        'SetActiveDBButton
-        '
-        Me.SetActiveDBButton.Enabled = False
-        Me.SetActiveDBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SetActiveDBButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
-        Me.SetActiveDBButton.Location = New System.Drawing.Point(118, 350)
-        Me.SetActiveDBButton.Name = "SetActiveDBButton"
-        Me.SetActiveDBButton.Size = New System.Drawing.Size(162, 23)
-        Me.SetActiveDBButton.TabIndex = 87
-        Me.SetActiveDBButton.Text = "Set As Active DB"
-        Me.SetActiveDBButton.UseVisualStyleBackColor = True
-        '
-        'CopyDBButton
-        '
-        Me.CopyDBButton.Enabled = False
-        Me.CopyDBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CopyDBButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
-        Me.CopyDBButton.Location = New System.Drawing.Point(118, 300)
-        Me.CopyDBButton.Name = "CopyDBButton"
-        Me.CopyDBButton.Size = New System.Drawing.Size(162, 23)
-        Me.CopyDBButton.TabIndex = 86
-        Me.CopyDBButton.Text = "Duplicate To New DB"
-        Me.CopyDBButton.UseVisualStyleBackColor = True
-        '
-        'SDBText
-        '
-        Me.SDBText.Location = New System.Drawing.Point(163, 150)
-        Me.SDBText.Name = "SDBText"
-        Me.SDBText.Size = New System.Drawing.Size(221, 23)
-        Me.SDBText.TabIndex = 84
-        Me.SDBText.Text = "DBNAME"
-        Me.SDBText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.SDBText.Visible = False
-        '
-        'SDBLabel
-        '
-        Me.SDBLabel.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SDBLabel.Location = New System.Drawing.Point(5, 150)
-        Me.SDBLabel.Name = "SDBLabel"
-        Me.SDBLabel.Size = New System.Drawing.Size(156, 23)
-        Me.SDBLabel.TabIndex = 83
-        Me.SDBLabel.Text = "Selected Database:"
-        Me.SDBLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.SDBLabel.Visible = False
-        '
-        'CDBText
-        '
-        Me.CDBText.Location = New System.Drawing.Point(163, 50)
-        Me.CDBText.Name = "CDBText"
-        Me.CDBText.Size = New System.Drawing.Size(221, 23)
-        Me.CDBText.TabIndex = 82
-        Me.CDBText.Text = "DBNAME"
-        Me.CDBText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'CDBLabel
-        '
-        Me.CDBLabel.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CDBLabel.Location = New System.Drawing.Point(3, 50)
-        Me.CDBLabel.Name = "CDBLabel"
-        Me.CDBLabel.Size = New System.Drawing.Size(158, 23)
-        Me.CDBLabel.TabIndex = 81
-        Me.CDBLabel.Text = "Active Database:"
-        Me.CDBLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'BlankDBButton
-        '
-        Me.BlankDBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BlankDBButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)
-        Me.BlankDBButton.Location = New System.Drawing.Point(118, 250)
-        Me.BlankDBButton.Name = "BlankDBButton"
-        Me.BlankDBButton.Size = New System.Drawing.Size(162, 23)
-        Me.BlankDBButton.TabIndex = 88
-        Me.BlankDBButton.Text = "Create Blank New DB"
-        Me.BlankDBButton.UseVisualStyleBackColor = True
-        '
         'Optioner
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -1241,15 +1505,15 @@ Partial Class Optioner
         Me.BackgroundPanel.ResumeLayout(False)
         Me.OptionsPanel.ResumeLayout(False)
         Me.OptionsMainPanel.ResumeLayout(False)
-        Me.DBPanel.ResumeLayout(False)
-        Me.ColorsPanel.ResumeLayout(False)
-        Me.ColorsPanel.PerformLayout()
-        Me.SoundsPanel.ResumeLayout(False)
-        Me.SoundsPanel.PerformLayout()
         Me.MusicPanel.ResumeLayout(False)
-        Me.MusicPanel.PerformLayout()
+        CType(Me.MusicFileImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AvatarPanel.ResumeLayout(False)
         CType(Me.AvatarImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ColorsPanel.ResumeLayout(False)
+        Me.ColorsPanel.PerformLayout()
+        Me.DBPanel.ResumeLayout(False)
+        Me.SoundsPanel.ResumeLayout(False)
+        Me.SoundsPanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1275,7 +1539,6 @@ Partial Class Optioner
     Friend WithEvents DBPanel As Panel
     Friend WithEvents SoundsPanel As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents CThemeLabel As Label
     Friend WithEvents AvatarImage As PictureBox
     Friend WithEvents OptionsRenameButton As Button
@@ -1352,4 +1615,26 @@ Partial Class Optioner
     Friend WithEvents CDBText As Label
     Friend WithEvents CDBLabel As Label
     Friend WithEvents BlankDBButton As Button
+    Friend WithEvents MusicFileText As Label
+    Friend WithEvents MusicFileImage As PictureBox
+    Friend WithEvents MusicResetButton As Button
+    Friend WithEvents MusicMainLabel As Label
+    Friend WithEvents MusicFileLenText As Label
+    Friend WithEvents MusicStopButton As Button
+    Friend WithEvents MusicPlayButton As Button
+    Friend WithEvents MusicTopText As Label
+    Friend WithEvents MusicDefeatLabel As Label
+    Friend WithEvents MusicVictoryLabel As Label
+    Friend WithEvents MusicBattleLabel As Label
+    Friend WithEvents MusicDefeatButton As Button
+    Friend WithEvents MusicVictoryButton As Button
+    Friend WithEvents MusicBattleButton As Button
+    Friend WithEvents MusicMainButton As Button
+    Friend WithEvents MusicDefeatText As Label
+    Friend WithEvents MusicVictoryText As Label
+    Friend WithEvents MusicBattleText As Label
+    Friend WithEvents MusicMainText As Label
+    Friend WithEvents MusicLowText As Label
+    Friend WithEvents MusicOffButton As Button
+    Friend WithEvents MusicOnButton As Button
 End Class

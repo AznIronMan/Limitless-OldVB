@@ -1,7 +1,7 @@
 =============================================
 LIMITLESS by Geoff Clark
 PUBLISHED by CLARKTRIBEGAMES LLC
-VERSION ALPHA 0.1.007.0009
+VERSION ALPHA 0.1.007.0010
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -73,7 +73,7 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.007.0009 / 2021.11.20 - The Revamp
+ALPHA 0.1.007.0010 / 2021.11.22 - The Revamp
 
 - redesigned the gui to have the menu buttons on the left
 - removed the options and editor for redesign
@@ -121,6 +121,14 @@ ALPHA 0.1.007.0009 / 2021.11.20 - The Revamp
 - removed lastdb from settings and memory, only using defaultdb now
 - updated references to lastdb as defaultdb
 - removed old code again
+- built music options section
+- added function to pull duration times for audio files selected
+- added buttons for setting custom audio, music turn on and off, and reset music to default
+- added function to read settings and display current music assignments
+- created logic for checking for default audio, updating audio with custom tracks, and updating the settings file appropriately
+- added logic for music turn on and off and reset music to default
+- added jukebox to switch to intro when stop preview is click or if the option window closes
+- placeholder form for editor and ported over legacy editor code to new form
 
 [PREVIOUS UPDATES]
 
