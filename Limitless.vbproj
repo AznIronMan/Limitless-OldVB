@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>0.1.007.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -186,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DocReader.resx">
       <DependentUpon>DocReader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor.resx">
+      <DependentUpon>Editor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Limitless.resx">
       <DependentUpon>Limitless.vb</DependentUpon>

@@ -125,6 +125,32 @@
         'LoadWindow
 
         'Editor
+        AssignColor(Editor.TitleBarPanel, "TitleBar")
+        AssignColor(Editor.TitleLabel, "TitleBar")
+        AssignColor(Editor.BackgroundPanel, "Background")
+        AssignColor(Editor.CloseButton, "TitleButton")
+        AssignColor(Editor.CloseText, "TitleButton")
+        AssignColor(Editor.EditorPanel, "Pages")
+        AssignColor(Editor.EditorDBLabel, "Pages")
+        AssignColor(Editor.EditorDBText, "Pages")
+        AssignColor(Editor.EditorDrop, "Pages")
+        AssignColor(Editor.EditorCountText, "Pages")
+        AssignColor(Editor.EditorDescText, "Pages")
+        AssignColor(Editor.EditorAddButton, "Button")
+        AssignColor(Editor.EditorEditButton, "Button")
+        AssignColor(Editor.EditorCopyButton, "Button")
+        AssignColor(Editor.EditorDeleteButton, "Button")
+        AssignColor(Editor.EditorImportButton, "Button")
+        AssignColor(Editor.EditorSearchButton, "Button")
+        AssignColor(Editor.EditorMultiButton, "Button")
+        AssignColor(Editor.EditorSelectButton, "Button")
+        AssignColor(Editor.EditorClearButton, "Button")
+        AssignColor(Editor.EditorCatText, "Pages")
+        AssignColor(Editor.EditorFilterText, "Pages")
+        AssignColor(Editor.EditorFilterButton, "Button")
+        AssignColor(Editor.EditorList, "Pages")
+        AssignColor(Editor.EditorLowText, "Pages")
+        AssignColor(Editor.EditorBackButton, "Button")
 
         'DocReader
         AssignColor(DocReader.TitleBarPanel, "TitleBar")

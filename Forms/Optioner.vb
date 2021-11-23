@@ -1161,16 +1161,28 @@
         MemoryBank.WindowDrag = False
     End Sub
 
-    Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles CloseButton.MouseHover,
-            OptionerBackButton.MouseHover
+    Private Sub Button_MouseHover(sender As Object, e As EventArgs) Handles CloseButton.MouseHover, OptionerBackButton.MouseHover, OptionsAddButton.MouseHover,
+        OptionsRefreshButton.MouseHover, OptionsRenameButton.MouseHover, OptionsDeleteButton.MouseHover, RandomThemeButton.MouseHover, ResetThemeButton.MouseHover,
+        CopyThemeButton.MouseHover, EditThemeButton.MouseHover, SaveThemeButton.MouseHover, SetActiveButton.MouseHover, SetActiveDBButton.MouseHover,
+        BlankDBButton.MouseHover, CopyDBButton.MouseHover, MusicPlayButton.MouseHover, MusicStopButton.MouseHover, MusicMainButton.MouseHover,
+        MusicBattleButton.MouseHover, MusicVictoryButton.MouseHover, MusicDefeatButton.MouseHover, MusicOnButton.MouseHover, MusicOffButton.MouseHover,
+        MusicResetButton.MouseHover
         HoverOverEffect(sender)
     End Sub
-    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles CloseButton.MouseLeave,
-            OptionerBackButton.MouseLeave
+    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles CloseButton.MouseLeave, OptionerBackButton.MouseLeave, OptionsAddButton.MouseLeave,
+        OptionsRefreshButton.MouseLeave, OptionsRenameButton.MouseLeave, OptionsDeleteButton.MouseLeave, RandomThemeButton.MouseLeave, ResetThemeButton.MouseLeave,
+        CopyThemeButton.MouseLeave, EditThemeButton.MouseLeave, SaveThemeButton.MouseLeave, SetActiveButton.MouseLeave, SetActiveDBButton.MouseLeave,
+        BlankDBButton.MouseLeave, CopyDBButton.MouseLeave, MusicPlayButton.MouseLeave, MusicStopButton.MouseLeave, MusicMainButton.MouseLeave,
+        MusicBattleButton.MouseLeave, MusicVictoryButton.MouseLeave, MusicDefeatButton.MouseLeave, MusicOnButton.MouseLeave, MusicOffButton.MouseLeave,
+        MusicResetButton.MouseLeave
         LeaveObjEffect(sender)
     End Sub
-    Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles CloseButton.MouseDown,
-            OptionerBackButton.MouseDown
+    Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles CloseButton.MouseDown, OptionerBackButton.MouseDown, OptionsAddButton.MouseDown,
+        OptionsRefreshButton.MouseDown, OptionsRenameButton.MouseDown, OptionsDeleteButton.MouseDown, RandomThemeButton.MouseDown, ResetThemeButton.MouseDown,
+        CopyThemeButton.MouseDown, EditThemeButton.MouseDown, SaveThemeButton.MouseDown, SetActiveButton.MouseDown, SetActiveDBButton.MouseDown,
+        BlankDBButton.MouseDown, CopyDBButton.MouseDown, MusicPlayButton.MouseDown, MusicStopButton.MouseDown, MusicMainButton.MouseDown,
+        MusicBattleButton.MouseDown, MusicVictoryButton.MouseDown, MusicDefeatButton.MouseDown, MusicOnButton.MouseDown, MusicOffButton.MouseDown,
+        MusicResetButton.MouseDown
         MouseDownEffect(sender)
     End Sub
     Private Sub CloseWindow(sender As Object, e As MouseEventArgs) Handles CloseButton.MouseDown, CloseText.MouseDown, CloseButton.Click, OptionerBackButton.Click

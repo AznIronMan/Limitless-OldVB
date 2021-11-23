@@ -86,7 +86,9 @@
     'TO DO: Build Load Game Here
 
     'Editor
-
+    Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
+        Editor.ShowDialog()
+    End Sub
     'Optioner
     Private Sub OptionsButton_Click(sender As Object, e As EventArgs) Handles OptionsButton.Click
         Optioner.ShowDialog()

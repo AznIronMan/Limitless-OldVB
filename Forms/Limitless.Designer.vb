@@ -318,7 +318,6 @@ Partial Class MainWindow
         Me.EditButton.BackColor = System.Drawing.SystemColors.ControlText
         Me.EditButton.BackgroundImage = CType(resources.GetObject("EditButton.BackgroundImage"), System.Drawing.Image)
         Me.EditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.EditButton.Enabled = False
         Me.EditButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText
         Me.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.EditButton.Font = New System.Drawing.Font("Lucida Console", 8.25!)

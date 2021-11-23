@@ -42,7 +42,7 @@
                     ClarkTribeGames.Updater.GetUpdater()
                 End If
             Catch ex As Exception
-                'This means there's no internet.
+                'This means there's no internet.  This is intentionally empty.
             End Try
         Else
             ClarkTribeGames.Updater.GetUpdater()

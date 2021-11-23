@@ -22,6 +22,7 @@ Partial Class Optioner
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Optioner))
         Me.TitleBarPanel = New System.Windows.Forms.Panel()
         Me.CloseButton = New System.Windows.Forms.Panel()
         Me.CloseText = New System.Windows.Forms.Label()
@@ -1410,7 +1411,6 @@ Partial Class Optioner
         Me.OptionsList.FormattingEnabled = True
         Me.OptionsList.Location = New System.Drawing.Point(442, 46)
         Me.OptionsList.Name = "OptionsList"
-        Me.OptionsList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
         Me.OptionsList.Size = New System.Drawing.Size(319, 405)
         Me.OptionsList.Sorted = True
         Me.OptionsList.TabIndex = 41
@@ -1495,8 +1495,11 @@ Partial Class Optioner
         Me.Font = New System.Drawing.Font("Lucida Console", 9.75!)
         Me.ForeColor = System.Drawing.SystemColors.Control
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "Optioner"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Limitless Options"
         Me.TitleBarPanel.ResumeLayout(False)

@@ -1,7 +1,7 @@
 =============================================
 LIMITLESS by Geoff Clark
 PUBLISHED by CLARKTRIBEGAMES LLC
-VERSION ALPHA 0.1.007.0010
+VERSION ALPHA 0.1.007.0011
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -73,7 +73,7 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.007.0010 / 2021.11.22 - The Revamp
+ALPHA 0.1.007.0011 / 2021.11.23 - The Revamp
 
 - redesigned the gui to have the menu buttons on the left
 - removed the options and editor for redesign
@@ -129,6 +129,16 @@ ALPHA 0.1.007.0010 / 2021.11.22 - The Revamp
 - added logic for music turn on and off and reset music to default
 - added jukebox to switch to intro when stop preview is click or if the option window closes
 - placeholder form for editor and ported over legacy editor code to new form
+- created editor menu form and class
+- added add edit copy delete import search multimode select-all and clear buttons - but only add edit copy delete will be active for now
+- temporary disable and hide buttons added for buttons that are inactive
+- added search filter for finding items faster
+- editor dropdown populates editable tables in the database
+- editor dropdown will show all editable items in the editor list
+- classifications, charms, handhelds, wearables, items have to have special queries built in order for their results to be accurate
+- added item description and count to editor display
+- added active database name to editor
+- added select category or double click item instruction at bottom of editor
 
 [PREVIOUS UPDATES]
 
