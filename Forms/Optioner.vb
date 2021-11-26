@@ -683,7 +683,7 @@
         If SetActiveDBButton.Enabled = True Then
             Dim dbname = ClarkTribeGames.Converters.UppercaseEachFirstLetter(OptionsList.SelectedItem.ToString)
             ClarkTribeGames.SQLite.RunSQL(Settings.SettingsPath, Settings.SettingsName,
-                "UPDATE mainSettings SET settingConfig = '" & LCase(dbname) & "' WHERE settingName like 'defaultdb';")
+                "UPDATE mainSettings SET settingConfig = '" & LCase(dbname) & "' WHERE settingName like 'database';")
             Settings.SettingsDB = LCase(dbname)
             MsgBox(ClarkTribeGames.Converters.UppercaseEachFirstLetter(dbname) & "has been set as the Active Database!", vbOKOnly)
             OptionsList.SelectedIndex = -1
@@ -864,7 +864,7 @@
             My.Computer.FileSystem.RenameFile(SelectedDir & "\" & oldname & Ext, newname & Ext)
             If LCase(ActivePanel) = "databases" Then
                 ClarkTribeGames.SQLite.RunSQL(Settings.SettingsPath, Settings.SettingsName,
-                "UPDATE mainSettings SET settingConfig = '" & LCase(newname) & "' WHERE settingName like 'defaultdb';")
+                "UPDATE mainSettings SET settingConfig = '" & LCase(newname) & "' WHERE settingName like 'database';")
                 Settings.SettingsDB = LCase(newname)
             End If
         Catch ex As Exception

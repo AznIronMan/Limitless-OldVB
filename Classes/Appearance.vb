@@ -151,6 +151,7 @@
         AssignColor(Editor.EditorList, "Pages")
         AssignColor(Editor.EditorLowText, "Pages")
         AssignColor(Editor.EditorBackButton, "Button")
+        AssignColor(Editor.mmmCheck, "Pages")
 
         'DocReader
         AssignColor(DocReader.TitleBarPanel, "TitleBar")

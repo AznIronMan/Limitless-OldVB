@@ -30,7 +30,7 @@
                 End If
                 CreateEmptyDB(ClarkTribeGames.Converters.UppercaseEachFirstLetter(DefaultSave))
                 ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
-                    "defaultdb", {"settingConfig"}, {DefaultSave})
+                    "database", {"settingConfig"}, {DefaultSave})
                 'ClarkTribeGames.SQLite.UpdateData(Settings.SettingsPath, Settings.SettingsName, "mainSettings", "settingName",
                 '    "lastdb", {"settingConfig"}, {DefaultSave})
                 'Settings.SettingsLastDB = LCase(DefaultSave)
@@ -80,7 +80,7 @@
     Public Shared Sub CreateEmptyDB(savename As String)
         ClarkTribeGames.SQLite.CreateDB(SavePath, savename & SaveExt, "
             CREATE TABLE 'all_Index' ('idxID' TEXT NOT NULL UNIQUE,'idxName' TEXT NOT NULL, 'idxDesc' TEXT, 
-            'idxActive' TEXT NOT NULL DEFAULT 1, PRIMARY KEY('idxID'));
+            'idxHidden' TEXT NOT NULL, 'idxActive' TEXT NOT NULL DEFAULT 1, PRIMARY KEY('idxID'));
             CREATE TABLE 'dbInfo' ('dbName' TEXT NOT NULL, 'dbVersion' TEXT NOT NULL);
             CREATE TABLE 'dbToons' ('toonID' TEXT NOT NULL, 'toonName' TEXT NOT NULL, 'toonUID' TEXT NOT NULL,
             'toonRace' TEXT NOT NULL, 'toonClass' TEXT NOT NULL, 'toonAlign' TEXT NOT NULL, 'toonGender' TEXT NOT NULL, 
@@ -121,7 +121,7 @@
             'itemElement' TEXT, 'itemMax' TEXT NOT NULL, 'itemCode' TEXT);
             CREATE TABLE 'dbItemType' ('itemtypeID' TEXT NOT NULL, 'itemtypeName' TEXT NOT NULL, 'itemtypeClass' TEXT NOT NULL,
             'itemtypeCode' TEXT NOT NULL);
-            CREATE TABLE 'dbItemClass' ('itemclassID' TEXT NOT NULL, 'itemclassname' TEXT NOT NULL, 
+            CREATE TABLE 'dbItemClass' ('itemclassID' TEXT NOT NULL, 'itemclassName' TEXT NOT NULL, 
             'itemclassCode' TEXT);
             CREATE TABLE 'dbForce' ('forceID' TEXT NOT NULL, 'forceName' TEXT NOT NULL, 'forceText' TEXT NOT NULL, 
             'forceObtain' TEXT NOT NULL, 'forceOwner' TEXT NOT NULL, 'forceDesc' TEXT, 'forceCode' TEXT);
@@ -181,21 +181,35 @@
 
         'all_Index
         ClarkTribeGames.SQLite.RunSQL(SavePath, savename & SaveExt, "
-            INSERT INTO 'all_Index' VALUES ('1','Abilities',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('2','Aliases',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('3','Arenas',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('4','Characters',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('5','Charms',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('6','Classifications',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('7','Destinies',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('8','Effects',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('9','Handhelds',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('10','Items',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('11','Multiverse',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('12','Relationships',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('13','Statuses',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('14','Teams',NULL,'1');
-            INSERT INTO 'all_Index' VALUES ('15','Abilities',NULL,'1');
+            INSERT INTO 'all_Index' VALUES ('1','Abilities',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('2','Abilities Types',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('3','Ages',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('4','Aliases',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('5','Arenas',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('6','Characters',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('7','Classes',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('8','Destinies',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('9','Editor Categories',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('10','Effects',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('11','Effect Types',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('12','Elements',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('13','Environments',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('14','Existences',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('15','Genders',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('16','Items',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('17','Item Classes',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('18','Item Types',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('19','Jobs',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('20','Languages',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('21','Life Forces',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('22','Life Force Obtains',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('23','Multiverse',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('24','Races',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('25','Relationships',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('26','Sections',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('27','Sizes',NULL,'1','1');
+            INSERT INTO 'all_Index' VALUES ('28','Statuses',NULL,'0','1');
+            INSERT INTO 'all_Index' VALUES ('29','Teams',NULL,'0','1');
             ")
 
         'dbAbl

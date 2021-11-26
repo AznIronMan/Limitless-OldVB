@@ -8,11 +8,12 @@
         BuildEditor()
     End Sub
     Private Sub BuildEditor()
+        If Settings.SettingsMMM = "on" Then mmmCheck.CheckState = CheckState.Checked Else mmmCheck.CheckState = CheckState.Unchecked
         EditorDrop.Items.Clear()
         EditorDrop.Items.Add(SelectPhrase)
         EditorDBText.Text = ClarkTribeGames.Converters.UppercaseEachFirstLetter(Settings.SettingsDB)
         For Each item In ClarkTribeGames.SQLite.QuerySQL(SaveDir, SaveFile,
-            "SELECT idxName from all_Index where idxActive = '1';", "col", {"idxName"}).Split(",")
+            "SELECT idxName from all_Index where idxActive = '1'" & ModMakerMode() & ";", "col", {"idxName"}).Split(",")
             EditorDrop.Items.Add(item)
         Next
         EditorDrop.SelectedIndex = 0
@@ -73,44 +74,68 @@
                 SelectionActive(False)
             Case "abilities"
                 SetListItem(cat, "dbAbl", "ablName")
+            Case "abilities types"
+                SetListItem(cat, "dbAblType", "abltypeName")
+            Case "ages"
+                SetListItem(cat, "dbAge", "ageName")
             Case "aliases"
                 SetListItem(cat, "dbAlias", "aliasName")
+            Case "alignments"
+                SetListItem(cat, "dbAlign", "alignName")
             Case "arenas"
                 SetListItem(cat, "dbArenas", "arenaName")
             Case "characters"
                 SetListItem(cat, "dbToons", "toonName")
-            Case "charms"
-                SetListItem(cat, "dbItems", "itemName")
-                'needs to be query to only get charms
-            Case "classifications"
+            Case "classes"
                 SetListItem(cat, "dbClass", "className")
-                'needs to be adjusted to be class + race
             Case "destinies"
                 SetListItem(cat, "dbDestiny", "destinyName")
+            Case "editor categories"
+                SetListItem(cat, "all_Index", "idxName")
             Case "effects"
                 SetListItem(cat, "dbEff", "effName")
-            Case "handhelds"
-                SetListItem(cat, "dbItems", "itemName")
-                'needs to be query to only get handhelds
+            Case "effect types"
+                SetListItem(cat, "dbEffType", "efftypeName")
+            Case "elements"
+                SetListItem(cat, "dbElements", "elementName")
+            Case "environments"
+                SetListItem(cat, "dbEnviro", "enviroName")
+            Case "existences"
+                SetListItem(cat, "dbExistence", "existName")
+            Case "genders"
+                SetListItem(cat, "dbGender", "genderName")
             Case "items"
                 SetListItem(cat, "dbItems", "itemName")
-                'needs to be query to only get items, relics
+            Case "item classes"
+                SetListItem(cat, "dbItemClass", "itemclassName")
+            Case "items types"
+                SetListItem(cat, "dbItemType", "itemtypeName")
+            Case "jobs"
+                SetListItem(cat, "dbJobs", "jobName")
+            Case "languages"
+                SetListItem(cat, "dbLang", "langName")
+            Case "life forces"
+                SetListItem(cat, "dbForce", "forceName")
+            Case "life force obtains"
+                SetListItem(cat, "dbForceObtain", "forceOName")
             Case "multiverse"
                 SetListItem("Universes", "dbVerse", "verseName")
+            Case "races"
+                SetListItem(cat, "dbRace", "raceName")
             Case "relationships"
                 SetListItem(cat, "dbRelation", "relationName")
+            Case "sections"
+                SetListItem(cat, "dbSections", "sectionName")
+            Case "sizes"
+                SetListItem(cat, "dbSize", "sizeName")
             Case "statuses"
                 SetListItem(cat, "dbStatus", "statusName")
             Case "teams"
                 SetListItem(cat, "dbTeam", "teamName")
-            Case "wearables"
-                SetListItem(cat, "dbItems", "itemName")
-                'needs to be query to only get wearables
             Case Else
                 'This is intentionally empty.
         End Select
     End Sub
-
     Private Sub SetListItem(type As String, table As String, col As String)
         EditorList.Items.Clear()
         SelectionActive(True)
@@ -128,19 +153,23 @@
             EditorCountText.Text = "No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type)
         End If
     End Sub
-
-    Private Sub SetListItemComplex(count As Integer, type As String, query As String)
-        EditorCountText.Text = count
-        If Not count = 0 Then
-            'do stuff
-        Else
-            SelectionActive(False)
-            EditorList.Enabled = True
-            EditorList.Items.Add("<No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type) & " Available>")
-            EditorList.Enabled = False
-        End If
-    End Sub
     '
+    Private Function ModMakerMode() As String
+        If Not Settings.SettingsMMM = "on" Then Return " and idxHidden = '0'" Else Return ""
+    End Function
+    Private Sub MmmCheck_CheckedChanged(sender As Object, e As EventArgs) Handles mmmCheck.CheckedChanged
+        MmmChange(mmmCheck)
+    End Sub
+    Private Sub MmmChange(checkbox As CheckBox)
+        If checkbox.CheckState = CheckState.Checked Then
+            Settings.SettingsMMM = "on"
+        Else
+            Settings.SettingsMMM = "off"
+        End If
+        ClarkTribeGames.SQLite.RunSQL(Settings.SettingsPath, Settings.SettingsName,
+             "UPDATE mainSettings SET settingConfig = '" & Settings.SettingsMMM & "' WHERE settingName like 'mmm';")
+        BuildEditor()
+    End Sub
     Private Sub HoverOverEffect(obj As Object)
         If obj.Enabled Then
             Appearance.AssignColor(obj, "Hover")
@@ -189,4 +218,5 @@
     Private Sub CloseWindow(sender As Object, e As MouseEventArgs) Handles CloseButton.MouseDown, CloseText.MouseDown, CloseButton.Click, EditorBackButton.Click
         Me.Close()
     End Sub
+
 End Class

@@ -12,7 +12,7 @@
     Public Shared SettingsCustW As String = "off"
     Public Shared SettingsCustL As String = "off"
     Public Shared SettingsSound As String = "on"
-    Public Shared SettingsSameDB As String = "on"
+    Public Shared SettingsMMM As String = "off"
     Public Shared SettingsDB As String = "default"
     Public Shared SettingsAutoSave As String = "on"
     Public Shared Sub CreateSettings()
@@ -34,7 +34,7 @@
         "'", "'custm', '" & SettingsCustM & "'", "'custi', '" & SettingsCustI &
         "'", "'custb', '" & SettingsCustB & "'", "'custw', '" & SettingsCustW &
         "'", "'custl', '" & SettingsCustL & "'", "'sound', '" & SettingsSound &
-        "'", "'samedb', '" & SettingsSameDB & "'", "'defaultdb', '" &
+        "'", "'mmm', '" & SettingsMMM & "'", "'database', '" &
         SettingsDB & "'", "'autosave', '" & SettingsAutoSave & "'"})
         ClarkTribeGames.SQLite.RunSQL(SettingsPath, SettingsName, "INSERT INTO 'main'.'colorSettings'
         ('uid', 'colorname', 'coloract', 'colordesc', 'tbarb', 'tbarf', 'tbutb', 'tbutf', 'backb', 
@@ -63,7 +63,7 @@
         SettingsCustW = CurrentSettings(7)
         SettingsCustL = CurrentSettings(8)
         SettingsSound = CurrentSettings(9)
-        SettingsSameDB = CurrentSettings(10)
+        SettingsMMM = CurrentSettings(10)
         SettingsDB = CurrentSettings(11)
         SettingsAutoSave = CurrentSettings(12)
     End Sub
