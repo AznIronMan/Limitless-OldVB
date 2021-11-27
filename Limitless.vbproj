@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>0.1.007.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -141,6 +141,18 @@
     <Compile Include="Forms\Editor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Editor\EditorAbl.Designer.vb">
+      <DependentUpon>EditorAbl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\EditorAbl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\Editor_Index.Designer.vb">
+      <DependentUpon>Editor_Index.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\Editor_Index.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Limitless.Designer.vb">
       <DependentUpon>Limitless.vb</DependentUpon>
     </Compile>
@@ -190,6 +202,12 @@
     <EmbeddedResource Include="Forms\Editor.resx">
       <DependentUpon>Editor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\EditorAbl.resx">
+      <DependentUpon>EditorAbl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\Editor_Index.resx">
+      <DependentUpon>Editor_Index.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Limitless.resx">
       <DependentUpon>Limitless.vb</DependentUpon>
     </EmbeddedResource>
@@ -235,5 +253,6 @@
   <ItemGroup>
     <Content Include="icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

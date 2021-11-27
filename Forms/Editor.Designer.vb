@@ -29,6 +29,7 @@ Partial Class Editor
         Me.TitleLabel = New System.Windows.Forms.Label()
         Me.BackgroundPanel = New System.Windows.Forms.Panel()
         Me.EditorPanel = New System.Windows.Forms.Panel()
+        Me.mmmCheck = New System.Windows.Forms.CheckBox()
         Me.EditorFilterText = New System.Windows.Forms.TextBox()
         Me.EditorDescText = New System.Windows.Forms.Label()
         Me.EditorLowText = New System.Windows.Forms.Label()
@@ -49,7 +50,6 @@ Partial Class Editor
         Me.EditorList = New System.Windows.Forms.ListBox()
         Me.EditorCatText = New System.Windows.Forms.Label()
         Me.EditorBackButton = New System.Windows.Forms.Button()
-        Me.mmmCheck = New System.Windows.Forms.CheckBox()
         Me.TitleBarPanel.SuspendLayout()
         Me.CloseButton.SuspendLayout()
         Me.BackgroundPanel.SuspendLayout()
@@ -147,6 +147,16 @@ Partial Class Editor
         Me.EditorPanel.Name = "EditorPanel"
         Me.EditorPanel.Size = New System.Drawing.Size(776, 547)
         Me.EditorPanel.TabIndex = 11
+        '
+        'mmmCheck
+        '
+        Me.mmmCheck.AutoSize = True
+        Me.mmmCheck.Location = New System.Drawing.Point(102, 505)
+        Me.mmmCheck.Name = "mmmCheck"
+        Me.mmmCheck.Size = New System.Drawing.Size(138, 17)
+        Me.mmmCheck.TabIndex = 111
+        Me.mmmCheck.Text = "Mod Maker Mode"
+        Me.mmmCheck.UseVisualStyleBackColor = True
         '
         'EditorFilterText
         '
@@ -363,16 +373,6 @@ Partial Class Editor
         Me.EditorBackButton.Size = New System.Drawing.Size(50, 50)
         Me.EditorBackButton.TabIndex = 32
         Me.EditorBackButton.UseVisualStyleBackColor = False
-        '
-        'mmmCheck
-        '
-        Me.mmmCheck.AutoSize = True
-        Me.mmmCheck.Location = New System.Drawing.Point(102, 505)
-        Me.mmmCheck.Name = "mmmCheck"
-        Me.mmmCheck.Size = New System.Drawing.Size(138, 17)
-        Me.mmmCheck.TabIndex = 111
-        Me.mmmCheck.Text = "Mod Maker Mode"
-        Me.mmmCheck.UseVisualStyleBackColor = True
         '
         'Editor
         '

@@ -238,6 +238,26 @@
         drop.SelectedIndex = 0
         ClarkTribeGames.SQLite.CloseSQL(MemoryBank.DataDir, DBName)
     End Sub
+    Public Shared Function LimitKeys(type As String, key As String) As Boolean
+        Dim AllowedKeys As String = ""
+        Select Case LCase(type)
+            Case "a"
+                AllowedKeys = "abcdefghijklmnopqrstuvwxyz"
+            Case "an"
+                AllowedKeys = "abcdefghijklmnopqrstuvwxyz0123456789"
+            Case "as"
+                AllowedKeys = "abcdefghijklmnopqrstuvwxyz "
+            Case "ans"
+                AllowedKeys = "abcdefghijklmnopqrstuvwxyz0123456789 "
+            Case "all"
+                AllowedKeys = "abcdefghijklmnopqrstuvwxyz0123456789 .-'!?$#%&"
+        End Select
+        If Not AllowedKeys.Contains(key) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
     Public Shared Function TestKeyPress(sender As Object, key As String) As Boolean
         Dim AllowedKeys As String = ""
         Select Case ClarkTribeGames.Converters.ControlToString(sender)

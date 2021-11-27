@@ -1,7 +1,7 @@
 =============================================
 LIMITLESS by Geoff Clark
 PUBLISHED by CLARKTRIBEGAMES LLC
-VERSION ALPHA 0.1.007.0012
+VERSION ALPHA 0.1.007.0013
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS GAME @ 
@@ -73,7 +73,7 @@ DEVELOPMENT NOTES
 
 [CURRENT UPDATE]
 
-ALPHA 0.1.007.0012 / 2021.11.25 - The Revamp
+ALPHA 0.1.007.0013 / 2021.11.26 - The Revamp
 
 - redesigned the gui to have the menu buttons on the left
 - removed the options and editor for redesign
@@ -142,6 +142,11 @@ ALPHA 0.1.007.0012 / 2021.11.25 - The Revamp
 - removed samedb setting as it will not be used now
 - added hidden editor categories from the db to be edited in mod maker mode
 - added mod maker mode for editing all tables in editor, not just the main ones
+- added proficiencies, modifiers, and ability modifiers to database tables for future use
+- modified some tables core fields to optimize future plans
+- added editor for editor categories - mainly just the ability to turn categories on or off when not in mod maker mode
+- added stats table to database
+- added editor ui for abilities with functionality
 
 [PREVIOUS UPDATES]
 

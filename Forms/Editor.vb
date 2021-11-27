@@ -1,9 +1,11 @@
 ﻿Public Class Editor
 
-    Private ReadOnly SaveDir As String = MemoryBank.DataDir & "\"
-    Private ReadOnly SaveFile As String = Settings.SettingsDB & MemoryBank.SavesExtL
-    Private ReadOnly SelectPhrase As String = "[Select a Category]"
-
+    Public Shared ReadOnly SaveDir As String = MemoryBank.DataDir & "\"
+    Public Shared ReadOnly SaveFile As String = Settings.SettingsDB & MemoryBank.SavesExtL
+    Public Shared ReadOnly SelectPhrase As String = "[Select a Category]"
+    Public Shared DropSelect As String = ""
+    Public Shared ListSelect As String = ""
+    Public Shared SelectType As String = ""
     Private Sub Editor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         BuildEditor()
     End Sub
@@ -61,9 +63,9 @@
         EditorClearButton.Visible = False
     End Sub
     Private Sub EditorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EditorDrop.SelectedIndexChanged
-        ListSelection(EditorDrop.SelectedItem.ToString, EditorList)
+        ListSelection(EditorDrop.SelectedItem.ToString)
     End Sub
-    Private Sub ListSelection(cat As String, list As ListBox)
+    Private Sub ListSelection(cat As String)
         EditorFilterText.Text = ""
         If Not LCase(cat) = LCase(SelectPhrase) Then EditorDescText.Text = ClarkTribeGames.SQLite.QuerySQL(SaveDir, SaveFile,
             "SELECT idxDesc from all_Index where idxActive = '1' and idxName = '" & cat & "';", "row", Enumerable.Empty(Of String).ToArray).Split(",")(0)
@@ -128,6 +130,8 @@
                 SetListItem(cat, "dbSections", "sectionName")
             Case "sizes"
                 SetListItem(cat, "dbSize", "sizeName")
+            Case "stats"
+                SetListItem(cat, "dbStats", "statName")
             Case "statuses"
                 SetListItem(cat, "dbStatus", "statusName")
             Case "teams"
@@ -135,6 +139,7 @@
             Case Else
                 'This is intentionally empty.
         End Select
+        DropSelect = ClarkTribeGames.Converters.UppercaseEachFirstLetter(cat)
     End Sub
     Private Sub SetListItem(type As String, table As String, col As String)
         EditorList.Items.Clear()
@@ -152,6 +157,18 @@
             EditorList.Enabled = False
             EditorCountText.Text = "No " & ClarkTribeGames.Converters.UppercaseEachFirstLetter(type)
         End If
+    End Sub
+    Private Sub EditorList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EditorList.SelectedIndexChanged
+        ListSelect = ClarkTribeGames.Converters.UppercaseEachFirstLetter(EditorList.SelectedItem.ToString)
+    End Sub
+
+    Private Sub EditorList_DoubleClick(sender As Object, e As EventArgs) Handles EditorList.DoubleClick
+        Dim cat As String = LCase(EditorDrop.SelectedItem.ToString)
+        SelectType = "edit"
+        Select Case cat
+            Case "editor categories"
+                Editor_Index.ShowDialog()
+        End Select
     End Sub
     '
     Private Function ModMakerMode() As String
